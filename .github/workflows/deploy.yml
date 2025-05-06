@@ -20,14 +20,18 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install system dependencies for sharp
+      - name: Clean install dependencies
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
         run: |
-          sudo apt-get update
-          sudo apt-get install -y libvips-dev
+          rm -rf node_modules
+          yarn install --frozen-lockfile --ignore-engines
+          yarn add sharp --cpu=x64 --os=linux --libc=glibc 
+          
       - name: Install, build, and upload your site
-        uses: withastro/action@v3
-      - name: Install sharp ..
-        uses: npm install --cpu=x64 --os=linux --libc=glibc sharp
+        uses: withastro/action@v3  
+      # - name: Install sharp ..
+      #   run: 
         # with:
         # path: . # The root location of your Astro project inside the repository. (optional)
         # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
