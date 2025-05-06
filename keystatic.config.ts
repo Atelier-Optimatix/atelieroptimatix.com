@@ -582,8 +582,8 @@ export default config({
 							},
 						}),
 						Works: block({
-							label: "Works",
-							description: "Works section",
+							label: "Products",
+							description: "Products section",
 							icon: GeneralIcon({ ariaHidden: true }),
 							schema: {},
 						}),
@@ -715,7 +715,7 @@ export default config({
 			},
 		}),
 		works: collection({
-			label: "Works",
+			label: "Projects",
 			slugField: "title",
 			path: "src/content/works/it/*",
 			entryLayout: "content",
