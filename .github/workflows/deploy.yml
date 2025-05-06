@@ -26,7 +26,7 @@ jobs:
         run: |
           rm -rf node_modules
           yarn install --frozen-lockfile --ignore-engines
-          npm install --cpu=x64 --os=linux --libc=glibc sharp
+          yarn add sharp --cpu=x64 --os=linux --libc=glibc 
           
       - name: Install, build, and upload your site
         uses: withastro/action@v3  
