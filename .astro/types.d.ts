@@ -135,16 +135,16 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"authors": {
-"en/giulio-zanchetta.mdoc": {
-	id: "en/giulio-zanchetta.mdoc";
-  slug: "en/giulio-zanchetta";
+"en/shamil-kuruppu.mdoc": {
+	id: "en/shamil-kuruppu.mdoc";
+  slug: "en/shamil-kuruppu";
   body: string;
   collection: "authors";
   data: any
 } & { render(): Render[".mdoc"] };
-"it/giulio-zanchetta.mdoc": {
-	id: "it/giulio-zanchetta.mdoc";
-  slug: "it/giulio-zanchetta";
+"it/shamil-kuruppu.mdoc": {
+	id: "it/shamil-kuruppu.mdoc";
+  slug: "it/shamil-kuruppu";
   body: string;
   collection: "authors";
   data: any
@@ -290,30 +290,23 @@ declare module 'astro:content' {
   collection: "works";
   data: InferEntrySchema<"works">
 } & { render(): Render[".mdoc"] };
-"it/nexacore.mdoc": {
-	id: "it/nexacore.mdoc";
-  slug: "it/nexacore";
+"it/duesautomata.mdoc": {
+	id: "it/duesautomata.mdoc";
+  slug: "it/duesautomata";
   body: string;
   collection: "works";
   data: InferEntrySchema<"works">
 } & { render(): Render[".mdoc"] };
-"it/quantumflow.mdoc": {
-	id: "it/quantumflow.mdoc";
-  slug: "it/quantumflow";
+"it/educonnect.mdoc": {
+	id: "it/educonnect.mdoc";
+  slug: "it/educonnect";
   body: string;
   collection: "works";
   data: InferEntrySchema<"works">
 } & { render(): Render[".mdoc"] };
-"it/skywardtech.mdoc": {
-	id: "it/skywardtech.mdoc";
-  slug: "it/skywardtech";
-  body: string;
-  collection: "works";
-  data: InferEntrySchema<"works">
-} & { render(): Render[".mdoc"] };
-"it/vortextech.mdoc": {
-	id: "it/vortextech.mdoc";
-  slug: "it/vortextech";
+"it/simmeringerp.mdoc": {
+	id: "it/simmeringerp.mdoc";
+  slug: "it/simmeringerp";
   body: string;
   collection: "works";
   data: InferEntrySchema<"works">
