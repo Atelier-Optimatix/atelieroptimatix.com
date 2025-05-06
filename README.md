@@ -1,28 +1,53 @@
-# React JS Startup and small business website template
+# [Mizar](https://mizar.majestico.co)
 
-### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a href="https://astro.build/">![Astro](.github/images/astro-icon.png)</a>
+<a href="https://tailwindcss.com/">![Tailwind](.github/images/tailwind-icon.png)</a>
+<a href="https://alpinejs.dev/">![Alpine js](.github/images/alpine-icon.png)</a>
 
-# Screenshot
+Mizar is a template made with [Astro](https://astro.build), [Tailwind](https://tailwindcss.com/) and [AlpineJS](https://alpinejs.dev/).
 
-![mld edit](https://user-images.githubusercontent.com/43953425/212030864-cf3aa272-e070-4e1b-8e25-f488ca56873e.png)
+This project was strongly inspired by a template found on Webflow which I can longer find, if you are the author please let me know so I can give you the credits.
+
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/majesticooss/mizar)
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/majesticooss/mizar)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/majesticooss/mizar)
 
 
+### [🧪 Site preview →](https://mizar.majestico.co)
 
-The Live demo is available [Here](https://mld-prototype.netlify.app)
+### [🧑‍🚀 Astro website →](https://astro.build/)
 
-## Description
+### [🕮 Astro docs →](https://docs.astro.build/en/getting-started/)
 
-This is a ReactJS based startup and small business website template. 
-It was designed using TailwindCSS and React. 
-The Contact form was made functional using EmailJS, to learn how to use EmailJS, you can check out the official documentation [here](https://www.emailjs.com/docs/) or follow this short tutorial [here](https://senuravihanjayadeva.medium.com/send-emails-using-react-through-emailjs-a9d4b21193a7) 
+---
 
-## How to use it
+## Preview
 
-To use this template:
-1. Clone the repository to your local machine, 
-2. run `npm install` to install all the required dependencies and
-3. run `npm start` to view the website locally.
-Feel free to edit and make changes. 
+![Astros Preview](.github/images/screenshot.png)
 
-You can also Fork the repo and clone to your local machine, make desired changes and enjoy.
-# atelieroptimatix.com
+## 🧪 Test
+
+On the folder run
+
+1. `bun install`  <small>(or `yarn` or `pnpm i`)</small>
+2. `bun run dev`  <small>(or `yarn dev` or `pnpm dev`)</small>
+
+## ✅ Features
+
+- [x] Localization
+- [x] Blog
+- [x] CMS for editing blog post (thanks to Keystatic)
+- [x] PWA (thanks to vite-pwa)
+
+## ✍️ Admin dashboard
+
+You can access the admin dashboard for editing blog post at `/keystatic` 
+
+For more information follow Keystatic documentation at [https://keystatic.com/docs/introduction](https://keystatic.com/docs/introduction)
+
+
+---
+
+<p align="right"><a href="https://majestico.co" target="_blank">majestico.co</p>
