@@ -13,34 +13,34 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+
     steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
-      - name: Install system dependencies for sharp
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          cache: "yarn"
+
+      - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y libvips-dev
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20 # Try Node 20 for better compatibility with modern dependencies
-          cache: yarn
-      - name: Configure Yarn
+
+      - name: Clean install dependencies
         run: |
-          yarn config set cache-folder ~/.yarn/cache
-          mkdir -p ~/.yarn/cache
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Install sharp for linux-x64
-        run: yarn add sharp --os=linux --cpu=x64
-      - name: Build Astro project
-        run: yarn astro build
-        env:
-          NODE_OPTIONS: --max-old-space-size=4096 # Increase Node.js memory limit to prevent crashes
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: ./dist # Astro default output directory
+          rm -rf node_modules
+          yarn install --frozen-lockfile --ignore-engines
+          yarn add sharp@latest
+
+      - name: Build with Astro
+        uses: withastro/action@v3
 
   deploy:
     needs: build
@@ -49,6 +49,4 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
