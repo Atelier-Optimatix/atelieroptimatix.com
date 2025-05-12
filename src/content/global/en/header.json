@@ -16,6 +16,10 @@
 			"link": "/works"
 		},
 		{
+			"title": "Blog",
+			"link": "/news"
+		},
+		{
 			"title": "Contacts",
 			"link": "/contact"
 		}
