@@ -223,23 +223,9 @@ declare module 'astro:content' {
 } & { render(): Render[".mdoc"] };
 };
 "posts": {
-"en/mastering-email-marketing-campaigns-for-ecommerce-success.mdoc": {
-	id: "en/mastering-email-marketing-campaigns-for-ecommerce-success.mdoc";
-  slug: "en/mastering-email-marketing-campaigns-for-ecommerce-success";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".mdoc"] };
-"en/revolutionizing-urban-farming-with-smart-technology.mdoc": {
-	id: "en/revolutionizing-urban-farming-with-smart-technology.mdoc";
-  slug: "en/revolutionizing-urban-farming-with-smart-technology";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".mdoc"] };
-"en/revolutionizing-virtual-reality-gaming-development.mdoc": {
-	id: "en/revolutionizing-virtual-reality-gaming-development.mdoc";
-  slug: "en/revolutionizing-virtual-reality-gaming-development";
+"en/future-of-edutech.mdoc": {
+	id: "en/future-of-edutech.mdoc";
+  slug: "en/future-of-edutech";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
