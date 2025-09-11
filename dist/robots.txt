@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://atelieroptimatix.com/sitemap-index.xml

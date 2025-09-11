@@ -1,0 +1,13 @@
+globalThis.process ??= {}; globalThis.process.env ??= {};
+const id = "en/about.mdoc";
+						const collection = "pages";
+						const slug = "en/about";
+						const body = "\n{% Container %}\n\n{% About\n  title=\"About us\"\n  subtitle=\"At Atelier Optimatix, we build specialised software for the education and industrial sectors. Our mission is to simplify complexity through intelligent, dependable, and future-ready digital solutions.\"\n  content=\"<br/><br/><span class=\\\"text-neutral-400\\\">We don’t just write code, we craft systems that empower schools, industries, and institutions to operate smarter and more securely. From intuitive edutech platforms that foster safer, more connected learning environments to robust industrial tools that enhance precision and efficiency, our work is driven by purpose and precision.<br/><br/>Rooted in a culture of excellence and integrity, we focus on long-term value rather than short-term fixes. Join us in redefining what purposeful software can achieve. Discover the Atelier Optimatix difference.</span>\"\n/%}\n\n{% /Container %}\n";
+						const data = {title:"About us",type:"informational",lastUpdateDate:new Date(1709942400000),hideTitle:false,seo:{title:"About us | Atelier Optimatix",description:"Atelier Optimatix is a software studio specialising in intelligent edutech and industrial solutions designed for performance, safety, and usability.",author:"Atelier Optimatix"}};
+						const _internal = {
+							type: 'content',
+							filePath: "/Users/shamil/Workspace/atelieroptimatix.com/mld/src/content/pages/en/about.mdoc",
+							rawData: "\ntitle: About us\ntype: informational\nlastUpdateDate: 2024-03-09\nhideTitle: false\nseo:\n  title: About us | Atelier Optimatix\n  description: Atelier Optimatix is a software studio specialising in intelligent edutech and industrial solutions designed for performance, safety, and usability.\n  author: Atelier Optimatix",
+						};
+
+export { _internal, body, collection, data, id, slug };
