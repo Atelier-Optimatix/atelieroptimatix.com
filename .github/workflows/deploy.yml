@@ -25,7 +25,6 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=4096
         run: |
           rm -rf node_modules
-          yarn install --frozen-lockfile --ignore-engines
       - name: Install dependencies
         run: yarn install --frozen-lockfile --ignore-engines
 
