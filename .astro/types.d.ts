@@ -223,6 +223,13 @@ declare module 'astro:content' {
 } & { render(): Render[".mdoc"] };
 };
 "posts": {
+"en/django-developer.mdoc": {
+	id: "en/django-developer.mdoc";
+  slug: "en/django-developer";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
 "en/future-of-edutech.mdoc": {
 	id: "en/future-of-edutech.mdoc";
   slug: "en/future-of-edutech";
