@@ -9,6 +9,7 @@ import AstroPWA from "@vite-pwa/astro";
 import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
+// import squoosh from "@astrojs/image/service/squoosh";
 import { defaultLocale, locales, siteTitle, siteUrl } from "./site.config";
 
 // https://astro.build/config
@@ -17,10 +18,10 @@ export default defineConfig({
 	output: "hybrid",
 	adapter: cloudflare({
 		imageService: "compile",
-		experimental: {
-			manualChunks: ["sharp"],
-		},
-	}),
+		// experimental: {
+		// 	manualChunks: ["sharp"],
+		// },
+  }),
 	compressHTML: true,
 	i18n: {
 		defaultLocale: defaultLocale,
