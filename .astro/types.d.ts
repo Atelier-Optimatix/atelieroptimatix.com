@@ -223,9 +223,9 @@ declare module 'astro:content' {
 } & { render(): Render[".mdoc"] };
 };
 "posts": {
-"en/django-developer.mdoc": {
-	id: "en/django-developer.mdoc";
-  slug: "en/django-developer";
+"en/kinder-care-privacy-policy.mdoc": {
+	id: "en/kinder-care-privacy-policy.mdoc";
+  slug: "en/kinder-care-privacy-policy";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
