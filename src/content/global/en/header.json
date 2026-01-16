@@ -22,6 +22,10 @@
 		{
 			"title": "Contacts",
 			"link": "/contact"
+		},
+		{
+			"title": "Legal",
+			"link": "/legal"
 		}
 	],
 	"actions": []
