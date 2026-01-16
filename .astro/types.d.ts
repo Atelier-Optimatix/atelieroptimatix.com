@@ -158,6 +158,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".mdoc"] };
+"en/cancellation-policy.mdoc": {
+	id: "en/cancellation-policy.mdoc";
+  slug: "en/cancellation-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
 "en/contact.mdoc": {
 	id: "en/contact.mdoc";
   slug: "en/contact";
@@ -172,9 +179,51 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".mdoc"] };
+"en/kinder-care-privacy-policy.mdoc": {
+	id: "en/kinder-care-privacy-policy.mdoc";
+  slug: "en/kinder-care-privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/legal.mdoc": {
+	id: "en/legal.mdoc";
+  slug: "en/legal";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
 "en/news.mdoc": {
 	id: "en/news.mdoc";
   slug: "en/news";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/payment-disclamer.mdoc": {
+	id: "en/payment-disclamer.mdoc";
+  slug: "en/payment-disclamer";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/privacy-policy.mdoc": {
+	id: "en/privacy-policy.mdoc";
+  slug: "en/privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/refund-policy.mdoc": {
+	id: "en/refund-policy.mdoc";
+  slug: "en/refund-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/terms-and-conditions.mdoc": {
+	id: "en/terms-and-conditions.mdoc";
+  slug: "en/terms-and-conditions";
   body: string;
   collection: "pages";
   data: InferEntrySchema<"pages">
@@ -223,13 +272,6 @@ declare module 'astro:content' {
 } & { render(): Render[".mdoc"] };
 };
 "posts": {
-"en/kinder-care-privacy-policy.mdoc": {
-	id: "en/kinder-care-privacy-policy.mdoc";
-  slug: "en/kinder-care-privacy-policy";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".mdoc"] };
 "en/future-of-edutech.mdoc": {
 	id: "en/future-of-edutech.mdoc";
   slug: "en/future-of-edutech";
