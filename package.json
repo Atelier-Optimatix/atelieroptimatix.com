@@ -20,6 +20,7 @@
 	},
 	"dependencies": {
 		"@astrojs/alpinejs": "^0.4.0",
+		"@astrojs/check": "^0.9.6",
 		"@astrojs/cloudflare": "0.0.0-cf-deps-chunk-20240407075425",
 		"@astrojs/image": "^0.18.0",
 		"@astrojs/markdoc": "^0.11.0",
@@ -35,7 +36,9 @@
 		"gsap": "^3.12.5",
 		"keystatic-components": "^0.0.2",
 		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
+		"react-dom": "^18.3.1",
+		"tar": "^7.5.7",
+		"typescript": "^5.9.3"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.7.3",
