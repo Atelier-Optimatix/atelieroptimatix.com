@@ -1,6 +1,4 @@
 ---
-import { pwaAssetsHead } from "virtual:pwa-assets/head";
-import { pwaInfo } from "virtual:pwa-info";
 import "@/styles/global.css";
 import { getLocalizedSettings } from "@/lib/localization-helpers";
 import { SEO, type SEOProps } from "astro-seo";
@@ -76,16 +74,31 @@ const seo = {
 
 	<SEO {...seo} />
 
-	{
-		pwaAssetsHead.themeColor && (
-			<meta
-				name="theme-color"
-				content={pwaAssetsHead.themeColor.content}
-			/>
-		)
-	}
-	{pwaAssetsHead.links.map((link) => <link {...link} />)}
-	{pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
+	<meta name="theme-color" content="#ffffff" />
+	<link rel="icon" href="/favicon.ico" sizes="48x48" />
+	<link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
+	<link
+		rel="apple-touch-startup-image"
+		media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+		href="/apple-splash-portrait-light-1536x2048.png"
+	/>
+	<link
+		rel="apple-touch-startup-image"
+		media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+		href="/apple-splash-landscape-light-2048x1536.png"
+	/>
+	<link
+		rel="apple-touch-startup-image"
+		media="screen and (prefers-color-scheme: dark) and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+		href="/apple-splash-portrait-dark-1536x2048.png"
+	/>
+	<link
+		rel="apple-touch-startup-image"
+		media="screen and (prefers-color-scheme: dark) and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+		href="/apple-splash-landscape-dark-2048x1536.png"
+	/>
+	<link rel="manifest" href="/manifest.webmanifest" />
 	<script src="/src/utils/pwa.ts"></script>
 
 	<!-- PRECONNECT FONTS -->

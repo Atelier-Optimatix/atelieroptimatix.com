@@ -11,10 +11,27 @@ import { defineConfig } from "astro/config";
 // import squoosh from "@astrojs/image/service/squoosh";
 import { defaultLocale, locales, siteTitle, siteUrl } from "./site.config";
 
+// Keystatic's admin UI only makes sense against `astro dev` (its "local"
+// storage writes straight to files on disk), and its integration injects
+// SSR-only routes with no opt-out. Those routes need an output mode that
+// allows on-demand rendering, so:
+//   - dev  → "hybrid" (SSR routes allowed; `astro dev` needs no adapter),
+//            which keeps the /keystatic admin working for content editing.
+//   - build → "static", producing a plain static site for GitHub Pages,
+//            with Keystatic left out entirely (the /admin redirect is a
+//            harmless no-op in that build).
+//
+// NOTE: Astro's `defineConfig` does NOT support Vite's function form
+// (`defineConfig((env) => ({...}))`) — passing a function silently drops the
+// whole config (integrations + vite plugins never wire up, which breaks
+// astro-icon's `virtual:astro-icon` and the PWA virtual modules at build
+// time). Detect the dev command from argv instead and keep the object form.
+const isDev = process.argv.includes("dev");
+
 // https://astro.build/config
-export default defineConfig(({ command }) => ({
+export default defineConfig({
 	site: siteUrl,
-	output: "static",
+	output: isDev ? "hybrid" : "static",
 	compressHTML: true,
 	i18n: {
 		defaultLocale: defaultLocale,
@@ -23,11 +40,6 @@ export default defineConfig(({ command }) => ({
 			prefixDefaultLocale: false,
 		},
 	},
-	// Keystatic's admin UI only makes sense against `astro dev` (its "local"
-	// storage writes straight to files on disk) — the integration always
-	// injects SSR-only routes with no opt-out, which is incompatible with
-	// `output: "static"`, so it's only registered in dev below and this
-	// redirect is a no-op in the production build.
 	redirects: {
 		"/admin": "/keystatic",
 	},
@@ -46,7 +58,7 @@ export default defineConfig(({ command }) => ({
 		icon(),
 		react(),
 		markdoc(),
-		...(command === "dev" ? [keystatic()] : []),
+		...(isDev ? [keystatic()] : []),
 		robotsTxt({
 			policy: [{ userAgent: "*", allow: "/" }],
 		}),
@@ -82,4 +94,4 @@ export default defineConfig(({ command }) => ({
 			},
 		}),
 	],
-}));
+});

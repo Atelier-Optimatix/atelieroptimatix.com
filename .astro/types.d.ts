@@ -1,5 +1,14 @@
 declare module 'astro:content' {
 	interface Render {
+		'.mdoc': Promise<{
+			Content(props: Record<string, any>): import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+		}>;
+	}
+}
+
+declare module 'astro:content' {
+	interface Render {
 		'.md': Promise<{
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
@@ -125,21 +134,378 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"pages": {
+		"authors": {
+"en/shamil-kuruppu.mdoc": {
+	id: "en/shamil-kuruppu.mdoc";
+  slug: "en/shamil-kuruppu";
+  body: string;
+  collection: "authors";
+  data: any
+} & { render(): Render[".mdoc"] };
+"es/shamil-kuruppu.mdoc": {
+	id: "es/shamil-kuruppu.mdoc";
+  slug: "es/shamil-kuruppu";
+  body: string;
+  collection: "authors";
+  data: any
+} & { render(): Render[".mdoc"] };
+"ms/shamil-kuruppu.mdoc": {
+	id: "ms/shamil-kuruppu.mdoc";
+  slug: "ms/shamil-kuruppu";
+  body: string;
+  collection: "authors";
+  data: any
+} & { render(): Render[".mdoc"] };
+};
+"pages": {
+"en/about.mdoc": {
+	id: "en/about.mdoc";
+  slug: "en/about";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/cancellation-policy.mdoc": {
+	id: "en/cancellation-policy.mdoc";
+  slug: "en/cancellation-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/contact.mdoc": {
+	id: "en/contact.mdoc";
+  slug: "en/contact";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/homepage.mdoc": {
+	id: "en/homepage.mdoc";
+  slug: "en/homepage";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/kinder-care-privacy-policy.mdoc": {
+	id: "en/kinder-care-privacy-policy.mdoc";
+  slug: "en/kinder-care-privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/legal.mdoc": {
+	id: "en/legal.mdoc";
+  slug: "en/legal";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/news.mdoc": {
+	id: "en/news.mdoc";
+  slug: "en/news";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/payment-disclamer.mdoc": {
+	id: "en/payment-disclamer.mdoc";
+  slug: "en/payment-disclamer";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/privacy-policy.mdoc": {
+	id: "en/privacy-policy.mdoc";
+  slug: "en/privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/refund-policy.mdoc": {
+	id: "en/refund-policy.mdoc";
+  slug: "en/refund-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/terms-and-conditions.mdoc": {
+	id: "en/terms-and-conditions.mdoc";
+  slug: "en/terms-and-conditions";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/works.mdoc": {
+	id: "en/works.mdoc";
+  slug: "en/works";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/about.mdoc": {
+	id: "es/about.mdoc";
+  slug: "es/about";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/cancellation-policy.mdoc": {
+	id: "es/cancellation-policy.mdoc";
+  slug: "es/cancellation-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/contact.mdoc": {
+	id: "es/contact.mdoc";
+  slug: "es/contact";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/homepage.mdoc": {
+	id: "es/homepage.mdoc";
+  slug: "es/homepage";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/kinder-care-privacy-policy.mdoc": {
+	id: "es/kinder-care-privacy-policy.mdoc";
+  slug: "es/kinder-care-privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/legal.mdoc": {
+	id: "es/legal.mdoc";
+  slug: "es/legal";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/news.mdoc": {
+	id: "es/news.mdoc";
+  slug: "es/news";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/payment-disclamer.mdoc": {
+	id: "es/payment-disclamer.mdoc";
+  slug: "es/payment-disclamer";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/privacy-policy.mdoc": {
+	id: "es/privacy-policy.mdoc";
+  slug: "es/privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/refund-policy.mdoc": {
+	id: "es/refund-policy.mdoc";
+  slug: "es/refund-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/terms-and-conditions.mdoc": {
+	id: "es/terms-and-conditions.mdoc";
+  slug: "es/terms-and-conditions";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/works.mdoc": {
+	id: "es/works.mdoc";
+  slug: "es/works";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/about.mdoc": {
+	id: "ms/about.mdoc";
+  slug: "ms/about";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/cancellation-policy.mdoc": {
+	id: "ms/cancellation-policy.mdoc";
+  slug: "ms/cancellation-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/contact.mdoc": {
+	id: "ms/contact.mdoc";
+  slug: "ms/contact";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/homepage.mdoc": {
+	id: "ms/homepage.mdoc";
+  slug: "ms/homepage";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/kinder-care-privacy-policy.mdoc": {
+	id: "ms/kinder-care-privacy-policy.mdoc";
+  slug: "ms/kinder-care-privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/legal.mdoc": {
+	id: "ms/legal.mdoc";
+  slug: "ms/legal";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/news.mdoc": {
+	id: "ms/news.mdoc";
+  slug: "ms/news";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/payment-disclamer.mdoc": {
+	id: "ms/payment-disclamer.mdoc";
+  slug: "ms/payment-disclamer";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/privacy-policy.mdoc": {
+	id: "ms/privacy-policy.mdoc";
+  slug: "ms/privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/refund-policy.mdoc": {
+	id: "ms/refund-policy.mdoc";
+  slug: "ms/refund-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/terms-and-conditions.mdoc": {
+	id: "ms/terms-and-conditions.mdoc";
+  slug: "ms/terms-and-conditions";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"ms/works.mdoc": {
+	id: "ms/works.mdoc";
+  slug: "ms/works";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
 };
 "posts": {
+"en/future-of-edutech.mdoc": {
+	id: "en/future-of-edutech.mdoc";
+  slug: "en/future-of-edutech";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"es/future-of-edutech.mdoc": {
+	id: "es/future-of-edutech.mdoc";
+  slug: "es/future-of-edutech";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"ms/future-of-edutech.mdoc": {
+	id: "ms/future-of-edutech.mdoc";
+  slug: "ms/future-of-edutech";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
 };
 "services": {
 };
 "works": {
+"en/duesautomata.mdoc": {
+	id: "en/duesautomata.mdoc";
+  slug: "en/duesautomata";
+  body: string;
+  collection: "works";
+  data: InferEntrySchema<"works">
+} & { render(): Render[".mdoc"] };
+"en/educonnect.mdoc": {
+	id: "en/educonnect.mdoc";
+  slug: "en/educonnect";
+  body: string;
+  collection: "works";
+  data: InferEntrySchema<"works">
+} & { render(): Render[".mdoc"] };
+"en/simmeringerp.mdoc": {
+	id: "en/simmeringerp.mdoc";
+  slug: "en/simmeringerp";
+  body: string;
+  collection: "works";
+  data: InferEntrySchema<"works">
+} & { render(): Render[".mdoc"] };
+"es/duesautomata.mdoc": {
+	id: "es/duesautomata.mdoc";
+  slug: "es/duesautomata";
+  body: string;
+  collection: "works";
+  data: InferEntrySchema<"works">
+} & { render(): Render[".mdoc"] };
+"es/educonnect.mdoc": {
+	id: "es/educonnect.mdoc";
+  slug: "es/educonnect";
+  body: string;
+  collection: "works";
+  data: InferEntrySchema<"works">
+} & { render(): Render[".mdoc"] };
+"es/simmeringerp.mdoc": {
+	id: "es/simmeringerp.mdoc";
+  slug: "es/simmeringerp";
+  body: string;
+  collection: "works";
+  data: InferEntrySchema<"works">
+} & { render(): Render[".mdoc"] };
+"ms/duesautomata.mdoc": {
+	id: "ms/duesautomata.mdoc";
+  slug: "ms/duesautomata";
+  body: string;
+  collection: "works";
+  data: InferEntrySchema<"works">
+} & { render(): Render[".mdoc"] };
+"ms/educonnect.mdoc": {
+	id: "ms/educonnect.mdoc";
+  slug: "ms/educonnect";
+  body: string;
+  collection: "works";
+  data: InferEntrySchema<"works">
+} & { render(): Render[".mdoc"] };
+"ms/simmeringerp.mdoc": {
+	id: "ms/simmeringerp.mdoc";
+  slug: "ms/simmeringerp";
+  body: string;
+  collection: "works";
+  data: InferEntrySchema<"works">
+} & { render(): Render[".mdoc"] };
 };
 
 	};
 
 	type DataEntryMap = {
-		"authors": {
-};
-"global": {
+		"global": {
 "contacts": {
 	id: "contacts";
   collection: "global";

@@ -136,7 +136,7 @@ function fieldName(fieldTitle: string): string {
 	// TODO: this is http:// while the site is https:// — browsers will block
 	// it as mixed content once served over https://atelieroptimatix.com. Swap
 	// to an https:// URL once TLS is in front of the CIA deployment.
-	const CIA_CONTACT_ENDPOINT = "http://13.250.10.188:4001/v1/public/atelieroptimatix/contact";
+	const CIA_CONTACT_ENDPOINT = "http://13.250.10.188:4000/v1/public/atelieroptimatix/contact";
 
 	const form = document.querySelector<HTMLFormElement>("#contact-form");
 	const status = document.querySelector<HTMLParagraphElement>("#contact-form-status");
