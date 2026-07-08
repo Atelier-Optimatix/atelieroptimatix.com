@@ -87,6 +87,10 @@ export default defineMarkdocConfig({
 			},
 			render: component("./src/components/sections/Services.astro"),
 		},
+		EduConnectReel: {
+			attributes: {},
+			render: component("./src/components/sections/EduConnectReel.astro"),
+		},
 		OurProducts: {
 			attributes: {
 				title: { type: String, render: "title", required: true },

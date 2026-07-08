@@ -1,0 +1,1086 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { defaultLocale } from "site.config";
+import Link from "@/components/primitives/Link.astro";
+
+const currentLocale = Astro.currentLocale ?? defaultLocale;
+const caseStudyHref = getRelativeLocaleUrl(currentLocale, "/work/educonnect");
+---
+
+<section id="educonnect-reel" class="ec-reel">
+	<div class="ec-scroller" id="ec-scroller">
+		<!-- 1. HOOK -->
+		<div class="ec-slide ec-slide--dark">
+			<div class="ec-hook">
+				<p class="ec-hookline" data-reveal="left" style="--d:0ms">
+					Paper registers.
+				</p>
+				<p
+					class="ec-hookline ec-hookline--dim"
+					data-reveal="left"
+					style="--d:150ms"
+				>
+					Phone-tag with parents.
+				</p>
+				<p
+					class="ec-hookline ec-hookline--dimmer"
+					data-reveal="left"
+					style="--d:300ms"
+				>
+					Slow, siloed incident reports.
+				</p>
+				<div class="ec-hookclose" data-reveal="pop" style="--d:650ms">
+					<span class="ec-goldbar"></span>
+					<span class="ec-enough">Enough.</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- 2. INTRO -->
+		<div class="ec-slide ec-slide--dark">
+			<div class="ec-intro">
+				<div class="ec-badge ec-badge--lg" data-reveal="pop" style="--d:0ms">
+					<svg viewBox="0 0 24 24" fill="none">
+						<path d="M2 9l10-5 10 5-10 5L2 9z" fill="#fff"></path>
+						<path
+							d="M6 11.5V15c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.5"
+							stroke="#fff"
+							stroke-width="1.6"></path>
+						<path
+							d="M22 9v5"
+							stroke="#fff"
+							stroke-width="1.4"
+							stroke-linecap="round"></path>
+					</svg>
+				</div>
+				<h2 class="ec-logo" data-reveal="up" style="--d:150ms">EduConnect</h2>
+				<p class="ec-kicker" data-reveal="up" style="--d:350ms">
+					ONE PLATFORM. EVERY SCHOOL INTERACTION.
+				</p>
+				<p class="ec-sub" data-reveal="up" style="--d:500ms">
+					Attendance, safeguarding and family communication — unified,
+					secure, always on.
+				</p>
+			</div>
+		</div>
+
+		<!-- 3. HERO DASHBOARD -->
+		<div class="ec-slide ec-slide--dark">
+			<div class="ec-split">
+				<div class="ec-split-copy">
+					<h2 class="ec-h1" data-reveal="left" style="--d:0ms">
+						Your entire school.<br />
+						<span class="ec-gold">One live view.</span>
+					</h2>
+					<p class="ec-sub" data-reveal="left" style="--d:200ms">
+						Attendance · Safeguarding · Messaging · Analytics
+					</p>
+				</div>
+				<div class="ec-split-visual">
+					<div
+						class="ec-glass ec-dashboard"
+						data-reveal="right"
+						style="--d:250ms"
+					>
+						<div class="ec-dashboard-head">
+							<span>School Dashboard</span>
+							<span class="ec-dot ec-dot--green"></span>
+						</div>
+						<div class="ec-dashboard-stats">
+							<div class="ec-glass ec-stat">
+								<div class="ec-stat-num">1,248</div>
+								<div class="ec-stat-label">Students</div>
+							</div>
+							<div class="ec-glass ec-stat">
+								<div class="ec-stat-num">95.2%</div>
+								<div class="ec-stat-label">Attendance</div>
+							</div>
+							<div class="ec-glass ec-stat">
+								<div class="ec-stat-num">100%</div>
+								<div class="ec-stat-label">Alerts resolved</div>
+							</div>
+						</div>
+						<div class="ec-dashboard-bars">
+							<span class="ec-bar" style="--h:40%"></span>
+							<span class="ec-bar" style="--h:58%"></span>
+							<span class="ec-bar" style="--h:50%"></span>
+							<span class="ec-bar" style="--h:74%"></span>
+							<span class="ec-bar" style="--h:62%"></span>
+							<span class="ec-bar" style="--h:88%"></span>
+							<span class="ec-bar ec-bar--gold" style="--h:80%"></span>
+						</div>
+					</div>
+					<div
+						class="ec-glass ec-floatchip ec-floatchip--a"
+						data-reveal="pop"
+						style="--d:900ms"
+					>
+						<span class="ec-check ec-check--green">✓</span>
+						<span>
+							<b>Attendance marked</b><br />
+							<small>Grade 6 — in 4 seconds</small>
+						</span>
+					</div>
+					<div
+						class="ec-glass ec-floatchip ec-floatchip--b"
+						data-reveal="pop"
+						style="--d:1150ms"
+					>
+						<span class="ec-check ec-check--gold">⚑</span>
+						<span>
+							<b>Incident closed</b><br />
+							<small>Safeguarding lead notified</small>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 4. ATTENDANCE & SAFETY -->
+		<div class="ec-slide ec-slide--dark">
+			<div class="ec-split">
+				<div class="ec-split-copy">
+					<p class="ec-kicker" data-reveal="up" style="--d:0ms">
+						01 — ATTENDANCE &amp; SAFETY
+					</p>
+					<h2 class="ec-h1 ec-h1--md" data-reveal="left" style="--d:100ms">
+						Tap in. Marked instantly.<br />
+						<span class="ec-gold">Parents told the same second.</span>
+					</h2>
+					<p class="ec-sub" data-reveal="left" style="--d:250ms">
+						A smart-ID tap at the gate, an automatic SMS home, and
+						real-time alerts to the safeguarding lead.
+					</p>
+					<div class="ec-chips" data-reveal="up" style="--d:500ms">
+						<span class="ec-chip">RFID smart-ID tap</span>
+						<span class="ec-chip">Instant SMS home</span>
+						<span class="ec-chip">Live incident alerts</span>
+					</div>
+				</div>
+				<div class="ec-split-visual">
+					<div
+						class="ec-glass ec-attendance"
+						data-reveal="right"
+						style="--d:250ms"
+					>
+						<div class="ec-card-title">Attendance · live</div>
+						<div class="ec-attendance-grid">
+							{
+								Array.from({ length: 12 }).map((_, i) => {
+									const late = [3, 7, 10].includes(i);
+									return (
+										<div class="ec-cell">
+											<span>{i + 1}</span>
+											<span
+												class:list={[
+													"ec-cell-dot",
+													late ? "ec-cell-dot--red" : "ec-cell-dot--green",
+												]}
+											>
+												{late ? "" : "✓"}
+											</span>
+										</div>
+									);
+								})
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 5. COMMUNICATION -->
+		<div class="ec-slide ec-slide--dark">
+			<div class="ec-split">
+				<div class="ec-split-copy">
+					<p class="ec-kicker" data-reveal="up" style="--d:0ms">
+						02 — COMMUNICATION
+					</p>
+					<h2 class="ec-h1 ec-h1--md" data-reveal="left" style="--d:100ms">
+						Notices sent once.<br />
+						<span class="ec-gold">Read by every parent.</span>
+					</h2>
+					<p class="ec-sub" data-reveal="left" style="--d:250ms">
+						Digital notices, parent-teacher messaging and multi-device
+						access for staff and guardians.
+					</p>
+					<div class="ec-chips" data-reveal="up" style="--d:500ms">
+						<span class="ec-chip">Digital notices</span>
+						<span class="ec-chip">Parent-teacher chat</span>
+						<span class="ec-chip">Multi-device access</span>
+					</div>
+				</div>
+				<div class="ec-split-visual">
+					<div
+						class="ec-glass ec-feed"
+						data-reveal="right"
+						style="--d:250ms"
+					>
+						<div class="ec-card-title">Notices &amp; messages</div>
+						<div class="ec-feed-item">
+							<span class="ec-check ec-check--gold">✉</span>
+							<span>
+								<b>Sports day rescheduled</b><br />
+								<small>Sent to 412 parents · read by 98%</small>
+							</span>
+						</div>
+						<div class="ec-feed-item">
+							<span class="ec-check ec-check--green">💬</span>
+							<span>
+								<b>Ms. Perera → Grade 6 parents</b><br />
+								<small>"Homework uploaded for tomorrow"</small>
+							</span>
+						</div>
+						<div class="ec-feed-item">
+							<span class="ec-check ec-check--red">⚠</span>
+							<span>
+								<b>Incident report filed</b><br />
+								<small>Safeguarding lead — acknowledged in 2 min</small>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 6. INTELLIGENCE -->
+		<div class="ec-slide ec-slide--dark">
+			<div class="ec-split">
+				<div class="ec-split-copy">
+					<p class="ec-kicker" data-reveal="up" style="--d:0ms">
+						03 — INTELLIGENCE
+					</p>
+					<h2 class="ec-h1 ec-h1--md" data-reveal="left" style="--d:100ms">
+						Know before it<br />
+						<span class="ec-gold">becomes a problem.</span>
+					</h2>
+					<p class="ec-sub" data-reveal="left" style="--d:250ms">
+						Early-warning analytics flag attendance and engagement
+						patterns — with safeguarding compliance built in.
+					</p>
+				</div>
+				<div class="ec-split-visual ec-split-visual--gauge">
+					<div class="ec-gauge" data-reveal="fade" style="--d:200ms">
+						<svg width="260" height="260" viewBox="0 0 380 380">
+							<circle
+								cx="190"
+								cy="190"
+								r="150"
+								fill="none"
+								stroke="rgba(255,255,255,.1)"
+								stroke-width="22"></circle>
+							<circle
+								class="ec-gauge-arc"
+								cx="190"
+								cy="190"
+								r="150"
+								fill="none"
+								stroke="var(--ec-gold)"
+								stroke-width="22"
+								stroke-linecap="round"
+								stroke-dasharray="0 943"
+								transform="rotate(-90 190 190)"></circle>
+							<text
+								class="ec-gauge-num"
+								x="190"
+								y="208"
+								text-anchor="middle">0</text>
+							<text
+								x="190"
+								y="252"
+								text-anchor="middle"
+								class="ec-gauge-label">SCHOOL HEALTH</text>
+						</svg>
+					</div>
+					<div class="ec-alerts">
+						<div
+							class="ec-glass ec-alert"
+							data-reveal="up"
+							style="--d:700ms"
+						>
+							<span class="ec-check ec-check--gold">⚠</span>
+							<span>Grade drop flagged — Grade 10</span>
+						</div>
+						<div
+							class="ec-glass ec-alert"
+							data-reveal="up"
+							style="--d:850ms"
+						>
+							<span class="ec-check ec-check--red">⏰</span>
+							<span>3 students chronically late</span>
+						</div>
+						<div
+							class="ec-glass ec-alert"
+							data-reveal="up"
+							style="--d:1000ms"
+						>
+							<span class="ec-check ec-check--green">⬆</span>
+							<span>Attendance improving — Grade 6</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 7. RESULTS + CTA -->
+		<div class="ec-slide ec-slide--dark">
+			<div class="ec-results">
+				<p class="ec-kicker" data-reveal="up" style="--d:0ms">
+					THE RESULTS SCHOOLS SEE
+				</p>
+				<div class="ec-stat-row">
+					<div
+						class="ec-glass ec-bigstat"
+						data-reveal="up"
+						style="--d:150ms"
+					>
+						<div class="ec-cnt" data-cap="80" data-suf="%">0%</div>
+						<div class="ec-bigstat-label">less paper-based admin</div>
+					</div>
+					<div
+						class="ec-glass ec-bigstat"
+						data-reveal="up"
+						style="--d:300ms"
+					>
+						<div class="ec-cnt" data-cap="50" data-suf="%">0%</div>
+						<div class="ec-bigstat-label">faster parent response</div>
+					</div>
+					<div
+						class="ec-glass ec-bigstat"
+						data-reveal="up"
+						style="--d:450ms"
+					>
+						<div class="ec-bigstat-static">Zero</div>
+						<div class="ec-bigstat-label">missed safeguarding alerts</div>
+					</div>
+				</div>
+				<div class="ec-cta" data-reveal="up" style="--d:750ms">
+					<div class="ec-cta-title">See it in your school.</div>
+					<div class="ec-cta-sub">
+						Book a free demo — no commitment.
+					</div>
+					<div class="ec-cta-buttons">
+						<Link href="/contact" style="button" class="ec-cta-btn">
+							Book a demo
+						</Link>
+						<a href={caseStudyHref} class="ec-cta-link">
+							View the EduConnect case study →
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="ec-scrollcue" aria-hidden="true">
+		<span class="ec-mouse"><span class="ec-wheel"></span></span>
+		<span class="ec-cue-text">Scroll to explore</span>
+	</div>
+</section>
+
+<style>
+	.ec-reel {
+		--ec-navy0: #070f1e;
+		--ec-navy1: #0a1b33;
+		--ec-navy3: #1b3a66;
+		--ec-gold: #c9a24b;
+		--ec-gold-hi: #e6c871;
+		--ec-gold-dk: #9c7b2e;
+		--ec-cream: #f5f1e8;
+		--ec-slate: #9fb2c9;
+		--ec-slate-dk: #5f7796;
+		--ec-green: #4fb477;
+		--ec-red: #e5704b;
+		position: relative;
+		height: 100svh;
+		width: 100%;
+		font-family: "Poppins", system-ui, sans-serif;
+	}
+
+	.ec-scroller {
+		height: 100%;
+		width: 100%;
+		overflow-y: auto;
+		overflow-x: hidden;
+		scroll-snap-type: y mandatory;
+		scroll-behavior: smooth;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+	}
+	.ec-scroller::-webkit-scrollbar {
+		display: none;
+	}
+
+	.ec-slide {
+		height: 100%;
+		width: 100%;
+		scroll-snap-align: start;
+		scroll-snap-stop: always;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		padding: clamp(24px, 6vw, 96px);
+		overflow: hidden;
+	}
+	.ec-slide--dark {
+		background:
+			radial-gradient(
+				900px 600px at 78% 15%,
+				rgba(27, 58, 102, 0.55),
+				transparent 70%
+			),
+			radial-gradient(
+				700px 500px at 12% 90%,
+				rgba(156, 123, 46, 0.13),
+				transparent 70%
+			),
+			linear-gradient(135deg, var(--ec-navy1) 0%, var(--ec-navy0) 55%, #060d19 100%);
+	}
+	.ec-slide--dark::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background-image: radial-gradient(
+			rgba(255, 255, 255, 0.05) 1.6px,
+			transparent 1.6px
+		);
+		background-size: 56px 56px;
+		pointer-events: none;
+	}
+
+	/* reveal primitives */
+	.ec-slide [data-reveal] {
+		opacity: 0;
+		animation: none;
+	}
+	.ec-slide.is-active [data-reveal="up"] {
+		animation: ecUp 0.6s cubic-bezier(0.22, 0.9, 0.3, 1) var(--d, 0ms) forwards;
+	}
+	.ec-slide.is-active [data-reveal="left"] {
+		animation: ecLeft 0.6s cubic-bezier(0.22, 0.9, 0.3, 1) var(--d, 0ms)
+			forwards;
+	}
+	.ec-slide.is-active [data-reveal="right"] {
+		animation: ecRight 0.65s cubic-bezier(0.34, 1.45, 0.5, 1) var(--d, 0ms)
+			forwards;
+	}
+	.ec-slide.is-active [data-reveal="pop"] {
+		animation: ecPop 0.5s cubic-bezier(0.34, 1.55, 0.5, 1) var(--d, 0ms)
+			forwards;
+	}
+	.ec-slide.is-active [data-reveal="fade"] {
+		animation: ecFade 0.5s ease-out var(--d, 0ms) forwards;
+	}
+	@keyframes ecUp {
+		from {
+			opacity: 0;
+			transform: translateY(60px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+	@keyframes ecLeft {
+		from {
+			opacity: 0;
+			transform: translateX(-70px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+	@keyframes ecRight {
+		from {
+			opacity: 0;
+			transform: translateX(90px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+	@keyframes ecPop {
+		from {
+			opacity: 0;
+			transform: scale(0.7);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+	@keyframes ecFade {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	/* typography */
+	.ec-kicker {
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: 3px;
+		color: var(--ec-gold);
+		margin-bottom: 14px;
+	}
+	.ec-h1 {
+		font-size: clamp(2.4rem, 5vw, 4.5rem);
+		font-weight: 700;
+		line-height: 1.12;
+		color: var(--ec-cream);
+	}
+	.ec-h1--md {
+		font-size: clamp(2rem, 3.6vw, 3.4rem);
+	}
+	.ec-gold {
+		color: var(--ec-gold-hi);
+	}
+	.ec-sub {
+		font-size: clamp(1rem, 1.4vw, 1.4rem);
+		color: var(--ec-slate);
+		font-weight: 400;
+		margin-top: 18px;
+	}
+
+	/* slide 1 */
+	.ec-hook {
+		width: min(880px, 100%);
+	}
+	.ec-hookline {
+		font-size: clamp(1.8rem, 4.4vw, 3.6rem);
+		font-weight: 700;
+		color: var(--ec-cream);
+		line-height: 1.15;
+	}
+	.ec-hookline--dim {
+		color: var(--ec-slate);
+	}
+	.ec-hookline--dimmer {
+		color: var(--ec-slate-dk);
+		font-size: clamp(1.5rem, 3.4vw, 2.9rem);
+	}
+	.ec-hookclose {
+		margin-top: 30px;
+	}
+	.ec-goldbar {
+		display: block;
+		width: 64px;
+		height: 6px;
+		border-radius: 3px;
+		background: linear-gradient(90deg, var(--ec-gold-hi), var(--ec-gold));
+	}
+	.ec-enough {
+		display: block;
+		font-family: Lora, Georgia, serif;
+		font-size: clamp(2.6rem, 6vw, 5rem);
+		font-weight: 700;
+		color: var(--ec-gold-hi);
+		margin-top: 18px;
+	}
+
+	/* slide 2 */
+	.ec-intro {
+		text-align: center;
+	}
+	.ec-badge {
+		width: 72px;
+		height: 72px;
+		border-radius: 20px;
+		margin: 0 auto;
+		background: linear-gradient(135deg, var(--ec-gold-hi), var(--ec-gold-dk));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+	}
+	.ec-badge svg {
+		width: 60%;
+		height: 60%;
+	}
+	.ec-logo {
+		font-family: Lora, Georgia, serif;
+		font-size: clamp(2.4rem, 6vw, 4.6rem);
+		font-weight: 700;
+		color: var(--ec-cream);
+		margin-top: 22px;
+	}
+	.ec-intro .ec-kicker {
+		margin-top: 26px;
+	}
+
+	/* split layout */
+	.ec-split {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: clamp(28px, 5vw, 72px);
+		width: min(1200px, 100%);
+	}
+	.ec-split-copy {
+		flex: 1 1 380px;
+		min-width: 280px;
+	}
+	.ec-split-visual {
+		flex: 1 1 420px;
+		min-width: 280px;
+		display: flex;
+		justify-content: center;
+		position: relative;
+	}
+	.ec-split-visual--gauge {
+		flex-direction: column;
+		align-items: center;
+		gap: 22px;
+	}
+
+	.ec-chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-top: 26px;
+	}
+	.ec-chip {
+		display: inline-flex;
+		align-items: center;
+		height: 42px;
+		padding: 0 18px;
+		border-radius: 21px;
+		background: rgba(255, 255, 255, 0.05);
+		border: 1.2px solid rgba(255, 255, 255, 0.18);
+		color: var(--ec-cream);
+		font-size: 0.9rem;
+		font-weight: 500;
+	}
+
+	.ec-glass {
+		background: rgba(255, 255, 255, 0.06);
+		border: 1.5px solid rgba(255, 255, 255, 0.18);
+		border-radius: 20px;
+		box-shadow: 0 22px 44px rgba(0, 0, 0, 0.4);
+	}
+
+	.ec-dashboard {
+		width: min(480px, 100%);
+		padding: 26px;
+	}
+	.ec-dashboard-head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: var(--ec-cream);
+		font-weight: 600;
+		font-size: 1rem;
+	}
+	.ec-dot {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	.ec-dot--green {
+		background: var(--ec-green);
+	}
+	.ec-dashboard-stats {
+		display: flex;
+		gap: 12px;
+		margin-top: 18px;
+	}
+	.ec-stat {
+		flex: 1;
+		border-radius: 12px;
+		padding: 12px;
+	}
+	.ec-stat-num {
+		color: var(--ec-gold-hi);
+		font-size: 1.3rem;
+		font-weight: 700;
+	}
+	.ec-stat-label {
+		color: var(--ec-slate);
+		font-size: 0.8rem;
+		margin-top: 2px;
+	}
+	.ec-dashboard-bars {
+		display: flex;
+		align-items: flex-end;
+		gap: 12px;
+		height: 130px;
+		margin-top: 30px;
+	}
+	.ec-bar {
+		flex: 1;
+		height: var(--h);
+		border-radius: 6px;
+		background: rgba(255, 255, 255, 0.16);
+		transition: height 1.1s cubic-bezier(0.22, 0.9, 0.3, 1) 0.3s;
+	}
+	.ec-bar--gold {
+		background: linear-gradient(180deg, var(--ec-gold-hi), var(--ec-gold));
+	}
+	.ec-slide:not(.is-active) .ec-bar {
+		height: 0 !important;
+	}
+
+	.ec-floatchip {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 0 18px;
+		height: 68px;
+		border-radius: 16px;
+		font-size: 0.85rem;
+		color: var(--ec-cream);
+		white-space: nowrap;
+	}
+	.ec-floatchip--a {
+		left: -10px;
+		bottom: -12px;
+	}
+	.ec-floatchip--b {
+		right: -10px;
+		top: -14px;
+	}
+	.ec-check {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.85rem;
+		flex-shrink: 0;
+	}
+	.ec-check--green {
+		background: var(--ec-green);
+		color: #fff;
+	}
+	.ec-check--gold {
+		background: var(--ec-gold);
+		color: var(--ec-navy0);
+	}
+	.ec-check--red {
+		background: var(--ec-red);
+		color: #fff;
+	}
+
+	.ec-card-title {
+		color: var(--ec-cream);
+		font-weight: 600;
+		font-size: 1.05rem;
+		margin-bottom: 18px;
+	}
+
+	.ec-attendance {
+		width: min(480px, 100%);
+		padding: 26px;
+	}
+	.ec-attendance-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 12px;
+	}
+	.ec-cell {
+		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		padding: 10px 12px;
+		position: relative;
+		min-height: 64px;
+		color: var(--ec-slate);
+		font-size: 0.85rem;
+		font-weight: 600;
+	}
+	.ec-cell-dot {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.7rem;
+		color: #fff;
+	}
+	.ec-cell-dot--green {
+		background: var(--ec-green);
+	}
+	.ec-cell-dot--red {
+		background: var(--ec-red);
+	}
+
+	.ec-feed {
+		width: min(480px, 100%);
+		padding: 26px;
+	}
+	.ec-feed-item {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding: 14px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		color: var(--ec-cream);
+		font-size: 0.9rem;
+	}
+	.ec-feed-item:last-child {
+		border-bottom: none;
+	}
+	.ec-feed-item small {
+		color: var(--ec-slate);
+		font-size: 0.78rem;
+	}
+
+	.ec-gauge svg {
+		width: clamp(180px, 24vw, 260px);
+		height: auto;
+	}
+	.ec-gauge-arc {
+		transition: stroke-dasharray 1.2s cubic-bezier(0.22, 0.9, 0.3, 1);
+	}
+	.ec-gauge-num {
+		font-family: Poppins;
+		font-weight: 700;
+		font-size: 72px;
+		fill: var(--ec-cream);
+	}
+	.ec-gauge-label {
+		font-family: Poppins;
+		font-weight: 600;
+		font-size: 14px;
+		letter-spacing: 2px;
+		fill: var(--ec-gold);
+	}
+	.ec-alerts {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		width: min(480px, 100%);
+	}
+	.ec-alert {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding: 14px 20px;
+		border-radius: 14px;
+		color: var(--ec-cream);
+		font-size: 0.9rem;
+		font-weight: 500;
+	}
+
+	/* slide 7 */
+	.ec-results {
+		width: min(1100px, 100%);
+		text-align: center;
+	}
+	.ec-stat-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+		justify-content: center;
+		margin-top: 6px;
+	}
+	.ec-bigstat {
+		flex: 1 1 240px;
+		max-width: 300px;
+		padding: 32px 24px;
+	}
+	.ec-cnt {
+		color: var(--ec-gold-hi);
+		font-size: clamp(2.4rem, 5vw, 3.6rem);
+		font-weight: 700;
+		line-height: 1;
+	}
+	.ec-bigstat-static {
+		color: var(--ec-gold-hi);
+		font-size: clamp(2.4rem, 5vw, 3.6rem);
+		font-weight: 700;
+		line-height: 1;
+	}
+	.ec-bigstat-label {
+		color: var(--ec-cream);
+		font-size: 1rem;
+		font-weight: 600;
+		margin-top: 10px;
+	}
+	.ec-cta {
+		margin-top: 48px;
+	}
+	.ec-cta-title {
+		font-family: Lora, Georgia, serif;
+		font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+		font-weight: 700;
+		color: var(--ec-cream);
+	}
+	.ec-cta-sub {
+		color: var(--ec-gold-hi);
+		font-size: 1.05rem;
+		font-weight: 600;
+		margin-top: 12px;
+	}
+	.ec-cta-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		margin-top: 28px;
+	}
+	.ec-cta-btn {
+		background: linear-gradient(
+			135deg,
+			var(--ec-gold-hi),
+			var(--ec-gold-dk)
+		) !important;
+		color: var(--ec-navy0) !important;
+	}
+	.ec-cta-link {
+		color: var(--ec-slate);
+		font-size: 0.95rem;
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
+	.ec-cta-link:hover {
+		color: var(--ec-cream);
+	}
+
+	/* scroll cue */
+	.ec-scrollcue {
+		position: absolute;
+		left: 50%;
+		bottom: clamp(18px, 3vh, 32px);
+		transform: translateX(-50%);
+		z-index: 20;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+		pointer-events: none;
+	}
+	.ec-mouse {
+		width: 26px;
+		height: 42px;
+		border-radius: 14px;
+		border: 2px solid rgba(245, 241, 232, 0.75);
+		display: flex;
+		justify-content: center;
+		padding-top: 7px;
+	}
+	.ec-wheel {
+		width: 4px;
+		height: 8px;
+		border-radius: 2px;
+		background: var(--ec-gold-hi);
+		animation: ecWheel 1.6s ease-in-out infinite;
+	}
+	.ec-cue-text {
+		color: rgba(245, 241, 232, 0.65);
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+	@keyframes ecWheel {
+		0% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+		60% {
+			transform: translateY(10px);
+			opacity: 0.3;
+		}
+		61% {
+			transform: translateY(0);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.ec-scroller {
+			scroll-behavior: auto;
+		}
+		.ec-wheel {
+			animation: none;
+		}
+	}
+</style>
+
+<script>
+	function initEduConnectReel() {
+		const scroller = document.getElementById("ec-scroller");
+		if (!scroller || (scroller as HTMLElement).dataset.ecInit) return;
+		(scroller as HTMLElement).dataset.ecInit = "1";
+
+		const slides = Array.from(scroller.querySelectorAll<HTMLElement>(".ec-slide"));
+
+		function animateCounters(slide: HTMLElement) {
+			slide.querySelectorAll<HTMLElement>(".ec-cnt").forEach((el) => {
+				const cap = Number(el.dataset.cap ?? 0);
+				const suf = el.dataset.suf ?? "";
+				const start = performance.now();
+				const dur = 1400;
+				function step(now: number) {
+					const p = Math.min(1, (now - start) / dur);
+					const eased = 1 - (1 - p) ** 3;
+					el.textContent = Math.round(cap * eased) + suf;
+					if (p < 1) requestAnimationFrame(step);
+				}
+				requestAnimationFrame(step);
+			});
+		}
+
+		function animateGauge(slide: HTMLElement) {
+			const arc = slide.querySelector<SVGCircleElement>(".ec-gauge-arc");
+			const num = slide.querySelector<SVGTextElement>(".ec-gauge-num");
+			if (!arc || !num) return;
+			const C = 2 * Math.PI * 150;
+			const target = 0.82;
+			const start = performance.now();
+			const dur = 1400;
+			function step(now: number) {
+				const p = Math.min(1, (now - start) / dur);
+				const eased = 1 - (1 - p) ** 3;
+				arc.setAttribute(
+					"stroke-dasharray",
+					`${C * target * eased} ${C}`,
+				);
+				num.textContent = String(Math.round(82 * eased));
+				if (p < 1) requestAnimationFrame(step);
+			}
+			requestAnimationFrame(step);
+		}
+
+		const io = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					const slide = entry.target as HTMLElement;
+					if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+						if (slide.classList.contains("is-active")) continue;
+						slide.classList.add("is-active");
+						if (slide.querySelector(".ec-cnt")) animateCounters(slide);
+						if (slide.querySelector(".ec-gauge-arc")) animateGauge(slide);
+					} else {
+						slide.classList.remove("is-active");
+					}
+				}
+			},
+			{ root: scroller, threshold: [0, 0.55, 1] },
+		);
+
+		for (const slide of slides) io.observe(slide);
+	}
+
+	document.addEventListener("astro:page-load", initEduConnectReel);
+</script>
