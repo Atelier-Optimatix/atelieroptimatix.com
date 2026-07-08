@@ -27,10 +27,14 @@ const posts = await getCollection("posts");
 const topInfoPages = pages
   .map((page) => {
     const [lang, ...slug] = page.slug.split("/");
+    const pageName = slug.join("/");
+    // homepage/index map to the site root; everything else keeps its name.
+    const unlocalized =
+      pageName === "homepage" || pageName === "index" ? "/" : `/${pageName}`;
     return {
       ...page,
       lang: lang,
-      slug: page.slug.startsWith("/") ? page.slug : `/${page.slug}`,
+      slug: translatePath(lang, unlocalized),
     };
   })
   .filter(
