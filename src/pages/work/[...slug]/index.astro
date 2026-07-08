@@ -8,7 +8,9 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-	return await getCollectionStaticPaths("works", "en");
+	const paths = await getCollectionStaticPaths("works", "en");
+	// EduConnect's case study now lives at /educonnect-description instead.
+	return paths.filter((path) => path.params.slug !== "educonnect");
 }
 
 const { data: work } = Astro.props;

@@ -15,10 +15,10 @@ const recentPosts = posts
 			slug: post.slug.startsWith("/") ? post.slug : `/${post.slug}`,
 		};
 	})
-	.filter((post) => post.lang === currentLocale)
+	.filter((post) => post.lang === currentLocale && !post.data.hidden)
 	.sort(
 		(a, b) =>
-			a.data.lastUpdateDate.getTime() - b.data.lastUpdateDate.getTime(),
+			b.data.lastUpdateDate.getTime() - a.data.lastUpdateDate.getTime(),
 	)
 	.slice(0, 4) as CollectionEntry<"posts">[];
 

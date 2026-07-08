@@ -1,7 +1,7 @@
 version: "0.2"
 language:
   - en
-  - it
+  - es
 dictionaries:
   - css
   - html

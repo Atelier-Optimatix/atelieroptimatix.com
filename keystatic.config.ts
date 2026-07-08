@@ -149,7 +149,7 @@ export default config({
 		pages: collection({
 			label: "Pages",
 			slugField: "title",
-			path: "src/content/pages/it/*",
+			path: "src/content/pages/en/*",
 			entryLayout: "content",
 			columns: ["title", "lastUpdateDate"],
 			previewUrl: "/{slug}",
@@ -634,7 +634,7 @@ export default config({
 		posts: collection({
 			label: "Posts",
 			slugField: "title",
-			path: "src/content/posts/it/*",
+			path: "src/content/posts/en/*",
 			entryLayout: "content",
 			columns: ["title", "lastUpdateDate"],
 			previewUrl: "/post/{slug}",
@@ -717,7 +717,7 @@ export default config({
 		works: collection({
 			label: "Projects",
 			slugField: "title",
-			path: "src/content/works/it/*",
+			path: "src/content/works/en/*",
 			entryLayout: "content",
 			columns: ["title", "lastUpdateDate"],
 			previewUrl: "/works/{slug}",
@@ -787,6 +787,65 @@ export default config({
 							directory: "src/assets/posts",
 							publicPath: "/src/assets/posts/",
 						},
+					},
+					components: {},
+				}),
+			},
+		}),
+		services: collection({
+			label: "Services",
+			slugField: "title",
+			path: "src/content/services/en/*",
+			entryLayout: "content",
+			columns: ["title", "lastUpdateDate"],
+			format: { contentField: "content" },
+			schema: {
+				title: fields.slug({
+					name: {
+						label: "Title",
+						validation: {
+							isRequired: true,
+						},
+					},
+				}),
+				description: fields.text({
+					label: "Description",
+					multiline: true,
+					validation: {
+						isRequired: true,
+					},
+				}),
+				cover: fields.image({
+					label: "Cover Image",
+					directory: "src/assets/services",
+					publicPath: "@/assets/services/",
+				}),
+				pubDate: fields.date({
+					label: "Publication Date",
+					defaultValue: {
+						kind: "today",
+					},
+					validation: {
+						isRequired: true,
+					},
+				}),
+				lastUpdateDate: fields.date({
+					label: "Last Update Date",
+					defaultValue: {
+						kind: "today",
+					},
+					validation: {
+						isRequired: true,
+					},
+				}),
+				hidden: fields.checkbox({
+					label: "Hidden",
+					defaultValue: false,
+				}),
+				content: fields.markdoc({
+					label: "Content",
+					options: {
+						heading: [2, 3, 4, 5, 6],
 					},
 					components: {},
 				}),

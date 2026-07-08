@@ -1,5 +1,4 @@
 import alpinejs from "@astrojs/alpinejs";
-import cloudflare from "@astrojs/cloudflare";
 import markdoc from "@astrojs/markdoc";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
@@ -13,15 +12,9 @@ import { defineConfig } from "astro/config";
 import { defaultLocale, locales, siteTitle, siteUrl } from "./site.config";
 
 // https://astro.build/config
-export default defineConfig({
+export default defineConfig(({ command }) => ({
 	site: siteUrl,
-	output: "hybrid",
-	adapter: cloudflare({
-		imageService: "compile",
-		// experimental: {
-		// 	manualChunks: ["sharp"],
-		// },
-  }),
+	output: "static",
 	compressHTML: true,
 	i18n: {
 		defaultLocale: defaultLocale,
@@ -30,6 +23,11 @@ export default defineConfig({
 			prefixDefaultLocale: false,
 		},
 	},
+	// Keystatic's admin UI only makes sense against `astro dev` (its "local"
+	// storage writes straight to files on disk) — the integration always
+	// injects SSR-only routes with no opt-out, which is incompatible with
+	// `output: "static"`, so it's only registered in dev below and this
+	// redirect is a no-op in the production build.
 	redirects: {
 		"/admin": "/keystatic",
 	},
@@ -48,7 +46,7 @@ export default defineConfig({
 		icon(),
 		react(),
 		markdoc(),
-		keystatic(),
+		...(command === "dev" ? [keystatic()] : []),
 		robotsTxt({
 			policy: [{ userAgent: "*", allow: "/" }],
 		}),
@@ -84,4 +82,4 @@ export default defineConfig({
 			},
 		}),
 	],
-});
+}));

@@ -1,0 +1,32 @@
+{
+	"logo": {
+		"imagePath": "/src/assets/global/navigation/logo.svg"
+	},
+	"pages": [
+		{
+			"title": "Inicio",
+			"link": "/"
+		},
+		{
+			"title": "Nosotros",
+			"link": "/about"
+		},
+		{
+			"title": "Productos",
+			"link": "/works"
+		},
+		{
+			"title": "Blog",
+			"link": "/news"
+		},
+		{
+			"title": "Contacto",
+			"link": "/contact"
+		},
+		{
+			"title": "Legal",
+			"link": "/legal"
+		}
+	],
+	"actions": []
+}

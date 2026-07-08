@@ -1,0 +1,32 @@
+{
+	"logo": {
+		"imagePath": "/src/assets/global/navigation/logo.svg"
+	},
+	"pages": [
+		{
+			"title": "Laman Utama",
+			"link": "/"
+		},
+		{
+			"title": "Tentang",
+			"link": "/about"
+		},
+		{
+			"title": "Produk",
+			"link": "/works"
+		},
+		{
+			"title": "Blog",
+			"link": "/news"
+		},
+		{
+			"title": "Hubungi",
+			"link": "/contact"
+		},
+		{
+			"title": "Undang-undang",
+			"link": "/legal"
+		}
+	],
+	"actions": []
+}

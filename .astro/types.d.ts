@@ -1,14 +1,5 @@
 declare module 'astro:content' {
 	interface Render {
-		'.mdoc': Promise<{
-			Content(props: Record<string, any>): import('astro').MarkdownInstance<{}>['Content'];
-			headings: import('astro').MarkdownHeading[];
-		}>;
-	}
-}
-
-declare module 'astro:content' {
-	interface Render {
 		'.md': Promise<{
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
@@ -134,224 +125,21 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"authors": {
-"en/shamil-kuruppu.mdoc": {
-	id: "en/shamil-kuruppu.mdoc";
-  slug: "en/shamil-kuruppu";
-  body: string;
-  collection: "authors";
-  data: any
-} & { render(): Render[".mdoc"] };
-"it/shamil-kuruppu.mdoc": {
-	id: "it/shamil-kuruppu.mdoc";
-  slug: "it/shamil-kuruppu";
-  body: string;
-  collection: "authors";
-  data: any
-} & { render(): Render[".mdoc"] };
-};
-"pages": {
-"en/about.mdoc": {
-	id: "en/about.mdoc";
-  slug: "en/about";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"en/cancellation-policy.mdoc": {
-	id: "en/cancellation-policy.mdoc";
-  slug: "en/cancellation-policy";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"en/contact.mdoc": {
-	id: "en/contact.mdoc";
-  slug: "en/contact";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"en/homepage.mdoc": {
-	id: "en/homepage.mdoc";
-  slug: "en/homepage";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"en/kinder-care-privacy-policy.mdoc": {
-	id: "en/kinder-care-privacy-policy.mdoc";
-  slug: "en/kinder-care-privacy-policy";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"en/legal.mdoc": {
-	id: "en/legal.mdoc";
-  slug: "en/legal";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"en/news.mdoc": {
-	id: "en/news.mdoc";
-  slug: "en/news";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"en/payment-disclamer.mdoc": {
-	id: "en/payment-disclamer.mdoc";
-  slug: "en/payment-disclamer";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"en/privacy-policy.mdoc": {
-	id: "en/privacy-policy.mdoc";
-  slug: "en/privacy-policy";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"en/refund-policy.mdoc": {
-	id: "en/refund-policy.mdoc";
-  slug: "en/refund-policy";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"en/terms-and-conditions.mdoc": {
-	id: "en/terms-and-conditions.mdoc";
-  slug: "en/terms-and-conditions";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"en/works.mdoc": {
-	id: "en/works.mdoc";
-  slug: "en/works";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"it/about.mdoc": {
-	id: "it/about.mdoc";
-  slug: "it/about";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"it/contact.mdoc": {
-	id: "it/contact.mdoc";
-  slug: "it/contact";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"it/homepage.mdoc": {
-	id: "it/homepage.mdoc";
-  slug: "it/homepage";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"it/news.mdoc": {
-	id: "it/news.mdoc";
-  slug: "it/news";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
-"it/works.mdoc": {
-	id: "it/works.mdoc";
-  slug: "it/works";
-  body: string;
-  collection: "pages";
-  data: InferEntrySchema<"pages">
-} & { render(): Render[".mdoc"] };
+		"pages": {
 };
 "posts": {
-"en/future-of-edutech.mdoc": {
-	id: "en/future-of-edutech.mdoc";
-  slug: "en/future-of-edutech";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".mdoc"] };
-"it/mastering-email-marketing-campaigns-for-ecommerce-success.mdoc": {
-	id: "it/mastering-email-marketing-campaigns-for-ecommerce-success.mdoc";
-  slug: "it/mastering-email-marketing-campaigns-for-ecommerce-success";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".mdoc"] };
-"it/revolutionizing-urban-farming-with-smart-technology.mdoc": {
-	id: "it/revolutionizing-urban-farming-with-smart-technology.mdoc";
-  slug: "it/revolutionizing-urban-farming-with-smart-technology";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".mdoc"] };
-"it/revolutionizing-virtual-reality-gaming-development.mdoc": {
-	id: "it/revolutionizing-virtual-reality-gaming-development.mdoc";
-  slug: "it/revolutionizing-virtual-reality-gaming-development";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".mdoc"] };
 };
 "services": {
 };
 "works": {
-"en/duesautomata.mdoc": {
-	id: "en/duesautomata.mdoc";
-  slug: "en/duesautomata";
-  body: string;
-  collection: "works";
-  data: InferEntrySchema<"works">
-} & { render(): Render[".mdoc"] };
-"en/educonnect.mdoc": {
-	id: "en/educonnect.mdoc";
-  slug: "en/educonnect";
-  body: string;
-  collection: "works";
-  data: InferEntrySchema<"works">
-} & { render(): Render[".mdoc"] };
-"en/simmeringerp.mdoc": {
-	id: "en/simmeringerp.mdoc";
-  slug: "en/simmeringerp";
-  body: string;
-  collection: "works";
-  data: InferEntrySchema<"works">
-} & { render(): Render[".mdoc"] };
-"it/duesautomata.mdoc": {
-	id: "it/duesautomata.mdoc";
-  slug: "it/duesautomata";
-  body: string;
-  collection: "works";
-  data: InferEntrySchema<"works">
-} & { render(): Render[".mdoc"] };
-"it/educonnect.mdoc": {
-	id: "it/educonnect.mdoc";
-  slug: "it/educonnect";
-  body: string;
-  collection: "works";
-  data: InferEntrySchema<"works">
-} & { render(): Render[".mdoc"] };
-"it/simmeringerp.mdoc": {
-	id: "it/simmeringerp.mdoc";
-  slug: "it/simmeringerp";
-  body: string;
-  collection: "works";
-  data: InferEntrySchema<"works">
-} & { render(): Render[".mdoc"] };
 };
 
 	};
 
 	type DataEntryMap = {
-		"global": {
+		"authors": {
+};
+"global": {
 "contacts": {
 	id: "contacts";
   collection: "global";
@@ -372,18 +160,33 @@ declare module 'astro:content' {
   collection: "global";
   data: any
 };
-"it/footer": {
-	id: "it/footer";
+"es/footer": {
+	id: "es/footer";
   collection: "global";
   data: any
 };
-"it/header": {
-	id: "it/header";
+"es/header": {
+	id: "es/header";
   collection: "global";
   data: any
 };
-"it/seo": {
-	id: "it/seo";
+"es/seo": {
+	id: "es/seo";
+  collection: "global";
+  data: any
+};
+"ms/footer": {
+	id: "ms/footer";
+  collection: "global";
+  data: any
+};
+"ms/header": {
+	id: "ms/header";
+  collection: "global";
+  data: any
+};
+"ms/seo": {
+	id: "ms/seo";
   collection: "global";
   data: any
 };

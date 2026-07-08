@@ -1,0 +1,11 @@
+---
+import { getEntry } from "astro:content";
+import WorkLayout from "@/layouts/WorkLayout.astro";
+
+const work = await getEntry("works", "ms/educonnect");
+const { Content } = await work.render();
+---
+
+<WorkLayout frontmatter={work}>
+	<Content />
+</WorkLayout>

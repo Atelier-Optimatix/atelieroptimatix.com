@@ -15,7 +15,10 @@ const config: Config = {
 			...defaultTheme.screens,
 		},
 		extend: {
-			colors: tailwindcssPaletteGenerator([style.theme.colors.primary, style.theme.colors.secondary]),
+			colors: {
+				...tailwindcssPaletteGenerator([style.theme.colors.primary, style.theme.colors.secondary]),
+				whatsapp: "#25d366",
+			},
 			fontFamily: {
 				sans: ["Inter Tight", ...defaultTheme.fontFamily.sans],
 				mono: ["Space Mono", ...defaultTheme.fontFamily.mono],

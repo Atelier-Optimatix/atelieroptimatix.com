@@ -15,10 +15,11 @@ interface Props {
 const { work } = Astro.props;
 
 const unlocalizedPath = unlocalizedUrl(work.slug);
-const localizedPath = translatePath(
-	currentLocale ?? defaultLocale,
-	`/work${unlocalizedPath}`,
-);
+// EduConnect's case study lives at its own /educonnect-description route instead of /work/educonnect.
+const localizedPath =
+	unlocalizedPath === "/educonnect"
+		? translatePath(currentLocale ?? defaultLocale, "/educonnect-description")
+		: translatePath(currentLocale ?? defaultLocale, `/work${unlocalizedPath}`);
 
 const videoSrc = work.data?.video ? await loadVideo(work.data.video) : null;
 ---

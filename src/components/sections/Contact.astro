@@ -41,6 +41,24 @@ interface Props {
 }
 
 const { title, fields } = Astro.props;
+
+const fieldNames: Record<string, string> = {
+	"Full Name": "name",
+	Email: "email",
+	Phone: "phone",
+	"Preferred Time for Call": "preferredTime",
+	Message: "message",
+};
+
+function fieldName(fieldTitle: string): string {
+	return (
+		fieldNames[fieldTitle] ??
+		fieldTitle
+			.trim()
+			.toLowerCase()
+			.replace(/[^a-z0-9]+(.)/g, (_, chr) => chr.toUpperCase())
+	);
+}
 ---
 
 <div
@@ -61,7 +79,7 @@ const { title, fields } = Astro.props;
 	</div>
 		<div class="mt-8">
 			<div class="mt-0 mx-0 mb-3.5">
-				<form data-static-form-name="contact" class="items-center auto-cols-fr grid-cols-1 sm:grid-cols-2 grid-rows-[auto] grid gap-8">
+				<form id="contact-form" data-static-form-name="contact" class="items-center auto-cols-fr grid-cols-1 sm:grid-cols-2 grid-rows-[auto] grid gap-8">
 					{
 						fields?.map((field) => {
 							if (field.type === "submit") {
@@ -77,9 +95,10 @@ const { title, fields } = Astro.props;
 											{field.title}
 										</p>
 										<textarea
+											name={fieldName(field.title)}
 											required={field.required}
 											placeholder={field.placeholder}
-											class="text-zinc-800 cursor-text py-4 w-full border-2 border-black border-solid rounded-md m-0",
+											class="text-zinc-800 cursor-text py-4 w-full border-2 border-black border-solid rounded-md m-0"
 										/>
 									</div>
 								);
@@ -90,6 +109,7 @@ const { title, fields } = Astro.props;
 											{field.title}
 										</p>
 										<input
+											name={fieldName(field.title)}
 											type={field.type as HTMLInputTypeAttribute}
 											required={field.required}
 											placeholder={field.placeholder}
@@ -100,8 +120,60 @@ const { title, fields } = Astro.props;
 							}
 						})
 					}
-				</fo>
+				</form>
+				<p id="contact-form-status" class="mt-4 text-base font-semibold hidden"></p>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script>
+	// Contact submissions go straight from the browser to the Central
+	// Intelligence Atelier platform's public contact endpoint — this site is
+	// static (GitHub Pages), so there's no server of our own to proxy through.
+	// That endpoint resolves its own project API key server-side, so nothing
+	// secret is exposed here.
+	// TODO: this is http:// while the site is https:// — browsers will block
+	// it as mixed content once served over https://atelieroptimatix.com. Swap
+	// to an https:// URL once TLS is in front of the CIA deployment.
+	const CIA_CONTACT_ENDPOINT = "http://13.250.10.188:4001/v1/public/atelieroptimatix/contact";
+
+	const form = document.querySelector<HTMLFormElement>("#contact-form");
+	const status = document.querySelector<HTMLParagraphElement>("#contact-form-status");
+
+	function showStatus(message: string, isError: boolean) {
+		if (!status) return;
+		status.textContent = message;
+		status.classList.remove("hidden", "text-red-600", "text-green-700");
+		status.classList.add(isError ? "text-red-600" : "text-green-700");
+	}
+
+	form?.addEventListener("submit", async (event) => {
+		event.preventDefault();
+		const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+		const data = Object.fromEntries(new FormData(form).entries());
+
+		submitButton?.setAttribute("disabled", "true");
+		showStatus("Sending...", false);
+
+		try {
+			const response = await fetch(CIA_CONTACT_ENDPOINT, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(data),
+			});
+			const result = await response.json();
+
+			if (response.ok && result.ok) {
+				showStatus("Thanks for reaching out! We'll get back to you soon.", false);
+				form.reset();
+			} else {
+				showStatus(result.message ?? "Something went wrong. Please try again.", true);
+			}
+		} catch {
+			showStatus("Something went wrong. Please try again.", true);
+		} finally {
+			submitButton?.removeAttribute("disabled");
+		}
+	});
+</script>

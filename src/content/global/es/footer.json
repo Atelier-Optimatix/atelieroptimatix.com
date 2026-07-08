@@ -1,0 +1,10 @@
+{
+	"title": "¿Tienes alguna pregunta?<br/> ¡No dudes en contactarnos!",
+	"copyright": "© 2025 Atelier Optimatix",
+	"buttons": [
+		{
+			"text": "Contáctanos",
+			"url": "/contact"
+		}
+	]
+}

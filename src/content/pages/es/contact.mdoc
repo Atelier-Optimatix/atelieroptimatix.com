@@ -1,0 +1,26 @@
+---
+title: Contact us
+type: informational
+lastUpdateDate: 2024-03-09
+hideTitle: false
+seo:
+  title: "Contáctenos | Atelier Optimatix – Expertos en Software Edutech e Industrial"
+  description: "Póngase en contacto con Atelier Optimatix para explorar soluciones de software a medida para la educación y la industria. Construyamos juntos sistemas más inteligentes."
+  author: Atelier Optimatix
+---
+
+{% Container %}
+
+{% Contact
+  title="Ponte en contacto"
+  fields=[
+    {title: "Nombre completo", placeholder: "John Doe", required: true, type: "text"},
+    {title: "Correo electrónico", placeholder: "contact@email.com", required: true, type: "email"},
+    {title: "Teléfono", placeholder: "+1 345-678", type: "tel"},
+    {title: "Horario preferido para la llamada", placeholder: "p. ej., 10:00 a 16:00", type: "text"},
+    {title: "Mensaje", placeholder: "Cuéntanos sobre tus necesidades o la idea de tu proyecto", type: "textarea", width: 2},
+    {title: "Enviar mensaje", type: "submit", width: 2}
+  ]
+/%}
+
+{% /Container %}
