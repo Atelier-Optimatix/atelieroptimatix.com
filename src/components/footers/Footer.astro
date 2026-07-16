@@ -20,7 +20,6 @@ function isActiveLocale(locale: string): boolean {
 }
 
 const pages = await getCollection("pages");
-const services = await getCollection("services");
 const posts = await getCollection("posts");
 
 // get top 6 pages which are informational pages
@@ -40,18 +39,6 @@ const topInfoPages = pages
   .filter(
     (page) => page.lang === currentLocale && page.data.type === "informational"
   )
-  .slice(0, 6);
-
-const topServices = services
-  .map((page) => {
-    const [lang, ...slug] = page.slug.split("/");
-    return {
-      ...page,
-      lang: lang,
-      slug: translatePath(lang, `/service${unlocalizedUrl(`/${page.slug}`)}`),
-    };
-  })
-  .filter((page) => page.lang === currentLocale)
   .slice(0, 6);
 
 const lastPosts = posts
@@ -131,22 +118,6 @@ const lastPosts = posts
                   </ul>
                 </div>
               </div>
-              <div class="items-start flex-col flex gap-[0.63rem]">
-                <p
-                  class="text-white border-b-2 text-lg pb-1 mb-3 border-white border-solid"
-                >
-                  Services
-                </p>
-                <ul class="text-white/[0.65] mb-3 list-none">
-                  {
-                    topServices.map(({ data: { title }, slug }) => (
-                      <li>
-                        <a href={slug}>{title}</a>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
               <!-- <div class="items-start flex-col flex gap-[0.63rem]">
                 <p
                   class="text-white border-b-2 text-lg pb-1 mb-3 border-white border-solid"
@@ -220,13 +191,13 @@ const lastPosts = posts
             }
           </div>
           <div class="flex gap-5 text-lg text-blue-700">
-            <a href="/privacy" class="inline-block max-w-full"
+            <a href="/privacy-policy" class="inline-block max-w-full"
               ><p
                 class="text-white border-b-2 cursor-pointer pb-1 border-white border-solid"
               >
                 Privacy policy
               </p></a
-            ><a href="/terms" class="inline-block max-w-full"
+            ><a href="/terms-and-conditions" class="inline-block max-w-full"
               ><p
                 class="text-white border-b-2 cursor-pointer pb-1 border-white border-solid"
               >

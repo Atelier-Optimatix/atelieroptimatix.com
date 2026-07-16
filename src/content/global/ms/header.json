@@ -12,7 +12,7 @@
 			"link": "/about"
 		},
 		{
-			"title": "Produk",
+			"title": "Kerja",
 			"link": "/works"
 		},
 		{
@@ -22,10 +22,6 @@
 		{
 			"title": "Hubungi",
 			"link": "/contact"
-		},
-		{
-			"title": "Undang-undang",
-			"link": "/legal"
 		}
 	],
 	"actions": []

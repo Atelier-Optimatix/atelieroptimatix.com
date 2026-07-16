@@ -12,7 +12,7 @@
 			"link": "/about"
 		},
 		{
-			"title": "Products",
+			"title": "Work",
 			"link": "/works"
 		},
 		{
@@ -20,12 +20,8 @@
 			"link": "/news"
 		},
 		{
-			"title": "Contacts",
+			"title": "Contact",
 			"link": "/contact"
-		},
-		{
-			"title": "Legal",
-			"link": "/legal"
 		}
 	],
 	"actions": []
