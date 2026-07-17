@@ -28,27 +28,27 @@ const geometryByName: Record<
 	{ clip: string; glow: { x: number; y: number }; hotspot: { left: number; top: number; width: number } }
 > = {
 	"Maneka Warangi": {
-		clip: "inset(27% 79% 0% 2%)",
+		clip: "inset(27% 79% 38% 2%)",
 		glow: { x: 14, y: 37 },
 		hotspot: { left: 2, top: 27, width: 19 },
 	},
 	"Dilanka Gamage": {
-		clip: "inset(24% 62% 0% 21%)",
+		clip: "inset(24% 62% 40% 21%)",
 		glow: { x: 28, y: 34 },
 		hotspot: { left: 21, top: 24, width: 19 },
 	},
 	"Shamil Asitha Kuruppu": {
-		clip: "inset(19% 45% 0% 38%)",
+		clip: "inset(19% 45% 45% 38%)",
 		glow: { x: 46, y: 28 },
 		hotspot: { left: 40, top: 19, width: 15 },
 	},
 	"Anjana Nisal": {
-		clip: "inset(15% 24% 0% 55.5%)",
+		clip: "inset(15% 24% 48% 55.5%)",
 		glow: { x: 65, y: 25 },
 		hotspot: { left: 55, top: 15, width: 21 },
 	},
 	"Eranga Anupama": {
-		clip: "inset(18% 0% 0% 76.5%)",
+		clip: "inset(18% 0% 45% 76.5%)",
 		glow: { x: 84, y: 28 },
 		hotspot: { left: 76, top: 18, width: 24 },
 	},
@@ -91,7 +91,7 @@ const alpine = `{
 	<div x-data={alpine}>
 		<!-- Stage -->
 		<div
-			class="team-stage relative w-full overflow-hidden rounded-[18px] bg-[#0c0b0a]"
+			class="team-stage relative w-full overflow-hidden rounded-[18px] border border-[#e7e3d7] bg-white"
 			style={`aspect-ratio:${teamPhoto.width}/${teamPhoto.height};`}
 		>
 			<svg width="0" height="0" class="absolute" aria-hidden="true">
@@ -111,9 +111,9 @@ const alpine = `{
 				</filter>
 			</svg>
 
-			<!-- Base silhouette -->
+			<!-- Base silhouette (people only, on white) -->
 			<Image
-				src={teamPhoto}
+				src={teamPhotoCutout}
 				alt="The Atelier Optimatix team, standing side by side as a darkened group silhouette"
 				class="team-base absolute inset-0 h-full w-full object-cover"
 				loading="eager"
