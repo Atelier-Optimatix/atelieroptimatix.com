@@ -1,0 +1,279 @@
+---
+import { Image } from "astro:assets";
+import teamPhoto from "@/assets/pages/about/team-photo.png";
+import teamPhotoCutout from "@/assets/pages/about/team-photo-cutout.png";
+
+interface Props {
+	title: string;
+	subtitle?: string;
+	members: {
+		name: string;
+		role: string;
+		description: string;
+		image?: string;
+		link?: string;
+	}[];
+}
+
+const { title, subtitle, members } = Astro.props;
+
+/**
+ * Per-person geometry on the group illustration (1037×753), keyed by name.
+ * Percentages of the image: reveal clip-path inset(T R B L), glow center,
+ * and the transparent hover hotspot (left / top / width, anchored to bottom).
+ * Re-tune here if the photo composition changes.
+ */
+const geometryByName: Record<
+	string,
+	{ clip: string; glow: { x: number; y: number }; hotspot: { left: number; top: number; width: number } }
+> = {
+	"Maneka Warangi": {
+		clip: "inset(27% 79% 0% 2%)",
+		glow: { x: 14, y: 37 },
+		hotspot: { left: 2, top: 27, width: 19 },
+	},
+	"Dilanka Gamage": {
+		clip: "inset(24% 62% 0% 21%)",
+		glow: { x: 28, y: 34 },
+		hotspot: { left: 21, top: 24, width: 19 },
+	},
+	"Shamil Asitha Kuruppu": {
+		clip: "inset(19% 45% 0% 38%)",
+		glow: { x: 46, y: 28 },
+		hotspot: { left: 40, top: 19, width: 15 },
+	},
+	"Anjana Nisal": {
+		clip: "inset(15% 24% 0% 55.5%)",
+		glow: { x: 65, y: 25 },
+		hotspot: { left: 55, top: 15, width: 21 },
+	},
+	"Eranga Anupama": {
+		clip: "inset(18% 0% 0% 76.5%)",
+		glow: { x: 84, y: 28 },
+		hotspot: { left: 76, top: 18, width: 24 },
+	},
+};
+const order = Object.keys(geometryByName);
+
+// Display members left → right as they stand in the photo; unknown names go last.
+const team = [...members].sort((a, b) => {
+	const ia = order.indexOf(a.name);
+	const ib = order.indexOf(b.name);
+	return (ia === -1 ? order.length : ia) - (ib === -1 ? order.length : ib);
+});
+
+const count = String(team.length).padStart(2, "0");
+
+const alpine = `{
+	active: null,
+	timer: null,
+	set(i) { this.stopCycle(); this.active = i },
+	clear() { this.stopCycle(); this.active = null },
+	stopCycle() { if (this.timer) { clearInterval(this.timer); this.timer = null } },
+	init() {
+		if (window.matchMedia('(pointer: coarse)').matches) {
+			this.active = 0;
+			this.timer = setInterval(() => { this.active = (this.active + 1) % ${team.length} }, 1800);
+		}
+	}
+}`;
+---
+
+<div class="pt-36" id="team">
+	<p class="font-mono text-[13px] tracking-[0.14em] text-secondary-500 mb-3">
+		THE TEAM · {count} PEOPLE
+	</p>
+	<h2
+		class="font-display font-extrabold leading-tight text-[clamp(30px,3.6vw,44px)] mb-10"
+		set:html={title}
+	/>
+
+	<div x-data={alpine}>
+		<!-- Stage -->
+		<div
+			class="team-stage relative w-full overflow-hidden rounded-[18px] bg-[#0c0b0a]"
+			style={`aspect-ratio:${teamPhoto.width}/${teamPhoto.height};`}
+		>
+			<svg width="0" height="0" class="absolute" aria-hidden="true">
+				<filter id="pencilSketch" x="-5%" y="-5%" width="110%" height="110%">
+					<feTurbulence
+						type="fractalNoise"
+						baseFrequency="0.012 0.018"
+						numOctaves="2"
+						seed="7"
+						result="n"></feTurbulence>
+					<feDisplacementMap
+						in="SourceGraphic"
+						in2="n"
+						scale="4"
+						xChannelSelector="R"
+						yChannelSelector="G"></feDisplacementMap>
+				</filter>
+			</svg>
+
+			<!-- Base silhouette -->
+			<Image
+				src={teamPhoto}
+				alt="The Atelier Optimatix team, standing side by side as a darkened group silhouette"
+				class="team-base absolute inset-0 h-full w-full object-cover"
+				loading="eager"
+			/>
+
+			<!-- Glow halos -->
+			{
+				team.map(({ name }, i) => {
+					const g = geometryByName[name]?.glow ?? { x: 50, y: 40 };
+					return (
+						<div
+							class="team-glow pointer-events-none absolute"
+							style={`left:${g.x}%;top:${g.y}%;width:32%;height:54%;`}
+							:style={`{ opacity: active === ${i} ? 1 : 0 }`}
+						/>
+					);
+				})
+			}
+
+			<!-- Per-person pencil-sketch reveals -->
+			{
+				team.map(({ name }, i) => {
+					const clip = geometryByName[name]?.clip ?? "inset(0% 0% 0% 0%)";
+					return (
+						<Image
+							src={teamPhotoCutout}
+							alt=""
+							aria-hidden="true"
+							class="team-reveal pointer-events-none absolute inset-0 h-full w-full object-cover"
+							style={`clip-path:${clip};`}
+							:style={`{ opacity: active === ${i} ? 1 : 0 }`}
+							loading="eager"
+						/>
+					);
+				})
+			}
+
+			<!-- Paper grain -->
+			<div class="team-grain pointer-events-none absolute inset-0" aria-hidden="true"></div>
+
+			<!-- Hover hotspots -->
+			{
+				team.map(({ name }, i) => {
+					const h = geometryByName[name]?.hotspot ?? { left: 0, top: 0, width: 0 };
+					return (
+						<div
+							class="absolute bottom-0 z-10 cursor-pointer"
+							style={`left:${h.left}%;top:${h.top}%;width:${h.width}%;`}
+							aria-label={`Reveal ${name}`}
+							@mouseenter={`set(${i})`}
+							@mouseleave="clear()"
+							@click={`set(${i})`}
+						/>
+					);
+				})
+			}
+
+			<!-- Info panel -->
+			<div class="team-panel absolute bottom-4 left-4 z-20 w-[min(400px,60%)] p-5 md:bottom-6 md:left-6">
+				<div x-show="active === null">
+					<p class="font-mono text-xs tracking-[0.08em] text-[#8fd0df]">THE PEOPLE</p>
+					<p class="mt-1.5 text-sm text-white/70">
+						{subtitle ?? "Hover a colleague to bring them out of the silhouette."}
+					</p>
+				</div>
+				{
+					team.map(({ name, role, description, link }, i) => (
+						<div x-show={`active === ${i}`} x-cloak>
+							<p class="font-mono text-xs tracking-[0.08em] text-[#8fd0df]">
+								{String(i + 1).padStart(2, "0")} / {count}
+							</p>
+							<p class="font-display mt-1 text-xl font-extrabold text-white md:text-[26px] md:leading-tight">
+								{name}
+							</p>
+							<p class="mt-0.5 text-[15px] font-semibold text-[#e7c98a]">{role}</p>
+							<p class="mt-1.5 hidden text-sm text-white/70 md:block">{description}</p>
+							{link && (
+								<a
+									href={link}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="mt-2 inline-block text-sm font-medium text-[#8fd0df] hover:underline underline-offset-4"
+								>
+									View profile ↗
+								</a>
+							)}
+						</div>
+					))
+				}
+			</div>
+		</div>
+
+		<!-- Name chips -->
+		<div class="mt-4 flex flex-wrap gap-2.5">
+			{
+				team.map(({ name }, i) => (
+					<button
+						type="button"
+						class="team-chip rounded-full bg-white px-4 py-2 text-sm font-semibold"
+						:class={`active === ${i} ? 'team-chip-active' : ''`}
+						@mouseenter={`set(${i})`}
+						@mouseleave="clear()"
+						@focus={`set(${i})`}
+						@click={`set(${i})`}
+					>
+						{name}
+					</button>
+				))
+			}
+		</div>
+	</div>
+</div>
+
+<style>
+	[x-cloak] {
+		display: none !important;
+	}
+	.team-base {
+		filter: brightness(0.17) saturate(0.45) contrast(1.18);
+	}
+	.team-reveal {
+		filter: url(#pencilSketch) saturate(1.38) brightness(1.14) contrast(1.08);
+		opacity: 0;
+		transition: opacity 0.55s ease;
+	}
+	.team-glow {
+		transform: translate(-50%, -50%);
+		border-radius: 50%;
+		opacity: 0;
+		transition: opacity 0.55s ease;
+		background: radial-gradient(
+			circle,
+			rgba(255, 205, 125, 0.55) 0%,
+			rgba(255, 236, 195, 0.28) 42%,
+			rgba(255, 250, 235, 0) 72%
+		);
+	}
+	.team-grain {
+		mix-blend-mode: soft-light;
+		opacity: 0.12;
+		background: repeating-linear-gradient(
+			45deg,
+			rgba(120, 90, 50, 0.5) 0 1px,
+			transparent 1px 3px
+		);
+	}
+	.team-panel {
+		background: rgba(12, 11, 10, 0.74);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border: 1px solid rgba(255, 255, 255, 0.14);
+		border-radius: 16px;
+	}
+	.team-chip {
+		border: 1.5px solid rgba(20, 18, 16, 0.14);
+		transition: border-color 0.3s ease;
+	}
+	.team-chip:hover,
+	.team-chip:focus-visible,
+	.team-chip-active {
+		border-color: #439db4;
+	}
+</style>

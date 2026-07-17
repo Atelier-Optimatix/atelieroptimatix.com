@@ -120,6 +120,14 @@ export default defineMarkdocConfig({
 			},
 			render: component("./src/components/sections/About.astro"),
 		},
+		Team: {
+			attributes: {
+				title: { type: String, render: "title", required: true },
+				subtitle: { type: String, render: "subtitle" },
+				members: { type: Array, render: "members", required: true },
+			},
+			render: component("./src/components/sections/Team.astro"),
+		},
 		Works: {
 			attributes: {},
 			render: component("./src/components/sections/Works.astro"),
