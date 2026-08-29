@@ -1,0 +1,42 @@
+---
+title: Entering and Publishing Exam Results
+description: The difference between adding results, uploading results in bulk, change requests, and rankings.
+product: shared
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/exam_routes.dart
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Two ways to enter results
+
+The **Exams** section offers two separate routes into the same result set, and it's easy to use
+the wrong one for what you're trying to do:
+
+- **Add results** — enter marks for one class/subject at a time, directly in the dashboard.
+  Use this for small classes or last-minute corrections.
+- **Upload results** — bulk-import marks for a class/subject from a file. Use this for whole-class
+  entry once marking is finished; it's much faster than typing marks in one at a time, but
+  mistakes in the file affect the whole class at once, so double-check the file before uploading.
+
+## Change requests
+
+If a result needs correcting after it's been entered (a marking error found later, a re-mark),
+use **change requests** rather than editing the result directly. This keeps a record of what was
+changed and why, which matters for handling parent queries about a grade later.
+
+## Rankings and term reports
+
+**Rankings** and **term reports** are generated from whatever results currently exist — they
+won't reflect a class until results for that class/subject have actually been entered or
+uploaded. If a ranking looks incomplete, check whether every subject's results have been entered
+yet before assuming the ranking calculation is wrong.
+
+## Who sees this
+
+Teachers typically use add/upload results for their own classes; rankings, term reports, and
+cross-class analytics are more commonly used by school admins reviewing a whole class or year
+group.
