@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from "astro:content";
+import DocsLayout from "@/layouts/DocsLayout.astro";
+import { getCollectionStaticPaths } from "@/lib/collection-helpers";
+
+export interface Props {
+	data: CollectionEntry<"docs">;
+}
+
+export async function getStaticPaths() {
+	return await getCollectionStaticPaths("docs", "en");
+}
+
+const { data: doc } = Astro.props;
+const { Content } = await doc.render();
+---
+
+<DocsLayout frontmatter={doc}>
+	<Content />
+</DocsLayout>

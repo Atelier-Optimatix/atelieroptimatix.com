@@ -1,0 +1,81 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Container from "@/components/primitives/Container.astro";
+import Link from "@/components/primitives/Link.astro";
+import Title from "@/components/primitives/Title.astro";
+
+const allDocs = await getCollection("docs", ({ data }) => !data.hidden);
+
+const productOrder = ["educonnect", "kindercare", "admissions", "shared"] as const;
+const productLabels: Record<string, string> = {
+	educonnect: "EduConnect",
+	kindercare: "KinderCare",
+	admissions: "Admissions",
+	shared: "Shared",
+};
+
+const sections = productOrder.map((product) => ({
+	product,
+	label: productLabels[product],
+	docs: allDocs.filter((doc) => doc.data.product === product),
+}));
+---
+
+<BaseLayout>
+	<section class="py-32 md:py-56">
+		<Container>
+			<div class="text-center">
+				<Title level={1}>User Guide</Title>
+				<p class="mx-auto max-w-2xl pt-6 text-base text-slate-500">
+					Help and how-to documentation for EduConnect, KinderCare and Admissions.
+				</p>
+			</div>
+
+			<div id="docs-search" class="mx-auto max-w-2xl pt-12"></div>
+
+			<div class="mx-auto grid max-w-4xl gap-12 pt-16 sm:grid-cols-2">
+				{
+					sections.map(
+						(section) =>
+							section.docs.length > 0 && (
+								<div>
+									<h2 class="pb-4 text-sm font-semibold uppercase tracking-wide text-black">
+										{section.label}
+									</h2>
+									<ul class="space-y-2">
+										{section.docs.map((doc) => {
+											const [, ...slug] = doc.slug.split("/");
+											return (
+												<li>
+													<Link href={`/docs/${slug.join("/")}`} size="md" style="outline">
+														{doc.data.title}
+													</Link>
+												</li>
+											);
+										})}
+									</ul>
+								</div>
+							),
+					)
+				}
+			</div>
+		</Container>
+	</section>
+</BaseLayout>
+
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+<script>
+	// Pagefind assets only exist after `npm run build` (see the postbuild script in
+	// package.json) - in local `astro dev` this script tag 404s silently and the
+	// search box just stays empty.
+	const script = document.createElement("script");
+	script.src = "/pagefind/pagefind-ui.js";
+	script.onload = () => {
+		const w = window as unknown as { PagefindUI?: new (opts: Record<string, unknown>) => unknown };
+		if (w.PagefindUI) {
+			new w.PagefindUI({ element: "#docs-search", showSubResults: true });
+		}
+	};
+	document.head.appendChild(script);
+</script>
