@@ -157,6 +157,36 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".mdoc"] };
 };
+"docs": {
+"en/admissions-admin-overview.mdoc": {
+	id: "en/admissions-admin-overview.mdoc";
+  slug: "en/admissions-admin-overview";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-staff-attendance-overview.mdoc": {
+	id: "en/educonnect-staff-attendance-overview.mdoc";
+  slug: "en/educonnect-staff-attendance-overview";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/kindercare-parent-getting-started.mdoc": {
+	id: "en/kindercare-parent-getting-started.mdoc";
+  slug: "en/kindercare-parent-getting-started";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-logging-in.mdoc": {
+	id: "en/shared-logging-in.mdoc";
+  slug: "en/shared-logging-in";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+};
 "pages": {
 "en/about.mdoc": {
 	id: "en/about.mdoc";
@@ -419,6 +449,20 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".mdoc"] };
+"en/the-case-for-boring-industrial-software.mdoc": {
+	id: "en/the-case-for-boring-industrial-software.mdoc";
+  slug: "en/the-case-for-boring-industrial-software";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"en/what-a-restaurant-needs-from-an-erp.mdoc": {
+	id: "en/what-a-restaurant-needs-from-an-erp.mdoc";
+  slug: "en/what-a-restaurant-needs-from-an-erp";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
 "es/future-of-edutech.mdoc": {
 	id: "es/future-of-edutech.mdoc";
   slug: "es/future-of-edutech";
@@ -426,9 +470,37 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".mdoc"] };
+"es/the-case-for-boring-industrial-software.mdoc": {
+	id: "es/the-case-for-boring-industrial-software.mdoc";
+  slug: "es/the-case-for-boring-industrial-software";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"es/what-a-restaurant-needs-from-an-erp.mdoc": {
+	id: "es/what-a-restaurant-needs-from-an-erp.mdoc";
+  slug: "es/what-a-restaurant-needs-from-an-erp";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
 "ms/future-of-edutech.mdoc": {
 	id: "ms/future-of-edutech.mdoc";
   slug: "ms/future-of-edutech";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"ms/the-case-for-boring-industrial-software.mdoc": {
+	id: "ms/the-case-for-boring-industrial-software.mdoc";
+  slug: "ms/the-case-for-boring-industrial-software";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"ms/what-a-restaurant-needs-from-an-erp.mdoc": {
+	id: "ms/what-a-restaurant-needs-from-an-erp.mdoc";
+  slug: "ms/what-a-restaurant-needs-from-an-erp";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
