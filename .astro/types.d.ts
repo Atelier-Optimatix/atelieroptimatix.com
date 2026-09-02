@@ -179,6 +179,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".mdoc"] };
+"en/educonnect-privacy-policy.mdoc": {
+	id: "en/educonnect-privacy-policy.mdoc";
+  slug: "en/educonnect-privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
 "en/homepage.mdoc": {
 	id: "en/homepage.mdoc";
   slug: "en/homepage";
@@ -259,6 +266,13 @@ declare module 'astro:content' {
 "es/contact.mdoc": {
 	id: "es/contact.mdoc";
   slug: "es/contact";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"es/educonnect-privacy-policy.mdoc": {
+	id: "es/educonnect-privacy-policy.mdoc";
+  slug: "es/educonnect-privacy-policy";
   body: string;
   collection: "pages";
   data: InferEntrySchema<"pages">
@@ -347,6 +361,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".mdoc"] };
+"ms/educonnect-privacy-policy.mdoc": {
+	id: "ms/educonnect-privacy-policy.mdoc";
+  slug: "ms/educonnect-privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
 "ms/homepage.mdoc": {
 	id: "ms/homepage.mdoc";
   slug: "ms/homepage";
@@ -419,6 +440,20 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".mdoc"] };
+"en/the-case-for-boring-industrial-software.mdoc": {
+	id: "en/the-case-for-boring-industrial-software.mdoc";
+  slug: "en/the-case-for-boring-industrial-software";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"en/what-a-restaurant-needs-from-an-erp.mdoc": {
+	id: "en/what-a-restaurant-needs-from-an-erp.mdoc";
+  slug: "en/what-a-restaurant-needs-from-an-erp";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
 "es/future-of-edutech.mdoc": {
 	id: "es/future-of-edutech.mdoc";
   slug: "es/future-of-edutech";
@@ -426,9 +461,37 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".mdoc"] };
+"es/the-case-for-boring-industrial-software.mdoc": {
+	id: "es/the-case-for-boring-industrial-software.mdoc";
+  slug: "es/the-case-for-boring-industrial-software";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"es/what-a-restaurant-needs-from-an-erp.mdoc": {
+	id: "es/what-a-restaurant-needs-from-an-erp.mdoc";
+  slug: "es/what-a-restaurant-needs-from-an-erp";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
 "ms/future-of-edutech.mdoc": {
 	id: "ms/future-of-edutech.mdoc";
   slug: "ms/future-of-edutech";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"ms/the-case-for-boring-industrial-software.mdoc": {
+	id: "ms/the-case-for-boring-industrial-software.mdoc";
+  slug: "ms/the-case-for-boring-industrial-software";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"ms/what-a-restaurant-needs-from-an-erp.mdoc": {
+	id: "ms/what-a-restaurant-needs-from-an-erp.mdoc";
+  slug: "ms/what-a-restaurant-needs-from-an-erp";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
