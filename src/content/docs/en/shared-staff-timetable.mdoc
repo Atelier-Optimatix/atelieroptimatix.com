@@ -1,0 +1,68 @@
+---
+title: Building the Timetable
+description: How admins lay out the weekly timetable, and where the subjects, curriculum and bell schedule behind it are configured.
+product: shared
+roles:
+  - admin
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/timetable_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## Where to find it
+
+Everything below sits in the **Timetable** group in the side drawer. Which items you see there
+depends on your access level — the grid, class subjects, curriculum and configuration are each
+separately permissioned, so an admin may see all four while a coordinator sees only one or two.
+
+Teachers don't normally use this section at all. They get **My Timetable** as its own top-level
+drawer item instead — a read-only view of their own week.
+
+## The order to do things in
+
+The timetable grid can only place lessons that the surrounding configuration already knows about,
+so a new institute usually works outwards from the setup screens:
+
+1. **Configuration → Bell Schedule** — define the periods that make up a day (label, start and end
+   time, and whether the period is a break). You can keep more than one schedule and mark one as
+   the default.
+2. **Grade Curriculum** — what each grade is meant to be taught.
+3. **Class Subjects** — which subjects actually run for each individual class.
+4. **Timetable Grid** — place those subjects into periods.
+
+If a subject isn't offered when you try to place it, the fix is almost always in Class Subjects or
+Grade Curriculum rather than in the grid itself.
+
+## Working in the grid
+
+- Each cell is one class in one period on one day. Selecting a cell lets you set the lesson there,
+  or place a whole **subject group** when several classes split into options at the same time.
+- **Copy day** takes every slot on one day and repeats it on the days you choose. The confirmation
+  tells you how many slots copied and how many were **skipped as conflicts** — skipped slots are
+  ones where the target period was already occupied or the teacher was already booked, so nothing
+  is silently overwritten.
+- When a change would double-book a teacher or a classroom, the grid refuses it and highlights the
+  clashing slot rather than saving both.
+
+## Other configuration tabs
+
+**Configuration** carries more than the bell schedule:
+
+- **Teacher Constraints** — when individual teachers are and aren't available.
+- **Subjects & Rules** and **Subject Groups** — how subjects behave and which ones are offered as a
+  set of options.
+- **Classrooms** — the rooms lessons can be matched to.
+- **Import Data** — bulk-load setup data instead of entering it screen by screen.
+
+You can also export the finished timetable for **all classes** or for **all teachers** from the top
+of the Configuration screen.
+
+## Related
+
+- [Managing Teachers](/docs/shared-staff-teacher-management)
+- [Teacher Attendance & Substitution](/docs/shared-staff-teacher-attendance)
+- [Taking Attendance as Staff](/docs/shared-staff-attendance-overview)
