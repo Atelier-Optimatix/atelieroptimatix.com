@@ -1,0 +1,40 @@
+---
+title: Institute Branding — Why Terminology Changes Between Institutes
+description: The dashboard adapts its wording (e.g. "School" vs "Kindergarten") per institute, not per product.
+product: shared
+roles:
+  - staff
+  - admin
+  - parent
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/institute_branding.dart
+  - educonnect-public/edu-frontend/lib/api_services/branding_service.dart
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## One codebase, many institutes
+
+Both the staff dashboard and the parent portal are the same application for every institute —
+there is no separate "EduConnect app" and "KinderCare app". What changes between institutes is
+branding: the display name, logo, theme color, and a couple of terminology swaps such as calling
+your institute a "School" or a "Kindergarten" depending on how it's registered.
+
+This means two institutes can look and read quite differently even though they're running
+identical software — if something looks "wrong" for one institute but fine for another, it's
+worth checking whether it's actually a bug or just that institute's branding/terminology before
+escalating it as one.
+
+## Where the terminology comes from
+
+On the parent portal, the active institute is usually determined by a `school` parameter in the
+URL you were sent (e.g. from an invite link or the mobile app), which is looked up to fetch that
+institute's display name and logo. If a parent lands on the login page without that context, the
+portal falls back to a previously remembered institute for that browser, or a generic default.
+
+## What this means in practice
+
+- Support conversations should always confirm *which institute* a user is on before assuming a
+  screen behaves identically everywhere.
+- Screenshots and documentation in this guide are taken from one representative institute — wording
+  like "Student" vs. a kindergarten-specific term may differ slightly on your screen.

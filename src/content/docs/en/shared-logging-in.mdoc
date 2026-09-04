@@ -1,25 +1,42 @@
 ---
-title: Logging In
-description: How login and password reset work across EduConnect, KinderCare and Admissions.
+title: Logging In and Staying Logged In
+description: How login differs for staff vs. parents, and what to do if you're unexpectedly logged out.
 product: shared
 roles:
   - staff
   - parent
-  - admin
+  - applicant
 sourcePaths:
-  - attendance-web-app/edu-frontend/lib/screens/auth/
-  - educonnect-public/edu-frontend/lib/screens/auth/
-  - educonnect-admissions/edu-frontend/lib/screens/auth/
-  - kinder_care_parent/lib/
-  - kinder-care-fe/lib/
+  - attendance-web-app/backend/config/product.js
+  - educonnect-public/edu-frontend/lib/screens/parent_login_page.dart
 lastUpdateDate: 2026-08-30
 hidden: false
 ---
 
-## Overview
+## Two different login systems
 
-This page is a placeholder scaffolded while the docs system was set up. Login is one of the
-cross-product concepts called out in the docs IA as `shared` content, single-sourced here and
-linked from each product's login screen tooltip rather than duplicated per product.
+Staff and parents use different login methods, even though they're on related apps:
 
-*(content to be filled in during Phase 3 content pass)*
+- **Staff** (the school dashboard) log in with a username and password, and their session is kept
+  alive automatically in the background for as long as they keep using the dashboard.
+- **Parents** (the parent portal) verify with a one-time code (OTP) sent to their phone/email the
+  first time, then log in with a password afterwards — see
+  [Getting Started as a Parent](/docs/shared-parent-getting-started).
+- **Admissions applicants** also use an OTP-based login, separate from both of the above, scoped
+  to that institute's admissions process.
+
+## Why you might get logged out
+
+Session length differs by institute type, and refreshing your session happens automatically in
+the background — you shouldn't normally need to log in again mid-session. If you *are* logged out
+unexpectedly:
+
+- On the staff dashboard, this is usually a genuinely expired session — log back in normally.
+- On the parent portal, an expired session can sometimes show as a generic error rather than a
+  clear "please log in again" message. If something looks broken rather than showing a login
+  prompt, try logging in again directly before assuming a feature is broken.
+
+## Related
+
+- [Institute Branding](/docs/shared-institute-branding) — why the login page can look different
+  between institutes.
