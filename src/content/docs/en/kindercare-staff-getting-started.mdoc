@@ -1,0 +1,61 @@
+---
+title: Getting Started with the KinderCare Staff App
+description: The four tabs of the teacher app, enrolling a child, and putting events on the calendar.
+product: kindercare
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/home_screen.dart
+  - kinder-care-fe/lib/screens/students_screen.dart
+  - kinder-care-fe/lib/screens/calendar_screen.dart
+  - kinder-care-fe/lib/screens/add_student_screen.dart
+  - kinder-care-fe/lib/screens/account_settings_screen.dart
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## The four tabs
+
+The KinderCare staff app is deliberately small. Everything lives behind four tabs along the bottom:
+
+- **Activities** — what you record about the children through the day.
+- **Students** — the children in your class.
+- **Calendar** — events for your class.
+- **Reports** — the written reports that go to parents.
+
+There's no side drawer and no separate admin area to go looking for. If something isn't on one of
+these four tabs, it isn't in this app.
+
+{% callout type="note" %}
+This is the teacher's app. Parents have a **separate** app with its own tabs — see
+[The KinderCare Parent App](/docs/kindercare-parent-app). The two show much of the same information,
+so it helps to know which one someone is describing before troubleshooting with them.
+{% /callout %}
+
+## Enrolling a child
+
+**Students → Add Student** collects the child's details in grouped sections — personal information
+(full name, student ID, date of birth), academic information, and contact information including the
+address. You can attach a photo at the same time, taken with the **camera** or picked from the
+**gallery**.
+
+Students can be searched by name from the Students tab, which is usually faster than scrolling once
+a class fills up.
+
+## The calendar
+
+The Calendar tab is editable, not just a view: you can **add**, **edit** and **delete** events.
+Deleting asks for confirmation first, since parents may already have seen the event in their app.
+
+## Account settings
+
+**Account Settings** is intentionally minimal. Alongside your account details it offers **Request
+Account Deletion** — a request to the school rather than something that happens immediately, so
+submitting it does not sign you out or remove your records on the spot.
+
+## Related
+
+- [Recording Activities](/docs/kindercare-staff-activities)
+- [Writing Reports](/docs/kindercare-staff-reports)
+- [The KinderCare Parent App](/docs/kindercare-parent-app)
