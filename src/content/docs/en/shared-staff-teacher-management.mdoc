@@ -1,0 +1,61 @@
+---
+title: Managing Teachers
+description: Adding and editing teacher records, reading an individual teacher's profile, and keeping your own details up to date.
+product: shared
+roles:
+  - admin
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/teacher_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## Where to find it
+
+The **Teachers** group in the side drawer, which holds an **Overview** dashboard, the **Directory**,
+**Attendance** and **Substitution**. Adding, editing and viewing an individual teacher are all
+reached from the Directory rather than being separate drawer items.
+
+Creating and editing teachers is separately permissioned from simply viewing them, so plenty of
+staff can browse the Directory without being able to change anything in it.
+
+## Adding and editing a teacher
+
+- **Directory → Add** opens a blank teacher form.
+- Editing an existing teacher opens the same form pre-filled, reached from that teacher's profile.
+
+Because it's one form either way, a field that's required when creating is required when editing —
+there's no reduced "quick edit" version to look for.
+
+## A teacher's profile
+
+Selecting a teacher from the Directory opens their profile, which is where their individual
+analytics live. From there you can drill into that specific teacher's attendance, and from that
+into a **monthly** breakdown. These are proper addressable pages, so a particular teacher's
+attendance view can be bookmarked or linked directly.
+
+## Your own profile
+
+**My Profile** is a separate top-level drawer item and is self-service — teachers use it without
+needing any Teachers-section access. It covers three things:
+
+- **Account** — your username and, if you're a teacher, your teacher ID. These are shown for
+  reference, not edited here.
+- **Teacher Profile** — your full name, date of birth and gender, plus optional contact number,
+  email, address, religion, ethnicity and nationality. You can also set or remove a profile photo.
+- **Change Password** — current password, then the new one twice.
+
+{% callout type="note" %}
+If **My Profile** appears in your drawer but opening it sends you back to the dashboard, your
+account predates the permission that controls it. That's an access-configuration gap rather than a
+fault with your account — ask your admin to grant it.
+{% /callout %}
+
+## Related
+
+- [Teacher Attendance & Substitution](/docs/shared-staff-teacher-attendance)
+- [Building the Timetable](/docs/shared-staff-timetable)
+- [Logging In](/docs/shared-logging-in)
