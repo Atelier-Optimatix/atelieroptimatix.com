@@ -714,6 +714,86 @@ export default config({
 				}),
 			},
 		}),
+		docs: collection({
+			label: "User Guide",
+			slugField: "title",
+			path: "src/content/docs/en/*",
+			entryLayout: "content",
+			columns: ["title", "product", "lastUpdateDate"],
+			previewUrl: "/docs/{slug}",
+			format: { contentField: "content" },
+			schema: {
+				title: fields.slug({
+					name: {
+						label: "Title",
+						validation: {
+							isRequired: true,
+						},
+					},
+					slug: {
+						label: "SEO-friendly slug",
+						description: "Used verbatim in the /docs/<product>/... URL and as the tooltip deep-link anchor target — avoid changing after publishing.",
+					},
+				}),
+				description: fields.text({
+					label: "Description",
+					description: "Also used as the trimmed excerpt shown in in-app tooltips — keep this to one short sentence.",
+					multiline: true,
+					validation: {
+						isRequired: true,
+					},
+				}),
+				product: fields.select({
+					label: "Product",
+					description: "Which top-level docs section this page belongs to.",
+					options: [
+						{ label: "EduConnect", value: "educonnect" },
+						{ label: "KinderCare", value: "kindercare" },
+						{ label: "Admissions", value: "admissions" },
+						{ label: "Shared (cross-product)", value: "shared" },
+					],
+					defaultValue: "shared",
+				}),
+				roles: fields.array(fields.text({ label: "Role" }), {
+					label: "Roles",
+					description: "Who this page is written for, e.g. staff, parent, admin.",
+					itemLabel: (props) => props.value,
+				}),
+				sourcePaths: fields.array(fields.text({ label: "Path or glob" }), {
+					label: "Source paths",
+					description: "Repo-relative paths/globs this page documents (e.g. attendance-web-app/edu-frontend/lib/screens/attendance/). Powers the CI staleness check — keep directory-level, not per-file.",
+					itemLabel: (props) => props.value,
+				}),
+				screenshotIds: fields.array(fields.text({ label: "Screenshot ID" }), {
+					label: "Screenshot IDs",
+					description: "Stable IDs referencing auto-captured screenshots (resolved at render time), not hand-embedded images.",
+					itemLabel: (props) => props.value,
+				}),
+				lastUpdateDate: fields.date({
+					label: "Last Update Date",
+					defaultValue: {
+						kind: "today",
+					},
+					validation: {
+						isRequired: true,
+					},
+				}),
+				hidden: fields.checkbox({
+					label: "Hidden",
+				}),
+				content: fields.markdoc({
+					label: "Content",
+					options: {
+						heading: [2, 3, 4, 5, 6],
+						image: {
+							directory: "src/assets/docs",
+							publicPath: "/src/assets/docs/",
+						},
+					},
+					components: {},
+				}),
+			},
+		}),
 		works: collection({
 			label: "Projects",
 			slugField: "title",

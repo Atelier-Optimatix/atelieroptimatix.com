@@ -60,9 +60,27 @@ const servicesCollection = defineCollection({
 		}),
 });
 
+// User guide / help center content. `product` and `roles` drive the docs IA
+// (grouping by /docs/<product>/<role>/...); `sourcePaths` powers the CI
+// staleness check that flags when mapped app code changes without a doc update.
+const docsCollection = defineCollection({
+	schema: () =>
+		z.object({
+			title: z.string(),
+			description: z.string(),
+			product: z.enum(["educonnect", "kindercare", "admissions", "shared"]),
+			roles: z.array(z.string()),
+			lastUpdateDate: z.date(),
+			sourcePaths: z.array(z.string()),
+			screenshotIds: z.optional(z.array(z.string())),
+			hidden: z.optional(z.boolean()),
+		}),
+});
+
 export const collections = {
 	posts: postsCollection,
 	pages: pagesCollection,
 	services: servicesCollection,
 	works: worksCollection,
+	docs: docsCollection,
 };

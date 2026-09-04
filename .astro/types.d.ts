@@ -157,6 +157,36 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".mdoc"] };
 };
+"docs": {
+"en/admissions-admin-overview.mdoc": {
+	id: "en/admissions-admin-overview.mdoc";
+  slug: "en/admissions-admin-overview";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-staff-attendance-overview.mdoc": {
+	id: "en/educonnect-staff-attendance-overview.mdoc";
+  slug: "en/educonnect-staff-attendance-overview";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/kindercare-parent-getting-started.mdoc": {
+	id: "en/kindercare-parent-getting-started.mdoc";
+  slug: "en/kindercare-parent-getting-started";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-logging-in.mdoc": {
+	id: "en/shared-logging-in.mdoc";
+  slug: "en/shared-logging-in";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+};
 "pages": {
 "en/about.mdoc": {
 	id: "en/about.mdoc";
