@@ -6,7 +6,15 @@ interface Props {
 	[key: string]: unknown;
 }
 
-let { level = 2, tag, class: className, ...rest } = Astro.props as Props;
+// `__collectHeading` is Markdoc's marker telling Astro's collector that this
+// component is a heading. It must not reach the DOM as an attribute.
+let {
+	level = 2,
+	tag,
+	class: className,
+	__collectHeading,
+	...rest
+} = Astro.props as Props;
 
 tag = tag ?? level;
 

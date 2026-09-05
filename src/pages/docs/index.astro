@@ -1,81 +1,71 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Container from "@/components/primitives/Container.astro";
-import Link from "@/components/primitives/Link.astro";
 import Title from "@/components/primitives/Title.astro";
+import DocsShell from "@/layouts/DocsShell.astro";
+import { getDocsNav } from "@/lib/docs-nav";
 
-const allDocs = await getCollection("docs", ({ data }) => !data.hidden);
-
-const productOrder = ["educonnect", "kindercare", "admissions", "shared"] as const;
-const productLabels: Record<string, string> = {
-	educonnect: "EduConnect",
-	kindercare: "KinderCare",
-	admissions: "Admissions",
-	shared: "Shared",
-};
-
-const sections = productOrder.map((product) => ({
-	product,
-	label: productLabels[product],
-	docs: allDocs.filter((doc) => doc.data.product === product),
-}));
+const nav = await getDocsNav();
+const pageCount = nav.reduce(
+	(total, group) =>
+		total + group.sections.reduce((sum, section) => sum + section.docs.length, 0),
+	0,
+);
 ---
 
-<BaseLayout>
-	<section class="py-32 md:py-56">
-		<Container>
-			<div class="text-center">
-				<Title level={1}>User Guide</Title>
-				<p class="mx-auto max-w-2xl pt-6 text-base text-slate-500">
-					Help and how-to documentation for EduConnect, KinderCare and Admissions.
-				</p>
-			</div>
+<DocsShell>
+	<div data-pagefind-ignore>
+		<Title level={1}>User Guide</Title>
+		<p class="max-w-2xl pt-6 text-base text-slate-500">
+			{pageCount} pages covering EduConnect and its KinderCare deployment, the admissions portal
+			and the parent apps. Search above, or browse below.
+		</p>
 
-			<div id="docs-search" class="mx-auto max-w-2xl pt-12"></div>
+		<div class="flex flex-wrap gap-3 pt-8">
+			<a
+				href="/docs/educonnect-overview"
+				class="rounded-full bg-black px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
+				>Start here</a
+			>
+			<a
+				href="/docs/educonnect-setting-up-a-new-institute"
+				class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-black hover:border-slate-400"
+				>Set up a new institute</a
+			>
+			<a
+				href="/docs/educonnect-teacher-getting-started"
+				class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-black hover:border-slate-400"
+				>I'm a teacher</a
+			>
+		</div>
 
-			<div class="mx-auto grid max-w-4xl gap-12 pt-16 sm:grid-cols-2">
-				{
-					sections.map(
-						(section) =>
-							section.docs.length > 0 && (
-								<div>
-									<h2 class="pb-4 text-sm font-semibold uppercase tracking-wide text-black">
-										{section.label}
-									</h2>
-									<ul class="space-y-2">
-										{section.docs.map((doc) => {
-											const [, ...slug] = doc.slug.split("/");
-											return (
-												<li>
-													<Link href={`/docs/${slug.join("/")}`} size="md" style="outline">
-														{doc.data.title}
-													</Link>
-												</li>
-											);
-										})}
-									</ul>
-								</div>
-							),
-					)
-				}
-			</div>
-		</Container>
-	</section>
-</BaseLayout>
+		{
+			nav.map((group) => (
+				<section class="pt-16">
+					<h2 class="text-2xl tracking-tighter text-black">{group.label}</h2>
+					<p class="max-w-2xl pt-2 text-sm text-slate-500">{group.blurb}</p>
 
-<link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
-<script>
-	// Pagefind assets only exist after `npm run build` (see the postbuild script in
-	// package.json) - in local `astro dev` this script tag 404s silently and the
-	// search box just stays empty.
-	const script = document.createElement("script");
-	script.src = "/pagefind/pagefind-ui.js";
-	script.onload = () => {
-		const w = window as unknown as { PagefindUI?: new (opts: Record<string, unknown>) => unknown };
-		if (w.PagefindUI) {
-			new w.PagefindUI({ element: "#docs-search", showSubResults: true });
+					{group.sections.map((section) => (
+						<div class="pt-8">
+							<h3 class="pb-3 text-xs font-semibold uppercase tracking-wide text-slate-400">
+								{section.section}
+							</h3>
+							<ul class="grid gap-x-8 gap-y-4 sm:grid-cols-2">
+								{section.docs.map((doc) => (
+									<li>
+										<a href={doc.href} class="group block">
+											<span class="text-base text-black group-hover:underline">
+												{doc.title}
+											</span>
+											<span class="block pt-1 text-sm leading-snug text-slate-500">
+												{doc.description}
+											</span>
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
+					))}
+				</section>
+			))
 		}
-	};
-	document.head.appendChild(script);
-</script>
+	</div>
+</DocsShell>

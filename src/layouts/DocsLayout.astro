@@ -1,24 +1,25 @@
 ---
 import { Image } from "astro:assets";
+import type { MarkdownHeading } from "astro";
 import type { CollectionEntry } from "astro:content";
-import Container from "@/components/primitives/Container.astro";
 import Prose from "@/components/primitives/Prose.astro";
 import Title from "@/components/primitives/Title.astro";
-import BaseLayout from "./BaseLayout.astro";
+import { docSlug, productLabels } from "@/lib/docs-nav";
+import DocsShell from "./DocsShell.astro";
 
 type Props = {
 	frontmatter: CollectionEntry<"docs">;
+	headings?: MarkdownHeading[];
 };
 
-const { frontmatter } = Astro.props;
-const { product, roles, lastUpdateDate, screenshotIds } = frontmatter.data;
+const { frontmatter, headings = [] } = Astro.props;
+const { product, roles, section, lastUpdateDate, screenshotIds } = frontmatter.data;
 
-const productLabels: Record<string, string> = {
-	educonnect: "EduConnect",
-	kindercare: "KinderCare",
-	admissions: "Admissions",
-	shared: "Shared",
-};
+const slug = docSlug(frontmatter);
+
+// h2s only: h3s are sub-points within a step list and would make the contents
+// longer than the sections it indexes.
+const toc = headings.filter((heading) => heading.depth === 2);
 
 // Screenshots are captured by automation elsewhere (see e.g.
 // attendance-web-app/screenshots/) and land here keyed by a stable id, not
@@ -40,46 +41,105 @@ const screenshots = (screenshotIds ?? [])
 	.filter((s): s is { id: string; image: ImageMetadata } => Boolean(s.image));
 ---
 
-<BaseLayout>
-	<section class="py-32 md:py-56">
-		<Container>
-			<div class="text-center">
-				<div class="inline-flex items-center gap-2 pb-4 lg:pb-6">
-					<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black">
-						{productLabels[product] ?? product}
+<DocsShell currentSlug={slug}>
+	<article class="docs-article" data-pagefind-body>
+		<div class="flex flex-wrap items-center gap-2 pb-4">
+			<span
+				class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black"
+				>{productLabels[product] ?? product}</span
+			>
+			{
+				section && (
+					<span class="rounded-full bg-slate-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
+						{section}
 					</span>
-					{
-						roles.map((role) => (
-							<span class="rounded-full bg-slate-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
-								{role}
-							</span>
-						))
-					}
+				)
+			}
+			{
+				roles.map((role) => (
+					<span class="rounded-full bg-slate-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
+						{role}
+					</span>
+				))
+			}
+		</div>
+
+		<Title level={1}>{frontmatter.data.title}</Title>
+		<p class="max-w-2xl pt-6 text-base text-slate-500">
+			<em>{frontmatter.data.description}</em>
+		</p>
+		<p class="pt-3 text-xs text-slate-400">
+			Last updated {lastUpdateDate?.toString().slice(0, 10)}
+		</p>
+
+		{
+			toc.length > 1 && (
+				<nav
+					aria-label="On this page"
+					class="mt-10 rounded-2xl border border-slate-200 p-5"
+					data-pagefind-ignore
+				>
+					<p class="pb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+						On this page
+					</p>
+					<ul class="space-y-1">
+						{toc.map((heading) => (
+							<li>
+								<a
+									href={`#${heading.slug}`}
+									class="text-sm text-slate-500 hover:text-black"
+								>
+									{heading.text}
+								</a>
+							</li>
+						))}
+					</ul>
+				</nav>
+			)
+		}
+
+		<Prose class="mx-0 max-w-none pt-8"><slot /></Prose>
+
+		{
+			screenshots.length > 0 && (
+				<div class="flex w-full flex-col gap-6 pt-8">
+					{screenshots.map(({ id, image }) => (
+						<Image
+							src={image}
+							alt={id.replace(/-/g, " ")}
+							class="w-full rounded-2xl border border-slate-200"
+						/>
+					))}
 				</div>
-				<Title level={1}>{frontmatter.data.title}</Title>
-				<p class="mx-auto max-w-2xl pt-8 text-base text-slate-500">
-					<em>{frontmatter.data?.description}</em>
-				</p>
-				<p class="pt-4 text-xs text-slate-400">
-					Last updated {lastUpdateDate?.toString().slice(0, 10)}
-				</p>
-			</div>
-			<div class="flex w-full flex-col items-center justify-center pt-12">
-				<Prose><slot /></Prose>
-				{
-					screenshots.length > 0 && (
-						<div class="mx-auto flex w-full max-w-3xl flex-col gap-6 pt-8">
-							{screenshots.map(({ id, image }) => (
-								<Image
-									src={image}
-									alt={id.replace(/-/g, " ")}
-									class="w-full rounded-2xl border border-slate-200"
-								/>
-							))}
-						</div>
-					)
-				}
-			</div>
-		</Container>
-	</section>
-</BaseLayout>
+			)
+		}
+	</article>
+</DocsShell>
+
+<style is:global>
+	/* Documentation typography. The site's default heading scale is built for
+	   marketing pages and renders an h2 at up to 3rem, which reads as a banner
+	   rather than a section break in a page with a dozen of them. */
+	.docs-article .prose :is(h2) {
+		font-size: 1.5rem;
+		line-height: 2rem;
+		margin-top: 2.5rem;
+	}
+	.docs-article .prose :is(h3) {
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+		margin-top: 1.75rem;
+	}
+	.docs-article .prose {
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+
+	/* Wide tables (the "which view answers which question" style) must scroll
+	   inside the article rather than widening the page. */
+	.docs-article .prose table {
+		display: block;
+		overflow-x: auto;
+		max-width: 100%;
+	}
+</style>
