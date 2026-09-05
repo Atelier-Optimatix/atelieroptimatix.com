@@ -1,0 +1,45 @@
+---
+title: "Tutorial: Send a Message to Parents"
+description: Selecting the classes to message, checking the confirmation before it goes, and where to find what was already sent.
+product: educonnect
+section: Tutorials
+order: 210
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/send_messages_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/send_messages/student_selection_state.dart
+hidden: false
+---
+
+**Communication → Send Messages** is the broadcast tool — closures, reminders, event notices.
+
+## Steps
+
+1. Open **Communication → Send Messages**.
+2. Choose your **recipients**, by class or by selecting individual students.
+3. Write the message.
+4. Select send. The **Confirm Message Sending** dialog lists **every class the message is going
+   to**, one per line.
+5. Read that list. It is the last check before a message reaches families, and it is the step that
+   catches the wrong class being selected.
+6. Confirm.
+
+## Before you send
+
+- **Messages cannot be recalled.** There is no unsend.
+- A student whose record has **no contact number** simply receives nothing — no error, no warning
+  in the confirmation. If a class's coverage matters, check contact numbers are filled in first.
+- Attendance SMS is configured separately in **Administration → Settings** and sends automatically;
+  it is not related to this screen.
+
+## What was sent before
+
+**Communication → Notification History** lists previous messages. Check it before sending — a
+duplicate reminder an hour after a colleague's is the most common avoidable mistake here.
+
+## Related
+
+- [Add a Student](/docs/educonnect-tutorial-add-a-student) — where contact numbers come from

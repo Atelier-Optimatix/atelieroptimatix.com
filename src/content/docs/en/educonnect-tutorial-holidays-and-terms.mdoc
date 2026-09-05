@@ -1,0 +1,58 @@
+---
+title: "Tutorial: Set Holidays, Terms and Working Days"
+description: Telling the system which days don't count — and why attendance reports look wrong until you have.
+product: educonnect
+section: Tutorials
+order: 180
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/settings/holiday_management_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/settings/settings_page.dart
+hidden: false
+---
+
+Attendance percentages are only as good as the calendar behind them. A holiday that isn't
+configured is a day the whole school appears to have skipped.
+
+## Working days
+
+In **Administration → Settings**, set which days of the week your institute runs, then **Save
+Working Days**. Everything else is calculated against this, so do it before term starts.
+
+## Adding a holiday
+
+1. Open **Administration → Holidays** (or **Manage Holidays** from Settings).
+2. Select **Add Holiday**.
+3. Fill in:
+   - **Title** — what it is called on reports.
+   - **Start** and **end date**. Both are required — *Title and date range are required.* is the
+     error if either is missing.
+   - **Type** — **School holiday** or **Term break**. Term breaks bound the terms that
+     [term attendance](/docs/educonnect-teacher-class-attendance) and progress reports are
+     calculated over, so the distinction matters.
+   - **Classes** — leave empty for **All classes**, or pick specific ones. This is how you record a
+     year group being away on a trip without marking the whole school absent.
+4. Save. You will see **Holiday created**.
+
+The list shows every holiday with its title, dates, type and which classes it applies to. **Delete**
+confirms first. If it says *No holidays yet. Add one to get started.*, nothing is configured — and
+every non-teaching day so far is being counted against your attendance figures.
+
+## Terms
+
+Term dates are set in **Administration → Settings** (and, for a school group, centrally in the head
+office **Configuration → Term Dates**). Save them with **Save Terms**.
+
+Get terms in before entering exam results: an exam sitting outside every configured term won't land
+in the term it belongs to.
+
+## Do this first
+
+If attendance percentages look implausibly low, check this page before investigating anything else.
+Unconfigured weekends, holidays and term breaks are by far the most common cause.
+
+## Related
+
+- [Setting Up a New Institute](/docs/educonnect-setting-up-a-new-institute)

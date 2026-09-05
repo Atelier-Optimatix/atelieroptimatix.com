@@ -1,0 +1,73 @@
+---
+title: "Tutorial: Add a User and Grant Access"
+description: Creating staff and parent logins, resetting a password, and using Access Control to decide what each account can open.
+product: educonnect
+section: Tutorials
+order: 170
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/user_management_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/user_management/parent_accounts_tab.dart
+  - attendance-web-app/edu-frontend/lib/screens/settings/access_management_page.dart
+hidden: false
+---
+
+## Two screens, two jobs
+
+- **Administration → Users** — who has a login.
+- **Administration → Access Control** — what that login can open.
+
+Creating a user does not by itself grant much. Both steps are needed.
+
+## Adding a user
+
+1. Open **Administration → Users**. It has two tabs: **Staff** and **Parents**.
+2. On **Staff**, select **Add User**.
+3. Fill in the account details and link it to the person's existing record — for a teacher, the
+   [teacher record you already created](/docs/educonnect-tutorial-add-a-teacher).
+4. Save.
+
+Parent accounts mostly create themselves — parents register from the portal with their child's
+Student ID and verify by SMS or email. The **Parents** tab is where you find and manage the result.
+See [Registering as a Parent](/docs/shared-parent-registration).
+
+## Resetting a password
+
+1. Find the user and select **Reset PW**.
+2. Either type a **New Password** and **Confirm Password**, or let the system generate one.
+3. The new password is then **displayed on screen** so you can pass it on.
+
+That display is the whole security model for a reset, so: read it out or hand it over directly,
+don't email it, and tell the person to change it at their first sign-in from
+[My Profile](/docs/educonnect-teacher-my-profile).
+
+## Deleting a user
+
+**Delete** confirms first. It removes the login, not the underlying teacher or student record —
+which is usually what you want for someone who has left.
+
+## Access Control
+
+**Administration → Access Control** is a matrix of screens against roles. It is what makes two
+teachers at the same school see different drawers.
+
+1. Open **Administration → Access Control**.
+2. Turn individual screens on or off. A role with some but not all of a group shows as **Partial
+   access**.
+3. A banner warns **You have unsaved permission changes** until you either **Save changes** or
+   **Discard** them. Don't leave the screen with it showing.
+
+**Reset to defaults** puts a role back to the shipped permission set. That is the fastest way out of
+a configuration nobody can explain any more, but it discards every customisation for that role —
+note what you changed before pressing it.
+
+## Debugging "I can't see that screen"
+
+Almost always access, not a fault. The drawer hides what you cannot open rather than greying it out,
+so a missing menu entry is the expected symptom. Check Access Control for that person's role first.
+
+## Related
+
+- [Finding Your Way Around](/docs/educonnect-navigating-the-dashboard)
