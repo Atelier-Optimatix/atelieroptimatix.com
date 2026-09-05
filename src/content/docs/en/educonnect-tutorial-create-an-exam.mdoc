@@ -1,0 +1,43 @@
+---
+title: "Tutorial: Create an Exam"
+description: Setting up a term, midterm or special exam so classes and subjects can have results entered against it.
+product: educonnect
+section: Tutorials
+order: 90
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/widgets/new_exam_form_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/exams/exam_dashboard_page.dart
+hidden: false
+---
+
+An exam is the container results are entered against. Create it before anyone starts marking.
+
+## Steps
+
+1. Open **Exams** in the side drawer.
+2. Select **New Exam**.
+3. Fill in:
+   - **Exam Name** — what everyone will see in dropdowns and on reports. Include the year if you run
+     the same exam annually (`Term 1 2026`, not `Term 1`).
+   - **Exam Type** — one of **TERM**, **MIDTERM** or **SPECIAL**. This is not cosmetic:
+     [progress reports](/docs/educonnect-tutorial-progress-reports) and term rankings are built from
+     TERM exams, so a term exam typed as SPECIAL will not appear where you expect it.
+   - **Date** — via **Pick Date**.
+4. Select **Save**.
+
+The exam now appears on the Exams dashboard, and classes can be opened under it.
+
+## What to do next
+
+- [Enter results](/docs/educonnect-tutorial-enter-exam-results), class by class and subject by
+  subject — or [upload them from a spreadsheet](/docs/educonnect-tutorial-upload-exam-results).
+- Check **Exams → Rankings** once enough subjects are in.
+- Review any **Exams → Result Changes** raised against marks that are already saved.
+
+## Related
+
+- [Entering and Publishing Exam Results](/docs/shared-staff-exam-results)

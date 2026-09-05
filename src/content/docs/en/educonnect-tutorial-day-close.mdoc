@@ -1,0 +1,50 @@
+---
+title: "Tutorial: Close the Day"
+description: Reconciling counted cash against what the system expected, closing the day, and what reopening one means.
+product: educonnect
+section: Tutorials
+order: 150
+roles:
+  - staff
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/day_close_page.dart
+hidden: false
+---
+
+Day close is the end-of-day cash check: the system tells you what it thinks is in the drawer, you
+count what actually is, and the difference is recorded rather than argued about later.
+
+**You need:** access to **Accounting → Day Close**. Do it after everyone has finished
+[recording payments](/docs/educonnect-tutorial-record-a-payment) for the day.
+
+## Steps
+
+1. Open **Accounting → Day Close** and select the day.
+2. Review the day's transactions listed on the screen. If it says **No transactions on this day**,
+   there is nothing to close — check you have the right date before assuming a problem.
+3. Count the cash and enter the **counted** figure.
+4. Select **Close day**.
+5. The confirmation shows **Expected cash** and **Counted cash** side by side. This is your last
+   look at the discrepancy before it is recorded. If they don't match, cancel and find out why
+   *before* closing — a missing receipt is much easier to trace today than next week.
+6. Confirm.
+
+## Reopening a day
+
+A closed day can be reopened, and past closes are listed on the same screen. Reopening exists for
+genuine corrections — a payment recorded against the wrong day, a miscount discovered immediately —
+not as a routine step. Every close and reopen is recorded.
+
+## Where this sits in the month
+
+1. Payments are recorded through the day.
+2. **Day close** each evening.
+3. [Reconciliation](/docs/educonnect-tutorial-reconciliation) periodically, to catch charges and
+   ledger entries that have drifted apart.
+4. Invoices issued from **Accounting → Invoices**.
+
+## Related
+
+- [Accounting Workflow — Ledger, Day-Close and Reconciliation](/docs/shared-staff-accounting-overview)

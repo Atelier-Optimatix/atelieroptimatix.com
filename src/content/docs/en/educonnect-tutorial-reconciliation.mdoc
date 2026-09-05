@@ -1,0 +1,80 @@
+---
+title: "Tutorial: Reconcile Charges and the Ledger"
+description: Working the four reconciliation tabs — orphaned charges, paid-but-unrecorded, ledger-without-charge, and amount mismatches.
+product: educonnect
+section: Advanced workflows
+order: 20
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/reconciliation_page.dart
+hidden: false
+---
+
+Reconciliation compares two things that should always agree — the **charges** raised against
+students, and the **ledger** of money actually received — and shows you every place they don't.
+
+Run it periodically, and always before closing a term's books.
+
+**You need:** access to **Accounting → Reconciliation**.
+
+## The four tabs
+
+Each tab is a different kind of disagreement, and each has a different fix. The count in the tab
+label is your worklist.
+
+### Orphaned charges
+
+A charge that no longer has a valid fee behind it — usually because a fee schedule was deleted or
+retired while charges were already raised against it. Each row shows the student, class, fee, amount
+and the **reason** it is orphaned.
+
+Two actions:
+
+- **Keep** — the charge is legitimate; leave it standing.
+- **Void** — the charge should never have existed. Voiding asks for confirmation and takes the
+  charge out of the student's outstanding balance.
+
+When it is empty you get *No orphaned charges awaiting review.*
+
+### Paid, no ledger
+
+A charge marked settled with no matching ledger entry. The money was recorded against the student
+but never landed in the day's takings — typically a payment recorded on a day that was later
+adjusted. Trace these against the receipt number before touching anything.
+
+### Ledger, not paid
+
+The mirror image: money in the ledger that isn't attached to a settled charge. Usually a payment
+applied to the wrong student, or one entered without selecting a charge.
+
+### Amount mismatches
+
+The charge and the ledger entry both exist but disagree on the amount. Most often a discount applied
+after the payment was taken, or a partial payment recorded as full.
+
+## Working it
+
+1. Start with **Orphaned charges** — clearing them often removes rows from the other tabs.
+2. Work each remaining tab until the counts are zero, or until every row left is one you have
+   explicitly decided to **Keep**.
+3. Only then close the period.
+
+When everything agrees you will see *Every ledger payment maps to a settled fee.*
+
+## Prevention
+
+Most rows here trace back to one of three habits:
+
+- Deleting fee schedules instead of switching them **Active** off — see
+  [Set Up Fees](/docs/educonnect-tutorial-fee-setup).
+- Adjusting amounts at the counter instead of granting a proper
+  [discount](/docs/educonnect-tutorial-discounts).
+- Reopening a closed day without re-checking the totals — see
+  [Close the Day](/docs/educonnect-tutorial-day-close).
+
+## Related
+
+- [Accounting Workflow — Ledger, Day-Close and Reconciliation](/docs/shared-staff-accounting-overview)
