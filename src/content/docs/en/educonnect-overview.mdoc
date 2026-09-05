@@ -1,0 +1,60 @@
+---
+title: What EduConnect Is
+description: One platform, two names — how EduConnect for schools, KinderCare for kindergartens, the parent portal and the admissions portal fit together.
+product: educonnect
+section: Getting started
+order: 0
+roles:
+  - admin
+  - staff
+  - teacher
+  - parent
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/
+hidden: false
+---
+
+## The short version
+
+**EduConnect is the main application.** It is the staff dashboard where classes, students,
+teachers, attendance, the timetable, exams and fees all live. Almost everything in this guide is
+about that one application.
+
+The same application is sold under two names, depending on who it is deployed for:
+
+- **EduConnect** — the deployment for schools.
+- **KinderCare** — the deployment for kindergartens.
+
+They are not separate products with separate features. They are the same codebase with different
+wording, different defaults and a different set of screens switched on. A kindergarten does not get
+a cut-down EduConnect; it gets EduConnect with the parts a kindergarten actually uses.
+
+If a screen is described anywhere in the **EduConnect** section of this guide, assume it also
+exists in a KinderCare deployment unless the KinderCare section says otherwise.
+
+## The pieces around it
+
+Four things sit alongside the staff dashboard:
+
+| Piece | Who signs in | What it's for |
+| --- | --- | --- |
+| **Staff dashboard** | Staff, teachers, admins | Everything operational — this is EduConnect proper |
+| **Parent portal** | Parents | Attendance, progress reports, the handbook, paying fees |
+| **Admissions portal** | Applicants, before they are students | Reading the prospectus, applying, paying the application fee |
+| **KinderCare mobile apps** | Kindergarten staff and parents | The two phone apps described in the KinderCare section |
+
+The two KinderCare mobile apps — a **staff app** and a **parent app** — only exist for kindergarten
+deployments. Schools use the web parent portal instead.
+
+## Why the wording changes between institutes
+
+The dashboard reads its own vocabulary from the institute's settings, so the same button can say
+"School" at one institute and "Kindergarten" at another. That is configuration, not a different
+build. See [Why Terminology Changes Between Institutes](/docs/shared-institute-branding).
+
+## Where to start
+
+- New to the staff dashboard? [Finding Your Way Around](/docs/educonnect-navigating-the-dashboard).
+- Setting up an institute from nothing? [Setting Up a New Institute](/docs/educonnect-setting-up-a-new-institute).
+- A teacher? Go straight to [Your First Week as a Teacher](/docs/educonnect-teacher-getting-started).

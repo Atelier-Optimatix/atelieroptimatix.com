@@ -1,0 +1,65 @@
+---
+title: "Tutorial: Add a Class"
+description: Creating a class from the Classes screen, what each of the four fields is for, and what to do next once the class exists.
+product: educonnect
+section: Tutorials
+order: 10
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/components/class_components/add_class_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/class_list.dart
+hidden: false
+---
+
+A class is the container almost everything else hangs off — students, attendance, the timetable
+grid, exam results and fee assignments are all addressed by class. Create the class first.
+
+**You need:** access to **Students → Classes**, and permission to create classes.
+
+## Steps
+
+1. Open **Students → Classes** in the side drawer.
+2. Select **Add Class**. The **Add New Class** dialog opens.
+3. Fill in the four fields:
+   - **Grade** — pick from the list. This is what groups classes together for
+     [Grade Curriculum](/docs/educonnect-tutorial-grade-curriculum) and for grade-wide reporting,
+     so it has to be right.
+   - **Syllabus** — pick from the list. Classes on different syllabuses in the same grade are
+     reported separately.
+   - **Class Name** — required, and this is the class's identifier throughout the system. Short and
+     conventional is better than descriptive: `10-A`, `Grade 3 Blue`. It is what you will see in
+     every class dropdown from now on.
+   - **Teacher Name** — optional. You can leave it empty and set the class teacher properly later.
+4. Select **Save**.
+
+You should see **Class added successfully**, and the new class appears in the list. If you get
+**Failed to add class.** instead, the most common cause is a class name that already exists.
+
+## Setting the class teacher
+
+The **Teacher Name** field on the dialog is free text — it is a label, not a link to a teacher
+record. To actually assign the teacher who owns the class:
+
+1. Open the class from **Students → Classes**.
+2. Use the **⋮ More options** menu on the class screen.
+3. Choose **Edit Class Teacher** and pick the teacher.
+
+This matters: the class teacher is who gets the class in **My Class**, and who can mark its
+attendance. See [Taking Attendance as a Teacher](/docs/educonnect-teacher-taking-attendance).
+
+## What to do next
+
+Once the class exists, in roughly this order:
+
+1. [Add students to it](/docs/educonnect-tutorial-add-a-student) — one at a time, or
+   [import them from Excel](/docs/educonnect-tutorial-import-students).
+2. [Assign its subjects](/docs/educonnect-tutorial-class-subjects) so it can be timetabled.
+3. Include it in [fee setup](/docs/educonnect-tutorial-fee-setup) if fees differ by class.
+
+## Related
+
+- [Managing Students, Classes and Substitutions](/docs/shared-staff-student-admissions-management)
+- [Setting Up a New Institute](/docs/educonnect-setting-up-a-new-institute)
