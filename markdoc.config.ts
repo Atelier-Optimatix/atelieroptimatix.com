@@ -1,4 +1,4 @@
-import { component, defineMarkdocConfig, nodes } from "@astrojs/markdoc/config";
+import { Markdoc, component, defineMarkdocConfig, nodes } from "@astrojs/markdoc/config";
 
 export default defineMarkdocConfig({
 	nodes: {
@@ -7,6 +7,12 @@ export default defineMarkdocConfig({
 			render: undefined, // default 'article'
 		},
 		heading: {
+			// Spread the whole default node, not just its attributes: the default
+			// carries the `transform` that slugs each heading into an `id` and
+			// flags it for Astro's `headings` collector. Overriding the node
+			// without it silently produced anchor-less headings and an empty
+			// `headings` array, which is what the docs table of contents needs.
+			...nodes.heading,
 			attributes: {
 				...nodes.heading.attributes, // Use the correct base attributes for a heading
 				// Additional custom attributes if needed
@@ -19,8 +25,30 @@ export default defineMarkdocConfig({
 			render: "a",
 			attributes: {
 				href: { type: String },
-				target: { type: String, default: "_blank" },
-				rel: { type: String, default: "noopener noreferrer" },
+				target: { type: String },
+				rel: { type: String },
+			},
+			// Open external links in a new tab, but keep internal navigation in
+			// place. A blanket target="_blank" default meant every cross-reference
+			// between guide pages spawned a tab, which makes a heavily cross-linked
+			// set of docs unusable after about five clicks.
+			transform(node, config) {
+				const attributes = node.transformAttributes(config);
+				const children = node.transformChildren(config);
+				const href = String(attributes.href ?? "");
+				const isInternal = href.startsWith("/") || href.startsWith("#");
+
+				return new Markdoc.Tag(
+					"a",
+					isInternal
+						? attributes
+						: {
+								...attributes,
+								target: attributes.target ?? "_blank",
+								rel: attributes.rel ?? "noopener noreferrer",
+							},
+					children,
+				);
 			},
 		},
 	},

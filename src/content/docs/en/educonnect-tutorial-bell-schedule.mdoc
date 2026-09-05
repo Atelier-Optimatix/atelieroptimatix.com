@@ -1,0 +1,59 @@
+---
+title: "Tutorial: Set Up the Bell Schedule"
+description: Defining the periods that make up a school day — the first thing the timetable needs, and the one it cannot be generated without.
+product: educonnect
+section: Tutorials
+order: 50
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/timetable_config_screen.dart
+hidden: false
+---
+
+The bell schedule is the shape of the day: how many periods there are, when each starts and ends,
+and which of them are breaks. Nothing in **Timetable** works until it exists.
+
+**You need:** access to **Timetable → Configuration**.
+
+## Steps
+
+1. Open **Timetable → Configuration**. It opens on the **Bell Schedule** tab.
+2. Select **Create Bell Schedule** and give it a name.
+3. Add periods with **Add Period**. Each period has:
+   - a **label** — pre-filled as `P1`, `P2`, … and editable to whatever you call them,
+   - a **start** and **end** time,
+   - a **Break** switch — turn it on for intervals and lunch. Break periods are still part of the
+     day, but nothing is ever scheduled into them.
+4. Watch the **Schedule Preview** underneath as you go. It draws the day back to you and flags
+   problems — overlapping times, a period that ends before it starts — inline, so fix them here
+   rather than after saving.
+5. Mark one schedule as **Default**. That is the one used for any class that isn't explicitly on
+   another.
+6. Select **Save Bell Schedule**. You should see **Bell schedule saved**.
+
+## More than one schedule
+
+You can keep several — a normal day and a half day, or different shapes for junior and senior
+sections. Exactly one is the default; the rest are selected explicitly. When you
+[generate the timetable](/docs/educonnect-tutorial-generate-timetable) the preflight check tells you
+how many schedules it found.
+
+## Deleting
+
+Deleting a schedule is immediate and confirms first. Anything currently placed against it will need
+re-placing, so prefer editing an existing schedule over deleting and recreating.
+
+## What to do next
+
+The rest of **Timetable → Configuration** can wait until you actually generate:
+
+- **Teacher Constraints** — when each teacher is available, and their limits (default: max 6 lessons
+  a day, max 3 consecutive, minimum gap 0).
+- **Subjects & Rules** and **Subject Groups** — how subjects behave, and which run as a set of
+  options at the same time.
+- **Classrooms** — the rooms lessons can be matched to.
+- **Import Data** — bulk-load setup instead of entering it screen by screen.
+
+Next in the chain: [Grade Curriculum](/docs/educonnect-tutorial-grade-curriculum).

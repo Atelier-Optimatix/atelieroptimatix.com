@@ -1,0 +1,49 @@
+---
+title: "Tutorial: Watch Attendance as It Happens"
+description: Using the Live Monitor at the gate, and building a saved filter for the questions you ask every week.
+product: educonnect
+section: Tutorials
+order: 220
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/attendance_filter/attendance_filter_page.dart
+  - attendance-web-app/edu-frontend/lib/navigation/routes/attendance_routes.dart
+hidden: false
+---
+
+## Live Monitor
+
+**Attendance → Live Monitor** shows scans as they arrive. It is a morning screen: leave it up while
+students are arriving and you can see the gate working — or see immediately that it isn't.
+
+Use it for:
+
+- Confirming a reader is actually registering scans, before a hundred students walk past a dead one.
+- Watching late arrivals as they come in, rather than reconstructing them afterwards.
+
+If nothing appears at all during arrivals, treat it as a device problem rather than an attendance
+one and check the reader.
+
+## Saved filters
+
+**Attendance → Saved Filters** is for the questions you ask repeatedly — *students below 80% this
+term*, *this year group's absences this week*. Build the query once, save it, and re-run it instead
+of rebuilding it each time.
+
+This is the difference between a report you run monthly and one you actually run. If you find
+yourself setting the same dropdowns every Monday, save it.
+
+## The rest of the Attendance group
+
+- **Summary** — the institute-wide view, drilling down to a class.
+- **Reports** — the printable output.
+- **Saved Filters** — as above.
+- **Live Monitor** — as above.
+
+## Related
+
+- [Taking Attendance as Staff](/docs/shared-staff-attendance-overview)
+- [Read Your Class's Attendance](/docs/educonnect-teacher-class-attendance)

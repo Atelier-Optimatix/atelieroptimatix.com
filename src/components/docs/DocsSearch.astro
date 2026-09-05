@@ -1,0 +1,62 @@
+---
+/**
+ * Pagefind search box. Rendered on every docs page (index and article), which
+ * is why the mount + loader live here rather than being repeated per page.
+ *
+ * Pagefind's assets are produced by the `postbuild` script in package.json, so
+ * they only exist after a real build. Under `astro dev` the script tag 404s
+ * silently and the box simply stays empty - that is expected, not a fault.
+ */
+type Props = { id?: string; class?: string };
+const { id = "docs-search", class: className } = Astro.props;
+---
+
+<div id={id} class:list={["docs-search", className]} data-pagefind-ignore></div>
+
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+<script is:inline define:vars={{ id }}>
+	(() => {
+		const mount = () => {
+			const el = document.getElementById(id);
+			if (!el || el.dataset.mounted) return;
+			if (!window.PagefindUI) return;
+			el.dataset.mounted = "true";
+			new window.PagefindUI({
+				element: `#${id}`,
+				showSubResults: true,
+				showImages: false,
+				resetStyles: false,
+				translations: { placeholder: "Search the guide" },
+			});
+		};
+
+		if (window.PagefindUI) {
+			mount();
+		} else if (!document.getElementById("pagefind-ui-script")) {
+			const script = document.createElement("script");
+			script.id = "pagefind-ui-script";
+			script.src = "/pagefind/pagefind-ui.js";
+			script.onload = mount;
+			document.head.appendChild(script);
+		} else {
+			document.getElementById("pagefind-ui-script")?.addEventListener("load", mount);
+		}
+
+		// The site uses view transitions, so a docs -> docs navigation reuses the
+		// document and never fires another load event.
+		document.addEventListener("astro:page-load", mount);
+	})();
+</script>
+
+<style is:global>
+	.docs-search .pagefind-ui {
+		--pagefind-ui-scale: 0.75;
+		--pagefind-ui-primary: #000;
+		--pagefind-ui-text: #0f172a;
+		--pagefind-ui-background: #fff;
+		--pagefind-ui-border: #e2e8f0;
+		--pagefind-ui-border-width: 1px;
+		--pagefind-ui-border-radius: 0.75rem;
+		--pagefind-ui-font: inherit;
+	}
+</style>

@@ -60,15 +60,25 @@ const servicesCollection = defineCollection({
 		}),
 });
 
-// User guide / help center content. `product` and `roles` drive the docs IA
-// (grouping by /docs/<product>/<role>/...); `sourcePaths` powers the CI
-// staleness check that flags when mapped app code changes without a doc update.
+// User guide / help center content. `product` and `section` drive the docs IA
+// (see src/lib/docs-nav.ts, which owns the ordering and the labels); `roles`
+// are rendered as badges; `sourcePaths` powers the CI staleness check that
+// flags when mapped app code changes without a doc update.
+//
+// A doc's filename is its slug, and slugs are load-bearing: the in-app help
+// tooltips in attendance-web-app, educonnect-public and educonnect-admissions
+// reference them by string (`HelpTooltip(slug: '...')`). Renaming a file
+// silently empties those tooltips - add a new doc instead.
 const docsCollection = defineCollection({
 	schema: () =>
 		z.object({
 			title: z.string(),
 			description: z.string(),
 			product: z.enum(["educonnect", "kindercare", "admissions", "shared"]),
+			// Sidebar grouping within a product. Omitted means "Guides".
+			section: z.optional(z.string()),
+			// Sort position within a section; ties fall back to title order.
+			order: z.optional(z.number()),
 			roles: z.array(z.string()),
 			lastUpdateDate: z.date(),
 			sourcePaths: z.array(z.string()),

@@ -1,0 +1,98 @@
+---
+title: Setting Up a New Institute
+description: The full order of operations from an empty system to a running one — and what breaks if you do it out of order.
+product: educonnect
+section: Getting started
+order: 2
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/
+hidden: false
+---
+
+Almost every screen in EduConnect depends on something configured on another screen. Doing this in
+order takes an afternoon; doing it out of order means redoing parts of it.
+
+Each step links to its own tutorial.
+
+## 1. The calendar
+
+**Administration → Settings**, then **Administration → Holidays**.
+
+Working days, term dates, holidays and term breaks. Everything attendance-related is a percentage of
+these, so getting them in first means your figures are right from day one instead of being corrected
+in week three.
+
+→ [Set Holidays, Terms and Working Days](/docs/educonnect-tutorial-holidays-and-terms)
+
+## 2. People and places
+
+1. **Classes** — → [Add a Class](/docs/educonnect-tutorial-add-a-class)
+2. **Teachers**, with the subjects each one teaches — →
+   [Add a Teacher](/docs/educonnect-tutorial-add-a-teacher)
+3. **Students**, into their classes — →
+   [Add a Student](/docs/educonnect-tutorial-add-a-student) or
+   [Import from Excel](/docs/educonnect-tutorial-import-students)
+4. Set the **class teacher** on each class.
+
+Teachers before students, because a class with a teacher on it is one less thing to revisit.
+
+## 3. Logins
+
+**Administration → Users**, then **Administration → Access Control**.
+
+A teacher record is not a login. Create the accounts, then decide what each role can open.
+
+→ [Add a User and Grant Access](/docs/educonnect-tutorial-users-and-access)
+
+## 4. The timetable chain
+
+Strictly in this order — each step is the input to the next:
+
+1. **Bell Schedule** — → [Set Up the Bell Schedule](/docs/educonnect-tutorial-bell-schedule)
+2. **Subjects & Rules**, **Subject Groups**, **Classrooms**, **Teacher Constraints** — the rest of
+   **Timetable → Configuration**
+3. **Grade Curriculum**, then **Apply to Grade** — →
+   [Create or Edit a Grade Curriculum](/docs/educonnect-tutorial-grade-curriculum)
+4. **Class Subjects**, assigning a teacher to each — →
+   [Assign Subjects and Teachers](/docs/educonnect-tutorial-class-subjects)
+5. **Generate** — → [Generate the Timetable](/docs/educonnect-tutorial-generate-timetable)
+
+Generating with an incomplete chain is the single most common source of "the timetable doesn't
+work". The generator can only place what steps 1–4 have told it about.
+
+## 5. Money
+
+1. **Fee Setup** — the fee types and their instalments →
+   [Set Up Fees](/docs/educonnect-tutorial-fee-setup)
+2. **Discounts** — scholarships, sibling and staff reductions →
+   [Set Up and Grant Discounts](/docs/educonnect-tutorial-discounts)
+3. **Portal Access Rules** — what unpaid fees do to a parent's portal access
+4. Online payments, in **Administration → Settings**, if you take card payments
+
+Fees before students start paying, obviously — but also before the term starts, since due dates are
+what make a charge overdue.
+
+## 6. Cards
+
+Add blank cards to the pool, upload the card design, and make sure every student and teacher record
+has an **RFID**. A record without one can never register attendance.
+
+→ [Issue and Replace ID Cards](/docs/educonnect-tutorial-id-cards)
+
+## 7. What parents see
+
+1. **Handbook** — → [Write and Publish the Student Handbook](/docs/educonnect-tutorial-handbook)
+2. **Prospectus**, if you take admissions through the portal
+3. Institute branding and terminology in **Administration → Settings** —
+   [why the wording changes](/docs/shared-institute-branding)
+
+## 8. Then, in term
+
+- Attendance daily — [as a teacher](/docs/educonnect-teacher-taking-attendance)
+- [Exams](/docs/educonnect-tutorial-create-an-exam) and
+  [results](/docs/educonnect-tutorial-enter-exam-results) as they happen
+- [Day close](/docs/educonnect-tutorial-day-close) each evening
+- [Progress reports](/docs/educonnect-tutorial-progress-reports) at the end of term

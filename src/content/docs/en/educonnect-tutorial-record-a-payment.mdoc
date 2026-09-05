@@ -1,0 +1,55 @@
+---
+title: "Tutorial: Record a Payment at the Counter"
+description: Taking a cash or cheque payment against a student's outstanding fees and issuing the receipt.
+product: educonnect
+section: Tutorials
+order: 140
+roles:
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/manual_payment_entry_page.dart
+hidden: false
+---
+
+This is the counter workflow — a parent in front of you, paying by cash, cheque or bank transfer.
+Card payments made by parents themselves land in **Accounting → Online Payments** instead and need
+no data entry.
+
+**You need:** access to **Accounting → Manual Payment Entry**, and
+[fees that have been set up](/docs/educonnect-tutorial-fee-setup).
+
+## Steps
+
+1. Open **Accounting → Manual Payment Entry**.
+2. Enter the student's ID or name and select **Find**. **Clear** resets the screen for the next
+   parent.
+3. The student's fees load in two lists:
+   - **Pending fees** — what is outstanding, each with its due date. If it says *Nothing outstanding
+     — all fees settled*, there is nothing to take.
+   - **Settled** — what has already been paid, with the date and method.
+4. Find the charge being paid and select **Receive**.
+5. In the dialog, check the amounts. Where a discount applies you will see the **Original** amount
+   alongside what is actually due — take the amount due, not the original.
+6. Set the **received on** date if the money came in earlier than today. It defaults to today.
+7. Record the **payment method**.
+8. Attach an image if your institute wants one — a photo of the cheque or the transfer slip.
+   **Remove** clears it if you pick the wrong file.
+9. Select **Confirm _amount_**.
+
+You will see **Payment recorded — receipt #_n_**. That receipt number is the parent's reference;
+give it to them.
+
+If you get **Payment failed**, nothing was recorded — do not re-enter it as a second payment until
+you have confirmed the first did not go through.
+
+## Checking your own work
+
+**My entries today** lists everything you have taken during this session, with receipt numbers. Use
+it to check a total before handing over, and at the end of your shift before
+[day close](/docs/educonnect-tutorial-day-close).
+
+## Related
+
+- [Close the Day](/docs/educonnect-tutorial-day-close)
+- [Accounting Workflow](/docs/shared-staff-accounting-overview)

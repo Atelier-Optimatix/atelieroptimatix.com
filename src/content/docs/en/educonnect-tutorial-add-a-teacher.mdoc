@@ -1,0 +1,73 @@
+---
+title: "Tutorial: Add a Teacher"
+description: Creating a teacher record, assigning the subjects they teach, and the separate step that gives them a login.
+product: educonnect
+section: Tutorials
+order: 40
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/add_teacher_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_management_page.dart
+hidden: false
+---
+
+## A teacher record is not a login
+
+These are two separate things, and doing only the first is the most common reason a new teacher
+"can't sign in":
+
+1. **The teacher record** — the person, their subjects, their attendance, their timetable. Created
+   here.
+2. **The user account** — the username and password they actually sign in with. Created in
+   **Administration → Users**, see [Users and Access](/docs/educonnect-tutorial-users-and-access).
+
+Create the teacher record first, then the account.
+
+## Steps
+
+1. Open **Teachers → Directory**.
+2. Select **Add Teacher**.
+3. Fill in the form:
+   - **Teacher ID** — required and unique. The field warns you with **Duplicate Teacher ID
+     detected** if it is taken.
+   - **Full Name** — required.
+   - **Gender** — required.
+   - **Date of Birth** and **Joined Date** — both optional, both `YYYY-MM-DD`.
+   - **Contact Number**, **Email**, **Address**, **Religion**, **Ethnicity**, **Nationality** — all
+     optional.
+   - **RFID** — optional. This is the card the teacher scans for their *own* attendance. Without it,
+     their attendance has to be recorded another way.
+4. Add the **subjects they teach**. This is the field that matters most downstream: the timetable
+   generator and the substitution suggestions both only ever propose a teacher for a subject listed
+   here. A teacher with no subjects will never be auto-scheduled.
+5. Add a **photo** if your institute uses them.
+6. Select **SAVE TEACHER**.
+
+## Then give them a login
+
+1. Open **Administration → Users**.
+2. Select **Add User** and create the account, linking it to the teacher record you just made.
+3. Check what the account can reach in **Administration → Access Control** — see
+   [Users and Access](/docs/educonnect-tutorial-users-and-access).
+
+## Editing and deleting
+
+Open the teacher from **Teachers → Directory** and use **Edit**. **DELETE TEACHER** confirms first,
+and removes the record along with its attendance history — for someone who has left, check with your
+institute before deleting rather than after.
+
+## What to do next
+
+- Assign them to classes as a subject teacher in
+  [Class Subjects](/docs/educonnect-tutorial-class-subjects).
+- Set when they are and aren't available in **Timetable → Configuration → Teacher Constraints**,
+  before you [generate the timetable](/docs/educonnect-tutorial-generate-timetable).
+- Make them a class teacher via **Edit Class Teacher** on a class — see
+  [Add a Class](/docs/educonnect-tutorial-add-a-class).
+
+## Related
+
+- [Managing Teachers](/docs/shared-staff-teacher-management)
+- [Teacher Attendance & Substitution](/docs/shared-staff-teacher-attendance)

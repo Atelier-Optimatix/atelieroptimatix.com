@@ -1,0 +1,61 @@
+---
+title: "Tutorial: Create or Edit a Grade Curriculum"
+description: Setting what a whole grade is taught and how often, then pushing it down to every class in that grade in one action.
+product: educonnect
+section: Tutorials
+order: 60
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/grade_curriculum_screen.dart
+hidden: false
+---
+
+The grade curriculum is the template: *"every Grade 8 class is taught these subjects, this many
+times a week."* You write it once per grade, then apply it to all that grade's classes rather than
+assigning subjects class by class.
+
+**You need:** access to **Timetable → Grade Curriculum**, and classes that already have the right
+grade set on them — see [Add a Class](/docs/educonnect-tutorial-add-a-class).
+
+## Steps
+
+1. Open **Timetable → Grade Curriculum**.
+2. Pick the **grade** you are editing at the top.
+3. For each subject the grade is taught, select **Add Subject** and fill in:
+   - **Subject** — searchable; the list comes from **Timetable → Configuration → Subjects & Rules**.
+   - **Lessons / week** — how many periods a week this subject gets. This is the number the
+     generator tries to place.
+   - **Max per day** — the ceiling on any single day. Leave blank to accept the default.
+   - **Max consecutive** — how many may run back to back. Leave blank to accept the default.
+
+   Blank is not zero. Blank means "use the default"; the row shows an **(override)** marker only
+   where you have set something explicitly.
+4. Optionally fill in the **Book List** — a free-text list of the grade's books, kept alongside the
+   curriculum.
+5. Select **Save Curriculum**. You should see **Curriculum saved successfully**.
+
+## Pushing it down to the classes
+
+Saving the curriculum does **not** by itself change any class. To do that:
+
+1. Select **Apply to Grade *N***.
+2. Read the confirmation. It tells you what will happen: *subject entries are created for all
+   classes in that grade, and existing teacher assignments are not changed.*
+3. Confirm. The result tells you how many entries were **created** and how many **updated**.
+
+Because it never touches teacher assignments, applying again after a curriculum change is safe — it
+adds and adjusts subjects without unpicking who teaches what.
+
+## Editing an existing curriculum
+
+Change the numbers in place and **Save Curriculum**, then **Apply to Grade** again to push the
+change out. Removing a subject from the curriculum does not retroactively strip it from classes that
+already have it; remove it in [Class Subjects](/docs/educonnect-tutorial-class-subjects) if you need
+it gone.
+
+## What to do next
+
+[Assign teachers to those subjects](/docs/educonnect-tutorial-class-subjects), then
+[generate the timetable](/docs/educonnect-tutorial-generate-timetable).
