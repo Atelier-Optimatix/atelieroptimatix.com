@@ -158,23 +158,30 @@ declare module 'astro:content' {
 } & { render(): Render[".mdoc"] };
 };
 "docs": {
-"en/admissions-admin-overview.mdoc": {
-	id: "en/admissions-admin-overview.mdoc";
-  slug: "en/admissions-admin-overview";
+"en/admissions-applying.mdoc": {
+	id: "en/admissions-applying.mdoc";
+  slug: "en/admissions-applying";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdoc"] };
-"en/educonnect-staff-attendance-overview.mdoc": {
-	id: "en/educonnect-staff-attendance-overview.mdoc";
-  slug: "en/educonnect-staff-attendance-overview";
+"en/admissions-payment.mdoc": {
+	id: "en/admissions-payment.mdoc";
+  slug: "en/admissions-payment";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdoc"] };
-"en/kindercare-parent-getting-started.mdoc": {
-	id: "en/kindercare-parent-getting-started.mdoc";
-  slug: "en/kindercare-parent-getting-started";
+"en/shared-head-office-group-reporting.mdoc": {
+	id: "en/shared-head-office-group-reporting.mdoc";
+  slug: "en/shared-head-office-group-reporting";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-institute-branding.mdoc": {
+	id: "en/shared-institute-branding.mdoc";
+  slug: "en/shared-institute-branding";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
@@ -182,6 +189,97 @@ declare module 'astro:content' {
 "en/shared-logging-in.mdoc": {
 	id: "en/shared-logging-in.mdoc";
   slug: "en/shared-logging-in";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-parent-getting-started.mdoc": {
+	id: "en/shared-parent-getting-started.mdoc";
+  slug: "en/shared-parent-getting-started";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-parent-payments.mdoc": {
+	id: "en/shared-parent-payments.mdoc";
+  slug: "en/shared-parent-payments";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-parent-progress-reports.mdoc": {
+	id: "en/shared-parent-progress-reports.mdoc";
+  slug: "en/shared-parent-progress-reports";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-parent-registration.mdoc": {
+	id: "en/shared-parent-registration.mdoc";
+  slug: "en/shared-parent-registration";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-parent-student-analytics.mdoc": {
+	id: "en/shared-parent-student-analytics.mdoc";
+  slug: "en/shared-parent-student-analytics";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-accounting-overview.mdoc": {
+	id: "en/shared-staff-accounting-overview.mdoc";
+  slug: "en/shared-staff-accounting-overview";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-analytics.mdoc": {
+	id: "en/shared-staff-analytics.mdoc";
+  slug: "en/shared-staff-analytics";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-attendance-overview.mdoc": {
+	id: "en/shared-staff-attendance-overview.mdoc";
+  slug: "en/shared-staff-attendance-overview";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-exam-results.mdoc": {
+	id: "en/shared-staff-exam-results.mdoc";
+  slug: "en/shared-staff-exam-results";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-student-admissions-management.mdoc": {
+	id: "en/shared-staff-student-admissions-management.mdoc";
+  slug: "en/shared-staff-student-admissions-management";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-teacher-attendance.mdoc": {
+	id: "en/shared-staff-teacher-attendance.mdoc";
+  slug: "en/shared-staff-teacher-attendance";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-teacher-management.mdoc": {
+	id: "en/shared-staff-teacher-management.mdoc";
+  slug: "en/shared-staff-teacher-management";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-timetable.mdoc": {
+	id: "en/shared-staff-timetable.mdoc";
+  slug: "en/shared-staff-timetable";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
