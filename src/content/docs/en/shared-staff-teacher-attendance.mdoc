@@ -1,0 +1,62 @@
+---
+title: Teacher Attendance & Substitution
+description: Tracking staff attendance, and building a cover plan for the teachers who are absent today.
+product: shared
+roles:
+  - admin
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/substitution_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_attendance_report_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_monthly_attendance_table.dart
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## Teacher attendance
+
+This is staff attendance, and it's separate from the student attendance teachers take for their
+classes.
+
+It shows up in two places on purpose:
+
+- **Teachers → Attendance**, for admins looking at the whole staff.
+- **My Attendance**, a top-level drawer item, so a teacher can check their own record without being
+  given access to the rest of the Teachers section.
+
+Both open the same report, and both can drill into a **monthly** table for a longer view.
+
+## Substitution
+
+**Teachers → Substitution** answers a single daily question: who's absent, and who covers their
+lessons?
+
+The page opens on today's absences and tells you the count directly — *"all present"*, or how many
+teachers are absent today.
+
+From there:
+
+- **Auto-Generate** proposes a cover plan for you.
+- **Save Plan** stores it; once a plan exists the same button becomes **Update Plan**, so you can
+  regenerate or adjust and save again.
+- **Print** produces the plan as a printable sheet for the staff room.
+
+Absences also distinguish an **early departure** from a full-day absence, so a teacher who leaves
+part-way through the day is covered only for the periods they actually miss.
+
+{% callout type="note" %}
+The action buttons can disappear while you're on the page. That normally means every teacher who
+was marked absent has since tapped in, so there's nothing left to cover — the plan isn't lost, it's
+simply no longer needed.
+{% /callout %}
+
+Because cover depends on knowing who teaches what and when, substitution is only as good as the
+timetable behind it. If a proposed plan looks wrong, check the timetable and teacher constraints
+before assuming the suggestion is at fault.
+
+## Related
+
+- [Managing Teachers](/docs/shared-staff-teacher-management)
+- [Building the Timetable](/docs/shared-staff-timetable)
+- [Taking Attendance as Staff](/docs/shared-staff-attendance-overview)

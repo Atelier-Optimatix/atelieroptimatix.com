@@ -1,0 +1,64 @@
+---
+title: Head Office & Group Reporting
+description: Reporting across every branch of a school group, and why head-office accounts can't open a single branch's screens.
+product: shared
+roles:
+  - org_admin
+  - super_admin
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/head_office_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/head_office/
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## Who this is for
+
+Head office is for people who run a *group* of institutes rather than one of them. There are two
+such roles:
+
+- **Organisation admin** — runs one customer's school group.
+- **Super admin** — internal platform staff.
+
+Both read the same group reports. The difference is reach: how many branches the account resolves
+to. A super admin additionally gets the **Platform** screens described below.
+
+{% callout type="note" %}
+A head-office account is confined to this section. If you sign in expecting a normal staff
+dashboard and land in **Group Overview** instead, nothing has gone wrong — that account is
+head-office, and the ordinary per-branch screens are deliberately out of reach for it. Day-to-day
+work in a single branch needs a staff account for that branch.
+{% /callout %}
+
+## Group Overview and the reports beneath it
+
+**Group Overview** is the landing page. Beneath it sit the group-wide views, each the same question
+a single branch would ask, but answered across every branch you can see:
+
+- **Branches** — the institutes in your group.
+- **Teachers**, **Accounting**, **Analytics**, **Collections**, **Operations**, **Exams**,
+  **Admissions** and **Demographics** — group-level reporting for each of those areas.
+
+These are read-across-the-group reports. Changing something for one branch still happens inside
+that branch, by someone with access to it.
+
+## Configuration
+
+Two group-level settings live apart from the reports:
+
+- **Discounts** — discount configuration applied across the group.
+- **Term Dates** — the group's term calendar.
+
+## Platform screens (super admin only)
+
+**Organisations** and **Provision Branch** are internal platform work — creating a new customer
+organisation, and standing up a new branch inside one. An organisation admin doesn't see these
+even though they see everything above, and the restriction is enforced on the server as well as
+hidden in the interface, so it isn't something that can be worked around by going to the address
+directly.
+
+## Related
+
+- [Accounting Overview](/docs/shared-staff-accounting-overview)
+- [Reading the Analytics Section](/docs/shared-staff-analytics)
+- [Institute Branding](/docs/shared-institute-branding)

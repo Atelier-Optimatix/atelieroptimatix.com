@@ -25,6 +25,16 @@ export default defineMarkdocConfig({
 		},
 	},
 	tags: {
+		// Lowercase because docs content authors write it inline as
+		// `{% callout type="note" %}`, unlike the capitalised page-section tags
+		// below which are placed by the Keystatic editor.
+		callout: {
+			attributes: {
+				type: { type: String, render: "type", matches: ["note", "warning"], default: "note" },
+			},
+			children: ["paragraph", "list", "link"],
+			render: component("./src/components/primitives/Callout.astro"),
+		},
 		Container: {
 			attributes: {
 				class: { type: String, render: "class" },

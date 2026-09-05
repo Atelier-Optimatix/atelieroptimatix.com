@@ -1,0 +1,26 @@
+---
+// Used by docs content via the Markdoc `{% callout %}` tag. Docs repeatedly
+// need to set one paragraph apart from the surrounding steps - "this looks
+// like a bug but isn't", "check this before you file a ticket" - and burying
+// that in ordinary prose is exactly where readers skim past it.
+type Props = {
+	type?: "note" | "warning";
+};
+
+const { type = "note" } = Astro.props;
+
+const styles: Record<string, string> = {
+	note: "border-slate-300 bg-slate-50 text-slate-700",
+	warning: "border-amber-300 bg-amber-50 text-amber-900",
+};
+
+const labels: Record<string, string> = {
+	note: "Note",
+	warning: "Careful",
+};
+---
+
+<aside class:list={["my-6 rounded-lg border-l-4 px-5 py-4 text-base", styles[type] ?? styles.note]}>
+	<p class="pb-1 text-xs font-semibold uppercase tracking-wide">{labels[type] ?? labels.note}</p>
+	<slot />
+</aside>

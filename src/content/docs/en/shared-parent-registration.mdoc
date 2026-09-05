@@ -1,0 +1,72 @@
+---
+title: Registering as a Parent
+description: Creating a parent account with your child's Student ID, verifying by SMS or email, and setting your password.
+product: shared
+roles:
+  - parent
+sourcePaths:
+  - educonnect-public/edu-frontend/lib/pages/parent_register_page.dart
+  - educonnect-public/edu-frontend/lib/pages/otp_verification_page.dart
+  - educonnect-public/edu-frontend/lib/pages/set_password_page.dart
+  - educonnect-public/edu-frontend/lib/pages/forgot_password_page.dart
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## Before you start
+
+You need two things the school already holds:
+
+- Your child's **Student ID** (something like `ADV001`).
+- The **mobile number or email address registered for you in the school's system**.
+
+Registration matches against those records. It can't create a parent who isn't already on file, so
+if verification fails the first thing to check is whether the school has your current number or
+address — not whether you typed the code correctly.
+
+## Registering
+
+From the login screen, choose to register, then:
+
+1. **Select your school** (or kindergarten — the wording follows your institute).
+2. Enter the **Student ID**.
+3. Choose how you'd like the code sent: **Mobile** or **Email**.
+4. Enter that mobile number or email address.
+5. **Send OTP**.
+
+## Entering the code
+
+The code is **six digits**. On the verification screen:
+
+- You can **resend** the code, but not immediately — there's a **60-second** wait, counted down on
+  screen, before the resend option becomes available.
+- If a code is rejected the boxes clear so you can retype cleanly.
+- **Back to Login** leaves the flow without completing it; you can start again later.
+
+## Setting your password
+
+Once the code is accepted you choose a password. It must be **at least 8 characters**, and you
+enter it twice so a typo can't lock you out of the account you're creating.
+
+After that you're signed in.
+
+## Forgotten password
+
+Resetting an existing password runs through the same verify-then-set-a-password steps, with one
+difference at the start: instead of picking a delivery channel, you identify yourself by
+**Username**, **Student ID** or **Email**, and the code goes to the contact details already on
+file for that account.
+
+The confirmation deliberately says only that *if* an account exists, a code has been sent — it
+won't tell you whether the identifier you typed was recognised, so nobody can use the reset screen
+to discover which accounts exist. If no code arrives, check the identifier with the school rather
+than assuming the message was lost.
+
+The same 8-character minimum applies to the new password, and you finish back at the login screen
+to sign in with it.
+
+## Related
+
+- [Getting Started as a Parent](/docs/shared-parent-getting-started)
+- [Logging In](/docs/shared-logging-in)
+- [Making a Payment](/docs/shared-parent-payments)
