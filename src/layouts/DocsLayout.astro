@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import Container from "@/components/primitives/Container.astro";
 import Prose from "@/components/primitives/Prose.astro";
@@ -10,7 +11,7 @@ type Props = {
 };
 
 const { frontmatter } = Astro.props;
-const { product, roles, lastUpdateDate } = frontmatter.data;
+const { product, roles, lastUpdateDate, screenshotIds } = frontmatter.data;
 
 const productLabels: Record<string, string> = {
 	educonnect: "EduConnect",
@@ -18,6 +19,25 @@ const productLabels: Record<string, string> = {
 	admissions: "Admissions",
 	shared: "Shared",
 };
+
+// Screenshots are captured by automation elsewhere (see e.g.
+// attendance-web-app/screenshots/) and land here keyed by a stable id, not
+// referenced by filename in the prose - this glob resolves `screenshotIds`
+// to whatever image currently exists for that id, so regenerating a
+// screenshot never requires touching doc content.
+const screenshotModules = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/docs/screenshots/*.{png,jpg,jpeg,webp}",
+	{ eager: true },
+);
+const screenshotsById = Object.fromEntries(
+	Object.entries(screenshotModules).map(([filePath, mod]) => [
+		filePath.replace(/^.*\//, "").replace(/\.[^.]+$/, ""),
+		mod.default,
+	]),
+);
+const screenshots = (screenshotIds ?? [])
+	.map((id) => ({ id, image: screenshotsById[id] }))
+	.filter((s): s is { id: string; image: ImageMetadata } => Boolean(s.image));
 ---
 
 <BaseLayout>
@@ -46,6 +66,19 @@ const productLabels: Record<string, string> = {
 			</div>
 			<div class="flex w-full flex-col items-center justify-center pt-12">
 				<Prose><slot /></Prose>
+				{
+					screenshots.length > 0 && (
+						<div class="mx-auto flex w-full max-w-3xl flex-col gap-6 pt-8">
+							{screenshots.map(({ id, image }) => (
+								<Image
+									src={image}
+									alt={id.replace(/-/g, " ")}
+									class="w-full rounded-2xl border border-slate-200"
+								/>
+							))}
+						</div>
+					)
+				}
 			</div>
 		</Container>
 	</section>

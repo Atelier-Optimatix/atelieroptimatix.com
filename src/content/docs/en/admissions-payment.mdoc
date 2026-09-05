@@ -1,0 +1,34 @@
+---
+title: Paying Your Application Fee
+description: What happens after you pay an admissions fee online, and why a "pending" status isn't a failure.
+product: admissions
+roles:
+  - applicant
+sourcePaths:
+  - educonnect-admissions/edu-frontend/lib/online_payment_return_page.dart
+  - educonnect-admissions/backend/controllers/onlinePaymentController.js
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## How the payment step works
+
+If your application requires a fee, you'll be sent to a payment gateway to pay by card. After
+paying, you're returned to a confirmation screen showing your transaction ID, a masked card
+number, the amount, and a status.
+
+## Payment statuses
+
+- **Not started** — you haven't reached or completed the payment step yet.
+- **Pending** — the payment is being processed. This is normal immediately after paying; it isn't
+  a failure, and you don't need to pay again.
+- **Paid** — the payment has been confirmed.
+
+Online card payments are only ever set to "paid" by the payment gateway confirming the
+transaction — an admissions officer can mark other payment methods as paid manually, but can't
+do that for a card payment still shown as pending. If your status has been stuck on pending for an
+unusually long time, contact the admissions office with your transaction ID rather than re-paying.
+
+## Related
+
+- [Applying to a School](/docs/admissions-applying)
