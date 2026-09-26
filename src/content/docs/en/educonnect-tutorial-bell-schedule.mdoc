@@ -6,7 +6,7 @@ section: Tutorials
 order: 50
 roles:
   - admin
-lastUpdateDate: 2026-09-05
+lastUpdateDate: 2026-09-26
 sourcePaths:
   - attendance-web-app/edu-frontend/lib/screens/timetable/timetable_config_screen.dart
 screenshotIds:
@@ -21,8 +21,10 @@ and which of them are breaks. Nothing in **Timetable** works until it exists.
 
 ## Steps
 
-1. Open **Timetable → Configuration**. It opens on the **Bell Schedule** tab.
-2. Select **Create Bell Schedule** and give it a name.
+1. Open **Timetable → Configuration** and select the **Bell Schedule** tab. (The page opens on
+   **Import Data**.)
+2. Select **Create Bell Schedule** and give it a name. Under the name, tick the grades that follow
+   this schedule — a grade already on another schedule shows which one it is assigned to.
 3. Add periods with **Add Period**. Each period has:
    - a **label** — pre-filled as `P1`, `P2`, … and editable to whatever you call them,
    - a **start** and **end** time,
@@ -38,7 +40,7 @@ and which of them are breaks. Nothing in **Timetable** works until it exists.
 ## More than one schedule
 
 You can keep several — a normal day and a half day, or different shapes for junior and senior
-sections. Exactly one is the default; the rest are selected explicitly. When you
+sections. **Duplicate schedule** copies the one you are looking at as a starting point. Exactly one is the default; the rest are selected explicitly. When you
 [generate the timetable](/docs/educonnect-tutorial-generate-timetable) the preflight check tells you
 how many schedules it found.
 
@@ -55,6 +57,7 @@ The rest of **Timetable → Configuration** can wait until you actually generate
   a day, max 3 consecutive, minimum gap 0).
 - **Subjects & Rules** and **Subject Groups** — how subjects behave, and which run as a set of
   options at the same time.
+- **Grade Curriculum** and **Class Subjects** — what each grade and class is taught, and by whom.
 - **Classrooms** — the rooms lessons can be matched to.
 - **Import Data** — bulk-load setup instead of entering it screen by screen.
 

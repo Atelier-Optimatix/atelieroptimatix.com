@@ -9,10 +9,15 @@ roles:
   - staff
   - teacher
 sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_attendance_report_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_monthly_timesheet_page.dart
   - attendance-web-app/edu-frontend/lib/screens/teacher/substitution_page.dart
   - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_attendance_report_page.dart
   - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_monthly_attendance_table.dart
-lastUpdateDate: 2026-09-04
+lastUpdateDate: 2026-09-26
+screenshotIds:
+  - "staff-teacher-attendance"
+  - "staff-teacher-timesheet"
 hidden: false
 ---
 
@@ -24,10 +29,27 @@ classes.
 It shows up in two places on purpose:
 
 - **Teachers → Attendance**, for admins looking at the whole staff.
-- **My Attendance**, a top-level drawer item, so a teacher can check their own record without being
-  given access to the rest of the Teachers section.
+- **Attendance → My Attendance**, so a teacher can check their own record without being given
+  access to the rest of the Teachers section.
 
 Both open the same report, and both can drill into a **monthly** table for a longer view.
+
+## Reading the daily list
+
+Each row is one teacher on one day. **In / Out** shows the first and last scan of the day side by
+side — during the school day the out time reads `--` until the teacher scans out — and
+**Time in School** is the difference between them (for example *7h 17m*). **Status** is worked out
+from the first scan against the institute's cut-off times: *on time*, *late*, or *absent*.
+**Marked By** names the reader that took the scan, or the person who marked it by hand.
+
+Select a row to see **every** scan that teacher made that day, not just the first and last.
+
+## Monthly views
+
+- **Monthly Attendance** lays the whole staff out a month at a time: `/` present, `L` late,
+  `L2` late (second tier), `A` absent, `—` no record.
+- **Timesheet** appears once you pick a single teacher in the **Teacher** filter. It lists every
+  date of the month with in and out times and hours worked, ready to print or export for payroll.
 
 ## Substitution
 
