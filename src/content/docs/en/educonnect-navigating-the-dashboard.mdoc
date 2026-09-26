@@ -8,7 +8,7 @@ roles:
   - admin
   - staff
   - teacher
-lastUpdateDate: 2026-09-05
+lastUpdateDate: 2026-09-26
 sourcePaths:
   - attendance-web-app/edu-frontend/lib/navigation/nav_menu.dart
   - attendance-web-app/edu-frontend/lib/shell/app_drawer.dart
@@ -23,12 +23,12 @@ appear in the same order:
 
 | Group | What's inside |
 | --- | --- |
-| *(top level)* | Dashboard, What's New |
+| *(top level)* | Dashboard, Help & What's New |
 | **My Class** | Students, Attendance — a teacher's own class |
 | **Students** | Student Search, Classes, Admissions, Prospectus, Fee Counter |
-| **Attendance** | Summary, Reports, Saved Filters, Live Monitor |
+| **Attendance** | Today's Attendance, Summary, Reports, Saved Filters, Live Monitor |
 | **Teachers** | Overview, Directory, Attendance, Substitution |
-| **Timetable** | Timetable Grid, Class Subjects, Grade Curriculum, Configuration |
+| **Timetable** | Timetable Grid, Configuration (Bell Schedule, Subjects & Rules, Grade Curriculum, Class Subjects and more are tabs inside it) |
 | **Exams** | Exams, Rankings, Result Changes, Progress Reports |
 | **Analytics** | Overview, Students & Risk, Academics, Attendance, Payments, Operations |
 | **Accounting** | Overview, Ledger, Manual Payment Entry, Online Payments, Day Close, Reconciliation, Fee Setup, Portal Access Rules, Invoices, Discounts |
@@ -38,8 +38,22 @@ appear in the same order:
 | **Reports** *(head office)* | Accounting, Analytics, Collections, Operations, Exams, Admissions, Demographics |
 | **Configuration** *(head office)* | Discount Rules, Term Dates |
 
-Teachers also get **My Timetable**, **My Attendance** and **My Profile** as their own top-level
-entries rather than inside a group.
+Teachers also get **My Class** (their own class's students and attendance) and **My Timetable**.
+Their own attendance record, **My Attendance**, sits at the top of the Attendance group.
+
+## Your account menu
+
+The round badge at the top right of every screen (your photo, or your initial) opens the account
+menu. It holds:
+
+- **My Profile** — your own details. Teachers edit their teacher record here; administrators edit
+  their name, mobile number, designation and email.
+- **Account Settings** — username and password.
+- **Preferences** — the colour **Theme** and the **Display density** (*Automatic*, *Comfortable* or
+  *Compact*; Compact fits more rows on small or older screens).
+- **Log out**.
+
+The app's version is shown at the bottom of the drawer — quote it when you contact support.
 
 ## Why your drawer looks different from a colleague's
 

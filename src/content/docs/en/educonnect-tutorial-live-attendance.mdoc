@@ -1,20 +1,38 @@
 ---
 title: "Tutorial: Watch Attendance as It Happens"
-description: Using the Live Monitor at the gate, and building a saved filter for the questions you ask every week.
+description: Today's present and absent lists, the Live Monitor at the gate, and saved filters for the questions you ask every week.
 product: educonnect
 section: Tutorials
 order: 220
 roles:
   - admin
   - staff
-lastUpdateDate: 2026-09-05
+lastUpdateDate: 2026-09-26
 sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/todays_attendance_page.dart
   - attendance-web-app/edu-frontend/lib/screens/attendance_filter/attendance_filter_page.dart
   - attendance-web-app/edu-frontend/lib/navigation/routes/attendance_routes.dart
 screenshotIds:
+  - "tutorial-todays-attendance"
   - "tutorial-live-attendance"
 hidden: false
 ---
+
+## Today's Attendance
+
+**Attendance → Today's Attendance** is the whole school on one page for today: a **Present** tab and
+an **Absent** tab, each with its count, and the time the list was last updated.
+
+- Narrow it with the **Class** picker, or search by admission number or name.
+- On the Present tab, filter by **when** the student arrived — *Any time*, *On Time*, *Late* or
+  *Afternoon Only* — and by **how** they were marked — *Marked by gate* (a card scan) or *Marked by
+  teacher*. Each row shows the tap time and whether it counts as late.
+- **Search all students** looks up any student, present or not.
+
+Late is decided by the institute's late cut-off in Settings, the same rule every other attendance
+screen uses. Teachers see this page as **Attendance** in their drawer.
+
+From a class's own attendance page, **Today's list** jumps straight here with that class selected.
 
 ## Live Monitor
 
@@ -40,6 +58,7 @@ yourself setting the same dropdowns every Monday, save it.
 
 ## The rest of the Attendance group
 
+- **Today's Attendance** — as above.
 - **Summary** — the institute-wide view, drilling down to a class.
 - **Reports** — the printable output.
 - **Saved Filters** — as above.

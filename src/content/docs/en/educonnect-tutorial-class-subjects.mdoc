@@ -6,9 +6,11 @@ section: Tutorials
 order: 70
 roles:
   - admin
-lastUpdateDate: 2026-09-05
+lastUpdateDate: 2026-09-26
 sourcePaths:
-  - attendance-web-app/edu-frontend/lib/screens/timetable/class_subjects_screen.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/widgets/class_subjects_tab.dart
+screenshotIds:
+  - "tutorial-class-subjects"
 hidden: false
 ---
 
@@ -20,8 +22,8 @@ and [teachers who list the subject](/docs/educonnect-tutorial-add-a-teacher) amo
 
 ## Steps
 
-1. Open **Timetable → Class Subjects**.
-2. Pick the **class** at the top. If you applied the grade curriculum, its subjects are already
+1. Open **Timetable → Configuration** and select the **Class Subjects** tab.
+2. Pick the class under **Select Class**. If you applied the grade curriculum, its subjects are already
    listed with no teacher yet. If you see **No subjects assigned to *class***, either the curriculum
    was never applied to that grade, or the class's grade is not what you think it is.
 3. For each row, set the **teacher**. Only teachers who list that subject appear in the picker — if
@@ -38,7 +40,7 @@ and [teachers who list the subject](/docs/educonnect-tutorial-add-a-teacher) amo
 Override at the class level only for genuine exceptions — a class that gets an extra Maths period,
 a split group that only meets twice a week. Anything that applies to the whole grade belongs in
 [Grade Curriculum](/docs/educonnect-tutorial-grade-curriculum) instead, where it stays consistent
-across classes and survives the next **Apply to Grade**.
+across classes and survives the next time the curriculum is saved.
 
 ## What to do next
 

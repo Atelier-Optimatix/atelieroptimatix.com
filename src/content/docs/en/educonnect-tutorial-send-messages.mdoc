@@ -7,7 +7,7 @@ order: 210
 roles:
   - admin
   - staff
-lastUpdateDate: 2026-09-05
+lastUpdateDate: 2026-09-26
 sourcePaths:
   - attendance-web-app/edu-frontend/lib/screens/send_messages_page.dart
   - attendance-web-app/edu-frontend/lib/screens/send_messages/student_selection_state.dart
@@ -16,12 +16,16 @@ screenshotIds:
 hidden: false
 ---
 
-**Communication → Send Messages** is the broadcast tool — closures, reminders, event notices.
+**Communication → Send Messages** is the broadcast tool — closures, reminders, event notices. It is
+in the web and Windows versions of the dashboard; the Android and iPhone apps leave it out.
+
+Choose **Class Wise** to message whole classes, or **Student Wise** to pick individual students. A
+message is limited to 160 characters (one SMS), with a counter under the text box.
 
 ## Steps
 
 1. Open **Communication → Send Messages**.
-2. Choose your **recipients**, by class or by selecting individual students.
+2. Choose **Class Wise** or **Student Wise**, then pick the classes or students.
 3. Write the message.
 4. Select send. The **Confirm Message Sending** dialog lists **every class the message is going
    to**, one per line.
