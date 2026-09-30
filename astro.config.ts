@@ -81,7 +81,11 @@ export default defineConfig({
 				navigateFallback: "/",
 				globPatterns: ["**/*.{css,js,html,svg,png,ico,txt}"],
 				globIgnores: ["**/_worker.js/**/*", "_worker.js"],
-				navigateFallbackDenylist: [/^\/keystatic/, /^\/api/],
+				// Deep links such as /docs/<page>/?role=admin come from the
+				// attendance web app. Ignore query strings when matching the
+				// precache, otherwise they miss it and fall back to the homepage.
+				ignoreURLParametersMatching: [/.*/],
+				navigateFallbackDenylist: [/^\/keystatic/, /^\/api/, /^\/docs/],
 				skipWaiting: true,
 				maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
 			},
