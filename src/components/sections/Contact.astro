@@ -42,6 +42,10 @@ interface Props {
 
 const { title, fields } = Astro.props;
 
+// Optional Cloudflare Turnstile site key (public by design). When unset the
+// widget is skipped and only the honeypot + timing checks apply.
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined;
+
 const fieldNames: Record<string, string> = {
 	"Full Name": "name",
 	Email: "email",
@@ -79,7 +83,14 @@ function fieldName(fieldTitle: string): string {
 	</div>
 		<div class="mt-8">
 			<div class="mt-0 mx-0 mb-3.5">
-				<form id="contact-form" data-static-form-name="contact" class="items-center auto-cols-fr grid-cols-1 sm:grid-cols-2 grid-rows-[auto] grid gap-8">
+				<form id="contact-form" data-static-form-name="contact" data-turnstile-site-key={turnstileSiteKey} class="items-center auto-cols-fr grid-cols-1 sm:grid-cols-2 grid-rows-[auto] grid gap-8">
+					<!-- Honeypot: hidden from people and assistive tech; bots fill it in. -->
+					<div aria-hidden="true" class="absolute -left-[10000px] top-auto h-px w-px overflow-hidden">
+						<label>
+							Website
+							<input type="text" name="website" tabindex="-1" autocomplete="off" />
+						</label>
+					</div>
 					{
 						fields?.map((field) => {
 							if (field.type === "submit") {
@@ -120,6 +131,7 @@ function fieldName(fieldTitle: string): string {
 							}
 						})
 					}
+					{turnstileSiteKey && <div id="contact-turnstile" class="sm:col-span-2" />}
 				</form>
 				<p id="contact-form-status" class="mt-4 text-base font-semibold hidden"></p>
 			</div>
@@ -145,6 +157,36 @@ function fieldName(fieldTitle: string): string {
 	const form = document.querySelector<HTMLFormElement>("#contact-form");
 	const status = document.querySelector<HTMLParagraphElement>("#contact-form-status");
 
+	// Anti-spam: the server should reject submissions where `website` (honeypot)
+	// is non-empty, `elapsedMs` is implausibly small, or `turnstileToken` fails
+	// Cloudflare's siteverify call.
+	const formLoadedAt = Date.now();
+	const turnstileSiteKey = form?.dataset.turnstileSiteKey;
+
+	type TurnstileApi = {
+		render: (el: HTMLElement, options: { sitekey: string }) => string;
+		reset: (widgetId?: string) => void;
+	};
+	let turnstileWidgetId: string | undefined;
+
+	function turnstile(): TurnstileApi | undefined {
+		return (window as unknown as { turnstile?: TurnstileApi }).turnstile;
+	}
+
+	if (form && turnstileSiteKey) {
+		const container = document.querySelector<HTMLElement>("#contact-turnstile");
+		const script = document.createElement("script");
+		script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+		script.async = true;
+		script.defer = true;
+		script.onload = () => {
+			if (container) {
+				turnstileWidgetId = turnstile()?.render(container, { sitekey: turnstileSiteKey });
+			}
+		};
+		document.head.appendChild(script);
+	}
+
 	function showStatus(message: string, isError: boolean) {
 		if (!status) return;
 		status.textContent = message;
@@ -155,7 +197,19 @@ function fieldName(fieldTitle: string): string {
 	form?.addEventListener("submit", async (event) => {
 		event.preventDefault();
 		const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]');
-		const data = Object.fromEntries(new FormData(form).entries());
+		const { "cf-turnstile-response": turnstileToken, ...fields } = Object.fromEntries(
+			new FormData(form).entries(),
+		);
+		const data = {
+			...fields,
+			elapsedMs: Date.now() - formLoadedAt,
+			...(turnstileToken ? { turnstileToken } : {}),
+		};
+
+		if (turnstileSiteKey && !turnstileToken) {
+			showStatus("Please complete the verification challenge and try again.", true);
+			return;
+		}
 
 		submitButton?.setAttribute("disabled", "true");
 		showStatus("Sending...", false);
@@ -177,6 +231,8 @@ function fieldName(fieldTitle: string): string {
 		} catch {
 			showStatus("Something went wrong. Please try again.", true);
 		} finally {
+			// Turnstile tokens are single-use.
+			if (turnstileWidgetId) turnstile()?.reset(turnstileWidgetId);
 			submitButton?.removeAttribute("disabled");
 		}
 	});
