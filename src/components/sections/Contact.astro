@@ -50,6 +50,12 @@ const fieldNames: Record<string, string> = {
 	Message: "message",
 };
 
+const fieldAutocomplete: Record<string, string> = {
+	name: "name",
+	email: "email",
+	phone: "tel",
+};
+
 function fieldName(fieldTitle: string): string {
 	return (
 		fieldNames[fieldTitle] ??
@@ -91,10 +97,11 @@ function fieldName(fieldTitle: string): string {
 							} else if (field.type === "textarea") {
 								return (
 									<div class:list={["text-base", field.width == 2 && "sm:col-span-2"]}>
-										<p class="text-black font-semibold max-w-full mb-3">
+										<label for={`contact-${fieldName(field.title)}`} class="block text-black font-semibold max-w-full mb-3">
 											{field.title}
-										</p>
+										</label>
 										<textarea
+											id={`contact-${fieldName(field.title)}`}
 											name={fieldName(field.title)}
 											required={field.required}
 											placeholder={field.placeholder}
@@ -105,11 +112,13 @@ function fieldName(fieldTitle: string): string {
 							} else {
 								return (
 									<div class:list={["text-base", field.width == 2 && "sm:col-span-2"]}>
-										<p class="text-black font-semibold max-w-full mb-3">
+										<label for={`contact-${fieldName(field.title)}`} class="block text-black font-semibold max-w-full mb-3">
 											{field.title}
-										</p>
+										</label>
 										<input
+											id={`contact-${fieldName(field.title)}`}
 											name={fieldName(field.title)}
+											autocomplete={fieldAutocomplete[fieldName(field.title)]}
 											type={field.type as HTMLInputTypeAttribute}
 											required={field.required}
 											placeholder={field.placeholder}
@@ -121,7 +130,7 @@ function fieldName(fieldTitle: string): string {
 						})
 					}
 				</form>
-				<p id="contact-form-status" class="mt-4 text-base font-semibold hidden"></p>
+				<p id="contact-form-status" role="status" aria-live="polite" class="mt-4 text-base font-semibold hidden"></p>
 			</div>
 		</div>
 	</div>
