@@ -9,6 +9,9 @@ const pagesCollection = defineCollection({
 			lastUpdateDate: z.date(),
 			hideTitle: z.optional(z.boolean()),
 			hidden: z.optional(z.boolean()),
+			// Privacy and legal documents: rendered with LegalPage (policy switcher,
+			// contents list, readable prose) instead of the plain page layout.
+			legal: z.optional(z.boolean()),
 			cover: z.optional(image()),
 			seo: z.object({
 				title: z.string(),

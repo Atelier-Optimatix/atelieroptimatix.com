@@ -6,5 +6,8 @@
 			"text": "Hubungi Kami",
 			"url": "/contact"
 		}
-	]
+	],
+	"legalHeading": "Privasi & undang-undang",
+	"privacyLabel": "Dasar privasi",
+	"termsLabel": "Terma"
 }

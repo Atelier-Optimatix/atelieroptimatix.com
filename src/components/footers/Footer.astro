@@ -4,6 +4,7 @@ import Container from "@/components/primitives/Container.astro";
 import Link from "@/components/primitives/Link.astro";
 import { getLocalizedSettings } from "@/lib/localization-helpers";
 import { translatePath, unlocalizedUrl } from "@/lib/localization-helpers";
+import { getLegalPages } from "@/lib/legal-pages";
 import { defaultLocale, locales } from "site";
 
 const currentLocale = Astro.currentLocale;
@@ -20,6 +21,8 @@ function isActiveLocale(locale: string): boolean {
 }
 
 const pages = await getCollection("pages");
+const legalPages = await getLegalPages(currentLocale);
+const legalHeading = footer.legalHeading ?? "Privacy & legal";
 const posts = await getCollection("posts");
 
 // get top 6 pages which are informational pages
@@ -37,7 +40,7 @@ const topInfoPages = pages
     };
   })
   .filter(
-    (page) => page.lang === currentLocale && page.data.type === "informational"
+    (page) => page.lang === currentLocale && page.data.type === "informational" && !page.data.legal
   )
   .slice(0, 6);
 
@@ -118,6 +121,22 @@ const lastPosts = posts
                   </ul>
                 </div>
               </div>
+              <div class="items-start flex-col flex gap-[0.63rem] col-span-2">
+                <p
+                  class="text-white border-b-2 text-lg pb-1 mb-3 border-white border-solid"
+                >
+                  {legalHeading}
+                </p>
+                <ul class="text-white/[0.65] mb-3 list-none">
+                  {
+                    legalPages.map(({ title, href }) => (
+                      <li>
+                        <a href={href}>{title}</a>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
               <!-- <div class="items-start flex-col flex gap-[0.63rem]">
                 <p
                   class="text-white border-b-2 text-lg pb-1 mb-3 border-white border-solid"
@@ -191,19 +210,18 @@ const lastPosts = posts
             }
           </div>
           <div class="flex gap-5 text-lg text-blue-700">
-            <a href="/privacy-policy" class="inline-block max-w-full"
-              ><p
-                class="text-white border-b-2 cursor-pointer pb-1 border-white border-solid"
-              >
-                Privacy policy
-              </p></a
-            ><a href="/terms-and-conditions" class="inline-block max-w-full"
-              ><p
-                class="text-white border-b-2 cursor-pointer pb-1 border-white border-solid"
-              >
-                Terms
-              </p></a
-            >
+            {
+              [
+                { href: translatePath(currentLocale ?? defaultLocale, "/privacy-policy"), text: footer.privacyLabel ?? "Privacy policy" },
+                { href: translatePath(currentLocale ?? defaultLocale, "/terms-and-conditions"), text: footer.termsLabel ?? "Terms" },
+              ].map(({ href, text }) => (
+                <a href={href} class="inline-block max-w-full">
+                  <p class="text-white border-b-2 cursor-pointer pb-1 border-white border-solid">
+                    {text}
+                  </p>
+                </a>
+              ))
+            }
           </div>
         </div>
       </div>

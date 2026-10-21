@@ -1,17 +1,27 @@
 ---
+import type { MarkdownHeading } from "astro";
 import type { CollectionEntry } from "astro:content";
+import LegalPage from "@/components/legal/LegalPage.astro";
 import Container from "@/components/primitives/Container.astro";
 import BaseLayout from "./BaseLayout.astro";
 
 type Props = {
 	frontmatter: CollectionEntry<"pages">;
+	headings?: MarkdownHeading[];
 };
 
-const { frontmatter } = Astro.props;
+const { frontmatter, headings = [] } = Astro.props;
 ---
 
 <BaseLayout seo={frontmatter.data.seo}>
 	<main>
+		{
+			frontmatter.data.legal ? (
+				<LegalPage frontmatter={frontmatter} headings={headings}>
+					<slot />
+				</LegalPage>
+			) : (
+				<>
 		{
 			frontmatter.data.hideTitle ? null : (
 				<header class="py-32 lg:pt-40 lg:pb-36">
@@ -36,5 +46,8 @@ const { frontmatter } = Astro.props;
 			)
 		}
 		<slot />
+				</>
+			)
+		}
 	</main>
 </BaseLayout>

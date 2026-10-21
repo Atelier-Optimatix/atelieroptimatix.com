@@ -42,6 +42,10 @@ export default defineConfig({
 	},
 	redirects: {
 		"/admin": "/keystatic",
+		// Fixed typo in the slug; keep old links working.
+		"/payment-disclamer": "/payment-disclaimer",
+		"/es/payment-disclamer": "/es/payment-disclaimer",
+		"/ms/payment-disclamer": "/ms/payment-disclaimer",
 	},
 	vite: {
 		define: {

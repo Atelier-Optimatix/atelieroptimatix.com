@@ -1,0 +1,114 @@
+---
+import type { MarkdownHeading } from "astro";
+import type { CollectionEntry } from "astro:content";
+import Container from "@/components/primitives/Container.astro";
+import { getLegalPages } from "@/lib/legal-pages";
+
+type Props = {
+	frontmatter: CollectionEntry<"pages">;
+	headings?: MarkdownHeading[];
+};
+
+const { frontmatter, headings = [] } = Astro.props;
+const locale = Astro.currentLocale ?? "en";
+
+const labels: Record<string, { policies: string; contents: string; updated: string }> = {
+	en: { policies: "Privacy documents", contents: "On this page", updated: "Last updated" },
+	es: { policies: "Documentos de privacidad", contents: "En esta página", updated: "Última actualización" },
+	ms: { policies: "Dokumen privasi", contents: "Dalam halaman ini", updated: "Kemas kini terakhir" },
+};
+const t = labels[locale] ?? labels.en;
+
+// The legal index links to these documents, so it is not listed among them.
+const pages = (await getLegalPages(locale)).filter((page) => page.name !== "legal");
+const toc = headings.filter((heading) => heading.depth === 2);
+const current = Astro.url.pathname.replace(/\/$/, "");
+const updated = new Intl.DateTimeFormat(locale, { dateStyle: "long", timeZone: "UTC" }).format(
+	frontmatter.data.lastUpdateDate,
+);
+---
+
+<header class="pt-32 pb-10 lg:pt-40 lg:pb-14">
+	<Container tag="div">
+		<div class="mx-auto max-w-3xl">
+			<span
+				class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black"
+				>{t.updated}: <time datetime={frontmatter.data.lastUpdateDate.toISOString().slice(0, 10)}>{updated}</time></span
+			>
+			<h1 class="mt-5 text-4xl font-semibold leading-tight tracking-tighter md:text-6xl">
+				{frontmatter.data.title}
+			</h1>
+			{frontmatter.data.subtitle && <p class="mt-5 text-xl text-slate-500">{frontmatter.data.subtitle}</p>}
+		</div>
+	</Container>
+</header>
+
+<Container tag="div" class="pb-32">
+	<div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-16">
+		<aside class="lg:sticky lg:top-28 lg:self-start">
+			<nav aria-label={t.policies}>
+				<p class="pb-3 text-xs font-semibold uppercase tracking-wide text-slate-500">{t.policies}</p>
+				<ul class="flex flex-col gap-1 text-base">
+					{
+						pages.map((page) => (
+							<li>
+								<a
+									href={page.href}
+									aria-current={current === page.href ? "page" : undefined}
+									class:list={[
+										"block rounded-lg px-3 py-2 hover:bg-slate-100",
+										current === page.href ? "bg-slate-100 font-semibold text-black" : "text-slate-600",
+									]}
+								>
+									{page.title}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+			{
+				toc.length > 1 && (
+					<nav aria-label={t.contents} class="mt-8 hidden border-t border-slate-200 pt-6 lg:block">
+						<p class="pb-3 text-xs font-semibold uppercase tracking-wide text-slate-500">{t.contents}</p>
+						<ol class="flex flex-col gap-2 text-sm text-slate-600">
+							{toc.map((heading) => (
+								<li>
+									<a href={`#${heading.slug}`} class="hover:text-black">
+										{heading.text}
+									</a>
+								</li>
+							))}
+						</ol>
+					</nav>
+				)
+			}
+		</aside>
+
+		<article
+			class="legal-prose prose w-full max-w-3xl text-lg text-slate-900 prose-headings:font-normal prose-headings:tracking-tighter prose-headings:text-black prose-a:text-primary-700 prose-a:underline hover:prose-a:text-black prose-li:marker:text-slate-500 prose-table:text-base"
+		>
+			<slot />
+		</article>
+	</div>
+</Container>
+
+<style is:global>
+	/* The shared Title component sizes headings for marketing pages; inside a
+	   policy they would dwarf the text, so they are scaled down here. */
+	.legal-prose h2 {
+		font-size: 1.75rem;
+		line-height: 1.2;
+		margin-top: 3rem;
+		scroll-margin-top: 7rem;
+	}
+	.legal-prose h3 {
+		font-size: 1.25rem;
+		margin-top: 2rem;
+		scroll-margin-top: 7rem;
+	}
+	.legal-prose table {
+		display: block;
+		overflow-x: auto;
+	}
+</style>

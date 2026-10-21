@@ -1,0 +1,37 @@
+---
+import { translatePath } from "@/lib/localization-helpers";
+
+// Summary cards for the top of a policy. `href` values are written
+// unlocalised in content and prefixed with the current locale here, so the
+// es/ms pages don't each need their own link maths.
+type Card = { title: string; text: string; href?: string };
+type Props = { cards: Card[] };
+
+const { cards } = Astro.props;
+const locale = Astro.currentLocale ?? "en";
+const localize = (href?: string) => (href?.startsWith("/") ? translatePath(locale, href) : href);
+---
+
+<div class="not-prose my-8 grid gap-4 sm:grid-cols-2">
+	{
+		cards.map((card) => {
+			const href = localize(card.href);
+			const Tag = href ? "a" : "div";
+			return (
+				<Tag
+					href={href}
+					class:list={[
+						"block rounded-2xl border border-slate-200 p-5 text-base",
+						href && "transition hover:border-black hover:bg-slate-50",
+					]}
+				>
+					<p class="pb-1 text-lg font-semibold text-black">
+						{card.title}
+						{href && <span aria-hidden="true"> →</span>}
+					</p>
+					<p class="text-slate-600">{card.text}</p>
+				</Tag>
+			);
+		})
+	}
+</div>
