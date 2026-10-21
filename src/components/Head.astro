@@ -2,6 +2,7 @@
 import "@/styles/global.css";
 import { getLocalizedSettings } from "@/lib/localization-helpers";
 import { SEO, type SEOProps } from "astro-seo";
+import { siteTitle } from "site";
 
 type Props = {
 	seo?: SEOProps | MinimalSeo;
@@ -38,7 +39,7 @@ const baseSeo: SEOProps = {
 		},
 		optional: {
 			description: seoProp?.description ?? defaultSeo.description,
-			siteName: seoProp?.title ?? defaultSeo.title,
+			siteName: siteTitle,
 		},
 	},
 	twitter: {

@@ -6,7 +6,7 @@ import Link from "@/components/primitives/Link.astro";
 import Prose from "@/components/primitives/Prose.astro";
 import Share from "@/components/primitives/Share.astro";
 import Title from "@/components/primitives/Title.astro";
-import { defaultLocale } from "site";
+import { defaultLocale, siteTitle } from "site";
 import BaseLayout from "./BaseLayout.astro";
 
 type Props = {
@@ -44,7 +44,12 @@ const l = componentLocales[currentLocale ?? defaultLocale];
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout>
+<BaseLayout
+	seo={{
+		title: `${frontmatter.data.title} | ${siteTitle}`,
+		description: frontmatter.data.description,
+	}}
+>
 	<section class="py-32 md:py-56">
 		<Container>
 			<div class="text-center">
