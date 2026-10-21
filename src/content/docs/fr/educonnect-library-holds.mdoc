@@ -1,0 +1,46 @@
+---
+title: "Tutoriel : les réservations et l'étagère des réservations"
+description: Réserver des livres qui sont sortis, l'étagère des réservations, les jours de retrait et l'annulation des réservations.
+product: educonnect
+section: Tutorials
+order: 234
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/holds_page.dart
+  - attendance-web-app/backend/services/library/holdService.js
+  - attendance-web-app/backend/services/library/holdShelf.js
+screenshotIds:
+  - "library-holds"
+hidden: false
+---
+
+Une réservation (hold) porte sur un **titre**, et non sur un exemplaire précis. Les réservations
+forment une file d'attente : premier arrivé, premier servi.
+
+**L'activer :** **Library Settings → Holds** (**Let borrowers reserve books**).
+
+## Ce qui se passe
+
+1. Un emprunteur réserve un livre qui est sorti. Le comptoir peut le faire avec **Reserve a book** ;
+   les parents et les élèves aussi si le portail l'autorise, et les enseignants depuis
+   [My Library](/fr/docs/educonnect-library-my-library).
+2. Lorsqu'un exemplaire est enregistré au retour, il est attribué à la plus ancienne réservation en
+   attente et se place sur l'**hold shelf** (étagère des réservations). Mettez-le physiquement de
+   côté.
+3. L'emprunteur dispose de **School days to collect** (3 par défaut) pour venir le chercher. Le lui
+   prêter satisfait la réservation. Une réservation non retirée expire et l'exemplaire passe au
+   suivant dans la file ou retourne sur les rayonnages.
+
+Un exemplaire placé sur l'étagère des réservations ne peut être prêté qu'à l'emprunteur pour lequel
+il est réservé, sauf dérogation. Un livre ayant des réservations en attente n'est pas renouvelé.
+
+Chaque emprunteur peut avoir un nombre limité de réservations (**Holds per borrower**, 2 par défaut ;
+0 signifie que seul le comptoir place des réservations).
+
+## La page Holds
+
+**Library → Holds** affiche l'**Hold shelf** (les livres mis de côté et pour qui) et les files
+d'attente. Toute personne disposant de **Place & cancel holds for borrowers** peut annuler.

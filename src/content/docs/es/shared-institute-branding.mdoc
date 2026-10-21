@@ -1,0 +1,45 @@
+---
+title: Identidad de la institución — por qué la terminología cambia entre instituciones
+description: El panel adapta su vocabulario (por ejemplo "School" o "Kindergarten") según la institución, no según el producto.
+product: shared
+section: Getting started
+order: 1
+roles:
+  - staff
+  - admin
+  - parent
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/utils/institute_branding.dart
+  - educonnect-public/edu-frontend/lib/api_services/branding_service.dart
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Una sola base de código, muchas instituciones
+
+Tanto el panel del personal como el portal para padres son la misma aplicación para todas las
+instituciones: no existe una aplicación "EduConnect" y otra "KinderCare" por separado. Lo que cambia
+entre instituciones es la identidad visual: el nombre mostrado, el logotipo, el color del tema y
+algunos ajustes de terminología, como llamar a su institución "School" o "Kindergarten" según cómo
+esté registrada.
+
+Esto significa que dos instituciones pueden verse y expresarse de forma bastante distinta aunque
+ejecuten un software idéntico. Si algo parece "incorrecto" en una institución pero correcto en otra,
+conviene comprobar si realmente es un error o simplemente la identidad visual o la terminología de esa
+institución, antes de escalarlo como tal.
+
+## De dónde proviene la terminología
+
+En el portal para padres, la institución activa se determina normalmente mediante un parámetro
+`school` en la URL que se le envió (por ejemplo, desde un enlace de invitación o la aplicación móvil),
+que se consulta para obtener el nombre y el logotipo de esa institución. Si un padre o madre llega a
+la página de inicio de sesión sin ese contexto, el portal recurre a una institución recordada
+previamente para ese navegador, o a un valor genérico predeterminado.
+
+## Qué significa esto en la práctica
+
+- En las conversaciones de soporte, confirme siempre *en qué institución* está el usuario antes de
+  suponer que una pantalla se comporta igual en todas partes.
+- Las capturas de pantalla y la documentación de esta guía se toman de una institución representativa:
+  términos como "Student" frente a uno específico de jardín de infancia pueden diferir ligeramente en
+  su pantalla.

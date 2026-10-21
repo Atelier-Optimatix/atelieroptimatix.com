@@ -1,0 +1,90 @@
+---
+title: Asistencia y sustitución de docentes
+description: Cómo hacer el seguimiento de la asistencia del personal y elaborar un plan de cobertura para los docentes que están ausentes hoy.
+product: educonnect
+section: Guides
+order: 50
+roles:
+  - admin
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_attendance_report_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_monthly_timesheet_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/substitution_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_attendance_report_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_monthly_attendance_table.dart
+lastUpdateDate: 2026-09-26
+screenshotIds:
+  - "staff-teacher-attendance"
+  - "staff-teacher-timesheet"
+hidden: false
+---
+
+## Asistencia de docentes
+
+Esta es la asistencia del personal y es independiente de la asistencia de estudiantes que los docentes
+registran para sus clases.
+
+Aparece en dos lugares a propósito:
+
+- **Teachers → Attendance**, para los administradores que supervisan a todo el personal.
+- **Attendance → My Attendance**, para que un docente pueda consultar su propio registro sin que se le
+  dé acceso al resto de la sección Teachers.
+
+Ambos abren el mismo informe, y ambos permiten pasar a una tabla **mensual** para una visión más
+amplia.
+
+## Cómo leer la lista diaria
+
+Cada fila es un docente en un día. **In / Out** muestra lado a lado el primer y el último registro del
+día (durante la jornada escolar la hora de salida aparece como `--` hasta que el docente registra su
+salida), y **Time in School** es la diferencia entre ambos (por ejemplo, *7h 17m*). **Status** se
+calcula a partir del primer registro frente a los horarios límite de la institución: *on time*,
+*late* o *absent*. **Marked By** indica el lector que tomó el registro, o la persona que lo marcó a
+mano.
+
+Seleccione una fila para ver **todos** los registros que ese docente hizo ese día, no solo el primero y
+el último.
+
+## Vistas mensuales
+
+- **Monthly Attendance** presenta a todo el personal de un mes: `/` presente, `L` con retraso, `L2`
+  con retraso (segundo nivel), `A` ausente, `—` sin registro.
+- **Timesheet** aparece cuando selecciona a un solo docente en el filtro **Teacher**. Enumera todas las
+  fechas del mes con las horas de entrada y salida y las horas trabajadas, listo para imprimir o
+  exportar para la nómina.
+
+## Sustitución
+
+**Teachers → Substitution** responde a una única pregunta diaria: quién está ausente y quién cubre sus
+clases.
+
+La página se abre con las ausencias de hoy y le indica directamente el número: *"all present"*, o
+cuántos docentes están ausentes hoy.
+
+A partir de ahí:
+
+- **Auto-Generate** le propone un plan de cobertura.
+- **Save Plan** lo guarda; una vez que existe un plan, el mismo botón pasa a ser **Update Plan**, para
+  que pueda regenerarlo o ajustarlo y guardar de nuevo.
+- **Print** genera el plan como una hoja imprimible para la sala de profesores.
+
+Las ausencias también distinguen una **salida anticipada** de una ausencia de día completo, de modo que
+un docente que se va a mitad de la jornada solo es cubierto durante los períodos que realmente falta.
+
+{% callout type="note" %}
+Los botones de acción pueden desaparecer mientras está en la página. Normalmente significa que todos
+los docentes marcados como ausentes ya han registrado su entrada, por lo que no queda nada por cubrir:
+el plan no se pierde, simplemente ya no es necesario.
+{% /callout %}
+
+Como la cobertura depende de saber quién enseña qué y cuándo, la sustitución es tan buena como el
+horario que la respalda. Si un plan propuesto parece incorrecto, revise el horario y las restricciones
+de los docentes antes de suponer que la sugerencia es la que falla.
+
+## Temas relacionados
+
+- [Gestión de docentes](/es/docs/shared-staff-teacher-management)
+- [Elaboración del horario](/es/docs/shared-staff-timetable)
+- [Toma de asistencia por parte del personal](/es/docs/shared-staff-attendance-overview)

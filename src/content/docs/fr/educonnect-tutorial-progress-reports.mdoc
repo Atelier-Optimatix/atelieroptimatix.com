@@ -1,0 +1,57 @@
+---
+title: "Tutoriel : Rédiger et publier les bulletins de progression"
+description: Constituer les bulletins trimestriels d'une classe à partir des notes enregistrées, ajouter les appréciations écrites, et l'étape irréversible de leur publication aux parents.
+product: educonnect
+section: Tutorials
+order: 120
+roles:
+  - staff
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/term_report_screen.dart
+screenshotIds:
+  - "tutorial-progress-reports"
+hidden: false
+---
+
+Un bulletin de progression rassemble les notes d'un trimestre et l'appréciation écrite, et — une fois publié —
+c'est ce que les parents voient dans le portail parents.
+
+**Vous avez besoin de :** les [résultats d'examens du trimestre saisis](/fr/docs/educonnect-tutorial-enter-exam-results), et de
+l'accès à **Exams → Progress Reports**.
+
+## Étapes
+
+1. Ouvrez **Exams → Progress Reports**.
+2. Choisissez une **class** et un **term**. Tant que vous ne l'avez pas fait, l'écran indique *Choose a class and term to
+   begin.*
+3. Les élèves de la classe se chargent avec leurs notes déjà renseignées depuis les examens. Si vous obtenez *That
+   class has no students*, vérifiez la liste de la classe plutôt que l'examen.
+4. Parcourez la liste en renseignant les évaluations et les commentaires. Les champs laissés vides affichent **Not rated** —
+   ce qui est un choix valide, et non une erreur, pour tout ce que votre établissement n'évalue pas.
+5. Les lignes que vous avez modifiées sans les enregistrer sont signalées **unsaved**. Ne quittez pas l'écran tant que
+   ce marqueur est affiché.
+6. Enregistrez votre travail.
+
+## Publication
+
+**Publish** est l'étape qui rend les bulletins visibles aux parents. Elle demande d'abord confirmation — *Publish
+term N reports?* — car elle change ce que les familles peuvent voir.
+
+Considérez la publication comme la fin du processus, et non comme un bouton d'enregistrement :
+
+- Publiez une fois la classe entière terminée, pas élève par élève.
+- Vérifiez d'abord que les évaluations se lisent comme vous voulez qu'un parent les lise.
+- Les corrections après publication sont visibles de quiconque a déjà ouvert le bulletin.
+
+## Ce que voient les parents
+
+Les bulletins publiés apparaissent dans le portail parents, à côté du guide de l'élève. Les parents peuvent accuser réception d'un
+bulletin, ce qui vous permet de savoir qui l'a réellement lu. Voir
+[Progress Reports & the Handbook](/fr/docs/shared-parent-progress-reports).
+
+## Voir aussi
+
+- [Entering and Publishing Exam Results](/fr/docs/shared-staff-exam-results)
+- [Progress Reports as a Teacher](/fr/docs/educonnect-teacher-progress-reports)

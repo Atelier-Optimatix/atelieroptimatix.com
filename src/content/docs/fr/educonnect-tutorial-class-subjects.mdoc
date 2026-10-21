@@ -1,0 +1,48 @@
+---
+title: "Tutoriel : Affecter des matières et des enseignants à une classe"
+description: Transformer le programme d'un niveau en liste réelle de matières pour une classe donnée, avec un enseignant nommé pour chacune.
+product: educonnect
+section: Tutorials
+order: 70
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/widgets/class_subjects_tab.dart
+screenshotIds:
+  - "tutorial-class-subjects"
+hidden: false
+---
+
+**Class Subjects** est l'endroit où un modèle de niveau devient la réalité d'une classe : *cette* classe étudie ces
+matières, enseignées par ces personnes. C'est la dernière chose dont le générateur d'emploi du temps a besoin.
+
+**Vous avez besoin de :** un [programme de niveau appliqué](/fr/docs/educonnect-tutorial-grade-curriculum) à la classe,
+et des [enseignants qui listent la matière](/fr/docs/educonnect-tutorial-add-a-teacher) parmi celles qu'ils enseignent.
+
+## Étapes
+
+1. Ouvrez **Timetable → Configuration** et sélectionnez l'onglet **Class Subjects**.
+2. Choisissez la classe sous **Select Class**. Si vous avez appliqué le programme du niveau, ses matières sont déjà
+   listées, sans enseignant pour l'instant. Si vous voyez **No subjects assigned to *class***, soit le programme
+   n'a jamais été appliqué à ce niveau, soit le niveau de la classe n'est pas celui que vous pensez.
+3. Pour chaque ligne, définissez l'**enseignant**. Seuls les enseignants qui listent cette matière apparaissent dans le sélecteur — si
+   la personne souhaitée est absente, ajoutez d'abord la matière à sa fiche enseignant.
+4. Pour ajouter une matière que le programme n'incluait pas, sélectionnez **Add Subject** et renseignez :
+   - **Subject** et **teacher**,
+   - **Lessons/week**, **Max consec.** et **Max/day** — tous facultatifs. Laissés vides, ils reprennent les chiffres du
+     programme du niveau ; renseignés, la ligne affiche la valeur suivie de **(override)**,
+     et cette classe seule reçoit le traitement différent.
+5. Enregistrez chaque ligne au fur et à mesure. **Remove** retire une affectation de la classe après confirmation.
+
+## Les dérogations, et quand les utiliser
+
+Ne dérogez au niveau de la classe que pour de véritables exceptions — une classe qui obtient une période de mathématiques supplémentaire,
+un groupe scindé qui ne se réunit que deux fois par semaine. Tout ce qui s'applique à l'ensemble du niveau relève plutôt de
+[Grade Curriculum](/fr/docs/educonnect-tutorial-grade-curriculum), où cela reste cohérent
+d'une classe à l'autre et subsiste à la prochaine sauvegarde du programme.
+
+## Que faire ensuite
+
+Une fois que chaque classe a des matières avec des enseignants, vous disposez de tout ce dont le générateur a besoin :
+[Generate the Timetable](/fr/docs/educonnect-tutorial-generate-timetable).

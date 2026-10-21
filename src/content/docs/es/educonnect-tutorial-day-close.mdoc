@@ -1,0 +1,51 @@
+---
+title: "Tutorial: Cerrar el día"
+description: Cómo cotejar el efectivo contado con lo que el sistema esperaba, cerrar el día y qué significa reabrir uno.
+product: educonnect
+section: Tutorials
+order: 150
+roles:
+  - staff
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/day_close_page.dart
+screenshotIds:
+  - "tutorial-day-close"
+hidden: false
+---
+
+El cierre del día es la verificación de caja de fin de jornada: el sistema le indica cuánto cree que hay en la caja, usted cuenta lo que realmente hay, y la diferencia queda registrada en lugar de discutirse más adelante.
+
+**Necesita:** acceso a **Accounting → Day Close**. Hágalo después de que todos hayan terminado de
+[registrar los pagos](/es/docs/educonnect-tutorial-record-a-payment) del día.
+
+## Pasos
+
+1. Abra **Accounting → Day Close** y seleccione el día.
+2. Revise las transacciones del día que aparecen en pantalla. Si indica **No transactions on this day**,
+   no hay nada que cerrar; compruebe que tiene la fecha correcta antes de suponer que hay un problema.
+3. Cuente el efectivo e introduzca la cifra **contada**.
+4. Seleccione **Close day**.
+5. La confirmación muestra **Expected cash** y **Counted cash** lado a lado. Es su última oportunidad
+   de ver la discrepancia antes de que se registre. Si no coinciden, cancele y averigüe por qué
+   *antes* de cerrar: un recibo faltante es mucho más fácil de rastrear hoy que la próxima semana.
+6. Confirme.
+
+## Reabrir un día
+
+Un día cerrado puede reabrirse, y los cierres anteriores aparecen en la misma pantalla. La reapertura
+existe para correcciones reales (un pago registrado en el día equivocado, un error de conteo
+descubierto de inmediato), no como un paso rutinario. Cada cierre y cada reapertura quedan registrados.
+
+## Dónde encaja esto en el mes
+
+1. Los pagos se registran a lo largo del día.
+2. **Day close** cada tarde.
+3. [Conciliación](/es/docs/educonnect-tutorial-reconciliation) periódicamente, para detectar cargos y
+   asientos contables que se hayan desajustado.
+4. Las facturas se emiten desde **Accounting → Invoices**.
+
+## Relacionado
+
+- [Flujo de contabilidad: libro mayor, cierre del día y conciliación](/es/docs/shared-staff-accounting-overview)

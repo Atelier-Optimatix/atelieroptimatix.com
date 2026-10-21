@@ -1,0 +1,85 @@
+---
+title: ඔබේ මාර්ගය සොයා ගැනීම
+description: side drawer එක සංවිධානය වන ආකාරය, දෙදෙනෙකුට වෙනස් මෙනු පෙනෙන්නේ ඇයිද, සහ මෙම මාර්ගෝපදේශයේ තිර සැබවින්ම පිහිටා ඇත්තේ කොතැනද.
+product: educonnect
+section: Getting started
+order: 1
+roles:
+  - admin
+  - staff
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/nav_menu.dart
+  - attendance-web-app/edu-frontend/lib/shell/app_drawer.dart
+  - attendance-web-app/edu-frontend/lib/navigation/access.dart
+hidden: false
+---
+
+## Side drawer එක
+
+සියල්ලටම ප්‍රවේශ වන්නේ වම්පස ඇති drawer එකෙනි. එහි අයිතම කණ්ඩායම් වලට බෙදා ඇති අතර, කණ්ඩායම් සෑම විටම එකම
+පිළිවෙලකින් පෙනේ:
+
+| කණ්ඩායම | ඇතුළත ඇත්තේ |
+| --- | --- |
+| *(ඉහළ මට්ටම)* | Dashboard, Help & What's New, List Reports (සහ ගුරුවරුන් සඳහා Teacher Complaints) |
+| **My Class** | Students, Attendance — ගුරුවරයෙකුගේ තමන්ගේම පන්තිය |
+| **Students** | Student Search, Classes, Admissions, Prospectus, Fee Counter, Left Students, Student ID Cards |
+| **Attendance** | Today's Attendance, Summary, Reports, Saved Filters, Live Monitor |
+| **Teachers** | Overview, Directory, Attendance, Substitution |
+| **Timetable** | Timetable Grid, Configuration (Bell Schedule, Subjects & Rules, Grade Curriculum, Class Subjects සහ තවත් ඒවා එහි ඇති tabs වේ) |
+| **Exams** | Exams, Rankings, Result Changes, Progress Reports |
+| **Analytics** | Statistics, Overview, Students & Risk, Academics, Attendance, Payments, Operations |
+| **Accounting** | Overview, Ledger, Manual Payment Entry, Online Payments, Day Close, Reconciliation, Fee Setup, Portal Access Rules, Invoices, Discounts |
+| **Communication** | Send Messages, Notification History, Notice Board |
+| **Administration** | Users, Locations, Settings, Access Control, Handbook, Prospectus, ID Cards, Campus Map, Calendar |
+| *(ප්‍රධාන කාර්යාලය)* | Group Overview, Branches, Teachers |
+| **Reports** *(ප්‍රධාන කාර්යාලය)* | Accounting, Analytics, Collections, Operations, Exams, Admissions, Demographics |
+| **Configuration** *(ප්‍රධාන කාර්යාලය)* | Discount Rules, Term Dates |
+
+**Calendar** (වෙනම *Holidays* සහ *Events* තිරවල ස්ථානය ගත්) සිදුවීම් සහ නිවාඩු දෙකම දරයි;
+[නිවාඩු, වාර සහ වැඩ කරන දින සකසන්න](/si/docs/educonnect-tutorial-holidays-and-terms) බලන්න. **List Reports**
+ඉහළ මට්ටමේ, Help & What's New යටතේ ඇත; [List Reports](/si/docs/educonnect-list-reports) බලන්න.
+**Student ID Cards** (Students යටතේ) එක් එක් සිසුවාගේ කාඩ්පත සොයාබලයි; **ID Cards** (Administration යටතේ)
+යනු හිස් කාඩ්පත් සමූහය සහ කාඩ්පත් නිර්මාණයි; [Student ID Cards](/si/docs/educonnect-tutorial-id-cards) බලන්න.
+
+කණ්ඩායමක් දිග හැරීමට එහි ශීර්ෂය තෝරන්න; drawer එක සෑම තිර ප්‍රමාණයකම ඝන පුවරුවක් වන අතර, දුරකථනයක එය
+overlay එකක් ලෙස විවෘත වේ.
+
+ගුරුවරුන්ට **My Class** (ඔවුන්ගේම පන්තියේ සිසුන් සහ පැමිණීම) සහ **My Timetable** ද ලැබේ. ඔවුන්ගේම පැමිණීම් වාර්තාව,
+**My Attendance**, Attendance කණ්ඩායමේ ඉහළින් ඇත.
+
+## ඔබේ ගිණුම් මෙනුව
+
+සෑම තිරයකම ඉහළ දකුණේ ඇති රවුම් ලාංඡනය (ඔබේ ඡායාරූපය, හෝ ඔබේ මුල් අකුර) ගිණුම් මෙනුව විවෘත කරයි. එහි ඇත්තේ:
+
+- **My Profile** — ඔබේම විස්තර. ගුරුවරුන් මෙහිදී තමන්ගේ ගුරු වාර්තාව සංස්කරණය කරයි; පරිපාලකයන් තම නම, ජංගම
+  දුරකථන අංකය, තනතුර සහ ඊමේල් සංස්කරණය කරයි.
+- **Account Settings** — පරිශීලක නාමය සහ මුරපදය.
+- **Preferences** — වර්ණ **Theme** සහ **Display density** (*Automatic*, *Comfortable* හෝ *Compact*;
+  Compact මඟින් කුඩා හෝ පැරණි තිරවල වැඩි පේළි ගණනක් ගැළපේ).
+- **Log out**.
+
+යෙදුමේ අනුවාදය drawer එකේ පතුලේ පෙන්වයි — සහාය අමතන විට එය සඳහන් කරන්න. දුරකථන සහ ටැබ්ලට් යෙදුම්වල, නව
+නිකුතුවක් ඇති විට **A new version is available.** යන බැනරයක් **Update** බොත්තමක් සමඟ පෙනේ; ඔබට එය
+ඉවත් කළ හැකිය.
+
+## ඔබේ drawer එක සගයෙකුගේ එකට වඩා වෙනස් වන්නේ ඇයි
+
+drawer එක ස්ථාවර මෙනුවක් නොවේ. එය ගොඩනැගෙන්නේ **ඔබට** විවෘත කිරීමට ඉඩ ඇති තිරවලිනි, එබැවින්:
+
+- ඔබට ප්‍රවේශයක් නැති කණ්ඩායමක් **කිසිසේත් නොපෙනේ** — එය අළු පැහැයෙන් පෙන්වන්නේ නැත.
+- ඔබට තිරයකට පමණක් ප්‍රවේශ විය හැකි කණ්ඩායමක් **තනි ටයිල් එකක් බවට හැකිළේ**, දිග හැරෙන ශීර්ෂයකින් තොරව.
+  එබැවින් "Timetable" පරිපාලකයෙකුට කණ්ඩායමක් ලෙසත් ගුරුවරයෙකුට තනි **My Timetable** සබැඳියක් ලෙසත් පෙනිය හැකිය.
+- එකම තනතුරක් ඇති දෙදෙනෙකුට පවා වෙනස් මෙනු පෙනිය හැකිය, මන්ද ප්‍රවේශය ලබා දෙන්නේ භූමිකාවකට නොව
+  **Administration → Access Control** හි තිරයකටය.
+
+මෙම මාර්ගෝපදේශය විස්තර කරන තිරයක් ඔබේ drawer එකේ නොමැති නම්, එය දෝෂයක් නොව ප්‍රවේශ ගැටලුවකි.
+[Access Control](/si/docs/educonnect-tutorial-users-and-access) පරීක්ෂා කරන ලෙස ඔබේ ආයතනය පරිපාලනය කරන අයගෙන් ඉල්ලන්න.
+
+## ආපසු යාම
+
+ඉහළ ඇති තීරුව ඔබ සිටින තැනට අදාළ breadcrumbs පෙන්වයි. විස්තර තිර — සිසු පැතිකඩක්, තනි විභාග පන්තියක් —
+drawer එකේ තමන්ගේම අයිතමයක් නොව ඒවායේ **ආසන්නතම මාපිය** අයිතමය ඉස්මතු කරයි, එබැවින් ඔබ ගැඹුරට යන විට drawer
+එක නොවෙනස්ව පවතී.

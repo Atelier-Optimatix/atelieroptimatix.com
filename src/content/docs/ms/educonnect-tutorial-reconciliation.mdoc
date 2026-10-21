@@ -1,0 +1,71 @@
+---
+title: "Tutorial: Menyelaraskan Caj dan Lejar"
+description: Mengendalikan empat tab penyelarasan — caj yatim, dibayar tetapi tidak direkodkan, lejar tanpa caj, dan ketidakpadanan jumlah.
+product: educonnect
+section: Advanced workflows
+order: 20
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/reconciliation_page.dart
+screenshotIds:
+  - "tutorial-reconciliation"
+hidden: false
+---
+
+Penyelarasan (reconciliation) membandingkan dua perkara yang sepatutnya sentiasa sepadan — **caj** yang dikenakan terhadap murid, dan **lejar** wang yang benar-benar diterima — dan menunjukkan setiap tempat yang tidak sepadan.
+
+Jalankannya secara berkala, dan sentiasa sebelum menutup akaun sesuatu penggal.
+
+**Anda memerlukan:** akses kepada **Accounting → Reconciliation**.
+
+## Empat tab
+
+Setiap tab ialah jenis percanggahan yang berbeza, dan setiap satu mempunyai pembetulan yang berbeza. Kiraan pada label tab ialah senarai tugas anda.
+
+### Orphaned charges
+
+Caj yang tidak lagi mempunyai yuran yang sah di belakangnya — biasanya kerana jadual yuran dipadam atau ditamatkan sedangkan caj sudah dikenakan terhadapnya. Setiap baris menunjukkan murid, kelas, yuran, jumlah dan **reason** ia menjadi yatim.
+
+Dua tindakan:
+
+- **Keep** — caj itu sah; biarkan ia kekal.
+- **Void** — caj itu tidak sepatutnya wujud. Void meminta pengesahan dan mengeluarkan caj daripada baki tertunggak murid.
+
+Apabila kosong, anda mendapat *No orphaned charges awaiting review.*
+
+### Paid, no ledger
+
+Caj yang ditandakan selesai tanpa catatan lejar yang sepadan. Wang direkodkan terhadap murid tetapi tidak pernah masuk ke dalam kutipan hari itu — lazimnya pembayaran yang direkodkan pada hari yang kemudian dilaraskan. Jejaki ini berdasarkan nombor resit sebelum menyentuh apa-apa.
+
+### Ledger, not paid
+
+Bayangan cermin: wang dalam lejar yang tidak dikaitkan dengan caj yang diselesaikan. Biasanya pembayaran yang dikenakan pada murid yang salah, atau yang dimasukkan tanpa memilih caj.
+
+### Amount mismatches
+
+Caj dan catatan lejar kedua-duanya wujud tetapi jumlahnya berbeza. Selalunya diskaun yang dikenakan selepas pembayaran diterima, atau pembayaran separa yang direkodkan sebagai penuh.
+
+## Mengendalikannya
+
+1. Mulakan dengan **Orphaned charges** — membersihkannya sering menghapuskan baris daripada tab lain.
+2. Kendalikan setiap tab yang tinggal sehingga kiraan menjadi sifar, atau sehingga setiap baris yang tinggal ialah baris yang telah anda putuskan secara jelas untuk **Keep**.
+3. Hanya kemudian tutup tempoh itu.
+
+Apabila semuanya sepadan, anda akan melihat *Every ledger payment maps to a settled fee.*
+
+## Pencegahan
+
+Kebanyakan baris di sini berpunca daripada salah satu tiga tabiat:
+
+- Memadam jadual yuran dan bukannya mematikan **Active** — lihat
+  [Set Up Fees](/ms/docs/educonnect-tutorial-fee-setup).
+- Melaraskan jumlah di kaunter dan bukannya memberi [diskaun](/ms/docs/educonnect-tutorial-discounts) yang betul.
+- Membuka semula hari yang telah ditutup tanpa menyemak semula jumlah — lihat
+  [Close the Day](/ms/docs/educonnect-tutorial-day-close).
+
+## Berkaitan
+
+- [Accounting Workflow — Ledger, Day-Close and Reconciliation](/ms/docs/shared-staff-accounting-overview)

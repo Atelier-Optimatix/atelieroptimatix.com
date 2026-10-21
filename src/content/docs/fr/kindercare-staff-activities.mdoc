@@ -1,0 +1,59 @@
+---
+title: "Enregistrer des activités"
+description: Consigner ce qu'un enfant a fait, avec une photo et un acquis d'apprentissage, puis le retrouver ensuite.
+product: kindercare
+section: Guides
+order: 10
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/activities_screen.dart
+  - kinder-care-fe/lib/screens/add_activity_screen.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Ce qu'est une activité
+
+Une activité est un moment consigné — ce qui s'est passé, quels enfants y ont participé et ce que cela
+révèle de leur apprentissage. C'est la matière première à partir de laquelle le rapport trimestriel est
+ensuite construit ; prendre l'habitude de consigner au fil de l'eau rend donc la rédaction des rapports
+rapide plutôt que pénible.
+
+Les parents les voient aussi, mais leur application les appelle des **observations** et non des
+activités. Ce sont les mêmes enregistrements, avec un mot différent.
+
+## En ajouter une
+
+**Activities → Add Activity**, puis :
+
+1. **Add a photo** — le formulaire s'ouvre sur cette étape. Utilisez **Take a photo** avec l'appareil
+   photo ou **Choose from gallery**, ou touchez **Skip for now** pour continuer sans photo. Les parents
+   voient la photo en premier dans leur fil ; il est donc généralement utile d'en ajouter une.
+2. **What did they do?** — choisissez l'**activity type** et le **learning outcome** qu'elle illustre,
+   et ajoutez des **Remarks (optional)** de 500 caractères au maximum.
+3. **Who took part?** — cochez tous les enfants concernés. **Search students** réduit la liste, et
+   l'en-tête indique combien d'enfants sont sélectionnés.
+
+Touchez ensuite **Create Activity**. Une activité peut concerner plusieurs enfants à la fois ; une
+séance de groupe est donc enregistrée une seule fois au lieu d'être ressaisie pour chaque enfant.
+L'activity type et le learning outcome sont obligatoires, et vous devez sélectionner **au moins un**
+élève ; le formulaire vous indique ce qui manque.
+
+Si vous quittez le formulaire en cours de route, l'application demande **Discard this activity?** avant
+d'effacer ce que vous avez saisi.
+
+## Retrouver des activités
+
+L'onglet Activities filtre par **student**, **activity type** et **date**, et **Clear** les réinitialise
+tous d'un coup. La liste charge d'autres éléments lorsque vous arrivez en bas de l'écran ; les activités
+plus anciennes apparaissent donc sans boutons de pagination. Si un enregistrement semble avoir disparu,
+vérifiez d'abord qu'un filtre appliqué plus tôt dans la journée n'est pas toujours actif avant de
+conclure qu'il n'a pas été enregistré.
+
+## Voir aussi
+
+- [Rédiger des rapports](/fr/docs/kindercare-staff-reports)
+- [Premiers pas avec l'application KinderCare pour le personnel](/fr/docs/kindercare-staff-getting-started)
+- [L'application KinderCare pour les parents](/fr/docs/kindercare-parent-app)

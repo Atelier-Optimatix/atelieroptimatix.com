@@ -1,0 +1,77 @@
+---
+title: "Clôturer un trimestre"
+description: La séquence de fin de trimestre — résultats saisis, bulletins publiés, comptes rapprochés et calendrier reporté sur la période suivante.
+product: educonnect
+section: Advanced workflows
+order: 40
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/term_report_screen.dart
+  - attendance-web-app/edu-frontend/lib/screens/accounting/reconciliation_page.dart
+hidden: false
+---
+
+La fin de trimestre touche les examens, les bulletins, la comptabilité et le calendrier. L'ordre est
+important, car chaque étape s'appuie sur la précédente.
+
+## 1. Terminer les examens
+
+Tous les résultats saisis et enregistrés, pour chaque classe et chaque matière.
+
+- [Saisir les résultats d'examen](/fr/docs/educonnect-tutorial-enter-exam-results)
+- [Téléverser les résultats depuis un tableur](/fr/docs/educonnect-tutorial-upload-exam-results)
+
+Videz la file d'attente dans **Exams → Result Changes** avant de poursuivre. Une demande de
+modification non approuvée est une note sur le point de changer — et les bulletins de progression
+sont construits à partir des notes.
+
+## 2. Vérifier les classements
+
+**Exams → Rankings**. C'est autant un contrôle de cohérence qu'un résultat : un classement qui
+semble faux signifie généralement qu'une matière n'a pas de notes pour une partie d'une classe, ou
+qu'un examen a été créé avec un mauvais **Exam Type** — seuls les examens de type TERM alimentent
+les classements du trimestre. Voir [Créer un examen](/fr/docs/educonnect-tutorial-create-an-exam).
+
+## 3. Bulletins de progression
+
+Les enseignants les rédigent, puis ils sont publiés en lot.
+
+- [Rédiger et publier les bulletins de progression](/fr/docs/educonnect-tutorial-progress-reports)
+- [Enseignants : rédiger les bulletins de progression](/fr/docs/educonnect-teacher-progress-reports)
+
+Publiez lorsque toute la cohorte est terminée. C'est la publication que voient les parents.
+
+## 4. Présence
+
+Avant de communiquer la présence du trimestre à qui que ce soit, vérifiez que le calendrier était
+correct — des jours fériés et des vacances non configurés font baisser tous les pourcentages. Voir
+[Définir les jours fériés, les trimestres et les jours ouvrés](/fr/docs/educonnect-tutorial-holidays-and-terms).
+
+Puis prenez les vues du trimestre dans **Attendance → Reports** ainsi que les synthèses de
+trimestre par classe.
+
+## 5. Clôturer les comptes
+
+1. Chaque jour du trimestre [clôturé](/fr/docs/educonnect-tutorial-day-close).
+2. [Rapprochement](/fr/docs/educonnect-tutorial-reconciliation) traité jusqu'à ce que chaque onglet
+   soit à zéro, ou que chaque ligne restante soit une ligne que vous avez volontairement conservée.
+3. Factures émises depuis **Accounting → Invoices**.
+4. [Remises accordées](/fr/docs/educonnect-tutorial-discounts) arrivant à échéance, à réexaminer —
+   bourses terminées, frères et sœurs qui sont partis.
+
+Effectuez le rapprochement avant d'émettre les factures, et non après.
+
+## 6. Reporter le calendrier sur la période suivante
+
+- Saisissez les dates et les jours fériés du trimestre suivant.
+- [Grilles de frais](/fr/docs/educonnect-tutorial-fee-setup) du trimestre suivant — utilisez
+  **Duplicate** sur les grilles actuelles et modifiez le libellé, le montant et la date d'échéance.
+- Modifications de l'emploi du temps, si la forme de la semaine change —
+  [régénérez-le](/fr/docs/educonnect-tutorial-generate-timetable) d'abord en **Preview only**.
+
+## À consulter également
+
+- [Flux de travail comptable](/fr/docs/shared-staff-accounting-overview)

@@ -1,0 +1,52 @@
+---
+title: "Tutoriel : Clôturer la journée"
+description: Rapprocher les espèces comptées de ce que le système attendait, clôturer la journée, et ce que signifie la rouvrir.
+product: educonnect
+section: Tutorials
+order: 150
+roles:
+  - staff
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/day_close_page.dart
+screenshotIds:
+  - "tutorial-day-close"
+hidden: false
+---
+
+La clôture de journée est le contrôle de caisse de fin de journée : le système vous indique ce qu'il pense se trouver dans le tiroir-caisse, vous
+comptez ce qui s'y trouve réellement, et l'écart est enregistré plutôt que discuté plus tard.
+
+**Vous avez besoin de :** l'accès à **Accounting → Day Close**. Faites-la une fois que tout le monde a terminé
+[d'enregistrer les paiements](/fr/docs/educonnect-tutorial-record-a-payment) de la journée.
+
+## Étapes
+
+1. Ouvrez **Accounting → Day Close** et sélectionnez la journée.
+2. Passez en revue les transactions de la journée listées à l'écran. Si l'écran indique **No transactions on this day**,
+   il n'y a rien à clôturer — vérifiez que vous avez la bonne date avant de supposer un problème.
+3. Comptez les espèces et saisissez le montant **counted** (compté).
+4. Sélectionnez **Close day**.
+5. La confirmation affiche **Expected cash** et **Counted cash** côte à côte. C'est votre dernier
+   regard sur l'écart avant son enregistrement. S'ils ne correspondent pas, annulez et cherchez pourquoi
+   *avant* de clôturer — un reçu manquant est bien plus facile à retrouver aujourd'hui que la semaine prochaine.
+6. Confirmez.
+
+## Rouvrir une journée
+
+Une journée clôturée peut être rouverte, et les clôtures passées sont listées sur le même écran. La réouverture existe pour de
+véritables corrections — un paiement enregistré sur le mauvais jour, une erreur de comptage découverte immédiatement —
+et non comme une étape de routine. Chaque clôture et réouverture est enregistrée.
+
+## Où cela se situe dans le mois
+
+1. Les paiements sont enregistrés tout au long de la journée.
+2. **Day close** chaque soir.
+3. [Reconciliation](/fr/docs/educonnect-tutorial-reconciliation) périodiquement, pour repérer les frais et
+   écritures du grand livre qui ont divergé.
+4. Les factures émises depuis **Accounting → Invoices**.
+
+## Voir aussi
+
+- [Accounting Workflow — Ledger, Day-Close and Reconciliation](/fr/docs/shared-staff-accounting-overview)

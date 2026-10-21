@@ -1,0 +1,99 @@
+---
+title: "Tutorial: Mengurus dan Menjejak Kad Pengenalan"
+description: Stok kad kosong, reka bentuk kad, menggantikan kad yang hilang, dan menjejak kad setiap murid daripada belum dicetak hingga diserahkan.
+product: educonnect
+section: Tutorials
+order: 190
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/settings/id_cards_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_cards_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_card_widgets.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_card_quick_add.dart
+  - attendance-web-app/edu-frontend/lib/api_services/student_id_card.dart
+  - attendance-web-app/backend/services/studentIdCardService.js
+screenshotIds:
+  - "tutorial-id-cards"
+  - "tutorial-student-id-cards"
+hidden: false
+---
+
+Kad pengenalan juga ialah kad kehadiran — nombor pada kad ialah **RFID** pada rekod individu itu, yang menjadikan imbasan mereka direkodkan. Jadi kad yang hilang ialah masalah kehadiran, bukan sekadar masalah identiti.
+
+Terdapat dua skrin. **Administration → ID Cards** mengurus stok kad kosong, reka bentuk dan penggantian kad hilang. **Students → Student ID Cards** merekodkan kedudukan kad setiap murid dalam kitaran hidupnya. Kedua-duanya memerlukan akses yang berasingan.
+
+**Anda memerlukan:** akses kepada **Administration → ID Cards** untuk bahagian pertama, dan kepada Student ID Cards untuk [Menjejak kad murid](#menjejak-kad-murid).
+
+## Stok kad kosong
+
+Stok (pool) ialah simpanan kad yang belum dikeluarkan. Tambahkan kad ke dalamnya apabila anda menerimanya daripada pembekal; skrin memberitahu apa yang tinggal. Pengeluaran mengambil daripada stok ini, jadi stok kosong ialah sebab pengeluaran gagal.
+
+## Reka bentuk kad
+
+Di bawah **Card designs**, muat naik reka bentuk institut anda sebagai PDF — secara berasingan bagi **Student card** dan **Teacher card**. Ini disimpan sebagai rujukan, supaya sesiapa yang mencetak mempunyai karya seni yang betul; kad bercetak itu sendiri dihasilkan daripadanya.
+
+**Upload PDF** menambah satu, **Replace** menggantikannya, dan pembuangan berlaku serta-merta (**Card design removed**).
+
+## Menggantikan kad yang hilang
+
+1. Buka **Administration → ID Cards** dan pilih **Report a lost card**.
+2. Pilih **Student** atau **Teacher**.
+3. Masukkan **Student ID** atau **Teacher ID**.
+4. Pilih **Issue Temporary Card**.
+5. **Print** kad itu.
+
+Kad sementara membawa nombor baharu, dan nombor itu menjadi RFID aktif individu tersebut. Kad lama mereka berhenti berfungsi — itulah tujuannya, kerana mungkin ia berada di tangan orang lain.
+
+## Jika kehadiran seseorang berhenti berfungsi
+
+Semak kad mereka sebelum apa-apa yang lain. Dua punca biasa ialah kad hilang yang tidak pernah dilaporkan, jadi imbasan pergi ke nombor yang sudah mati, dan rekod yang langsung tidak pernah diisi RFID — lihat [Add a Student](/ms/docs/educonnect-tutorial-add-a-student).
+
+## Menjejak kad murid
+
+**Students → Student ID Cards** menyimpan rekod kad setiap murid: sama ada ia sudah dicetak, sama ada ia sudah diserahkan, dan apa yang berlaku jika ia hilang atau rosak. Mengubah status kad memerlukan kebenaran urus yang berasingan; tanpanya, senarai hanya boleh dibaca.
+
+### Senarai
+
+Setiap murid dipaparkan dengan **Name**, **Student ID**, **Class**, **RFID**, **Status**, **Reason** dan tarikh **Updated**. Pengepala lajur boleh mengisih. Gunakan penapis untuk mengecilkan senarai:
+
+- **Search name, student ID or RFID**
+- **Class** (*All classes* secara lalai)
+- **Status**, yang menunjukkan berapa murid dalam setiap keadaan; **Reset** mengosongkan penapis.
+
+Status ialah **Not printed**, **Printed**, **Distributed**, **Lost**, **Damaged**, **Returned**, **Replaced** dan **Other**. Murid yang belum direkodkan kadnya dipaparkan sebagai *Not printed*.
+
+Menu eksport pada halaman memuat turun senarai yang ditapis, termasuk tarikh Printed dan Handed over serta sebab kad belum dicetak.
+
+### Sebab kad tidak dicetak
+
+Jika kad murid masih *Not printed* dan rekodnya tidak lengkap, lajur **Reason** dipaparkan dengan warna merah, contohnya *Missing photo, address*. Kad memerlukan **photo**, **address** dan **phone number** murid dalam rekod. Buka profil murid, tambah apa yang tiada, dan sebabnya akan hilang. Nilai kosong, *N/A* atau yang tiada dikira sebagai tiada.
+
+### Menandakan kad dicetak atau diserahkan
+
+1. Tandakan murid yang anda mahu, atau tandakan pengepala untuk memilih seluruh senarai yang ditapis.
+2. Gunakan **Mark printed** atau **Mark distributed**; butang menunjukkan berapa yang dipilih, contohnya *Mark printed (12)*. Kedua-dua butang berada di bahagian atas halaman.
+
+Bagi seorang murid, gunakan menu pada barisnya (**Change status**) untuk memilih mana-mana status. Nota diperlukan untuk **Other** (*Add a note saying what happened.*) dan pilihan bagi yang lain. Apabila status ialah **Lost** atau **Damaged**, anda juga boleh memilih **Start a replacement card**, yang menambah kad *Not printed* baharu ke dalam senarai.
+
+### Quick add di meja penyerahan
+
+**Quick add** digunakan untuk menyerahkan kad satu demi satu:
+
+1. Pilih **Quick add**.
+2. Taip atau imbas **Student ID** dan **RFID** kad, kemudian **Verify**.
+3. Semak murid yang dipaparkan. Skrin memberi amaran jika kad sudah dipautkan kepada murid ini, jika ia akan menggantikan kad semasa mereka, atau jika RFID tidak boleh digunakan kerana rekod lain memegangnya.
+4. **Confirm** merekodkan kad sebagai dipautkan dan diserahkan.
+
+Kad yang ditambah dengan cara ini disenaraikan di bawah **Added this session**.
+
+### Pada profil murid
+
+Profil murid mempunyai bahagian **ID Card** yang menunjukkan nombor kad (RFID), bila ia dicetak dan diserahkan, sebarang nota, dan **History** setiap perubahan. **Update** di situ mengubah status dengan cara yang sama seperti pada senarai.
+
+## Berkaitan
+
+- [Student Search, Profiles and Left Students](/ms/docs/educonnect-student-search-and-profile)
+- [Mark Your Class's Attendance](/ms/docs/educonnect-teacher-taking-attendance)

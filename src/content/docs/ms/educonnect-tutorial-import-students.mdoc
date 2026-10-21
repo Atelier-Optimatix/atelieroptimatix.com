@@ -1,0 +1,64 @@
+---
+title: "Tutorial: Mengimport Murid daripada Excel"
+description: Mendaftarkan satu kelas secara pukal daripada hamparan — susunan lajur tepat yang dijangka oleh pengimport, dan sebab ia tidak pernah membaca tajuk lajur anda.
+product: educonnect
+section: Tutorials
+order: 30
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/class_excel_import.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/students_in_class.dart
+hidden: false
+---
+
+Untuk lebih daripada beberapa orang murid, import kelas daripada hamparan dan bukannya
+[menambah mereka seorang demi seorang](/ms/docs/educonnect-tutorial-add-a-student).
+
+## Satu perkara yang mengelirukan semua orang
+
+**Pengimport membaca lajur mengikut kedudukan, bukan mengikut tajuk.** Ia melangkau baris pertama anda dengan andaian ia ialah tajuk, kemudian membaca lajur A sebagai Student ID, lajur B sebagai RFID, dan seterusnya — apa pun tajuk anda sebenarnya.
+
+Jadi hamparan dengan tajuk yang betul tetapi susunan yang salah akan diimport secara senyap dan salah. Betulkan susunannya dan tajuk boleh berbunyi apa sahaja yang anda suka.
+
+## Susunan lajur
+
+| Column | Field | Notes |
+| --- | --- | --- |
+| A | Student ID | Hanya digit, unik di seluruh institut |
+| B | RFID | Nombor kad kehadiran; biarkan kosong jika kad menyusul |
+| C | Full Name | |
+| D | Date of Birth | `YYYY-MM-DD`. Boleh dibiarkan kosong |
+| E | Class ID | **Class Name** tepat seperti yang dipaparkan dalam Classes |
+| F | Email | |
+| G | Mobile Number | SMS kehadiran dan peringatan pembayaran dihantar ke sini |
+| H | Address | |
+| I | Parent/Guardian | |
+| J | Religion | |
+| K | Nationality | |
+| L | Gender | |
+
+Setiap lajur selepas A–C boleh dibiarkan kosong. Sel kosong diimport sebagai kosong; ia tidak menghentikan baris itu.
+
+## Langkah
+
+1. Sediakan hamparan mengikut susunan lajur di atas, dengan satu baris tajuk di bahagian atas.
+2. Buka **Students → Classes** dan buka kelas yang anda import ke dalamnya.
+3. Buka menu **⋮ More options** dan pilih **Import Students from Excel**.
+4. Pilih fail `.xlsx` atau `.xls` anda.
+5. Jadual **Imported Data Preview** dipaparkan, menunjukkan setiap baris tepat seperti yang dibaca oleh pengimport. **Inilah titik semakan** — tatal ke sisi dan sahkan nilai berada di bawah tajuk yang betul. Jika nama muncul di bawah "Date of Birth", susunan lajur anda salah: batalkan, betulkan hamparan, dan mulakan semula.
+6. Sahkan untuk menyimpan.
+
+Jika anda melihat **Unable to import Excel file. Please try again.**, fail itu langsung tidak dapat dihuraikan — biasanya `.csv` yang dinamakan semula sebagai `.xlsx`, atau fail yang masih dibuka dalam Excel.
+
+## Selepas mengimport
+
+- Murid yang diimport tanpa RFID tidak akan merekodkan kehadiran sehingga nombor kad ditambah. Isikannya dengan mengedit setiap murid, atau import semula selepas kad dikeluarkan.
+- Pastikan bilangan pada senarai kelas sepadan dengan hamparan anda sebelum meneruskan.
+
+## Berkaitan
+
+- [Add a Student](/ms/docs/educonnect-tutorial-add-a-student)
+- [Add a Class](/ms/docs/educonnect-tutorial-add-a-class)

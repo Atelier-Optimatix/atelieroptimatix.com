@@ -1,0 +1,70 @@
+---
+title: Papan Kenyataan
+description: Membaca papan kenyataan sekolah, dan menyiarkan, menjadualkan, menyemat serta mengarkib kenyataan untuk kakitangan, ibu bapa atau kelas terpilih.
+product: educonnect
+section: Guides
+order: 70
+roles:
+  - admin
+  - staff
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/notices/notice_board_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/notices/notice_editor_dialog.dart
+  - attendance-web-app/edu-frontend/lib/models/notice.dart
+  - attendance-web-app/backend/config/accessCatalog.js
+screenshotIds:
+  - "staff-notice-board"
+hidden: false
+---
+
+**Communication → Notice Board** ialah tempat sekolah menyiarkan kenyataan yang kekal kelihatan, berbeza
+daripada [Send Messages](/ms/docs/educonnect-tutorial-send-messages), yang menghantar SMS sekali sahaja.
+Sesuatu kenyataan boleh sampai kepada kakitangan, ibu bapa (yang juga dimaklumkan pada telefon mereka kali
+pertama ia diterbitkan) atau ibu bapa dan guru bagi kelas terpilih.
+
+## Membaca kenyataan
+
+Semua orang di pihak kakitangan boleh membaca papan (kebenaran *View the notice board*). Tab **Board**
+menyenaraikan kenyataan yang berkenaan dengan anda, yang terbaharu dahulu, dengan kenyataan yang disemat
+di bahagian atas. *No notices right now.* bermaksud tiada kenyataan.
+
+## Menyiarkan kenyataan
+
+Menyiarkan ialah kebenaran yang berasingan (*Create, publish, pin & archive notices*) yang dibiarkan oleh
+tetapan lalai kepada pentadbir, kerana ia meletakkan teks di hadapan seluruh sekolah. Jika anda
+mempunyainya, halaman juga mempunyai tab **Manage** dengan setiap kenyataan dan butang **New notice**.
+
+1. Pilih **New notice**.
+2. Masukkan **Title** dan **Message**. Kedua-duanya wajib (*Give the notice a title.*, *Write the
+   message.*), dan masing-masing mempunyai had panjang.
+3. Pilih **Audience**: semua orang, guru, ibu bapa, atau **classes**. Bagi kelas, pilih yang mana. Ibu bapa
+   kepada murid dalam kelas tersebut, dan guru yang mengajar mereka, akan melihat kenyataan itu. Pengguna
+   yang tidak mempunyai kelas yang ditetapkan tidak mempunyai kelas untuk disiarkan.
+4. Tetapkan **Publish** kepada tarikh dan masa. Masa pada masa hadapan menjadualkan kenyataan itu.
+5. Secara pilihan tetapkan **Expires**. Tarikh tamat mesti selepas tarikh penerbitan.
+6. Secara pilihan lampirkan PDF atau imej (sehingga 20 MB setiap satu). Lampiran hanya boleh ditambah
+   daripada aplikasi web.
+7. Pilih **Save draft**, atau **Publish**. Menyunting kenyataan sedia ada menawarkan **Save** dan **Save &
+   publish**.
+
+Anda akan melihat *Notice saved*.
+
+## Mengurus kenyataan
+
+Tab **Manage** menyenaraikan **Title**, **Audience**, **Status**, **Dates** dan **Files**, dan boleh
+ditapis mengikut status: **Drafts**, **Published** atau **Archived**. Pada setiap baris anda boleh:
+
+- **Edit** kenyataan.
+- **Publish** draf. Satu dialog mengesahkan khalayak terlebih dahulu; ibu bapa dimaklumkan jika kenyataan
+  itu belum pernah dihantar sebelum ini.
+- **Pin to the top** atau **Unpin**.
+- **Archive** kenyataan.
+
+Cip status memberitahu anda kedudukan sesuatu kenyataan: **Draft**, **Scheduled** (tarikh penerbitan pada
+masa hadapan), **Live**, **Expired** atau **Archived**.
+
+## Berkaitan
+
+- [Send Messages](/ms/docs/educonnect-tutorial-send-messages)

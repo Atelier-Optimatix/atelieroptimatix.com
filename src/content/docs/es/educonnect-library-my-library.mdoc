@@ -1,0 +1,32 @@
+---
+title: "Mi biblioteca para docentes y personal"
+description: Cómo ver sus propios préstamos y reservas, reservar un libro y qué sucede en el mostrador.
+product: educonnect
+section: For teachers
+order: 90
+roles:
+  - teacher
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/my_library_page.dart
+  - attendance-web-app/backend/services/library/appAccess.js
+screenshotIds:
+  - "library-my-library"
+hidden: false
+---
+
+**My Library** es su propia cuenta de biblioteca. Está desactivada para los docentes hasta que su escuela marque
+**My loans & holds** para el rol de docente en Access Control. Un miembro del personal no docente la ve
+una vez que un administrador le haya [dado acceso a la aplicación](/es/docs/educonnect-library-borrowers).
+
+Muestra:
+
+- Los libros que tiene prestados y cuándo vencen.
+- Sus reservas. Use **Reserve a book** para buscar en el catálogo y reservar uno que esté prestado (si las reservas
+  están activadas y no ha alcanzado su límite), y cancele sus propias reservas.
+- Multas, para consulta. A los docentes y al personal nunca se les multa.
+- Los libros que ha devuelto.
+
+Las renovaciones y devoluciones se hacen en el mostrador. Si ve un mensaje que indica que su cuenta no tiene registro
+de biblioteca, pida al bibliotecario que lo agregue como prestatario.

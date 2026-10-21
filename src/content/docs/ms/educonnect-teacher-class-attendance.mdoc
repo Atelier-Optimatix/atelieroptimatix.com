@@ -1,0 +1,67 @@
+---
+title: "Untuk Guru: Baca Kehadiran Kelas Anda"
+description: Paparan harian, mingguan dan penggal bagi kelas anda — apa yang dijawab oleh setiap satu, dan yang mana satu untuk dibuka bagi soalan yang mana.
+product: educonnect
+section: For teachers
+order: 20
+roles:
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/class_attendance_dashboard_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/detailed_summary_daywise_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/detailed_summary_weekwise_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/term_attendance_summary_page.dart
+screenshotIds:
+  - "teacher-class-attendance"
+hidden: false
+---
+
+**My Class → Attendance** membuka papan pemuka bagi kelas anda dengan tiga cara untuk masuk ke data yang
+sama. Ia bukan tiga laporan; ia ialah tiga tahap zum.
+
+## Yang mana untuk dibuka
+
+| Soalan | Paparan |
+| --- | --- |
+| "Siapa yang hadir pada hari Selasa?" | **Day-wise Summary** |
+| "Siapa yang semakin merosot — tidak hadir pada hari yang sama setiap minggu?" | **Week-wise Summary** |
+| "Siapa yang berada di bawah ambang kehadiran penggal ini?" | **Term Attendance** |
+| "Saya perlukan sesuatu untuk dicetak atau diserahkan" | **Attendance Report** |
+
+## Day-wise Summary
+
+Satu baris bagi setiap pelajar, satu lajur bagi setiap hari. Ini ialah paparan untuk menjawab soalan
+tertentu tentang tarikh tertentu, dan untuk mengesan hari apabila seluruh kelas menurun — Isnin yang
+hujan, cuti umum yang belum dikonfigurasikan.
+
+## Week-wise Summary
+
+Mengagregatkan data yang sama mengikut minggu. Corak yang tidak kelihatan hari demi hari muncul di sini:
+pelajar yang selalu tidak hadir pada hari Jumaat, dua minggu apabila seseorang senyap-senyap berhenti
+datang.
+
+Jika ia menyatakan **No Data Available**, tiada kehadiran direkodkan bagi tempoh itu — yang, pada awal
+penggal, biasanya hanya bermakna belum ada sesiapa menandakan daftar. **No Students Found** bermaksud
+sesuatu yang berbeza: kelas itu tidak mempunyai sesiapa yang didaftarkan.
+
+## Term Attendance
+
+**Term Overview** dengan angka kelas, kemudian **Per-Student Breakdown** dengan garis **Class Avg** untuk
+dibandingkan. Ini ialah paparan yang digunakan sebelum malam ibu bapa, dan yang menjawab "adakah kehadiran
+pelajar ini benar-benar satu masalah, atau ia hanya terasa begitu?"
+
+## Attendance Report
+
+Versi yang boleh dicetak dan dikongsi. Gunakannya untuk apa-apa yang keluar daripada sistem.
+
+## Peringatan tentang maksud "tidak hadir"
+
+Tiada satu pun paparan ini dapat membezakan ketidakhadiran sebenar daripada daftar yang tidak pernah
+dilengkapkan — pelajar yang tidak ditandakan kelihatan sama sahaja. Jika sesuatu hari kelihatan
+membimbangkan, semak sama ada ia sebenarnya telah ditandakan sebelum bertindak. Lihat
+[Tandakan Kehadiran Kelas Anda](/ms/docs/educonnect-teacher-taking-attendance).
+
+## Berkaitan
+
+- [Mengambil Kehadiran sebagai Kakitangan](/ms/docs/shared-staff-attendance-overview)

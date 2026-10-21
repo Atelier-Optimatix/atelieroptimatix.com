@@ -1,0 +1,83 @@
+---
+title: Rapports sous forme de listes
+description: Des listes de données brutes en lecture seule sur les élèves, la présence, les examens, la comptabilité et plus encore, que vous pouvez rechercher, filtrer et télécharger en CSV ou en PDF.
+product: educonnect
+section: Guides
+order: 85
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/list_reports_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/list_reports/
+  - attendance-web-app/backend/services/lists/
+screenshotIds:
+  - "staff-list-reports"
+  - "staff-list-report-view"
+hidden: false
+---
+
+**List Reports** est destiné aux moments où il vous faut les lignes brutes, et non un graphique :
+tous les élèves absents hier, tous les RFID en double, tous les frais impayés. Il se trouve au
+premier niveau du menu latéral, sous **Help & What's New**.
+
+Les listes sont en **lecture seule**. Rien de ce que vous faites ici ne modifie une fiche. L'accès
+est accordé par l'autorisation *List reports (view & download raw data)* dans **Administration →
+Access Control**, et les listes qui contiennent des montants nécessitent aussi l'autorisation
+comptable correspondante. Si une liste ne vous est pas proposée, vous ne la verrez pas dans le
+catalogue.
+
+## Trouver une liste
+
+Le catalogue regroupe les listes sous **Students**, **Teachers & staff**, **Attendance**, **Exams**,
+**Accounting**, **Admissions** et **School structure**. L'en-tête indique combien vous en voyez
+(*12 of 40 lists*). Saisissez un terme dans **Search lists** (par exemple « RFID », « absent » ou
+« teachers ») pour affiner. *No lists match your search.* signifie qu'aucune ne correspond ; *No
+lists are available to this account.* signifie que votre accès n'en inclut aucune.
+
+Quelques listes que vous pourriez chercher :
+
+- **Students** — tous les élèves, élèves dont le numéro de contact est manquant ou invalide, élèves
+  partageant un numéro de contact, élèves sans classe valide, RFID et identifiants d'élève en double,
+  anniversaires et âges, élèves partis, élèves supprimés, réussites des élèves, certificats émis,
+  listes de classe.
+- **Attendance** — élèves absents à une date, élèves présents ou en retard à une date, pourcentage de
+  présence sur une période, registre quotidien des élèves, présence quotidienne par classe,
+  enseignants absents ou présents à une date, feuille de présence des enseignants, absences déclarées
+  des enseignants, et journal brut des passages de carte.
+- **Exams** — examens, résultats d'examen, notes inférieures à la note de passage, notes manquantes,
+  synthèse d'examen par élève, remarques et conduite des bulletins trimestriels, et journal des
+  modifications de notes.
+- **Accounting** — frais facturés, frais impayés, solde des frais par élève, remises, grand livre,
+  paiements, remboursements et annulations, clôtures de journée, boîte de réception des paiements en
+  ligne, types et grilles de frais, et salaires des enseignants.
+- **Admissions** — candidatures d'admission et paiements des frais d'admission.
+
+## Travailler avec une liste
+
+Ouvrez une liste. Si elle nécessite une date, une classe ou un examen, définissez les filtres en haut
+et appuyez sur **Show** (*Set the filters and press Show.*). **Reset** les efface. Ensuite :
+
+- **Search these rows** recherche du texte dans n'importe quelle colonne.
+- **Columns** permet de choisir les colonnes à afficher.
+- Cliquez sur un en-tête pour trier ; les nombres sont triés numériquement et les cellules vides
+  arrivent en dernier.
+- Des listes déroulantes de filtrage apparaissent pour les colonnes comportant un petit ensemble de
+  valeurs.
+
+Une liste très longue est tronquée : une note rouge indique *Showing the first N of M rows. Narrow the
+filters to see the rest.* Affinez les filtres plutôt que de vous attendre à ce que le téléchargement
+contienne les lignes manquantes.
+
+## Télécharger
+
+Utilisez le menu d'exportation pour télécharger en **CSV** ou en **PDF**. Le fichier contient les
+lignes actuellement affichées (après votre recherche et vos filtres) et uniquement les colonnes que
+vous avez laissées activées sous **Columns**. Le PDF n'est proposé que si 25 colonnes ou moins sont
+affichées ; sinon, masquez certaines colonnes ou utilisez le CSV.
+
+## À consulter également
+
+- [Lire la section Analytics](/fr/docs/shared-staff-analytics)
+- [Recherche et fiches d'élèves](/fr/docs/educonnect-student-search-and-profile)

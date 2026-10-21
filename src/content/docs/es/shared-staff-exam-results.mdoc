@@ -1,0 +1,53 @@
+---
+title: Ingreso y publicación de resultados de exámenes
+description: La diferencia entre agregar resultados, cargar resultados en bloque, solicitudes de cambio y clasificaciones.
+product: educonnect
+section: Guides
+order: 60
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/exam_routes.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Dos formas de ingresar resultados
+
+La sección **Exams** ofrece dos vías distintas hacia el mismo conjunto de resultados, y es fácil usar
+la equivocada para lo que se quiere hacer:
+
+- **Add results** — ingrese las calificaciones de una clase y asignatura a la vez, directamente en el
+  panel. Úselo para clases pequeñas o correcciones de último momento.
+- **Upload results** — importe en bloque las calificaciones de una clase y asignatura desde un
+  archivo. Úselo para el ingreso de una clase completa una vez terminada la calificación; es mucho más
+  rápido que escribir las calificaciones una por una, pero los errores en el archivo afectan a toda la
+  clase a la vez, así que revise bien el archivo antes de cargarlo.
+
+## La lista de clases del examen
+
+Al abrir un examen se muestran sus clases agrupadas por grado, con el mismo diseño que **Students →
+Classes**. Cada clase muestra sus asignaturas y estudiantes, y *No results yet* hasta que se ingresan
+calificaciones. Los estudiantes eliminados aparecen como un grupo aparte. La exportación entrega
+**Exam Coverage by Class** con grado, clase, asignaturas, estudiantes y puntaje promedio.
+
+## Solicitudes de cambio
+
+Si un resultado necesita corregirse después de haberse ingresado (un error de calificación detectado
+más tarde, una recorrección), use **change requests** en lugar de editar el resultado directamente.
+Así se conserva un registro de lo que se cambió y por qué, lo que importa al atender consultas de los
+padres sobre una calificación más adelante.
+
+## Clasificaciones e informes de período
+
+Las **Rankings** y los **term reports** se generan a partir de los resultados que existan en ese
+momento: no reflejarán una clase hasta que se hayan ingresado o cargado los resultados de esa clase y
+asignatura. Si una clasificación parece incompleta, compruebe si ya se han ingresado los resultados de
+todas las asignaturas antes de suponer que el cálculo de la clasificación es incorrecto.
+
+## Quién ve esto
+
+Los docentes suelen usar agregar y cargar resultados para sus propias clases; las clasificaciones, los
+informes de período y la analítica entre clases son más habituales entre los administradores de la
+escuela que revisan una clase completa o un grupo de curso.

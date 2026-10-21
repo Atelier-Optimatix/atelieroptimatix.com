@@ -1,0 +1,78 @@
+---
+title: "Tutorial: Agregar un usuario y otorgar acceso"
+description: Cómo crear inicios de sesión para personal y padres, restablecer una contraseña y usar Access Control para decidir qué puede abrir cada cuenta.
+product: educonnect
+section: Tutorials
+order: 170
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/user_management_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/user_management/parent_accounts_tab.dart
+  - attendance-web-app/edu-frontend/lib/screens/settings/access_management_page.dart
+screenshotIds:
+  - "tutorial-users-and-access"
+hidden: false
+---
+
+## Dos pantallas, dos funciones
+
+- **Administration → Users** — quién tiene un inicio de sesión.
+- **Administration → Access Control** — qué puede abrir ese inicio de sesión.
+
+Crear un usuario no otorga por sí mismo muchos permisos. Se necesitan ambos pasos.
+
+## Agregar un usuario
+
+1. Abra **Administration → Users**. Tiene dos pestañas: **Staff** y **Parents**.
+2. En **Staff**, seleccione **Add User**.
+3. Complete los datos de la cuenta y vincúlela con el registro existente de la persona; en el caso de
+   un docente, el [registro de docente que ya creó](/es/docs/educonnect-tutorial-add-a-teacher).
+4. Guarde.
+
+Las cuentas de padres se crean en su mayoría por sí solas: los padres se registran desde el portal
+con el Student ID de su hijo o hija y verifican mediante SMS o correo electrónico. La pestaña
+**Parents** es donde usted encuentra y gestiona el resultado. Consulte
+[Registro como padre o madre](/es/docs/shared-parent-registration).
+
+## Restablecer una contraseña
+
+1. Busque al usuario y seleccione **Reset PW**.
+2. Escriba una **New Password** y una **Confirm Password**, o deje que el sistema genere una.
+3. La nueva contraseña se **muestra en pantalla** para que pueda comunicarla.
+
+Esa visualización es todo el modelo de seguridad del restablecimiento, por lo que: léala en voz alta
+o entréguela directamente, no la envíe por correo electrónico e indique a la persona que la cambie en
+su primer inicio de sesión desde
+[My Profile](/es/docs/educonnect-teacher-my-profile).
+
+## Eliminar un usuario
+
+**Delete** solicita confirmación primero. Elimina el inicio de sesión, no el registro de docente o de
+estudiante subyacente, que suele ser lo que se desea para alguien que ya se ha ido.
+
+## Access Control
+
+**Administration → Access Control** es una matriz de pantallas frente a roles. Es lo que hace que dos
+docentes de la misma escuela vean menús distintos.
+
+1. Abra **Administration → Access Control**.
+2. Active o desactive pantallas individuales. Un rol que tiene algunas pero no todas las pantallas de
+   un grupo aparece como **Partial access**.
+3. Un aviso indica **You have unsaved permission changes** hasta que usted elija **Save changes** o
+   **Discard**. No abandone la pantalla mientras se muestre.
+
+**Reset to defaults** devuelve un rol al conjunto de permisos original. Es la forma más rápida de
+salir de una configuración que nadie puede explicar, pero descarta todas las personalizaciones de ese
+rol: anote lo que cambió antes de pulsarlo.
+
+## Diagnóstico de "no puedo ver esa pantalla"
+
+Casi siempre se trata de un problema de acceso, no de una falla. El menú oculta lo que usted no puede
+abrir en lugar de mostrarlo atenuado, por lo que la ausencia de una opción de menú es el síntoma
+esperado. Revise primero Access Control para el rol de esa persona.
+
+## Temas relacionados
+
+- [Cómo orientarse en el panel](/es/docs/educonnect-navigating-the-dashboard)

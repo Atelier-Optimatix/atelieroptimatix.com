@@ -1,0 +1,101 @@
+---
+title: Lire la section Analytics
+description: À quelle question répond chacune des pages d'analyse, comment ses chiffres sont calculés, et pourquoi certaines sont réservées aux administrateurs.
+product: educonnect
+section: Guides
+order: 80
+roles:
+  - admin
+  - staff
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/analytics_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/analytics/
+lastUpdateDate: 2026-10-21
+screenshotIds:
+  - "staff-analytics-overview"
+hidden: false
+---
+
+## Où la trouver
+
+**Analytics** dans le menu latéral. Ce n'est pas un tableau de bord unique — ce sont sept pages, chacune
+regroupée autour d'un type de décision plutôt qu'autour d'un seul écran de l'application :
+
+| Page | À quoi elle sert |
+| --- | --- |
+| **Statistics** | Admissions, départs et effectifs, comptés à partir des fiches élèves. Listée en premier. |
+| **Overview** | Le point de départ — l'image d'ensemble de l'établissement. |
+| **Students & Risk** | Quels élèves, individuellement, demandent de l'attention. |
+| **Academics** | Performances aux examens et aux évaluations. |
+| **Attendance** | La présence, avec la ponctualité. |
+| **Payments** | Les frais facturés par rapport aux frais effectivement encaissés. |
+| **Operations** | Le fonctionnement quotidien de l'établissement. |
+
+**Payments** et **Operations** sont réservées aux administrateurs. Si vous êtes enseignant ou
+coordinateur, ces deux pages n'apparaîtront pas dans votre groupe Analytics — c'est la répartition
+d'accès prévue, et non une page manquante.
+
+## School Statistics
+
+**Analytics → Statistics** compte les élèves plutôt que de les noter. Choisissez une **Range** (*Last N
+years*) et vous obtenez des cartes de synthèse : **Students on roll**, **Admissions** et **Leavers** pour
+l'année en cours (du 1er janvier à aujourd'hui), **Net change**, **Classes**, **Average class size**,
+**Teachers** et **Seats filled**. En dessous :
+
+- **Admissions, leavers & students on roll** par **Month**, **Term** ou **Year**, sous forme de
+  graphique et de tableau avec une ligne de total. Les *admissions* sont les élèves dont la date
+  d'arrivée tombe dans la période ; les *départs* sont les élèves marqués comme partis avec une date de
+  départ dans la période ; les *effectifs* sont les élèves arrivés et non encore partis au dernier jour
+  de la période.
+- **Students by grade** — les élèves inscrits aujourd'hui selon le niveau de leur classe actuelle,
+  répartis selon le genre enregistré (Male, Female, Not recorded) avec les classes et les places.
+
+Les élèves sans date d'arrivée enregistrée ne sont pas comptés comme admissions et sont comptés dans
+les effectifs dès le début de la période ; la page indique combien ils sont. La vue par trimestre
+nécessite les dates des trimestres pour chaque année ; les années qui n'en ont pas sont listées et
+n'affichent aucun trimestre. Voir
+[Définir les jours fériés, les trimestres et les jours ouvrés](/fr/docs/educonnect-tutorial-holidays-and-terms).
+
+## Comment sont calculés les chiffres d'Operations
+
+Chaque chiffre de **Operations** a une icône d'information (survolez-la, ou touchez-la sur téléphone)
+qui l'explique. En résumé :
+
+- **Class stability** part de 100 pour chaque classe et retranche des points pour la volatilité des
+  présences sur 60 jours (40 %), les jours d'absence de son enseignant au cours des 90 derniers jours
+  (30 %), les remplacements par semaine (20 %) et la baisse des présences lorsque l'enseignant est
+  absent (10 %). Plus le score est élevé, plus la classe est stable.
+- **Ledger mismatch** compare, pour chaque journée clôturée des 30 derniers jours, le total net
+  enregistré à la clôture avec le net recalculé à partir du grand livre de cette journée. Un écart
+  supérieur à 0.01 est pris en compte.
+- **Data quality** compte les élèves actifs (ni anciens élèves, ni partis) sans RFID ou avec *N/A*, les
+  élèves actifs sans badgeage en 30 jours, les numéros de carte badgés en 30 jours qui n'appartiennent à
+  aucun élève, et les jours avec badgeages mais sans résumé de présence quotidien.
+- **Voids and refunds** sont mesurés par rapport aux paiements des 30 mêmes jours ; plus de 5 % de
+  l'un ou de l'autre est signalé.
+
+## Se limiter à une classe
+
+La plupart des pages acceptent un filtre de classe, et la classe que vous choisissez est reprise dans
+l'adresse propre de la page. Cela signifie qu'une vue filtrée peut être enregistrée dans vos favoris ou
+collée à l'attention d'un collègue, et elle s'ouvrira sur la même classe pour lui — à condition qu'il ait
+accès à cette page au départ.
+
+## Les anciens liens fonctionnent toujours
+
+La section analytique a été réorganisée : d'un tableau de bord unique à six onglets, elle est devenue ces
+pages séparées. Les anciens favoris et liens enregistrés continuent de fonctionner :
+
+- Les liens d'onglets numérotés (le format d'origine `?tab=`) mènent à la page correspondante.
+- Les noms de pages retirées redirigent vers leur nouvel emplacement — *Exams* → **Academics**,
+  *Financial* → **Payments**, *Punctuality* → **Attendance** (la ponctualité y a été fusionnée), et
+  *Intelligence* → **Students & Risk**.
+
+Dans tous les cas, la classe que vous aviez sélectionnée est conservée, vous ne perdez donc pas votre
+filtre. Il n'est pas nécessaire de rechercher et de mettre à jour les anciens liens.
+
+## Voir aussi
+
+- [Faire l'appel en tant que membre du personnel](/fr/docs/shared-staff-attendance-overview)
+- [Aperçu de la comptabilité](/fr/docs/shared-staff-accounting-overview)
+- [Résultats d'examen](/fr/docs/shared-staff-exam-results)

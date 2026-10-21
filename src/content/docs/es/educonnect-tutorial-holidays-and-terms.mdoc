@@ -1,0 +1,97 @@
+---
+title: "Tutorial: Definir feriados, períodos y días laborables"
+description: Cómo usar el Calendar para indicar al sistema qué días no cuentan, y por qué los informes de asistencia parecen erróneos hasta que lo haga.
+product: educonnect
+section: Tutorials
+order: 180
+roles:
+  - admin
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/events/events_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/events/holiday_form_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/events/mark_today_holiday_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/settings/settings_page.dart
+screenshotIds:
+  - "tutorial-holidays-and-terms"
+  - "tutorial-calendar-mark-holiday"
+hidden: false
+---
+
+Los porcentajes de asistencia valen tanto como el calendario en que se basan. Un feriado que no está configurado es un día en que toda la escuela parece haber faltado.
+
+## Días laborables
+
+En **Administration → Settings**, establezca qué días de la semana funciona su institución y luego
+seleccione **Save Working Days**. Todo lo demás se calcula a partir de esto, así que hágalo antes de
+que comience el período.
+
+## La página Calendar
+
+Los feriados ahora están en **Administration → Calendar** (las antiguas pantallas *Holidays* y *Events*
+se fusionaron en ella; los enlaces antiguos a Holidays abren la pestaña **Holidays** del Calendar).
+Tiene dos pestañas:
+
+- **Upcoming**: eventos y feriados que aún están por llegar, en orden de fecha.
+- **Holidays**: todos los feriados y recesos de período que haya definido. Son la única fuente de
+  verdad sobre qué días cuentan como día lectivo, y determinan los porcentajes de asistencia y los
+  boletines en todas partes.
+
+Una tarjeta en la parte superior muestra **School days held in** el año en curso: los días laborables
+desde el 1 de enero hasta hoy, sin contar fines de semana, feriados ni días fuera de las fechas del
+período. Si esa cifra parece incorrecta, la causa es su calendario.
+
+Todas las personas con acceso de personal pueden leer el Calendar. Solo los administradores ven los
+botones para agregar, editar o eliminar.
+
+## Agregar un feriado
+
+1. Abra **Administration → Calendar** y elija la pestaña **Holidays**.
+2. Seleccione **Add Holiday**.
+3. Complete:
+   - **Title**: el nombre con el que aparece en los informes. *Enter a title* es el error si está vacío.
+   - **Date range**: elija el primer y el último día (dos clics; no hay nada preseleccionado). *Pick the
+     first and last day* es el error si no lo ha hecho.
+   - **School holiday** o **Term break**. Los recesos de período delimitan los períodos sobre los que se
+     calculan la [asistencia del período](/es/docs/educonnect-teacher-class-attendance) y los informes
+     de progreso, de modo que la distinción importa.
+   - **Classes**: déjelo vacío para todas las clases o elija algunas específicas. Así se registra que un
+     grado está fuera en una excursión sin marcar ausente a toda la escuela.
+4. Seleccione **Create**. Verá **Holiday created**.
+
+La lista muestra cada feriado con sus fechas, su tipo y **All classes** o las clases a las que se
+aplica. **Delete** pide confirmación (*Delete holiday?*) y advierte que afecta a los porcentajes de
+asistencia y a los boletines. Si indica *No holidays yet. Add one to get started.*, no hay nada
+configurado, y todos los días no lectivos hasta ahora se están contando en contra de sus cifras de asistencia.
+
+## Cerrar la escuela hoy
+
+Si la escuela cierra de forma inesperada, seleccione **Mark today a holiday**. Escriba un **Reason**
+(obligatorio: *Enter a reason*), elija opcionalmente las clases (vacío significa todas las clases) y
+seleccione **Mark as holiday**. Los porcentajes de asistencia y los informes omiten el día, y verá
+**Today marked as a holiday**.
+
+## Agregar un evento
+
+En la pestaña **Upcoming**, **Add Event** solicita un **Title**, **Details** opcionales, una fecha y un
+icono. *Editar* un evento cambia solo esa ocurrencia. Las series recurrentes se crean desde el
+calendario del panel, no aquí.
+
+## Períodos
+
+Las fechas de los períodos se establecen en **Administration → Settings** (y, para un grupo de
+escuelas, de forma centralizada en **Configuration → Term Dates** de la sede central). Guárdelas con
+**Save Terms**.
+
+Defina los períodos antes de registrar resultados de exámenes: un examen realizado fuera de todos los
+períodos configurados no se asignará al período al que pertenece.
+
+## Haga esto primero
+
+Si los porcentajes de asistencia parecen inverosímilmente bajos, revise esta página antes de investigar
+cualquier otra cosa. Los fines de semana, feriados y recesos de período sin configurar son, con mucho,
+la causa más común.
+
+## Relacionado
+
+- [Configurar una nueva institución](/es/docs/educonnect-setting-up-a-new-institute)

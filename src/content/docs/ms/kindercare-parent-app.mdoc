@@ -1,0 +1,102 @@
+---
+title: Aplikasi Ibu Bapa KinderCare
+description: Apa yang dilihat oleh ibu bapa — pemerhatian, profil dan laporan anak, kalendar, tema, bayaran dan pengumuman — dan cara satu log masuk menguruskan lebih daripada seorang anak.
+product: kindercare
+section: For parents
+order: 10
+roles:
+  - parent
+sourcePaths:
+  - kinder_care_parent/lib/screens/home_screen.dart
+  - kinder_care_parent/lib/screens/activities_screen.dart
+  - kinder_care_parent/lib/screens/theme_plans_screen.dart
+  - kinder_care_parent/lib/screens/switch_account_screen.dart
+  - kinder_care_parent/lib/screens/add_child_screen.dart
+  - kinder_care_parent/lib/screens/account_screen.dart
+  - kinder_care_parent/lib/screens/announcements_screen.dart
+  - kinder_care_parent/lib/screens/student_profile_screen.dart
+  - kinder_care_shared/lib/src/student_profile/student_profile_page.dart
+  - kinder_care_parent/lib/screens/payment/payment_screen.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Lima tab
+
+- **Observations** — apa yang direkodkan oleh staf tentang anak anda, biasanya bersama foto.
+- **Student** — profil anak anda, dengan tab **Details**, **Attendance** dan **Reports**.
+- **Calendar** — apa yang akan datang.
+- **Themes** — pelan tema yang sedang dijalankan oleh pusat.
+- **Payments** — rekod bayaran anda.
+
+Ikon loceng di bahagian atas setiap skrin membuka **Announcements** daripada sekolah. Lencana merah
+mengira yang belum anda buka (ia memaparkan **9+** selepas sembilan).
+
+{% callout type="note" %}
+Staf memanggil pemerhatian sebagai **activities** (aktiviti) dalam aplikasi mereka sendiri. Jika guru
+menyebut "aktiviti yang saya tambah", itu perkara yang sama dengan yang anda lihat di bawah **Observations**.
+{% /callout %}
+
+## Mencari pemerhatian tertentu
+
+Pemerhatian boleh ditapis mengikut **growth milestone**, **activity type** dan **date**, dengan **Clear**
+untuk menetapkannya semula. Senarai memuatkan lebih banyak apabila anda menatal ke bahagian bawah. Penapis growth milestone
+ialah yang paling berguna apabila anda mahu melihat kemajuan dalam satu bidang
+dari semasa ke semasa dan bukannya membaca suapan hari demi hari.
+
+## Profil anak anda
+
+Tab **Student** ialah halaman profil yang sama seperti yang dilihat oleh guru, dengan tiga tab:
+
+- **Details** — maklumat anak anda, dengan alahan dan ubat diserlahkan.
+- **Attendance** — kalendar mengikut bulan yang menunjukkan hari hadir, hari bekerja dan peratusan
+  kehadiran.
+- **Reports** — laporan bertulis yang telah **diterbitkan** oleh guru anak anda. Draf tidak pernah dipaparkan.
+
+Anda boleh mengemas kini **nombor telefon bimbit**, **e-mel** dan **alamat** anda, serta menukar foto
+anak anda (gunakan pensel, kemudian **Save Changes**). Semua yang lain ditetapkan oleh sekolah; tanya guru
+atau pejabat jika ada yang salah.
+
+## Bayaran
+
+Tab Payments menyenaraikan rekod bayaran anda dan membawa anda ke halaman bayaran apabila ada yang perlu
+dibayar. Jika ia menyatakan tiada rekod bayaran ditemui, pusat belum mengenakan apa-apa terhadap akaun
+anda — ia bukan petanda aplikasi gagal memuatkannya.
+
+## Lebih daripada seorang anak, atau lebih daripada seorang ibu bapa
+
+**Satu log masuk boleh menampung beberapa orang anak di sekolah yang sama.** Ketik huruf awal atau foto
+anak anda di bahagian atas skrin untuk melihat anak-anak dalam akaun, ketik salah seorang untuk
+**switch child** (menukar anak), atau pilih **Manage children & accounts**. Anda akan menemui skrin yang
+sama di bawah **Account → Switch child**.
+
+Pada skrin **Switch child**:
+
+- **Children on this account** menyenaraikan setiap anak bersama kelasnya; anak yang sedang anda lihat
+  ditandakan. Menukar akan memuat semula setiap tab untuk anak itu, jadi tiada apa daripada anak
+  sebelumnya yang tertinggal.
+- **Add another child** meminta **Student ID** anak, kemudian **Send code**: kod dihantar ke nombor
+  telefon atau e-mel yang ada pada sekolah bagi anak itu. Masukkannya dan ketik **Add child**. Hanya
+  anak di *sekolah yang sama* dengan akaun ini boleh ditambah.
+- Apabila ada lebih daripada seorang anak, menu **⋮** menawarkan **Remove from account**. Anak yang
+  dipaparkan sebagai "No longer on the school's records" tidak boleh ditukar kepadanya.
+
+Anak di **sekolah yang berbeza** memerlukan akaun ibu bapa yang berasingan. Akaun tersebut dipaparkan di bawah **Other parent
+accounts**; **Sign in to a different parent account** menambah satu. Menukar kepada akaun lain akan
+melog keluar anda daripada akaun semasa, dan akaun disimpan **pada peranti**:
+
+- Telefon baharu bermula tanpa akaun tersimpan. Itu dijangka — log masuk sekali dan ia disimpan semula.
+- Tanda ✕ di sebelah akaun tersimpan membuangnya daripada *peranti itu sahaja*. Akaun itu sendiri masih
+  wujud, dan anda boleh log masuk semula dengannya.
+
+## Log keluar dan memadam akaun anda
+
+**Account → Log out** melog keluar anda. Di bawah **Danger zone**, **Delete account** membuang log masuk
+anda secara kekal dan melog keluar anda; ia meminta pengesahan dan tidak boleh dibatalkan.
+
+## Berkaitan
+
+- [Merekod Aktiviti](/ms/docs/kindercare-staff-activities)
+- [Menghantar Pengumuman](/ms/docs/kindercare-staff-announcements)
+- [Bermula dengan Aplikasi Staf KinderCare](/ms/docs/kindercare-staff-getting-started)
+- [Mendaftar sebagai Ibu Bapa](/ms/docs/shared-parent-registration)

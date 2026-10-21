@@ -1,0 +1,44 @@
+---
+title: Log Masuk dan Kekal Log Masuk
+description: Perbezaan log masuk antara staf dan ibu bapa, dan apa yang perlu dibuat jika anda dilog keluar secara tidak dijangka.
+product: shared
+section: Getting started
+order: 0
+roles:
+  - staff
+  - parent
+  - applicant
+sourcePaths:
+  - attendance-web-app/backend/config/product.js
+  - educonnect-public/edu-frontend/lib/pages/parent_login_page.dart
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Dua sistem log masuk yang berbeza
+
+Staf dan ibu bapa menggunakan kaedah log masuk yang berbeza, walaupun aplikasinya berkaitan:
+
+- **Staf** (papan pemuka sekolah) log masuk dengan nama pengguna dan kata laluan, dan sesi mereka dikekalkan
+  secara automatik di latar belakang selagi mereka terus menggunakan papan pemuka.
+- **Ibu bapa** (portal ibu bapa) mengesahkan dengan kod satu kali (OTP) yang dihantar ke telefon/e-mel
+  mereka pada kali pertama, kemudian log masuk dengan kata laluan selepas itu — lihat
+  [Bermula sebagai Ibu Bapa](/ms/docs/shared-parent-getting-started).
+- **Pemohon kemasukan** juga menggunakan log masuk berasaskan OTP, berasingan daripada kedua-dua yang di atas, terhad
+  kepada proses kemasukan institut itu.
+
+## Mengapa anda mungkin dilog keluar
+
+Tempoh sesi berbeza mengikut jenis institut, dan penyegaran sesi berlaku secara automatik di
+latar belakang — anda biasanya tidak perlu log masuk semula di pertengahan sesi. Jika anda *dilog* keluar
+secara tidak dijangka:
+
+- Pada papan pemuka staf, ini biasanya sesi yang benar-benar telah tamat — log masuk semula seperti biasa.
+- Pada portal ibu bapa, sesi yang tamat kadangkala dipaparkan sebagai ralat umum dan bukannya mesej
+  "sila log masuk semula" yang jelas. Jika sesuatu kelihatan rosak dan bukannya menunjukkan gesaan log masuk,
+  cuba log masuk semula secara terus sebelum menganggap sesuatu ciri rosak.
+
+## Berkaitan
+
+- [Penjenamaan Institut](/ms/docs/shared-institute-branding) — mengapa halaman log masuk boleh kelihatan berbeza
+  antara institut.

@@ -1,0 +1,44 @@
+---
+title: "Docentes: Consultar a un estudiante"
+description: Cómo encontrar a un estudiante, leer su perfil y qué le indican realmente los análisis que incluye.
+product: educonnect
+section: For teachers
+order: 80
+roles:
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_search.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/
+hidden: false
+---
+
+## Cómo encontrar a un estudiante
+
+Hay dos vías:
+
+- **My Class → Students**: su propia lista de clase, que es donde normalmente comenzará.
+- **Students → Student Search**: todos los estudiantes, si se le ha concedido este acceso. Busque por nombre o por Student ID; el ID es más rápido y no deja dudas cuando los nombres se repiten.
+
+Al seleccionar un estudiante se abre su perfil. Student Search también puede filtrar por clase, género y datos faltantes; consulte [Búsqueda de estudiantes, perfiles y estudiantes que han salido](/es/docs/educonnect-student-search-and-profile).
+
+## Qué contiene el perfil
+
+Los datos del estudiante y, a continuación, su historial: la asistencia del mes y del período (incluida una cuadrícula **Attendance by Day** para el período que elija, que marca los feriados como *Not a school day*), los resultados de exámenes de todas las asignaturas y los pagos, cuando usted puede verlos.
+
+Lo más útil para un docente es la combinación. Una caída en los resultados que coincide con una caída en la asistencia da lugar a una conversación distinta de la que se tiene cuando no coinciden, y el perfil es el único lugar donde ambos datos están en la misma pantalla.
+
+## Cómo interpretar con cautela las cifras de asistencia
+
+La asistencia mensual y del período que aparece en un perfil se construye a partir de los mismos registros que usted crea cada mañana. Un estudiante que parece haber faltado quince días puede haber estado simplemente en una clase en la que no se completó el registro. Antes de comentarlo con una familia, revise la asistencia de la propia clase en esas fechas; consulte [Consultar la asistencia de su clase](/es/docs/educonnect-teacher-class-attendance).
+
+Si su escuela ha activado el **Permanent Record** (expediente permanente), los docentes pueden agregar y editar allí entradas de su propia clase; solo los administradores pueden eliminarlas.
+
+## Lo que puede y no puede cambiar
+
+Puede leer un perfil. Editar registros de estudiantes, pasar a un estudiante de una clase a otra y eliminar a cualquiera son tareas de la oficina; además, el Student ID y la Class no pueden editarse en absoluto una vez creado el estudiante, ni siquiera por un administrador. Consulte [Agregar un estudiante](/es/docs/educonnect-tutorial-add-a-student).
+
+## Relacionado
+
+- [Gestión de estudiantes, clases y suplencias](/es/docs/shared-staff-student-admissions-management)
+- [Cómo leer la sección de análisis](/es/docs/shared-staff-analytics)

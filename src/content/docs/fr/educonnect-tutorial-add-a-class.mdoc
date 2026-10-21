@@ -1,0 +1,67 @@
+---
+title: "Tutoriel : Ajouter une classe"
+description: Créer une classe depuis l'écran Classes, à quoi sert chacun des quatre champs, et que faire ensuite une fois la classe créée.
+product: educonnect
+section: Tutorials
+order: 10
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/components/class_components/add_class_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/class_list.dart
+screenshotIds:
+  - "tutorial-add-a-class"
+hidden: false
+---
+
+Une classe est le conteneur auquel presque tout le reste se rattache — élèves, présence, grille
+d'emploi du temps, résultats d'examens et frais de scolarité sont tous adressés par classe. Créez d'abord la classe.
+
+**Vous avez besoin de :** l'accès à **Students → Classes** et de l'autorisation de créer des classes.
+
+## Étapes
+
+1. Ouvrez **Students → Classes** dans le menu latéral.
+2. Sélectionnez **Add Class**. La boîte de dialogue **Add New Class** s'ouvre.
+3. Remplissez les quatre champs :
+   - **Grade** (niveau) — choisissez dans la liste. C'est ce qui regroupe les classes pour
+     [Grade Curriculum](/fr/docs/educonnect-tutorial-grade-curriculum) et pour les rapports par niveau,
+     il doit donc être exact.
+   - **Syllabus** (programme) — choisissez dans la liste. Les classes de programmes différents dans le même niveau sont
+     rapportées séparément.
+   - **Class Name** (nom de la classe) — obligatoire, c'est l'identifiant de la classe dans tout le système. Court et
+     conventionnel vaut mieux que descriptif : `10-A`, `Grade 3 Blue`. C'est ce que vous verrez dans
+     chaque liste déroulante de classes désormais.
+   - **Teacher Name** (nom de l'enseignant) — facultatif. Vous pouvez le laisser vide et définir correctement l'enseignant principal plus tard.
+4. Sélectionnez **Save**.
+
+Vous devriez voir **Class added successfully**, et la nouvelle classe apparaît dans la liste. Si vous obtenez
+**Failed to add class.** à la place, la cause la plus fréquente est un nom de classe déjà existant.
+
+## Définir l'enseignant principal
+
+Le champ **Teacher Name** de la boîte de dialogue est un texte libre — c'est une étiquette, pas un lien vers une fiche
+enseignant. Pour affecter réellement l'enseignant responsable de la classe :
+
+1. Ouvrez la classe depuis **Students → Classes**.
+2. Utilisez le menu **⋮ More options** sur l'écran de la classe.
+3. Choisissez **Edit Class Teacher** et sélectionnez l'enseignant.
+
+C'est important : l'enseignant principal est celui qui obtient la classe dans **My Class** et qui peut en marquer
+la présence. Voir [Taking Attendance as a Teacher](/fr/docs/educonnect-teacher-taking-attendance).
+
+## Que faire ensuite
+
+Une fois la classe créée, à peu près dans cet ordre :
+
+1. [Y ajouter des élèves](/fr/docs/educonnect-tutorial-add-a-student) — un par un, ou
+   [les importer depuis Excel](/fr/docs/educonnect-tutorial-import-students).
+2. [Lui affecter ses matières](/fr/docs/educonnect-tutorial-class-subjects) afin qu'elle puisse figurer à l'emploi du temps.
+3. L'inclure dans la [configuration des frais](/fr/docs/educonnect-tutorial-fee-setup) si les frais diffèrent selon la classe.
+
+## Voir aussi
+
+- [Managing Students, Classes and Substitutions](/fr/docs/shared-staff-student-admissions-management)
+- [Setting Up a New Institute](/fr/docs/educonnect-setting-up-a-new-institute)

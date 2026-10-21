@@ -1,0 +1,33 @@
+---
+title: "Informes de la biblioteca"
+description: Los informes de circulación, colección, retrasos y multas, y qué cuenta cada cifra.
+product: educonnect
+section: Guides
+order: 236
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/library_reports_page.dart
+  - attendance-web-app/backend/services/library/libraryReportService.js
+screenshotIds:
+  - "library-reports"
+hidden: false
+---
+
+**Library → Reports** requiere **Library reports**. Elija un período de **un año o menos**; para rangos
+más largos, la página le pide que elija uno más corto para que las cifras sean completas.
+
+Los informes abarcan:
+
+- **Circulation**: préstamos y devoluciones durante el período, con desgloses **By borrower type**, **By
+  grade** y **By class**, además de cuántos libros y prestatarios distintos.
+- **Popular titles** y los títulos que **never borrowed** (nunca se han prestado).
+- **Overdue**: libros retrasados y **Days late**.
+- **Collection**: ejemplares de la biblioteca **By status**, **By condition**, **By shelf** y **By
+  subject**, a la fecha de hoy.
+- **Fines**: por tipo, con impagas, pagadas y condonadas.
+- **Engagement**: quién toma libros prestados y quién no.
+
+Las cifras se almacenan en caché durante unos minutos.

@@ -1,0 +1,62 @@
+---
+title: "Envoyer des annonces"
+description: Publier un avis aux parents d'une classe, de quelques enfants ou de toute l'école, et l'envoi facultatif d'un SMS.
+product: kindercare
+section: Guides
+order: 30
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/announcements_screen.dart
+  - kinder-care-fe/lib/screens/add_announcement_screen.dart
+  - kinder_care_parent/lib/screens/announcements_screen.dart
+  - kinder_care_parent/lib/widgets/kc_appbar.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## À quoi servent les annonces
+
+Les annonces sont des avis à sens unique adressés aux parents — « la journée sportive est déplacée à
+vendredi » — par opposition aux [rapports](/fr/docs/kindercare-staff-reports), qui concernent un seul
+enfant. Elles se trouvent dans l'onglet **Notices** de l'application du personnel et derrière l'icône
+de cloche dans l'application des parents.
+
+## En publier une
+
+**Notices → New announcement**, puis :
+
+1. **Title** et **Message** — tous deux obligatoires.
+2. **Send to** — qui doit la recevoir :
+   - **All classes** — tous les parents de l'école. Les enseignants de classe ne voient pas cette
+     option ; elle est réservée aux rôles ayant une portée à l'échelle de l'école.
+   - **Classes** — choisissez une ou plusieurs classes. Un enseignant de classe ne peut choisir que sa
+     propre classe, qui est présélectionnée.
+   - **Students** — choisissez des enfants individuellement parmi les classes sélectionnées, et **seuls
+     les parents de ces enfants** sont prévenus.
+3. **Also send an SMS** — désactivé par défaut. Les parents reçoivent **toujours** une notification
+   push ; l'option SMS leur envoie aussi un texto, ce qui a un coût pour chaque destinataire ; laissez
+   donc cette option désactivée, sauf si l'avis est urgent.
+
+**Post Announcement** demande d'abord une confirmation, en nommant le public concerné (par exemple
+« les parents de 2 classes »). Une notification push est envoyée aux parents lors de la publication.
+
+## Retrouver et supprimer des annonces
+
+L'onglet Notices liste ce que vous avez publié et filtre par **All**, **School-wide**, **Classes** et
+**Students**. Tirez vers le bas pour actualiser ; la liste charge d'autres éléments au fil du défilement.
+L'icône de corbeille supprime une annonce après confirmation — une annonce supprimée est retirée
+définitivement ; ne supprimez donc que celle que vous avez publiée par erreur.
+
+## Ce que voient les parents
+
+Les parents voient un badge rouge sur la cloche pour les avis qu'ils n'ont pas ouverts, et la liste
+complète sous **Announcements**. Les avis non lus sont en gras. Voir
+[L'application KinderCare pour les parents](/fr/docs/kindercare-parent-app).
+
+## Voir aussi
+
+- [Rédiger des rapports](/fr/docs/kindercare-staff-reports)
+- [Premiers pas avec l'application KinderCare pour le personnel](/fr/docs/kindercare-staff-getting-started)
+- [L'application KinderCare pour les parents](/fr/docs/kindercare-parent-app)

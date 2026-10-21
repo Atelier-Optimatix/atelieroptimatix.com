@@ -1,0 +1,83 @@
+---
+title: "Planifier les remplacements des enseignants absents"
+description: La routine du matin — repérer les créneaux à couvrir du jour, choisir les remplaçants, enregistrer le plan pour qu'il parvienne aux enseignants, et gérer les départs en cours de journée.
+product: educonnect
+section: Advanced workflows
+order: 10
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/substitution_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_dashboard_page.dart
+screenshotIds:
+  - "flow-substitution-planning"
+hidden: false
+---
+
+Il s'agit d'une routine quotidienne, et non d'une tâche de configuration. Elle doit être faite tôt —
+le plan n'apparaît dans l'emploi du temps de personne tant qu'il n'est pas enregistré.
+
+**Ce dont vous avez besoin :** l'accès à **Teachers → Substitution**, et la présence des enseignants
+du jour déjà enregistrée.
+
+## La routine du matin
+
+1. **Vérifiez qui est absent.** Le tableau de bord **Teachers** affiche **Present Today** et
+   **Absent Today** d'un coup d'œil, avec **Arrange Substitutes** qui mène directement au plan. S'il
+   indique *All teachers are present!*, il n'y a rien à faire.
+2. Ouvrez **Teachers → Substitution**.
+3. L'écran liste chaque période à couvrir : **Period**, **Time**, **Class · Subject** et
+   **Suggested Substitutes**. Les lignes d'un enseignant finalement présent affichent **Teacher
+   present — no sub needed**.
+4. Pour chaque ligne, choisissez un remplaçant :
+   - Les **Suggested Substitutes** sont les enseignants libres à cette période *et* qui enseignent
+     cette matière. Privilégiez-les.
+   - **Any teacher** élargit le choix à tous les enseignants libres, lorsqu'aucun ne correspond à la
+     matière. Ce sera de la surveillance plutôt que de l'enseignement, mais mieux qu'une classe sans
+     adulte.
+   - *No suggested substitutes* signifie que personne n'est à la fois libre et qualifié. Élargissez
+     la recherche, ou acceptez délibérément le créneau non couvert.
+5. Utilisez **Remove from plan** pour annuler une affectation avant l'enregistrement.
+6. **Enregistrez le plan.** Le statut indique **Plan ready to save** jusqu'à ce que vous le fassiez,
+   puis **Plan saved**.
+
+**Rien n'arrive à aucun enseignant tant que vous n'avez pas enregistré.** Un plan établi puis laissé
+non enregistré reste invisible.
+
+## Le faire parvenir aux personnes concernées
+
+- L'enregistrement place un marqueur **SUB** sur le
+  [My Timetable](/fr/docs/educonnect-teacher-my-timetable) (emploi du temps) de chaque remplaçant,
+  pour la journée concernée.
+- **Print Plan** produit la copie destinée à la salle des professeurs.
+
+Faites les deux. Les enseignants qui ne consultent pas l'application le matin sont précisément ceux
+que vous devez joindre.
+
+## Départs en cours de journée
+
+Lorsque quelqu'un part en cours de journée, utilisez **Add teacher's periods (early departure)** :
+
+1. Sélectionnez l'enseignant et les périodes à partir de son départ.
+2. **Add Periods** ajoute ces périodes au plan du jour comme créneaux à couvrir.
+3. Affectez des remplaçants et enregistrez à nouveau.
+
+Les périodes du matin, déjà assurées, ne sont pas modifiées.
+
+## Messages d'état
+
+| Statut | Signification |
+| --- | --- |
+| **Weekend — no timetable** | Rien n'est planifié aujourd'hui |
+| **All teachers present today** | Aucune absence enregistrée |
+| **No substitutions needed** | Des absences existent, mais aucune n'avait de cours aujourd'hui |
+| **Plan not created** | Il y a des créneaux à couvrir et personne n'a commencé |
+| **Plan ready to save** | Affectations faites, pas encore enregistrées — **pas en vigueur** |
+| **Plan saved** | En vigueur dans les emplois du temps des enseignants |
+
+## À consulter également
+
+- [Présence des enseignants et remplacements](/fr/docs/shared-staff-teacher-attendance)
+- [Missions de remplacement](/fr/docs/educonnect-teacher-substitution) — le point de vue de l'enseignant

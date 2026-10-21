@@ -1,0 +1,56 @@
+---
+title: "Enseignants : Missions de remplacement"
+description: Comment vous apprenez que vous assurez une classe, ce qu'un départ anticipé change à votre journée, et d'où vient le plan de remplacement.
+product: educonnect
+section: For teachers
+order: 70
+roles:
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/substitution_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/teacher_timetable_page.dart
+hidden: false
+---
+
+## Comment vous l'apprenez
+
+Un remplacement apparaît dans **[My Timetable](/fr/docs/educonnect-teacher-my-timetable)** sous forme de période marquée
+**SUB**, le jour concerné. Il ne vous est pas envoyé par e-mail et ne figure pas dans votre emploi du temps habituel —
+consultez donc My Timetable le matin, et pas seulement en début de trimestre.
+
+Certains établissements impriment aussi le plan du jour et l'affichent en salle des professeurs ; le plan imprimé et My
+Timetable proviennent de la même source.
+
+## D'où il vient
+
+Chaque matin, la personne qui gère les remplacements ouvre **Teachers → Substitution**. L'écran liste chaque période
+laissée sans enseignant par un collègue absent — période, heure, classe et matière — et propose des **suggested
+substitutes** (remplaçants suggérés) pour chacune. Les suggestions sont des enseignants libres à ce moment-là et qui enseignent cette
+matière ; la personne qui établit le plan peut aussi choisir **any teacher** (n'importe quel enseignant).
+
+Le plan est ensuite enregistré, et c'est à ce moment qu'il arrive dans votre emploi du temps. Tant qu'il n'est pas enregistré, rien n'apparaît
+pour vous.
+
+## Départs anticipés
+
+Un collègue qui part en cours de journée est traité séparément — ses périodes restantes sont
+ajoutées au plan comme **early departure** (départ anticipé), en milieu de matinée. Une période SUB peut donc apparaître dans votre journée
+alors que celle-ci a déjà commencé. C'est le seul cas où l'emploi du temps consulté à 8 h est
+réellement dépassé à 11 h.
+
+## Ce que remplacer signifie concrètement
+
+Une période SUB est la classe de quelqu'un d'autre, dans la salle de quelqu'un d'autre :
+
+- Elle disparaît de votre semaine lorsque le plan de ce jour disparaît.
+- L'assiduité de cette classe reste du ressort de son propre enseignant principal — vous ne faites pas l'appel
+  sauf si on vous l'a demandé.
+- Si vous pensez qu'une affectation est erronée ou impossible — vous enseignez déjà à ce moment-là, vous êtes hors
+  site — dites-le à la personne qui a établi le plan. Vous ne pouvez pas la modifier de votre côté, et c'est
+  voulu : seul le responsable du plan peut voir si vous déplacer crée un nouveau trou.
+
+## Voir aussi
+
+- [Teacher Attendance & Substitution](/fr/docs/shared-staff-teacher-attendance)
+- [Plan Cover for Absent Teachers](/fr/docs/educonnect-flow-substitution-planning)

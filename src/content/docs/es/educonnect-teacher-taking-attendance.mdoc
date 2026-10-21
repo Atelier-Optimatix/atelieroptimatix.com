@@ -1,0 +1,59 @@
+---
+title: "Docentes: Registrar la asistencia de su clase"
+description: "El registro diario: dónde está la columna de asistencia, cómo marcar y desmarcar a un estudiante y cómo interactúa con los escaneos de tarjeta."
+product: educonnect
+section: For teachers
+order: 10
+roles:
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/students_in_class.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_list_desktop.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_list_mobile.dart
+hidden: false
+---
+
+Esta es la tarea que realizará todas las mañanas.
+
+## Dónde está
+
+**My Class → Students** en el menú lateral.
+
+La columna de asistencia de esa lista **solo aparece en las cuentas de docente**. Si usted está viendo la misma clase como administrador, o a través de **Students → Classes** en lugar de **My Class**, la columna no está; por eso un administrador no puede ver lo que usted describe.
+
+## Marcar a un estudiante como presente
+
+1. Abra **My Class → Students**.
+2. Busque al estudiante en la lista.
+3. Seleccione el control de asistencia de su fila. Lo marca de inmediato: no hay un paso de guardado aparte ni una confirmación.
+
+Recorra la lista. El control muestra el estado actual de cada estudiante, de modo que, con un vistazo a la columna, sabrá quién falta por marcar.
+
+## Desmarcar
+
+Al seleccionar de nuevo el control de un estudiante ya marcado, se le pregunta **Are you sure you want to unmark attendance?** y, al confirmar, se elimina el registro. Utilícelo para corregir un error real, no para marcar a alguien como ausente; vea la explicación a continuación.
+
+## Presente, ausente y sin marcar
+
+Solo se almacenan dos estados: un estudiante **tiene** un registro de asistencia para hoy, o no lo tiene.
+
+- **Marcado** = presente.
+- **Sin marcar** = no registrado como presente. Esto abarca al ausente, al que llega tarde y aún no ha llegado, y al que todavía no ha revisado; los informes no pueden distinguir entre ellos.
+
+Por eso el registro solo es significativo cuando ha recorrido toda la clase. Termine la lista.
+
+## Tarjetas y escaneos
+
+Donde los estudiantes llevan tarjetas RFID, el escaneo en la puerta crea el mismo registro que usted crearía a mano; un estudiante que ya se haya escaneado aparecerá como marcado antes de que usted empiece. Usted completa los que la puerta no registró, sin duplicarlos.
+
+A un estudiante sin número de tarjeta en su registro nunca se le puede marcar mediante escaneo, solo usted puede hacerlo. Si alguien falta de forma permanente en los escaneos, es probable que su registro no tenga RFID; consulte [Agregar un estudiante](/es/docs/educonnect-tutorial-add-a-student).
+
+## Si un estudiante falta en la lista
+
+Está matriculado en otra clase o no está matriculado. Agregarlo es una tarea de la oficina, no de los docentes: pida que lo agreguen a su clase en lugar de crear un registro duplicado.
+
+## Relacionado
+
+- [Consultar la asistencia de su clase](/es/docs/educonnect-teacher-class-attendance)
+- [Registro de asistencia por parte del personal](/es/docs/shared-staff-attendance-overview)

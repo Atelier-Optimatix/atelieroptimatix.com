@@ -1,0 +1,64 @@
+---
+title: "Tutoriel : Configurer la grille horaire"
+description: Définir les périodes qui composent une journée scolaire — la première chose dont l'emploi du temps a besoin, et sans laquelle il ne peut pas être généré.
+product: educonnect
+section: Tutorials
+order: 50
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/timetable_config_screen.dart
+screenshotIds:
+  - "tutorial-bell-schedule"
+hidden: false
+---
+
+La grille horaire (bell schedule) est la forme de la journée : combien de périodes, l'heure de début et de fin de chacune,
+et lesquelles sont des pauses. Rien dans **Timetable** ne fonctionne tant qu'elle n'existe pas.
+
+**Vous avez besoin de :** l'accès à **Timetable → Configuration**.
+
+## Étapes
+
+1. Ouvrez **Timetable → Configuration** et sélectionnez l'onglet **Bell Schedule**. (La page s'ouvre sur
+   **Import Data**.)
+2. Sélectionnez **Create Bell Schedule** et donnez-lui un nom. Sous le nom, cochez les niveaux qui suivent
+   cette grille — un niveau déjà rattaché à une autre grille indique laquelle.
+3. Ajoutez des périodes avec **Add Period**. Chaque période comporte :
+   - un **label** (libellé) — prérempli en `P1`, `P2`, … et modifiable selon votre appellation,
+   - une heure de **start** (début) et de **end** (fin),
+   - un interrupteur **Break** (pause) — activez-le pour les récréations et le déjeuner. Les périodes de pause font toujours partie de la
+     journée, mais rien n'y est jamais planifié.
+4. Surveillez le **Schedule Preview** (aperçu) en dessous au fur et à mesure. Il vous restitue la journée et signale
+   les problèmes — heures qui se chevauchent, période qui se termine avant d'avoir commencé — directement, corrigez-les donc ici
+   plutôt qu'après l'enregistrement.
+5. Marquez une grille comme **Default** (par défaut). C'est celle utilisée pour toute classe qui n'est pas explicitement rattachée à
+   une autre.
+6. Sélectionnez **Save Bell Schedule**. Vous devriez voir **Bell schedule saved**.
+
+## Plusieurs grilles
+
+Vous pouvez en conserver plusieurs — une journée normale et une demi-journée, ou des formes différentes pour les sections
+primaire et secondaire. **Duplicate schedule** copie celle que vous consultez comme point de départ. Une seule est la grille par défaut ; les autres sont sélectionnées explicitement. Lorsque vous
+[générez l'emploi du temps](/fr/docs/educonnect-tutorial-generate-timetable), la vérification préalable vous indique
+combien de grilles elle a trouvées.
+
+## Suppression
+
+La suppression d'une grille est immédiate et demande d'abord une confirmation. Tout ce qui est actuellement placé sur cette grille devra
+être replacé ; privilégiez donc la modification d'une grille existante plutôt que sa suppression et sa recréation.
+
+## Que faire ensuite
+
+Le reste de **Timetable → Configuration** peut attendre le moment de la génération :
+
+- **Teacher Constraints** — quand chaque enseignant est disponible, et ses limites (par défaut : 6 cours maximum
+  par jour, 3 consécutifs maximum, écart minimum de 0).
+- **Subjects & Rules** et **Subject Groups** — comment les matières se comportent, et lesquelles sont proposées comme un ensemble
+  d'options en même temps.
+- **Grade Curriculum** et **Class Subjects** — ce qui est enseigné à chaque niveau et classe, et par qui.
+- **Classrooms** — les salles auxquelles les cours peuvent être associés.
+- **Import Data** — charger la configuration en masse plutôt que de la saisir écran par écran.
+
+Étape suivante : [Grade Curriculum](/fr/docs/educonnect-tutorial-grade-curriculum).

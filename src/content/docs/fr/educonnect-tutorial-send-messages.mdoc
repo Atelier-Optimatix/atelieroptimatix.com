@@ -1,0 +1,55 @@
+---
+title: "Tutoriel : envoyer un message aux parents"
+description: Sélectionner les classes destinataires, vérifier la confirmation avant l'envoi et retrouver les messages déjà envoyés.
+product: educonnect
+section: Tutorials
+order: 210
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/send_messages_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/send_messages/student_selection_state.dart
+screenshotIds:
+  - "tutorial-send-messages"
+hidden: false
+---
+
+**Communication → Send Messages** est l'outil de diffusion — fermetures, rappels, avis d'événements.
+Il se trouve dans les versions web et Windows du tableau de bord ; les applications Android et iPhone
+ne le proposent pas.
+
+Choisissez **Class Wise** pour écrire à des classes entières, ou **Student Wise** pour sélectionner
+des élèves individuellement. Un message est limité à 160 caractères (un seul SMS), avec un compteur
+sous la zone de texte.
+
+## Étapes
+
+1. Ouvrez **Communication → Send Messages**.
+2. Choisissez **Class Wise** ou **Student Wise**, puis sélectionnez les classes ou les élèves.
+3. Rédigez le message.
+4. Sélectionnez le bouton d'envoi. La boîte de dialogue **Confirm Message Sending** liste **chaque
+   classe destinataire**, une par ligne.
+5. Lisez cette liste. C'est la dernière vérification avant que le message n'atteigne les familles, et
+   c'est elle qui permet de repérer une classe sélectionnée par erreur.
+6. Confirmez.
+
+## Avant d'envoyer
+
+- **Un message ne peut pas être rappelé.** Il n'existe aucune annulation d'envoi.
+- Un élève dont la fiche ne comporte **aucun numéro de contact** ne reçoit simplement rien — ni
+  erreur, ni avertissement dans la confirmation. Si la couverture d'une classe est importante,
+  vérifiez d'abord que les numéros de contact sont renseignés.
+- Les SMS de présence se configurent séparément dans **Administration → Settings** et partent
+  automatiquement ; ils n'ont aucun rapport avec cet écran.
+
+## Messages déjà envoyés
+
+**Communication → Notification History** liste les messages précédents. Consultez-la avant d'envoyer
+— un rappel en double une heure après celui d'un collègue est l'erreur évitable la plus fréquente.
+
+## Voir aussi
+
+- [Le tableau d'affichage](/fr/docs/educonnect-notice-board) — pour des avis qui restent visibles, plutôt qu'un SMS ponctuel
+- [Ajouter un élève](/fr/docs/educonnect-tutorial-add-a-student) — d'où viennent les numéros de contact

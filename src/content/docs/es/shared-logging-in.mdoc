@@ -1,0 +1,47 @@
+---
+title: Inicio de sesión y cómo mantener la sesión
+description: En qué se diferencia el inicio de sesión del personal y de los padres, y qué hacer si se cierra su sesión de forma inesperada.
+product: shared
+section: Getting started
+order: 0
+roles:
+  - staff
+  - parent
+  - applicant
+sourcePaths:
+  - attendance-web-app/backend/config/product.js
+  - educonnect-public/edu-frontend/lib/pages/parent_login_page.dart
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Dos sistemas de inicio de sesión distintos
+
+El personal y los padres usan métodos de inicio de sesión diferentes, aunque se trate de aplicaciones
+relacionadas:
+
+- **El personal** (el panel escolar) inicia sesión con un nombre de usuario y una contraseña, y su
+  sesión se mantiene activa automáticamente en segundo plano mientras sigan usando el panel.
+- **Los padres** (el portal para padres) se verifican con un código de un solo uso (OTP) enviado a su
+  teléfono o correo electrónico la primera vez, y después inician sesión con una contraseña; consulte
+  [Primeros pasos como padre o madre](/es/docs/shared-parent-getting-started).
+- **Los solicitantes de admisión** también usan un inicio de sesión basado en OTP, independiente de
+  los dos anteriores y limitado al proceso de admisiones de esa institución.
+
+## Por qué podría cerrarse su sesión
+
+La duración de la sesión varía según el tipo de institución, y la renovación de su sesión se hace
+automáticamente en segundo plano: normalmente no debería tener que volver a iniciar sesión a mitad de
+una sesión. Si su sesión se cierra de forma inesperada:
+
+- En el panel del personal, suele ser una sesión realmente expirada: vuelva a iniciar sesión con
+  normalidad.
+- En el portal para padres, una sesión expirada a veces puede aparecer como un error genérico en lugar
+  de un mensaje claro de "inicie sesión de nuevo". Si algo parece fallar en lugar de mostrar una
+  solicitud de inicio de sesión, intente iniciar sesión directamente de nuevo antes de suponer que una
+  función está averiada.
+
+## Temas relacionados
+
+- [Identidad de la institución](/es/docs/shared-institute-branding) — por qué la página de inicio de
+  sesión puede verse distinta entre instituciones.

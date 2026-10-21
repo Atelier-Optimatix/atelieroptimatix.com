@@ -1,0 +1,65 @@
+---
+title: "Tutoriel : Configurer et accorder des remises"
+description: Rédiger une règle de remise une fois, puis l'accorder à des élèves individuels — avec des paliers, des limites par classe et une date d'expiration.
+product: educonnect
+section: Tutorials
+order: 160
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/discount_rules_page.dart
+screenshotIds:
+  - "tutorial-discounts"
+hidden: false
+---
+
+Les remises fonctionnent en deux temps : une **règle** décrit le type de réduction, et une **attribution** (grant) la rattache
+à un élève. Rédiger une règle ne modifie les frais de personne tant que vous ne l'avez pas accordée.
+
+**Vous avez besoin de :** l'accès à **Accounting → Discounts**.
+
+## Créer une règle
+
+1. Ouvrez **Accounting → Discounts**, sur l'onglet **Rules**.
+2. Sélectionnez **New rule** et renseignez :
+   - **Name** — ce qui apparaît dans le détail des frais de l'élève ; nommez-la donc d'après sa raison :
+     `Sibling — second child`, `Staff child`, `Merit scholarship`.
+   - **Type** et **basis** (base) — ce à partir de quoi la réduction est calculée.
+   - **Value** — soit un **%**, soit un montant **fixed** (fixe).
+   - **Scope** (portée) — **Limit to classes** si elle ne s'applique qu'à certains niveaux. Laissez la liste de classes
+     vide pour signifier toutes les classes.
+   - **Validity** (validité) — la période pendant laquelle la règle est valable. Une date d'expiration permet à une bourse d'un an de cesser
+     de s'appliquer d'elle-même, sans qu'il faille y penser.
+   - **Active**.
+3. **Tiers (optional)** — ajoutez des paliers lorsque la réduction varie par tranche plutôt que d'être un chiffre unique,
+   par exemple une remise de fratrie qui augmente à partir du troisième enfant. Chaque palier porte son propre
+   pourcentage ou sa propre valeur fixe.
+4. Enregistrez.
+
+## L'accorder à un élève
+
+1. Sélectionnez **Grant discount**.
+2. Choisissez l'**élève** et la **règle**.
+3. Définissez la **validité** de cette attribution particulière si elle diffère de celle de la règle.
+4. Enregistrez.
+
+L'onglet des attributions liste chaque attribution avec l'élève, la règle, la valeur, la validité, **qui l'a accordée**,
+et son statut. Cette colonne « granted by » constitue la piste d'audit — c'est la raison d'accorder une
+remise ici plutôt que d'ajuster discrètement un montant au guichet.
+
+## Révoquer
+
+**Revoke** met fin à une attribution. Elle n'annule pas les paiements déjà encaissés au tarif réduit ; elle empêche
+la remise de s'appliquer aux frais futurs.
+
+## Comment elle apparaît au guichet
+
+Lorsque vous [recevez un paiement](/fr/docs/educonnect-tutorial-record-a-payment) pour un élève bénéficiant d'une remise,
+la boîte de dialogue affiche le montant **Original** à côté de ce qui est réellement dû. Encaissez le montant dû.
+
+## Voir aussi
+
+- [Set Up Fees](/fr/docs/educonnect-tutorial-fee-setup)
+- [Reconciliation](/fr/docs/educonnect-tutorial-reconciliation)

@@ -1,0 +1,98 @@
+---
+title: Configuración de un nuevo instituto
+description: El orden completo de las operaciones desde un sistema vacío hasta uno en funcionamiento, y qué falla si se hace en otro orden.
+product: educonnect
+section: Getting started
+order: 2
+roles:
+  - admin
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/
+hidden: false
+---
+
+Casi todas las pantallas de EduConnect dependen de algo configurado en otra pantalla. Hacerlo en
+orden lleva una tarde; hacerlo en desorden implica rehacer partes del trabajo.
+
+Cada paso enlaza con su propio tutorial.
+
+## 1. El calendario
+
+**Administration → Settings** y luego **Administration → Calendar**.
+
+Días laborables, fechas de los trimestres, feriados y recesos. Todo lo relacionado con la asistencia es un porcentaje de
+estos datos, por lo que ingresarlos primero significa que sus cifras son correctas desde el primer día en lugar de corregirse
+en la tercera semana.
+
+→ [Configuración de feriados, trimestres y días laborables](/es/docs/educonnect-tutorial-holidays-and-terms)
+
+## 2. Personas y lugares
+
+1. **Classes** — → [Agregar una clase](/es/docs/educonnect-tutorial-add-a-class)
+2. **Teachers**, con las asignaturas que enseña cada uno — →
+   [Agregar un docente](/es/docs/educonnect-tutorial-add-a-teacher)
+3. **Students**, en sus clases — →
+   [Agregar un estudiante](/es/docs/educonnect-tutorial-add-a-student) o
+   [Importar desde Excel](/es/docs/educonnect-tutorial-import-students)
+4. Establezca el **class teacher** (docente de la clase) en cada clase.
+
+Los docentes antes que los estudiantes, porque una clase que ya tiene un docente asignado es una cosa menos que revisar después.
+
+## 3. Inicios de sesión
+
+**Administration → Users** y luego **Administration → Access Control**.
+
+Un registro de docente no es un inicio de sesión. Cree las cuentas y luego decida qué puede abrir cada rol.
+
+→ [Agregar un usuario y conceder acceso](/es/docs/educonnect-tutorial-users-and-access)
+
+## 4. La cadena del horario
+
+Estrictamente en este orden: cada paso es la entrada del siguiente:
+
+1. **Bell Schedule** — → [Configuración del horario de timbres](/es/docs/educonnect-tutorial-bell-schedule)
+2. **Subjects & Rules**, **Subject Groups**, **Classrooms**, **Teacher Constraints** — el resto de
+   **Timetable → Configuration**
+3. **Grade Curriculum** (al guardarlo se aplica a las clases del grado) — →
+   [Crear o editar un currículo de grado](/es/docs/educonnect-tutorial-grade-curriculum)
+4. **Class Subjects**, asignando un docente a cada una — →
+   [Asignar asignaturas y docentes](/es/docs/educonnect-tutorial-class-subjects)
+5. **Generate** — → [Generar el horario](/es/docs/educonnect-tutorial-generate-timetable)
+
+Generar con una cadena incompleta es la causa más común de que "el horario no
+funcione". El generador solo puede ubicar lo que los pasos 1 a 4 le hayan informado.
+
+## 5. Dinero
+
+1. **Fee Setup** — los tipos de tarifa y sus cuotas →
+   [Configuración de tarifas](/es/docs/educonnect-tutorial-fee-setup)
+2. **Discounts** — becas, reducciones por hermanos y para el personal →
+   [Configuración y concesión de descuentos](/es/docs/educonnect-tutorial-discounts)
+3. **Portal Access Rules** — qué efecto tienen las tarifas impagas en el acceso de un padre al portal
+4. Pagos en línea, en **Administration → Settings**, si acepta pagos con tarjeta
+
+Las tarifas antes de que los estudiantes empiecen a pagar, por supuesto, pero también antes de que comience el trimestre, ya que las fechas de vencimiento son
+lo que hace que un cargo esté vencido.
+
+## 6. Tarjetas
+
+Agregue tarjetas en blanco al conjunto, cargue el diseño de la tarjeta y asegúrese de que cada registro de estudiante y de docente
+tenga un **RFID**. Un registro sin él nunca podrá registrar asistencia.
+
+→ [Emisión y reemplazo de tarjetas de identificación](/es/docs/educonnect-tutorial-id-cards)
+
+## 7. Lo que ven los padres
+
+1. **Handbook** — → [Redacción y publicación del manual del estudiante](/es/docs/educonnect-tutorial-handbook)
+2. **Prospectus**, si gestiona las admisiones a través del portal
+3. La imagen de marca y la terminología del instituto en **Administration → Settings** —
+   [por qué cambia la redacción](/es/docs/shared-institute-branding)
+
+## 8. Después, durante el trimestre
+
+- Asistencia diaria — [como docente](/es/docs/educonnect-teacher-taking-attendance)
+- [Exámenes](/es/docs/educonnect-tutorial-create-an-exam) y
+  [resultados](/es/docs/educonnect-tutorial-enter-exam-results) a medida que ocurren
+- [Cierre del día](/es/docs/educonnect-tutorial-day-close) cada tarde
+- [Informes de progreso](/es/docs/educonnect-tutorial-progress-reports) al final del trimestre

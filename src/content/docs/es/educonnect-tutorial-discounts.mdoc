@@ -1,0 +1,64 @@
+---
+title: "Tutorial: Configurar y otorgar descuentos"
+description: Cómo redactar una regla de descuento una sola vez y luego otorgarla a estudiantes individuales, con niveles, límites por clase y vencimiento.
+product: educonnect
+section: Tutorials
+order: 160
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/discount_rules_page.dart
+screenshotIds:
+  - "tutorial-discounts"
+hidden: false
+---
+
+Los descuentos funcionan en dos mitades: una **regla** describe el tipo de reducción y una **concesión** (grant) la asigna a un estudiante. Redactar una regla no cambia las cuotas de nadie hasta que se otorga.
+
+**Necesita:** acceso a **Accounting → Discounts**.
+
+## Crear una regla
+
+1. Abra **Accounting → Discounts**, en la pestaña **Rules**.
+2. Seleccione **New rule** y complete:
+   - **Name**: lo que aparece en el desglose de cuotas del estudiante, así que nómbrela por el motivo:
+     `Sibling — second child`, `Staff child`, `Merit scholarship`.
+   - **Type** y **basis**: sobre qué se calcula la reducción.
+   - **Value**: un **%** o un monto **fijo**.
+   - **Scope**: **Limit to classes** si solo se aplica a algunos grados. Deje la lista de clases vacía
+     para indicar todas las clases.
+   - **Validity**: el período durante el cual la regla es válida. Un vencimiento es la forma de que una
+     beca de un año deje de aplicarse por sí sola en lugar de depender de que alguien lo recuerde.
+   - **Active**.
+3. **Tiers (optional)**: agregue niveles cuando la reducción varíe por tramos en lugar de ser una sola
+   cifra, por ejemplo un descuento por hermanos que aumenta con el tercer hijo. Cada nivel tiene su
+   propio porcentaje o valor fijo.
+4. Guarde.
+
+## Otorgarla a un estudiante
+
+1. Seleccione **Grant discount**.
+2. Elija el **student** y la **rule**.
+3. Establezca la **validity** de esta concesión en particular si difiere de la de la regla.
+4. Guarde.
+
+La pestaña de concesiones enumera cada una con el estudiante, la regla, el valor, la vigencia, **quién
+la otorgó** y su estado. Esa columna "granted by" es el rastro de auditoría; es el motivo para otorgar
+un descuento aquí en lugar de ajustar discretamente un importe en la caja.
+
+## Revocar
+
+**Revoke** pone fin a una concesión. No deshace los pagos ya recibidos con el descuento; detiene la
+aplicación del descuento a los cargos futuros.
+
+## Cómo se ve en la caja
+
+Cuando [recibe un pago](/es/docs/educonnect-tutorial-record-a-payment) de un estudiante con descuento,
+el cuadro de diálogo muestra el importe **Original** junto a lo que realmente se debe. Cobre el importe adeudado.
+
+## Relacionado
+
+- [Configurar las cuotas](/es/docs/educonnect-tutorial-fee-setup)
+- [Conciliación](/es/docs/educonnect-tutorial-reconciliation)

@@ -1,0 +1,66 @@
+---
+title: "Tutorial: Configurar el horario de timbres"
+description: "Cómo definir los períodos que forman una jornada escolar: lo primero que necesita el horario y sin lo cual no se puede generar."
+product: educonnect
+section: Tutorials
+order: 50
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/timetable_config_screen.dart
+screenshotIds:
+  - "tutorial-bell-schedule"
+hidden: false
+---
+
+El horario de timbres es la forma de la jornada: cuántos períodos hay, cuándo empieza y termina cada
+uno y cuáles son recreos. Nada de **Timetable** funciona hasta que exista.
+
+**Necesita:** acceso a **Timetable → Configuration**.
+
+## Pasos
+
+1. Abra **Timetable → Configuration** y seleccione la pestaña **Bell Schedule**. (La página se abre en
+   **Import Data**.)
+2. Seleccione **Create Bell Schedule** y póngale un nombre. Debajo del nombre, marque los grados que
+   siguen este horario; un grado que ya esté en otro horario indica a cuál está asignado.
+3. Agregue períodos con **Add Period**. Cada período tiene:
+   - una **etiqueta**: aparece rellenada como `P1`, `P2`, … y puede editarse con el nombre que usted
+     les dé,
+   - una hora de **inicio** y una de **fin**,
+   - un interruptor **Break**: actívelo para los recreos y el almuerzo. Los períodos de descanso siguen
+     formando parte de la jornada, pero nunca se programa nada en ellos.
+4. Observe la **Schedule Preview** (vista previa) que aparece debajo mientras trabaja. Le muestra la
+   jornada y señala los problemas (horas que se superponen, un período que termina antes de empezar)
+   directamente, de modo que corríjalos aquí en lugar de hacerlo después de guardar.
+5. Marque un horario como **Default** (predeterminado). Es el que se usa para toda clase que no esté
+   asignada explícitamente a otro.
+6. Seleccione **Save Bell Schedule**. Debería ver **Bell schedule saved**.
+
+## Más de un horario
+
+Puede conservar varios: una jornada normal y una jornada reducida, o formas distintas para las
+secciones de primaria y secundaria. **Duplicate schedule** copia el que está viendo como punto de
+partida. Exactamente uno es el predeterminado; los demás se seleccionan de forma explícita. Cuando
+[genere el horario](/es/docs/educonnect-tutorial-generate-timetable), la comprobación previa le indica
+cuántos horarios encontró.
+
+## Eliminar
+
+Eliminar un horario es inmediato y pide confirmación primero. Todo lo que esté colocado en él habrá
+que volver a colocarlo, así que es preferible editar un horario existente que eliminarlo y recrearlo.
+
+## Qué hacer a continuación
+
+El resto de **Timetable → Configuration** puede esperar hasta que realmente genere el horario:
+
+- **Teacher Constraints**: cuándo está disponible cada docente y sus límites (por defecto: máximo 6
+  clases al día, máximo 3 consecutivas, intervalo mínimo 0).
+- **Subjects & Rules** y **Subject Groups**: cómo se comportan las asignaturas y cuáles se imparten como
+  un conjunto de opciones al mismo tiempo.
+- **Grade Curriculum** y **Class Subjects**: qué se enseña en cada grado y clase, y quién lo imparte.
+- **Classrooms**: las aulas a las que se pueden asignar las clases.
+- **Import Data**: cargar la configuración de forma masiva en lugar de introducirla pantalla por pantalla.
+
+Siguiente en la cadena: [Currículo del grado](/es/docs/educonnect-tutorial-grade-curriculum).

@@ -1,0 +1,90 @@
+---
+title: "Tutoriel : utiliser le comptoir de prêt"
+description: Prêter, renouveler et retourner des livres avec une carte d'identité et un lecteur de codes-barres, et gérer les prêts en retard.
+product: educonnect
+section: Tutorials
+order: 230
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/circulation_desk_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/loans_page.dart
+  - attendance-web-app/backend/services/library/circulationService.js
+screenshotIds:
+  - "library-circulation-desk"
+  - "library-loans"
+hidden: false
+---
+
+Le comptoir est l'endroit où les livres sortent et reviennent. Il écoute les scans en permanence ; il
+est donc rare que vous ayez besoin de cliquer.
+
+**Ce dont vous avez besoin :** un rôle disposant de **Circulation desk**, **Check out & renew** et
+**Check in returns**, normalement celui du bibliothécaire. Ouvrez **Library → Circulation Desk**.
+
+**Matériel :** un lecteur de codes-barres USB ou Bluetooth réglé sur Code 128 ou Code 39 avec un
+suffixe Entrée, et un lecteur RFID USB en mode clavier qui lit les mêmes cartes que vos lecteurs
+d'entrée. À défaut, utilisez l'appareil photo : **Scan with camera** fonctionne sur un téléphone, une
+tablette ou une webcam d'ordinateur portable.
+
+## Prêter un livre
+
+1. **Passez la carte de l'emprunteur.** L'écran affiche son nom, ses livres en prêt avec les dates
+   de retour, ses réservations et ses amendes, et indique s'il peut emprunter un livre de plus.
+2. **Scannez le code-barres de chaque livre.** Chaque livre est prêté avec la date de retour issue
+   des règles de prêt.
+3. Sélectionnez **Done**, ou patientez. La fiche de l'emprunteur se ferme d'elle-même après le délai
+   d'inactivité défini dans Library Settings.
+
+Une date de retour tombant un jour de fermeture est reportée au jour d'école suivant. Un double scan
+du même livre est sans conséquence.
+
+Si la carte ne correspond à rien, ou si un scan correspond à plusieurs éléments, le comptoir le
+signale (**That scan matches more than one thing**). Recherchez alors la personne par son nom. Si
+**Lend only on a card tap** est activé, cela nécessite une dérogation.
+
+## Retourner un livre
+
+Scannez le livre. Vous n'avez pas besoin d'ouvrir d'abord la fiche de l'emprunteur. Si le livre est
+en retard, l'amende est calculée et, lorsque les amendes sont activées, facturée à ce moment-là. Un
+second scan d'un livre déjà retourné ne produit aucun effet. Si quelqu'un attend le livre, il est
+placé sur l'étagère des réservations : voir [Holds](/fr/docs/educonnect-library-holds).
+
+**Abîmé ?** Lors d'un retour, enregistrez les dégâts pour les facturer.
+
+## Renouveler
+
+Renouvelez depuis la liste de l'emprunteur. Un livre attendu par quelqu'un n'est pas renouvelé, et
+les renouvellements s'arrêtent à la limite fixée dans les règles de prêt.
+
+## Lorsqu'un livre est prêté à quelqu'un d'autre
+
+Le scanner pour un nouvel emprunteur affiche **This book is on loan to someone else**. Choisissez
+**Check in and lend** s'il est réellement revenu.
+
+## Dérogations
+
+Un emprunteur ayant atteint sa limite, bloqué ou devant trop d'argent ne peut pas emprunter. Une
+personne disposant de **Override** peut prêter malgré tout : vous devez indiquer un motif, et le
+comptoir affiche **Override on: reason** jusqu'à ce que vous ayez terminé. Chaque dérogation est
+enregistrée.
+
+## Loans & Overdue
+
+**Library → Loans & Overdue** propose trois listes : **All on loan**, **Overdue** et **Returned
+today**. Les livres en retard affichent l'amende qu'ils entraîneraient s'ils étaient retournés
+aujourd'hui. Il s'agit d'une projection, et rien n'est facturé tant que le livre n'est pas revenu.
+
+## Déclarer un livre perdu
+
+Ouvrez le prêt depuis la page de l'emprunteur et déclarez-le perdu. Un élève se voit facturer le prix
+de l'exemplaire, ou celui du titre, ou le coût de remplacement par défaut défini dans les
+paramètres, plus les frais de traitement des livres perdus. Si le livre réapparaît par la suite et
+est enregistré au retour, son amende impayée est annulée.
+
+## À consulter également
+
+- [Borrowers](/fr/docs/educonnect-library-borrowers)
+- [Fines](/fr/docs/educonnect-library-fines)

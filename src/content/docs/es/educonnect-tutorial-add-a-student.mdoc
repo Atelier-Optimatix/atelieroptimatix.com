@@ -1,0 +1,72 @@
+---
+title: "Tutorial: Agregar un estudiante"
+description: Cómo matricular a un estudiante en una clase, por qué el formulario es distinto en cada institución y los dos campos que deben ser únicos.
+product: educonnect
+section: Tutorials
+order: 20
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/add_student_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/add_student_form.dart
+  - attendance-web-app/edu-frontend/assets/student_fields/
+screenshotIds:
+  - "tutorial-add-a-student"
+hidden: false
+---
+
+**Necesita:** una clase existente donde colocar al estudiante (consulte
+[Agregar una clase](/es/docs/educonnect-tutorial-add-a-class)) y permiso para crear estudiantes.
+
+## Pasos
+
+1. Abra **Students → Classes** y abra la clase a la que se incorpora el estudiante.
+2. Seleccione **Add Student**. (También puede llegar al mismo formulario desde **Students → Student Search**.)
+3. Complete el formulario. Los campos que verá dependen de su institución (vea más abajo), pero estos
+   son los que se comportan de manera especial:
+   - **Student ID**: obligatorio, solo dígitos y **único en toda la institución**. Si el ID ya está en
+     uso, el campo se lo indica mientras escribe. No podrá cambiarlo más adelante al editar al
+     estudiante, así que decida su esquema de numeración antes de empezar a matricular.
+   - **RFID**: el número de la tarjeta de asistencia del estudiante. También solo dígitos y también se
+     comprueba que no esté duplicado. Déjelo vacío si las tarjetas se emiten más tarde; la asistencia
+     simplemente no se registrará por escaneo hasta que se complete.
+   - **Student's Full Name** (nombre completo del estudiante): solo letras, espacios y puntos.
+   - **Date of Birth** (fecha de nacimiento): un selector de fecha, que se almacena como `YYYY-MM-DD`.
+   - **Class**: ya completado con la clase desde la que llegó. Igual que el Student ID, es de solo
+     lectura una vez creado el estudiante; pasar a un estudiante de una clase a otra es una acción
+     distinta, no una edición.
+   - **Contact Number** (número de contacto): opcional, pero los SMS de asistencia y los recordatorios
+     de pago se envían a este número, de modo que un estudiante sin número no recibe nada y sin aviso.
+4. Agregue una **foto** si su institución las utiliza; es la que aparece en las
+   [credenciales](/es/docs/educonnect-tutorial-id-cards) y en las listas de clase.
+5. Si el estudiante tiene un **hermano** ya matriculado, use el selector de hermanos para vincularlos.
+   Busque por Student ID o por nombre. Los vínculos entre hermanos son la base de los descuentos familiares.
+6. Seleccione **Save**.
+
+## Por qué su formulario es distinto de las capturas
+
+El formulario Add Student está **configurado por institución**. Qué campos existen, cuáles son
+obligatorios, cómo se llaman y qué valores aceptan proviene de la definición de campos de su propia
+institución; por eso un colegio pide número de documento (NIC), casa y etnia, mientras que otro no
+pide ninguno de ellos.
+
+Dos consecuencias que conviene conocer:
+
+- Si falta un campo que necesita, se puede activar para su institución. Es un cambio de
+  configuración, no una función nueva.
+- Un campo marcado como opcional aquí puede ser obligatorio en su institución, y viceversa.
+
+## Editar y eliminar
+
+Abra al estudiante desde **Students → Student Search** o desde la lista de la clase. Todo es editable
+excepto **Student ID** y **Class**. **Delete Student** pide confirmación y elimina el registro por
+completo; para un estudiante que simplemente se ha ido, es preferible seguir el proceso de baja de su
+institución en lugar de eliminarlo, porque al eliminarlo se pierde también su historial de asistencia
+y resultados.
+
+## Relacionado
+
+- [Importar estudiantes desde Excel](/es/docs/educonnect-tutorial-import-students): para más de unos pocos
+- [Gestión de estudiantes, clases y suplencias](/es/docs/shared-staff-student-admissions-management)

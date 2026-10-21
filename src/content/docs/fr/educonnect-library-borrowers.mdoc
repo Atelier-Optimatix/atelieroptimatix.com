@@ -1,0 +1,61 @@
+---
+title: "Tutoriel : gérer les emprunteurs de la bibliothèque"
+description: Les prêts, réservations, amendes et limites d'une personne, le blocage d'un emprunteur, l'ajout d'emprunteurs parmi le personnel et l'octroi d'un accès à l'application.
+product: educonnect
+section: Tutorials
+order: 232
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/borrowers_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/borrower_detail_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/widgets/app_access_dialog.dart
+screenshotIds:
+  - "library-borrower"
+hidden: false
+---
+
+Les emprunteurs sont vos élèves, enseignants et membres du personnel. Rien n'est copié : la
+bibliothèque n'ajoute que son propre état (un blocage, des limites personnelles, un nombre de prêts)
+la première fois qu'une personne emprunte.
+
+Ouvrez **Library → Borrowers**, effectuez une recherche et sélectionnez une personne.
+
+## La page de l'emprunteur
+
+- **Library card** (carte de bibliothèque) : le numéro de carte enregistré.
+- Historique des **Loans** (prêts), **Holds** (réservations), **Fines** (amendes) et **Returned**
+  (retours).
+- **Blocked because** (bloqué car) : la raison pour laquelle la personne ne peut pas emprunter
+  actuellement. Elle est calculée au moment de la consultation, jamais enregistrée : limite de prêts,
+  livre en retard, amendes impayées au-delà de votre limite, ou blocage placé manuellement.
+- **Reserve a book** : réserver un livre en son nom.
+
+## Bloquer, débloquer et limites personnelles
+
+Avec **Add staff borrowers, block, unblock & set limits**, vous pouvez bloquer une personne en
+indiquant un motif. Elle conserve les livres qu'elle a déjà ; le comptoir refuse les nouveaux prêts.
+
+Sous **Own limits**, définissez **Books at a time (0–50)** ou **Loan length in days** pour une seule
+personne. Laissez une case vide pour appliquer la **Loan rule** (règle de prêt) correspondant à son
+type.
+
+## Ajouter un emprunteur parmi le personnel
+
+Le personnel non enseignant ne figure pas dans vos listes d'élèves ou d'enseignants. Utilisez
+**New staff borrower** sur cette page ou au comptoir.
+
+## Donner à un emprunteur du personnel l'accès à l'application
+
+**Give app access** crée un identifiant de connexion afin qu'un membre du personnel puisse consulter
+ses propres prêts et réservations dans [My Library](/fr/docs/educonnect-library-my-library). Choisissez
+un nom d'utilisateur (3 à 64 caractères : lettres, chiffres, points, tirets, tirets bas et @, sans
+espaces) et un premier mot de passe. **Remove access** le supprime. Les enseignants n'en ont pas
+besoin ; ils utilisent le compte dont ils disposent déjà.
+
+## À consulter également
+
+- [Circulation Desk](/fr/docs/educonnect-library-circulation-desk)
+- [Fines](/fr/docs/educonnect-library-fines)

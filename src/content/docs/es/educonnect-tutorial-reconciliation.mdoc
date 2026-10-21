@@ -1,0 +1,80 @@
+---
+title: "Tutorial: Conciliar los cargos y el libro mayor"
+description: "Cómo trabajar las cuatro pestañas de conciliación: cargos huérfanos, pagados pero no registrados, libro mayor sin cargo y diferencias de importe."
+product: educonnect
+section: Advanced workflows
+order: 20
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/reconciliation_page.dart
+screenshotIds:
+  - "tutorial-reconciliation"
+hidden: false
+---
+
+La conciliación compara dos cosas que siempre deberían coincidir, los **cargos** generados a los estudiantes y el **libro mayor** del dinero realmente recibido, y le muestra todos los puntos en que no coinciden.
+
+Ejecútela periódicamente y siempre antes de cerrar las cuentas de un período.
+
+**Necesita:** acceso a **Accounting → Reconciliation**.
+
+## Las cuatro pestañas
+
+Cada pestaña es un tipo distinto de discrepancia, y cada una tiene una solución diferente. El número en
+la etiqueta de la pestaña es su lista de tareas.
+
+### Orphaned charges
+
+Un cargo que ya no tiene detrás una cuota válida, normalmente porque se eliminó o retiró un calendario
+de cuotas cuando ya se habían generado cargos contra él. Cada fila muestra el estudiante, la clase, la
+cuota, el importe y el **motivo** por el que es huérfano.
+
+Dos acciones:
+
+- **Keep**: el cargo es legítimo; déjelo vigente.
+- **Void**: el cargo nunca debió existir. Anular pide confirmación y retira el cargo del saldo pendiente del estudiante.
+
+Cuando está vacío aparece *No orphaned charges awaiting review.*
+
+### Paid, no ledger
+
+Un cargo marcado como saldado sin asiento correspondiente en el libro mayor. El dinero se registró a
+nombre del estudiante pero nunca llegó a lo recaudado del día, normalmente por un pago registrado en un
+día que luego se ajustó. Rastree estos casos por el número de recibo antes de tocar nada.
+
+### Ledger, not paid
+
+La imagen especular: dinero en el libro mayor que no está asociado a un cargo saldado. Suele ser un
+pago aplicado al estudiante equivocado o uno introducido sin seleccionar un cargo.
+
+### Amount mismatches
+
+El cargo y el asiento del libro mayor existen, pero no coinciden en el importe. Lo más frecuente es un
+descuento aplicado después de cobrar el pago, o un pago parcial registrado como total.
+
+## Cómo trabajarlo
+
+1. Empiece por **Orphaned charges**: resolverlos suele eliminar filas de las demás pestañas.
+2. Trabaje cada pestaña restante hasta que los recuentos sean cero, o hasta que cada fila que quede sea
+   una que haya decidido explícitamente **Keep**.
+3. Solo entonces cierre el período.
+
+Cuando todo coincide verá *Every ledger payment maps to a settled fee.*
+
+## Prevención
+
+La mayoría de las filas de aquí se deben a uno de tres hábitos:
+
+- Eliminar calendarios de cuotas en lugar de desactivar **Active**; consulte
+  [Configurar las cuotas](/es/docs/educonnect-tutorial-fee-setup).
+- Ajustar importes en la caja en lugar de otorgar un
+  [descuento](/es/docs/educonnect-tutorial-discounts) como corresponde.
+- Reabrir un día cerrado sin volver a comprobar los totales; consulte
+  [Cerrar el día](/es/docs/educonnect-tutorial-day-close).
+
+## Relacionado
+
+- [Flujo de contabilidad: libro mayor, cierre del día y conciliación](/es/docs/shared-staff-accounting-overview)

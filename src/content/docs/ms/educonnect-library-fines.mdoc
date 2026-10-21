@@ -1,0 +1,57 @@
+---
+title: "Tutorial: Denda Perpustakaan dan Cara Membayarnya"
+description: Menyediakan denda perpustakaan, cara denda lewat, hilang dan kerosakan dikenakan, mengecualikannya dan cara keluarga membayar.
+product: educonnect
+section: Tutorials
+order: 233
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/fines_page.dart
+  - attendance-web-app/backend/services/library/fineService.js
+  - attendance-web-app/backend/config/libraryOptions.js
+screenshotIds:
+  - "library-fines"
+hidden: false
+---
+
+Denda **tidak aktif** sehingga anda menghidupkan **Charge library fines** dalam Library Settings. Semasa
+tidak aktif, tiada apa-apa dikenakan dan denda yang tidak dibayar tidak menyekat apa-apa.
+
+**Hanya pelajar yang didenda.** Guru dan kakitangan tidak pernah didenda.
+
+## Bagaimana denda dibuat
+
+Denda perpustakaan ialah caj tertunggak biasa pada akaun pelajar. Ini bermakna ia muncul pada penyata
+mereka dan diselesaikan dengan cara yang sama seperti caj lain. Perpustakaan tidak pernah menyentuh
+lejar anda sendiri.
+
+| Jenis | Bila ia dikenakan |
+| --- | --- |
+| Overdue | Sekali, apabila buku didaftar masuk. Semasa buku masih di luar, ia hanya unjuran |
+| Lost | Apabila pustakawan mengisytiharkan buku hilang |
+| Damage | Apabila pustakawan merekodkan kerosakan |
+
+Tetapan: **Fine per late day**, **Days late before fining starts**, **Most for one late book** (0 bermaksud
+tiada had), **Count school days only** (hujung minggu, cuti dan hari di luar penggal bukan hari lewat),
+**Lost book, when no price is recorded**, **Added to every lost book**, **Stop borrowing when owing more
+than** (0 bermaksud sebarang denda tidak berbayar menyekat) dan **Days to pay**.
+
+## Halaman Fines
+
+**Library → Fines** menyenaraikan denda yang tidak dibayar, dibayar dan dikecualikan. Orang yang mempunyai
+**Waive unpaid library fines** boleh mengecualikan denda yang tidak dibayar dengan memberi sebab: ia
+dibatalkan tanpa sebarang catatan lejar.
+
+## Cara keluarga membayar
+
+- Di pejabat, melalui Manual Payment Entry, di bawah ID pelajar.
+- Dalam talian, jika sekolah anda menerima pembayaran dalam talian dan **Let parents pay library fines
+  online** dihidupkan. Denda juga muncul pada skrin pembayaran dalam talian sama ada portal perpustakaan
+  dihidupkan atau tidak.
+
+## Berkaitan
+
+- [Rekod Pembayaran](/ms/docs/educonnect-tutorial-record-a-payment)

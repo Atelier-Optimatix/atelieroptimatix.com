@@ -1,0 +1,79 @@
+---
+title: List Reports
+description: Senarai data mentah baca sahaja untuk pelajar, kehadiran, peperiksaan, perakaunan dan banyak lagi, yang boleh anda cari, tapis dan muat turun sebagai CSV atau PDF.
+product: educonnect
+section: Guides
+order: 85
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/list_reports_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/list_reports/
+  - attendance-web-app/backend/services/lists/
+screenshotIds:
+  - "staff-list-reports"
+  - "staff-list-report-view"
+hidden: false
+---
+
+**List Reports** (laporan senarai) adalah untuk ketika anda memerlukan baris mentah, bukan carta: setiap
+pelajar yang tidak hadir semalam, setiap RFID pendua, setiap yuran yang belum dibayar. Ia terletak pada
+peringkat teratas laci sisi, di bawah **Help & What's New**.
+
+Senarai ini **baca sahaja**. Tiada apa yang anda lakukan di sini mengubah sebarang rekod. Akses diberikan
+melalui kunci *List reports (view & download raw data)* dalam **Administration → Access Control**, dan
+senarai yang mengandungi wang juga memerlukan kebenaran perakaunan yang sepadan. Jika sesuatu senarai
+tidak ditawarkan kepada anda, anda tidak akan melihatnya dalam katalog.
+
+## Mencari senarai
+
+Katalog mengumpulkan senarai di bawah **Students**, **Teachers & staff**, **Attendance**, **Exams**,
+**Accounting**, **Admissions** dan **School structure**. Pengepala menunjukkan berapa banyak yang boleh
+anda lihat (*12 of 40 lists*). Taip dalam **Search lists** (contohnya "RFID", "absent" atau "teachers")
+untuk menyempitkannya. *No lists match your search.* bermaksud tiada yang sepadan; *No lists are available
+to this account.* bermaksud akses anda tidak merangkumi mana-mana senarai.
+
+Beberapa senarai yang mungkin anda cari:
+
+- **Students** — Semua pelajar, pelajar dengan nombor hubungan yang tiada atau tidak sah, pelajar yang
+  berkongsi nombor hubungan, pelajar tanpa kelas yang sah, RFID dan ID pelajar pendua, hari lahir dan
+  umur, pelajar yang telah berhenti, pelajar yang dipadam, pencapaian pelajar, sijil yang dikeluarkan,
+  senarai kelas.
+- **Attendance** — pelajar yang tidak hadir pada sesuatu tarikh, pelajar yang hadir atau lewat pada
+  sesuatu tarikh, peratusan kehadiran bagi sesuatu tempoh, daftar pelajar hari demi hari, kehadiran harian
+  mengikut kelas, guru yang tidak hadir atau hadir pada sesuatu tarikh, lembaran waktu guru, ketidakhadiran
+  guru yang diisytiharkan, dan log ketikan mentah.
+- **Exams** — peperiksaan, keputusan peperiksaan, markah di bawah markah lulus, markah yang tiada,
+  ringkasan peperiksaan bagi setiap pelajar, catatan dan kelakuan laporan penggal, dan log perubahan markah.
+- **Accounting** — caj yuran, yuran tertunggak, baki yuran bagi setiap pelajar, diskaun, lejar,
+  pembayaran, bayaran balik dan pembatalan, penutupan hari, peti masuk pembayaran dalam talian, jenis dan
+  jadual yuran, dan gaji guru.
+- **Admissions** — permohonan kemasukan dan pembayaran yuran kemasukan.
+
+## Bekerja dengan senarai
+
+Buka senarai. Jika ia memerlukan tarikh, kelas atau peperiksaan, tetapkan penapis di bahagian atas dan
+tekan **Show** (*Set the filters and press Show.*). **Reset** mengosongkannya. Kemudian:
+
+- **Search these rows** memadankan teks dalam mana-mana lajur.
+- **Columns** memilih lajur yang hendak dipaparkan.
+- Klik pengepala untuk menyusun; nombor disusun secara berangka dan yang kosong diletakkan terakhir.
+- Senarai juntai turun penapis muncul bagi lajur yang mempunyai set nilai yang kecil.
+
+Senarai yang sangat panjang akan dipotong: nota merah menyatakan *Showing the first N of M rows. Narrow
+the filters to see the rest.* Sempitkan penapis dan jangan menjangka muat turun mengandungi baris yang
+tiada.
+
+## Muat turun
+
+Gunakan menu eksport untuk memuat turun sebagai **CSV** atau **PDF**. Fail mengandungi baris yang sedang
+dipaparkan (selepas carian dan penapis anda) dan hanya lajur yang anda biarkan hidup di bawah **Columns**.
+PDF hanya ditawarkan apabila 25 lajur atau kurang dipaparkan; jika tidak, sembunyikan beberapa lajur atau
+gunakan CSV.
+
+## Berkaitan
+
+- [Membaca Bahagian Analytics](/ms/docs/shared-staff-analytics)
+- [Carian dan Profil Pelajar](/ms/docs/educonnect-student-search-and-profile)

@@ -1,0 +1,51 @@
+---
+title: "පාඩම: පුස්තකාල දඩ සහ ඒවා ගෙවීම"
+description: පුස්තකාල දඩ සැකසීම, ප්‍රමාද, නැතිවූ සහ හානි දඩ අය කරන ආකාරය, ඒවා ඉවත් කිරීම (waive) සහ පවුල් ගෙවන ආකාරය.
+product: educonnect
+section: Tutorials
+order: 233
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/fines_page.dart
+  - attendance-web-app/backend/services/library/fineService.js
+  - attendance-web-app/backend/config/libraryOptions.js
+screenshotIds:
+  - "library-fines"
+hidden: false
+---
+
+Library Settings හි **Charge library fines** සක්‍රීය කරන තෙක් දඩ **අක්‍රීයව** පවතී. අක්‍රීය විට කිසිවක් අය නොකෙරෙන අතර, ගෙවා නැති දඩ කිසිවක් අවහිර නොකරයි.
+
+**දඩ නියම කෙරෙන්නේ සිසුන්ට පමණි.** ගුරුවරුන්ට සහ කාර්ය මණ්ඩලයට කිසිවිටක නොවේ.
+
+## දඩයක් සෑදෙන ආකාරය
+
+පුස්තකාල දඩයක් යනු සිසුවාගේ ගිණුමේ සාමාන්‍ය පොරොත්තු අයකිරීමකි (pending charge). එනම් එය ඔවුන්ගේ ප්‍රකාශයේ දිස් වන අතර, වෙනත් ඕනෑම අයකිරීමක් මෙන් පියවනු ලැබේ.
+පුස්තකාලය කිසිවිටක ඔබේ ලෙජරය (ledger) ස්පර්ශ නොකරයි.
+
+| වර්ගය | අය කරන්නේ කවදාද |
+| --- | --- |
+| Overdue | පොත ආපසු ගන්නා විට එක් වරක්. පොත පිටත ඇති අතරතුර එය ප්‍රක්ෂේපණයක් පමණි |
+| Lost | පුස්තකාලයාධිපතිවරයෙකු පොත නැතිවූ බව ප්‍රකාශ කරන විට |
+| Damage | පුස්තකාලයාධිපතිවරයෙකු හානිය සටහන් කරන විට |
+
+සැකසුම්: **Fine per late day**, **Days late before fining starts**, **Most for one late book**
+(සීමාවක් නොමැති නම් 0), **Count school days only** (සති අන්ත, නිවාඩු සහ වාරයෙන් පිටත දින ප්‍රමාද දින නොවේ), **Lost book, when no price is recorded**,
+**Added to every lost book**, **Stop borrowing when owing more than** (0 යනු ගෙවා නැති ඕනෑම දඩයක් අවහිර කරන බවයි) සහ **Days to pay**.
+
+## Fines පිටුව
+
+**Library → Fines** ගෙවා නැති, ගෙවූ සහ ඉවත් කළ (waived) දඩ ලැයිස්තුගත කරයි. **Waive unpaid library fines** ඇති අයෙකුට හේතුවක් සමඟ ගෙවා නැති දඩයක් ඉවත් කළ හැක:
+එය ලෙජර සටහනක් නොමැතිව අවලංගු කෙරේ.
+
+## පවුල් ගෙවන ආකාරය
+
+- කාර්යාලයේදී, Manual Payment Entry හරහා, සිසු හැඳුනුම (student ID) යටතේ.
+- ඔබේ පාසල ඔන්ලයින් ගෙවීම් භාර ගන්නේ නම් සහ **Let parents pay library fines online** සක්‍රීය නම් ඔන්ලයින්. පෝටලයේ පුස්තකාලය සක්‍රීය වුවත් නැතත්, දඩ ඔන්ලයින් ගෙවීම් තිරවලද දිස් වේ.
+
+## සම්බන්ධ පිටු
+
+- [ගෙවීමක් සටහන් කිරීම](/si/docs/educonnect-tutorial-record-a-payment)

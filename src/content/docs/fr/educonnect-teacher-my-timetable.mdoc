@@ -1,0 +1,50 @@
+---
+title: "Enseignants : Votre emploi du temps"
+description: Lire votre propre semaine, ce que signifie le marqueur SUB, et pourquoi vous pouvez le consulter sans pouvoir le modifier.
+product: educonnect
+section: For teachers
+order: 30
+roles:
+  - teacher
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/teacher_timetable_page.dart
+screenshotIds:
+  - "teacher-my-timetable"
+hidden: false
+---
+
+**My Timetable** (Mon emploi du temps) est votre propre semaine, avec un onglet par jour. Il est en lecture seule par conception — l'emploi du temps est
+construit de manière centralisée afin que la modification d'une personne ne puisse pas créer de double réservation pour une autre. Consultez
+[Generate the Timetable](/fr/docs/educonnect-tutorial-generate-timetable) pour savoir comment il est produit.
+
+## Le lire
+
+Chaque onglet de jour liste vos périodes dans l'ordre, avec la classe, la matière et la salle. Les périodes libres et
+les pauses font partie de la journée, d'après la grille horaire (bell schedule) utilisée par votre établissement.
+
+## Le marqueur SUB
+
+Une période signalée **SUB** est une période que vous assurez en remplacement d'un collègue absent. Elle ne fait pas partie de
+votre emploi du temps habituel et ne sera plus là demain — elle provient du plan de remplacement du jour.
+
+Deux conséquences en découlent :
+
+- **Consultez My Timetable le matin, et pas seulement en début de trimestre.** Un remplacement ajouté aujourd'hui
+  apparaît aujourd'hui.
+- Une période SUB est la classe de quelqu'un d'autre. Vous l'assurez, vous ne la reprenez pas, et elle disparaît
+  de votre semaine lorsque le plan de ce jour disparaît.
+
+Si vous pensez qu'une affectation SUB est erronée, elle se modifie dans le plan de remplacement, par la personne qui l'a établi —
+voir [Substitution Duties](/fr/docs/educonnect-teacher-substitution).
+
+## Si votre emploi du temps est vide
+
+Soit l'emploi du temps n'a pas encore été généré pour ce trimestre, soit les matières que vous enseignez ne vous sont pas
+affectées pour une classe. Le second cas est le plus fréquent ; il se corrige dans
+**Timetable → Configuration → Class Subjects** par un administrateur — voir
+[Assign Subjects and Teachers to a Class](/fr/docs/educonnect-tutorial-class-subjects).
+
+## Voir aussi
+
+- [Building the Timetable](/fr/docs/shared-staff-timetable)

@@ -1,0 +1,37 @@
+---
+title: Membayar Yuran Permohonan Anda
+description: Apa yang berlaku selepas anda membayar yuran kemasukan dalam talian, dan sebab status "pending" bukan satu kegagalan.
+product: admissions
+section: Guides
+order: 3
+roles:
+  - applicant
+sourcePaths:
+  - educonnect-admissions/edu-frontend/lib/screens/online_payment_return_page.dart
+  - educonnect-admissions/backend/controllers/onlinePaymentController.js
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Cara langkah pembayaran berfungsi
+
+Jika permohonan anda memerlukan yuran, anda akan dibawa ke gerbang pembayaran untuk membayar dengan kad.
+Selepas membayar, anda dikembalikan ke skrin pengesahan yang memaparkan ID transaksi, nombor kad yang
+disembunyikan sebahagiannya, jumlah dan status.
+
+## Status pembayaran
+
+- **Not started** (belum dimulakan) — anda belum sampai ke atau belum melengkapkan langkah pembayaran.
+- **Pending** (belum selesai) — pembayaran sedang diproses. Ini perkara biasa sejurus selepas membayar;
+  ia bukan satu kegagalan, dan anda tidak perlu membayar lagi.
+- **Paid** (dibayar) — pembayaran telah disahkan.
+
+Pembayaran kad dalam talian hanya ditetapkan sebagai "paid" apabila gerbang pembayaran mengesahkan
+transaksi tersebut — pegawai kemasukan boleh menandakan kaedah pembayaran lain sebagai dibayar secara
+manual, tetapi tidak boleh berbuat demikian bagi pembayaran kad yang masih berstatus pending. Jika
+status anda tersangkut pada pending untuk tempoh yang luar biasa lama, hubungi pejabat kemasukan dengan
+ID transaksi anda dan jangan membayar semula.
+
+## Berkaitan
+
+- [Memohon ke Sekolah](/ms/docs/admissions-applying)

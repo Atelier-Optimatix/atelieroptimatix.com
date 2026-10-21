@@ -1,0 +1,56 @@
+---
+title: "Enseignants : Rédiger les bulletins de progression"
+description: Remplir les bulletins d'un trimestre pour votre classe, ce que signifient « Not rated » et « unsaved », et pourquoi la publication n'est pas de votre ressort.
+product: educonnect
+section: For teachers
+order: 60
+roles:
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/term_report_screen.dart
+hidden: false
+---
+
+En fin de trimestre, **Exams → Progress Reports** est l'endroit où se place votre appréciation écrite. Les notes
+y figurent déjà — elles proviennent des résultats d'examens — votre rôle est donc la partie qu'un tableur ne peut
+pas produire.
+
+## Étapes
+
+1. Ouvrez **Exams → Progress Reports**.
+2. Choisissez votre **class** (classe) et le **term** (trimestre). Rien ne se charge tant que vous n'avez pas choisi les deux.
+3. Vos élèves apparaissent avec leurs notes déjà renseignées.
+4. Parcourez la liste. Chaque champ laissé vide s'affiche comme **Not rated**, ce qui est une valeur
+   légitime pour tout ce que votre établissement n'évalue pas — ce n'est pas une erreur à corriger.
+5. **Surveillez le marqueur « unsaved ».** Une ligne dans laquelle vous avez saisi du texte sans l'enregistrer est signalée. Ne
+   quittez pas la page et ne fermez pas l'onglet tant qu'une ligne l'affiche.
+6. Enregistrez.
+
+Vous pouvez revenir sur une classe partiellement terminée autant de fois que nécessaire.
+
+## Rédaction
+
+Deux points utiles à connaître avant de commencer :
+
+- Ce que vous écrivez est lu par les parents, mot pour mot, dans le portail parents — sans résumé ni
+  reformulation par le secrétariat.
+- Une fois le trimestre publié, les corrections sont visibles de quiconque a déjà ouvert le bulletin. Mieux vaut
+  relire un commentaire avant d'enregistrer plutôt que de le corriger ensuite.
+
+## Publication
+
+**Publish** n'est généralement pas une action d'enseignant, et elle est volontairement distincte de l'enregistrement. C'est
+elle qui rend les bulletins de tout le trimestre visibles aux parents en une seule fois, et elle demande d'abord une confirmation. Si vous
+disposez du bouton, ne l'utilisez que lorsque toute la classe est terminée — pas élève par élève.
+
+## Si les notes semblent erronées
+
+Corrigez-les à la source, dans l'examen, plutôt que de contourner le problème ici. La modification de notes enregistrées déclenche une
+**change request** (demande de modification) — voir
+[Enter Exam Results](/fr/docs/educonnect-tutorial-enter-exam-results).
+
+## Voir aussi
+
+- [Write and Publish Progress Reports](/fr/docs/educonnect-tutorial-progress-reports)
+- [Progress Reports & the Handbook](/fr/docs/shared-parent-progress-reports) — côté parents

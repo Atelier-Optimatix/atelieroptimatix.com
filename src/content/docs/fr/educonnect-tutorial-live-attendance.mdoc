@@ -1,0 +1,70 @@
+---
+title: "Tutoriel : Suivre l'assiduité en temps réel"
+description: Les listes des présents et des absents du jour, le Live Monitor à l'entrée, et les filtres enregistrés pour les questions que vous posez chaque semaine.
+product: educonnect
+section: Tutorials
+order: 220
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/todays_attendance_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/attendance_filter/attendance_filter_page.dart
+  - attendance-web-app/edu-frontend/lib/navigation/routes/attendance_routes.dart
+screenshotIds:
+  - "tutorial-todays-attendance"
+  - "tutorial-live-attendance"
+hidden: false
+---
+
+## Today's Attendance
+
+**Attendance → Today's Attendance** présente toute l'école sur une seule page pour aujourd'hui : un onglet **Present** et
+un onglet **Absent**, chacun avec son effectif, ainsi que l'heure de la dernière mise à jour de la liste.
+
+- Restreignez-la avec le sélecteur **Class**, ou recherchez par numéro d'admission ou par nom.
+- Sur l'onglet Present, filtrez selon **quand** l'élève est arrivé — *Any time*, *On Time*, *Late* ou
+  *Afternoon Only* — et selon **comment** il a été marqué — *Marked by gate* (un scan de carte) ou *Marked by
+  teacher*. Chaque ligne indique l'heure du passage et si celui-ci compte comme un retard.
+- **Search all students** recherche n'importe quel élève, présent ou non.
+
+Le retard est déterminé par l'heure limite de retard de l'établissement dans Settings, la même règle que celle utilisée par tous les autres écrans
+d'assiduité. Les enseignants voient cette page sous le nom **Attendance** dans leur menu latéral.
+
+Depuis la page d'assiduité propre à une classe, **Today's list** mène directement ici avec cette classe sélectionnée.
+
+## Live Monitor
+
+**Attendance → Live Monitor** affiche les scans au fur et à mesure de leur arrivée. C'est un écran du matin : laissez-le ouvert pendant que les
+élèves arrivent et vous pouvez voir l'entrée fonctionner — ou constater immédiatement qu'elle ne fonctionne pas.
+
+Utilisez-le pour :
+
+- Confirmer qu'un lecteur enregistre bien les scans, avant que cent élèves ne passent devant un lecteur en panne.
+- Observer les arrivées tardives au moment où elles se produisent, plutôt que de les reconstituer ensuite.
+
+Si rien n'apparaît pendant les arrivées, considérez qu'il s'agit d'un problème d'appareil plutôt que d'un problème d'assiduité,
+et vérifiez le lecteur.
+
+## Saved filters
+
+**Attendance → Saved Filters** sert aux questions que vous posez de façon répétée — *élèves en dessous de 80 % ce
+trimestre*, *absences de ce niveau cette semaine*. Construisez la requête une fois, enregistrez-la et relancez-la plutôt que de
+la reconstruire à chaque fois.
+
+C'est la différence entre un rapport que vous prévoyez de lancer chaque mois et un rapport que vous lancez réellement. Si vous
+vous surprenez à régler les mêmes listes déroulantes chaque lundi, enregistrez-la.
+
+## Le reste du groupe Attendance
+
+- **Today's Attendance** — comme ci-dessus.
+- **Summary** — la vue à l'échelle de l'établissement, avec exploration jusqu'à une classe.
+- **Reports** — la sortie imprimable.
+- **Saved Filters** — comme ci-dessus.
+- **Live Monitor** — comme ci-dessus.
+
+## Voir aussi
+
+- [Taking Attendance as Staff](/fr/docs/shared-staff-attendance-overview)
+- [Read Your Class's Attendance](/fr/docs/educonnect-teacher-class-attendance)

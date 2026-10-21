@@ -1,0 +1,75 @@
+---
+title: "Tutorial: Agregar un docente"
+description: Cómo crear el registro de un docente, asignarle las asignaturas que imparte y el paso independiente que le da acceso para iniciar sesión.
+product: educonnect
+section: Tutorials
+order: 40
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/add_teacher_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_management_page.dart
+screenshotIds:
+  - "tutorial-add-a-teacher"
+hidden: false
+---
+
+## Un registro de docente no es un acceso
+
+Son dos cosas distintas, y hacer solo la primera es la razón más común por la que un docente nuevo
+"no puede iniciar sesión":
+
+1. **El registro del docente**: la persona, sus asignaturas, su asistencia, su horario. Se crea aquí.
+2. **La cuenta de usuario**: el nombre de usuario y la contraseña con los que realmente inicia sesión.
+   Se crea en **Administration → Users**; consulte
+   [Usuarios y acceso](/es/docs/educonnect-tutorial-users-and-access).
+
+Cree primero el registro del docente y luego la cuenta.
+
+## Pasos
+
+1. Abra **Teachers → Directory**.
+2. Seleccione **Add Teacher**.
+3. Complete el formulario:
+   - **Teacher ID**: obligatorio y único. El campo le advierte con **Duplicate Teacher ID
+     detected** si ya está en uso.
+   - **Full Name**: obligatorio.
+   - **Gender**: obligatorio.
+   - **Date of Birth** y **Joined Date**: ambos opcionales, ambos `YYYY-MM-DD`.
+   - **Contact Number**, **Email**, **Address**, **Religion**, **Ethnicity**, **Nationality**: todos
+     opcionales.
+   - **RFID**: opcional. Es la tarjeta que el docente escanea para su *propia* asistencia. Sin ella,
+     su asistencia debe registrarse de otra forma.
+4. Agregue las **asignaturas que imparte**. Este es el campo más importante para lo que sigue: el
+   generador de horarios y las sugerencias de suplencias solo proponen a un docente para una
+   asignatura que figure aquí. Un docente sin asignaturas nunca se programará automáticamente.
+5. Agregue una **foto** si su institución las utiliza.
+6. Seleccione **SAVE TEACHER**.
+
+## Después, dele acceso
+
+1. Abra **Administration → Users**.
+2. Seleccione **Add User** y cree la cuenta, vinculándola al registro de docente que acaba de crear.
+3. Revise a qué puede acceder la cuenta en **Administration → Access Control**; consulte
+   [Usuarios y acceso](/es/docs/educonnect-tutorial-users-and-access).
+
+## Editar y eliminar
+
+Abra al docente desde **Teachers → Directory** y use **Edit**. **DELETE TEACHER** pide confirmación
+primero y elimina el registro junto con su historial de asistencia; si se trata de alguien que se ha
+ido, consulte con su institución antes de eliminarlo, no después.
+
+## Qué hacer a continuación
+
+- Asígnelo a clases como docente de asignatura en
+  [Asignaturas por clase](/es/docs/educonnect-tutorial-class-subjects).
+- Defina cuándo está y cuándo no está disponible en **Timetable → Configuration → Teacher Constraints**,
+  antes de [generar el horario](/es/docs/educonnect-tutorial-generate-timetable).
+- Conviértalo en docente titular mediante **Edit Class Teacher** en una clase; consulte
+  [Agregar una clase](/es/docs/educonnect-tutorial-add-a-class).
+
+## Relacionado
+
+- [Gestión de docentes](/es/docs/shared-staff-teacher-management)
+- [Asistencia y suplencias de docentes](/es/docs/shared-staff-teacher-attendance)

@@ -1,0 +1,51 @@
+---
+title: Flux de travail de la comptabilité — grand livre, clôture de journée et rapprochement
+description: L'ordre dans lequel ces étapes doivent se dérouler, et la différence entre émettre et imprimer une facture.
+product: educonnect
+section: Guides
+order: 70
+roles:
+  - staff
+  - admin
+  - accountant
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/accounting_routes.dart
+screenshotIds:
+  - staff-accounting-overview
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Les sections de la comptabilité, dans l'ordre où vous les utiliserez généralement
+
+1. **Fees / Invoices** — définir ce qui est dû et émettre les factures aux familles.
+2. **Ledger / Entry** — enregistrer les paiements et autres transactions au fur et à mesure.
+3. **Online payments** — les paiements effectués par les parents via le portail parents arrivent ici
+   automatiquement ; vous n'avez pas à les saisir manuellement dans le grand livre (voir
+   [Payer les frais en ligne](/fr/docs/shared-parent-payments) pour le côté parents de ce processus).
+4. **Day-close** — clôture les transactions d'une journée.
+5. **Reconciliation** — vérifie les enregistrements de la journée clôturée par rapport aux encaissements
+   et aux relevés bancaires réels.
+
+La clôture de journée doit avoir lieu avant le rapprochement pour une journée donnée — lancer un
+rapprochement sur une journée qui n'a pas encore été clôturée, ou tenter de clôturer une journée une
+seconde fois, est une source fréquente de totaux qui ne concordent pas.
+
+## Émettre ou imprimer une facture
+
+Émettre une facture et l'imprimer sont deux étapes distinctes. L'émission rend la facture officielle et
+l'enregistre dans le système ; l'impression produit simplement une copie papier ou PDF d'une facture déjà
+émise. Vous pouvez réimprimer une facture émise à tout moment — il n'est pas nécessaire (et il ne faut
+pas) la réémettre simplement pour en obtenir une autre copie.
+
+## Remises
+
+Les remises s'appliquent par élève et par frais, et influent sur ce qui apparaît sur la facture de cet
+élève — configurez-les avant d'émettre la facture à laquelle elles doivent s'appliquer, car l'émission
+fige le montant à ce moment-là.
+
+## Portal access
+
+**Portal access** détermine si un parent peut voir et payer des frais donnés via le portail parents —
+si un parent indique qu'il ne trouve pas de frais à payer en ligne, vérifiez ce réglage avant de
+supposer qu'il s'agit d'un problème de passerelle de paiement.

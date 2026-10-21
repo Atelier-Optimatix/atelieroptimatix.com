@@ -1,0 +1,69 @@
+---
+title: නිවේදන පුවරුව
+description: පාසල් නිවේදන පුවරුව කියවීම, සහ කාර්ය මණ්ඩලය, දෙමාපියන් හෝ තෝරාගත් පන්ති සඳහා නිවේදන පළ කිරීම, කාලසටහන්ගත කිරීම, ඇමිණීම සහ සංරක්ෂණය කිරීම.
+product: educonnect
+section: Guides
+order: 70
+roles:
+  - admin
+  - staff
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/notices/notice_board_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/notices/notice_editor_dialog.dart
+  - attendance-web-app/edu-frontend/lib/models/notice.dart
+  - attendance-web-app/backend/config/accessCatalog.js
+screenshotIds:
+  - "staff-notice-board"
+hidden: false
+---
+
+**Communication → Notice Board** යනු එක් වරක් SMS යවන [Send Messages](/si/docs/educonnect-tutorial-send-messages)
+මෙන් නොව, දිගටම දෘශ්‍යමානව පවතින නිවේදන පාසල පළ කරන තැනයි. නිවේදනයක් කාර්ය මණ්ඩලයට, දෙමාපියන්ට (ප්‍රථම වරට
+ප්‍රකාශයට පත් කරන විට ඔවුන්ගේ දුරකථනවලටද දැනුම් දෙයි) හෝ තෝරාගත් පන්තිවල දෙමාපියන්ට සහ ගුරුවරුන්ට ලඟා විය හැකිය.
+
+## නිවේදන කියවීම
+
+කාර්ය මණ්ඩල පැත්තේ සැමට පුවරුව කියවිය හැකිය (*View the notice board* අවසරය). **Board** tab එකේ ඔබට අදාළ
+නිවේදන අලුත්ම ඒවා පළමුව, ඇමිණූ නිවේදන ඉහළින් සමඟ ලැයිස්තුගත කෙරේ. *No notices right now.* යනු කිසිවක්
+නොමැති බවයි.
+
+## නිවේදන පළ කිරීම
+
+පළ කිරීම වෙනම අවසරයකි (*Create, publish, pin & archive notices*) එය මුළු පාසල ඉදිරියේම පෙළ තබන බැවින්
+පෙරනිමි සැකසුම් එය පරිපාලකයා සතුව තබයි. ඔබට එය ඇත්නම්, පිටුවේ සෑම නිවේදනයක්ම සහිත **Manage** tab එකක්ද
+**New notice** බොත්තමක්ද ඇත.
+
+1. **New notice** තෝරන්න.
+2. **Title** සහ **Message** ඇතුළත් කරන්න. දෙකම අවශ්‍යයි (*Give the notice a title.*, *Write the
+   message.*), සහ ඒ සෑම එකකටම දිග සීමාවක් ඇත.
+3. **Audience** තෝරන්න: සැමට, ගුරුවරුන්ට, දෙමාපියන්ට, හෝ **classes**. පන්ති සඳහා, කුමන ඒවාදැයි තෝරන්න. එම
+   පන්තිවල දරුවන්ගේ දෙමාපියන්ට සහ ඔවුන්ට උගන්වන ගුරුවරුන්ට නිවේදනය පෙනේ. පන්තියක් පවරා නැති පරිශීලකයෙකුට
+   පළ කිරීමට පන්තියක් නැත.
+4. **Publish** දිනයක් සහ වේලාවක් ලෙස සකසන්න. අනාගත වේලාවක් නිවේදනය කාලසටහන්ගත කරයි.
+5. විකල්ප ලෙස **Expires** සකසන්න. කල් ඉකුත්වීම ප්‍රකාශන දිනයට පසු විය යුතුයි.
+6. විකල්ප ලෙස PDF එකක් හෝ රූපයක් ඇමිණිය හැකිය (එක් එකක් 20 MB දක්වා). ඇමුණුම් එක් කළ හැක්කේ වෙබ් යෙදුමෙන්
+   පමණි.
+7. **Save draft**, හෝ **Publish** තෝරන්න. පවතින නිවේදනයක් සංස්කරණය කරන විට **Save** සහ **Save &
+   publish** ලැබේ.
+
+ඔබට *Notice saved* පෙනෙනු ඇත.
+
+## නිවේදන කළමනාකරණය
+
+**Manage** tab එක **Title**, **Audience**, **Status**, **Dates** සහ **Files** ලැයිස්තුගත කරන අතර
+තත්ත්වය අනුව පෙරිය හැකිය: **Drafts**, **Published** හෝ **Archived**. සෑම පේළියකම ඔබට කළ හැක්කේ:
+
+- නිවේදනය **Edit** කිරීම.
+- කෙටුම්පතක් **Publish** කිරීම. මුලින්ම ප්‍රේක්ෂක පිරිස dialog එකකින් තහවුරු කෙරේ; නිවේදනය කලින් යවා නොමැති නම්
+  දෙමාපියන්ට දැනුම් දෙනු ලැබේ.
+- **Pin to the top** හෝ **Unpin** කිරීම.
+- එය **Archive** කිරීම.
+
+Status chips මඟින් නිවේදනයක් සිටින තැන කියයි: **Draft**, **Scheduled** (ප්‍රකාශන දිනය අනාගතයේ), **Live**,
+**Expired** හෝ **Archived**.
+
+## ආශ්‍රිත
+
+- [Send Messages](/si/docs/educonnect-tutorial-send-messages)

@@ -1,0 +1,42 @@
+---
+title: Penjenamaan Institut — Mengapa Istilah Berbeza Antara Institut
+description: Papan pemuka menyesuaikan perkataannya (contohnya "School" berbanding "Kindergarten") mengikut institut, bukan mengikut produk.
+product: shared
+section: Getting started
+order: 1
+roles:
+  - staff
+  - admin
+  - parent
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/utils/institute_branding.dart
+  - educonnect-public/edu-frontend/lib/api_services/branding_service.dart
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Satu pangkalan kod, banyak institut
+
+Papan pemuka staf dan portal ibu bapa ialah aplikasi yang sama bagi setiap institut —
+tiada "aplikasi EduConnect" dan "aplikasi KinderCare" yang berasingan. Apa yang berubah antara institut
+ialah penjenamaan: nama paparan, logo, warna tema, dan beberapa pertukaran istilah seperti memanggil
+institut anda "School" atau "Kindergarten" bergantung pada cara ia didaftarkan.
+
+Ini bermakna dua institut boleh kelihatan dan berbunyi agak berbeza walaupun menjalankan perisian yang
+serupa — jika sesuatu kelihatan "salah" bagi satu institut tetapi baik bagi yang lain, ada baiknya
+disemak sama ada ia benar-benar pepijat atau hanya penjenamaan/istilah institut itu sebelum
+dilaporkan sebagai pepijat.
+
+## Dari mana istilah datang
+
+Pada portal ibu bapa, institut yang aktif biasanya ditentukan oleh parameter `school` dalam
+URL yang dihantar kepada anda (contohnya daripada pautan jemputan atau aplikasi mudah alih), yang dicari untuk mendapatkan
+nama paparan dan logo institut itu. Jika ibu bapa sampai ke halaman log masuk tanpa konteks itu,
+portal akan kembali kepada institut yang diingati sebelum ini bagi pelayar tersebut, atau lalai generik.
+
+## Maksudnya dalam amalan
+
+- Perbualan sokongan hendaklah sentiasa mengesahkan *institut mana* yang digunakan pengguna sebelum
+  menganggap skrin berfungsi sama di semua tempat.
+- Tangkapan skrin dan dokumentasi dalam panduan ini diambil daripada satu institut wakil — perkataan
+  seperti "Student" berbanding istilah khusus tadika mungkin sedikit berbeza pada skrin anda.

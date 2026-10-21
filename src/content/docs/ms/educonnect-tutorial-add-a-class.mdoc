@@ -1,0 +1,59 @@
+---
+title: "Tutorial: Menambah Kelas"
+description: Mencipta kelas daripada skrin Classes, fungsi setiap satu daripada empat medan, dan langkah seterusnya selepas kelas wujud.
+product: educonnect
+section: Tutorials
+order: 10
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/components/class_components/add_class_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/class_list.dart
+screenshotIds:
+  - "tutorial-add-a-class"
+hidden: false
+---
+
+Kelas ialah bekas yang menjadi tempat hampir segala yang lain bergantung — murid, kehadiran, grid jadual waktu, keputusan peperiksaan dan tugasan yuran semuanya dirujuk mengikut kelas. Cipta kelas dahulu.
+
+**Anda memerlukan:** akses kepada **Students → Classes**, dan kebenaran untuk mencipta kelas.
+
+## Langkah
+
+1. Buka **Students → Classes** dalam laci menu sisi.
+2. Pilih **Add Class**. Dialog **Add New Class** dibuka.
+3. Isi empat medan:
+   - **Grade** — pilih daripada senarai. Inilah yang mengumpulkan kelas bersama-sama untuk
+     [Grade Curriculum](/ms/docs/educonnect-tutorial-grade-curriculum) dan untuk pelaporan seluruh gred, jadi ia mesti betul.
+   - **Syllabus** — pilih daripada senarai. Kelas yang menggunakan sukatan pelajaran berbeza dalam gred yang sama dilaporkan secara berasingan.
+   - **Class Name** — wajib, dan ini ialah pengecam kelas di seluruh sistem. Ringkas dan lazim lebih baik daripada deskriptif: `10-A`, `Grade 3 Blue`. Inilah yang akan anda lihat dalam setiap senarai juntai kelas mulai sekarang.
+   - **Teacher Name** — pilihan. Anda boleh membiarkannya kosong dan menetapkan guru kelas dengan betul kemudian.
+4. Pilih **Save**.
+
+Anda akan melihat **Class added successfully**, dan kelas baharu itu muncul dalam senarai. Jika anda mendapat **Failed to add class.**, punca yang paling biasa ialah nama kelas yang sudah wujud.
+
+## Menetapkan guru kelas
+
+Medan **Teacher Name** pada dialog ialah teks bebas — ia hanya label, bukan pautan kepada rekod guru. Untuk benar-benar menugaskan guru yang memiliki kelas itu:
+
+1. Buka kelas itu daripada **Students → Classes**.
+2. Gunakan menu **⋮ More options** pada skrin kelas.
+3. Pilih **Edit Class Teacher** dan pilih guru itu.
+
+Ini penting: guru kelas ialah orang yang mendapat kelas itu dalam **My Class**, dan yang boleh menandakan kehadirannya. Lihat [Taking Attendance as a Teacher](/ms/docs/educonnect-teacher-taking-attendance).
+
+## Langkah seterusnya
+
+Setelah kelas wujud, mengikut urutan ini secara kasar:
+
+1. [Tambah murid ke dalamnya](/ms/docs/educonnect-tutorial-add-a-student) — seorang demi seorang, atau
+   [import daripada Excel](/ms/docs/educonnect-tutorial-import-students).
+2. [Tetapkan mata pelajarannya](/ms/docs/educonnect-tutorial-class-subjects) supaya ia boleh dijadualkan.
+3. Sertakannya dalam [fee setup](/ms/docs/educonnect-tutorial-fee-setup) jika yuran berbeza mengikut kelas.
+
+## Berkaitan
+
+- [Managing Students, Classes and Substitutions](/ms/docs/shared-staff-student-admissions-management)
+- [Setting Up a New Institute](/ms/docs/educonnect-setting-up-a-new-institute)

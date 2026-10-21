@@ -1,0 +1,51 @@
+---
+title: Memasukkan dan Menerbitkan Keputusan Peperiksaan
+description: Perbezaan antara menambah keputusan, memuat naik keputusan secara pukal, permintaan perubahan, dan kedudukan.
+product: educonnect
+section: Guides
+order: 60
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/exam_routes.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Dua cara memasukkan keputusan
+
+Bahagian **Exams** menawarkan dua laluan berasingan ke set keputusan yang sama, dan mudah untuk menggunakan
+yang salah bagi apa yang anda cuba lakukan:
+
+- **Add results** — masukkan markah untuk satu kelas/subjek pada satu masa, terus dalam papan pemuka.
+  Gunakan ini untuk kelas kecil atau pembetulan saat akhir.
+- **Upload results** — import markah secara pukal untuk sesebuah kelas/subjek daripada fail. Gunakan ini untuk kemasukan
+  seluruh kelas setelah pemarkahan selesai; ia jauh lebih pantas daripada menaip markah satu demi satu, tetapi
+  kesilapan dalam fail menjejaskan seluruh kelas sekali gus, jadi semak fail dua kali sebelum memuat naik.
+
+## Senarai kelas peperiksaan
+
+Membuka peperiksaan menunjukkan kelasnya dikumpulkan mengikut gred, dalam susun atur yang sama seperti **Students → Classes**.
+Setiap kelas menunjukkan subjek dan pelajarnya, dan *No results yet* sehingga markah dimasukkan. Pelajar yang
+dipadam muncul sebagai kumpulan tersendiri. Eksport memberikan **Exam Coverage by Class** dengan gred, kelas,
+subjek, pelajar dan skor purata.
+
+## Permintaan perubahan
+
+Jika keputusan perlu dibetulkan selepas dimasukkan (kesilapan pemarkahan yang ditemui kemudian, pemarkahan semula),
+gunakan **change requests** dan bukannya menyunting keputusan secara terus. Ini menyimpan rekod apa yang
+diubah dan sebabnya, yang penting untuk menangani pertanyaan ibu bapa tentang sesuatu gred kemudian.
+
+## Kedudukan dan laporan penggal
+
+**Rankings** dan **term reports** dijana daripada apa sahaja keputusan yang wujud sekarang —
+ia tidak akan mencerminkan sesebuah kelas sehingga keputusan bagi kelas/subjek itu benar-benar dimasukkan atau
+dimuat naik. Jika kedudukan kelihatan tidak lengkap, semak sama ada keputusan setiap subjek telah dimasukkan
+sebelum menganggap pengiraan kedudukan salah.
+
+## Siapa yang melihat ini
+
+Guru biasanya menggunakan add/upload results untuk kelas mereka sendiri; rankings, term reports, dan
+analitik merentasi kelas lebih lazim digunakan oleh pentadbir sekolah yang menyemak seluruh kelas atau kumpulan
+tahun.

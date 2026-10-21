@@ -1,0 +1,51 @@
+---
+title: Flujo de trabajo de contabilidad — libro mayor, cierre del día y conciliación
+description: El orden en que deben realizarse estos pasos y la diferencia entre emitir e imprimir una factura.
+product: educonnect
+section: Guides
+order: 70
+roles:
+  - staff
+  - admin
+  - accountant
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/accounting_routes.dart
+screenshotIds:
+  - staff-accounting-overview
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Las secciones de contabilidad, en el orden en que normalmente las usará
+
+1. **Fees / Invoices** — configure lo que se adeuda y emita facturas a las familias.
+2. **Ledger / Entry** — registre los pagos y otras transacciones a medida que llegan.
+3. **Online payments** — los pagos realizados por los padres a través del portal para padres llegan
+   aquí automáticamente; no necesita ingresarlos manualmente en el libro mayor (consulte
+   [Pago de cuotas en línea](/es/docs/shared-parent-payments) para el lado de los padres).
+4. **Day-close** — cierra las transacciones de un día.
+5. **Reconciliation** — compara los registros del día cerrado con los recibos o registros bancarios
+   reales.
+
+El cierre del día debe realizarse antes de la conciliación de un día determinado: ejecutar la
+conciliación de un día que aún no se ha cerrado, o intentar cerrar un día por segunda vez, es una
+fuente común de totales que no coinciden.
+
+## Emitir frente a imprimir una factura
+
+Emitir una factura e imprimirla son dos pasos independientes. Emitir es lo que hace oficial la factura
+y la registra en el sistema; imprimir solo produce una copia física o en PDF de una factura que ya se
+ha emitido. Puede volver a imprimir una factura emitida en cualquier momento: no necesita (ni debe)
+volver a emitirla solo para obtener otra copia.
+
+## Descuentos
+
+Los descuentos se aplican por estudiante y cuota, y afectan a lo que aparece en la factura de ese
+estudiante. Configúrelos antes de emitir la factura a la que deben aplicarse, ya que al emitirla se
+fija el importe en ese momento.
+
+## Acceso al portal
+
+**Portal access** controla si un padre o madre puede ver y pagar una cuota determinada a través del
+portal para padres. Si un padre dice que no encuentra una cuota para pagar en línea, revise esto antes
+de suponer que es un problema de la pasarela de pago.

@@ -1,0 +1,72 @@
+---
+title: "Tutoriel : Importer des élèves depuis Excel"
+description: Inscrire une classe en masse depuis un tableur — l'ordre exact des colonnes attendu par l'outil d'import, et pourquoi il ne lit jamais vos en-têtes.
+product: educonnect
+section: Tutorials
+order: 30
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/class_excel_import.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/students_in_class.dart
+hidden: false
+---
+
+Au-delà de quelques élèves, importez la classe depuis un tableur plutôt que de
+[les ajouter un par un](/fr/docs/educonnect-tutorial-add-a-student).
+
+## Le point qui piège tout le monde
+
+**L'outil d'import lit les colonnes par position, pas par en-tête.** Il ignore votre première ligne en
+supposant qu'il s'agit d'un en-tête, puis lit la colonne A comme Student ID, la colonne B comme RFID, et ainsi de suite —
+quels que soient vos en-têtes.
+
+Un tableur avec les bons en-têtes dans le mauvais ordre s'importe donc silencieusement et de manière erronée. Respectez
+l'ordre, et les en-têtes peuvent dire ce que vous voulez.
+
+## L'ordre des colonnes
+
+| Colonne | Champ | Remarques |
+| --- | --- | --- |
+| A | Student ID | Chiffres uniquement, unique dans tout l'établissement |
+| B | RFID | Le numéro de la carte de présence ; laissez vide si les cartes viennent plus tard |
+| C | Full Name | |
+| D | Date of Birth | `YYYY-MM-DD`. Peut être laissé vide |
+| E | Class ID | Le **Class Name** exactement tel qu'il apparaît dans Classes |
+| F | Email | |
+| G | Mobile Number | Les SMS de présence et les rappels de paiement sont envoyés ici |
+| H | Address | |
+| I | Parent/Guardian | |
+| J | Religion | |
+| K | Nationality | |
+| L | Gender | |
+
+Toutes les colonnes après A à C peuvent rester vides. Une cellule vide s'importe comme vide ; elle n'arrête pas la ligne.
+
+## Étapes
+
+1. Préparez la feuille dans l'ordre de colonnes ci-dessus, avec une ligne d'en-tête en haut.
+2. Ouvrez **Students → Classes** puis la classe dans laquelle vous importez.
+3. Ouvrez le menu **⋮ More options** et choisissez **Import Students from Excel**.
+4. Sélectionnez votre fichier `.xlsx` ou `.xls`.
+5. Le tableau **Imported Data Preview** apparaît, montrant chaque ligne exactement comme l'outil l'a lue.
+   **C'est le point de contrôle** — faites défiler horizontalement et vérifiez que les valeurs se trouvent sous les bons
+   en-têtes. Si des noms apparaissent sous « Date of Birth », l'ordre de vos colonnes est faux : annulez, corrigez
+   la feuille et recommencez.
+6. Confirmez pour enregistrer.
+
+Si vous voyez **Unable to import Excel file. Please try again.**, le fichier n'a pas pu être lu du tout —
+généralement un `.csv` renommé en `.xlsx`, ou un fichier encore ouvert dans Excel.
+
+## Après l'import
+
+- Les élèves importés sans RFID n'enregistreront pas leur présence tant qu'un numéro de carte n'est pas ajouté.
+  Renseignez-le en modifiant chaque élève, ou réimportez une fois les cartes émises.
+- Vérifiez que le nombre d'élèves dans la liste de la classe correspond à votre feuille avant de poursuivre.
+
+## Voir aussi
+
+- [Add a Student](/fr/docs/educonnect-tutorial-add-a-student)
+- [Add a Class](/fr/docs/educonnect-tutorial-add-a-class)

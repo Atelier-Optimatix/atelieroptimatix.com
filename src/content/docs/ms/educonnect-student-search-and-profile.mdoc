@@ -1,0 +1,102 @@
+---
+title: Carian Pelajar, Profil dan Pelajar yang Telah Berhenti
+description: Mencari dan menapis setiap pelajar, membaca profil (termasuk grid kehadiran penggal hari demi hari dan rekod kekal), dan apa yang berlaku apabila seseorang pelajar berhenti.
+product: educonnect
+section: Guides
+order: 60
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_search.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/left_students_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/student_analytics_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_term_attendance_grid.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_permanent_record_section.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/mark_left_dialog.dart
+  - attendance-web-app/edu-frontend/lib/utils/left_student_fields.dart
+screenshotIds:
+  - "staff-student-search"
+  - "staff-student-profile-term-grid"
+  - "staff-left-students"
+hidden: false
+---
+
+## Student Search
+
+**Students → Student Search** menyenaraikan setiap pelajar dalam jadual yang boleh anda cari, tapis dan
+susun. Ia dibina untuk soalan seperti "pelajar mana yang tiada nombor telefon penjaga?" sama seperti untuk
+mencari seorang individu.
+
+- **Search** menerima nama, ID, kelas, penjaga atau nombor telefon. Gunakan **Search By** untuk
+  mengehadkannya kepada satu medan, contohnya RFID atau Address; *All fields* ialah lalai.
+- Penapis **Class** dan **Gender** menyempitkan senarai.
+- **Missing** memaparkan pelajar yang mempunyai nilai kosong dalam satu medan: **Mobile**, **Parent /
+  Guardian**, **Address**, **Email**, **Date of Birth**, **Religion**, **Nationality** atau **RFID**. Ini
+  cara terpantas untuk mencari rekod yang perlu dibetulkan, contohnya sebelum mengeluarkan
+  [kad ID](/ms/docs/educonnect-tutorial-id-cards).
+- **Reset Filters** muncul sebaik sahaja sebarang penapis aktif.
+- Klik pengepala lajur untuk menyusun. **Columns** menyembunyikan atau menunjukkan lajur, dan **Compact** /
+  **Comfortable** mengubah kepadatan susunan baris.
+
+*No students match your search.* bermaksud tepat seperti itu; kosongkan penapis sebelum menganggap
+pelajar itu tiada. Untuk mengeluarkan data yang sama sebagai fail, lihat
+[List Reports](/ms/docs/educonnect-list-reports).
+
+## Profil pelajar
+
+Pilih seorang pelajar untuk membuka profilnya. Pengepala kekal di tempatnya semasa anda menatal bahagian
+demi bahagian, dan selepas anda menyunting dan menyimpan, anda kekal pada profil dengan nilai yang telah
+disimpan dipaparkan. Senarai pelajar di seluruh aplikasi, termasuk senarai mudah alih, memaparkan foto
+setiap pelajar jika ada.
+
+Kehadiran muncul dalam dua bentuk:
+
+- **Term Attendance** — ringkasan kehadiran penggal.
+- **Attendance by Day** — grid kalendar bagi penggal yang anda pilih daripada juntai turun **Term 1, Term
+  2…**, satu sel bagi setiap hari, diwarnakan **Present**, **Absent**, **Not a school day** atau
+  **Upcoming**. Di bawahnya, satu cip mengira hari persekolahan yang dihadiri, contohnya *18 / 20 school
+  days attended (90.0%)*, atau menyatakan *No school days held yet*.
+
+Sel bukan hari persekolahan datang daripada [Calendar](/ms/docs/educonnect-tutorial-holidays-and-terms)
+anda (hujung minggu, cuti dan hari di luar penggal), jadi ketidakhadiran yang anda lihat pada hari cuti
+bermakna cuti itu belum dikonfigurasikan.
+
+Lebih ke bawah ialah keputusan peperiksaan, pembayaran, sijil, adik-beradik dan kelas terdahulu. Pelajar
+yang mempunyai kad dalam rekod juga memaparkan bahagian **ID Card** (lihat
+[Urus dan Jejak Kad ID](/ms/docs/educonnect-tutorial-id-cards)).
+
+### Permanent Record
+
+Jika institut anda telah menghidupkannya, bahagian **Permanent Record** memuatkan nota bertarikh dalam
+kategori **Conduct**, **Academic**, **Health** dan **Other**. Pilih **Add entry**, pilih kategori dan
+tarikh, tulis nota, dan simpan. Setiap entri menunjukkan siapa yang menambahnya (dan siapa yang
+menyuntingnya).
+
+Ia tidak aktif sehingga pentadbir menghidupkan **Enable the permanent record section** dalam
+**Administration → Settings**. Hanya guru dan pentadbir boleh membacanya, tidak pernah ibu bapa. Guru boleh
+menambah dan menyunting entri bagi kelas mereka sendiri; hanya pentadbir boleh memadam. Mematikan tetapan
+menyembunyikan bahagian itu tetapi mengekalkan entri.
+
+## Apabila seorang pelajar berhenti
+
+Orang yang mempunyai kebenaran *Mark students as left school* (ditetapkan dalam Access Control)
+mengeluarkan pelajar daripada daftar melalui halaman sunting pelajar dengan butang **Mark as left**.
+Dialog meminta **Date left**, **Reason** dan **Note** secara pilihan. Sebabnya ialah: *Finished school*,
+*Moved to a different school*, *Relocated abroad*, *Financial reasons*, *Family reasons* dan *Other*. Anda
+akan melihat *Student marked as left school*.
+
+**Students → Left Students** menyenaraikan semua yang ditandakan telah berhenti, dengan ID mereka, kelas
+terakhir yang dihadiri, tarikh menyertai, tarikh berhenti dan sebab. Cari mengikut nama, ID pelajar atau
+kelas, dan susun mengikut mana-mana lajur tersebut. Pelajar dalam rekod yang dipadam boleh dipindahkan ke
+senarai ini dengan **Move to left students**. Pelajar yang dipadam mengekalkan profil yang masih boleh
+dimuatkan daripada rekod tersebut.
+
+Pelajar yang telah berhenti tidak dikira dalam daftar atau dalam angka kemasukan; lihat
+[School Statistics](/ms/docs/shared-staff-analytics).
+
+## Berkaitan
+
+- [Tambah Pelajar](/ms/docs/educonnect-tutorial-add-a-student)
+- [Untuk Guru: Mencari Seorang Pelajar](/ms/docs/educonnect-teacher-students-and-analytics)

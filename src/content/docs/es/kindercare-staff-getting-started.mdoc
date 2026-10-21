@@ -1,0 +1,108 @@
+---
+title: Primeros pasos con la aplicación KinderCare para el personal
+description: Las cinco pestañas de la aplicación para docentes, cómo matricular a un niño, el perfil del estudiante y cómo agregar eventos al calendario.
+product: kindercare
+section: Getting started
+order: 10
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/home_screen.dart
+  - kinder-care-fe/lib/screens/students_screen.dart
+  - kinder-care-fe/lib/screens/calendar_screen.dart
+  - kinder-care-fe/lib/screens/add_student_screen.dart
+  - kinder-care-fe/lib/screens/account_settings_screen.dart
+  - kinder-care-fe/lib/screens/student_profile_screen.dart
+  - kinder-care-shared/lib/src/student_profile/student_profile_page.dart
+  - kinder-care-shared/lib/src/student_profile/profile_permissions.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Las cinco pestañas
+
+La aplicación KinderCare para el personal es deliberadamente pequeña. Todo se encuentra detrás de
+cinco pestañas en la parte inferior:
+
+- **Activities** — lo que registra sobre los niños a lo largo del día.
+- **Students** — los niños de su clase.
+- **Calendar** — eventos de su clase.
+- **Reports** — los informes escritos que se envían a los padres.
+- **Notices** — comunicados a los padres. Consulte [Envío de comunicados](/es/docs/kindercare-staff-announcements).
+
+No hay menú lateral ni un área de administración aparte que buscar. Si algo no está en una de estas
+cinco pestañas, no está en esta aplicación.
+
+{% callout type="note" %}
+Esta es la aplicación del docente. Los padres tienen una aplicación **distinta** con sus propias
+pestañas; consulte [La aplicación KinderCare para padres](/es/docs/kindercare-parent-app). Ambas
+muestran buena parte de la misma información, por lo que conviene saber cuál está describiendo
+alguien antes de resolver un problema con esa persona.
+{% /callout %}
+
+## Matricular a un niño
+
+**Students → Add Student** recoge los datos del niño en secciones agrupadas: información personal
+(nombre completo, student ID, fecha de nacimiento), información académica (clase, género),
+información de contacto (dirección, número de móvil, correo electrónico, padre/madre/tutor) e
+información adicional (nacionalidad, religión, RFID, alergias y medicamentos). Puede adjuntar una
+foto al mismo tiempo, tomada con la **camera** o elegida de la **gallery**. El nombre completo, el
+student ID y la clase son obligatorios.
+
+## La pestaña Students
+
+La pestaña Students muestra su clase como **cuadrícula** o como **lista**; el botón de la esquina
+superior derecha alterna entre ambas. **Search by Name** acota los resultados, lo que suele ser más
+rápido que desplazarse cuando la clase crece. Cada niño también lleva una insignia que indica si su
+asistencia se ha marcado **hoy**; si falta la insignia, es posible que los datos de asistencia
+simplemente no se hayan cargado, y el resto de la aplicación sigue funcionando.
+
+Si aún no tiene una clase asignada, la pestaña le pide que elija una en lugar de mostrar una lista
+vacía.
+
+## El perfil de un niño
+
+Toque a un niño para abrir su perfil. Es la misma página que ven los padres en su aplicación, por lo
+que la terminología coincide en ambos lados. Tiene dos pestañas:
+
+- **Details** — información personal y de contacto, el student ID y la clase del niño, y quién
+  actualizó el registro por última vez y cuándo. Las **alergias y los medicamentos** se muestran en
+  una tarjeta roja resaltada para que sean difíciles de pasar por alto.
+- **Attendance** — un calendario mes a mes del niño con **Days Present**, **Working Days** y un
+  porcentaje de **Attendance**. Para moverse entre meses use las flechas del calendario.
+
+Use el lápiz (**Edit profile**) para cambiar datos y **Save Changes** al terminar; el botón de cámara
+cambia la foto del niño. El personal puede editar todos los campos salvo el **student ID**, la
+**class** y **Emergency Contact**, que en la aplicación son solo de visualización. (Los padres solo
+pueden editar su teléfono, correo electrónico, dirección y la foto.)
+
+{% callout type="note" %}
+Si un guardado falla, la aplicación muestra el motivo recibido en lugar de un error genérico, así que
+lea el mensaje antes de reintentar: normalmente indica el campo que fue rechazado.
+{% /callout %}
+
+## El calendario
+
+La pestaña Calendar es editable, no solo de consulta: puede **agregar**, **editar** y **eliminar**
+eventos. Carga los eventos de todo el año, por lo que puede avanzar y retroceder entre los meses sin
+esperar. Al eliminar se solicita confirmación primero, ya que los padres pueden haber visto ya el
+evento en su aplicación.
+
+## Mantener la sesión iniciada
+
+La aplicación mantiene su sesión iniciada entre reinicios, por lo que no tiene que iniciar sesión
+todas las mañanas. Solo necesita volver a iniciar sesión después de cerrarla.
+
+## Configuración de la cuenta
+
+**Account Settings** es intencionalmente mínima. Además de los datos de su cuenta, ofrece **Request
+Account Deletion**: una solicitud a la escuela y no algo que ocurra de inmediato, por lo que enviarla
+no cierra su sesión ni elimina sus registros en el momento.
+
+## Temas relacionados
+
+- [Registro de actividades](/es/docs/kindercare-staff-activities)
+- [Redacción de informes](/es/docs/kindercare-staff-reports)
+- [Envío de comunicados](/es/docs/kindercare-staff-announcements)
+- [La aplicación KinderCare para padres](/es/docs/kindercare-parent-app)

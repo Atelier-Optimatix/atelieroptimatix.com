@@ -1,0 +1,91 @@
+---
+title: Présences des enseignants et remplacements
+description: Suivre les présences du personnel et élaborer un plan de remplacement pour les enseignants absents aujourd'hui.
+product: educonnect
+section: Guides
+order: 50
+roles:
+  - admin
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_attendance_report_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_monthly_timesheet_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/substitution_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_attendance_report_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_monthly_attendance_table.dart
+lastUpdateDate: 2026-09-26
+screenshotIds:
+  - "staff-teacher-attendance"
+  - "staff-teacher-timesheet"
+hidden: false
+---
+
+## Présences des enseignants
+
+Il s'agit des présences du personnel, distinctes des présences des élèves que les enseignants relèvent
+pour leurs classes.
+
+Elles apparaissent volontairement à deux endroits :
+
+- **Teachers → Attendance**, pour les administrateurs qui consultent l'ensemble du personnel.
+- **Attendance → My Attendance**, afin qu'un enseignant puisse consulter son propre relevé sans qu'on lui
+  donne accès au reste de la section Teachers.
+
+Les deux ouvrent le même rapport, et tous deux permettent d'accéder à un tableau **mensuel** pour une vue
+plus longue.
+
+## Lire la liste quotidienne
+
+Chaque ligne correspond à un enseignant pour un jour donné. **In / Out** affiche côte à côte le premier
+et le dernier badgeage de la journée — pendant la journée scolaire, l'heure de sortie indique `--` tant
+que l'enseignant n'a pas badgé en sortant — et **Time in School** est la différence entre les deux (par
+exemple *7h 17m*). **Status** est déterminé à partir du premier badgeage par rapport aux heures limites
+de l'établissement : *on time* (à l'heure), *late* (en retard) ou *absent*. **Marked By** désigne le
+lecteur qui a enregistré le badgeage, ou la personne qui l'a saisi à la main.
+
+Sélectionnez une ligne pour voir **tous** les badgeages de cet enseignant pour la journée, et pas
+seulement le premier et le dernier.
+
+## Vues mensuelles
+
+- **Monthly Attendance** présente l'ensemble du personnel mois par mois : `/` présent, `L` en retard,
+  `L2` en retard (deuxième niveau), `A` absent, `—` aucun enregistrement.
+- **Timesheet** apparaît dès que vous choisissez un seul enseignant dans le filtre **Teacher**. Il liste
+  chaque date du mois avec les heures d'arrivée et de départ et les heures travaillées, prêt à être
+  imprimé ou exporté pour la paie.
+
+## Remplacements
+
+**Teachers → Substitution** répond à une seule question quotidienne : qui est absent, et qui assure ses
+cours ?
+
+La page s'ouvre sur les absences du jour et vous en indique directement le nombre — *« all present »*,
+ou combien d'enseignants sont absents aujourd'hui.
+
+À partir de là :
+
+- **Auto-Generate** vous propose un plan de remplacement.
+- **Save Plan** l'enregistre ; dès qu'un plan existe, le même bouton devient **Update Plan**, ce qui vous
+  permet de le régénérer ou de l'ajuster puis de l'enregistrer de nouveau.
+- **Print** produit le plan sous forme de feuille imprimable pour la salle des professeurs.
+
+Les absences distinguent aussi un **early departure** (départ anticipé) d'une absence sur toute la
+journée ; un enseignant qui part en cours de journée n'est donc remplacé que pour les périodes qu'il
+manque réellement.
+
+{% callout type="note" %}
+Les boutons d'action peuvent disparaître pendant que vous êtes sur la page. Cela signifie normalement
+que tous les enseignants qui avaient été marqués absents ont depuis badgé, et qu'il ne reste donc plus
+rien à couvrir — le plan n'est pas perdu, il n'est simplement plus nécessaire.
+{% /callout %}
+
+Comme le remplacement dépend de la connaissance de qui enseigne quoi et quand, il ne vaut que ce que vaut
+l'emploi du temps qui le sous-tend. Si un plan proposé semble erroné, vérifiez l'emploi du temps et les
+contraintes des enseignants avant de supposer que la suggestion est en cause.
+
+## Voir aussi
+
+- [Gérer les enseignants](/fr/docs/shared-staff-teacher-management)
+- [Construire l'emploi du temps](/fr/docs/shared-staff-timetable)
+- [Faire l'appel en tant que membre du personnel](/fr/docs/shared-staff-attendance-overview)

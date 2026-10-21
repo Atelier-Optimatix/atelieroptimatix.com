@@ -1,0 +1,84 @@
+---
+title: "Tutorial: Usar el mostrador de circulación"
+description: Préstamo, renovación y devolución de libros con una tarjeta de identificación y un lector de códigos de barras, y gestión de los préstamos vencidos.
+product: educonnect
+section: Tutorials
+order: 230
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/circulation_desk_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/loans_page.dart
+  - attendance-web-app/backend/services/library/circulationService.js
+screenshotIds:
+  - "library-circulation-desk"
+  - "library-loans"
+hidden: false
+---
+
+El mostrador es el lugar por donde salen y regresan los libros. Escucha los escaneos en todo momento, por lo que rara vez necesitará
+hacer clic.
+
+**Necesita:** un rol con **Circulation desk**, **Check out & renew** y **Check in returns**,
+normalmente el del bibliotecario. Abra **Library → Circulation Desk**.
+
+**Equipo:** un lector de códigos de barras USB o Bluetooth configurado en Code 128 o Code 39 con sufijo Enter, y
+un lector RFID USB en modo teclado que lea las mismas tarjetas que sus lectores de entrada. Si no tiene ninguno,
+use la cámara: **Scan with camera** funciona en un teléfono, una tableta o la cámara web de un portátil.
+
+## Prestar un libro
+
+1. **Acerque la tarjeta del prestatario.** La pantalla muestra su nombre, los libros que tiene prestados con sus fechas de vencimiento,
+   las reservas y las multas, y si puede tomar otro libro.
+2. **Escanee el código de barras de cada libro.** Cada libro se presta con la fecha de vencimiento que establecen las reglas de préstamo.
+3. Seleccione **Done** o espere. El prestatario se cierra solo tras el tiempo de inactividad configurado en Library Settings.
+
+Una fecha de vencimiento que cae en un día cerrado pasa al siguiente día escolar. Escanear dos veces el mismo libro
+no causa problemas.
+
+Si la tarjeta no coincide con nadie, o un escaneo coincide con más de una cosa, el mostrador lo indica
+(**That scan matches more than one thing**). Busque a la persona por su nombre. Si **Lend only on a
+card tap** está activado, eso requiere una excepción (override).
+
+## Devolver un libro
+
+Escanee el libro. No necesita abrir primero al prestatario. Si el libro está retrasado, la multa se calcula y,
+si las multas están activadas, se cobra en ese momento. Un segundo escaneo de un libro ya devuelto
+no hace nada. Si alguien espera el libro, este pasa al estante de reservas: consulte [Reservas](/es/docs/educonnect-library-holds).
+
+**¿Dañado?** Al devolver, registre el daño para cobrarlo.
+
+## Renovar
+
+Renueve desde la lista del prestatario. Un libro que otra persona está esperando no se renueva, y las renovaciones se detienen
+en el límite establecido en las reglas de préstamo.
+
+## Cuando un libro está prestado a otra persona
+
+Al escanearlo para un nuevo prestatario aparece **This book is on loan to someone else**. Elija **Check in and
+lend** si realmente ha sido devuelto.
+
+## Excepciones
+
+Un prestatario que ha llegado a su límite, está bloqueado o debe demasiado no puede tomar libros prestados. Alguien con **Override** puede
+prestar de todos modos: debe indicar un motivo, y el mostrador muestra **Override on: reason** hasta que termine.
+Cada excepción queda registrada.
+
+## Loans & Overdue
+
+**Library → Loans & Overdue** tiene tres listas: **All on loan**, **Overdue** y **Returned today**.
+Los libros retrasados muestran la multa que tendrían si se devolvieran hoy. Es una proyección y no se
+cobra nada hasta que el libro regrese.
+
+## Declarar un libro perdido
+
+Abra el préstamo desde la página del prestatario y declárelo perdido. A un estudiante se le cobra el precio del ejemplar,
+o el precio del título, o el costo de reposición predeterminado de la configuración, más la tarifa de gestión por pérdida. Si
+el libro aparece más tarde y se registra su devolución, su multa impaga queda anulada.
+
+## Temas relacionados
+
+- [Prestatarios](/es/docs/educonnect-library-borrowers)
+- [Multas](/es/docs/educonnect-library-fines)

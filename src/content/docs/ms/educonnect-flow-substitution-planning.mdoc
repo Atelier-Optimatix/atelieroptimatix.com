@@ -1,0 +1,80 @@
+---
+title: Rancang Guru Ganti untuk Guru yang Tidak Hadir
+description: Rutin pagi — mencari kekosongan hari ini, memilih guru ganti, menyimpan pelan supaya sampai kepada guru, dan menangani guru yang pulang awal.
+product: educonnect
+section: Advanced workflows
+order: 10
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/substitution_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_dashboard_page.dart
+screenshotIds:
+  - "flow-substitution-planning"
+hidden: false
+---
+
+Ini ialah rutin harian, bukan tugas konfigurasi. Ia mesti dilakukan awal — pelan tidak sampai ke jadual
+waktu sesiapa sehingga ia disimpan.
+
+**Anda memerlukan:** akses kepada **Teachers → Substitution**, dan kehadiran guru hari ini telah direkodkan.
+
+## Rutin pagi
+
+1. **Semak siapa yang tidak hadir.** Papan pemuka **Teachers** memaparkan **Present Today** dan
+   **Absent Today** sekali pandang, dengan **Arrange Substitutes** terus membawa ke pelan. Jika ia
+   menyatakan *All teachers are present!* tiada apa-apa yang perlu dilakukan.
+2. Buka **Teachers → Substitution**.
+3. Skrin ini menyenaraikan setiap waktu yang memerlukan ganti: **Period**, **Time**, **Class · Subject**,
+   dan **Suggested Substitutes**. Baris bagi guru yang ternyata hadir memaparkan **Teacher present — no
+   sub needed**.
+4. Bagi setiap baris, pilih guru ganti:
+   - **Suggested Substitutes** ialah guru yang lapang pada waktu itu *dan* mengajar mata pelajaran
+     tersebut. Utamakan mereka.
+   - **Any teacher** meluaskan pilihan kepada semua guru yang lapang, apabila tiada padanan mata
+     pelajaran. Ini sekadar penyeliaan dan bukan pengajaran, tetapi lebih baik daripada kelas tanpa guru.
+   - *No suggested substitutes* bermaksud tiada sesiapa yang lapang dan layak sekali gus. Luaskan
+     carian, atau terima kekosongan itu dengan sengaja.
+5. Gunakan **Remove from plan** untuk membatalkan sesuatu tugasan sebelum menyimpan.
+6. **Simpan pelan.** Status menunjukkan **Plan ready to save** sehingga anda menyimpannya, kemudian
+   **Plan saved**.
+
+**Tiada apa-apa sampai kepada mana-mana guru sehingga anda menyimpan.** Pelan yang disediakan tetapi
+tidak disimpan tidak kelihatan.
+
+## Menyampaikannya kepada orang
+
+- Menyimpan akan meletakkan penanda **SUB** pada
+  [My Timetable](/ms/docs/educonnect-teacher-my-timetable) setiap guru ganti, bagi hari tersebut.
+- **Print Plan** menghasilkan salinan untuk bilik guru.
+
+Lakukan kedua-duanya. Guru yang tidak menyemak aplikasi pada waktu pagi adalah tepat sekali mereka yang
+perlu anda hubungi.
+
+## Guru yang pulang pada pertengahan hari
+
+Apabila seseorang keluar pada pertengahan hari, gunakan **Add teacher's periods (early departure)**:
+
+1. Pilih guru dan waktu-waktu bermula dari waktu pemergiannya.
+2. **Add Periods** memasukkan waktu-waktu tersebut ke dalam pelan hari ini sebagai kekosongan.
+3. Tugaskan guru ganti dan simpan semula.
+
+Waktu pagi mereka yang telah diajar tidak diusik.
+
+## Mesej status
+
+| Status | Maksudnya |
+| --- | --- |
+| **Weekend — no timetable** | Tiada apa-apa dijadualkan hari ini |
+| **All teachers present today** | Tiada ketidakhadiran direkodkan |
+| **No substitutions needed** | Ada ketidakhadiran, tetapi tiada seorang pun mempunyai waktu hari ini |
+| **Plan not created** | Ada kekosongan dan belum ada sesiapa yang memulakan |
+| **Plan ready to save** | Tugasan telah dibuat, belum disimpan — **belum aktif** |
+| **Plan saved** | Aktif pada jadual waktu guru |
+
+## Berkaitan
+
+- [Kehadiran Guru & Guru Ganti](/ms/docs/shared-staff-teacher-attendance)
+- [Tugas Guru Ganti](/ms/docs/educonnect-teacher-substitution) — dari sisi guru

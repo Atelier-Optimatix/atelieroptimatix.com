@@ -1,0 +1,64 @@
+---
+title: "Tutoriel : Configurer les frais de scolarité"
+description: Définir ce que facture votre établissement, quand cela arrive à échéance et à quelles classes cela s'applique — avant qu'un paiement puisse être enregistré.
+product: educonnect
+section: Tutorials
+order: 130
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/fee_setup_page.dart
+screenshotIds:
+  - "tutorial-fee-setup"
+hidden: false
+---
+
+Rien ne fonctionne dans Accounting tant que les frais n'existent pas. Un paiement est toujours *rattaché* à des frais, et ceux-ci
+proviennent de l'échéancier que vous définissez ici.
+
+**Vous avez besoin de :** l'accès à **Accounting → Fee Setup**.
+
+## Les deux niveaux
+
+- Un **fee type** (type de frais) est l'élément facturé — Term Fee, Admission Fee, Transport.
+- Un **schedule** (échéance) est une échéance de ce type : un libellé, un montant, une date d'échéance et les personnes concernées.
+
+Un type de frais comporte généralement plusieurs échéances — trois versements trimestriels du même Term Fee.
+
+## Étapes
+
+1. Ouvrez **Accounting → Fee Setup**.
+2. Créez ou sélectionnez le **fee type**.
+3. Sélectionnez **Schedule** pour ajouter une échéance, et renseignez :
+   - **Label** — ce qui apparaît sur le relevé du parent et sur le reçu. Soyez précis :
+     `Term 1 2026`, et non `Instalment`.
+   - **Amount**.
+   - **Due date** — ce qui rend des frais en retard, et ce sur quoi les rappels de paiement s'appuient.
+   - **Applies to classes** — soit **All classes**, soit cochez des classes précises. C'est ainsi que vous
+     facturez des montants différents selon les niveaux : une échéance par ensemble de classes.
+   - **Active** — laissez activé. Le désactiver retire une échéance sans supprimer son historique.
+4. Enregistrez.
+
+## Dupliquer
+
+**Duplicate** copie une échéance existante afin que vous ne changiez que le libellé, le montant et la date d'échéance.
+C'est le moyen le plus rapide de reconduire des frais au trimestre ou à l'année suivante, et il garde
+une formulation cohérente d'une échéance à l'autre.
+
+## Retirer plutôt que supprimer
+
+Désactivez **Active** pour une échéance qui ne s'applique plus. Supprimer une échéance contre laquelle des paiements existent déjà
+produit les frais orphelins que vous devrez ensuite régler dans
+[Reconciliation](/fr/docs/educonnect-tutorial-reconciliation).
+
+## Que faire ensuite
+
+- [Enregistrez les paiements](/fr/docs/educonnect-tutorial-record-a-payment) à mesure qu'ils arrivent.
+- Configurez des [remises](/fr/docs/educonnect-tutorial-discounts) pour les bourses et les réductions de fratrie.
+- Décidez de l'effet des frais impayés sur l'accès au portail dans **Accounting → Portal Access Rules**.
+
+## Voir aussi
+
+- [Accounting Workflow — Ledger, Day-Close and Reconciliation](/fr/docs/shared-staff-accounting-overview)

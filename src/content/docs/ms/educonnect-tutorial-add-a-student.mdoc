@@ -1,0 +1,55 @@
+---
+title: "Tutorial: Menambah Murid"
+description: Mendaftarkan murid ke dalam kelas, sebab borang kelihatan berbeza di setiap institut, dan dua medan yang mesti unik.
+product: educonnect
+section: Tutorials
+order: 20
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/add_student_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/add_student_form.dart
+  - attendance-web-app/edu-frontend/assets/student_fields/
+screenshotIds:
+  - "tutorial-add-a-student"
+hidden: false
+---
+
+**Anda memerlukan:** kelas sedia ada untuk menempatkan murid — lihat
+[Add a Class](/ms/docs/educonnect-tutorial-add-a-class) — dan kebenaran untuk mencipta murid.
+
+## Langkah
+
+1. Buka **Students → Classes** dan buka kelas yang akan disertai oleh murid itu.
+2. Pilih **Add Student**. (Anda juga boleh sampai ke borang yang sama daripada **Students → Student Search**.)
+3. Isi borang. Medan yang anda lihat bergantung pada institut anda (lihat di bawah), tetapi inilah medan yang berfungsi secara khas:
+   - **Student ID** — wajib, hanya digit, dan **unik di seluruh institut**. Jika ID sudah digunakan, medan itu memberitahu anda semasa anda menaip. Anda tidak boleh mengubahnya kemudian dengan mengedit murid, jadi tentukan skema penomboran anda sebelum mula mendaftarkan murid.
+   - **RFID** — nombor pada kad kehadiran murid. Juga hanya digit, juga disemak untuk pendua. Biarkan kosong jika kad dikeluarkan kemudian; kehadiran tidak akan dapat diimbas sehingga ia diisi.
+   - **Student's Full Name** — hanya huruf, ruang dan noktah.
+   - **Date of Birth** — pemilih tarikh, disimpan sebagai `YYYY-MM-DD`.
+   - **Class** — telah diisi dengan kelas yang anda datang daripadanya. Seperti Student ID, ia hanya boleh dibaca setelah murid wujud; memindahkan murid antara kelas ialah tindakan berasingan, bukan suntingan.
+   - **Contact Number** — pilihan, tetapi SMS kehadiran dan peringatan pembayaran dihantar ke nombor ini, jadi murid yang tiada nombor tidak menerima apa-apa tanpa sebarang amaran.
+4. Tambah **photo** jika institut anda menggunakannya — inilah yang dipaparkan pada
+   [ID cards](/ms/docs/educonnect-tutorial-id-cards) dan dalam senarai kelas.
+5. Jika murid itu mempunyai **sibling** (adik-beradik) yang sudah berdaftar, gunakan pemilih adik-beradik untuk memautkan mereka. Cari mengikut Student ID atau nama. Pautan adik-beradik ialah asas bagi diskaun keluarga.
+6. Pilih **Save**.
+
+## Sebab borang anda kelihatan berbeza daripada tangkapan skrin
+
+Borang Add Student **dikonfigurasikan bagi setiap institut**. Medan yang wujud, medan yang wajib, label medan, dan apa yang diterima semuanya datang daripada definisi medan institut anda sendiri — itulah sebabnya sebuah sekolah meminta nombor NIC, rumah sukan dan etnik manakala sekolah lain tidak meminta satu pun daripadanya.
+
+Dua akibat yang patut diketahui:
+
+- Jika medan yang anda perlukan tiada, ia boleh dihidupkan untuk institut anda. Ia perubahan konfigurasi, bukan ciri baharu.
+- Medan yang ditandakan pilihan di sini mungkin ditandakan wajib di institut anda, dan sebaliknya.
+
+## Mengedit dan membuang
+
+Buka murid itu daripada **Students → Student Search** atau daripada senarai kelas. Semuanya boleh diedit kecuali **Student ID** dan **Class**. **Delete Student** meminta pengesahan dan membuang rekod itu sepenuhnya — bagi murid yang sekadar telah berhenti, utamakan proses pemberhentian di institut anda berbanding memadam, kerana memadam turut menghapuskan sejarah kehadiran dan keputusannya.
+
+## Berkaitan
+
+- [Import Students from Excel](/ms/docs/educonnect-tutorial-import-students) — untuk lebih daripada beberapa orang
+- [Managing Students, Classes and Substitutions](/ms/docs/shared-staff-student-admissions-management)

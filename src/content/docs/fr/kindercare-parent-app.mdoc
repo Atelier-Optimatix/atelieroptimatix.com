@@ -1,0 +1,110 @@
+---
+title: "L'application KinderCare pour les parents"
+description: Ce que voient les parents — observations, profil et rapports de l'enfant, calendrier, thèmes, paiements et annonces — et comment un seul identifiant gère plusieurs enfants.
+product: kindercare
+section: For parents
+order: 10
+roles:
+  - parent
+sourcePaths:
+  - kinder_care_parent/lib/screens/home_screen.dart
+  - kinder_care_parent/lib/screens/activities_screen.dart
+  - kinder_care_parent/lib/screens/theme_plans_screen.dart
+  - kinder_care_parent/lib/screens/switch_account_screen.dart
+  - kinder_care_parent/lib/screens/add_child_screen.dart
+  - kinder_care_parent/lib/screens/account_screen.dart
+  - kinder_care_parent/lib/screens/announcements_screen.dart
+  - kinder_care_parent/lib/screens/student_profile_screen.dart
+  - kinder_care_shared/lib/src/student_profile/student_profile_page.dart
+  - kinder_care_parent/lib/screens/payment/payment_screen.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Les cinq onglets
+
+- **Observations** — ce que le personnel a consigné au sujet de votre enfant, le plus souvent avec des
+  photos.
+- **Student** (élève) — le profil de votre enfant, avec les onglets **Details**, **Attendance** et
+  **Reports**.
+- **Calendar** (calendrier) — ce qui est à venir.
+- **Themes** (thèmes) — les plans thématiques que l'établissement est en train de suivre.
+- **Payments** (paiements) — vos enregistrements de paiement.
+
+L'icône de cloche en haut de chaque écran ouvre les **Announcements** de l'école. Un badge rouge
+indique le nombre d'annonces que vous n'avez pas encore ouvertes (il affiche **9+** au-delà de neuf).
+
+{% callout type="note" %}
+Le personnel appelle les observations des **activities** dans son application. Si un enseignant parle
+de « l'activité que j'ai ajoutée », il s'agit de la même chose que ce que vous voyez sous
+**Observations**.
+{% /callout %}
+
+## Retrouver une observation en particulier
+
+Les observations se filtrent par **growth milestone** (étape de développement), **activity type** et
+**date**, et **Clear** les réinitialise. La liste charge d'autres éléments lorsque vous arrivez en bas
+de l'écran. Le filtre par étape de développement est le plus utile lorsque vous souhaitez suivre les
+progrès dans un domaine précis au fil du temps plutôt que de lire le fil jour après jour.
+
+## Le profil de votre enfant
+
+L'onglet **Student** est la même page de profil que celle que voit l'enseignant, avec trois onglets :
+
+- **Details** — les informations sur votre enfant, avec les allergies et les médicaments mis en
+  évidence.
+- **Attendance** — un calendrier mensuel indiquant les jours de présence, les jours ouvrés et un
+  pourcentage de présence.
+- **Reports** — les rapports écrits que l'enseignant de votre enfant a **publiés**. Les brouillons ne
+  sont jamais affichés.
+
+Vous pouvez modifier votre **mobile number**, votre **email** et votre **address**, ainsi que la
+**photo** de votre enfant (utilisez le crayon, puis **Save Changes**). Tout le reste est défini par
+l'établissement ; si une information est erronée, adressez-vous à l'enseignant ou au bureau.
+
+## Paiements
+
+L'onglet Payments liste vos enregistrements de paiement et vous redirige vers la page de paiement
+lorsqu'un montant est dû. S'il indique qu'aucun enregistrement de paiement n'a été trouvé, c'est que
+l'établissement n'a rien facturé sur votre compte — ce n'est pas le signe que l'application n'a pas
+réussi à les charger.
+
+## Plusieurs enfants ou plusieurs parents
+
+**Un seul identifiant peut regrouper plusieurs enfants d'un même établissement.** Touchez l'initiale ou
+la photo de votre enfant en haut de l'écran pour voir les enfants rattachés au compte, touchez-en un
+pour **changer d'enfant** (switch child), ou choisissez **Manage children & accounts**. Vous
+retrouverez ce même écran sous **Account → Switch child**.
+
+Sur l'écran **Switch child** :
+
+- **Children on this account** liste chaque enfant avec sa classe ; celui que vous consultez est
+  coché. Le changement d'enfant recharge tous les onglets pour cet enfant, afin que rien de l'enfant
+  précédent ne subsiste.
+- **Add another child** demande l'**Student ID** de l'enfant, puis **Send code** : un code est envoyé au
+  numéro de téléphone ou à l'adresse e-mail que l'établissement a enregistrés pour cet enfant. Saisissez-le
+  et touchez **Add child**. Seuls les enfants du *même établissement* que ce compte peuvent être ajoutés.
+- Lorsqu'il y a plusieurs enfants, le menu **⋮** propose **Remove from account**. Un enfant affiché
+  comme « No longer on the school's records » ne peut pas être sélectionné.
+
+Un enfant dans un **autre établissement** nécessite un compte parent distinct. Ces comptes apparaissent
+sous **Other parent accounts** ; **Sign in to a different parent account** permet d'en ajouter un.
+Passer à un autre compte vous déconnecte du compte actuel, et les comptes sont enregistrés **sur
+l'appareil** :
+
+- Un nouveau téléphone démarre sans compte enregistré. C'est normal — connectez-vous une fois et le
+  compte est de nouveau enregistré.
+- Le ✕ à côté d'un compte enregistré le retire *de cet appareil uniquement*. Le compte lui-même existe
+  toujours, et vous pouvez vous y reconnecter.
+
+## Se déconnecter et supprimer votre compte
+
+**Account → Log out** vous déconnecte. Sous **Danger zone**, **Delete account** supprime définitivement
+votre identifiant et vous déconnecte ; une confirmation est demandée et l'action est irréversible.
+
+## Voir aussi
+
+- [Enregistrer des activités](/fr/docs/kindercare-staff-activities)
+- [Envoyer des annonces](/fr/docs/kindercare-staff-announcements)
+- [Premiers pas avec l'application KinderCare pour le personnel](/fr/docs/kindercare-staff-getting-started)
+- [S'inscrire en tant que parent](/fr/docs/shared-parent-registration)

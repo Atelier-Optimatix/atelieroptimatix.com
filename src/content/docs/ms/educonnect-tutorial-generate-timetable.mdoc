@@ -1,0 +1,86 @@
+---
+title: "Tutorial: Menjana Jadual Waktu"
+description: Menjalankan penjana jadual waktu automatik — semakan preflight, pratonton sebelum anda mengesahkan, dan membaca keputusan scheduled/skipped.
+product: educonnect
+section: Tutorials
+order: 80
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/widgets/timetable_generate_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/timetable_grid_screen.dart
+screenshotIds:
+  - "tutorial-generate-timetable"
+hidden: false
+---
+
+Penjana meletakkan pengajaran ke dalam waktu untuk anda, dengan mematuhi bilangan pengajaran seminggu, ketersediaan guru serta had harian dan berturut-turut. Ia tidak mereka apa-apa — ia hanya dapat meletakkan apa yang sudah dinyatakan wujud oleh **Class Subjects**.
+
+## Sebelum anda mula
+
+Semua yang berikut mesti sudah benar. Penjana menyemak dua yang pertama untuk anda dan enggan berjalan jika tidak dipenuhi:
+
+1. [Jadual loceng](/ms/docs/educonnect-tutorial-bell-schedule) wujud.
+2. [Tugasan mata pelajaran kelas](/ms/docs/educonnect-tutorial-class-subjects) wujud — dengan guru.
+3. Ketersediaan dan had guru ditetapkan dalam **Timetable → Configuration → Teacher Constraints**. Jika dilangkau, penjana menganggap semua orang bebas sepanjang minggu.
+
+## Langkah
+
+1. Buka **Timetable → Timetable Grid**.
+2. Pilih **Generate**. Dialog **Generate Timetable** dibuka dengan dua baris preflight di bahagian atas:
+   - **Bell schedule configured** (atau *Bell schedules configured: N* jika anda mempunyai lebih daripada satu)
+   - **Class-subject assignments: *N***
+
+   Jika salah satu gagal, anda mendapat **Complete setup in Timetable Configuration before generating**, dan butang Generate kekal dilumpuhkan. Betulkan penetapan itu dan jangan cuba mengelaknya.
+3. Pilih **Scope**:
+   - **All classes** — pilihan biasa untuk jadual waktu baharu.
+   - **Selected classes only** — kemudian tandakan kelas. Gunakan ini apabila anda membuat semula satu kumpulan tahun dan tidak mahu yang lain disentuh.
+4. Tentukan **Replace existing slots**:
+   - **Off** (lalai) — penjana bekerja dengan mengambil kira apa yang sudah diletakkan.
+   - **On** — slot sedia ada dalam skop **dipadam** dahulu. Dialog menyatakannya dengan jelas. Ini pilihan yang betul untuk pembinaan semula sebenar dan pilihan yang salah jika rakan sekerja telah meletakkan apa-apa secara manual.
+5. **Amat disyorkan kali pertama:** hidupkan **Preview only (don't save)**. Butang bertukar daripada **Generate** kepada **Preview**, dan anda mendapat keputusan penuh tanpa apa-apa ditulis.
+6. Jalankannya.
+
+## Membaca keputusan
+
+Helaian keputusan menunjukkan:
+
+- **score** dalam peratusan — sejauh mana peletakan itu memenuhi kekangan,
+- **Scheduled** — pengajaran yang diletakkan,
+- **Skipped** — pengajaran yang tidak dapat diletakkan,
+- **Total**,
+- senarai **warnings** yang menerangkan sebab langkauan.
+
+Kemudian tiga pilihan:
+
+- **Accept & Save** — mengesahkan keputusan.
+- **Discard** — membuangnya dan mengubah sesuatu.
+- **View Timetable** — melihat grid sebelum memutuskan.
+
+Larian pratonton hanya membenarkan anda melihat; tiada apa-apa disimpan dalam kedua-dua keadaan.
+
+## Apabila pengajaran dilangkau
+
+Langkauan hampir selalu disebabkan kekangan yang tidak dapat dipenuhi, bukan kegagalan penjana. Mengikut kemungkinan yang kasar:
+
+- **Waktu dalam sehari tidak mencukupi** untuk bilangan pengajaran seminggu yang dituntut oleh kurikulum. Sama ada tambah waktu pada jadual loceng atau kurangkan lessons/week.
+- **Seorang guru terlalu banyak komitmen** — orang yang sama ialah satu-satunya yang ditugaskan bagi sesuatu mata pelajaran dalam terlalu banyak kelas.
+- **Kekangan guru terlalu ketat** — tempoh ketersediaan, max/day atau max consecutive tidak meninggalkan slot yang sah.
+- **Sesuatu mata pelajaran tiada guru** dalam Class Subjects, jadi tiada sesiapa untuk diletakkan.
+
+Baca amaran, betulkan puncanya, dan jalankan semula dalam pratonton sehingga bilangan yang dilangkau boleh diterima.
+
+## Menyiapkannya secara manual
+
+Penjana membawa anda sebahagian besar jalan; beberapa slot terakhir biasanya manual. Dalam grid:
+
+- Pilih sel untuk menetapkan pengajaran di situ, atau letakkan seluruh **subject group** apabila kelas berpecah kepada pilihan pada masa yang sama.
+- **Copy day** mengulang satu hari ke hari lain, dan memberitahu anda berapa slot disalin dan berapa **skipped as conflicts** — tiada apa-apa ditimpa secara senyap.
+- Grid menolak sebarang perubahan yang menyebabkan guru atau bilik mempunyai dua tempahan serentak, dan menyerlahkan percanggahan itu.
+- Tapis paparan mengikut **Room**, **Teacher** atau **Class**, dan mengikut hari, menggunakan bar alat.
+
+## Berkaitan
+
+- [Building the Timetable](/ms/docs/shared-staff-timetable) — konsep di sebalik skrin-skrin ini
+- [Your Timetable as a Teacher](/ms/docs/educonnect-teacher-my-timetable)

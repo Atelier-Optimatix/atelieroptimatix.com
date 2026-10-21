@@ -1,0 +1,53 @@
+---
+title: "Tutorial: Menetapkan Jadual Loceng"
+description: Menentukan waktu-waktu yang membentuk satu hari persekolahan — perkara pertama yang diperlukan oleh jadual waktu, dan tanpanya jadual waktu tidak dapat dijana.
+product: educonnect
+section: Tutorials
+order: 50
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/timetable_config_screen.dart
+screenshotIds:
+  - "tutorial-bell-schedule"
+hidden: false
+---
+
+Jadual loceng ialah bentuk satu hari: berapa banyak waktu, bila setiap satu bermula dan tamat, dan yang mana antaranya waktu rehat. Tiada apa-apa dalam **Timetable** berfungsi sehingga ia wujud.
+
+**Anda memerlukan:** akses kepada **Timetable → Configuration**.
+
+## Langkah
+
+1. Buka **Timetable → Configuration** dan pilih tab **Bell Schedule**. (Halaman ini dibuka pada
+   **Import Data**.)
+2. Pilih **Create Bell Schedule** dan berikan nama. Di bawah nama itu, tandakan gred yang mengikut jadual ini — gred yang sudah berada pada jadual lain menunjukkan jadual mana yang ditugaskan kepadanya.
+3. Tambah waktu dengan **Add Period**. Setiap waktu mempunyai:
+   - satu **label** — diisi awal sebagai `P1`, `P2`, … dan boleh diedit kepada apa sahaja yang anda gunakan,
+   - masa **start** dan **end**,
+   - suis **Break** — hidupkannya untuk waktu rehat dan makan tengah hari. Waktu rehat masih sebahagian daripada hari itu, tetapi tiada apa-apa yang dijadualkan padanya.
+4. Perhatikan **Schedule Preview** di bawah semasa anda bekerja. Ia melukis semula hari itu untuk anda dan menandakan masalah — masa bertindih, waktu yang tamat sebelum bermula — secara sebaris, jadi betulkan di sini dan bukan selepas menyimpan.
+5. Tandakan satu jadual sebagai **Default**. Itulah yang digunakan bagi mana-mana kelas yang tidak secara jelas berada pada jadual lain.
+6. Pilih **Save Bell Schedule**. Anda akan melihat **Bell schedule saved**.
+
+## Lebih daripada satu jadual
+
+Anda boleh menyimpan beberapa jadual — hari biasa dan separuh hari, atau bentuk berbeza bagi bahagian rendah dan menengah. **Duplicate schedule** menyalin jadual yang sedang anda lihat sebagai titik permulaan. Tepat satu jadual ialah lalai; yang lain dipilih secara jelas. Apabila anda
+[menjana jadual waktu](/ms/docs/educonnect-tutorial-generate-timetable), semakan preflight memberitahu anda berapa banyak jadual yang ditemuinya.
+
+## Memadam
+
+Memadam jadual berlaku serta-merta dan meminta pengesahan dahulu. Apa-apa yang kini diletakkan padanya perlu diletakkan semula, jadi utamakan mengedit jadual sedia ada berbanding memadam dan mencipta semula.
+
+## Langkah seterusnya
+
+Selebihnya dalam **Timetable → Configuration** boleh ditangguhkan sehingga anda benar-benar menjana:
+
+- **Teacher Constraints** — bila setiap guru ada, dan had mereka (lalai: maksimum 6 pengajaran sehari, maksimum 3 berturut-turut, jurang minimum 0).
+- **Subjects & Rules** dan **Subject Groups** — cara mata pelajaran berfungsi, dan yang mana dijalankan sebagai set pilihan pada masa yang sama.
+- **Grade Curriculum** dan **Class Subjects** — apa yang diajar kepada setiap gred dan kelas, dan oleh siapa.
+- **Classrooms** — bilik yang boleh dipadankan dengan pengajaran.
+- **Import Data** — memuatkan penetapan secara pukal dan bukannya memasukkannya skrin demi skrin.
+
+Seterusnya dalam rantaian: [Grade Curriculum](/ms/docs/educonnect-tutorial-grade-curriculum).

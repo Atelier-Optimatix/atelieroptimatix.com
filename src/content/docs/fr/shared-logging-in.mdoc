@@ -1,0 +1,48 @@
+---
+title: Se connecter et rester connecté
+description: En quoi la connexion diffère entre le personnel et les parents, et que faire en cas de déconnexion inattendue.
+product: shared
+section: Getting started
+order: 0
+roles:
+  - staff
+  - parent
+  - applicant
+sourcePaths:
+  - attendance-web-app/backend/config/product.js
+  - educonnect-public/edu-frontend/lib/pages/parent_login_page.dart
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Deux systèmes de connexion différents
+
+Le personnel et les parents utilisent des méthodes de connexion différentes, même si les applications
+sont apparentées :
+
+- Le **personnel** (le tableau de bord de l'établissement) se connecte avec un nom d'utilisateur et un
+  mot de passe, et sa session est maintenue automatiquement en arrière-plan tant qu'il continue
+  d'utiliser le tableau de bord.
+- Les **parents** (le portail parents) se vérifient avec un code à usage unique (OTP) envoyé sur leur
+  téléphone ou par e-mail la première fois, puis se connectent avec un mot de passe ensuite — voir
+  [Premiers pas en tant que parent](/fr/docs/shared-parent-getting-started).
+- Les **candidats à l'admission** utilisent également une connexion par OTP, distincte des deux
+  précédentes et propre au processus d'admission de l'établissement concerné.
+
+## Pourquoi vous pourriez être déconnecté
+
+La durée de session varie selon le type d'établissement, et le renouvellement de votre session se fait
+automatiquement en arrière-plan — vous ne devriez normalement pas avoir à vous reconnecter en cours de
+session. Si vous êtes déconnecté de manière inattendue :
+
+- Sur le tableau de bord du personnel, il s'agit généralement d'une session réellement expirée —
+  reconnectez-vous normalement.
+- Sur le portail parents, une session expirée peut parfois s'afficher sous la forme d'une erreur
+  générique plutôt que d'un message clair du type « veuillez vous reconnecter ». Si quelque chose semble
+  ne plus fonctionner au lieu d'afficher une invite de connexion, essayez de vous reconnecter
+  directement avant de supposer qu'une fonctionnalité est en panne.
+
+## Voir aussi
+
+- [Identité visuelle de l'établissement](/fr/docs/shared-institute-branding) — pourquoi la page de
+  connexion peut avoir un aspect différent d'un établissement à l'autre.

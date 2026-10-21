@@ -1,0 +1,105 @@
+---
+title: Recherche d'élèves, fiches et élèves partis
+description: Rechercher et filtrer tous les élèves, lire la fiche (y compris la grille de présence jour par jour du trimestre et le dossier permanent), et ce qui se passe lorsqu'un élève quitte l'établissement.
+product: educonnect
+section: Guides
+order: 60
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_search.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/left_students_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/student_analytics_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_term_attendance_grid.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_permanent_record_section.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/mark_left_dialog.dart
+  - attendance-web-app/edu-frontend/lib/utils/left_student_fields.dart
+screenshotIds:
+  - "staff-student-search"
+  - "staff-student-profile-term-grid"
+  - "staff-left-students"
+hidden: false
+---
+
+## Student Search
+
+**Students → Student Search** liste tous les élèves dans un tableau que vous pouvez rechercher,
+filtrer et trier. Il est conçu pour répondre à des questions comme « quels élèves n'ont pas de numéro
+de téléphone de responsable ? » autant que pour retrouver une personne précise.
+
+- **Search** accepte un nom, un identifiant, une classe, un responsable ou un numéro de téléphone.
+  Utilisez **Search By** pour le limiter à un seul champ, par exemple RFID ou Address ; *All fields*
+  est la valeur par défaut.
+- Les filtres **Class** et **Gender** restreignent la liste.
+- **Missing** affiche les élèves dont un champ est vide : **Mobile**, **Parent / Guardian**,
+  **Address**, **Email**, **Date of Birth**, **Religion**, **Nationality** ou **RFID**. C'est le moyen
+  le plus rapide de repérer les fiches à corriger, par exemple avant d'émettre des
+  [cartes d'identité](/fr/docs/educonnect-tutorial-id-cards).
+- **Reset Filters** apparaît dès qu'un filtre est actif.
+- Cliquez sur l'en-tête d'une colonne pour trier. **Columns** masque ou affiche des colonnes, et
+  **Compact** / **Comfortable** modifie la densité des lignes.
+
+*No students match your search.* signifie exactement cela ; supprimez un filtre avant de supposer que
+l'élève est absent des fichiers. Pour extraire les mêmes données dans un fichier, voir
+[Rapports sous forme de listes](/fr/docs/educonnect-list-reports).
+
+## La fiche de l'élève
+
+Sélectionnez un élève pour ouvrir sa fiche. L'en-tête reste en place pendant que vous faites défiler
+les sections, et après une modification enregistrée, vous restez sur la fiche avec les valeurs
+enregistrées affichées. Les listes d'élèves de l'application, y compris la liste mobile, affichent la
+photo de chaque élève lorsqu'il y en a une.
+
+La présence apparaît sous deux formes :
+
+- **Term Attendance** — la synthèse de présence du trimestre.
+- **Attendance by Day** — une grille de calendrier pour le trimestre choisi dans la liste déroulante
+  **Term 1, Term 2…**, une cellule par jour, colorée selon **Present**, **Absent**, **Not a school
+  day** ou **Upcoming**. En dessous, une pastille compte les jours d'école suivis, par exemple *18 / 20
+  school days attended (90.0%)*, ou indique *No school days held yet*.
+
+Les cellules « Not a school day » proviennent de votre
+[Calendar](/fr/docs/educonnect-tutorial-holidays-and-terms) (week-ends, jours fériés et jours hors
+trimestre) ; une absence visible un jour férié signifie donc que ce jour férié n'est pas configuré.
+
+Plus bas se trouvent les résultats d'examen, les paiements, les certificats, les frères et sœurs et
+les classes précédentes. Les élèves dont une carte est enregistrée affichent aussi une section **ID
+Card** (voir [Gérer et suivre les cartes d'identité](/fr/docs/educonnect-tutorial-id-cards)).
+
+### Permanent Record
+
+Si votre établissement l'a activée, la section **Permanent Record** (dossier permanent) contient des
+notes datées dans les catégories **Conduct**, **Academic**, **Health** et **Other**. Sélectionnez
+**Add entry**, choisissez une catégorie et une date, rédigez la note et enregistrez. Chaque entrée
+indique qui l'a ajoutée (et qui l'a modifiée).
+
+Elle est désactivée tant qu'un administrateur n'a pas activé **Enable the permanent record section**
+dans **Administration → Settings**. Seuls les enseignants et les administrateurs peuvent la lire,
+jamais les parents. Les enseignants peuvent ajouter et modifier des entrées pour leur propre classe ;
+seuls les administrateurs peuvent supprimer. Désactiver le paramètre masque la section mais conserve
+les entrées.
+
+## Lorsqu'un élève quitte l'établissement
+
+Une personne disposant de l'autorisation *Mark students as left school* (définie dans Access Control)
+retire un élève des effectifs depuis la page de modification de l'élève, avec le bouton **Mark as
+left**. La boîte de dialogue demande la **Date left**, un **Reason** et une **Note** facultative. Les
+motifs sont : *Finished school*, *Moved to a different school*, *Relocated abroad*, *Financial
+reasons*, *Family reasons* et *Other*. Vous verrez *Student marked as left school*.
+
+**Students → Left Students** liste toutes les personnes marquées comme parties, avec leur
+identifiant, la dernière classe fréquentée, la date d'arrivée, la date de départ et le motif.
+Recherchez par nom, identifiant d'élève ou classe, et triez selon n'importe laquelle de ces colonnes.
+Un élève figurant dans les dossiers supprimés peut être transféré vers cette liste avec **Move to
+left students**. Les élèves supprimés conservent une fiche qui se charge toujours à partir de ces
+dossiers.
+
+Les élèves partis ne sont pas comptés dans les effectifs ni dans les chiffres d'admissions ; voir
+[Statistiques de l'établissement](/fr/docs/shared-staff-analytics).
+
+## À consulter également
+
+- [Ajouter un élève](/fr/docs/educonnect-tutorial-add-a-student)
+- [Enseignants : rechercher un élève](/fr/docs/educonnect-teacher-students-and-analytics)

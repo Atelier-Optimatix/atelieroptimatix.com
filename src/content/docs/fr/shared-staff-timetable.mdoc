@@ -1,0 +1,75 @@
+---
+title: Construire l'emploi du temps
+description: Comment les administrateurs établissent l'emploi du temps hebdomadaire, et où sont configurés les matières, le programme et les horaires de cloche qui le sous-tendent.
+product: educonnect
+section: Guides
+order: 30
+roles:
+  - admin
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/timetable_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/
+lastUpdateDate: 2026-09-26
+screenshotIds:
+  - "tutorial-generate-timetable"
+hidden: false
+---
+
+## Où le trouver
+
+Tout ce qui suit se trouve dans le groupe **Timetable** du menu latéral. Les éléments que vous y voyez
+dépendent de votre niveau d'accès — la grille, les matières de classe, le programme et la configuration
+font chacun l'objet d'une autorisation distincte ; un administrateur peut donc voir les quatre, alors
+qu'un coordinateur n'en voit qu'un ou deux.
+
+Les enseignants n'utilisent normalement pas du tout cette section. Ils disposent à la place de **My
+Timetable**, un élément de menu de premier niveau distinct — une vue en lecture seule de leur propre
+semaine.
+
+## L'ordre à suivre
+
+La grille de l'emploi du temps ne peut placer que des cours que la configuration environnante connaît
+déjà ; un nouvel établissement procède donc généralement des écrans de configuration vers la grille :
+
+1. **Configuration → Bell Schedule** — définissez les périodes qui composent une journée (intitulé,
+   heures de début et de fin, et indication de si la période est une pause). Vous pouvez conserver
+   plusieurs horaires et en marquer un comme horaire par défaut.
+2. **Grade Curriculum** — ce que chaque niveau est censé étudier.
+3. **Class Subjects** — les matières qui sont effectivement enseignées pour chaque classe.
+4. **Timetable Grid** — placez ces matières dans les périodes.
+
+Si une matière n'est pas proposée lorsque vous essayez de la placer, la solution se trouve presque
+toujours dans Class Subjects ou Grade Curriculum plutôt que dans la grille elle-même.
+
+## Travailler dans la grille
+
+- Chaque cellule correspond à une classe, sur une période, un jour donné. Sélectionner une cellule vous
+  permet d'y définir le cours, ou d'y placer tout un **subject group** (groupe de matières) lorsque
+  plusieurs classes se répartissent en options au même moment.
+- **Copy day** prend tous les créneaux d'un jour et les répète sur les jours que vous choisissez. La
+  confirmation vous indique combien de créneaux ont été copiés et combien ont été **ignorés pour cause de
+  conflit** — les créneaux ignorés sont ceux dont la période cible était déjà occupée ou dont
+  l'enseignant était déjà réservé ; rien n'est donc écrasé en silence.
+- Lorsqu'une modification créerait une double réservation d'un enseignant ou d'une salle, la grille la
+  refuse et met en évidence le créneau en conflit au lieu d'enregistrer les deux.
+
+## Autres onglets de configuration
+
+**Configuration** contient plus que l'horaire de cloche :
+
+- **Teacher Constraints** — quand les enseignants sont, ou ne sont pas, disponibles.
+- **Subjects & Rules** et **Subject Groups** — le comportement des matières et celles qui sont proposées
+  comme ensemble d'options.
+- **Classrooms** — les salles auxquelles les cours peuvent être associés.
+- **Import Data** — charger en masse les données de configuration au lieu de les saisir écran par écran.
+
+Vous pouvez aussi exporter l'emploi du temps terminé pour **toutes les classes** ou pour **tous les
+enseignants** depuis le haut de l'écran Configuration.
+
+## Voir aussi
+
+- [Gérer les enseignants](/fr/docs/shared-staff-teacher-management)
+- [Présences des enseignants et remplacements](/fr/docs/shared-staff-teacher-attendance)
+- [Faire l'appel en tant que membre du personnel](/fr/docs/shared-staff-attendance-overview)

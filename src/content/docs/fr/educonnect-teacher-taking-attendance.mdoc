@@ -1,0 +1,71 @@
+---
+title: "Enseignants : Faire l'appel de votre classe"
+description: Le registre quotidien — où se trouve la colonne de présence, comment marquer et démarquer un élève, et son interaction avec les scans de cartes.
+product: educonnect
+section: For teachers
+order: 10
+roles:
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/students_in_class.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_list_desktop.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_list_mobile.dart
+hidden: false
+---
+
+C'est la tâche que vous accomplirez chaque matin.
+
+## Où la trouver
+
+**My Class → Students** dans le menu latéral.
+
+La colonne de présence de cette liste **n'apparaît que pour les comptes enseignants**. Si vous regardez
+la même classe en tant qu'administrateur, ou via **Students → Classes** plutôt que **My Class**, la colonne
+n'est pas là — c'est pourquoi un administrateur ne peut pas voir ce que vous décrivez.
+
+## Marquer un élève présent
+
+1. Ouvrez **My Class → Students**.
+2. Repérez l'élève dans la liste.
+3. Sélectionnez le contrôle de présence sur sa ligne. Il le marque immédiatement — il n'y a pas d'étape d'enregistrement
+   distincte, ni de confirmation.
+
+Parcourez la liste. Le contrôle indique l'état actuel de chaque élève ; un coup d'œil sur la colonne
+montre donc qui n'est pas encore marqué.
+
+## Démarquer
+
+Sélectionner à nouveau le contrôle d'un élève déjà marqué affiche **Are you sure you want to unmark
+attendance?** et, une fois confirmé, supprime l'enregistrement. Utilisez cette option pour une véritable erreur, pas pour
+marquer quelqu'un absent — voir ci-dessous.
+
+## Présent, absent et non marqué
+
+Il n'existe que deux états enregistrés : un élève **a** un enregistrement de présence pour aujourd'hui, ou il n'en a pas.
+
+- **Marqué** = présent.
+- **Non marqué** = non enregistré comme présent. Cela couvre l'absent, le retardataire pas encore arrivé et
+  celui que vous n'avez pas encore traité, et les rapports ne peuvent pas les distinguer.
+
+Le registre n'a donc de sens qu'une fois toute la classe passée en revue. Terminez la liste.
+
+## Cartes et scans
+
+Lorsque les élèves portent des cartes RFID, le scan à l'entrée crée le même enregistrement que vous créeriez à la
+main — un élève qui a déjà scanné sa carte apparaîtra comme marqué avant que vous ne commenciez. Vous complétez
+ceux que l'entrée a manqués, vous ne faites pas de doublon.
+
+Un élève sans numéro de carte dans son dossier ne peut jamais être marqué par scan, seulement par vous. Si
+quelqu'un est constamment absent des scans, son dossier n'a probablement pas de RFID — voir
+[Add a Student](/fr/docs/educonnect-tutorial-add-a-student).
+
+## Si un élève est absent de la liste
+
+Il est inscrit dans une autre classe, ou pas inscrit du tout. L'ajouter est une tâche du secrétariat, pas d'un
+enseignant — demandez qu'il soit ajouté à votre classe plutôt que de créer un doublon.
+
+## Voir aussi
+
+- [Reading Your Class's Attendance](/fr/docs/educonnect-teacher-class-attendance)
+- [Taking Attendance as Staff](/fr/docs/shared-staff-attendance-overview)

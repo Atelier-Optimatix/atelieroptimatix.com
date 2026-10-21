@@ -1,0 +1,123 @@
+---
+title: "Tutorial: Gestionar y dar seguimiento a las credenciales"
+description: El conjunto de tarjetas en blanco, los diseños de tarjeta, la reposición de una tarjeta perdida y el seguimiento de la tarjeta de cada estudiante, desde sin imprimir hasta entregada.
+product: educonnect
+section: Tutorials
+order: 190
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/settings/id_cards_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_cards_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_card_widgets.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_card_quick_add.dart
+  - attendance-web-app/edu-frontend/lib/api_services/student_id_card.dart
+  - attendance-web-app/backend/services/studentIdCardService.js
+screenshotIds:
+  - "tutorial-id-cards"
+  - "tutorial-student-id-cards"
+hidden: false
+---
+
+Las credenciales (tarjetas de identificación) también son tarjetas de asistencia: el número de la tarjeta es el **RFID** del registro de la persona, que es lo que hace que sus escaneos se registren. Por eso, una tarjeta perdida es un problema de asistencia, y no solo de identidad.
+
+Hay dos pantallas. **Administration → ID Cards** gestiona el conjunto de tarjetas en blanco, los diseños y la reposición de tarjetas perdidas. **Students → Student ID Cards** registra en qué punto de su ciclo de vida está la tarjeta de cada estudiante. Requieren accesos independientes.
+
+**Necesita:** acceso a **Administration → ID Cards** para la primera parte, y a Student ID Cards para
+[el seguimiento de las tarjetas de estudiantes](#seguimiento-de-las-tarjetas-de-estudiantes).
+
+## El conjunto de tarjetas en blanco
+
+El conjunto (pool) es el stock de tarjetas sin emitir. Agregue tarjetas a él a medida que las reciba de
+su proveedor; la pantalla le indica cuántas quedan. La emisión toma tarjetas de este conjunto, por lo
+que un conjunto vacío es la razón por la que falla una emisión.
+
+## Diseños de tarjeta
+
+En **Card designs**, suba el diseño de su institución en PDF, por separado para **Student card** y
+**Teacher card**. Se guarda como referencia, para que quien imprima tenga el arte correcto; la tarjeta
+impresa se produce a partir de él.
+
+**Upload PDF** agrega uno, **Replace** lo sustituye y la eliminación es inmediata (**Card design removed**).
+
+## Reponer una tarjeta perdida
+
+1. Abra **Administration → ID Cards** y elija **Report a lost card**.
+2. Seleccione **Student** o **Teacher**.
+3. Introduzca el **Student ID** o el **Teacher ID**.
+4. Seleccione **Issue Temporary Card**.
+5. Imprima la tarjeta con **Print**.
+
+La tarjeta temporal lleva un número nuevo, y ese número pasa a ser el RFID activo de la persona. Su
+tarjeta anterior deja de funcionar, que es precisamente la idea, ya que presumiblemente está en manos
+de otra persona.
+
+## Si la asistencia de alguien deja de funcionar
+
+Revise primero su tarjeta. Las dos causas habituales son una tarjeta perdida que nunca se reportó, de
+modo que los escaneos van a un número inactivo, y un registro al que nunca se le completó el RFID;
+consulte [Agregar un estudiante](/es/docs/educonnect-tutorial-add-a-student).
+
+## Seguimiento de las tarjetas de estudiantes
+
+**Students → Student ID Cards** lleva un registro de la tarjeta de cada estudiante: si se ha impreso,
+si se ha entregado y qué ocurrió si se perdió o se dañó. Cambiar el estado de una tarjeta requiere el
+permiso de gestión independiente; sin él, la lista es de solo lectura.
+
+### La lista
+
+Cada estudiante aparece con su **Name**, **Student ID**, **Class**, **RFID**, **Status**, **Reason** y
+la fecha de **Updated**. Los encabezados de columna ordenan. Use los filtros para acotar:
+
+- **Search name, student ID or RFID**
+- **Class** (*All classes* por defecto)
+- **Status**, que muestra cuántos estudiantes hay en cada estado; **Reset** borra los filtros.
+
+Los estados son **Not printed**, **Printed**, **Distributed**, **Lost**, **Damaged**, **Returned**,
+**Replaced** y **Other**. Un estudiante sin tarjeta registrada aún aparece como *Not printed*.
+
+El menú de exportación de la página descarga la lista filtrada, incluidas las fechas de impresión y de
+entrega (Printed y Handed over) y el motivo por el que una tarjeta no se ha impreso.
+
+### Por qué una tarjeta no se imprime
+
+Si la tarjeta de un estudiante sigue en *Not printed* y su registro está incompleto, la columna
+**Reason** aparece en rojo, por ejemplo *Missing photo, address*. Una tarjeta necesita que consten la
+**foto**, la **dirección** y el **número de teléfono** del estudiante. Abra el perfil del estudiante,
+agregue lo que falta y el motivo desaparece. Un valor en blanco, *N/A* o ausente cuenta como faltante.
+
+### Marcar tarjetas como impresas o entregadas
+
+1. Marque a los estudiantes que desee, o marque el encabezado para seleccionar toda la lista filtrada.
+2. Use **Mark printed** o **Mark distributed**; el botón muestra cuántos están seleccionados, por ejemplo
+   *Mark printed (12)*. Ambos botones están en la parte superior de la página.
+
+Para un solo estudiante, use el menú de su fila (**Change status**) para elegir cualquier estado. Se
+requiere una nota para **Other** (*Add a note saying what happened.*) y es opcional para los demás.
+Cuando el estado es **Lost** o **Damaged**, también puede elegir **Start a replacement card**, que agrega
+a la lista una nueva tarjeta *Not printed*.
+
+### Alta rápida en el puesto de entrega
+
+**Quick add** sirve para entregar tarjetas una tras otra:
+
+1. Seleccione **Quick add**.
+2. Escriba o escanee el **Student ID** y el **RFID** de la tarjeta, y luego **Verify**.
+3. Compruebe el estudiante que se muestra. La pantalla le avisa si la tarjeta ya está vinculada a este
+   estudiante, si sustituirá su tarjeta actual o si el RFID no puede usarse porque otro registro lo tiene.
+4. **Confirm** registra la tarjeta como vinculada y entregada.
+
+Las tarjetas agregadas de esta forma aparecen en **Added this session**.
+
+### En el perfil del estudiante
+
+El perfil de un estudiante tiene una sección **ID Card** que muestra el número de la tarjeta (RFID),
+cuándo se imprimió y se entregó, cualquier nota y un **History** de cada cambio. **Update** ahí cambia
+el estado de la misma forma que en la lista.
+
+## Relacionado
+
+- [Búsqueda de estudiantes, perfiles y estudiantes que han salido](/es/docs/educonnect-student-search-and-profile)
+- [Registrar la asistencia de su clase](/es/docs/educonnect-teacher-taking-attendance)

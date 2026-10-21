@@ -1,0 +1,59 @@
+---
+title: "Tutoriel : les amendes de la bibliothèque et leur paiement"
+description: Configurer les amendes de la bibliothèque, comment les amendes pour retard, perte et dégradation sont facturées, les annuler et comment les familles paient.
+product: educonnect
+section: Tutorials
+order: 233
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/fines_page.dart
+  - attendance-web-app/backend/services/library/fineService.js
+  - attendance-web-app/backend/config/libraryOptions.js
+screenshotIds:
+  - "library-fines"
+hidden: false
+---
+
+Les amendes sont **désactivées** tant que vous n'avez pas activé **Charge library fines** dans
+Library Settings. Tant qu'elles sont désactivées, rien n'est facturé et les amendes impayées ne
+bloquent rien.
+
+**Seuls les élèves sont soumis aux amendes.** Les enseignants et le personnel n'en reçoivent jamais.
+
+## Comment une amende est créée
+
+Une amende de bibliothèque est une charge ordinaire en attente sur le compte de l'élève. Elle
+apparaît donc sur son relevé et se règle comme n'importe quelle autre charge. La bibliothèque ne
+touche jamais elle-même à votre grand livre.
+
+| Type | Moment de la facturation |
+| --- | --- |
+| Overdue (retard) | Une seule fois, lorsque le livre est enregistré au retour. Tant que le livre est sorti, il ne s'agit que d'une projection |
+| Lost (perte) | Lorsqu'un bibliothécaire déclare le livre perdu |
+| Damage (dégradation) | Lorsqu'un bibliothécaire enregistre des dégâts |
+
+Paramètres : **Fine per late day**, **Days late before fining starts**, **Most for one late book**
+(0 pour aucun plafond), **Count school days only** (les week-ends, jours fériés et jours hors
+trimestre ne comptent pas comme jours de retard), **Lost book, when no price is recorded**, **Added
+to every lost book**, **Stop borrowing when owing more than** (0 signifie que toute amende impayée
+bloque) et **Days to pay**.
+
+## La page Fines
+
+**Library → Fines** liste les amendes impayées, payées et annulées. Une personne disposant de
+**Waive unpaid library fines** peut annuler une amende impayée en indiquant un motif : elle est
+annulée sans aucune écriture comptable.
+
+## Comment les familles paient
+
+- Au secrétariat, via Manual Payment Entry, sous l'identifiant de l'élève.
+- En ligne, si votre établissement accepte les paiements en ligne et que **Let parents pay library
+  fines online** est activé. Les amendes apparaissent aussi sur les écrans de paiement en ligne, que
+  la bibliothèque du portail soit activée ou non.
+
+## À consulter également
+
+- [Enregistrer un paiement](/fr/docs/educonnect-tutorial-record-a-payment)

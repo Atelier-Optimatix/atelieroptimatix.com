@@ -1,0 +1,45 @@
+---
+title: "Tutoriel : Créer un examen"
+description: Configurer un examen de trimestre, de mi-trimestre ou spécial afin que les résultats des classes et des matières puissent y être saisis.
+product: educonnect
+section: Tutorials
+order: 90
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/widgets/new_exam_form_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/exams/exam_dashboard_page.dart
+screenshotIds:
+  - "tutorial-create-an-exam"
+hidden: false
+---
+
+Un examen est le conteneur dans lequel les résultats sont saisis. Créez-le avant que quiconque commence à noter.
+
+## Étapes
+
+1. Ouvrez **Exams** dans le menu latéral.
+2. Sélectionnez **New Exam**.
+3. Renseignez :
+   - **Exam Name** — ce que tout le monde verra dans les listes déroulantes et sur les rapports. Incluez l'année si vous organisez
+     le même examen chaque année (`Term 1 2026`, et non `Term 1`).
+   - **Exam Type** — l'un de **TERM**, **MIDTERM** ou **SPECIAL**. Ce n'est pas anodin :
+     les [bulletins de progression](/fr/docs/educonnect-tutorial-progress-reports) et les classements du trimestre sont construits à partir des
+     examens TERM ; un examen de trimestre saisi comme SPECIAL n'apparaîtra donc pas là où vous l'attendez.
+   - **Date** — via **Pick Date**.
+4. Sélectionnez **Save**.
+
+L'examen apparaît désormais sur le tableau de bord Exams, et les classes peuvent être ouvertes sous celui-ci.
+
+## Que faire ensuite
+
+- [Saisir les résultats](/fr/docs/educonnect-tutorial-enter-exam-results), classe par classe et matière par
+  matière — ou [les téléverser depuis un tableur](/fr/docs/educonnect-tutorial-upload-exam-results).
+- Consultez **Exams → Rankings** une fois suffisamment de matières saisies.
+- Examinez les **Exams → Result Changes** soulevées sur des notes déjà enregistrées.
+
+## Voir aussi
+
+- [Entering and Publishing Exam Results](/fr/docs/shared-staff-exam-results)

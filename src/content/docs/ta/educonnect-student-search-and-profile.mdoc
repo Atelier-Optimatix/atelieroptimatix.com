@@ -1,0 +1,79 @@
+---
+title: மாணவர் தேடல், சுயவிவரங்கள், விலகிய மாணவர்கள்
+description: ஒவ்வொரு மாணவரையும் தேடுதல், வடிகட்டுதல்; சுயவிவரத்தை (நாள்வாரித் தவணை வருகைக் கட்டமும் நிரந்தரப் பதிவும் உட்பட) வாசித்தல்; மாணவர் விலகும்போது என்ன நடக்கும்.
+product: educonnect
+section: Guides
+order: 60
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_search.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/left_students_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/student_analytics_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_term_attendance_grid.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_permanent_record_section.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/mark_left_dialog.dart
+  - attendance-web-app/edu-frontend/lib/utils/left_student_fields.dart
+screenshotIds:
+  - "staff-student-search"
+  - "staff-student-profile-term-grid"
+  - "staff-left-students"
+hidden: false
+---
+
+## Student Search
+
+**Students → Student Search** ஒவ்வொரு மாணவரையும் தேட, வடிகட்ட, வரிசைப்படுத்தக்கூடிய அட்டவணையில் பட்டியலிடுகிறது. ஒருவரைக் கண்டுபிடிப்பதற்கு மட்டுமன்றி,
+"எந்த மாணவர்களுக்குப் பாதுகாவலரின் தொலைபேசி இலக்கம் இல்லை?" போன்ற கேள்விகளுக்கும் இது உருவாக்கப்பட்டுள்ளது.
+
+- **Search** பெயர், அடையாள இலக்கம், வகுப்பு, பாதுகாவலர் அல்லது தொலைபேசி இலக்கத்தை ஏற்கும். **Search By** ஐப் பயன்படுத்தி ஒரே புலத்துக்கு (எ.கா. RFID அல்லது Address) வரையறுக்கலாம்; *All fields* இயல்புநிலை.
+- **Class**, **Gender** வடிகட்டிகள் பட்டியலைச் சுருக்கும்.
+- **Missing** ஒரு புலத்தில் வெற்றுப் பெறுமானம் உள்ள மாணவர்களைக் காட்டும்: **Mobile**, **Parent / Guardian**, **Address**, **Email**, **Date of Birth**, **Religion**, **Nationality** அல்லது **RFID**.
+  திருத்த வேண்டிய பதிவுகளை, உதாரணமாக [அடையாள அட்டைகளை](/ta/docs/educonnect-tutorial-id-cards) வழங்கும் முன், விரைவாகக் கண்டறிய இதுவே சிறந்த வழி.
+- ஏதேனும் வடிகட்டி செயற்பாட்டில் இருக்கும்போது **Reset Filters** தோன்றும்.
+- வரிசைப்படுத்த நெடுவரிசைத் தலைப்பைச் சொடுக்குங்கள். **Columns** நெடுவரிசைகளை மறைக்கும் அல்லது காட்டும்; **Compact** / **Comfortable** வரிசைகள் எவ்வளவு நெருக்கமாக இருக்க வேண்டும் என்பதை மாற்றும்.
+
+*No students match your search.* என்பது சொன்னபடியே; மாணவர் இல்லை என எண்ணும் முன் ஒரு வடிகட்டியை அழியுங்கள். அதே தரவைக் கோப்பாகப் பெற, பார்க்க [List Reports](/ta/docs/educonnect-list-reports).
+
+## மாணவர் சுயவிவரம்
+
+ஒரு மாணவரைத் தெரிவு செய்து அவரது சுயவிவரத்தைத் திறக்கலாம். பிரிவுகளினூடாக நகரும்போது மேல்தலைப்பு அதே இடத்தில் இருக்கும்; திருத்திச் சேமித்த பின்னரும் சேமித்த பெறுமானங்களுடன் சுயவிவரத்திலேயே இருப்பீர்கள்.
+செயலியிலுள்ள மாணவர் பட்டியல்கள், கைப்பேசிப் பட்டியல் உட்பட, புகைப்படம் இருந்தால் ஒவ்வொரு மாணவரின் புகைப்படத்தையும் காட்டும்.
+
+வருகை இரு வடிவங்களில் தோன்றும்:
+
+- **Term Attendance** — தவணையின் வருகைச் சுருக்கம்.
+- **Attendance by Day** — **Term 1, Term 2…** dropdown இலிருந்து நீங்கள் தெரிவு செய்யும் தவணைக்கான நாட்காட்டிக் கட்டம்; ஒவ்வொரு நாளுக்கும் ஒரு கலம்; **Present**, **Absent**, **Not a school day** அல்லது **Upcoming** என நிறமிடப்பட்டிருக்கும்.
+  அதன் கீழே, சென்ற பாடசாலை நாட்களைக் கணக்கிடும் ஒரு சிப் இருக்கும், எடுத்துக்காட்டாக *18 / 20 school days attended (90.0%)*; அல்லது *No school days held yet* எனக் கூறும்.
+
+Not-a-school-day கலங்கள் உங்கள் [Calendar](/ta/docs/educonnect-tutorial-holidays-and-terms) இலிருந்து வருகின்றன (வார இறுதிகள், விடுமுறைகள், தவணைக்கு வெளியே உள்ள நாட்கள்); எனவே விடுமுறை நாளில் வராமை தெரிந்தால், அந்த விடுமுறை அமைக்கப்படவில்லை என்று பொருள்.
+
+மேலும் கீழே பரீட்சை முடிவுகள், கொடுப்பனவுகள், சான்றிதழ்கள், சகோதரர்கள், முந்தைய வகுப்புகள் உள்ளன. பதிவில் அட்டை உள்ள மாணவர்களுக்கு **ID Card** பிரிவும் காட்டப்படும் (பார்க்க
+[Manage and Track ID Cards](/ta/docs/educonnect-tutorial-id-cards)).
+
+### Permanent Record
+
+உங்கள் நிறுவனம் இதைச் செயற்படுத்தியிருந்தால், **Permanent Record** பிரிவு **Conduct**, **Academic**, **Health**, **Other** ஆகிய வகைகளில் திகதியிட்ட குறிப்புகளைக் கொண்டிருக்கும். **Add entry** ஐத் தெரிவு செய்து,
+வகையையும் திகதியையும் தெரிவு செய்து, குறிப்பை எழுதிச் சேமியுங்கள். ஒவ்வொரு பதிவும் அதைச் சேர்த்தவரையும் (திருத்தியவரையும்) காட்டும்.
+
+**Administration → Settings** இல் நிர்வாகி **Enable the permanent record section** ஐச் செயற்படுத்தும் வரை இது செயலிழந்திருக்கும். ஆசிரியர்களும் நிர்வாகிகளும் மட்டுமே இதை வாசிக்கலாம்; பெற்றோர் ஒருபோதும் முடியாது. ஆசிரியர்கள் தம் சொந்த வகுப்புக்கு
+பதிவுகளைச் சேர்க்கவும் திருத்தவும் முடியும்; நிர்வாகிகள் மட்டுமே நீக்க முடியும். அமைப்பைச் செயலிழக்கச் செய்தால் பிரிவு மறையும், ஆனால் பதிவுகள் வைத்திருக்கப்படும்.
+
+## மாணவர் விலகும்போது
+
+*Mark students as left school* அனுமதி உள்ளவர் (Access Control இல் அமைக்கப்படுவது), மாணவரின் திருத்தப் பக்கத்திலுள்ள **Mark as left** பொத்தானால் மாணவரைப் பதிவேட்டிலிருந்து நீக்குவார். உரையாடல் பெட்டி **Date left**, **Reason**, விருப்பத் தெரிவான
+**Note** ஆகியவற்றைக் கேட்கும். காரணங்கள்:
+*Finished school*, *Moved to a different school*, *Relocated abroad*, *Financial reasons*, *Family reasons*, *Other*. *Student marked as left school* எனக் காண்பீர்கள்.
+
+**Students → Left Students** விலகியவர்களாகக் குறிக்கப்பட்ட அனைவரையும் அவர்களின் அடையாள இலக்கம், கடைசியாகப் படித்த வகுப்பு, சேர்ந்த திகதி, விலகிய திகதி, காரணம் ஆகியவற்றுடன் பட்டியலிடும். பெயர், மாணவர் அடையாள இலக்கம் அல்லது வகுப்பால் தேடலாம்;
+அந்த நெடுவரிசைகளில் எதன் மூலமும் வரிசைப்படுத்தலாம். நீக்கப்பட்ட பதிவுகளிலுள்ள மாணவரை **Move to left students** மூலம் இந்தப் பட்டியலுக்கு மாற்றலாம். நீக்கப்பட்ட மாணவர்களுக்கு அந்தப் பதிவுகளிலிருந்து இன்னும் ஏற்றப்படும் சுயவிவரம் இருக்கும்.
+
+விலகிய மாணவர்கள் பதிவேட்டிலும் அனுமதி எண்ணிக்கைகளிலும் கணக்கிடப்படுவதில்லை; பார்க்க
+[School Statistics](/ta/docs/shared-staff-analytics).
+
+## தொடர்புடையவை
+
+- [Add a Student](/ta/docs/educonnect-tutorial-add-a-student)
+- [Teachers: Looking Up a Student](/ta/docs/educonnect-teacher-students-and-analytics)

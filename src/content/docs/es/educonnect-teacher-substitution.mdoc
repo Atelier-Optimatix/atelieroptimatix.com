@@ -1,0 +1,43 @@
+---
+title: "Docentes: Suplencias"
+description: Cómo se entera de que cubrirá una clase, qué implica una salida anticipada para su jornada y de dónde proviene el plan de cobertura.
+product: educonnect
+section: For teachers
+order: 70
+roles:
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/substitution_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/teacher_timetable_page.dart
+hidden: false
+---
+
+## Cómo se entera
+
+La cobertura aparece en **[My Timetable](/es/docs/educonnect-teacher-my-timetable)** como un período marcado como **SUB**, el día al que corresponde. No se le envía por correo electrónico ni figura en su horario habitual; por eso debe consultar My Timetable por la mañana, y no solo al comienzo del período lectivo.
+
+Algunas instituciones también imprimen el plan del día y lo colocan en la sala de profesores; el plan impreso y My Timetable provienen del mismo origen.
+
+## De dónde proviene
+
+Cada mañana, quien gestiona las suplencias abre **Teachers → Substitution**. La pantalla enumera todos los períodos que ha dejado sin cubrir un colega ausente (período, hora, clase y asignatura) y propone **suggested substitutes** (suplentes sugeridos) para cada uno. Las sugerencias son docentes que están libres a esa hora y que imparten esa asignatura; quien elabora el plan también puede elegir a **cualquier docente**.
+
+Después se guarda el plan, y es entonces cuando llega a su horario. Mientras no se guarde, no le aparece nada.
+
+## Salidas anticipadas
+
+Un colega que se retira a mitad de la jornada se gestiona por separado: sus períodos restantes se agregan al plan como una **early departure** (salida anticipada), a media mañana. Por eso un período SUB puede aparecer en su jornada una vez iniciado el día. Es el único caso en que el horario que consultó a las 8:00 está realmente desactualizado a las 11:00.
+
+## Qué significa realmente cubrir una clase
+
+Un período SUB es la clase de otra persona, en el aula de otra persona:
+
+- Desaparece de su semana cuando desaparece el plan de ese día.
+- La asistencia de esa clase sigue a cargo de su propio docente titular; usted no pasa lista salvo que se lo hayan pedido.
+- Si considera que una asignación es incorrecta o imposible (por ejemplo, ya está dando clase a esa hora o se encuentra fuera del centro), comuníqueselo a quien elaboró el plan. Usted no puede cambiarla desde su lado, y es intencional: solo el responsable del plan puede ver si trasladarlo a usted genera un nuevo hueco.
+
+## Relacionado
+
+- [Asistencia y suplencias de docentes](/es/docs/shared-staff-teacher-attendance)
+- [Planificar la cobertura de docentes ausentes](/es/docs/educonnect-flow-substitution-planning)

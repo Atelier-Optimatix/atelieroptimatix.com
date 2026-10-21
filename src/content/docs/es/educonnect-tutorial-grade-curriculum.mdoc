@@ -1,0 +1,55 @@
+---
+title: "Tutorial: Crear o editar un currículo del grado"
+description: Cómo definir qué se enseña en todo un grado y con qué frecuencia, y luego aplicarlo a todas las clases de ese grado en una sola acción.
+product: educonnect
+section: Tutorials
+order: 60
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/widgets/grade_curriculum_tab.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/timetable_config_screen.dart
+screenshotIds:
+  - "tutorial-grade-curriculum"
+hidden: false
+---
+
+El currículo del grado es la plantilla: *"en todas las clases de Grade 8 se enseñan estas asignaturas, tantas veces por semana."* Lo redacta una vez por grado y luego lo aplica a todas las clases de ese grado, en lugar de asignar asignaturas clase por clase.
+
+**Necesita:** acceso a **Timetable → Configuration** y clases que ya tengan el grado correcto
+establecido; consulte [Agregar una clase](/es/docs/educonnect-tutorial-add-a-class).
+
+## Pasos
+
+1. Abra **Timetable → Configuration** y seleccione la pestaña **Grade Curriculum**.
+2. Elija el grado en **Select Grade**.
+3. Para cada asignatura que se imparte en el grado, seleccione **Add Subject** y complete:
+   - **Subject**: con búsqueda; la lista proviene de **Timetable → Configuration → Subjects & Rules**.
+   - **Lessons / week**: cuántos períodos por semana recibe esta asignatura. Es el número que el
+     generador intenta colocar.
+   - **Max per day**: el tope en un solo día. Déjelo en blanco para aceptar el valor predeterminado.
+   - **Max consecutive**: cuántas pueden darse seguidas. Déjelo en blanco para aceptar el valor predeterminado.
+
+   En blanco no es cero. En blanco significa "usar el valor predeterminado"; la fila muestra una marca
+   **(override)** solo donde usted haya establecido algo de forma explícita.
+4. Opcionalmente, complete el **Book List**, una lista de texto libre con los libros del grado, que se
+   conserva junto con el currículo.
+5. Seleccione **Save Curriculum**. Esto guarda el currículo **y** lo aplica a todas las clases del
+   grado: la confirmación indica cuántas clases lo recibirán y le recuerda que *las asignaciones de
+   docentes existentes no se modificarán*. Seleccione **Save & Apply** y el resultado le indica
+   cuántas entradas de asignatura por clase se **crearon** y cuántas se **actualizaron**.
+
+Como nunca modifica las asignaciones de docentes, volver a guardar tras un cambio en el currículo es
+seguro: agrega y ajusta asignaturas sin deshacer quién imparte cada una.
+
+## Editar un currículo existente
+
+Cambie los números directamente y vuelva a seleccionar **Save Curriculum**. Quitar una asignatura del
+currículo no la elimina retroactivamente de las clases que ya la tienen; elimínela en
+[Asignaturas por clase](/es/docs/educonnect-tutorial-class-subjects) si necesita que desaparezca.
+
+## Qué hacer a continuación
+
+[Asigne docentes a esas asignaturas](/es/docs/educonnect-tutorial-class-subjects) y después
+[genere el horario](/es/docs/educonnect-tutorial-generate-timetable).

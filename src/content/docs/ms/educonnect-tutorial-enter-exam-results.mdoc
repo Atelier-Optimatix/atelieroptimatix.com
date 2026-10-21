@@ -1,0 +1,40 @@
+---
+title: "Tutorial: Memasukkan Keputusan Peperiksaan bagi Sesebuah Kelas"
+description: Menaip markah bagi satu kelas dan mata pelajaran, menandakan murid yang tidak hadir, dan perkara yang berlaku apabila anda perlu mengubah markah yang sudah disimpan.
+product: educonnect
+section: Tutorials
+order: 100
+roles:
+  - staff
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/add_class_results_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/exams/exam_change_requests_page.dart
+hidden: false
+---
+
+**Anda memerlukan:** [peperiksaan](/ms/docs/educonnect-tutorial-create-an-exam) yang sudah wujud, dan akses kepada kelas itu.
+
+## Langkah
+
+1. Buka **Exams** dan pilih peperiksaan itu.
+2. Pilih **class** daripada senarai kelas.
+3. Pilih **Add Results**.
+4. Di bahagian atas, pilih **subject** dan **teacher** yang dikreditkan dengan markah itu.
+5. Taip markah menyusuri senarai murid. Semasa anda bekerja, pembilang di bahagian atas skrin mencatat kemajuan: **_n_ of _total_ entered**, dan **_n_ absent**.
+6. Bagi murid yang tidak menduduki kertas itu, tandakan **Absent** dan bukannya memasukkan `0`. Sifar ialah markah dan menurunkan purata; murid yang tidak hadir dikecualikan daripada purata.
+7. Apabila semua yang menduduki peperiksaan telah dimasukkan, gunakan **Mark remaining absent** untuk menandakan yang selebihnya sekali gus — tetapi baca dahulu kiraan entered/absent dan pastikan yang selebihnya benar-benar murid yang tidak hadir dan bukan orang yang anda terlupa.
+8. Pilih **Save Results** dan sahkan.
+
+## Mengubah markah selepas itu
+
+Markah yang telah disimpan tidak boleh diedit sewenang-wenangnya. Mengeditnya menghasilkan **change request** dengan nota pilihan, yang disemak oleh seseorang yang mempunyai hak kelulusan di bawah **Exams → Result Changes**. Ini memang disengajakan — ia meninggalkan jejak pada markah yang sudah dilihat.
+
+Jika anda mendapat **The mark has moved** semasa mengedit, seseorang lain telah mengubah markah itu selepas anda membuka skrin. Muat semula dan lihat nilai semasa sebelum menghantar semula; perubahan anda tidak dilaksanakan.
+
+## Berkaitan
+
+- [Upload Exam Results from a Spreadsheet](/ms/docs/educonnect-tutorial-upload-exam-results) — lebih pantas
+  untuk seluruh kelas
+- [Entering and Publishing Exam Results](/ms/docs/shared-staff-exam-results)

@@ -1,0 +1,56 @@
+---
+title: "Tutorial: Menyediakan dan Memberi Diskaun"
+description: Menulis peraturan diskaun sekali, kemudian memberikannya kepada murid secara individu — dengan peringkat, had kelas dan tarikh luput.
+product: educonnect
+section: Tutorials
+order: 160
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/discount_rules_page.dart
+screenshotIds:
+  - "tutorial-discounts"
+hidden: false
+---
+
+Diskaun berfungsi dalam dua bahagian: **rule** (peraturan) menerangkan jenis pengurangan, dan **grant** (pemberian) mengaitkannya dengan seorang murid. Menulis peraturan tidak mengubah yuran sesiapa sehingga anda memberikannya.
+
+**Anda memerlukan:** akses kepada **Accounting → Discounts**.
+
+## Mencipta peraturan
+
+1. Buka **Accounting → Discounts**, pada tab **Rules**.
+2. Pilih **New rule** dan isi:
+   - **Name** — apa yang dipaparkan pada pecahan yuran murid, jadi namakan mengikut sebabnya:
+     `Sibling — second child`, `Staff child`, `Merit scholarship`.
+   - **Type** dan **basis** — asas pengiraan pengurangan itu.
+   - **Value** — sama ada **%** atau jumlah **fixed**.
+   - **Scope** — **Limit to classes** jika ia hanya terpakai pada sesetengah kumpulan tahun. Biarkan senarai kelas kosong bermaksud semua kelas.
+   - **Validity** — tempoh peraturan itu sah. Tarikh luput ialah cara biasiswa setahun berhenti terpakai dengan sendirinya dan bukannya perlu diingat.
+   - **Active**.
+3. **Tiers (optional)** — tambah peringkat jika pengurangan berbeza mengikut jalur dan bukannya satu nombor, contohnya diskaun adik-beradik yang meningkat bagi anak ketiga. Setiap peringkat mempunyai peratusan atau nilai tetapnya sendiri.
+4. Simpan.
+
+## Memberikannya kepada murid
+
+1. Pilih **Grant discount**.
+2. Pilih **student** dan **rule**.
+3. Tetapkan **validity** bagi pemberian khusus ini jika ia berbeza daripada peraturan.
+4. Simpan.
+
+Tab pemberian menyenaraikan setiap pemberian dengan murid, peraturan, nilai, tempoh sah, **siapa yang memberikannya**, dan statusnya. Lajur "granted by" itu ialah jejak audit — itulah sebab untuk memberi diskaun di sini dan bukannya melaraskan jumlah secara senyap di kaunter.
+
+## Membatalkan
+
+**Revoke** menamatkan pemberian. Ia tidak membatalkan pembayaran yang sudah diterima pada kadar diskaun; ia menghentikan diskaun daripada terpakai pada caj akan datang.
+
+## Cara ia kelihatan di kaunter
+
+Apabila anda [menerima pembayaran](/ms/docs/educonnect-tutorial-record-a-payment) bagi murid yang mendapat diskaun, dialog memaparkan jumlah **Original** di sebelah jumlah yang sebenarnya perlu dibayar. Ambil jumlah yang perlu dibayar.
+
+## Berkaitan
+
+- [Set Up Fees](/ms/docs/educonnect-tutorial-fee-setup)
+- [Reconciliation](/ms/docs/educonnect-tutorial-reconciliation)

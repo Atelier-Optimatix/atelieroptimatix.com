@@ -1,0 +1,75 @@
+---
+title: Registro como padre o madre
+description: Cómo crear una cuenta de padre o madre con el Student ID de su hijo, verificarla por SMS o correo electrónico y establecer su contraseña.
+product: educonnect
+section: For parents
+order: 1
+roles:
+  - parent
+sourcePaths:
+  - educonnect-public/edu-frontend/lib/pages/parent_register_page.dart
+  - educonnect-public/edu-frontend/lib/pages/otp_verification_page.dart
+  - educonnect-public/edu-frontend/lib/pages/set_password_page.dart
+  - educonnect-public/edu-frontend/lib/pages/forgot_password_page.dart
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## Antes de comenzar
+
+Necesita dos datos que la escuela ya tiene:
+
+- El **Student ID** de su hijo o hija (algo como `ADV001`).
+- El **número de móvil o la dirección de correo electrónico registrados para usted en el sistema de la
+  escuela**.
+
+El registro se contrasta con esos datos. No puede crear a un padre o madre que no conste ya en los
+registros, por lo que, si la verificación falla, lo primero que debe comprobar es si la escuela tiene
+su número o dirección actuales, no si escribió bien el código.
+
+## Cómo registrarse
+
+Desde la pantalla de inicio de sesión, elija registrarse y luego:
+
+1. **Select your school** (o jardín de infancia; la denominación sigue a la de su institución).
+2. Ingrese el **Student ID**.
+3. Elija cómo desea recibir el código: **Mobile** o **Email**.
+4. Ingrese ese número de móvil o dirección de correo electrónico.
+5. **Send OTP**.
+
+## Cómo ingresar el código
+
+El código tiene **seis dígitos**. En la pantalla de verificación:
+
+- Puede **reenviar** el código, pero no de inmediato: hay una espera de **60 segundos**, con cuenta
+  regresiva en pantalla, antes de que esté disponible la opción de reenvío.
+- Si se rechaza un código, las casillas se borran para que pueda volver a escribirlo sin problemas.
+- **Back to Login** abandona el flujo sin completarlo; puede comenzar de nuevo más tarde.
+
+## Cómo establecer su contraseña
+
+Una vez aceptado el código, elige una contraseña. Debe tener **al menos 8 caracteres** y se ingresa
+dos veces para que un error de escritura no le impida acceder a la cuenta que está creando.
+
+Después de eso, se inicia su sesión.
+
+## Contraseña olvidada
+
+Restablecer una contraseña existente sigue los mismos pasos de verificar y luego establecer una
+contraseña, con una diferencia al inicio: en lugar de elegir un canal de envío, usted se identifica
+por **Username**, **Student ID** o **Email**, y el código se envía a los datos de contacto que ya
+constan para esa cuenta.
+
+La confirmación indica deliberadamente solo que, *si* existe una cuenta, se ha enviado un código: no
+le dirá si el identificador que escribió fue reconocido, de modo que nadie pueda usar la pantalla de
+restablecimiento para descubrir qué cuentas existen. Si no llega ningún código, verifique el
+identificador con la escuela en lugar de suponer que el mensaje se perdió.
+
+Se aplica el mismo mínimo de 8 caracteres a la nueva contraseña, y usted termina de nuevo en la
+pantalla de inicio de sesión para ingresar con ella.
+
+## Temas relacionados
+
+- [Primeros pasos como padre o madre](/es/docs/shared-parent-getting-started)
+- [Inicio de sesión](/es/docs/shared-logging-in)
+- [Realizar un pago](/es/docs/shared-parent-payments)

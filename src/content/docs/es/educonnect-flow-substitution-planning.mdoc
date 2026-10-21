@@ -1,0 +1,77 @@
+---
+title: Planificar suplencias para docentes ausentes
+description: La rutina matutina — identificar los huecos de hoy, elegir suplentes, guardar el plan para que llegue a los docentes y gestionar las salidas a mitad del día.
+product: educonnect
+section: Advanced workflows
+order: 10
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/substitution_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_dashboard_page.dart
+screenshotIds:
+  - "flow-substitution-planning"
+hidden: false
+---
+
+Esta es una rutina diaria, no una tarea de configuración. Debe hacerse temprano: el plan no llega al horario de
+nadie hasta que se guarda.
+
+**Necesita:** acceso a **Teachers → Substitution** y la asistencia de los docentes de hoy ya registrada.
+
+## La rutina matutina
+
+1. **Compruebe quién está ausente.** El panel **Teachers** muestra **Present Today** y **Absent Today**
+   de un vistazo, y **Arrange Substitutes** lleva directamente al plan. Si indica *All teachers
+   are present!*, no hay nada que hacer.
+2. Abra **Teachers → Substitution**.
+3. La pantalla enumera cada período que necesita cobertura: **Period**, **Time**, **Class · Subject** y
+   **Suggested Substitutes**. Las filas de un docente que finalmente sí asiste muestran **Teacher present — no
+   sub needed**.
+4. Para cada fila, elija un suplente:
+   - Los **Suggested Substitutes** son docentes que están libres en ese período *y* que enseñan esa asignatura. Prefiera
+     a estos.
+   - **Any teacher** amplía la búsqueda a todos los que estén libres, cuando no hay coincidencia de asignatura. Será supervisión más que
+     enseñanza, pero es mejor que dejar un grupo sin atención.
+   - *No suggested substitutes* significa que nadie está a la vez libre y cualificado. Amplíe la búsqueda o acepte
+     el hueco de forma deliberada.
+5. Use **Remove from plan** para deshacer una asignación antes de guardar.
+6. **Guarde el plan.** El estado indica **Plan ready to save** hasta que lo haga, y luego **Plan saved**.
+
+**Nada llega a ningún docente hasta que usted guarde.** Un plan elaborado y sin guardar es invisible.
+
+## Cómo hacerlo llegar a las personas
+
+- Al guardar, se coloca un marcador **SUB** en el
+  [Mi horario](/es/docs/educonnect-teacher-my-timetable) de cada suplente, para ese día.
+- **Print Plan** genera la copia para la sala de profesores.
+
+Haga ambas cosas. Los docentes que no consultan la aplicación por la mañana son precisamente aquellos a quienes necesita llegar.
+
+## Salidas a mitad del día
+
+Cuando alguien se va a mitad de la jornada, use **Add teacher's periods (early departure)**:
+
+1. Seleccione al docente y los períodos desde su salida en adelante.
+2. **Add Periods** incorpora esos períodos al plan de hoy como huecos.
+3. Asigne suplentes y guarde de nuevo.
+
+Sus períodos de la mañana, ya impartidos, no se tocan.
+
+## Mensajes de estado
+
+| Estado | Qué significa |
+| --- | --- |
+| **Weekend — no timetable** | No hay nada programado hoy |
+| **All teachers present today** | No hay ausencias registradas |
+| **No substitutions needed** | Hay ausencias, pero ninguna tenía períodos hoy |
+| **Plan not created** | Hay huecos y nadie ha comenzado |
+| **Plan ready to save** | Asignaciones hechas pero sin guardar: **no está activo** |
+| **Plan saved** | Activo en los horarios de los docentes |
+
+## Temas relacionados
+
+- [Asistencia y suplencias de docentes](/es/docs/shared-staff-teacher-attendance)
+- [Tareas de suplencia](/es/docs/educonnect-teacher-substitution): el lado del docente

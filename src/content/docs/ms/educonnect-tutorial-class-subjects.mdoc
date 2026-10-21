@@ -1,0 +1,37 @@
+---
+title: "Tutorial: Menugaskan Mata Pelajaran dan Guru kepada Kelas"
+description: Menukar kurikulum sesuatu gred menjadi senarai mata pelajaran sebenar bagi sesebuah kelas, dengan guru yang dinamakan bagi setiap satu.
+product: educonnect
+section: Tutorials
+order: 70
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/widgets/class_subjects_tab.dart
+screenshotIds:
+  - "tutorial-class-subjects"
+hidden: false
+---
+
+**Class Subjects** ialah tempat templat gred menjadi realiti sesebuah kelas: kelas *ini* mempelajari mata pelajaran ini, diajar oleh orang-orang ini. Ia perkara terakhir yang diperlukan oleh penjana jadual waktu.
+
+**Anda memerlukan:** [kurikulum gred yang telah dikenakan](/ms/docs/educonnect-tutorial-grade-curriculum) pada kelas itu, dan [guru yang menyenaraikan mata pelajaran itu](/ms/docs/educonnect-tutorial-add-a-teacher) antara yang mereka ajar.
+
+## Langkah
+
+1. Buka **Timetable → Configuration** dan pilih tab **Class Subjects**.
+2. Pilih kelas di bawah **Select Class**. Jika anda telah mengenakan kurikulum gred, mata pelajarannya sudah disenaraikan tanpa guru lagi. Jika anda melihat **No subjects assigned to *class***, sama ada kurikulum tidak pernah dikenakan pada gred itu, atau gred kelas itu bukan seperti yang anda sangka.
+3. Bagi setiap baris, tetapkan **teacher**. Hanya guru yang menyenaraikan mata pelajaran itu muncul dalam pemilih — jika orang yang anda mahu tiada, tambah mata pelajaran itu pada rekod gurunya dahulu.
+4. Untuk menambah mata pelajaran yang tidak disertakan dalam kurikulum, pilih **Add Subject** dan isi:
+   - **Subject** dan **teacher**,
+   - **Lessons/week**, **Max consec.** dan **Max/day** — semuanya pilihan. Jika dibiarkan kosong, ia mewarisi nombor kurikulum gred; jika diisi, baris itu menunjukkan nilai dengan **(override)** di sebelahnya, dan hanya kelas itu yang mendapat layanan berbeza.
+5. Simpan setiap baris semasa anda bekerja. **Remove** membuang tugasan daripada kelas selepas pengesahan.
+
+## Override, dan bila menggunakannya
+
+Gunakan override pada peringkat kelas hanya untuk pengecualian sebenar — kelas yang mendapat satu waktu Matematik tambahan, kumpulan terpisah yang hanya bertemu dua kali seminggu. Apa-apa yang terpakai kepada seluruh gred sepatutnya berada dalam [Grade Curriculum](/ms/docs/educonnect-tutorial-grade-curriculum), supaya ia kekal konsisten merentas kelas dan kekal apabila kurikulum disimpan lain kali.
+
+## Langkah seterusnya
+
+Apabila setiap kelas mempunyai mata pelajaran dengan guru yang ditetapkan, anda sudah mempunyai segala yang diperlukan oleh penjana: [Generate the Timetable](/ms/docs/educonnect-tutorial-generate-timetable).

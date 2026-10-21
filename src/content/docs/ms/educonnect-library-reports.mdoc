@@ -1,0 +1,33 @@
+---
+title: "Laporan Perpustakaan"
+description: Laporan peminjaman, koleksi, lewat dan denda serta apa yang dikira oleh setiap angka.
+product: educonnect
+section: Guides
+order: 236
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/library_reports_page.dart
+  - attendance-web-app/backend/services/library/libraryReportService.js
+screenshotIds:
+  - "library-reports"
+hidden: false
+---
+
+**Library → Reports** memerlukan **Library reports**. Pilih tempoh **setahun atau kurang**; bagi julat yang
+lebih panjang, halaman meminta anda memilih tempoh yang lebih pendek supaya angka adalah lengkap.
+
+Laporan meliputi:
+
+- **Circulation**: peminjaman dan pemulangan sepanjang tempoh, dengan pecahan **By borrower type**, **By
+  grade** dan **By class**, serta bilangan buku dan peminjam yang berbeza.
+- **Popular titles** dan tajuk yang **never borrowed** (tidak pernah dipinjam).
+- **Overdue**: buku yang lewat dan **Days late**.
+- **Collection**: salinan dalam perpustakaan **By status**, **By condition**, **By shelf** dan **By
+  subject**, setakat hari ini.
+- **Fines**: mengikut jenis, dengan yang tidak dibayar, dibayar dan dikecualikan.
+- **Engagement**: siapa yang meminjam dan siapa yang tidak.
+
+Angka disimpan dalam cache selama beberapa minit.

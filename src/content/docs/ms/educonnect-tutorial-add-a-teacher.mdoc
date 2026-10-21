@@ -1,0 +1,64 @@
+---
+title: "Tutorial: Menambah Guru"
+description: Mencipta rekod guru, menetapkan mata pelajaran yang diajar, dan langkah berasingan yang memberi mereka log masuk.
+product: educonnect
+section: Tutorials
+order: 40
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/add_teacher_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_management_page.dart
+screenshotIds:
+  - "tutorial-add-a-teacher"
+hidden: false
+---
+
+## Rekod guru bukan log masuk
+
+Kedua-duanya adalah perkara berasingan, dan hanya melakukan yang pertama ialah punca paling biasa guru baharu "tidak boleh log masuk":
+
+1. **Rekod guru** — individu itu, mata pelajarannya, kehadirannya, jadual waktunya. Dicipta di sini.
+2. **Akaun pengguna** — nama pengguna dan kata laluan yang sebenarnya digunakan untuk log masuk. Dicipta dalam **Administration → Users**, lihat [Users and Access](/ms/docs/educonnect-tutorial-users-and-access).
+
+Cipta rekod guru dahulu, kemudian akaunnya.
+
+## Langkah
+
+1. Buka **Teachers → Directory**.
+2. Pilih **Add Teacher**.
+3. Isi borang:
+   - **Teacher ID** — wajib dan unik. Medan itu memberi amaran **Duplicate Teacher ID detected** jika ID sudah digunakan.
+   - **Full Name** — wajib.
+   - **Gender** — wajib.
+   - **Date of Birth** dan **Joined Date** — kedua-duanya pilihan, kedua-duanya `YYYY-MM-DD`.
+   - **Contact Number**, **Email**, **Address**, **Religion**, **Ethnicity**, **Nationality** — semuanya pilihan.
+   - **RFID** — pilihan. Ini ialah kad yang diimbas oleh guru untuk kehadiran *mereka sendiri*. Tanpanya, kehadiran mereka perlu direkodkan dengan cara lain.
+4. Tambah **mata pelajaran yang mereka ajar**. Inilah medan yang paling penting untuk langkah seterusnya: penjana jadual waktu dan cadangan penggantian hanya akan mencadangkan guru bagi mata pelajaran yang disenaraikan di sini. Guru yang tiada mata pelajaran tidak akan dijadualkan secara automatik.
+5. Tambah **photo** jika institut anda menggunakannya.
+6. Pilih **SAVE TEACHER**.
+
+## Kemudian beri mereka log masuk
+
+1. Buka **Administration → Users**.
+2. Pilih **Add User** dan cipta akaun itu, dengan memautkannya kepada rekod guru yang baru anda buat.
+3. Semak apa yang boleh dicapai oleh akaun itu dalam **Administration → Access Control** — lihat
+   [Users and Access](/ms/docs/educonnect-tutorial-users-and-access).
+
+## Mengedit dan memadam
+
+Buka guru itu daripada **Teachers → Directory** dan gunakan **Edit**. **DELETE TEACHER** meminta pengesahan dahulu, dan membuang rekod bersama sejarah kehadirannya — bagi seseorang yang telah berhenti, rujuk institut anda sebelum memadam, bukan selepasnya.
+
+## Langkah seterusnya
+
+- Tugaskan mereka kepada kelas sebagai guru mata pelajaran dalam
+  [Class Subjects](/ms/docs/educonnect-tutorial-class-subjects).
+- Tetapkan bila mereka ada dan tiada dalam **Timetable → Configuration → Teacher Constraints**, sebelum anda [menjana jadual waktu](/ms/docs/educonnect-tutorial-generate-timetable).
+- Jadikan mereka guru kelas melalui **Edit Class Teacher** pada sesuatu kelas — lihat
+  [Add a Class](/ms/docs/educonnect-tutorial-add-a-class).
+
+## Berkaitan
+
+- [Managing Teachers](/ms/docs/shared-staff-teacher-management)
+- [Teacher Attendance & Substitution](/ms/docs/shared-staff-teacher-attendance)

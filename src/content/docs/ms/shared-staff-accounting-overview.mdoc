@@ -1,0 +1,50 @@
+---
+title: Aliran Kerja Perakaunan — Lejar, Penutupan Hari dan Penyelarasan
+description: Urutan langkah-langkah ini perlu dilakukan, dan perbezaan antara mengeluarkan dan mencetak invois.
+product: educonnect
+section: Guides
+order: 70
+roles:
+  - staff
+  - admin
+  - accountant
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/accounting_routes.dart
+screenshotIds:
+  - staff-accounting-overview
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Bahagian perakaunan, mengikut urutan yang lazim anda gunakan
+
+1. **Fees / Invoices** — tetapkan apa yang terhutang dan keluarkan invois kepada keluarga.
+2. **Ledger / Entry** — rekod bayaran dan transaksi lain apabila ia diterima.
+3. **Online payments** — pembayaran yang dibuat oleh ibu bapa melalui portal ibu bapa masuk ke sini
+   secara automatik; anda tidak perlu memasukkannya secara manual dalam lejar (lihat
+   [Membayar Yuran Secara Dalam Talian](/ms/docs/shared-parent-payments) untuk sisi ibu bapa bagi perkara ini).
+4. **Day-close** — menutup transaksi sesuatu hari.
+5. **Reconciliation** — menyemak rekod hari yang telah ditutup berbanding resit/rekod bank sebenar.
+
+Day-close hendaklah dilakukan sebelum reconciliation bagi sesuatu hari — menjalankan reconciliation pada hari
+yang belum ditutup, atau cuba menutup hari buat kali kedua, ialah punca biasa jumlah yang
+tidak sepadan.
+
+## Mengeluarkan berbanding mencetak invois
+
+Mengeluarkan invois dan mencetaknya ialah dua langkah berasingan. Mengeluarkan menjadikan invois
+rasmi dan direkodkan dalam sistem; mencetak hanya menghasilkan salinan fizikal/PDF bagi invois
+yang telah dikeluarkan. Anda boleh mencetak semula invois yang telah dikeluarkan pada bila-bila masa — anda tidak perlu
+(dan tidak sepatutnya) mengeluarkannya semula hanya untuk mendapatkan salinan lain.
+
+## Diskaun
+
+Diskaun dikenakan bagi setiap pelajar/yuran dan menjejaskan apa yang muncul pada invois pelajar itu — tetapkan
+ini sebelum mengeluarkan invois yang sepatutnya dikenakan diskaun, kerana pengeluaran mengunci jumlah pada
+ketika itu.
+
+## Akses portal
+
+**Portal access** mengawal sama ada ibu bapa boleh melihat dan membayar sesuatu yuran melalui portal ibu bapa
+atau tidak — jika ibu bapa berkata mereka tidak menemui yuran untuk dibayar dalam talian, semak ini sebelum menganggap
+ia masalah get laluan pembayaran.
