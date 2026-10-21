@@ -1,0 +1,43 @@
+---
+title: "Tutorial: Holds and the Hold Shelf"
+description: Reserving books that are out, the hold shelf, pickup days and cancelling holds.
+product: educonnect
+section: Tutorials
+order: 234
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/holds_page.dart
+  - attendance-web-app/backend/services/library/holdService.js
+  - attendance-web-app/backend/services/library/holdShelf.js
+screenshotIds:
+  - "library-holds"
+hidden: false
+---
+
+A hold reserves a **title**, not a particular copy. Holds queue first come, first served.
+
+**Turn it on:** **Library Settings → Holds** (**Let borrowers reserve books**).
+
+## What happens
+
+1. A borrower reserves a book that is out. The desk can do this with **Reserve a book**; parents and
+   students can too if the portal allows it, and teachers from [My Library](/docs/educonnect-library-my-library).
+2. When a copy is checked in it goes to the oldest waiting hold and sits on the **hold shelf**. Put
+   it physically aside.
+3. The borrower has **School days to collect** (default 3) to pick it up. Lending it to them fulfils
+   the hold. An uncollected hold expires and the copy moves to the next in the queue or back to the
+   shelf.
+
+A copy on the hold shelf lends only to the borrower it is held for unless an override is used. A book
+with waiting holds is not renewed.
+
+Each borrower may have a limited number of holds (**Holds per borrower**, default 2; 0 means only the
+desk places holds).
+
+## The Holds page
+
+**Library → Holds** shows the **Hold shelf** (books set aside and who for) and the queues. Anyone with
+**Place & cancel holds for borrowers** can cancel.

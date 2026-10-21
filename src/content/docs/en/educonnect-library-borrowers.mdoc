@@ -1,0 +1,56 @@
+---
+title: "Tutorial: Manage Library Borrowers"
+description: A person's loans, holds, fines and limits, blocking a borrower, adding staff borrowers and giving them app access.
+product: educonnect
+section: Tutorials
+order: 232
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/borrowers_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/borrower_detail_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/widgets/app_access_dialog.dart
+screenshotIds:
+  - "library-borrower"
+hidden: false
+---
+
+Borrowers are your students, teachers and staff. Nothing is copied: the library adds only its own
+state (a block, personal limits, a count of loans) the first time someone borrows.
+
+Open **Library → Borrowers**, search, and select a person.
+
+## The borrower page
+
+- **Library card**: the card number on file.
+- **Loans**, **Holds**, **Fines** and **Returned** history.
+- **Blocked because**: the reason they cannot borrow now. This is worked out when you look, never
+  stored: loan limit, an overdue book, unpaid fines above your limit, or a block placed by hand.
+- **Reserve a book** on their behalf.
+
+## Block, unblock and personal limits
+
+With **Add staff borrowers, block, unblock & set limits** you can block someone with a reason. They
+keep the books they have; the desk refuses new loans.
+
+Under **Own limits** set **Books at a time (0–50)** or **Loan length in days** for one person. Leave a
+box empty to use the **Loan rule** for their type.
+
+## Add a staff borrower
+
+Non-teaching staff are not in your student or teacher lists. Use **New staff borrower** on this page
+or at the desk.
+
+## Give a staff borrower app access
+
+**Give app access** creates a sign-in so a staff member can see their own loans and holds in
+[My Library](/docs/educonnect-library-my-library). Choose a username (3 to 64 characters: letters,
+digits, dots, dashes, underscores and @, no spaces) and a first password. **Remove access** takes it
+away. Teachers do not need this; they use the account they already have.
+
+## Related
+
+- [Circulation Desk](/docs/educonnect-library-circulation-desk)
+- [Fines](/docs/educonnect-library-fines)

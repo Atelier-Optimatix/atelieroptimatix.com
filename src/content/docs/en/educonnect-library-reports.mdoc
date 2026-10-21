@@ -1,0 +1,33 @@
+---
+title: "Library Reports"
+description: The circulation, collection, overdue and fines reports and what each figure counts.
+product: educonnect
+section: Guides
+order: 236
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/library_reports_page.dart
+  - attendance-web-app/backend/services/library/libraryReportService.js
+screenshotIds:
+  - "library-reports"
+hidden: false
+---
+
+**Library → Reports** needs **Library reports**. Choose a period of **a year or less**; for longer
+ranges the page asks you to pick a shorter one so figures are complete.
+
+The reports cover:
+
+- **Circulation**: checkouts and returns over the period, with breakdowns **By borrower type**, **By
+  grade** and **By class**, plus how many different books and borrowers.
+- **Popular titles** and titles that were **never borrowed**.
+- **Overdue**: books overdue and **Days late**.
+- **Collection**: copies in the library **By status**, **By condition**, **By shelf** and **By
+  subject**, as of today.
+- **Fines**: by kind, with unpaid, paid and waived.
+- **Engagement**: who is borrowing and who is not.
+
+Figures are cached for a few minutes.

@@ -1,0 +1,70 @@
+---
+title: The Notice Board
+description: Reading the school notice board, and posting, scheduling, pinning and archiving notices for staff, parents or selected classes.
+product: educonnect
+section: Guides
+order: 70
+roles:
+  - admin
+  - staff
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/notices/notice_board_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/notices/notice_editor_dialog.dart
+  - attendance-web-app/edu-frontend/lib/models/notice.dart
+  - attendance-web-app/backend/config/accessCatalog.js
+screenshotIds:
+  - "staff-notice-board"
+hidden: false
+---
+
+**Communication → Notice Board** is where the school posts notices that stay visible, as opposed to
+[Send Messages](/docs/educonnect-tutorial-send-messages), which sends a one-off SMS. A notice can reach
+staff, parents (who are also notified on their phones the first time it is published) or the
+parents and teachers of selected classes.
+
+## Reading notices
+
+Everyone on the staff side can read the board (the *View the notice board* permission). The **Board**
+tab lists the notices that apply to you, newest first, with pinned notices at the top.
+*No notices right now.* means there are none.
+
+## Posting notices
+
+Posting is a separate permission (*Create, publish, pin & archive notices*) that the defaults leave
+with the administrator, because it puts text in front of the whole school. If you have it, the page
+also has a **Manage** tab with every notice and a **New notice** button.
+
+1. Select **New notice**.
+2. Enter a **Title** and a **Message**. Both are required (*Give the notice a title.*, *Write the
+   message.*), and each has a length limit.
+3. Choose the **Audience**: everyone, teachers, parents, or **classes**. For classes, pick which ones.
+   Parents of children in those classes, and the teachers who teach them, will see the notice. A user
+   with no assigned class has no class to post to.
+4. Set **Publish** to a date and time. A future time schedules the notice.
+5. Optionally set **Expires**. The expiry must be after the publication date.
+6. Optionally attach a PDF or an image (up to 20 MB each). Attachments can be added from the web app
+   only.
+7. Choose **Save draft**, or **Publish**. Editing an existing notice offers **Save** and **Save &
+   publish**.
+
+You will see *Notice saved*.
+
+## Managing notices
+
+The **Manage** tab lists **Title**, **Audience**, **Status**, **Dates** and **Files**, and can be
+filtered by status: **Drafts**, **Published** or **Archived**. On each row you can:
+
+- **Edit** the notice.
+- **Publish** a draft. A dialog confirms the audience first; parents are notified if the notice
+  hasn't been sent before.
+- **Pin to the top** or **Unpin**.
+- **Archive** it.
+
+Status chips tell you where a notice is: **Draft**, **Scheduled** (publication date in the future),
+**Live**, **Expired** or **Archived**.
+
+## Related
+
+- [Send Messages](/docs/educonnect-tutorial-send-messages)

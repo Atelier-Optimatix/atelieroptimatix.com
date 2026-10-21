@@ -1,17 +1,20 @@
 ---
 title: "Tutorial: Set Holidays, Terms and Working Days"
-description: Telling the system which days don't count — and why attendance reports look wrong until you have.
+description: Using the Calendar to tell the system which days don't count — and why attendance reports look wrong until you have.
 product: educonnect
 section: Tutorials
 order: 180
 roles:
   - admin
-lastUpdateDate: 2026-09-05
+lastUpdateDate: 2026-10-21
 sourcePaths:
-  - attendance-web-app/edu-frontend/lib/screens/settings/holiday_management_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/events/events_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/events/holiday_form_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/events/mark_today_holiday_dialog.dart
   - attendance-web-app/edu-frontend/lib/screens/settings/settings_page.dart
 screenshotIds:
   - "tutorial-holidays-and-terms"
+  - "tutorial-calendar-mark-holiday"
 hidden: false
 ---
 
@@ -23,24 +26,54 @@ configured is a day the whole school appears to have skipped.
 In **Administration → Settings**, set which days of the week your institute runs, then **Save
 Working Days**. Everything else is calculated against this, so do it before term starts.
 
+## The Calendar page
+
+Holidays now live on **Administration → Calendar** (the old *Holidays* screen and *Events* screen
+were merged into it; old links to Holidays open the Calendar's **Holidays** tab). It has two tabs:
+
+- **Upcoming** — events and holidays still ahead, in date order.
+- **Holidays** — every holiday and term break you have defined. These are the single source of truth
+  for which days count as a school day, and drive attendance percentages and report cards everywhere.
+
+A card at the top shows **School days held in** the current year: working days from 1 January up to
+today, leaving out weekends, holidays and days outside term dates. If that number looks wrong, your
+calendar is the reason.
+
+Everyone with staff access can read the Calendar. Only administrators see the buttons to add, edit
+or delete.
+
 ## Adding a holiday
 
-1. Open **Administration → Holidays** (or **Manage Holidays** from Settings).
+1. Open **Administration → Calendar** and choose the **Holidays** tab.
 2. Select **Add Holiday**.
 3. Fill in:
-   - **Title** — what it is called on reports.
-   - **Start** and **end date**. Both are required — *Title and date range are required.* is the
-     error if either is missing.
-   - **Type** — **School holiday** or **Term break**. Term breaks bound the terms that
+   - **Title** — what it is called on reports. *Enter a title* is the error if it is empty.
+   - **Date range** — pick the first and last day (two clicks; nothing is pre-selected). *Pick the
+     first and last day* is the error if you have not.
+   - **School holiday** or **Term break**. Term breaks bound the terms that
      [term attendance](/docs/educonnect-teacher-class-attendance) and progress reports are
      calculated over, so the distinction matters.
-   - **Classes** — leave empty for **All classes**, or pick specific ones. This is how you record a
+   - **Classes** — leave empty for all classes, or pick specific ones. This is how you record a
      year group being away on a trip without marking the whole school absent.
-4. Save. You will see **Holiday created**.
+4. Select **Create**. You will see **Holiday created**.
 
-The list shows every holiday with its title, dates, type and which classes it applies to. **Delete**
-confirms first. If it says *No holidays yet. Add one to get started.*, nothing is configured — and
+The list shows each holiday with its dates, type, and **All classes** or the classes it applies to.
+**Delete** asks first (*Delete holiday?*), and warns that it affects attendance percentages and
+report cards. If it says *No holidays yet. Add one to get started.*, nothing is configured — and
 every non-teaching day so far is being counted against your attendance figures.
+
+## Closing the school today
+
+If the school is unexpectedly shut, select **Mark today a holiday**. Enter a **Reason** (required —
+*Enter a reason*), optionally choose classes (empty means every class), and select **Mark as
+holiday**. Attendance percentages and reports skip the day, and you will see **Today marked as a
+holiday**.
+
+## Adding an event
+
+On the **Upcoming** tab, **Add Event** takes a **Title**, optional **Details**, a date and an icon.
+*Editing* an event changes that one occurrence. Recurring series are created from the dashboard
+calendar rather than here.
 
 ## Terms
 

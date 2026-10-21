@@ -10,7 +10,7 @@ roles:
 sourcePaths:
   - kinder-care-fe/lib/screens/reports_screen.dart
   - kinder-care-fe/lib/screens/report_editor_screen.dart
-lastUpdateDate: 2026-09-04
+lastUpdateDate: 2026-10-21
 hidden: false
 ---
 
@@ -27,7 +27,9 @@ Then choose the shape of the report:
 ## The generated draft
 
 **Generate draft** writes a first version for you from the activities already recorded for that
-child in that period. This is why recording activities as you go matters: the draft is only as good
+child in that period. You can add **Notes for the AI draft (optional)** first — for example "settled
+in well, working on sharing" — to steer it. Not every build of the app has the generator switched on; if
+you don't see **Generate draft**, write the report by hand. This is why recording activities as you go matters: the draft is only as good
 as what's there to draw on, and a period with nothing logged produces very little.
 
 {% callout type="warning" %}
@@ -49,6 +51,15 @@ Two separate buttons, and the difference matters:
 
 Save a draft whenever you're interrupted. Publish only when the report is genuinely ready, since
 publishing is what makes it visible outside the staff room.
+
+Saving an already-published report as a draft **unpublishes** it: the app warns you first, and
+families can no longer see it until you publish again.
+
+## Finding reports again
+
+The Reports tab lists your reports with **All**, **Drafts** and **Published** filters, and loads
+more as you scroll. Parents read published reports on the **Reports** tab of their child's
+profile.
 
 ## Related
 
