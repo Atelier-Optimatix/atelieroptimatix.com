@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from "astro:content";
+import DocsLayout from "@/layouts/DocsLayout.astro";
+import { getDocsStaticPaths } from "@/lib/docs-nav";
+import { docsLocales, defaultLocale } from "site.config";
+
+export interface Props {
+	data: CollectionEntry<"docs">;
+	fallback: boolean;
+}
+
+// /<locale>/docs/<slug> for every non-default docs locale. A slug with no
+// translation still gets a page: the English entry, with a notice.
+export async function getStaticPaths() {
+	const perLocale = await Promise.all(
+		docsLocales
+			.filter((lang) => lang !== defaultLocale)
+			.map(async (lang) =>
+				(await getDocsStaticPaths(lang)).map((path) => ({
+					...path,
+					params: { ...path.params, lang },
+				})),
+			),
+	);
+	return perLocale.flat();
+}
+
+const { data: doc, fallback } = Astro.props;
+const { Content, headings } = await doc.render();
+---
+
+<DocsLayout frontmatter={doc} headings={headings} fallback={fallback}>
+	<Content />
+</DocsLayout>

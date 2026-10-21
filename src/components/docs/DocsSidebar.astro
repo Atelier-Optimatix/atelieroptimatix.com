@@ -1,5 +1,6 @@
 ---
 import DocsSearch from "@/components/docs/DocsSearch.astro";
+import { docsHref, docsUi } from "@/lib/docs-i18n";
 import { getDocsNav } from "@/lib/docs-nav";
 
 /**
@@ -19,7 +20,9 @@ type Props = {
 };
 
 const { currentSlug, searchId = "docs-sidebar-search" } = Astro.props;
-const nav = await getDocsNav();
+const locale = Astro.currentLocale;
+const t = docsUi(locale);
+const nav = await getDocsNav(locale);
 
 // Which product group to leave open on first paint: the one holding the current
 // page, or (on the index, where there is no current page) EduConnect - the
@@ -31,13 +34,13 @@ const openProduct = currentSlug
 	: nav[0]?.product;
 ---
 
-<nav class="docs-sidebar" aria-label="User guide">
+<nav class="docs-sidebar" aria-label={t.navLabel}>
 	<DocsSearch id={searchId} class="pb-6" />
 
 	<a
-		href="/docs"
+		href={docsHref(locale)}
 		class="block pb-6 text-xs font-semibold uppercase tracking-wide text-slate-500 hover:text-black"
-		>← All docs</a
+		>{t.allDocs}</a
 	>
 
 	{

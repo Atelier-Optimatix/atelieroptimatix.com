@@ -1,10 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import { getLocalizedSettings } from "@/lib/localization-helpers";
-import { translatePath, unlocalizedUrl } from "@/lib/localization-helpers";
-import { defaultLocale, locales } from "site";
+import { chromeLocale, translatePath, unlocalizedUrl } from "@/lib/localization-helpers";
+import { defaultLocale, siteLocales as locales } from "site";
 
-const currentLocale = Astro.currentLocale;
+const docsLocale = Astro.currentLocale;
+const currentLocale = chromeLocale(docsLocale);
 
 function getTranslatedUrl(locale: string): string {
   const unlocalizedPath = unlocalizedUrl(Astro.url.pathname);

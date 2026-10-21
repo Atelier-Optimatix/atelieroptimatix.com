@@ -4,15 +4,20 @@ import type { MarkdownHeading } from "astro";
 import type { CollectionEntry } from "astro:content";
 import Prose from "@/components/primitives/Prose.astro";
 import Title from "@/components/primitives/Title.astro";
-import { docSlug, productLabels } from "@/lib/docs-nav";
+import { docsUi, productLabel, roleLabel, sectionLabel } from "@/lib/docs-i18n";
+import { docSlug } from "@/lib/docs-nav";
 import DocsShell from "./DocsShell.astro";
 
 type Props = {
 	frontmatter: CollectionEntry<"docs">;
 	headings?: MarkdownHeading[];
+	/** True when no translation exists and the English entry is shown instead. */
+	fallback?: boolean;
 };
 
-const { frontmatter, headings = [] } = Astro.props;
+const { frontmatter, headings = [], fallback = false } = Astro.props;
+const locale = Astro.currentLocale;
+const t = docsUi(locale);
 const { product, roles, section, lastUpdateDate, screenshotIds } = frontmatter.data;
 
 const slug = docSlug(frontmatter);
@@ -42,45 +47,56 @@ const screenshots = (screenshotIds ?? [])
 ---
 
 <DocsShell currentSlug={slug}>
-	<article class="docs-article" data-pagefind-body>
+	<article class="docs-article" data-pagefind-body={fallback ? undefined : ""} data-pagefind-ignore={fallback ? "" : undefined}>
 		<div class="flex flex-wrap items-center gap-2 pb-4">
 			<span
 				class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-black"
-				>{productLabels[product] ?? product}</span
+				>{productLabel(locale, product)}</span
 			>
 			{
 				section && (
 					<span class="rounded-full bg-slate-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
-						{section}
+						{sectionLabel(locale, section)}
 					</span>
 				)
 			}
 			{
 				roles.map((role) => (
 					<span class="rounded-full bg-slate-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
-						{role}
+						{roleLabel(locale, role)}
 					</span>
 				))
 			}
 		</div>
+
+		{
+			fallback && (
+				<p
+					class="mb-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900"
+					data-pagefind-ignore
+				>
+					{t.notTranslated}
+				</p>
+			)
+		}
 
 		<Title level={1}>{frontmatter.data.title}</Title>
 		<p class="max-w-2xl pt-6 text-base text-slate-500">
 			<em>{frontmatter.data.description}</em>
 		</p>
 		<p class="pt-3 text-xs text-slate-400">
-			Last updated {lastUpdateDate?.toString().slice(0, 10)}
+			{t.lastUpdated} {lastUpdateDate?.toString().slice(0, 10)}
 		</p>
 
 		{
 			toc.length > 1 && (
 				<nav
-					aria-label="On this page"
+					aria-label={t.onThisPage}
 					class="mt-10 rounded-2xl border border-slate-200 p-5"
 					data-pagefind-ignore
 				>
 					<p class="pb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
-						On this page
+						{t.onThisPage}
 					</p>
 					<ul class="space-y-1">
 						{toc.map((heading) => (
