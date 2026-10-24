@@ -1,0 +1,55 @@
+---
+title: "Tutorial: Library Fines and Paying Them"
+description: Setting up library fines, how overdue, lost and damage fines are charged, waiving them and how families pay.
+product: educonnect
+section: Tutorials
+order: 233
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/fines_page.dart
+  - attendance-web-app/backend/services/library/fineService.js
+  - attendance-web-app/backend/config/libraryOptions.js
+screenshotIds:
+  - "library-fines"
+hidden: false
+---
+
+Fines are **off** until you turn on **Charge library fines** in Library Settings. While off, nothing
+is charged and unpaid fines block nothing.
+
+**Only students are fined.** Teachers and staff never are.
+
+## How a fine is made
+
+A library fine is an ordinary pending charge on the student's account. That means it appears on
+their statement and is settled the way any other charge is. The library never touches your ledger
+itself.
+
+| Kind | When it is charged |
+| --- | --- |
+| Overdue | Once, when the book is checked in. While the book is out it is only a projection |
+| Lost | When a librarian declares the book lost |
+| Damage | When a librarian records damage |
+
+Settings: **Fine per late day**, **Days late before fining starts**, **Most for one late book**
+(0 for no cap), **Count school days only** (weekends, holidays and out-of-term days are not late
+days), **Lost book, when no price is recorded**, **Added to every lost book**, **Stop borrowing when
+owing more than** (0 means any unpaid fine blocks) and **Days to pay**.
+
+## The Fines page
+
+**Library → Fines** lists unpaid, paid and waived fines. Someone with **Waive unpaid library fines**
+can waive an unpaid fine with a reason: it is voided without any ledger entry.
+
+## How families pay
+
+- At the office, through Manual Payment Entry, under the student ID.
+- Online, if your school takes online payments and **Let parents pay library fines online** is on.
+  Fines also appear on the online payments screens whether or not the portal library is on.
+
+## Related
+
+- [Record a Payment](/docs/educonnect-tutorial-record-a-payment)

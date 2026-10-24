@@ -1,0 +1,48 @@
+---
+title: "Tutorial: Enter Exam Results for a Class"
+description: Typing marks for one class and subject, marking absentees, and what happens when you need to change a mark that's already saved.
+product: educonnect
+section: Tutorials
+order: 100
+roles:
+  - staff
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/add_class_results_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/exams/exam_change_requests_page.dart
+hidden: false
+---
+
+**You need:** an [exam](/docs/educonnect-tutorial-create-an-exam) that already exists, and access to
+the class.
+
+## Steps
+
+1. Open **Exams** and select the exam.
+2. Pick the **class** from the class list.
+3. Select **Add Results**.
+4. At the top, choose the **subject** and the **teacher** the marks are credited to.
+5. Type marks down the list of students. As you go, the counters at the top of the screen keep
+   score: **_n_ of _total_ entered**, and **_n_ absent**.
+6. For students who did not sit the paper, tick **Absent** rather than entering `0`. A zero is a
+   mark and drags averages down; absent is excluded from them.
+7. When everyone who sat is entered, use **Mark remaining absent** to tick the stragglers in one go
+   — but read the entered/absent counts first and make sure the remainder really are absentees and
+   not people you forgot.
+8. Select **Save Results** and confirm.
+
+## Changing a mark afterwards
+
+Saved marks are not freely editable. Editing one raises a **change request** with an optional note,
+which someone with approval rights reviews under **Exams → Result Changes**. This is deliberate —
+it leaves a trail on marks that have already been seen.
+
+If you get **The mark has moved** while editing, someone else changed that mark after you opened the
+screen. Reload and look at the current value before re-submitting; your change was not applied.
+
+## Related
+
+- [Upload Exam Results from a Spreadsheet](/docs/educonnect-tutorial-upload-exam-results) — faster
+  for a full class
+- [Entering and Publishing Exam Results](/docs/shared-staff-exam-results)

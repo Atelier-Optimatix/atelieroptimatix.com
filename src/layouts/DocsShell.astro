@@ -1,0 +1,46 @@
+---
+import DocsSidebar from "@/components/docs/DocsSidebar.astro";
+import Container from "@/components/primitives/Container.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+/**
+ * Two-column documentation chrome: a persistent nav sidebar and the page body.
+ * Shared by the guide index and every article so the sidebar, its scroll
+ * behaviour and the mobile disclosure are defined once.
+ */
+type Props = {
+	/** Slug of the article being viewed; omitted on the index. */
+	currentSlug?: string;
+};
+
+const { currentSlug } = Astro.props;
+---
+
+<BaseLayout>
+	<section class="pb-24 pt-28 md:pb-32 md:pt-40">
+		<Container>
+			<div class="lg:grid lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-12">
+				<!-- Mobile: the same tree, behind a disclosure so it doesn't push the
+				     article below the fold. Desktop: always visible, sticky. -->
+				<details class="docs-nav-disclosure mb-8 rounded-2xl border border-slate-200 p-4 lg:hidden">
+					<summary class="cursor-pointer text-sm font-semibold text-black">
+						Browse the guide
+					</summary>
+					<div class="pt-4">
+						<DocsSidebar currentSlug={currentSlug} searchId="docs-search-mobile" />
+					</div>
+				</details>
+
+				<aside
+					class="hidden lg:sticky lg:top-28 lg:block lg:max-h-[calc(100vh-9rem)] lg:self-start lg:overflow-y-auto lg:pr-4"
+				>
+					<DocsSidebar currentSlug={currentSlug} searchId="docs-search-desktop" />
+				</aside>
+
+				<div class="min-w-0">
+					<slot />
+				</div>
+			</div>
+		</Container>
+	</section>
+</BaseLayout>

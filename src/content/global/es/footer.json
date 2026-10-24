@@ -6,5 +6,8 @@
 			"text": "Contáctanos",
 			"url": "/contact"
 		}
-	]
+	],
+	"legalHeading": "Privacidad y legal",
+	"privacyLabel": "Política de privacidad",
+	"termsLabel": "Términos"
 }

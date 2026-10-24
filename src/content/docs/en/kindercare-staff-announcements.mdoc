@@ -1,0 +1,59 @@
+---
+title: Sending Announcements
+description: Posting a notice to the parents of a class, a few children or the whole school, and the optional SMS.
+product: kindercare
+section: Guides
+order: 30
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/announcements_screen.dart
+  - kinder-care-fe/lib/screens/add_announcement_screen.dart
+  - kinder_care_parent/lib/screens/announcements_screen.dart
+  - kinder_care_parent/lib/widgets/kc_appbar.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## What announcements are for
+
+Announcements are one-way notices to parents — "sports day moved to Friday" — as opposed to
+[reports](/docs/kindercare-staff-reports), which are about one child. They live on the **Notices**
+tab of the staff app and behind the bell icon in the parent app.
+
+## Posting one
+
+**Notices → New announcement**, then:
+
+1. **Title** and **Message** — both required.
+2. **Send to** — who should receive it:
+   - **All classes** — every parent in the school. Class teachers don't see this option; it is
+     reserved for roles with school-wide reach.
+   - **Classes** — pick one or more classes. A class teacher can only choose their own class, which
+     is preselected.
+   - **Students** — pick individual children from the selected classes, and **only those children's
+     parents** are told.
+3. **Also send an SMS** — off by default. Parents **always** get a push notification; the SMS option
+   texts them as well, and costs money for each recipient, so leave it off unless the notice is
+   urgent.
+
+**Post Announcement** asks you to confirm first, naming the audience (for example "the parents of 2
+classes"). Parents are sent a push notification when it is posted.
+
+## Finding and removing announcements
+
+The Notices tab lists what you've posted and filters by **All**, **School-wide**, **Classes** and
+**Students**. Pull down to refresh; the list loads more as you scroll. The trash icon deletes an
+announcement after a confirmation — a deleted notice is removed, so only delete one you posted by mistake.
+
+## What parents see
+
+Parents see a red badge on the bell for notices they haven't opened, and the full list under
+**Announcements**. Unread ones are bold. See [The KinderCare Parent App](/docs/kindercare-parent-app).
+
+## Related
+
+- [Writing Reports](/docs/kindercare-staff-reports)
+- [Getting Started with the KinderCare Staff App](/docs/kindercare-staff-getting-started)
+- [The KinderCare Parent App](/docs/kindercare-parent-app)

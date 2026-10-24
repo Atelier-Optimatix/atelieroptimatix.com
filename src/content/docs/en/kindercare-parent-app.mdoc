@@ -1,0 +1,99 @@
+---
+title: The KinderCare Parent App
+description: What parents see — observations, the child's profile and reports, calendar, themes, payments and announcements — and how one login handles more than one child.
+product: kindercare
+section: For parents
+order: 10
+roles:
+  - parent
+sourcePaths:
+  - kinder_care_parent/lib/screens/home_screen.dart
+  - kinder_care_parent/lib/screens/activities_screen.dart
+  - kinder_care_parent/lib/screens/theme_plans_screen.dart
+  - kinder_care_parent/lib/screens/switch_account_screen.dart
+  - kinder_care_parent/lib/screens/add_child_screen.dart
+  - kinder_care_parent/lib/screens/account_screen.dart
+  - kinder_care_parent/lib/screens/announcements_screen.dart
+  - kinder_care_parent/lib/screens/student_profile_screen.dart
+  - kinder_care_shared/lib/src/student_profile/student_profile_page.dart
+  - kinder_care_parent/lib/screens/payment/payment_screen.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## The five tabs
+
+- **Observations** — what staff recorded about your child, usually with photos.
+- **Student** — your child's profile, with **Details**, **Attendance** and **Reports** tabs.
+- **Calendar** — what's coming up.
+- **Themes** — the theme plans the setting is working through.
+- **Payments** — your payment records.
+
+The bell icon at the top of each screen opens **Announcements** from the school. A red badge counts
+the ones you haven't opened yet (it shows **9+** past nine).
+
+{% callout type="note" %}
+Staff call observations **activities** in their own app. If a teacher refers to "the activity I
+added", that's the same thing you see under **Observations**.
+{% /callout %}
+
+## Finding a particular observation
+
+Observations filter by **growth milestone**, **activity type** and **date**, with **Clear** to reset
+them. The list loads more as you scroll to the bottom. The growth-milestone filter is the useful one when you want to see progress in a single area
+over time rather than reading the feed day by day.
+
+## Your child's profile
+
+The **Student** tab is the same profile page the teacher sees, with three tabs:
+
+- **Details** — your child's information, with allergies and medicine highlighted.
+- **Attendance** — a calendar by month showing days present, working days and an attendance
+  percentage.
+- **Reports** — the written reports your child's teacher has **published**. Drafts are never shown.
+
+You can update your **mobile number**, **email** and **address**, and change your child's **photo**
+(use the pencil, then **Save Changes**). Everything else is fixed by the school; ask the teacher or
+office if it is wrong.
+
+## Payments
+
+The Payments tab lists your payment records and takes you out to the payment page when something is
+due. If it says no payment records were found, the setting hasn't raised anything against your
+account — it isn't a sign the app failed to load them.
+
+## More than one child, or more than one parent
+
+**One login can hold several children at the same school.** Tap your child's initial or photo at the
+top of the screen to see the children on the account, tap one to **switch child**, or choose
+**Manage children & accounts**. You'll find the same screen under **Account → Switch child**.
+
+On the **Switch child** screen:
+
+- **Children on this account** lists each child with their class; the one you are viewing is
+  ticked. Switching reloads every tab for that child, so nothing from the previous child lingers.
+- **Add another child** asks for the child's **Student ID**, then **Send code**: a code goes to the
+  phone number or email the school has on file for that child. Enter it and tap **Add child**. Only
+  children at the *same school* as this account can be added.
+- With more than one child, the **⋮** menu offers **Remove from account**. A child shown as "No
+  longer on the school's records" can't be switched to.
+
+A child at a **different school** needs a separate parent account. Those appear under **Other parent
+accounts**; **Sign in to a different parent account** adds one. Switching to another account signs
+you out of the current one, and accounts are saved **on the device**:
+
+- A new phone starts with no saved accounts. That's expected — sign in once and it's saved again.
+- The ✕ beside a saved account takes it off *that device only*. The account itself still exists,
+  and you can sign back in with it.
+
+## Logging out and deleting your account
+
+**Account → Log out** signs you out. Under **Danger zone**, **Delete account** permanently removes
+your login and signs you out; it asks you to confirm and can't be undone.
+
+## Related
+
+- [Recording Activities](/docs/kindercare-staff-activities)
+- [Sending Announcements](/docs/kindercare-staff-announcements)
+- [Getting Started with the KinderCare Staff App](/docs/kindercare-staff-getting-started)
+- [Registering as a Parent](/docs/shared-parent-registration)

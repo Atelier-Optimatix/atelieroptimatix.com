@@ -1,0 +1,104 @@
+---
+title: Getting Started with the KinderCare Staff App
+description: The five tabs of the teacher app, enrolling a child, the student profile, and putting events on the calendar.
+product: kindercare
+section: Getting started
+order: 10
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/home_screen.dart
+  - kinder-care-fe/lib/screens/students_screen.dart
+  - kinder-care-fe/lib/screens/calendar_screen.dart
+  - kinder-care-fe/lib/screens/add_student_screen.dart
+  - kinder-care-fe/lib/screens/account_settings_screen.dart
+  - kinder-care-fe/lib/screens/student_profile_screen.dart
+  - kinder-care-shared/lib/src/student_profile/student_profile_page.dart
+  - kinder-care-shared/lib/src/student_profile/profile_permissions.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## The five tabs
+
+The KinderCare staff app is deliberately small. Everything lives behind five tabs along the bottom:
+
+- **Activities** — what you record about the children through the day.
+- **Students** — the children in your class.
+- **Calendar** — events for your class.
+- **Reports** — the written reports that go to parents.
+- **Notices** — announcements to parents. See [Sending Announcements](/docs/kindercare-staff-announcements).
+
+There's no side drawer and no separate admin area to go looking for. If something isn't on one of
+these five tabs, it isn't in this app.
+
+{% callout type="note" %}
+This is the teacher's app. Parents have a **separate** app with its own tabs — see
+[The KinderCare Parent App](/docs/kindercare-parent-app). The two show much of the same information,
+so it helps to know which one someone is describing before troubleshooting with them.
+{% /callout %}
+
+## Enrolling a child
+
+**Students → Add Student** collects the child's details in grouped sections — personal information
+(full name, student ID, date of birth), academic information (class, gender), contact information
+(address, mobile number, email, parent/guardian), and additional information (nationality, religion,
+RFID, allergies and medicine). You can attach a photo at the same time, taken with the **camera** or
+picked from the **gallery**. Full name, student ID and class are required.
+
+## The Students tab
+
+The Students tab shows your class as a **grid** or a **list** — the button at the top right switches
+between them. **Search by Name** narrows it down, which is usually faster than scrolling once a
+class fills up. Each child also carries a badge showing whether their attendance has been marked
+**today**; if the badge is missing, the attendance data may simply not have loaded, and the rest of
+the app still works.
+
+If you have no class assigned yet, the tab asks you to choose one rather than showing an empty list.
+
+## A child's profile
+
+Tap a child to open their profile. It is the same page parents see in their app, so the wording
+matches on both sides. It has two tabs:
+
+- **Details** — personal and contact information, the school's student ID and class, and who last
+  updated the record and when. **Allergies and medicine** are shown in a highlighted red card so
+  they are hard to miss.
+- **Attendance** — a month-by-month calendar for the child with **Days Present**, **Working Days**
+  and an **Attendance** percentage. Move between months with the calendar arrows.
+
+Use the pencil (**Edit profile**) to change details and **Save Changes** when you are done; the
+camera button changes the child's photo. Staff can edit every field apart from the **student ID**,
+**class** and **Emergency Contact**, which are display-only in the app. (Parents can edit only
+their phone, email, address and the photo.)
+
+{% callout type="note" %}
+If a save fails, the app shows the reason it was given rather than a generic error, so read the
+message before retrying — it usually names the field that was rejected.
+{% /callout %}
+
+## The calendar
+
+The Calendar tab is editable, not just a view: you can **add**, **edit** and **delete** events.
+It loads the whole year's events, so you can page back and forward through the months without
+waiting. Deleting asks for confirmation first, since parents may already have seen the event in
+their app.
+
+## Staying signed in
+
+The app keeps you signed in across restarts, so you don't log in every morning. You only need to
+sign in again after you log out.
+
+## Account settings
+
+**Account Settings** is intentionally minimal. Alongside your account details it offers **Request
+Account Deletion** — a request to the school rather than something that happens immediately, so
+submitting it does not sign you out or remove your records on the spot.
+
+## Related
+
+- [Recording Activities](/docs/kindercare-staff-activities)
+- [Writing Reports](/docs/kindercare-staff-reports)
+- [Sending Announcements](/docs/kindercare-staff-announcements)
+- [The KinderCare Parent App](/docs/kindercare-parent-app)

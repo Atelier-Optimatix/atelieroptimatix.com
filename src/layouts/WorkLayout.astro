@@ -8,7 +8,7 @@ import Share from "@/components/primitives/Share.astro";
 import Title from "@/components/primitives/Title.astro";
 import { loadVideo } from "@/lib/asset-helpers";
 import { Icon } from "astro-icon/components";
-import { defaultLocale } from "site";
+import { defaultLocale, siteTitle } from "site";
 import BaseLayout from "./BaseLayout.astro";
 
 type Props = {
@@ -46,7 +46,12 @@ const videoSrc = frontmatter.data?.video
 	: null;
 ---
 
-<BaseLayout>
+<BaseLayout
+	seo={{
+		title: `${frontmatter.data.title} | ${siteTitle}`,
+		description: frontmatter.data.description,
+	}}
+>
 	<section class="py-32 md:py-56">
 		<Container>
 			<div class="text-center">

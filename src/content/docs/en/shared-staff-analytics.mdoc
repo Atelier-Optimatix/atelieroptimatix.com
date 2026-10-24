@@ -1,0 +1,94 @@
+---
+title: Reading the Analytics Section
+description: What each of the analytics pages answers, how its figures are calculated, and why some of them are admin-only.
+product: educonnect
+section: Guides
+order: 80
+roles:
+  - admin
+  - staff
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/analytics_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/analytics/
+lastUpdateDate: 2026-10-21
+screenshotIds:
+  - "staff-analytics-overview"
+hidden: false
+---
+
+## Where to find it
+
+**Analytics** in the side drawer. It isn't a single dashboard — it's seven pages, each grouped around
+one kind of decision rather than around one screen of the app:
+
+| Page | What it's for |
+| --- | --- |
+| **Statistics** | Admissions, leavers and roll counts, counted from the student records. Listed first. |
+| **Overview** | The starting point — the headline picture across the institute. |
+| **Students & Risk** | Which individual students need attention. |
+| **Academics** | Exam and assessment performance. |
+| **Attendance** | Attendance together with punctuality. |
+| **Payments** | Fees charged against fees actually collected. |
+| **Operations** | How the institute is running day to day. |
+
+**Payments** and **Operations** are admin-only. If you're a teacher or coordinator, those two won't
+appear in your Analytics group — that's the intended access split, not a missing page.
+
+## School Statistics
+
+**Analytics → Statistics** counts students rather than scoring them. Choose a **Range** (*Last N years*)
+and you get headline cards: **Students on roll**, **Admissions** and **Leavers** for the current year
+(1 January to today), **Net change**, **Classes**, **Average class size**, **Teachers** and **Seats
+filled**. Below them:
+
+- **Admissions, leavers & students on roll** by **Month**, **Term** or **Year**, as a chart and a table
+  with a total row. *Admissions* are students whose join date falls in the period; *leavers* are
+  students marked as left with a leaving date in the period; *on roll* is students who had joined
+  and not yet left on the last day of the period.
+- **Students by grade** — students on the roll today by the grade of their current class, split by
+  recorded gender (Male, Female, Not recorded) with classes and seats.
+
+Students with no join date on record are not counted as admissions and are counted on the roll from
+the start of the range; the page says how many there are. Term view needs term dates for each year;
+years without them are listed and show no terms. See
+[Set Holidays, Terms and Working Days](/docs/educonnect-tutorial-holidays-and-terms).
+
+## How the Operations figures are worked out
+
+Each figure on **Operations** has an info icon (hover, or tap on a phone) that explains it. In summary:
+
+- **Class stability** starts each class at 100 and subtracts for attendance volatility over 60 days
+  (40%), days its teacher was absent in the last 90 days (30%), substitutions per week (20%) and how
+  much attendance drops when the teacher is away (10%). Higher is steadier.
+- **Ledger mismatch** compares, for each closed day in the last 30, the net total saved at day close
+  with the net recomputed from that day's ledger. A difference over 0.01 counts.
+- **Data quality** counts active students (not alumni or left) with no RFID or *N/A*, active students
+  with no tap in 30 days, card numbers tapped in 30 days that belong to no student, and days with
+  taps but no daily attendance summary.
+- **Voids and refunds** are measured against payments in the same 30 days; more than 5% of either is
+  flagged.
+
+## Narrowing to one class
+
+Most pages accept a class filter, and the class you pick is carried in the page's own address. That
+means a filtered view can be bookmarked or pasted to a colleague and it will open on the same class
+for them — provided they have access to that page in the first place.
+
+## Old links still work
+
+The analytics section was reorganised from a single six-tab dashboard into these separate pages.
+Older bookmarks and saved links still resolve:
+
+- Numbered tab links (the original `?tab=` style) land on the matching page.
+- The retired page names redirect to their new homes — *Exams* → **Academics**, *Financial* →
+  **Payments**, *Punctuality* → **Attendance** (punctuality was merged in), and *Intelligence* →
+  **Students & Risk**.
+
+In every case the class you had selected is carried across, so you don't lose your filter. There's
+no need to hunt down and update old links.
+
+## Related
+
+- [Taking Attendance as Staff](/docs/shared-staff-attendance-overview)
+- [Accounting Overview](/docs/shared-staff-accounting-overview)
+- [Exam Results](/docs/shared-staff-exam-results)

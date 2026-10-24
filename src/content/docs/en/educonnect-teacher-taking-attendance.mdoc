@@ -1,0 +1,71 @@
+---
+title: "Teachers: Mark Your Class's Attendance"
+description: The daily register — where the attendance column is, how to mark and unmark a student, and how it interacts with card scans.
+product: educonnect
+section: For teachers
+order: 10
+roles:
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/students_in_class.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_list_desktop.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_list_mobile.dart
+hidden: false
+---
+
+This is the one task you will do every morning.
+
+## Where it is
+
+**My Class → Students** in the side drawer.
+
+The attendance column on that roster **only appears for teacher accounts**. If you are looking at
+the same class as an admin, or through **Students → Classes** rather than **My Class**, the column
+is not there — that is why an administrator cannot see what you are describing.
+
+## Marking a student present
+
+1. Open **My Class → Students**.
+2. Find the student in the roster.
+3. Select the attendance control on their row. It marks them immediately — there is no separate save
+   step, and no confirmation.
+
+Work down the list. The control shows each student's current state, so a glance down the column
+tells you who is still unmarked.
+
+## Unmarking
+
+Selecting the control again on an already-marked student asks **Are you sure you want to unmark
+attendance?** and, on confirming, removes the record. Use this for a genuine mistake, not for
+marking someone absent — see below.
+
+## Present, absent and unmarked
+
+There are only two states stored: a student **has** an attendance record for today, or they do not.
+
+- **Marked** = present.
+- **Unmarked** = not recorded present. That covers absent, late-and-not-yet-arrived, and
+  you-haven't-got-to-them-yet, and the reports cannot tell those apart.
+
+So the register is only meaningful once you have been through the whole class. Finish the list.
+
+## Cards and scans
+
+Where students carry RFID cards, scanning at the gate creates the same record you would create by
+hand — a student who has already scanned in will show as marked before you start. You are topping up
+the ones the gate missed, not duplicating it.
+
+A student with no card number on their record can never be marked by scanning, only by you. If
+someone is permanently missing from the scans, their record probably has no RFID — see
+[Add a Student](/docs/educonnect-tutorial-add-a-student).
+
+## If a student is missing from the roster
+
+They are enrolled in a different class, or not enrolled at all. Adding them is an office task, not a
+teacher one — ask for them to be added to your class rather than creating a duplicate record.
+
+## Related
+
+- [Reading Your Class's Attendance](/docs/educonnect-teacher-class-attendance)
+- [Taking Attendance as Staff](/docs/shared-staff-attendance-overview)

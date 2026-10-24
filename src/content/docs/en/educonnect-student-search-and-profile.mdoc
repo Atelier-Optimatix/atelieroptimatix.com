@@ -1,0 +1,98 @@
+---
+title: Student Search, Profiles and Left Students
+description: Searching and filtering every student, reading the profile (including the day-by-day term attendance grid and permanent record), and what happens when a student leaves.
+product: educonnect
+section: Guides
+order: 60
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_search.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/left_students_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/student_analytics_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_term_attendance_grid.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_permanent_record_section.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/mark_left_dialog.dart
+  - attendance-web-app/edu-frontend/lib/utils/left_student_fields.dart
+screenshotIds:
+  - "staff-student-search"
+  - "staff-student-profile-term-grid"
+  - "staff-left-students"
+hidden: false
+---
+
+## Student Search
+
+**Students → Student Search** lists every student in a table you can search, filter and sort. It is
+built for questions like "which students have no guardian phone number?" as much as for finding one
+person.
+
+- **Search** takes a name, ID, class, guardian or phone number. Use **Search By** to restrict it to
+  one field, for example RFID or Address; *All fields* is the default.
+- **Class** and **Gender** filters narrow the list.
+- **Missing** shows students with a blank value in one field: **Mobile**, **Parent / Guardian**,
+  **Address**, **Email**, **Date of Birth**, **Religion**, **Nationality** or **RFID**. It is the quickest
+  way to find records that need fixing, for example before issuing
+  [ID cards](/docs/educonnect-tutorial-id-cards).
+- **Reset Filters** appears once any filter is active.
+- Click a column header to sort. **Columns** hides or shows columns, and **Compact** / **Comfortable**
+  changes how tightly rows are packed.
+
+*No students match your search.* means exactly that; clear a filter before assuming the student is
+missing. To pull the same data out as a file, see [List Reports](/docs/educonnect-list-reports).
+
+## The student profile
+
+Select a student to open their profile. The header stays in place while you scroll through the
+sections, and after you edit and save you stay on the profile with the saved values showing. Student
+lists across the app, including the mobile list, show each student's photo where there is one.
+
+Attendance appears in two forms:
+
+- **Term Attendance** — the term's attendance summary.
+- **Attendance by Day** — a calendar grid for the term you pick from the **Term 1, Term 2…**
+  dropdown, one cell per day, coloured **Present**, **Absent**, **Not a school day** or **Upcoming**.
+  Below it, a chip counts school days attended, for example *18 / 20 school days attended (90.0%)*,
+  or says *No school days held yet*.
+
+Not-a-school-day cells come from your [Calendar](/docs/educonnect-tutorial-holidays-and-terms)
+(weekends, holidays and days outside term), so an absence you see on a holiday means the holiday
+isn't configured.
+
+Further down are exam results, payments, certificates, siblings and previous classes. Students with a
+card on record also show an **ID Card** section (see
+[Manage and Track ID Cards](/docs/educonnect-tutorial-id-cards)).
+
+### Permanent Record
+
+If your institute has turned it on, the **Permanent Record** section holds dated notes in the
+categories **Conduct**, **Academic**, **Health** and **Other**. Select **Add entry**, choose a category
+and date, write the note, and save. Each entry shows who added it (and who edited it).
+
+It is off until an administrator switches on **Enable the permanent record section** in
+**Administration → Settings**. Only teachers and administrators can read it, never parents. Teachers can
+add and edit entries for their own class; only administrators can delete. Turning the setting off
+hides the section but keeps the entries.
+
+## When a student leaves
+
+Someone with the *Mark students as left school* permission (set in Access Control) takes a student off the roll
+from the student's edit page with the **Mark as left** button. The dialog asks for the **Date left**, a **Reason** and an optional
+**Note**. Reasons are:
+*Finished school*, *Moved to a different school*, *Relocated abroad*, *Financial reasons*, *Family
+reasons* and *Other*. You will see *Student marked as left school*.
+
+**Students → Left Students** lists everyone marked as left, with their ID, last attended class, date
+joined, date left and reason. Search by name, student ID or class, and sort by any of those columns.
+A student in the deleted records can be moved on to this list with **Move to left students**.
+Deleted students keep a profile that still loads from those records.
+
+Left students are not counted in the roll or in admissions figures; see
+[School Statistics](/docs/shared-staff-analytics).
+
+## Related
+
+- [Add a Student](/docs/educonnect-tutorial-add-a-student)
+- [Teachers: Looking Up a Student](/docs/educonnect-teacher-students-and-analytics)

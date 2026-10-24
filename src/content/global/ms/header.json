@@ -20,6 +20,10 @@
 			"link": "/news"
 		},
 		{
+			"title": "Panduan Pengguna",
+			"link": "/docs"
+		},
+		{
 			"title": "Hubungi",
 			"link": "/contact"
 		}

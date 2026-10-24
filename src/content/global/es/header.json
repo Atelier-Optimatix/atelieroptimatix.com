@@ -20,6 +20,10 @@
 			"link": "/news"
 		},
 		{
+			"title": "Guía de Usuario",
+			"link": "/docs"
+		},
+		{
 			"title": "Contacto",
 			"link": "/contact"
 		}

@@ -1,0 +1,44 @@
+---
+title: Logging In and Staying Logged In
+description: How login differs for staff vs. parents, and what to do if you're unexpectedly logged out.
+product: shared
+section: Getting started
+order: 0
+roles:
+  - staff
+  - parent
+  - applicant
+sourcePaths:
+  - attendance-web-app/backend/config/product.js
+  - educonnect-public/edu-frontend/lib/pages/parent_login_page.dart
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Two different login systems
+
+Staff and parents use different login methods, even though they're on related apps:
+
+- **Staff** (the school dashboard) log in with a username and password, and their session is kept
+  alive automatically in the background for as long as they keep using the dashboard.
+- **Parents** (the parent portal) verify with a one-time code (OTP) sent to their phone/email the
+  first time, then log in with a password afterwards — see
+  [Getting Started as a Parent](/docs/shared-parent-getting-started).
+- **Admissions applicants** also use an OTP-based login, separate from both of the above, scoped
+  to that institute's admissions process.
+
+## Why you might get logged out
+
+Session length differs by institute type, and refreshing your session happens automatically in
+the background — you shouldn't normally need to log in again mid-session. If you *are* logged out
+unexpectedly:
+
+- On the staff dashboard, this is usually a genuinely expired session — log back in normally.
+- On the parent portal, an expired session can sometimes show as a generic error rather than a
+  clear "please log in again" message. If something looks broken rather than showing a login
+  prompt, try logging in again directly before assuming a feature is broken.
+
+## Related
+
+- [Institute Branding](/docs/shared-institute-branding) — why the login page can look different
+  between institutes.

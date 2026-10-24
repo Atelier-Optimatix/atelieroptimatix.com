@@ -1,0 +1,75 @@
+---
+title: Closing Out a Term
+description: The end-of-term sequence — results in, reports published, books reconciled, and the calendar rolled forward.
+product: educonnect
+section: Advanced workflows
+order: 40
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/term_report_screen.dart
+  - attendance-web-app/edu-frontend/lib/screens/accounting/reconciliation_page.dart
+hidden: false
+---
+
+End of term touches exams, reports, accounting and the calendar. The order matters because each step
+consumes the one before it.
+
+## 1. Finish the exams
+
+All results entered and saved, for every class and subject.
+
+- [Enter Exam Results](/docs/educonnect-tutorial-enter-exam-results)
+- [Upload Results from a Spreadsheet](/docs/educonnect-tutorial-upload-exam-results)
+
+Clear the queue in **Exams → Result Changes** before moving on. An unapproved change request is a
+mark that is about to move — and progress reports are built from marks.
+
+## 2. Check the rankings
+
+**Exams → Rankings**. This is a sanity check as much as an output: a ranking that looks wrong usually
+means a subject is missing marks for part of a class, or an exam was created with the wrong
+**Exam Type** — only TERM exams feed term rankings. See
+[Create an Exam](/docs/educonnect-tutorial-create-an-exam).
+
+## 3. Progress reports
+
+Teachers fill them in, then they are published as a batch.
+
+- [Write and Publish Progress Reports](/docs/educonnect-tutorial-progress-reports)
+- [Teachers: Write Progress Reports](/docs/educonnect-teacher-progress-reports)
+
+Publish once the whole cohort is complete. Publishing is what parents see.
+
+## 4. Attendance
+
+Before quoting term attendance to anyone, confirm the calendar was right — unconfigured holidays and
+term breaks depress every percentage. See
+[Set Holidays, Terms and Working Days](/docs/educonnect-tutorial-holidays-and-terms).
+
+Then take the term views from **Attendance → Reports** and the per-class term summaries.
+
+## 5. Close the books
+
+1. Every day of the term [closed](/docs/educonnect-tutorial-day-close).
+2. [Reconciliation](/docs/educonnect-tutorial-reconciliation) worked until every tab is zero, or
+   every remaining row is one you have deliberately kept.
+3. Invoices issued from **Accounting → Invoices**.
+4. Expiring [discount grants](/docs/educonnect-tutorial-discounts) reviewed — scholarships that
+   ended, siblings who have left.
+
+Reconcile before issuing invoices, not after.
+
+## 6. Roll the calendar forward
+
+- Next term's dates and holidays in.
+- Next term's [fee schedules](/docs/educonnect-tutorial-fee-setup) — **Duplicate** the current ones
+  and change the label, amount and due date.
+- Timetable changes, if the shape of the week is changing —
+  [regenerate](/docs/educonnect-tutorial-generate-timetable) in **Preview only** first.
+
+## Related
+
+- [Accounting Workflow](/docs/shared-staff-accounting-overview)

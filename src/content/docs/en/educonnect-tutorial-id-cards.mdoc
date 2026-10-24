@@ -1,0 +1,125 @@
+---
+title: "Tutorial: Manage and Track ID Cards"
+description: The blank card pool, card designs, replacing a lost card, and tracking every student's card from not printed to handed over.
+product: educonnect
+section: Tutorials
+order: 190
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/settings/id_cards_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_cards_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_card_widgets.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_card_quick_add.dart
+  - attendance-web-app/edu-frontend/lib/api_services/student_id_card.dart
+  - attendance-web-app/backend/services/studentIdCardService.js
+screenshotIds:
+  - "tutorial-id-cards"
+  - "tutorial-student-id-cards"
+hidden: false
+---
+
+ID cards are also attendance cards — the number on the card is the **RFID** on the person's record,
+which is what makes their scans register. So a lost card is an attendance problem, not just an
+identity one.
+
+There are two screens. **Administration → ID Cards** manages the blank card pool, designs and lost-card
+replacement. **Students → Student ID Cards** records where each student's card is in its life. They
+need separate access.
+
+**You need:** access to **Administration → ID Cards** for the first part, and to Student ID Cards for
+[Tracking student cards](#tracking-student-cards).
+
+## The blank card pool
+
+The pool is the stock of unissued cards. Add cards to it as you receive them from your supplier; the
+screen tells you what is left. Issuing draws from this pool, so an empty pool is why issuing fails.
+
+## Card designs
+
+Under **Card designs**, upload your institute's design as a PDF — separately for **Student card**
+and **Teacher card**. This is held for reference, so whoever prints has the right artwork; the
+printed card itself is produced from it.
+
+**Upload PDF** adds one, **Replace** swaps it, and removal is immediate (**Card design removed**).
+
+## Replacing a lost card
+
+1. Open **Administration → ID Cards** and choose **Report a lost card**.
+2. Pick **Student** or **Teacher**.
+3. Enter the **Student ID** or **Teacher ID**.
+4. Select **Issue Temporary Card**.
+5. **Print** the card.
+
+The temporary card carries a new number, and that number becomes the person's active RFID. Their old
+card stops working — which is the point, since it is presumably in someone else's hands.
+
+## If someone's attendance stops working
+
+Check their card before anything else. The two usual causes are a lost card that was never reported,
+so scans are going to a dead number, and a record that never had an RFID filled in at all — see
+[Add a Student](/docs/educonnect-tutorial-add-a-student).
+
+## Tracking student cards
+
+**Students → Student ID Cards** keeps a record of every student's card: whether it has been printed,
+whether it has been handed over, and what happened if it was lost or damaged. Changing a card's status
+needs the separate manage permission; without it the list is read-only.
+
+### The list
+
+Every student appears with their **Name**, **Student ID**, **Class**, **RFID**, **Status**, **Reason**
+and **Updated** date. Column headers sort. Use the filters to narrow it:
+
+- **Search name, student ID or RFID**
+- **Class** (*All classes* by default)
+- **Status**, showing how many students are in each state; **Reset** clears the filters.
+
+The statuses are **Not printed**, **Printed**, **Distributed**, **Lost**, **Damaged**, **Returned**,
+**Replaced** and **Other**. A student with no card recorded yet shows as *Not printed*.
+
+The export menu on the page downloads the filtered list, including the Printed and Handed over dates
+and the reason a card has not been printed.
+
+### Why a card isn't printed
+
+If a student's card is still *Not printed* and their record is incomplete, the **Reason** column shows
+in red, for example *Missing photo, address*. A card needs the student's **photo**, **address** and
+**phone number** on file. Open the student's profile, add what is missing, and the reason clears. A
+blank, *N/A* or absent value counts as missing.
+
+### Mark cards printed or handed over
+
+1. Tick the students you want, or tick the header to select the whole filtered list.
+2. Use **Mark printed** or **Mark distributed**; the button shows how many are selected, for example
+   *Mark printed (12)*. Both buttons are at the top of the page.
+
+For one student, use the menu on their row (**Change status**) to pick any status. A note is
+required for **Other** (*Add a note saying what happened.*) and optional for the rest. When the
+status is **Lost** or **Damaged** you can also choose **Start a replacement card**, which adds a new
+*Not printed* card to the list.
+
+### Quick add at the handover desk
+
+**Quick add** is for handing out cards one after another:
+
+1. Select **Quick add**.
+2. Type or scan the **Student ID** and the card's **RFID**, then **Verify**.
+3. Check the student shown. The screen warns you if the card is already linked to this student, if it
+   will replace their current card, or if the RFID cannot be used because another record holds it.
+4. **Confirm** records the card as linked and handed over.
+
+Cards added this way are listed under **Added this session**.
+
+### On the student's profile
+
+A student's profile has an **ID Card** section showing the card number (RFID), when it was printed
+and handed over, any note, and a **History** of every change. **Update** there changes the status
+the same way as the list does.
+
+## Related
+
+- [Student Search, Profiles and Left Students](/docs/educonnect-student-search-and-profile)
+- [Mark Your Class's Attendance](/docs/educonnect-teacher-taking-attendance)

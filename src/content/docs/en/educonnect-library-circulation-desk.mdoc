@@ -1,0 +1,84 @@
+---
+title: "Tutorial: Use the Circulation Desk"
+description: Lending, renewing and returning books with an ID card and a barcode scanner, and handling overdue loans.
+product: educonnect
+section: Tutorials
+order: 230
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/circulation_desk_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/loans_page.dart
+  - attendance-web-app/backend/services/library/circulationService.js
+screenshotIds:
+  - "library-circulation-desk"
+  - "library-loans"
+hidden: false
+---
+
+The desk is where books go out and come back. It listens for scans all the time, so you rarely need
+to click.
+
+**You need:** a role with **Circulation desk**, **Check out & renew** and **Check in returns**,
+normally the librarian. Open **Library → Circulation Desk**.
+
+**Hardware:** a USB or Bluetooth barcode scanner set to Code 128 or Code 39 with an Enter suffix, and
+a USB RFID reader in keyboard mode that reads the same cards as your gate readers. Without either,
+use the camera: **Scan with camera** works on a phone, a tablet or a laptop webcam.
+
+## Lend a book
+
+1. **Tap the borrower's card.** The screen shows their name, their books on loan with due dates,
+   holds and fines, and whether they may borrow another.
+2. **Scan each book's barcode.** Each book is lent with the due date from the loan rules.
+3. Select **Done**, or wait. The borrower closes by itself after the idle time in Library Settings.
+
+A due date that falls on a closed day moves to the next school day. A double scan of the same book
+is harmless.
+
+If the card has no match, or a scan matches more than one thing, the desk says so
+(**That scan matches more than one thing**). Look the person up by name instead. If **Lend only on a
+card tap** is on, that needs an override.
+
+## Return a book
+
+Scan the book. You do not need to open the borrower first. If the book is late, the fine is worked
+out and, when fines are on, charged at that moment. A second scan of an already returned book does
+nothing. If the book has someone waiting, it goes to the hold shelf: see [Holds](/docs/educonnect-library-holds).
+
+**Damaged?** On a return, record damage to charge for it.
+
+## Renew
+
+Renew from the borrower's list. A book with someone waiting for it is not renewed, and renewals stop
+at the limit in the loan rules.
+
+## When a book is on loan to someone else
+
+Scanning it for a new borrower shows **This book is on loan to someone else**. Choose **Check in and
+lend** if it has really come back.
+
+## Overrides
+
+A borrower at their limit, blocked, or owing too much cannot borrow. Someone with **Override** can
+lend anyway: you must give a reason, and the desk shows **Override on: reason** until you finish.
+Every override is recorded.
+
+## Loans & Overdue
+
+**Library → Loans & Overdue** has three lists: **All on loan**, **Overdue**, and **Returned today**.
+Late books show the fine they would carry if returned today. That is a projection and nothing is
+charged until the book comes back.
+
+## Declare a book lost
+
+Open the loan from the borrower's page and declare it lost. A student is charged the copy's price,
+or the title's price, or the default replacement cost in settings, plus the lost processing fee. If
+the book later turns up and is checked in, its unpaid fine is voided.
+
+## Related
+
+- [Borrowers](/docs/educonnect-library-borrowers)
+- [Fines](/docs/educonnect-library-fines)

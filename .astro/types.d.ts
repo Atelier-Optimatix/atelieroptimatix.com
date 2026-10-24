@@ -157,6 +157,456 @@ declare module 'astro:content' {
   data: any
 } & { render(): Render[".mdoc"] };
 };
+"docs": {
+"en/admissions-applying.mdoc": {
+	id: "en/admissions-applying.mdoc";
+  slug: "en/admissions-applying";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/admissions-paying-at-the-office.mdoc": {
+	id: "en/admissions-paying-at-the-office.mdoc";
+  slug: "en/admissions-paying-at-the-office";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/admissions-payment.mdoc": {
+	id: "en/admissions-payment.mdoc";
+  slug: "en/admissions-payment";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/admissions-prospectus.mdoc": {
+	id: "en/admissions-prospectus.mdoc";
+  slug: "en/admissions-prospectus";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/admissions-signing-in.mdoc": {
+	id: "en/admissions-signing-in.mdoc";
+  slug: "en/admissions-signing-in";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-flow-admissions-pipeline.mdoc": {
+	id: "en/educonnect-flow-admissions-pipeline.mdoc";
+  slug: "en/educonnect-flow-admissions-pipeline";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-flow-substitution-planning.mdoc": {
+	id: "en/educonnect-flow-substitution-planning.mdoc";
+  slug: "en/educonnect-flow-substitution-planning";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-flow-term-close.mdoc": {
+	id: "en/educonnect-flow-term-close.mdoc";
+  slug: "en/educonnect-flow-term-close";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-navigating-the-dashboard.mdoc": {
+	id: "en/educonnect-navigating-the-dashboard.mdoc";
+  slug: "en/educonnect-navigating-the-dashboard";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-overview.mdoc": {
+	id: "en/educonnect-overview.mdoc";
+  slug: "en/educonnect-overview";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-setting-up-a-new-institute.mdoc": {
+	id: "en/educonnect-setting-up-a-new-institute.mdoc";
+  slug: "en/educonnect-setting-up-a-new-institute";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-teacher-class-attendance.mdoc": {
+	id: "en/educonnect-teacher-class-attendance.mdoc";
+  slug: "en/educonnect-teacher-class-attendance";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-teacher-getting-started.mdoc": {
+	id: "en/educonnect-teacher-getting-started.mdoc";
+  slug: "en/educonnect-teacher-getting-started";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-teacher-my-attendance.mdoc": {
+	id: "en/educonnect-teacher-my-attendance.mdoc";
+  slug: "en/educonnect-teacher-my-attendance";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-teacher-my-profile.mdoc": {
+	id: "en/educonnect-teacher-my-profile.mdoc";
+  slug: "en/educonnect-teacher-my-profile";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-teacher-my-timetable.mdoc": {
+	id: "en/educonnect-teacher-my-timetable.mdoc";
+  slug: "en/educonnect-teacher-my-timetable";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-teacher-progress-reports.mdoc": {
+	id: "en/educonnect-teacher-progress-reports.mdoc";
+  slug: "en/educonnect-teacher-progress-reports";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-teacher-students-and-analytics.mdoc": {
+	id: "en/educonnect-teacher-students-and-analytics.mdoc";
+  slug: "en/educonnect-teacher-students-and-analytics";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-teacher-substitution.mdoc": {
+	id: "en/educonnect-teacher-substitution.mdoc";
+  slug: "en/educonnect-teacher-substitution";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-teacher-taking-attendance.mdoc": {
+	id: "en/educonnect-teacher-taking-attendance.mdoc";
+  slug: "en/educonnect-teacher-taking-attendance";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-add-a-class.mdoc": {
+	id: "en/educonnect-tutorial-add-a-class.mdoc";
+  slug: "en/educonnect-tutorial-add-a-class";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-add-a-student.mdoc": {
+	id: "en/educonnect-tutorial-add-a-student.mdoc";
+  slug: "en/educonnect-tutorial-add-a-student";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-add-a-teacher.mdoc": {
+	id: "en/educonnect-tutorial-add-a-teacher.mdoc";
+  slug: "en/educonnect-tutorial-add-a-teacher";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-bell-schedule.mdoc": {
+	id: "en/educonnect-tutorial-bell-schedule.mdoc";
+  slug: "en/educonnect-tutorial-bell-schedule";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-class-subjects.mdoc": {
+	id: "en/educonnect-tutorial-class-subjects.mdoc";
+  slug: "en/educonnect-tutorial-class-subjects";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-create-an-exam.mdoc": {
+	id: "en/educonnect-tutorial-create-an-exam.mdoc";
+  slug: "en/educonnect-tutorial-create-an-exam";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-day-close.mdoc": {
+	id: "en/educonnect-tutorial-day-close.mdoc";
+  slug: "en/educonnect-tutorial-day-close";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-discounts.mdoc": {
+	id: "en/educonnect-tutorial-discounts.mdoc";
+  slug: "en/educonnect-tutorial-discounts";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-enter-exam-results.mdoc": {
+	id: "en/educonnect-tutorial-enter-exam-results.mdoc";
+  slug: "en/educonnect-tutorial-enter-exam-results";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-fee-setup.mdoc": {
+	id: "en/educonnect-tutorial-fee-setup.mdoc";
+  slug: "en/educonnect-tutorial-fee-setup";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-generate-timetable.mdoc": {
+	id: "en/educonnect-tutorial-generate-timetable.mdoc";
+  slug: "en/educonnect-tutorial-generate-timetable";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-grade-curriculum.mdoc": {
+	id: "en/educonnect-tutorial-grade-curriculum.mdoc";
+  slug: "en/educonnect-tutorial-grade-curriculum";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-handbook.mdoc": {
+	id: "en/educonnect-tutorial-handbook.mdoc";
+  slug: "en/educonnect-tutorial-handbook";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-holidays-and-terms.mdoc": {
+	id: "en/educonnect-tutorial-holidays-and-terms.mdoc";
+  slug: "en/educonnect-tutorial-holidays-and-terms";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-id-cards.mdoc": {
+	id: "en/educonnect-tutorial-id-cards.mdoc";
+  slug: "en/educonnect-tutorial-id-cards";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-import-students.mdoc": {
+	id: "en/educonnect-tutorial-import-students.mdoc";
+  slug: "en/educonnect-tutorial-import-students";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-live-attendance.mdoc": {
+	id: "en/educonnect-tutorial-live-attendance.mdoc";
+  slug: "en/educonnect-tutorial-live-attendance";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-progress-reports.mdoc": {
+	id: "en/educonnect-tutorial-progress-reports.mdoc";
+  slug: "en/educonnect-tutorial-progress-reports";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-reconciliation.mdoc": {
+	id: "en/educonnect-tutorial-reconciliation.mdoc";
+  slug: "en/educonnect-tutorial-reconciliation";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-record-a-payment.mdoc": {
+	id: "en/educonnect-tutorial-record-a-payment.mdoc";
+  slug: "en/educonnect-tutorial-record-a-payment";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-send-messages.mdoc": {
+	id: "en/educonnect-tutorial-send-messages.mdoc";
+  slug: "en/educonnect-tutorial-send-messages";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-upload-exam-results.mdoc": {
+	id: "en/educonnect-tutorial-upload-exam-results.mdoc";
+  slug: "en/educonnect-tutorial-upload-exam-results";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-tutorial-users-and-access.mdoc": {
+	id: "en/educonnect-tutorial-users-and-access.mdoc";
+  slug: "en/educonnect-tutorial-users-and-access";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/kindercare-overview.mdoc": {
+	id: "en/kindercare-overview.mdoc";
+  slug: "en/kindercare-overview";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/kindercare-parent-app.mdoc": {
+	id: "en/kindercare-parent-app.mdoc";
+  slug: "en/kindercare-parent-app";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/kindercare-staff-activities.mdoc": {
+	id: "en/kindercare-staff-activities.mdoc";
+  slug: "en/kindercare-staff-activities";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/kindercare-staff-getting-started.mdoc": {
+	id: "en/kindercare-staff-getting-started.mdoc";
+  slug: "en/kindercare-staff-getting-started";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/kindercare-staff-reports.mdoc": {
+	id: "en/kindercare-staff-reports.mdoc";
+  slug: "en/kindercare-staff-reports";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-head-office-group-reporting.mdoc": {
+	id: "en/shared-head-office-group-reporting.mdoc";
+  slug: "en/shared-head-office-group-reporting";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-institute-branding.mdoc": {
+	id: "en/shared-institute-branding.mdoc";
+  slug: "en/shared-institute-branding";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-logging-in.mdoc": {
+	id: "en/shared-logging-in.mdoc";
+  slug: "en/shared-logging-in";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-parent-getting-started.mdoc": {
+	id: "en/shared-parent-getting-started.mdoc";
+  slug: "en/shared-parent-getting-started";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-parent-payments.mdoc": {
+	id: "en/shared-parent-payments.mdoc";
+  slug: "en/shared-parent-payments";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-parent-progress-reports.mdoc": {
+	id: "en/shared-parent-progress-reports.mdoc";
+  slug: "en/shared-parent-progress-reports";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-parent-registration.mdoc": {
+	id: "en/shared-parent-registration.mdoc";
+  slug: "en/shared-parent-registration";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-parent-student-analytics.mdoc": {
+	id: "en/shared-parent-student-analytics.mdoc";
+  slug: "en/shared-parent-student-analytics";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-accounting-overview.mdoc": {
+	id: "en/shared-staff-accounting-overview.mdoc";
+  slug: "en/shared-staff-accounting-overview";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-analytics.mdoc": {
+	id: "en/shared-staff-analytics.mdoc";
+  slug: "en/shared-staff-analytics";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-attendance-overview.mdoc": {
+	id: "en/shared-staff-attendance-overview.mdoc";
+  slug: "en/shared-staff-attendance-overview";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-exam-results.mdoc": {
+	id: "en/shared-staff-exam-results.mdoc";
+  slug: "en/shared-staff-exam-results";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-student-admissions-management.mdoc": {
+	id: "en/shared-staff-student-admissions-management.mdoc";
+  slug: "en/shared-staff-student-admissions-management";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-teacher-attendance.mdoc": {
+	id: "en/shared-staff-teacher-attendance.mdoc";
+  slug: "en/shared-staff-teacher-attendance";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-teacher-management.mdoc": {
+	id: "en/shared-staff-teacher-management.mdoc";
+  slug: "en/shared-staff-teacher-management";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+"en/shared-staff-timetable.mdoc": {
+	id: "en/shared-staff-timetable.mdoc";
+  slug: "en/shared-staff-timetable";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdoc"] };
+};
 "pages": {
 "en/about.mdoc": {
 	id: "en/about.mdoc";
@@ -175,6 +625,13 @@ declare module 'astro:content' {
 "en/contact.mdoc": {
 	id: "en/contact.mdoc";
   slug: "en/contact";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
+"en/educonnect-privacy-policy.mdoc": {
+	id: "en/educonnect-privacy-policy.mdoc";
+  slug: "en/educonnect-privacy-policy";
   body: string;
   collection: "pages";
   data: InferEntrySchema<"pages">
@@ -263,6 +720,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".mdoc"] };
+"es/educonnect-privacy-policy.mdoc": {
+	id: "es/educonnect-privacy-policy.mdoc";
+  slug: "es/educonnect-privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
 "es/homepage.mdoc": {
 	id: "es/homepage.mdoc";
   slug: "es/homepage";
@@ -347,6 +811,13 @@ declare module 'astro:content' {
   collection: "pages";
   data: InferEntrySchema<"pages">
 } & { render(): Render[".mdoc"] };
+"ms/educonnect-privacy-policy.mdoc": {
+	id: "ms/educonnect-privacy-policy.mdoc";
+  slug: "ms/educonnect-privacy-policy";
+  body: string;
+  collection: "pages";
+  data: InferEntrySchema<"pages">
+} & { render(): Render[".mdoc"] };
 "ms/homepage.mdoc": {
 	id: "ms/homepage.mdoc";
   slug: "ms/homepage";
@@ -419,6 +890,20 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".mdoc"] };
+"en/the-case-for-boring-industrial-software.mdoc": {
+	id: "en/the-case-for-boring-industrial-software.mdoc";
+  slug: "en/the-case-for-boring-industrial-software";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"en/what-a-restaurant-needs-from-an-erp.mdoc": {
+	id: "en/what-a-restaurant-needs-from-an-erp.mdoc";
+  slug: "en/what-a-restaurant-needs-from-an-erp";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
 "es/future-of-edutech.mdoc": {
 	id: "es/future-of-edutech.mdoc";
   slug: "es/future-of-edutech";
@@ -426,9 +911,37 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".mdoc"] };
+"es/the-case-for-boring-industrial-software.mdoc": {
+	id: "es/the-case-for-boring-industrial-software.mdoc";
+  slug: "es/the-case-for-boring-industrial-software";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"es/what-a-restaurant-needs-from-an-erp.mdoc": {
+	id: "es/what-a-restaurant-needs-from-an-erp.mdoc";
+  slug: "es/what-a-restaurant-needs-from-an-erp";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
 "ms/future-of-edutech.mdoc": {
 	id: "ms/future-of-edutech.mdoc";
   slug: "ms/future-of-edutech";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"ms/the-case-for-boring-industrial-software.mdoc": {
+	id: "ms/the-case-for-boring-industrial-software.mdoc";
+  slug: "ms/the-case-for-boring-industrial-software";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".mdoc"] };
+"ms/what-a-restaurant-needs-from-an-erp.mdoc": {
+	id: "ms/what-a-restaurant-needs-from-an-erp.mdoc";
+  slug: "ms/what-a-restaurant-needs-from-an-erp";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">

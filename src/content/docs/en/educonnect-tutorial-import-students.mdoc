@@ -1,0 +1,72 @@
+---
+title: "Tutorial: Import Students from Excel"
+description: Bulk-enrolling a class from a spreadsheet — the exact column order the importer expects, and why it never reads your headings.
+product: educonnect
+section: Tutorials
+order: 30
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/class_excel_import.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/students_in_class.dart
+hidden: false
+---
+
+For more than a handful of students, import the class from a spreadsheet instead of
+[adding them one at a time](/docs/educonnect-tutorial-add-a-student).
+
+## The one thing that catches everyone
+
+**The importer reads columns by position, not by heading.** It skips your first row on the
+assumption that it is a header, then reads column A as Student ID, column B as RFID, and so on —
+whatever your headings actually say.
+
+So a spreadsheet with the right headings in the wrong order imports silently and wrongly. Get the
+order right and the headings can say anything you like.
+
+## The column order
+
+| Column | Field | Notes |
+| --- | --- | --- |
+| A | Student ID | Digits only, unique across the institute |
+| B | RFID | The attendance card number; leave blank if cards come later |
+| C | Full Name | |
+| D | Date of Birth | `YYYY-MM-DD`. May be left blank |
+| E | Class ID | The **Class Name** exactly as it appears in Classes |
+| F | Email | |
+| G | Mobile Number | Attendance SMS and payment reminders go here |
+| H | Address | |
+| I | Parent/Guardian | |
+| J | Religion | |
+| K | Nationality | |
+| L | Gender | |
+
+Every column after A–C may be left empty. An empty cell imports as empty; it does not stop the row.
+
+## Steps
+
+1. Prepare the sheet in the column order above, with one header row at the top.
+2. Open **Students → Classes** and open the class you are importing into.
+3. Open the **⋮ More options** menu and choose **Import Students from Excel**.
+4. Pick your `.xlsx` or `.xls` file.
+5. The **Imported Data Preview** table appears, showing every row exactly as the importer read it.
+   **This is the checkpoint** — scroll across and confirm the values landed under the right
+   headings. If names are showing up under "Date of Birth", your column order is wrong: cancel, fix
+   the sheet, and start again.
+6. Confirm to save.
+
+If you see **Unable to import Excel file. Please try again.**, the file could not be parsed at all —
+usually a `.csv` renamed to `.xlsx`, or a file still open in Excel.
+
+## After importing
+
+- Students imported without an RFID will not register attendance until a card number is added.
+  Fill them in by editing each student, or re-import once cards are issued.
+- Verify the count on the class roster matches your sheet before moving on.
+
+## Related
+
+- [Add a Student](/docs/educonnect-tutorial-add-a-student)
+- [Add a Class](/docs/educonnect-tutorial-add-a-class)

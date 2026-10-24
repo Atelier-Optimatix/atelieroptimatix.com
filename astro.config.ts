@@ -42,6 +42,10 @@ export default defineConfig({
 	},
 	redirects: {
 		"/admin": "/keystatic",
+		// Fixed typo in the slug; keep old links working.
+		"/payment-disclamer": "/payment-disclaimer",
+		"/es/payment-disclamer": "/es/payment-disclaimer",
+		"/ms/payment-disclamer": "/ms/payment-disclaimer",
 	},
 	vite: {
 		define: {
@@ -81,7 +85,11 @@ export default defineConfig({
 				navigateFallback: "/",
 				globPatterns: ["**/*.{css,js,html,svg,png,ico,txt}"],
 				globIgnores: ["**/_worker.js/**/*", "_worker.js"],
-				navigateFallbackDenylist: [/^\/keystatic/, /^\/api/],
+				// Deep links such as /docs/<page>/?role=admin come from the
+				// attendance web app. Ignore query strings when matching the
+				// precache, otherwise they miss it and fall back to the homepage.
+				ignoreURLParametersMatching: [/.*/],
+				navigateFallbackDenylist: [/^\/keystatic/, /^\/api/, /^\/docs/],
 				skipWaiting: true,
 				maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
 			},

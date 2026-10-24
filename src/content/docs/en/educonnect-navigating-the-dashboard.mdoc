@@ -1,0 +1,87 @@
+---
+title: Finding Your Way Around
+description: How the side drawer is organised, why two people see different menus, and where the screens in this guide actually live.
+product: educonnect
+section: Getting started
+order: 1
+roles:
+  - admin
+  - staff
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/nav_menu.dart
+  - attendance-web-app/edu-frontend/lib/shell/app_drawer.dart
+  - attendance-web-app/edu-frontend/lib/navigation/access.dart
+hidden: false
+---
+
+## The side drawer
+
+Everything is reached from the drawer on the left. Its entries are grouped, and the groups always
+appear in the same order:
+
+| Group | What's inside |
+| --- | --- |
+| *(top level)* | Dashboard, Help & What's New, List Reports (and Teacher Complaints, for teachers) |
+| **My Class** | Students, Attendance — a teacher's own class |
+| **Students** | Student Search, Classes, Admissions, Prospectus, Fee Counter, Left Students, Student ID Cards |
+| **Attendance** | Today's Attendance, Summary, Reports, Saved Filters, Live Monitor |
+| **Teachers** | Overview, Directory, Attendance, Substitution |
+| **Timetable** | Timetable Grid, Configuration (Bell Schedule, Subjects & Rules, Grade Curriculum, Class Subjects and more are tabs inside it) |
+| **Exams** | Exams, Rankings, Result Changes, Progress Reports |
+| **Analytics** | Statistics, Overview, Students & Risk, Academics, Attendance, Payments, Operations |
+| **Accounting** | Overview, Ledger, Manual Payment Entry, Online Payments, Day Close, Reconciliation, Fee Setup, Portal Access Rules, Invoices, Discounts |
+| **Communication** | Send Messages, Notification History, Notice Board |
+| **Administration** | Users, Locations, Settings, Access Control, Handbook, Prospectus, ID Cards, Campus Map, Calendar |
+| *(head office)* | Group Overview, Branches, Teachers |
+| **Reports** *(head office)* | Accounting, Analytics, Collections, Operations, Exams, Admissions, Demographics |
+| **Configuration** *(head office)* | Discount Rules, Term Dates |
+
+**Calendar** (which replaced the separate *Holidays* and *Events* screens) holds both events and holidays;
+see [Set Holidays, Terms and Working Days](/docs/educonnect-tutorial-holidays-and-terms). **List Reports** sits
+at the top level, under Help & What's New; see [List Reports](/docs/educonnect-list-reports).
+**Student ID Cards** (under Students) tracks each student's card; **ID Cards** (under Administration)
+is the blank card pool and card designs; see [Student ID Cards](/docs/educonnect-tutorial-id-cards).
+
+Select a group's header to expand it; the drawer is a solid panel on every screen size, and on a
+phone it opens as an overlay.
+
+Teachers also get **My Class** (their own class's students and attendance) and **My Timetable**.
+Their own attendance record, **My Attendance**, sits at the top of the Attendance group.
+
+## Your account menu
+
+The round badge at the top right of every screen (your photo, or your initial) opens the account
+menu. It holds:
+
+- **My Profile** — your own details. Teachers edit their teacher record here; administrators edit
+  their name, mobile number, designation and email.
+- **Account Settings** — username and password.
+- **Preferences** — the colour **Theme** and the **Display density** (*Automatic*, *Comfortable* or
+  *Compact*; Compact fits more rows on small or older screens).
+- **Log out**.
+
+The app's version is shown at the bottom of the drawer — quote it when you contact support. In the
+phone and tablet apps, a banner reading **A new version is available.** with an **Update** button
+appears when a newer release is out; you can dismiss it.
+
+## Why your drawer looks different from a colleague's
+
+The drawer is not a fixed menu. It is built from the screens **you** are allowed to open, so:
+
+- A group you have no access to **does not appear at all** — it is not greyed out.
+- A group you can only reach one screen in **collapses into a single tile**, without the expandable
+  header. So "Timetable" may appear as a group for an admin and as a single **My Timetable** link
+  for a teacher.
+- Two people with the same job title can still see different menus, because access is granted per
+  screen in **Administration → Access Control**, not per role.
+
+If a screen this guide describes is missing from your drawer, that is an access question, not a bug.
+Ask whoever administers your institute to check [Access Control](/docs/educonnect-tutorial-users-and-access).
+
+## Getting back
+
+The bar across the top shows breadcrumbs for where you are. Detail screens — a student profile, a
+single exam class — highlight their **nearest parent** in the drawer rather than an entry of their
+own, so the drawer stays put while you drill down.

@@ -1,0 +1,92 @@
+---
+import DocsSearch from "@/components/docs/DocsSearch.astro";
+import { getDocsNav } from "@/lib/docs-nav";
+
+/**
+ * The whole user guide as a nav tree: product -> section -> page, in the order
+ * src/lib/docs-nav.ts defines. Rendered on the index and on every article, so
+ * the guide reads like documentation rather than a set of loose pages.
+ */
+type Props = {
+	/** Slug of the page being viewed, so it can be marked current. */
+	currentSlug?: string;
+	/**
+	 * DOM id for the search mount. The shell renders this component twice - once
+	 * for the mobile disclosure, once for the desktop rail - so the two copies
+	 * need distinct ids or Pagefind mounts into whichever it finds first.
+	 */
+	searchId?: string;
+};
+
+const { currentSlug, searchId = "docs-sidebar-search" } = Astro.props;
+const nav = await getDocsNav();
+
+// Which product group to leave open on first paint: the one holding the current
+// page, or (on the index, where there is no current page) EduConnect - the
+// first group, and the main application.
+const openProduct = currentSlug
+	? (nav.find((group) =>
+			group.sections.some((section) => section.docs.some((doc) => doc.slug === currentSlug)),
+		)?.product ?? nav[0]?.product)
+	: nav[0]?.product;
+---
+
+<nav class="docs-sidebar" aria-label="User guide">
+	<DocsSearch id={searchId} class="pb-6" />
+
+	<a
+		href="/docs"
+		class="block pb-6 text-xs font-semibold uppercase tracking-wide text-slate-500 hover:text-black"
+		>← All docs</a
+	>
+
+	{
+		nav.map((group) => (
+			<details class="docs-sidebar__group" open={group.product === openProduct}>
+				<summary class="cursor-pointer list-none py-2 text-sm font-semibold text-black">
+					{group.label}
+				</summary>
+				<div class="pb-4 pl-1">
+					{group.sections.map((section) => (
+						<div class="pt-3">
+							<p class="pb-1 text-[0.6875rem] font-semibold uppercase tracking-wide text-slate-400">
+								{section.section}
+							</p>
+							<ul class="border-l border-slate-200">
+								{section.docs.map((doc) => (
+									<li>
+										<a
+											href={doc.href}
+											aria-current={doc.slug === currentSlug ? "page" : undefined}
+											class="-ml-px block border-l py-1 pl-3 text-sm leading-snug border-transparent text-slate-500 hover:border-slate-400 hover:text-black aria-[current=page]:border-black aria-[current=page]:font-medium aria-[current=page]:text-black"
+										>
+											{doc.title}
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
+					))}
+				</div>
+			</details>
+		))
+	}
+</nav>
+
+<style>
+	/* Chrome/Safari draw their own marker on <summary>; swap it for one that
+	   flips with the group's open state. */
+	.docs-sidebar__group > summary::-webkit-details-marker {
+		display: none;
+	}
+	.docs-sidebar__group > summary::before {
+		content: "›";
+		display: inline-block;
+		width: 1rem;
+		color: #94a3b8;
+		transition: transform 0.15s ease;
+	}
+	.docs-sidebar__group[open] > summary::before {
+		transform: rotate(90deg);
+	}
+</style>

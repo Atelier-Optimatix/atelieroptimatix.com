@@ -1,0 +1,47 @@
+---
+title: "Tutorial: Upload Exam Results from a Spreadsheet"
+description: The seven-step upload wizard — picking the sheet, telling it which row is the header, mapping columns, and matching rows to students.
+product: educonnect
+section: Tutorials
+order: 110
+roles:
+  - staff
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/upload_class_results_wizard.dart
+hidden: false
+---
+
+Unlike the [student importer](/docs/educonnect-tutorial-import-students), the results uploader does
+not care what order your columns are in — you tell it, in the wizard. So you can upload the marking
+spreadsheet a teacher already keeps, without reshaping it first.
+
+## Steps
+
+The wizard has seven steps and a progress indicator across the top. You can go back at any point.
+
+1. **Pick file** — choose the workbook.
+2. **Pick sheet** — if it has several sheets, choose one. Each is listed with its row count, which is
+   usually enough to spot the right one.
+3. **Header row** — tell it which row holds your column headings. Marking spreadsheets often have a
+   title and a blank row above the real header; this is where you account for that.
+4. **Columns** — map each column to what it holds: the student identifier, the marks, and anything
+   to ignore. Columns you don't map are skipped.
+5. **Matching** — the wizard matches each row to a student in the class and shows you the result.
+   **This is the step that matters.** Unmatched rows are the ones to look at: usually a stray space,
+   a name spelled differently from the enrolment record, or a student in a different class.
+6. **Review** — the final list of what will be written. Confirm the count against your sheet.
+7. **Upload** — confirm, and it writes.
+
+## If rows won't match
+
+- Match on **Student ID** rather than name wherever the sheet has one; names are the usual culprit.
+- A student who has left, or was never enrolled in this class, will never match. Remove the row.
+- Fix the spreadsheet and restart the wizard rather than forcing a partial upload — you can always
+  fill in a handful of stragglers by hand afterwards with
+  [Add Results](/docs/educonnect-tutorial-enter-exam-results).
+
+## Related
+
+- [Entering and Publishing Exam Results](/docs/shared-staff-exam-results)
