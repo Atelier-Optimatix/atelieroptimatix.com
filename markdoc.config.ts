@@ -174,10 +174,26 @@ export default defineMarkdocConfig({
 			attributes: {},
 			render: component("./src/components/sections/News.astro"),
 		},
+		LegalCards: {
+			attributes: {
+				cards: { type: Array, render: "cards", required: true },
+			},
+			render: component("./src/components/legal/LegalCards.astro"),
+		},
+		PrivacyStrip: {
+			attributes: {
+				title: { type: String, render: "title", required: true },
+				text: { type: String, render: "text", required: true },
+				links: { type: Array, render: "links", required: true },
+			},
+			render: component("./src/components/sections/PrivacyStrip.astro"),
+		},
 		Contact: {
 			attributes: {
 				title: { type: String, render: "title", required: true },
 				fields: { type: Array, render: "fields", required: true },
+				consent: { type: String, render: "consent" },
+				consentLink: { type: String, render: "consentLink" },
 			},
 			render: component("./src/components/sections/Contact.astro"),
 		},

@@ -1,0 +1,37 @@
+---
+import { translatePath } from "@/lib/localization-helpers";
+
+// Homepage entry point to the privacy documents, so they are reachable
+// without scrolling to the footer.
+type Props = {
+	title: string;
+	text: string;
+	links: { text: string; href: string }[];
+};
+
+const { title, text, links } = Astro.props;
+const locale = Astro.currentLocale ?? "en";
+---
+
+<div class="pb-32">
+	<div class="flex flex-col gap-6 rounded-3xl border border-slate-200 p-8 md:flex-row md:items-center md:justify-between md:p-10">
+		<div class="max-w-xl">
+			<h2 class="text-2xl font-semibold md:text-3xl">{title}</h2>
+			<p class="mt-3 text-base text-slate-600">{text}</p>
+		</div>
+		<ul class="flex flex-wrap gap-3 text-base">
+			{
+				links.map((link) => (
+					<li>
+						<a
+							href={translatePath(locale, link.href)}
+							class="inline-block rounded-full border-2 border-black px-5 py-2 transition hover:bg-black hover:text-white"
+						>
+							{link.text}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</div>

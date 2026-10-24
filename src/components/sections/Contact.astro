@@ -1,5 +1,6 @@
 ---
 import Button from "@/components/primitives/Button.astro";
+import { translatePath } from "@/lib/localization-helpers";
 
 type HTMLInputTypeAttribute =
 	| "button"
@@ -38,9 +39,12 @@ interface FormField {
 interface Props {
 	title: string;
 	fields: FormField[];
+	consent?: string;
+	consentLink?: string;
 }
 
-const { title, fields } = Astro.props;
+const { title, fields, consent, consentLink } = Astro.props;
+const consentHref = translatePath(Astro.currentLocale ?? "en", "/website-privacy");
 
 // Optional Cloudflare Turnstile site key (public by design). When unset the
 // widget is skipped and only the honeypot + timing checks apply.
@@ -95,9 +99,17 @@ function fieldName(fieldTitle: string): string {
 						fields?.map((field) => {
 							if (field.type === "submit") {
 								return (
-									<Button type="submit" class:list={[field.width == 2 && "sm:col-span-2"]}>
-										{field.title}
-									</Button>
+									<>
+										{consent && (
+											<p class="text-sm text-zinc-600 sm:col-span-2">
+												{consent}{" "}
+												<a href={consentHref} class="underline hover:text-black">{consentLink}</a>.
+											</p>
+										)}
+										<Button type="submit" class:list={[field.width == 2 && "sm:col-span-2"]}>
+											{field.title}
+										</Button>
+									</>
 								);
 							} else if (field.type === "textarea") {
 								return (
