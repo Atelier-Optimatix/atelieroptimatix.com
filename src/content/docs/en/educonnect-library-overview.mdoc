@@ -1,0 +1,108 @@
+---
+title: "The School Library: Overview and Setup"
+description: What the library module does, who can use it, how to switch it on and the settings that control it.
+product: educonnect
+section: Getting started
+order: 50
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/backend/config/libraryOptions.js
+  - attendance-web-app/edu-frontend/lib/screens/library/library_settings_page.dart
+  - attendance-web-app/backend/config/accessCatalog.js
+screenshotIds:
+  - "library-settings"
+  - "library-drawer"
+hidden: false
+---
+
+The library module lends books to students, teachers and staff from the same application you already
+use. It keeps a catalogue of titles, one record per physical copy, who has borrowed what, holds,
+fines, stock-takes and reports. Borrowers are the people already on your records: nobody is entered
+twice.
+
+> The Library is a recent addition and may not be switched on for your institute yet. If you do not
+> see **Library** in the drawer, ask your administrator to grant a role access to it.
+
+## How lending works
+
+- **Copies carry a barcode.** Every physical book has a label. Scanning it identifies the copy.
+- **People are identified by their ID card.** The number on a student's or teacher's card is their
+  RFID, the same number attendance uses. Tapping the card on a USB reader at the desk opens that
+  person. See [Issue and Replace ID Cards](/docs/educonnect-tutorial-id-cards).
+- **Both devices act as a keyboard.** The desk needs no extra software, and a phone or laptop camera
+  can scan instead of a handheld scanner. See [The Circulation Desk](/docs/educonnect-library-circulation-desk).
+
+## The Library drawer
+
+| Screen | What it is for | Guide |
+| --- | --- | --- |
+| **Circulation Desk** | Lend, return, renew | [Circulation Desk](/docs/educonnect-library-circulation-desk) |
+| **Catalogue** | Books and copies, import, labels | [Catalogue](/docs/educonnect-library-catalogue) |
+| **Loans & Overdue** | Everything out, what is late, what came back today | [Circulation Desk](/docs/educonnect-library-circulation-desk) |
+| **Holds** | The hold shelf and reservation queues | [Holds](/docs/educonnect-library-holds) |
+| **Borrowers** | Each person's loans, holds, fines and limits | [Borrowers](/docs/educonnect-library-borrowers) |
+| **Fines** | Unpaid, paid and waived library fines | [Fines](/docs/educonnect-library-fines) |
+| **Stock-take** | Check the shelves against the catalogue | [Stock-take](/docs/educonnect-library-stocktake) |
+| **Reports** | Circulation, collection and fines figures | [Reports](/docs/educonnect-library-reports) |
+| **Library Settings** | Loan rules, fines, holds, labels, portal | below |
+
+Teachers who have been granted it also see **My Library**. See
+[My Library](/docs/educonnect-library-my-library).
+
+## Who can do what
+
+Everything is controlled in **Access Control**, under the **Library** group. There is a ready-made
+**librarian** role. It lands on the Circulation Desk and holds the desk, holds, borrowers, catalogue,
+stock-take, fines, waiving fines and reports. It does **not** include **Library settings**, which
+stay with the administrator until you grant them.
+
+The main permissions:
+
+| Permission | Allows |
+| --- | --- |
+| Search the catalogue | View books and availability |
+| Circulation desk | Open the desk, loans and borrowers |
+| Check out & renew / Check in returns | Lend and take back |
+| Override borrowing limits, blocks & holds | Lend past a limit or block, with a reason |
+| Add & edit books and copies; Withdraw, repair & restore | Maintain the catalogue |
+| Bulk import the catalogue | Spreadsheet import |
+| Start a stock-take; Finalise | Run and close a stock-take |
+| Declare books lost & charge damage | Assess fines |
+| Waive unpaid library fines | A money decision, so it is separate from the fines group |
+| Library reports | View reports |
+| Library settings | Change the rules below |
+
+Teachers get **no** library permissions by default. Tick them on when your library goes live.
+
+## Library Settings
+
+Open **Library → Library Settings** (needs the settings permission).
+
+- **Loan rules**: separately for students, teachers and staff: books at a time (0 means that type
+  cannot borrow), loan length in days, renewals and days per renewal. Defaults: students 2 books for
+  14 days; teachers 10 for 30; staff 5 for 30.
+- **Move due dates off closed days**: a due date on a weekend, holiday or outside term moves to the
+  next school day.
+- **No new books while one is overdue**.
+- **Circulation desk**: close the borrower after a set number of seconds without a scan (default 90),
+  so the next child's books never land on the previous child's card; and **Lend only on a card tap**,
+  which makes looking someone up by name need an override.
+- **Charge library fines**: see [Fines](/docs/educonnect-library-fines). Off until you opt in.
+- **Holds**: whether borrowers can reserve, holds per borrower, and school days to collect.
+- **Parent portal**: show the library to parents, let them reserve, let them pay fines online.
+- **Overdue reminders**: a weekly push at 7 am to every borrower with an overdue book (a student's
+  parents, or the teacher). Off by default.
+- **ISBN lookup**: adds a **Look up** button to the add-book form. It sends the ISBN to Open Library,
+  so it is off until you opt in.
+- **Barcode labels**: the **Label prefix** (default `LIB`, giving `LIB000001`, `LIB000002` and so
+  on). Labels already printed keep their number, so choose a distinct prefix if books may move
+  between campuses.
+- **Shelf locations**: the vocabulary offered when adding copies, for example "Fiction A–F".
+
+## Not in this version
+
+Teachers and staff are never fined, and there is no separate search service: catalogue search matches
+the start of words in titles, authors and similar fields.

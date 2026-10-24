@@ -1,0 +1,83 @@
+---
+title: "Tutorial: Build and Maintain the Library Catalogue"
+description: Adding books and copies, importing a book register from a spreadsheet, looking up ISBNs and printing barcode labels.
+product: educonnect
+section: Tutorials
+order: 231
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/catalogue_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/import_catalogue_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/widgets/print_labels_dialog.dart
+  - attendance-web-app/backend/services/library/importService.js
+screenshotIds:
+  - "library-catalogue"
+  - "library-import"
+hidden: false
+---
+
+The catalogue has two levels. A **title** is the book as published: name, authors, ISBN, subjects,
+price. A **copy** is one physical item with its own barcode, condition and shelf. Lending always
+involves a copy.
+
+**You need:** **Search the catalogue** to look, **Add & edit books and copies** to change, **Bulk
+import** for the spreadsheet.
+
+## Search
+
+Open **Library → Catalogue**. Search matches the beginnings of words in titles, authors and similar
+fields. **Include hidden books** shows titles the school keeps out of the parent portal. Open a book
+to see its copies and who holds them, and a copy to see its history.
+
+## Add a book
+
+1. Select **Add book**.
+2. Fill in the title and details. If **ISBN lookup** is on in Library Settings, enter the ISBN and
+   select **Look up** to fill empty fields from Open Library.
+3. Choose where the book is visible: everyone, or staff only.
+4. Add copies. You can add up to 200 at once. Choose the condition, the shelf location and whether it
+   was bought or donated.
+
+Copies without a barcode of their own get a generated label such as `LIB000123`.
+
+## Import a book register
+
+1. In the Catalogue select **Import**, then **Download a template** if you want one.
+2. **Choose .xlsx file** and map your column headings, starting with **Title**.
+3. Review the plan: **New books**, **Copies of books already in the catalogue**, **Copies keeping
+   their barcode**, **Copies with new labels**, **Rows skipped**, and any rows to look at with the
+   reason for each.
+4. Confirm. Nothing is held between the plan and the commit, so the plan is recalculated against the
+   catalogue as it is at that moment.
+
+Good to know:
+- Rows with the same ISBN become one title. Without an ISBN, a title is matched by name and first
+  author.
+- A row **with** a barcode is one copy with that label. Importing the same file again adds nothing
+  twice.
+- A row **without** a barcode gets new labels every time it is imported, so a re-import adds
+  duplicates. The plan warns you.
+- One file can hold up to 20,000 rows.
+
+## Print barcode labels
+
+Select **Print labels**, tick the copies, and choose which slot on the first sheet to start from
+(partly used label sheets). The layout is A4, 3 columns by 8. Newly generated labels are ticked by
+default, because those are the ones with nothing on the book yet.
+
+## Scan with the camera
+
+Anywhere the app asks for a scan you can use **Scan with camera**. It takes the same path as a
+handheld scanner. It closes after one code, except in a stock-take where it stays open.
+
+## Withdraw, repair, restore
+
+A librarian with **Withdraw, repair & restore copies** can mark a copy as repair, withdrawn or
+available. Missing and lost are set by stock-takes and the desk.
+
+## Related
+
+- [Stock-take](/docs/educonnect-library-stocktake)

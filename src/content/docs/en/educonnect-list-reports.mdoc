@@ -1,0 +1,75 @@
+---
+title: List Reports
+description: Read-only raw-data lists for students, attendance, exams, accounting and more, which you can search, filter and download as CSV or PDF.
+product: educonnect
+section: Guides
+order: 85
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/list_reports_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/list_reports/
+  - attendance-web-app/backend/services/lists/
+screenshotIds:
+  - "staff-list-reports"
+  - "staff-list-report-view"
+hidden: false
+---
+
+**List Reports** is for the moment you need the raw rows, not a chart: every student who was absent
+yesterday, every duplicate RFID, every unpaid fee. It sits at the top level of the side drawer,
+under **Help & What's New**.
+
+Lists are **read-only**. Nothing you do here changes a record. Access is granted by the *List
+reports (view & download raw data)* key in **Administration → Access Control**, and lists that
+contain money also need the matching accounting permission. If a list isn't offered to you, you will
+not see it in the catalogue.
+
+## Finding a list
+
+The catalogue groups lists under **Students**, **Teachers & staff**, **Attendance**, **Exams**,
+**Accounting**, **Admissions** and **School structure**. The header shows how many you can see
+(*12 of 40 lists*). Type in **Search lists** (for example "RFID", "absent" or "teachers") to narrow
+it. *No lists match your search.* means nothing matches; *No lists are available to this account.*
+means your access doesn't include any.
+
+Some lists you may be looking for:
+
+- **Students** — All students, students with a missing or invalid contact number, students sharing a
+  contact number, students without a valid class, duplicate RFIDs and student IDs, birthdays and
+  ages, left students, deleted students, student achievements, certificates issued, class lists.
+- **Attendance** — students absent on a date, students present or late on a date, attendance % for a
+  period, day-by-day student register, daily attendance by class, teachers absent or present on a
+  date, teacher timesheet, declared teacher absences, and the raw tap log.
+- **Exams** — exams, exam results, marks below the pass mark, missing marks, exam summary per
+  student, term report remarks and conduct, and the mark change log.
+- **Accounting** — fee charges, outstanding fees, fee balance per student, discounts, ledger,
+  payments, refunds and voids, day closes, the online payment inbox, fee types and schedules, and
+  teacher salaries.
+- **Admissions** — admission applications and admission fee payments.
+
+## Working with a list
+
+Open a list. If it needs a date, class or exam, set the filters at the top and press **Show**
+(*Set the filters and press Show.*). **Reset** clears them. Then:
+
+- **Search these rows** matches text in any column.
+- **Columns** chooses which columns to show.
+- Click a header to sort; numbers sort numerically and blanks go last.
+- Filter dropdowns appear for columns with a small set of values.
+
+A very long list is cut off: a red note says *Showing the first N of M rows. Narrow the filters to
+see the rest.* Narrow the filters rather than expecting the download to contain the missing rows.
+
+## Download
+
+Use the export menu to download as **CSV** or **PDF**. The file contains the rows currently shown
+(after your search and filters) and only the columns you have left switched on under **Columns**.
+The PDF is only offered when 25 or fewer columns are shown; otherwise hide some columns or use CSV.
+
+## Related
+
+- [Reading the Analytics Section](/docs/shared-staff-analytics)
+- [Student Search and Profiles](/docs/educonnect-student-search-and-profile)

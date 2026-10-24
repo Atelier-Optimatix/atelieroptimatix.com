@@ -1,0 +1,44 @@
+---
+title: "Tutorial: Run a Library Stock-take"
+description: Checking the shelves against the catalogue by scanning, and what finalising changes.
+product: educonnect
+section: Tutorials
+order: 235
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/stocktakes_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/stocktake_page.dart
+  - attendance-web-app/backend/services/library/stocktakeService.js
+screenshotIds:
+  - "library-stocktake"
+hidden: false
+---
+
+A stock-take finds out which books are really on the shelves.
+
+**You need:** **Start a stock-take** to run one and **Finalise** to close or cancel it.
+
+## Run one
+
+1. **Library → Stock-take → Start a stock-take.** Give it a name. Pick shelves to check only those
+   (add shelf locations in Library Settings), or none for the whole library.
+2. Under **Scan the shelf**, choose **Shelf I am scanning** and scan every book. Every scan is saved.
+   Scanning a book twice is harmless. The camera can stay open for continuous scanning, or use
+   **Paste a list** for scans stored in a scanner's memory.
+3. Review the lists:
+   - **Not seen yet**: shelf books nobody has scanned. Check this first.
+   - **Found on a different shelf** from the one recorded.
+   - **On the shelf but recorded as lent**: check them in.
+   - **Recorded as missing or lost**: finalising puts them back.
+   - **Not in the catalogue**: barcodes with no record. Add the book.
+4. **Finalise.** Unseen shelf books become **missing**. Missing or lost books that were scanned go back
+   through check-in, so they reach the next hold or the shelf, and a found lost book's unpaid fine is
+   voided.
+
+**Cancel** changes no book; its scans are kept but cannot be finalised later.
+
+Lending carries on during a stock-take, and a book lent or returned after it started counts as seen.
+If finalising stops part-way, **Carry on finalising** resumes it.

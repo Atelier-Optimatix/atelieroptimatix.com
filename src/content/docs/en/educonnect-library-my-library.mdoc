@@ -1,0 +1,32 @@
+---
+title: "My Library for Teachers and Staff"
+description: Seeing your own loans and holds, reserving a book and what happens at the desk.
+product: educonnect
+section: For teachers
+order: 90
+roles:
+  - teacher
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/my_library_page.dart
+  - attendance-web-app/backend/services/library/appAccess.js
+screenshotIds:
+  - "library-my-library"
+hidden: false
+---
+
+**My Library** is your own library account. It is off for teachers until your school ticks
+**My loans & holds** for the teacher role in Access Control. A non-teaching staff member sees it
+once an administrator has [given them app access](/docs/educonnect-library-borrowers).
+
+It shows:
+
+- Books you have on loan and when they are due.
+- Your holds. Use **Reserve a book** to search the catalogue and reserve one that is out (if holds
+  are on and you are under your limit), and cancel your own holds.
+- Fines to view. Teachers and staff are never fined.
+- Books you have returned.
+
+Renewals and returns happen at the desk. If you see a message that your account has no library
+record, ask the librarian to add you as a borrower.
