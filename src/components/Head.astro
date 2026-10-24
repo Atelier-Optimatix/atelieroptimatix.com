@@ -1,7 +1,12 @@
 ---
 import "@/styles/global.css";
-import { getLocalizedSettings } from "@/lib/localization-helpers";
+import {
+	getLocalizedSettings,
+	translatePath,
+	unlocalizedUrl,
+} from "@/lib/localization-helpers";
 import { SEO, type SEOProps } from "astro-seo";
+import { locales } from "site";
 import { siteTitle } from "site";
 
 type Props = {
@@ -19,6 +24,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const pathWithSlash = Astro.url.pathname.endsWith("/")
 	? Astro.url.pathname
 	: `${Astro.url.pathname}/`;
+
+// Every route exists in all locales (content parity), so alternates are a plain
+// path mapping. 404 is a status page, not a translated route.
+const basePathRaw = unlocalizedUrl(pathWithSlash);
+const basePath = basePathRaw.endsWith("/") ? basePathRaw : `${basePathRaw}/`;
+const alternates = basePath.startsWith("/404")
+	? []
+	: [
+			...locales.map((l) => ({
+				hreflang: l,
+				href: new URL(translatePath(l, basePath), Astro.site).toString(),
+			})),
+			{
+				hreflang: "x-default",
+				href: new URL(basePath, Astro.site).toString(),
+			},
+		];
 
 const shareImage = new URL(
 	"og.png",
@@ -46,6 +68,11 @@ const baseSeo: SEOProps = {
 		site: canonicalURL,
 	},
 	extend: {
+		link: alternates.map(({ hreflang, href }) => ({
+			rel: "alternate",
+			hreflang,
+			href,
+		})),
 		meta: [
 			{
 				name: "publisher",
