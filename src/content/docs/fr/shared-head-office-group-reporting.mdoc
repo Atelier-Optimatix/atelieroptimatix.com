@@ -1,0 +1,68 @@
+---
+title: "Siège et rapports de groupe"
+description: Produire des rapports sur toutes les antennes d'un groupe scolaire, et pourquoi les comptes du siège ne peuvent pas ouvrir les écrans d'une seule antenne.
+product: educonnect
+section: Advanced workflows
+order: 90
+roles:
+  - org_admin
+  - super_admin
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/head_office_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/head_office/
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## À qui s'adresse cette page
+
+Le siège (head office) s'adresse aux personnes qui dirigent un *groupe* d'établissements plutôt qu'un
+seul. Il existe deux rôles de ce type :
+
+- **Organisation admin** — dirige le groupe scolaire d'un client.
+- **Super admin** — personnel interne de la plateforme.
+
+Les deux consultent les mêmes rapports de groupe. La différence tient à la portée : le nombre
+d'antennes auquel le compte donne accès. Un super admin dispose en plus des écrans **Platform**
+décrits plus bas.
+
+{% callout type="note" %}
+Un compte du siège est cantonné à cette section. Si vous vous connectez en vous attendant à un tableau
+de bord du personnel ordinaire et que vous arrivez sur **Group Overview**, rien ne s'est mal passé :
+ce compte est un compte du siège, et les écrans ordinaires d'une antenne lui sont volontairement
+inaccessibles. Le travail quotidien dans une antenne nécessite un compte du personnel de cette antenne.
+{% /callout %}
+
+## Group Overview et les rapports qui en dépendent
+
+**Group Overview** est la page d'accueil. En dessous se trouvent les vues à l'échelle du groupe, chacune
+posant la même question qu'une antenne isolée, mais avec une réponse portant sur toutes les antennes que
+vous pouvez voir :
+
+- **Branches** — les établissements de votre groupe.
+- **Teachers**, **Accounting**, **Analytics**, **Collections**, **Operations**, **Exams**,
+  **Admissions** et **Demographics** — les rapports de groupe pour chacun de ces domaines.
+
+Ce sont des rapports de consultation transversale. Modifier quelque chose pour une antenne se fait
+toujours au sein de cette antenne, par une personne qui y a accès.
+
+## Configuration
+
+Deux réglages de groupe se trouvent à part des rapports :
+
+- **Discounts** — la configuration des remises appliquée à l'ensemble du groupe.
+- **Term Dates** — le calendrier des trimestres du groupe.
+
+## Écrans Platform (super admin uniquement)
+
+**Organisations** et **Provision Branch** relèvent du travail interne de la plateforme : créer une
+nouvelle organisation cliente, et mettre en place une nouvelle antenne au sein de celle-ci. Un
+organisation admin ne les voit pas, même s'il voit tout ce qui précède, et cette restriction est
+appliquée côté serveur en plus d'être masquée dans l'interface ; il n'est donc pas possible de la
+contourner en se rendant directement à l'adresse.
+
+## Voir aussi
+
+- [Aperçu de la comptabilité](/fr/docs/shared-staff-accounting-overview)
+- [Lire la section Analytics](/fr/docs/shared-staff-analytics)
+- [Identité visuelle de l'établissement](/fr/docs/shared-institute-branding)

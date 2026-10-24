@@ -1,0 +1,45 @@
+---
+title: "Tutorial: Tempahan dan Rak Tempahan"
+description: Menempah buku yang sedang dipinjam, rak tempahan, hari pengambilan dan membatalkan tempahan.
+product: educonnect
+section: Tutorials
+order: 234
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/holds_page.dart
+  - attendance-web-app/backend/services/library/holdService.js
+  - attendance-web-app/backend/services/library/holdShelf.js
+screenshotIds:
+  - "library-holds"
+hidden: false
+---
+
+Tempahan (hold) menempah satu **tajuk**, bukan salinan tertentu. Tempahan beratur mengikut siapa datang
+dahulu dilayan dahulu.
+
+**Hidupkannya:** **Library Settings → Holds** (**Let borrowers reserve books**).
+
+## Apa yang berlaku
+
+1. Peminjam menempah buku yang sedang dipinjam. Kaunter boleh melakukannya dengan **Reserve a book**; ibu
+   bapa dan pelajar juga boleh jika portal membenarkannya, dan guru daripada
+   [My Library](/ms/docs/educonnect-library-my-library).
+2. Apabila sesalinan didaftar masuk, ia diberikan kepada tempahan menunggu yang paling lama dan diletakkan
+   di **hold shelf** (rak tempahan). Asingkan ia secara fizikal.
+3. Peminjam mempunyai **School days to collect** (lalai 3) untuk mengambilnya. Meminjamkannya kepada mereka
+   memenuhi tempahan. Tempahan yang tidak diambil akan tamat tempoh dan salinan berpindah kepada orang
+   seterusnya dalam giliran atau kembali ke rak.
+
+Salinan di rak tempahan hanya dipinjamkan kepada peminjam yang menempahnya melainkan override digunakan.
+Buku yang mempunyai tempahan menunggu tidak diperbaharui.
+
+Setiap peminjam boleh mempunyai bilangan tempahan yang terhad (**Holds per borrower**, lalai 2; 0
+bermaksud hanya kaunter yang membuat tempahan).
+
+## Halaman Holds
+
+**Library → Holds** memaparkan **Hold shelf** (buku yang diasingkan dan untuk siapa) dan giliran.
+Sesiapa yang mempunyai **Place & cancel holds for borrowers** boleh membatalkan.

@@ -1,0 +1,113 @@
+---
+title: "Perpustakaan Sekolah: Gambaran Keseluruhan dan Penyediaan"
+description: Apa yang dilakukan modul perpustakaan, siapa yang boleh menggunakannya, cara menghidupkannya dan tetapan yang mengawalnya.
+product: educonnect
+section: Getting started
+order: 50
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/backend/config/libraryOptions.js
+  - attendance-web-app/edu-frontend/lib/screens/library/library_settings_page.dart
+  - attendance-web-app/backend/config/accessCatalog.js
+screenshotIds:
+  - "library-settings"
+  - "library-drawer"
+hidden: false
+---
+
+Modul perpustakaan meminjamkan buku kepada pelajar, guru dan kakitangan daripada aplikasi yang sama yang
+sudah anda gunakan. Ia menyimpan katalog tajuk, satu rekod bagi setiap salinan fizikal, siapa meminjam apa,
+tempahan, denda, stock-take dan laporan. Peminjam ialah orang yang sudah ada dalam rekod anda: tiada
+sesiapa dimasukkan dua kali.
+
+> Perpustakaan ialah tambahan baharu dan mungkin belum dihidupkan untuk institut anda. Jika anda tidak
+> melihat **Library** dalam laci, minta pentadbir anda memberi sesuatu peranan akses kepadanya.
+
+## Cara peminjaman berfungsi
+
+- **Salinan membawa kod bar.** Setiap buku fizikal mempunyai label. Mengimbasnya mengenal pasti salinan.
+- **Orang dikenal pasti melalui kad ID mereka.** Nombor pada kad pelajar atau guru ialah RFID mereka,
+  nombor yang sama yang digunakan oleh kehadiran. Mengetik kad pada pembaca USB di kaunter membuka orang
+  itu. Lihat [Keluarkan dan Gantikan Kad ID](/ms/docs/educonnect-tutorial-id-cards).
+- **Kedua-dua peranti bertindak sebagai papan kekunci.** Kaunter tidak memerlukan perisian tambahan, dan
+  kamera telefon atau komputer riba boleh mengimbas sebagai ganti pengimbas tangan. Lihat
+  [Kaunter Peminjaman](/ms/docs/educonnect-library-circulation-desk).
+
+## Laci Library
+
+| Skrin | Kegunaannya | Panduan |
+| --- | --- | --- |
+| **Circulation Desk** | Pinjam, pulang, perbaharui | [Circulation Desk](/ms/docs/educonnect-library-circulation-desk) |
+| **Catalogue** | Buku dan salinan, import, label | [Catalogue](/ms/docs/educonnect-library-catalogue) |
+| **Loans & Overdue** | Semua yang dipinjam, yang lewat, yang dipulangkan hari ini | [Circulation Desk](/ms/docs/educonnect-library-circulation-desk) |
+| **Holds** | Rak tempahan dan giliran tempahan | [Holds](/ms/docs/educonnect-library-holds) |
+| **Borrowers** | Pinjaman, tempahan, denda dan had setiap orang | [Borrowers](/ms/docs/educonnect-library-borrowers) |
+| **Fines** | Denda perpustakaan yang tidak dibayar, dibayar dan dikecualikan | [Fines](/ms/docs/educonnect-library-fines) |
+| **Stock-take** | Semak rak berbanding katalog | [Stock-take](/ms/docs/educonnect-library-stocktake) |
+| **Reports** | Angka peminjaman, koleksi dan denda | [Reports](/ms/docs/educonnect-library-reports) |
+| **Library Settings** | Peraturan pinjaman, denda, tempahan, label, portal | di bawah |
+
+Guru yang telah diberi akses juga melihat **My Library**. Lihat
+[My Library](/ms/docs/educonnect-library-my-library).
+
+## Siapa boleh buat apa
+
+Semuanya dikawal dalam **Access Control**, di bawah kumpulan **Library**. Terdapat peranan **librarian**
+yang siap sedia. Ia mendarat di Circulation Desk dan memegang kaunter, tempahan, peminjam, katalog,
+stock-take, denda, pengecualian denda dan laporan. Ia **tidak** termasuk **Library settings**, yang kekal
+dengan pentadbir sehingga anda memberikannya.
+
+Kebenaran utama:
+
+| Kebenaran | Membenarkan |
+| --- | --- |
+| Search the catalogue | Melihat buku dan ketersediaan |
+| Circulation desk | Membuka kaunter, pinjaman dan peminjam |
+| Check out & renew / Check in returns | Meminjamkan dan menerima pulangan |
+| Override borrowing limits, blocks & holds | Meminjamkan melepasi had atau sekatan, dengan sebab |
+| Add & edit books and copies; Withdraw, repair & restore | Menyelenggara katalog |
+| Bulk import the catalogue | Import hamparan |
+| Start a stock-take; Finalise | Menjalankan dan menutup stock-take |
+| Declare books lost & charge damage | Menilai denda |
+| Waive unpaid library fines | Keputusan wang, jadi ia berasingan daripada kumpulan denda |
+| Library reports | Melihat laporan |
+| Library settings | Mengubah peraturan di bawah |
+
+Guru **tidak** mendapat kebenaran perpustakaan secara lalai. Tandakannya apabila perpustakaan anda mula
+beroperasi.
+
+## Library Settings
+
+Buka **Library → Library Settings** (memerlukan kebenaran tetapan).
+
+- **Loan rules**: berasingan bagi pelajar, guru dan kakitangan: bilangan buku pada satu masa (0 bermaksud
+  jenis itu tidak boleh meminjam), tempoh pinjaman dalam hari, pembaharuan dan hari bagi setiap pembaharuan.
+  Lalai: pelajar 2 buku selama 14 hari; guru 10 selama 30; kakitangan 5 selama 30.
+- **Move due dates off closed days**: tarikh akhir pada hujung minggu, cuti atau di luar penggal
+  dipindahkan ke hari persekolahan berikutnya.
+- **No new books while one is overdue**.
+- **Circulation desk**: tutup paparan peminjam selepas beberapa saat tanpa imbasan (lalai 90), supaya
+  buku kanak-kanak seterusnya tidak pernah masuk ke kad kanak-kanak sebelumnya; dan **Lend only on a card
+  tap**, yang menjadikan mencari seseorang mengikut nama memerlukan override.
+- **Charge library fines**: lihat [Fines](/ms/docs/educonnect-library-fines). Tidak aktif sehingga anda
+  memilih untuk menghidupkannya.
+- **Holds**: sama ada peminjam boleh menempah, tempahan bagi setiap peminjam, dan hari persekolahan untuk
+  mengambil.
+- **Parent portal**: tunjukkan perpustakaan kepada ibu bapa, benarkan mereka menempah, benarkan mereka
+  membayar denda dalam talian.
+- **Overdue reminders**: pemberitahuan tolak mingguan pada 7 pagi kepada setiap peminjam yang mempunyai buku
+  lewat (ibu bapa pelajar, atau guru). Tidak aktif secara lalai.
+- **ISBN lookup**: menambah butang **Look up** pada borang tambah buku. Ia menghantar ISBN kepada Open
+  Library, jadi ia tidak aktif sehingga anda memilih untuk menghidupkannya.
+- **Barcode labels**: **Label prefix** (lalai `LIB`, menghasilkan `LIB000001`, `LIB000002` dan seterusnya).
+  Label yang telah dicetak mengekalkan nombornya, jadi pilih awalan yang berbeza jika buku mungkin
+  berpindah antara kampus.
+- **Shelf locations**: senarai perkataan yang ditawarkan semasa menambah salinan, contohnya "Fiction A–F".
+
+## Tiada dalam versi ini
+
+Guru dan kakitangan tidak pernah didenda, dan tiada perkhidmatan carian berasingan: carian katalog
+memadankan permulaan perkataan dalam tajuk, penulis dan medan yang serupa.

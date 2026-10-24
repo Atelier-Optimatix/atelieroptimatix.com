@@ -1,0 +1,92 @@
+---
+title: "Mener une campagne d'admissions"
+description: De la publication du prospectus à l'inscription d'un élève — récupérer les candidatures du portail, les noter, encaisser les frais et convertir.
+product: educonnect
+section: Advanced workflows
+order: 30
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/admissions_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/admission_details_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/admission_fee_counter_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/settings/admissions_guidebook_page.dart
+screenshotIds:
+  - "flow-admissions-pipeline"
+hidden: false
+---
+
+Une campagne d'admissions s'étend sur deux systèmes : les candidats utilisent le **portail des
+admissions**, le personnel travaille dans le **tableau de bord du personnel**. Voici le déroulement
+complet côté personnel.
+
+## 1. Publier le prospectus
+
+**Students → Prospectus** (également accessible depuis **Administration**). C'est ce que les
+candidats lisent avant de candidater ; il doit donc être en ligne avant que vous annonciez la
+campagne.
+
+Vue des candidats : [Consulter le prospectus](/fr/docs/admissions-prospectus).
+
+## 2. Les candidatures arrivent
+
+Les candidats se connectent avec un code à usage unique, remplissent le formulaire et l'envoient.
+Une fois envoyée, une candidature est **locked** (verrouillée) pour eux — ils ne peuvent plus la
+modifier. Voir [Déposer une candidature auprès d'un établissement](/fr/docs/admissions-applying).
+
+## 3. Les récupérer dans le tableau de bord
+
+Ouvrez **Students → Admissions** et sélectionnez **Fetch from Portal**. Le système indique combien
+de candidatures ont été **synced** (synchronisées) et combien ont été **skipped** (ignorées) — ce
+qui signifie généralement qu'elles ont déjà été importées.
+
+Synchronisez régulièrement pendant toute la durée d'une campagne ouverte plutôt qu'une seule fois à
+la fin ; le tableau de bord ne connaît que les candidatures qui ont été récupérées.
+
+## 4. Examiner et noter
+
+La liste des admissions peut être filtrée et triée par nom, adresse, religion, **total score** (note
+totale) et **status** (statut). Ouvrez n'importe quelle ligne pour consulter la candidature complète
+et les documents téléversés.
+
+La **total score** est le critère de classement. Quels que soient vos critères, ils aboutissent à ce
+nombre ; assurez-vous donc qu'il est renseigné de manière cohérente avant de commencer à comparer
+les candidats.
+
+Exportez la liste — identifiant d'admission, nom, adresse, religion et note totale — pour un examen
+hors ligne ou une réunion de sélection.
+
+## 5. Encaisser les frais de candidature
+
+Deux voies, qui aboutissent au même résultat :
+
+- **En ligne** — le candidat paie par carte dans le portail. Un statut *pending* n'est pas un échec ;
+  il se résout de lui-même. Voir [Payer vos frais de candidature](/fr/docs/admissions-payment).
+- **Au secrétariat** — espèces, chèque ou virement, enregistrés dans **Students → Fee Counter** (le
+  même écran apparaît sous le nom **Admission Fees** dans Accounting). Voir
+  [Payer au secrétariat de l'établissement](/fr/docs/admissions-paying-at-the-office).
+
+Les frais d'admission arrivent dans le même registre que tout le reste ; ils alimentent donc
+normalement la [clôture de journée](/fr/docs/educonnect-tutorial-day-close) et le
+[rapprochement](/fr/docs/educonnect-tutorial-reconciliation).
+
+## 6. Convertir en élèves
+
+Les candidats acceptés deviennent des élèves. Préparez d'abord les classes — voir
+[Ajouter une classe](/fr/docs/educonnect-tutorial-add-a-class) — car un élève en a besoin d'une lors
+de son inscription, et la classe ne peut pas être modifiée ensuite en éditant la fiche.
+
+## 7. Après la campagne
+
+- Vérifiez que les [grilles de frais](/fr/docs/educonnect-tutorial-fee-setup) couvrent les nouvelles classes.
+- Émettez les [cartes d'identité](/fr/docs/educonnect-tutorial-id-cards) — sans RFID, pas de suivi de présence.
+- Les parents s'enregistrent eux-mêmes à l'aide de l'identifiant d'élève (Student ID) de leur enfant —
+  [S'inscrire en tant que parent](/fr/docs/shared-parent-registration).
+
+## Pour un groupe d'établissements
+
+Le siège voit l'ensemble des admissions du groupe dans **Reports → Admissions**, mais ne peut pas
+ouvrir les écrans d'un établissement en particulier. Voir
+[Siège et rapports de groupe](/fr/docs/shared-head-office-group-reporting).

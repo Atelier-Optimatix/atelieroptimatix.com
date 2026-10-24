@@ -1,0 +1,59 @@
+---
+title: "Tutorial: Menyediakan Yuran"
+description: Menentukan apa yang dikenakan oleh institut anda, bila ia perlu dibayar, dan kelas mana yang terlibat — sebelum sebarang pembayaran boleh direkodkan.
+product: educonnect
+section: Tutorials
+order: 130
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/fee_setup_page.dart
+screenshotIds:
+  - "tutorial-fee-setup"
+hidden: false
+---
+
+Tiada apa-apa dalam Accounting berfungsi sehingga yuran wujud. Pembayaran sentiasa dibuat *terhadap* sesuatu caj, dan caj datang daripada jadual yuran yang anda tentukan di sini.
+
+**Anda memerlukan:** akses kepada **Accounting → Fee Setup**.
+
+## Dua peringkat
+
+- **Fee type** ialah perkara yang dicaj — Term Fee, Admission Fee, Transport.
+- **Schedule** ialah satu ansuran daripadanya: label, jumlah, tarikh akhir bayaran, dan kepada siapa ia terpakai.
+
+Satu fee type biasanya mempunyai beberapa schedule — tiga ansuran penggal bagi Term Fee yang sama.
+
+## Langkah
+
+1. Buka **Accounting → Fee Setup**.
+2. Cipta atau pilih **fee type**.
+3. Pilih **Schedule** untuk menambah ansuran, dan isi:
+   - **Label** — apa yang dipaparkan pada penyata ibu bapa dan resit. Jadilah spesifik:
+     `Term 1 2026`, bukan `Instalment`.
+   - **Amount**.
+   - **Due date** — yang menjadikan sesuatu caj tertunggak, dan yang menjadi asas peringatan pembayaran.
+   - **Applies to classes** — sama ada **All classes**, atau tandakan kelas tertentu. Beginilah cara anda mengenakan jumlah berbeza kepada kumpulan tahun berbeza: satu schedule bagi setiap set kelas.
+   - **Active** — biarkan hidup. Mematikannya menamatkan schedule tanpa memadam sejarahnya.
+4. Simpan.
+
+## Menduplikasi
+
+**Duplicate** menyalin schedule sedia ada supaya anda hanya perlu mengubah label, jumlah dan tarikh akhir. Ini cara paling pantas untuk membawa yuran ke penggal atau tahun seterusnya, dan ia memastikan perkataan yang digunakan konsisten antara ansuran.
+
+## Tamatkan, jangan padam
+
+Matikan **Active** bagi schedule yang tidak lagi terpakai. Memadam schedule yang sudah ada pembayaran terhadapnya akan menghasilkan caj yatim yang kemudian perlu anda bersihkan dalam
+[Reconciliation](/ms/docs/educonnect-tutorial-reconciliation).
+
+## Langkah seterusnya
+
+- [Rekod pembayaran](/ms/docs/educonnect-tutorial-record-a-payment) apabila ia diterima.
+- Sediakan [diskaun](/ms/docs/educonnect-tutorial-discounts) untuk biasiswa dan pengurangan adik-beradik.
+- Tentukan kesan yuran tertunggak terhadap akses portal dalam **Accounting → Portal Access Rules**.
+
+## Berkaitan
+
+- [Accounting Workflow — Ledger, Day-Close and Reconciliation](/ms/docs/shared-staff-accounting-overview)

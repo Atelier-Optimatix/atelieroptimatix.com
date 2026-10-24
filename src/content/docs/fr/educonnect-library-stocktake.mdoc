@@ -1,0 +1,49 @@
+---
+title: "Tutoriel : réaliser un inventaire de la bibliothèque"
+description: Vérifier les rayonnages par rapport au catalogue au moyen de scans, et ce que modifie la finalisation.
+product: educonnect
+section: Tutorials
+order: 235
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/stocktakes_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/stocktake_page.dart
+  - attendance-web-app/backend/services/library/stocktakeService.js
+screenshotIds:
+  - "library-stocktake"
+hidden: false
+---
+
+Un inventaire (stock-take) permet de savoir quels livres se trouvent réellement sur les rayonnages.
+
+**Ce dont vous avez besoin :** **Start a stock-take** pour en lancer un et **Finalise** pour le clore
+ou l'annuler.
+
+## En réaliser un
+
+1. **Library → Stock-take → Start a stock-take.** Donnez-lui un nom. Choisissez des rayonnages pour
+   ne vérifier que ceux-ci (ajoutez des localisations dans Library Settings), ou aucun pour toute la
+   bibliothèque.
+2. Sous **Scan the shelf**, choisissez **Shelf I am scanning** et scannez chaque livre. Chaque scan
+   est enregistré. Scanner un livre deux fois est sans conséquence. L'appareil photo peut rester
+   ouvert pour un scan continu, ou utilisez **Paste a list** pour les scans stockés dans la mémoire
+   d'une douchette.
+3. Examinez les listes :
+   - **Not seen yet** : les livres des rayonnages que personne n'a scannés. Vérifiez-la en premier.
+   - **Found on a different shelf** de celui qui est enregistré.
+   - **On the shelf but recorded as lent** : enregistrez leur retour.
+   - **Recorded as missing or lost** : la finalisation les remet en circulation.
+   - **Not in the catalogue** : des codes-barres sans fiche. Ajoutez le livre.
+4. **Finalise.** Les livres des rayonnages non vus passent à l'état **missing** (manquant). Les livres
+   manquants ou perdus qui ont été scannés repassent par l'enregistrement au retour : ils rejoignent
+   donc la réservation suivante ou les rayonnages, et l'amende impayée d'un livre perdu retrouvé est
+   annulée.
+
+**Cancel** ne modifie aucun livre ; ses scans sont conservés mais ne pourront plus être finalisés
+ultérieurement.
+
+Les prêts se poursuivent pendant un inventaire, et un livre prêté ou retourné après son début compte
+comme vu. Si la finalisation s'interrompt en cours de route, **Carry on finalising** la reprend.

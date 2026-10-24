@@ -1,0 +1,68 @@
+---
+title: "Enseignants : consulter la présence de votre classe"
+description: Les vues par jour, par semaine et par trimestre de votre classe — ce à quoi répond chacune, et laquelle ouvrir selon la question.
+product: educonnect
+section: For teachers
+order: 20
+roles:
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/class_attendance_dashboard_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/detailed_summary_daywise_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/detailed_summary_weekwise_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/term_attendance_summary_page.dart
+screenshotIds:
+  - "teacher-class-attendance"
+hidden: false
+---
+
+**My Class → Attendance** ouvre un tableau de bord de votre classe offrant trois accès aux mêmes
+données. Il ne s'agit pas de trois rapports ; ce sont trois niveaux de zoom.
+
+## Laquelle ouvrir
+
+| Question | Vue |
+| --- | --- |
+| « Qui était là mardi ? » | **Day-wise Summary** |
+| « Qui décroche — en manquant le même jour chaque semaine ? » | **Week-wise Summary** |
+| « Qui est sous le seuil de présence ce trimestre ? » | **Term Attendance** |
+| « J'ai besoin de quelque chose à imprimer ou à transmettre » | **Attendance Report** |
+
+## Day-wise Summary
+
+Une ligne par élève, une colonne par jour. C'est la vue qui répond à une question précise sur une date
+précise, et qui permet de repérer le jour où toute la classe a fléchi — un lundi pluvieux, un jour
+férié qui n'avait pas été configuré.
+
+## Week-wise Summary
+
+Agrège les mêmes données par semaine. Des tendances y apparaissent qui sont invisibles jour par jour :
+l'élève qui est systématiquement absent le vendredi, la quinzaine où quelqu'un a discrètement cessé de
+venir.
+
+Si elle indique **No Data Available**, aucune présence n'a été enregistrée pour la période — ce qui, en
+début de trimestre, signifie généralement que personne n'a encore fait l'appel. **No Students Found**
+signifie autre chose : la classe n'a aucun élève inscrit.
+
+## Term Attendance
+
+Un **Term Overview** avec les chiffres de la classe, puis un **Per-Student Breakdown** accompagné d'une
+ligne **Class Avg** pour comparer. C'est la vue à utiliser avant une réunion de parents, et celle qui
+répond à « la présence de cet élève pose-t-elle réellement problème, ou en a-t-on seulement
+l'impression ? »
+
+## Attendance Report
+
+La version imprimable et partageable. Utilisez-la pour tout ce qui quitte le système.
+
+## Un rappel sur le sens d'« absent »
+
+Aucune de ces vues ne peut distinguer une véritable absence d'un appel qui n'a jamais été terminé — un
+élève non marqué apparaît de la même façon dans les deux cas. Si un jour paraît alarmant, vérifiez
+s'il a bien été renseigné avant d'agir. Voir
+[Faire l'appel de votre classe](/fr/docs/educonnect-teacher-taking-attendance).
+
+## À consulter également
+
+- [Faire l'appel en tant que membre du personnel](/fr/docs/shared-staff-attendance-overview)

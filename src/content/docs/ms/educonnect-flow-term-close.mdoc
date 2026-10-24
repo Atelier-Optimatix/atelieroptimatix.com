@@ -1,0 +1,75 @@
+---
+title: Menutup Sesuatu Penggal
+description: Urutan akhir penggal — keputusan dimasukkan, laporan diterbitkan, buku akaun diselaraskan, dan kalendar dilanjutkan ke hadapan.
+product: educonnect
+section: Advanced workflows
+order: 40
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/term_report_screen.dart
+  - attendance-web-app/edu-frontend/lib/screens/accounting/reconciliation_page.dart
+hidden: false
+---
+
+Akhir penggal melibatkan peperiksaan, laporan, perakaunan dan kalendar. Urutan adalah penting kerana
+setiap langkah menggunakan hasil langkah sebelumnya.
+
+## 1. Selesaikan peperiksaan
+
+Semua keputusan dimasukkan dan disimpan, bagi setiap kelas dan mata pelajaran.
+
+- [Masukkan Keputusan Peperiksaan](/ms/docs/educonnect-tutorial-enter-exam-results)
+- [Muat Naik Keputusan daripada Hamparan](/ms/docs/educonnect-tutorial-upload-exam-results)
+
+Kosongkan baris gilir di **Exams → Result Changes** sebelum meneruskan. Permintaan perubahan yang belum
+diluluskan ialah markah yang bakal berubah — dan laporan kemajuan dibina daripada markah.
+
+## 2. Semak kedudukan
+
+**Exams → Rankings**. Ini ialah semakan kewarasan sebanyak ia merupakan satu output: kedudukan yang
+kelihatan salah biasanya bermaksud sesuatu mata pelajaran tiada markah bagi sebahagian kelas, atau
+peperiksaan dicipta dengan **Exam Type** yang salah — hanya peperiksaan TERM menyumbang kepada kedudukan
+penggal. Lihat [Cipta Peperiksaan](/ms/docs/educonnect-tutorial-create-an-exam).
+
+## 3. Laporan kemajuan
+
+Guru mengisinya, kemudian ia diterbitkan sebagai satu kelompok.
+
+- [Tulis dan Terbitkan Laporan Kemajuan](/ms/docs/educonnect-tutorial-progress-reports)
+- [Untuk Guru: Tulis Laporan Kemajuan](/ms/docs/educonnect-teacher-progress-reports)
+
+Terbitkan setelah seluruh kohort lengkap. Penerbitan inilah yang dilihat oleh ibu bapa.
+
+## 4. Kehadiran
+
+Sebelum memetik kehadiran penggal kepada sesiapa, pastikan kalendar adalah betul — cuti dan cuti penggal
+yang tidak dikonfigurasikan merendahkan setiap peratusan. Lihat
+[Tetapkan Cuti, Penggal dan Hari Bekerja](/ms/docs/educonnect-tutorial-holidays-and-terms).
+
+Kemudian ambil paparan penggal daripada **Attendance → Reports** dan ringkasan penggal setiap kelas.
+
+## 5. Tutup buku akaun
+
+1. Setiap hari dalam penggal telah [ditutup](/ms/docs/educonnect-tutorial-day-close).
+2. [Penyesuaian](/ms/docs/educonnect-tutorial-reconciliation) dikerjakan sehingga setiap tab menjadi sifar,
+   atau setiap baris yang tinggal ialah baris yang sengaja anda kekalkan.
+3. Invois dikeluarkan daripada **Accounting → Invoices**.
+4. [Pemberian diskaun](/ms/docs/educonnect-tutorial-discounts) yang hampir tamat disemak — biasiswa yang
+   telah berakhir, adik-beradik yang telah berhenti.
+
+Laksanakan penyesuaian sebelum mengeluarkan invois, bukan selepasnya.
+
+## 6. Lanjutkan kalendar ke hadapan
+
+- Masukkan tarikh dan cuti penggal seterusnya.
+- [Jadual yuran](/ms/docs/educonnect-tutorial-fee-setup) penggal seterusnya — **Duplicate** jadual semasa
+  dan ubah label, amaun dan tarikh akhir.
+- Perubahan jadual waktu, jika bentuk minggu berubah —
+  [jana semula](/ms/docs/educonnect-tutorial-generate-timetable) dalam **Preview only** terlebih dahulu.
+
+## Berkaitan
+
+- [Aliran Kerja Perakaunan](/ms/docs/shared-staff-accounting-overview)

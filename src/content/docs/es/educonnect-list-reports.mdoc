@@ -1,0 +1,75 @@
+---
+title: Informes de listas
+description: Listas de datos sin procesar, de solo lectura, sobre estudiantes, asistencia, exámenes, contabilidad y más, que puede buscar, filtrar y descargar en CSV o PDF.
+product: educonnect
+section: Guides
+order: 85
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/list_reports_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/list_reports/
+  - attendance-web-app/backend/services/lists/
+screenshotIds:
+  - "staff-list-reports"
+  - "staff-list-report-view"
+hidden: false
+---
+
+**List Reports** (informes de listas) sirve para el momento en que necesita las filas sin procesar y no un gráfico: todos los estudiantes que
+faltaron ayer, todos los RFID duplicados, todas las tarifas impagas. Se encuentra en el nivel superior del menú lateral,
+debajo de **Help & What's New**.
+
+Las listas son de **solo lectura**. Nada de lo que haga aquí modifica un registro. El acceso se concede mediante la clave
+*List reports (view & download raw data)* en **Administration → Access Control**, y las listas que
+contienen dinero también requieren el permiso de contabilidad correspondiente. Si una lista no se le ofrece, no
+la verá en el catálogo.
+
+## Cómo encontrar una lista
+
+El catálogo agrupa las listas en **Students**, **Teachers & staff**, **Attendance**, **Exams**,
+**Accounting**, **Admissions** y **School structure**. El encabezado muestra cuántas puede ver
+(*12 of 40 lists*). Escriba en **Search lists** (por ejemplo "RFID", "absent" o "teachers") para acotar
+el resultado. *No lists match your search.* significa que nada coincide; *No lists are available to this account.*
+significa que su acceso no incluye ninguna.
+
+Algunas listas que quizá busque:
+
+- **Students** — todos los estudiantes, estudiantes con un número de contacto faltante o no válido, estudiantes que comparten un
+  número de contacto, estudiantes sin una clase válida, RFID e ID de estudiante duplicados, cumpleaños y
+  edades, estudiantes que se han ido, estudiantes eliminados, logros de los estudiantes, certificados emitidos, listas de clase.
+- **Attendance** — estudiantes ausentes en una fecha, estudiantes presentes o con retraso en una fecha, porcentaje de asistencia de un
+  período, registro diario de estudiantes día por día, asistencia diaria por clase, docentes ausentes o presentes en una
+  fecha, hoja de horas del docente, ausencias de docentes declaradas y el registro de lecturas sin procesar.
+- **Exams** — exámenes, resultados de exámenes, notas por debajo de la nota de aprobación, notas faltantes, resumen de exámenes por
+  estudiante, observaciones y conducta del informe trimestral, y el registro de cambios de notas.
+- **Accounting** — cargos de tarifas, tarifas pendientes, saldo de tarifas por estudiante, descuentos, libro contable,
+  pagos, reembolsos y anulaciones, cierres del día, la bandeja de pagos en línea, tipos y calendarios de tarifas, y
+  sueldos de docentes.
+- **Admissions** — solicitudes de admisión y pagos de tarifas de admisión.
+
+## Cómo trabajar con una lista
+
+Abra una lista. Si necesita una fecha, una clase o un examen, configure los filtros en la parte superior y presione **Show**
+(*Set the filters and press Show.*). **Reset** los borra. Después:
+
+- **Search these rows** busca texto en cualquier columna.
+- **Columns** permite elegir qué columnas mostrar.
+- Haga clic en un encabezado para ordenar; los números se ordenan numéricamente y los vacíos van al final.
+- Aparecen menús desplegables de filtro para las columnas con un conjunto reducido de valores.
+
+Una lista muy larga se corta: una nota en rojo indica *Showing the first N of M rows. Narrow the filters to
+see the rest.* Acote los filtros en lugar de esperar que la descarga contenga las filas que faltan.
+
+## Descarga
+
+Use el menú de exportación para descargar en **CSV** o **PDF**. El archivo contiene las filas que se muestran en ese momento
+(después de su búsqueda y filtros) y solo las columnas que haya dejado activadas en **Columns**.
+El PDF solo se ofrece cuando se muestran 25 columnas o menos; de lo contrario, oculte algunas columnas o use CSV.
+
+## Temas relacionados
+
+- [Lectura de la sección Analytics](/es/docs/shared-staff-analytics)
+- [Búsqueda y perfiles de estudiantes](/es/docs/educonnect-student-search-and-profile)

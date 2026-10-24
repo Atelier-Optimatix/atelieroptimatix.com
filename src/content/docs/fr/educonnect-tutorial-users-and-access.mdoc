@@ -1,0 +1,79 @@
+---
+title: "Tutoriel : ajouter un utilisateur et accorder des accès"
+description: Créer des comptes pour le personnel et les parents, réinitialiser un mot de passe et utiliser Access Control pour décider de ce que chaque compte peut ouvrir.
+product: educonnect
+section: Tutorials
+order: 170
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/user_management_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/user_management/parent_accounts_tab.dart
+  - attendance-web-app/edu-frontend/lib/screens/settings/access_management_page.dart
+screenshotIds:
+  - "tutorial-users-and-access"
+hidden: false
+---
+
+## Deux écrans, deux rôles
+
+- **Administration → Users** — qui possède un identifiant de connexion.
+- **Administration → Access Control** — ce que cet identifiant peut ouvrir.
+
+Créer un utilisateur n'accorde pas grand-chose à lui seul. Les deux étapes sont nécessaires.
+
+## Ajouter un utilisateur
+
+1. Ouvrez **Administration → Users**. L'écran comporte deux onglets : **Staff** et **Parents**.
+2. Dans **Staff**, sélectionnez **Add User**.
+3. Renseignez les informations du compte et reliez-le à la fiche existante de la personne — pour un
+   enseignant, la [fiche enseignant que vous avez déjà créée](/fr/docs/educonnect-tutorial-add-a-teacher).
+4. Enregistrez.
+
+Les comptes de parents se créent en grande partie d'eux-mêmes : les parents s'inscrivent depuis le
+portail avec l'identifiant élève (Student ID) de leur enfant et vérifient leur compte par SMS ou par
+e-mail. L'onglet **Parents** vous permet de retrouver et de gérer le résultat.
+Voir [S'inscrire en tant que parent](/fr/docs/shared-parent-registration).
+
+## Réinitialiser un mot de passe
+
+1. Trouvez l'utilisateur et sélectionnez **Reset PW**.
+2. Saisissez un **New Password** et un **Confirm Password**, ou laissez le système en générer un.
+3. Le nouveau mot de passe est alors **affiché à l'écran** afin que vous puissiez le transmettre.
+
+Cet affichage constitue à lui seul toute la sécurité d'une réinitialisation. Communiquez donc le mot
+de passe oralement ou remettez-le en main propre, ne l'envoyez pas par e-mail, et demandez à la
+personne de le modifier dès sa première connexion depuis
+[My Profile](/fr/docs/educonnect-teacher-my-profile).
+
+## Supprimer un utilisateur
+
+**Delete** demande d'abord une confirmation. Cette action supprime l'identifiant de connexion, et non
+la fiche enseignant ou élève sous-jacente — ce qui est généralement ce que l'on souhaite pour une
+personne qui a quitté l'établissement.
+
+## Access Control
+
+**Administration → Access Control** est une matrice croisant les écrans et les rôles. C'est ce qui fait
+que deux enseignants d'un même établissement ne voient pas le même menu.
+
+1. Ouvrez **Administration → Access Control**.
+2. Activez ou désactivez des écrans un par un. Un rôle qui n'a accès qu'à une partie d'un groupe est
+   indiqué par **Partial access**.
+3. Une bannière avertit **You have unsaved permission changes** tant que vous n'avez pas utilisé
+   **Save changes** ou **Discard**. Ne quittez pas l'écran tant qu'elle est affichée.
+
+**Reset to defaults** remet un rôle sur l'ensemble de permissions d'origine. C'est le moyen le plus
+rapide de sortir d'une configuration que plus personne ne sait expliquer, mais cela supprime toutes
+les personnalisations de ce rôle — notez ce que vous aviez modifié avant d'appuyer dessus.
+
+## Dépannage : « Je ne vois pas cet écran »
+
+Il s'agit presque toujours d'un problème d'accès, et non d'une panne. Le menu masque ce que vous ne
+pouvez pas ouvrir au lieu de le griser ; une entrée de menu manquante est donc le symptôme attendu.
+Vérifiez d'abord Access Control pour le rôle de la personne concernée.
+
+## Voir aussi
+
+- [Se repérer dans l'application](/fr/docs/educonnect-navigating-the-dashboard)

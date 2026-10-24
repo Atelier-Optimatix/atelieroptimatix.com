@@ -1,0 +1,66 @@
+---
+title: "Docentes: Consulte la asistencia de su clase"
+description: "Las vistas diaria, semanal y trimestral de su clase: qué responde cada una y cuál abrir según la pregunta."
+product: educonnect
+section: For teachers
+order: 20
+roles:
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/class_attendance_dashboard_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/detailed_summary_daywise_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/detailed_summary_weekwise_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/term_attendance_summary_page.dart
+screenshotIds:
+  - "teacher-class-attendance"
+hidden: false
+---
+
+**My Class → Attendance** abre un panel de su clase con tres maneras de acceder a los mismos datos. No
+son tres informes; son tres niveles de zoom.
+
+## Cuál abrir
+
+| Pregunta | Vista |
+| --- | --- |
+| "¿Quién asistió el martes?" | **Day-wise Summary** |
+| "¿Quién se está alejando, por ejemplo faltando el mismo día cada semana?" | **Week-wise Summary** |
+| "¿Quién está por debajo del umbral de asistencia este trimestre?" | **Term Attendance** |
+| "Necesito algo para imprimir o entregar" | **Attendance Report** |
+
+## Day-wise Summary
+
+Una fila por estudiante, una columna por día. Es la vista para responder una pregunta concreta sobre una
+fecha concreta, y para detectar el día en que toda la clase bajó: un lunes lluvioso, un feriado que
+no estaba configurado.
+
+## Week-wise Summary
+
+Agrega los mismos datos por semana. Aquí aparecen patrones que son invisibles día a día: el estudiante
+que falta de forma habitual los viernes, la quincena en que alguien dejó de venir silenciosamente.
+
+Si indica **No Data Available**, no se ha registrado asistencia para el período, lo que, al
+inicio de un trimestre, normalmente solo significa que nadie ha pasado lista todavía. **No Students Found** significa
+algo distinto: la clase no tiene a nadie matriculado.
+
+## Term Attendance
+
+Un **Term Overview** con las cifras de la clase y luego un **Per-Student Breakdown** con una línea **Class Avg**
+para comparar. Es la vista que debe usar antes de una reunión con padres, y la que responde a
+"¿la asistencia de este estudiante es realmente un problema o solo lo parece?"
+
+## Attendance Report
+
+La versión imprimible y compartible. Úsela para todo lo que salga del sistema.
+
+## Un recordatorio sobre lo que significa "ausente"
+
+Ninguna de estas vistas puede distinguir una ausencia real de una lista que nunca se completó: un
+estudiante sin marcar se ve idéntico en ambos casos. Si un día parece alarmante, compruebe si realmente se marcó
+antes de actuar. Consulte
+[Registro de la asistencia de su clase](/es/docs/educonnect-teacher-taking-attendance).
+
+## Temas relacionados
+
+- [Registro de asistencia como personal](/es/docs/shared-staff-attendance-overview)

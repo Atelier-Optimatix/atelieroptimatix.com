@@ -1,0 +1,88 @@
+---
+title: "Tutoriel : constituer et tenir à jour le catalogue de la bibliothèque"
+description: Ajouter des livres et des exemplaires, importer un registre de livres depuis un tableur, rechercher des ISBN et imprimer des étiquettes de codes-barres.
+product: educonnect
+section: Tutorials
+order: 231
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/catalogue_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/import_catalogue_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/widgets/print_labels_dialog.dart
+  - attendance-web-app/backend/services/library/importService.js
+screenshotIds:
+  - "library-catalogue"
+  - "library-import"
+hidden: false
+---
+
+Le catalogue comporte deux niveaux. Un **titre** (title) est le livre tel qu'il a été publié : nom,
+auteurs, ISBN, matières, prix. Un **exemplaire** (copy) est un objet physique doté de son propre
+code-barres, de son état et de son rayonnage. Un prêt concerne toujours un exemplaire.
+
+**Ce dont vous avez besoin :** **Search the catalogue** pour consulter, **Add & edit books and
+copies** pour modifier, **Bulk import** pour le tableur.
+
+## Rechercher
+
+Ouvrez **Library → Catalogue**. La recherche correspond au début des mots dans les titres, les
+auteurs et les champs similaires. **Include hidden books** affiche les titres que l'établissement ne
+rend pas visibles dans le portail des parents. Ouvrez un livre pour voir ses exemplaires et qui les
+détient, et un exemplaire pour voir son historique.
+
+## Ajouter un livre
+
+1. Sélectionnez **Add book**.
+2. Renseignez le titre et les détails. Si **ISBN lookup** est activé dans Library Settings, saisissez
+   l'ISBN et sélectionnez **Look up** pour compléter les champs vides à partir d'Open Library.
+3. Choisissez qui peut voir le livre : tout le monde, ou le personnel uniquement.
+4. Ajoutez des exemplaires. Vous pouvez en ajouter jusqu'à 200 à la fois. Choisissez l'état, la
+   localisation sur les rayonnages et s'il a été acheté ou reçu en don.
+
+Les exemplaires sans code-barres propre reçoivent une étiquette générée, par exemple `LIB000123`.
+
+## Importer un registre de livres
+
+1. Dans le Catalogue, sélectionnez **Import**, puis **Download a template** si vous souhaitez un
+   modèle.
+2. **Choose .xlsx file** et associez les intitulés de vos colonnes, en commençant par **Title**.
+3. Examinez le plan : **New books**, **Copies of books already in the catalogue**, **Copies keeping
+   their barcode**, **Copies with new labels**, **Rows skipped**, ainsi que les lignes à examiner,
+   avec le motif pour chacune.
+4. Confirmez. Rien n'est conservé entre le plan et la validation ; le plan est donc recalculé par
+   rapport au catalogue tel qu'il est à ce moment-là.
+
+Bon à savoir :
+- Les lignes ayant le même ISBN forment un seul titre. Sans ISBN, un titre est reconnu par son nom et
+  son premier auteur.
+- Une ligne **avec** code-barres correspond à un exemplaire portant cette étiquette. Importer deux
+  fois le même fichier n'ajoute rien en double.
+- Une ligne **sans** code-barres reçoit de nouvelles étiquettes à chaque importation ; une
+  réimportation ajoute donc des doublons. Le plan vous en avertit.
+- Un fichier peut contenir jusqu'à 20 000 lignes.
+
+## Imprimer des étiquettes de codes-barres
+
+Sélectionnez **Print labels**, cochez les exemplaires et choisissez l'emplacement de départ sur la
+première planche (pour les planches d'étiquettes partiellement utilisées). La mise en page est A4,
+3 colonnes sur 8. Les étiquettes nouvellement générées sont cochées par défaut, car ce sont celles
+dont le livre ne porte encore aucune étiquette.
+
+## Scanner avec l'appareil photo
+
+Partout où l'application demande un scan, vous pouvez utiliser **Scan with camera**. Il emprunte le
+même chemin qu'une douchette. Il se ferme après un seul code, sauf lors d'un inventaire où il reste
+ouvert.
+
+## Retirer, réparer, rétablir
+
+Un bibliothécaire disposant de **Withdraw, repair & restore copies** peut marquer un exemplaire comme
+en réparation, retiré ou disponible. Les statuts manquant et perdu sont définis par les inventaires
+et par le comptoir.
+
+## À consulter également
+
+- [Stock-take](/fr/docs/educonnect-library-stocktake)

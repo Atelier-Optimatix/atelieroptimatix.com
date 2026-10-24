@@ -1,0 +1,101 @@
+---
+title: Configurer un nouvel établissement
+description: L'ordre complet des opérations, d'un système vide à un système en service — et ce qui se casse si vous les faites dans le désordre.
+product: educonnect
+section: Getting started
+order: 2
+roles:
+  - admin
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/
+hidden: false
+---
+
+Presque chaque écran d'EduConnect dépend d'un élément configuré sur un autre écran. Faire cela dans
+l'ordre prend un après-midi ; le faire dans le désordre oblige à en refaire une partie.
+
+Chaque étape renvoie vers son propre tutoriel.
+
+## 1. Le calendrier
+
+**Administration → Settings**, puis **Administration → Calendar**.
+
+Jours ouvrés, dates des trimestres, jours fériés et vacances. Tout ce qui touche à la présence est un
+pourcentage calculé à partir de ces éléments ; les saisir en premier garantit donc que vos chiffres
+sont justes dès le premier jour, plutôt que corrigés à la troisième semaine.
+
+→ [Définir les jours fériés, les trimestres et les jours ouvrés](/fr/docs/educonnect-tutorial-holidays-and-terms)
+
+## 2. Les personnes et les lieux
+
+1. **Classes** — → [Ajouter une classe](/fr/docs/educonnect-tutorial-add-a-class)
+2. **Teachers**, avec les matières enseignées par chacun — →
+   [Ajouter un enseignant](/fr/docs/educonnect-tutorial-add-a-teacher)
+3. **Students**, dans leurs classes — →
+   [Ajouter un élève](/fr/docs/educonnect-tutorial-add-a-student) ou
+   [Importer depuis Excel](/fr/docs/educonnect-tutorial-import-students)
+4. Définissez l'**enseignant référent** (class teacher) de chaque classe.
+
+Les enseignants avant les élèves, car une classe qui a déjà un enseignant est une chose de moins à
+reprendre plus tard.
+
+## 3. Les comptes de connexion
+
+**Administration → Users**, puis **Administration → Access Control**.
+
+Une fiche d'enseignant n'est pas un compte de connexion. Créez les comptes, puis décidez de ce que
+chaque rôle peut ouvrir.
+
+→ [Ajouter un utilisateur et accorder des accès](/fr/docs/educonnect-tutorial-users-and-access)
+
+## 4. La chaîne de l'emploi du temps
+
+Strictement dans cet ordre — chaque étape alimente la suivante :
+
+1. **Bell Schedule** — → [Configurer l'horaire des sonneries](/fr/docs/educonnect-tutorial-bell-schedule)
+2. **Subjects & Rules**, **Subject Groups**, **Classrooms**, **Teacher Constraints** — le reste de
+   **Timetable → Configuration**
+3. **Grade Curriculum** (son enregistrement l'applique aux classes du niveau) — →
+   [Créer ou modifier un programme de niveau](/fr/docs/educonnect-tutorial-grade-curriculum)
+4. **Class Subjects**, en affectant un enseignant à chacune — →
+   [Affecter des matières et des enseignants](/fr/docs/educonnect-tutorial-class-subjects)
+5. **Generate** — → [Générer l'emploi du temps](/fr/docs/educonnect-tutorial-generate-timetable)
+
+Générer avec une chaîne incomplète est la cause la plus fréquente de « l'emploi du temps ne
+fonctionne pas ». Le générateur ne peut placer que ce que les étapes 1 à 4 lui ont indiqué.
+
+## 5. L'argent
+
+1. **Fee Setup** — les types de frais et leurs échéances →
+   [Configurer les frais](/fr/docs/educonnect-tutorial-fee-setup)
+2. **Discounts** — bourses, réductions pour fratries et pour le personnel →
+   [Configurer et accorder des remises](/fr/docs/educonnect-tutorial-discounts)
+3. **Portal Access Rules** — l'effet des frais impayés sur l'accès d'un parent au portail
+4. Paiements en ligne, dans **Administration → Settings**, si vous acceptez les paiements par carte
+
+Les frais avant que les élèves commencent à payer, bien sûr — mais aussi avant le début du trimestre,
+puisque ce sont les dates d'échéance qui rendent une charge en retard.
+
+## 6. Les cartes
+
+Ajoutez des cartes vierges au stock, téléversez le modèle de carte, et assurez-vous que chaque fiche
+d'élève et d'enseignant comporte un **RFID**. Une fiche qui n'en a pas ne pourra jamais enregistrer de
+présence.
+
+→ [Émettre et remplacer des cartes d'identité](/fr/docs/educonnect-tutorial-id-cards)
+
+## 7. Ce que voient les parents
+
+1. **Handbook** — → [Rédiger et publier le règlement intérieur des élèves](/fr/docs/educonnect-tutorial-handbook)
+2. **Prospectus**, si vous gérez les admissions par le portail
+3. L'identité visuelle et la terminologie de l'établissement dans **Administration → Settings** —
+   [pourquoi le vocabulaire change](/fr/docs/shared-institute-branding)
+
+## 8. Ensuite, en cours de trimestre
+
+- La présence au quotidien — [en tant qu'enseignant](/fr/docs/educonnect-teacher-taking-attendance)
+- Les [examens](/fr/docs/educonnect-tutorial-create-an-exam) et les
+  [résultats](/fr/docs/educonnect-tutorial-enter-exam-results) au fil de l'eau
+- La [clôture de journée](/fr/docs/educonnect-tutorial-day-close) chaque soir
+- Les [bulletins de progression](/fr/docs/educonnect-tutorial-progress-reports) en fin de trimestre

@@ -1,0 +1,86 @@
+---
+title: Kehadiran Guru & Penggantian
+description: Menjejak kehadiran staf, dan membina pelan ganti bagi guru yang tidak hadir hari ini.
+product: educonnect
+section: Guides
+order: 50
+roles:
+  - admin
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_attendance_report_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_monthly_timesheet_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/substitution_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_attendance_report_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_monthly_attendance_table.dart
+lastUpdateDate: 2026-09-26
+screenshotIds:
+  - "staff-teacher-attendance"
+  - "staff-teacher-timesheet"
+hidden: false
+---
+
+## Kehadiran guru
+
+Ini ialah kehadiran staf, dan ia berasingan daripada kehadiran pelajar yang diambil oleh guru bagi
+kelas mereka.
+
+Ia muncul di dua tempat dengan sengaja:
+
+- **Teachers → Attendance**, untuk pentadbir yang melihat seluruh staf.
+- **Attendance → My Attendance**, supaya guru boleh menyemak rekod sendiri tanpa diberi
+  akses kepada bahagian Teachers yang lain.
+
+Kedua-duanya membuka laporan yang sama, dan kedua-duanya boleh masuk ke jadual **monthly** untuk paparan yang lebih panjang.
+
+## Membaca senarai harian
+
+Setiap baris ialah seorang guru pada satu hari. **In / Out** menunjukkan imbasan pertama dan terakhir pada hari itu
+bersebelahan — semasa hari persekolahan masa keluar dipaparkan `--` sehingga guru mengimbas keluar — dan
+**Time in School** ialah perbezaan antara keduanya (contohnya *7h 17m*). **Status** dikira
+daripada imbasan pertama berbanding masa had institut: *on time*, *late*, atau *absent*.
+**Marked By** menamakan pembaca yang mengambil imbasan, atau orang yang menandanya secara manual.
+
+Pilih satu baris untuk melihat **setiap** imbasan yang dibuat guru itu pada hari tersebut, bukan hanya yang pertama dan terakhir.
+
+## Paparan bulanan
+
+- **Monthly Attendance** menyusun seluruh staf sebulan pada satu masa: `/` hadir, `L` lewat,
+  `L2` lewat (peringkat kedua), `A` tidak hadir, `—` tiada rekod.
+- **Timesheet** muncul setelah anda memilih seorang guru dalam penapis **Teacher**. Ia menyenaraikan setiap
+  tarikh dalam bulan itu dengan masa masuk dan keluar serta jam bekerja, sedia untuk dicetak atau dieksport untuk gaji.
+
+## Penggantian
+
+**Teachers → Substitution** menjawab satu soalan harian: siapa yang tidak hadir, dan siapa yang
+menggantikan pelajaran mereka?
+
+Halaman ini terbuka pada ketidakhadiran hari ini dan memberitahu anda bilangannya secara terus — *"all present"*, atau berapa ramai
+guru yang tidak hadir hari ini.
+
+Dari situ:
+
+- **Auto-Generate** mencadangkan pelan ganti untuk anda.
+- **Save Plan** menyimpannya; setelah pelan wujud butang yang sama menjadi **Update Plan**, jadi anda boleh
+  menjana semula atau melaras dan menyimpan lagi.
+- **Print** menghasilkan pelan sebagai helaian boleh cetak untuk bilik staf.
+
+Ketidakhadiran juga membezakan **early departure** (pulang awal) daripada ketidakhadiran sehari penuh, jadi guru yang pergi
+di pertengahan hari hanya digantikan bagi waktu yang benar-benar mereka tiada.
+
+{% callout type="note" %}
+Butang tindakan boleh hilang semasa anda berada di halaman ini. Itu biasanya bermakna setiap guru yang
+ditanda tidak hadir telah pun mengimbas masuk, jadi tiada apa lagi yang perlu diganti — pelan itu tidak hilang,
+ia cuma tidak diperlukan lagi.
+{% /callout %}
+
+Oleh sebab penggantian bergantung pada mengetahui siapa mengajar apa dan bila, penggantian hanya sebaik
+jadual waktu di belakangnya. Jika pelan yang dicadangkan kelihatan salah, semak jadual waktu dan kekangan guru
+sebelum menganggap cadangan itu yang bersalah.
+
+## Berkaitan
+
+- [Menguruskan Guru](/ms/docs/shared-staff-teacher-management)
+- [Membina Jadual Waktu](/ms/docs/shared-staff-timetable)
+- [Mengambil Kehadiran sebagai Staf](/ms/docs/shared-staff-attendance-overview)

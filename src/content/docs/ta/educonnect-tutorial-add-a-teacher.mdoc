@@ -1,0 +1,61 @@
+---
+title: "பயிற்சி: ஆசிரியரைச் சேர்த்தல்"
+description: ஆசிரியர் பதிவை உருவாக்குதல், அவர் கற்பிக்கும் பாடங்களை நியமித்தல், உள்நுழைவை வழங்கும் தனிப் படி.
+product: educonnect
+section: Tutorials
+order: 40
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/add_teacher_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_management_page.dart
+screenshotIds:
+  - "tutorial-add-a-teacher"
+hidden: false
+---
+
+## ஆசிரியர் பதிவு என்பது உள்நுழைவு அல்ல
+
+இவை இரண்டு தனித்தனி விடயங்கள்; முதலாவதை மட்டும் செய்வதே புதிய ஆசிரியரால் "உள்நுழைய முடியவில்லை" என்பதற்கான மிகப் பொதுவான காரணம்:
+
+1. **ஆசிரியர் பதிவு** — நபர், அவரது பாடங்கள், வருகை, நேரசூசி. இங்கே உருவாக்கப்படுகிறது.
+2. **பயனர் கணக்கு** — அவர் உண்மையில் உள்நுழையப் பயன்படுத்தும் பயனர் பெயரும் கடவுச்சொல்லும். **Administration → Users** இல் உருவாக்கப்படுகிறது; [Users and Access](/ta/docs/educonnect-tutorial-users-and-access) ஐப் பாருங்கள்.
+
+முதலில் ஆசிரியர் பதிவையும், பின்னர் கணக்கையும் உருவாக்குங்கள்.
+
+## படிகள்
+
+1. **Teachers → Directory** ஐத் திறவுங்கள்.
+2. **Add Teacher** ஐத் தெரிவு செய்யுங்கள்.
+3. படிவத்தை நிரப்புங்கள்:
+   - **Teacher ID** — கட்டாயம்; தனித்துவமானது. அது எடுக்கப்பட்டிருந்தால் **Duplicate Teacher ID detected** என்று புலம் எச்சரிக்கும்.
+   - **Full Name** — கட்டாயம்.
+   - **Gender** — கட்டாயம்.
+   - **Date of Birth** மற்றும் **Joined Date** — இரண்டும் விருப்பத்துக்குரியவை; இரண்டும் `YYYY-MM-DD`.
+   - **Contact Number**, **Email**, **Address**, **Religion**, **Ethnicity**, **Nationality** — அனைத்தும் விருப்பத்துக்குரியவை.
+   - **RFID** — விருப்பத்துக்குரியது. ஆசிரியர் தமது *சொந்த* வருகைக்காக ஸ்கேன் செய்யும் அட்டை இது. இது இல்லையெனில், அவரது வருகை வேறு வழியில் பதியப்பட வேண்டும்.
+4. **அவர் கற்பிக்கும் பாடங்களை** சேர்க்கவும். இதுவே கீழ்நிலையில் மிக முக்கியமான புலம்: நேரசூசி உருவாக்கியும் பதிலீட்டுப் பரிந்துரைகளும் இங்கே பட்டியலிடப்பட்ட பாடத்துக்கு மட்டுமே ஆசிரியரை முன்மொழியும். பாடங்கள் இல்லாத ஆசிரியர் ஒருபோதும் தானாக நேரசூசியில் சேர்க்கப்படமாட்டார்.
+5. உங்கள் நிறுவனம் பயன்படுத்தினால் **photo** ஒன்றைச் சேர்க்கவும்.
+6. **SAVE TEACHER** ஐத் தெரிவு செய்யுங்கள்.
+
+## பின்னர் அவருக்கு உள்நுழைவை வழங்குங்கள்
+
+1. **Administration → Users** ஐத் திறவுங்கள்.
+2. **Add User** ஐத் தெரிவு செய்து, நீங்கள் இப்போது உருவாக்கிய ஆசிரியர் பதிவுடன் இணைத்துக் கணக்கை உருவாக்குங்கள்.
+3. அந்தக் கணக்கு எவற்றை அணுக முடியும் என்பதை **Administration → Access Control** இல் சரிபாருங்கள் — [Users and Access](/ta/docs/educonnect-tutorial-users-and-access) ஐப் பாருங்கள்.
+
+## திருத்துதலும் நீக்குதலும்
+
+**Teachers → Directory** இலிருந்து ஆசிரியரைத் திறந்து **Edit** ஐப் பயன்படுத்துங்கள். **DELETE TEACHER** முதலில் உறுதிப்படுத்தல் கேட்டு, வருகை வரலாற்றுடன் சேர்த்துப் பதிவை நீக்கும் — பணியை விட்டுச் சென்றவருக்கு, நீக்கிய பின்னர் அல்லாமல் நீக்கும் முன்பே உங்கள் நிறுவனத்துடன் கலந்தாலோசியுங்கள்.
+
+## அடுத்து என்ன செய்வது
+
+- [Class Subjects](/ta/docs/educonnect-tutorial-class-subjects) இல் பாட ஆசிரியராக அவரை வகுப்புகளுக்கு நியமியுங்கள்.
+- [நேரசூசியை உருவாக்கும்](/ta/docs/educonnect-tutorial-generate-timetable) முன், **Timetable → Configuration → Teacher Constraints** இல் அவர் இருக்கும், இல்லாத நேரங்களை அமையுங்கள்.
+- ஒரு வகுப்பில் **Edit Class Teacher** மூலம் அவரை வகுப்பாசிரியராக்குங்கள் — [Add a Class](/ta/docs/educonnect-tutorial-add-a-class) ஐப் பாருங்கள்.
+
+## தொடர்புடையவை
+
+- [Managing Teachers](/ta/docs/shared-staff-teacher-management)
+- [Teacher Attendance & Substitution](/ta/docs/shared-staff-teacher-attendance)

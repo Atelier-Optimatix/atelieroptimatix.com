@@ -1,0 +1,72 @@
+---
+title: Membina Jadual Waktu
+description: Cara pentadbir menyusun jadual waktu mingguan, dan tempat subjek, kurikulum serta jadual loceng di belakangnya dikonfigurasikan.
+product: educonnect
+section: Guides
+order: 30
+roles:
+  - admin
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/timetable_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/
+lastUpdateDate: 2026-09-26
+screenshotIds:
+  - "tutorial-generate-timetable"
+hidden: false
+---
+
+## Tempat mencarinya
+
+Semua yang di bawah terletak dalam kumpulan **Timetable** pada laci sisi. Item mana yang anda lihat di sana
+bergantung pada tahap akses anda — grid, subjek kelas, kurikulum dan konfigurasi masing-masing
+mempunyai kebenaran berasingan, jadi pentadbir mungkin melihat kesemua empat manakala penyelaras hanya melihat satu atau dua.
+
+Guru biasanya tidak menggunakan bahagian ini langsung. Mereka mendapat **My Timetable** sebagai item laci
+peringkat atas yang tersendiri — paparan baca sahaja bagi minggu mereka sendiri.
+
+## Urutan melakukan sesuatu
+
+Grid jadual waktu hanya boleh menempatkan pelajaran yang sudah dikenali oleh konfigurasi di sekelilingnya,
+jadi institut baharu biasanya bekerja dari luar ke dalam bermula dengan skrin persediaan:
+
+1. **Configuration → Bell Schedule** — tentukan waktu yang membentuk satu hari (label, masa mula dan tamat,
+   dan sama ada waktu itu ialah rehat). Anda boleh menyimpan lebih daripada satu jadual dan menandakan satu sebagai
+   lalai.
+2. **Grade Curriculum** — apa yang sepatutnya diajar bagi setiap gred.
+3. **Class Subjects** — subjek mana yang benar-benar berjalan bagi setiap kelas individu.
+4. **Timetable Grid** — letakkan subjek tersebut ke dalam waktu.
+
+Jika subjek tidak ditawarkan apabila anda cuba meletakkannya, pembetulannya hampir selalu dalam Class Subjects atau
+Grade Curriculum dan bukannya dalam grid itu sendiri.
+
+## Bekerja dalam grid
+
+- Setiap sel ialah satu kelas dalam satu waktu pada satu hari. Memilih sel membolehkan anda menetapkan pelajaran di situ,
+  atau meletakkan seluruh **subject group** apabila beberapa kelas berpecah kepada pilihan pada masa yang sama.
+- **Copy day** mengambil setiap slot pada satu hari dan mengulanginya pada hari yang anda pilih. Pengesahan
+  memberitahu berapa slot disalin dan berapa **skipped as conflicts** — slot yang dilangkau ialah
+  yang waktu sasarannya sudah diisi atau gurunya sudah ditempah, jadi tiada apa
+  yang ditimpa secara senyap.
+- Apabila sesuatu perubahan akan menempah guru atau bilik darjah dua kali, grid menolaknya dan menyerlahkan
+  slot yang bertembung dan bukannya menyimpan kedua-duanya.
+
+## Tab konfigurasi lain
+
+**Configuration** mengandungi lebih daripada bell schedule:
+
+- **Teacher Constraints** — bila guru individu tersedia dan tidak tersedia.
+- **Subjects & Rules** dan **Subject Groups** — cara subjek berfungsi dan yang mana ditawarkan sebagai
+  set pilihan.
+- **Classrooms** — bilik yang boleh dipadankan dengan pelajaran.
+- **Import Data** — muat data persediaan secara pukal dan bukannya memasukkannya skrin demi skrin.
+
+Anda juga boleh mengeksport jadual waktu yang siap untuk **all classes** atau untuk **all teachers** dari bahagian atas
+skrin Configuration.
+
+## Berkaitan
+
+- [Menguruskan Guru](/ms/docs/shared-staff-teacher-management)
+- [Kehadiran Guru & Penggantian](/ms/docs/shared-staff-teacher-attendance)
+- [Mengambil Kehadiran sebagai Staf](/ms/docs/shared-staff-attendance-overview)

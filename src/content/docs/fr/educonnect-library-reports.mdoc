@@ -1,0 +1,34 @@
+---
+title: "Rapports de la bibliothèque"
+description: Les rapports de circulation, de collection, de retards et d'amendes, et ce que compte chaque chiffre.
+product: educonnect
+section: Guides
+order: 236
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/library_reports_page.dart
+  - attendance-web-app/backend/services/library/libraryReportService.js
+screenshotIds:
+  - "library-reports"
+hidden: false
+---
+
+**Library → Reports** nécessite **Library reports**. Choisissez une période d'**un an maximum** ; pour
+des plages plus longues, la page vous demande d'en choisir une plus courte afin que les chiffres
+soient complets.
+
+Les rapports couvrent :
+
+- **Circulation** : les prêts et les retours sur la période, avec des ventilations **By borrower
+  type**, **By grade** et **By class**, ainsi que le nombre de livres et d'emprunteurs différents.
+- **Popular titles** (titres populaires) et titres **never borrowed** (jamais empruntés).
+- **Overdue** : livres en retard et **Days late**.
+- **Collection** : exemplaires de la bibliothèque **By status**, **By condition**, **By shelf** et
+  **By subject**, à la date du jour.
+- **Fines** : par type, avec impayées, payées et annulées.
+- **Engagement** : qui emprunte et qui n'emprunte pas.
+
+Les chiffres sont mis en cache pendant quelques minutes.

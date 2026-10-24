@@ -1,0 +1,111 @@
+---
+title: "Premiers pas avec l'application KinderCare pour le personnel"
+description: Les cinq onglets de l'application des enseignants, l'inscription d'un enfant, le profil de l'élève et l'ajout d'événements au calendrier.
+product: kindercare
+section: Getting started
+order: 10
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/home_screen.dart
+  - kinder-care-fe/lib/screens/students_screen.dart
+  - kinder-care-fe/lib/screens/calendar_screen.dart
+  - kinder-care-fe/lib/screens/add_student_screen.dart
+  - kinder-care-fe/lib/screens/account_settings_screen.dart
+  - kinder-care-fe/lib/screens/student_profile_screen.dart
+  - kinder-care-shared/lib/src/student_profile/student_profile_page.dart
+  - kinder-care-shared/lib/src/student_profile/profile_permissions.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Les cinq onglets
+
+L'application KinderCare pour le personnel est volontairement sobre. Tout se trouve derrière cinq
+onglets, en bas de l'écran :
+
+- **Activities** — ce que vous consignez au sujet des enfants tout au long de la journée.
+- **Students** — les enfants de votre classe.
+- **Calendar** — les événements de votre classe.
+- **Reports** — les rapports écrits destinés aux parents.
+- **Notices** — les annonces aux parents. Voir [Envoyer des annonces](/fr/docs/kindercare-staff-announcements).
+
+Il n'y a ni menu latéral ni espace d'administration distinct à chercher. Si quelque chose ne figure pas
+sur l'un de ces cinq onglets, ce n'est pas dans cette application.
+
+{% callout type="note" %}
+Il s'agit de l'application des enseignants. Les parents disposent d'une application **distincte**, avec
+ses propres onglets — voir [L'application KinderCare pour les parents](/fr/docs/kindercare-parent-app).
+Les deux affichent en grande partie les mêmes informations ; il est donc utile de savoir de laquelle
+parle votre interlocuteur avant de chercher à résoudre un problème avec lui.
+{% /callout %}
+
+## Inscrire un enfant
+
+**Students → Add Student** recueille les informations de l'enfant par sections : informations
+personnelles (nom complet, identifiant élève, date de naissance), informations scolaires (classe,
+genre), coordonnées (adresse, numéro de mobile, e-mail, parent/tuteur) et informations complémentaires
+(nationalité, religion, RFID, allergies et médicaments). Vous pouvez joindre une photo en même temps,
+prise avec l'**appareil photo** (camera) ou choisie dans la **galerie** (gallery). Le nom complet,
+l'identifiant élève et la classe sont obligatoires.
+
+## L'onglet Students
+
+L'onglet Students affiche votre classe sous forme de **grille** (grid) ou de **liste** (list) — le
+bouton en haut à droite permet de basculer de l'une à l'autre. **Search by Name** affine l'affichage, ce
+qui est généralement plus rapide que de faire défiler la liste lorsque la classe est nombreuse. Chaque
+enfant porte aussi un badge indiquant si sa présence a été marquée **aujourd'hui** ; si le badge est
+absent, il se peut simplement que les données de présence ne se soient pas chargées, et le reste de
+l'application continue de fonctionner.
+
+Si aucune classe ne vous est encore attribuée, l'onglet vous invite à en choisir une au lieu d'afficher
+une liste vide.
+
+## Le profil d'un enfant
+
+Touchez un enfant pour ouvrir son profil. C'est la même page que celle que voient les parents dans leur
+application, de sorte que le vocabulaire est identique des deux côtés. Elle comporte deux onglets :
+
+- **Details** — informations personnelles et coordonnées, identifiant élève et classe de
+  l'établissement, ainsi que la personne qui a modifié la fiche en dernier et à quel moment.
+  Les **allergies et médicaments** (Allergies and medicine) sont affichés dans une carte rouge
+  mise en évidence afin qu'ils soient difficiles à manquer.
+- **Attendance** — un calendrier mensuel de l'enfant avec **Days Present**, **Working Days** et un
+  pourcentage d'**Attendance**. Passez d'un mois à l'autre avec les flèches du calendrier.
+
+Utilisez le crayon (**Edit profile**) pour modifier les informations, puis **Save Changes** une fois
+terminé ; le bouton en forme d'appareil photo change la photo de l'enfant. Le personnel peut modifier
+tous les champs, à l'exception de l'**identifiant élève** (student ID), de la **classe** (class) et de
+l'**Emergency Contact**, qui sont en lecture seule dans l'application. (Les parents ne peuvent modifier
+que leur téléphone, leur e-mail, leur adresse et la photo.)
+
+{% callout type="note" %}
+Si un enregistrement échoue, l'application affiche le motif qui lui a été renvoyé plutôt qu'une erreur
+générique ; lisez donc le message avant de réessayer — il nomme généralement le champ qui a été refusé.
+{% /callout %}
+
+## Le calendrier
+
+L'onglet Calendar est modifiable, et pas seulement consultable : vous pouvez **ajouter**, **modifier**
+et **supprimer** des événements. Il charge les événements de toute l'année ; vous pouvez donc parcourir
+les mois vers l'avant et vers l'arrière sans attendre. La suppression demande d'abord une confirmation,
+car les parents ont peut-être déjà vu l'événement dans leur application.
+
+## Rester connecté
+
+L'application vous garde connecté d'un redémarrage à l'autre ; vous n'avez donc pas à vous connecter
+chaque matin. Vous n'avez à vous reconnecter qu'après vous être déconnecté.
+
+## Paramètres du compte
+
+**Account Settings** est volontairement minimal. Outre les informations de votre compte, il propose
+**Request Account Deletion** — une demande adressée à l'établissement, et non une action immédiate ; la
+soumettre ne vous déconnecte pas et ne supprime pas vos données sur-le-champ.
+
+## Voir aussi
+
+- [Enregistrer des activités](/fr/docs/kindercare-staff-activities)
+- [Rédiger des rapports](/fr/docs/kindercare-staff-reports)
+- [Envoyer des annonces](/fr/docs/kindercare-staff-announcements)
+- [L'application KinderCare pour les parents](/fr/docs/kindercare-parent-app)

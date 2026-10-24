@@ -10,7 +10,7 @@ import headerMs from "@/content/global/ms/header.json";
 import seoMs from "@/content/global/ms/seo.json";
 import style from "@/content/global/style.json";
 import widget from "@/content/global/widget.json";
-import { defaultLocale, locales } from "site.config";
+import { defaultLocale, locales, siteLocales } from "site.config";
 
 const settings: Record<string, LocalizedSettings> = {
 	es: {
@@ -63,4 +63,12 @@ export function unlocalizedUrl(url: string): string {
 
 export function translatePath(l: string, path: string) {
 	return l === defaultLocale ? path : `/${l}${path}`;
+}
+
+/**
+ * The locale the marketing chrome (header, footer, blog and work links) should
+ * render in. Guide-only locales have no such pages, so they borrow the default.
+ */
+export function chromeLocale(locale?: string): string {
+	return siteLocales.includes((locale ?? defaultLocale) as never) ? (locale ?? defaultLocale) : defaultLocale;
 }

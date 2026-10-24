@@ -1,0 +1,44 @@
+---
+title: "Tutorial: Realizar un inventario de la biblioteca"
+description: Cómo comprobar los estantes frente al catálogo mediante escaneo, y qué cambia al finalizar.
+product: educonnect
+section: Tutorials
+order: 235
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/stocktakes_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/stocktake_page.dart
+  - attendance-web-app/backend/services/library/stocktakeService.js
+screenshotIds:
+  - "library-stocktake"
+hidden: false
+---
+
+Un inventario (stock-take) permite saber qué libros están realmente en los estantes.
+
+**Necesita:** **Start a stock-take** para realizar uno y **Finalise** para cerrarlo o cancelarlo.
+
+## Cómo realizarlo
+
+1. **Library → Stock-take → Start a stock-take.** Póngale un nombre. Elija estantes para revisar solo esos
+   (agregue ubicaciones de estante en Library Settings), o ninguno para toda la biblioteca.
+2. En **Scan the shelf**, elija **Shelf I am scanning** y escanee cada libro. Cada escaneo se guarda.
+   Escanear un libro dos veces no causa problemas. La cámara puede permanecer abierta para el escaneo continuo, o use
+   **Paste a list** para escaneos almacenados en la memoria de un lector.
+3. Revise las listas:
+   - **Not seen yet**: libros del estante que nadie ha escaneado. Revise esta primero.
+   - **Found on a different shelf** de la registrada.
+   - **On the shelf but recorded as lent**: registre su devolución.
+   - **Recorded as missing or lost**: al finalizar vuelven a su lugar.
+   - **Not in the catalogue**: códigos de barras sin registro. Agregue el libro.
+4. **Finalise.** Los libros del estante no vistos pasan a **missing**. Los libros missing o lost que fueron escaneados vuelven
+   por el registro de devolución, de modo que llegan a la siguiente reserva o al estante, y la multa impaga de un libro perdido
+   que se encontró queda anulada.
+
+**Cancel** no cambia ningún libro; sus escaneos se conservan pero no pueden finalizarse después.
+
+El préstamo continúa durante un inventario, y un libro prestado o devuelto después de que comenzó cuenta como visto.
+Si la finalización se detiene a medias, **Carry on finalising** la reanuda.

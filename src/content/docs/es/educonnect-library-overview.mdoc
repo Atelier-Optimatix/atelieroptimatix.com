@@ -1,0 +1,108 @@
+---
+title: "La biblioteca escolar: descripción general y configuración"
+description: Qué hace el módulo de biblioteca, quién puede usarlo, cómo activarlo y los ajustes que lo controlan.
+product: educonnect
+section: Getting started
+order: 50
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/backend/config/libraryOptions.js
+  - attendance-web-app/edu-frontend/lib/screens/library/library_settings_page.dart
+  - attendance-web-app/backend/config/accessCatalog.js
+screenshotIds:
+  - "library-settings"
+  - "library-drawer"
+hidden: false
+---
+
+El módulo de biblioteca presta libros a estudiantes, docentes y personal desde la misma aplicación que ya
+utiliza. Mantiene un catálogo de títulos, un registro por cada ejemplar físico, quién ha tomado prestado qué, reservas,
+multas, inventarios e informes. Los prestatarios son las personas que ya figuran en sus registros: nadie se ingresa
+dos veces.
+
+> La biblioteca es una incorporación reciente y es posible que aún no esté activada para su instituto. Si no
+> ve **Library** en el menú lateral, pida a su administrador que otorgue acceso a un rol.
+
+## Cómo funciona el préstamo
+
+- **Los ejemplares llevan un código de barras.** Cada libro físico tiene una etiqueta. Al escanearla se identifica el ejemplar.
+- **Las personas se identifican con su tarjeta de identificación.** El número de la tarjeta de un estudiante o docente es su
+  RFID, el mismo número que usa la asistencia. Al acercar la tarjeta a un lector USB en el mostrador se abre a esa
+  persona. Consulte [Emisión y reemplazo de tarjetas de identificación](/es/docs/educonnect-tutorial-id-cards).
+- **Ambos dispositivos funcionan como un teclado.** El mostrador no necesita software adicional, y la cámara de un teléfono o portátil
+  puede escanear en lugar de un lector manual. Consulte [El mostrador de circulación](/es/docs/educonnect-library-circulation-desk).
+
+## El menú lateral Library
+
+| Pantalla | Para qué sirve | Guía |
+| --- | --- | --- |
+| **Circulation Desk** | Prestar, devolver, renovar | [Mostrador de circulación](/es/docs/educonnect-library-circulation-desk) |
+| **Catalogue** | Libros y ejemplares, importación, etiquetas | [Catálogo](/es/docs/educonnect-library-catalogue) |
+| **Loans & Overdue** | Todo lo que está prestado, lo que está retrasado, lo que volvió hoy | [Mostrador de circulación](/es/docs/educonnect-library-circulation-desk) |
+| **Holds** | El estante de reservas y las colas de reserva | [Reservas](/es/docs/educonnect-library-holds) |
+| **Borrowers** | Préstamos, reservas, multas y límites de cada persona | [Prestatarios](/es/docs/educonnect-library-borrowers) |
+| **Fines** | Multas de biblioteca impagas, pagadas y condonadas | [Multas](/es/docs/educonnect-library-fines) |
+| **Stock-take** | Comprobar los estantes frente al catálogo | [Inventario](/es/docs/educonnect-library-stocktake) |
+| **Reports** | Cifras de circulación, colección y multas | [Informes](/es/docs/educonnect-library-reports) |
+| **Library Settings** | Reglas de préstamo, multas, reservas, etiquetas, portal | más abajo |
+
+Los docentes a quienes se les haya concedido también ven **My Library**. Consulte
+[Mi biblioteca](/es/docs/educonnect-library-my-library).
+
+## Quién puede hacer qué
+
+Todo se controla en **Access Control**, en el grupo **Library**. Existe un rol **librarian** ya preparado.
+Entra directamente en el Circulation Desk y reúne los permisos de mostrador, reservas, prestatarios, catálogo,
+inventario, multas, condonación de multas e informes. **No** incluye **Library settings**, que
+permanece con el administrador hasta que usted los conceda.
+
+Los permisos principales:
+
+| Permiso | Permite |
+| --- | --- |
+| Search the catalogue | Ver libros y disponibilidad |
+| Circulation desk | Abrir el mostrador, los préstamos y los prestatarios |
+| Check out & renew / Check in returns | Prestar y recibir devoluciones |
+| Override borrowing limits, blocks & holds | Prestar superando un límite o un bloqueo, indicando un motivo |
+| Add & edit books and copies; Withdraw, repair & restore | Mantener el catálogo |
+| Bulk import the catalogue | Importación desde hoja de cálculo |
+| Start a stock-take; Finalise | Ejecutar y cerrar un inventario |
+| Declare books lost & charge damage | Evaluar multas |
+| Waive unpaid library fines | Una decisión monetaria, por lo que está separada del grupo de multas |
+| Library reports | Ver informes |
+| Library settings | Cambiar las reglas siguientes |
+
+Los docentes **no** tienen permisos de biblioteca por defecto. Actívelos cuando su biblioteca entre en funcionamiento.
+
+## Library Settings
+
+Abra **Library → Library Settings** (requiere el permiso de configuración).
+
+- **Loan rules**: por separado para estudiantes, docentes y personal: libros a la vez (0 significa que ese tipo
+  no puede tomar prestado), duración del préstamo en días, renovaciones y días por renovación. Valores predeterminados: estudiantes, 2 libros por
+  14 días; docentes, 10 por 30; personal, 5 por 30.
+- **Move due dates off closed days**: una fecha de vencimiento en fin de semana, feriado o fuera del trimestre pasa al
+  siguiente día escolar.
+- **No new books while one is overdue**.
+- **Circulation desk**: cerrar al prestatario tras un número determinado de segundos sin escaneo (90 por defecto),
+  para que los libros del siguiente niño nunca queden en la tarjeta del anterior; y **Lend only on a card tap**,
+  que hace que buscar a alguien por nombre requiera una excepción.
+- **Charge library fines**: consulte [Multas](/es/docs/educonnect-library-fines). Desactivado hasta que lo active.
+- **Holds**: si los prestatarios pueden reservar, reservas por prestatario y días escolares para recoger.
+- **Parent portal**: mostrar la biblioteca a los padres, permitirles reservar, permitirles pagar multas en línea.
+- **Overdue reminders**: una notificación semanal a las 7 a. m. para cada prestatario con un libro retrasado (los
+  padres de un estudiante, o el docente). Desactivado por defecto.
+- **ISBN lookup**: agrega un botón **Look up** al formulario de agregar libro. Envía el ISBN a Open Library,
+  por lo que está desactivado hasta que usted lo habilite.
+- **Barcode labels**: el **Label prefix** (`LIB` por defecto, que genera `LIB000001`, `LIB000002` y así
+  sucesivamente). Las etiquetas ya impresas conservan su número, así que elija un prefijo distinto si los libros pueden pasar
+  entre campus.
+- **Shelf locations**: el vocabulario que se ofrece al agregar ejemplares, por ejemplo "Fiction A–F".
+
+## No incluido en esta versión
+
+A los docentes y al personal nunca se les multa, y no hay un servicio de búsqueda independiente: la búsqueda del catálogo coincide con
+el inicio de las palabras en títulos, autores y campos similares.

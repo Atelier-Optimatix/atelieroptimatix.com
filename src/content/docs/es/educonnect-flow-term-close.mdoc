@@ -1,0 +1,75 @@
+---
+title: Cierre de un trimestre
+description: La secuencia de fin de trimestre — resultados ingresados, informes publicados, libros conciliados y calendario avanzado.
+product: educonnect
+section: Advanced workflows
+order: 40
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/term_report_screen.dart
+  - attendance-web-app/edu-frontend/lib/screens/accounting/reconciliation_page.dart
+hidden: false
+---
+
+El fin de trimestre involucra exámenes, informes, contabilidad y calendario. El orden importa porque cada paso utiliza
+el resultado del anterior.
+
+## 1. Terminar los exámenes
+
+Todos los resultados ingresados y guardados, para cada clase y asignatura.
+
+- [Ingreso de resultados de exámenes](/es/docs/educonnect-tutorial-enter-exam-results)
+- [Carga de resultados desde una hoja de cálculo](/es/docs/educonnect-tutorial-upload-exam-results)
+
+Vacíe la cola de **Exams → Result Changes** antes de continuar. Una solicitud de cambio sin aprobar es una
+nota que está a punto de cambiar, y los informes de progreso se elaboran a partir de las notas.
+
+## 2. Revisar los rankings
+
+**Exams → Rankings**. Es tanto una verificación de coherencia como un resultado: un ranking que parece incorrecto suele
+significar que a una asignatura le faltan notas de parte de una clase, o que un examen se creó con el **Exam Type** equivocado:
+solo los exámenes TERM alimentan los rankings del trimestre. Consulte
+[Crear un examen](/es/docs/educonnect-tutorial-create-an-exam).
+
+## 3. Informes de progreso
+
+Los docentes los completan y luego se publican por lotes.
+
+- [Redacción y publicación de informes de progreso](/es/docs/educonnect-tutorial-progress-reports)
+- [Docentes: redacción de informes de progreso](/es/docs/educonnect-teacher-progress-reports)
+
+Publique cuando toda la cohorte esté completa. La publicación es lo que ven los padres.
+
+## 4. Asistencia
+
+Antes de citar la asistencia del trimestre a cualquier persona, confirme que el calendario era correcto: los feriados y
+recesos del trimestre sin configurar reducen todos los porcentajes. Consulte
+[Configuración de feriados, trimestres y días laborables](/es/docs/educonnect-tutorial-holidays-and-terms).
+
+Luego obtenga las vistas del trimestre en **Attendance → Reports** y los resúmenes trimestrales por clase.
+
+## 5. Cerrar los libros
+
+1. Cada día del trimestre [cerrado](/es/docs/educonnect-tutorial-day-close).
+2. La [conciliación](/es/docs/educonnect-tutorial-reconciliation) trabajada hasta que cada pestaña esté en cero, o
+   cada fila restante sea una que usted haya decidido conservar deliberadamente.
+3. Facturas emitidas desde **Accounting → Invoices**.
+4. [Descuentos concedidos](/es/docs/educonnect-tutorial-discounts) próximos a vencer, revisados: becas que
+   terminaron, hermanos que ya se fueron.
+
+Concilie antes de emitir las facturas, no después.
+
+## 6. Avanzar el calendario
+
+- Fechas y feriados del próximo trimestre ingresados.
+- [Calendarios de tarifas](/es/docs/educonnect-tutorial-fee-setup) del próximo trimestre: use **Duplicate** con los actuales
+  y cambie la etiqueta, el monto y la fecha de vencimiento.
+- Cambios en el horario, si la estructura de la semana va a cambiar:
+  [regenere](/es/docs/educonnect-tutorial-generate-timetable) primero en **Preview only**.
+
+## Temas relacionados
+
+- [Flujo de trabajo de contabilidad](/es/docs/shared-staff-accounting-overview)

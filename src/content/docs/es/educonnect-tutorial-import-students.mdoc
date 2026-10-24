@@ -1,0 +1,73 @@
+---
+title: "Tutorial: Importar estudiantes desde Excel"
+description: "Cómo matricular a una clase de forma masiva desde una hoja de cálculo: el orden exacto de columnas que espera el importador y por qué nunca lee sus encabezados."
+product: educonnect
+section: Tutorials
+order: 30
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/class_excel_import.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/students_in_class.dart
+hidden: false
+---
+
+Para más de unos pocos estudiantes, importe la clase desde una hoja de cálculo en lugar de
+[agregarlos de uno en uno](/es/docs/educonnect-tutorial-add-a-student).
+
+## Lo único que sorprende a todos
+
+**El importador lee las columnas por posición, no por encabezado.** Omite su primera fila suponiendo
+que es un encabezado, y luego lee la columna A como Student ID, la columna B como RFID, y así
+sucesivamente, sea lo que sea que digan sus encabezados.
+
+Por eso, una hoja con los encabezados correctos en el orden equivocado se importa sin avisar y de forma
+incorrecta. Si el orden es correcto, los encabezados pueden decir lo que usted quiera.
+
+## El orden de las columnas
+
+| Columna | Campo | Notas |
+| --- | --- | --- |
+| A | Student ID | Solo dígitos, único en toda la institución |
+| B | RFID | El número de la tarjeta de asistencia; déjelo en blanco si las tarjetas llegan después |
+| C | Full Name | |
+| D | Date of Birth | `YYYY-MM-DD`. Puede dejarse en blanco |
+| E | Class ID | El **Class Name** exactamente como aparece en Classes |
+| F | Email | |
+| G | Mobile Number | Aquí se envían los SMS de asistencia y los recordatorios de pago |
+| H | Address | |
+| I | Parent/Guardian | |
+| J | Religion | |
+| K | Nationality | |
+| L | Gender | |
+
+Todas las columnas posteriores a A–C pueden dejarse vacías. Una celda vacía se importa como vacía; no
+detiene la fila.
+
+## Pasos
+
+1. Prepare la hoja con el orden de columnas indicado arriba, con una fila de encabezado en la parte superior.
+2. Abra **Students → Classes** y abra la clase en la que va a importar.
+3. Abra el menú **⋮ More options** y elija **Import Students from Excel**.
+4. Seleccione su archivo `.xlsx` o `.xls`.
+5. Aparece la tabla **Imported Data Preview**, que muestra cada fila exactamente como la leyó el
+   importador. **Este es el punto de control**: desplácese hacia los lados y confirme que los valores
+   quedaron bajo los encabezados correctos. Si los nombres aparecen bajo "Date of Birth", el orden de
+   sus columnas es incorrecto: cancele, corrija la hoja y empiece de nuevo.
+6. Confirme para guardar.
+
+Si ve **Unable to import Excel file. Please try again.**, el archivo no pudo analizarse en absoluto;
+normalmente es un `.csv` al que se cambió la extensión a `.xlsx`, o un archivo que sigue abierto en Excel.
+
+## Después de importar
+
+- Los estudiantes importados sin RFID no registrarán asistencia hasta que se agregue un número de
+  tarjeta. Complételos editando a cada estudiante, o vuelva a importar cuando se emitan las tarjetas.
+- Verifique que el recuento en la lista de la clase coincida con su hoja antes de continuar.
+
+## Relacionado
+
+- [Agregar un estudiante](/es/docs/educonnect-tutorial-add-a-student)
+- [Agregar una clase](/es/docs/educonnect-tutorial-add-a-class)

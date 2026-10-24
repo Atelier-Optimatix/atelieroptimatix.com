@@ -1,0 +1,70 @@
+---
+title: ගුරු පැමිණීම සහ ආදේශනය
+description: කාර්ය මණ්ඩල පැමිණීම නිරීක්ෂණය කිරීම සහ අද නොපැමිණි ගුරුවරුන් සඳහා ආවරණ සැලැස්මක් සැකසීම.
+product: educonnect
+section: Guides
+order: 50
+roles:
+  - admin
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_attendance_report_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_monthly_timesheet_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/substitution_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_attendance_report_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_monthly_attendance_table.dart
+lastUpdateDate: 2026-09-26
+screenshotIds:
+  - "staff-teacher-attendance"
+  - "staff-teacher-timesheet"
+hidden: false
+---
+
+## ගුරු පැමිණීම
+
+මෙය කාර්ය මණ්ඩල පැමිණීමයි; ගුරුවරුන් තම පන්ති සඳහා සටහන් කරන සිසු පැමිණීමෙන් එය වෙනස් ය.
+
+එය හිතාමතාම ස්ථාන දෙකක පෙනේ:
+
+- මුළු කාර්ය මණ්ඩලයම බලන පරිපාලකයන් සඳහා **Teachers → Attendance**.
+- ගුරුවරයෙකුට Teachers අංශයේ ඉතිරි කොටස වෙත ප්‍රවේශය නොදී තමන්ගේම වාර්තාව පරීක්ෂා කිරීමට හැකි වන සේ **Attendance → My Attendance**.
+
+දෙකම එකම වාර්තාව විවෘත කරන අතර, දෙකටම දීර්ඝ දසුනක් සඳහා **මාසික** (monthly) වගුවකට ගැඹුරට යා හැක.
+
+## දෛනික ලැයිස්තුව කියවීම
+
+සෑම පේළියක්ම එක් ගුරුවරයෙකුගේ එක් දවසකි. **In / Out** දවසේ පළමු සහ අවසාන ස්කෑන් එකිනෙක ළඟින් පෙන්වයි — පාසල් දවස තුළ ගුරුවරයා ස්කෑන් කර පිටවන තුරු පිටවීමේ වේලාව `--` ලෙස පෙනේ — සහ **Time in School** යනු ඒ දෙක අතර වෙනසයි (උදාහරණයක් ලෙස *7h 17m*). **Status** ගණනය කරන්නේ ආයතනයේ කප්පාදු වේලාවන්ට (cut-off times) එරෙහිව පළමු ස්කෑන් එකෙනි: *on time*, *late*, හෝ *absent*. **Marked By** ස්කෑන් කළ කියවනය (reader) හෝ එය අතින් සලකුණු කළ පුද්ගලයා නම් කරයි.
+
+එම ගුරුවරයා එදින කළ **සියලුම** ස්කෑන් පළමු සහ අවසාන ඒවා පමණක් නොව බැලීමට පේළියක් තෝරන්න.
+
+## මාසික දසුන්
+
+- **Monthly Attendance** මුළු කාර්ය මණ්ඩලයම මාසයක් වශයෙන් සකසයි: `/` පැමිණ ඇත, `L` ප්‍රමාද, `L2` ප්‍රමාද (දෙවන මට්ටම), `A` නොපැමිණි, `—` වාර්තාවක් නැත.
+- **Timesheet** **Teacher** පෙරහනේ තනි ගුරුවරයෙකු තෝරාගත් පසු දිස් වේ. එය මාසයේ සෑම දිනයක්ම ඇතුළුවීමේ සහ පිටවීමේ වේලාවන් සහ වැඩ කළ පැය සමඟ ලැයිස්තුගත කරන අතර, වැටුප් සඳහා මුද්‍රණයට හෝ නිර්යාතයට සූදානම්ය.
+
+## ආදේශනය (Substitution)
+
+**Teachers → Substitution** එක් දෛනික ප්‍රශ්නයකට පිළිතුරු දෙයි: කවුද නොපැමිණ ඇත්තේ, සහ ඔවුන්ගේ පාඩම් ආවරණය කරන්නේ කවුද?
+
+පිටුව අදට අදාළ නොපැමිණීම් සමඟ විවෘත වන අතර, ගණන කෙලින්ම කියයි — *"all present"*, හෝ අද ගුරුවරුන් කී දෙනෙක් නොපැමිණ ඇත්ද යන්න.
+
+එතැන් සිට:
+
+- **Auto-Generate** ඔබ වෙනුවෙන් ආවරණ සැලැස්මක් යෝජනා කරයි.
+- **Save Plan** එය ගබඩා කරයි; සැලැස්මක් තිබූ පසු එම බොත්තමම **Update Plan** බවට පත් වන අතර, ඔබට නැවත ජනනය කිරීමට හෝ සකස් කර නැවත සුරැකීමට හැක.
+- **Print** සැලැස්ම කාර්ය මණ්ඩල කාමරය සඳහා මුද්‍රණය කළ හැකි පත්‍රයක් ලෙස නිපදවයි.
+
+නොපැමිණීම් මගින් **early departure** (කලින් පිටවීමක්) සහ සම්පූර්ණ දවසක නොපැමිණීමක් අතර වෙනසද දක්වයි; එබැවින් දවස මැදදී පිටත්ව යන ගුරුවරයෙකු ආවරණය කරන්නේ ඔහු/ඇය සැබවින්ම මග හරින කාල සීමා සඳහා පමණි.
+
+{% callout type="note" %}
+ඔබ පිටුවේ සිටින අතරතුර ක්‍රියා බොත්තම් අතුරුදහන් විය හැක. එයින් සාමාන්‍යයෙන් අදහස් වන්නේ නොපැමිණි ලෙස සලකුණු කළ සෑම ගුරුවරයෙකුම පසුව ටැප් කර ඇති බවත්, එබැවින් ආවරණය කිරීමට කිසිවක් ඉතිරි නොවන බවත්ය — සැලැස්ම නැති වී නැත, එය තවදුරටත් අවශ්‍ය නොවේ.
+{% /callout %}
+
+ආවරණය රඳා පවතින්නේ කවුරුන් කුමක් උගන්වන්නේ කවදාදැයි දැන ගැනීම මත බැවින්, ආදේශනය එහි පිටුපස ඇති කාල සටහන තරම්ම හොඳය. යෝජිත සැලැස්මක් වැරදියි සේ පෙනේ නම්, යෝජනාවේ වරදක් යැයි සිතීමට පෙර කාල සටහන සහ ගුරු සීමා (teacher constraints) පරීක්ෂා කරන්න.
+
+## අදාළ
+
+- [Managing Teachers](/si/docs/shared-staff-teacher-management)
+- [Building the Timetable](/si/docs/shared-staff-timetable)
+- [Taking Attendance as Staff](/si/docs/shared-staff-attendance-overview)

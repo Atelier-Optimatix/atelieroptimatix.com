@@ -1,0 +1,66 @@
+---
+title: Gestión de docentes
+description: Cómo agregar y editar registros de docentes, leer el perfil de un docente y mantener actualizados sus propios datos.
+product: educonnect
+section: Guides
+order: 40
+roles:
+  - admin
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/teacher_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/
+lastUpdateDate: 2026-09-26
+hidden: false
+---
+
+## Dónde encontrarla
+
+El grupo **Teachers** del menú lateral, que contiene un panel **Overview**, el **Directory**,
+**Attendance** y **Substitution**. Agregar, editar y ver a un docente individual se hace desde el
+Directory y no son opciones independientes del menú.
+
+Crear y editar docentes tiene permisos distintos a los de simplemente verlos, por lo que muchos
+miembros del personal pueden consultar el Directory sin poder cambiar nada en él.
+
+## Cómo agregar y editar un docente
+
+- **Directory → Add** abre un formulario de docente en blanco.
+- Editar un docente existente abre el mismo formulario con los datos cargados, al que se accede desde
+  el perfil de ese docente.
+
+Como es el mismo formulario en ambos casos, un campo obligatorio al crear también lo es al editar: no
+hay una versión reducida de "edición rápida" que buscar.
+
+## El perfil de un docente
+
+Al seleccionar un docente del Directory se abre su perfil, que es donde se encuentra su analítica
+individual. Desde allí puede profundizar en la asistencia de ese docente y, desde esta, en un desglose
+**mensual**. Son páginas con dirección propia, por lo que la vista de asistencia de un docente en
+particular puede guardarse como marcador o enlazarse directamente.
+
+## Su propio perfil
+
+**My Profile** está en el menú de la cuenta (la insignia en la parte superior derecha de cada pantalla)
+y es de autoservicio: los docentes lo usan sin necesitar acceso a la sección Teachers. Abarca tres
+aspectos:
+
+- **Account** — su nombre de usuario y, si es docente, su ID de docente. Se muestran como referencia,
+  no se editan aquí.
+- **Teacher Profile** — su nombre completo, fecha de nacimiento y género, además de número de contacto,
+  correo electrónico, dirección, religión, origen étnico y nacionalidad (opcionales). También puede
+  establecer o eliminar una foto de perfil.
+- **Change Password** — la contraseña actual y luego la nueva dos veces.
+
+{% callout type="note" %}
+Si **My Profile** aparece en el menú de su cuenta pero al abrirlo vuelve al panel, su cuenta es
+anterior al permiso que lo controla. Es una carencia de configuración de acceso y no una falla de su
+cuenta: pida a su administrador que se lo conceda.
+{% /callout %}
+
+## Temas relacionados
+
+- [Asistencia y sustitución de docentes](/es/docs/shared-staff-teacher-attendance)
+- [Elaboración del horario](/es/docs/shared-staff-timetable)
+- [Inicio de sesión](/es/docs/shared-logging-in)

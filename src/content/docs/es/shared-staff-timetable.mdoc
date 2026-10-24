@@ -1,0 +1,76 @@
+---
+title: Elaboración del horario
+description: Cómo los administradores organizan el horario semanal y dónde se configuran las asignaturas, el currículo y el horario de timbres que lo respaldan.
+product: educonnect
+section: Guides
+order: 30
+roles:
+  - admin
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/timetable_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/
+lastUpdateDate: 2026-09-26
+screenshotIds:
+  - "tutorial-generate-timetable"
+hidden: false
+---
+
+## Dónde encontrarlo
+
+Todo lo siguiente se encuentra en el grupo **Timetable** del menú lateral. Los elementos que vea allí
+dependen de su nivel de acceso: la cuadrícula, las asignaturas de clase, el currículo y la
+configuración tienen permisos independientes, por lo que un administrador puede ver los cuatro
+mientras que un coordinador ve solo uno o dos.
+
+Los docentes normalmente no usan esta sección. En su lugar, disponen de **My Timetable** como elemento
+propio de primer nivel del menú: una vista de solo lectura de su propia semana.
+
+## El orden en que debe hacer las cosas
+
+La cuadrícula del horario solo puede colocar clases que la configuración circundante ya conoce, por
+lo que una institución nueva normalmente trabaja de adentro hacia afuera, comenzando por las
+pantallas de configuración:
+
+1. **Configuration → Bell Schedule** — defina los períodos que componen un día (etiqueta, hora de inicio
+   y de fin, y si el período es un descanso). Puede mantener más de un horario y marcar uno como
+   predeterminado.
+2. **Grade Curriculum** — lo que debe enseñarse en cada grado.
+3. **Class Subjects** — qué asignaturas se imparten realmente en cada clase individual.
+4. **Timetable Grid** — coloque esas asignaturas en los períodos.
+
+Si una asignatura no se ofrece al intentar colocarla, la solución casi siempre está en Class Subjects o
+Grade Curriculum y no en la propia cuadrícula.
+
+## Cómo trabajar en la cuadrícula
+
+- Cada celda es una clase en un período de un día. Al seleccionar una celda puede definir la lección
+  allí, o colocar un **subject group** completo cuando varias clases se dividen en opciones al mismo
+  tiempo.
+- **Copy day** toma todos los bloques de un día y los repite en los días que elija. La confirmación le
+  indica cuántos bloques se copiaron y cuántos se **omitieron por conflictos**: los bloques omitidos
+  son aquellos en los que el período de destino ya estaba ocupado o el docente ya estaba reservado, de
+  modo que nada se sobrescribe en silencio.
+- Cuando un cambio provocaría una doble reserva de un docente o un aula, la cuadrícula lo rechaza y
+  resalta el bloque en conflicto en lugar de guardar ambos.
+
+## Otras pestañas de configuración
+
+**Configuration** incluye más que el horario de timbres:
+
+- **Teacher Constraints** — cuándo están y cuándo no están disponibles los docentes.
+- **Subjects & Rules** y **Subject Groups** — cómo se comportan las asignaturas y cuáles se ofrecen
+  como un conjunto de opciones.
+- **Classrooms** — las aulas a las que se pueden asignar las clases.
+- **Import Data** — cargue en bloque los datos de configuración en lugar de ingresarlos pantalla por
+  pantalla.
+
+También puede exportar el horario terminado de **todas las clases** o de **todos los docentes** desde la
+parte superior de la pantalla Configuration.
+
+## Temas relacionados
+
+- [Gestión de docentes](/es/docs/shared-staff-teacher-management)
+- [Asistencia y sustitución de docentes](/es/docs/shared-staff-teacher-attendance)
+- [Toma de asistencia por parte del personal](/es/docs/shared-staff-attendance-overview)

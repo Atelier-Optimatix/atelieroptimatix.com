@@ -1,0 +1,82 @@
+---
+title: "Tutoriel : Rapprocher les frais et le grand livre"
+description: Traiter les quatre onglets de rapprochement — frais orphelins, payés mais non enregistrés, écritures sans frais, et écarts de montant.
+product: educonnect
+section: Advanced workflows
+order: 20
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/reconciliation_page.dart
+screenshotIds:
+  - "tutorial-reconciliation"
+hidden: false
+---
+
+Le rapprochement (reconciliation) compare deux éléments qui devraient toujours concorder — les **frais** (charges) imputés aux
+élèves, et le **grand livre** (ledger) des sommes effectivement reçues — et vous montre chaque endroit où ils divergent.
+
+Lancez-le périodiquement, et toujours avant de clôturer les comptes d'un trimestre.
+
+**Vous avez besoin de :** l'accès à **Accounting → Reconciliation**.
+
+## Les quatre onglets
+
+Chaque onglet correspond à un type de désaccord différent, et chacun appelle une correction différente. Le nombre indiqué dans le libellé
+de l'onglet est votre liste de travail.
+
+### Orphaned charges
+
+Des frais qui n'ont plus de frais valides derrière eux — généralement parce qu'une échéance a été supprimée ou
+retirée alors que des frais avaient déjà été imputés. Chaque ligne indique l'élève, la classe, les frais, le montant
+et la **raison** pour laquelle ils sont orphelins.
+
+Deux actions :
+
+- **Keep** — les frais sont légitimes ; laissez-les en place.
+- **Void** — les frais n'auraient jamais dû exister. L'annulation demande confirmation et retire les
+  frais du solde dû de l'élève.
+
+Lorsque l'onglet est vide, vous obtenez *No orphaned charges awaiting review.*
+
+### Paid, no ledger
+
+Des frais marqués comme réglés sans écriture correspondante dans le grand livre. L'argent a été enregistré pour l'élève
+mais n'est jamais arrivé dans les recettes du jour — typiquement un paiement enregistré un jour qui a ensuite été
+ajusté. Recoupez ces lignes avec le numéro de reçu avant de toucher à quoi que ce soit.
+
+### Ledger, not paid
+
+L'image inverse : de l'argent dans le grand livre qui n'est pas rattaché à des frais réglés. Généralement un paiement
+appliqué au mauvais élève, ou saisi sans sélection de frais.
+
+### Amount mismatches
+
+Les frais et l'écriture du grand livre existent tous deux mais divergent sur le montant. Le plus souvent une remise appliquée
+après l'encaissement du paiement, ou un paiement partiel enregistré comme total.
+
+## Le traiter
+
+1. Commencez par **Orphaned charges** — les régler supprime souvent des lignes dans les autres onglets.
+2. Traitez chaque onglet restant jusqu'à ce que les compteurs soient à zéro, ou que chaque ligne restante soit une ligne que vous avez
+   explicitement décidé de **Keep**.
+3. Ce n'est qu'alors que vous clôturez la période.
+
+Lorsque tout concorde, vous verrez *Every ledger payment maps to a settled fee.*
+
+## Prévention
+
+La plupart des lignes ici remontent à l'une de ces trois habitudes :
+
+- Supprimer des échéances au lieu de désactiver **Active** — voir
+  [Set Up Fees](/fr/docs/educonnect-tutorial-fee-setup).
+- Ajuster les montants au guichet au lieu d'accorder une
+  [remise](/fr/docs/educonnect-tutorial-discounts) en bonne et due forme.
+- Rouvrir une journée clôturée sans revérifier les totaux — voir
+  [Close the Day](/fr/docs/educonnect-tutorial-day-close).
+
+## Voir aussi
+
+- [Accounting Workflow — Ledger, Day-Close and Reconciliation](/fr/docs/shared-staff-accounting-overview)

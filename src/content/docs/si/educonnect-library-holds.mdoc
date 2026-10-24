@@ -1,0 +1,42 @@
+---
+title: "පාඩම: වෙන්කිරීම් (Holds) සහ Hold Shelf"
+description: පිටත ඇති පොත් වෙන් කිරීම, hold shelf, රැගෙන යාමේ දින සහ වෙන්කිරීම් අවලංගු කිරීම.
+product: educonnect
+section: Tutorials
+order: 234
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/holds_page.dart
+  - attendance-web-app/backend/services/library/holdService.js
+  - attendance-web-app/backend/services/library/holdShelf.js
+screenshotIds:
+  - "library-holds"
+hidden: false
+---
+
+වෙන්කිරීමක් (hold) **මාතෘකාවක්** වෙන් කරයි, නිශ්චිත පිටපතක් නොවේ. වෙන්කිරීම් පළමුව පැමිණියාට පළමුව යන පිළිවෙලින් පෝලිමේ සිටී.
+
+**සක්‍රීය කරන්න:** **Library Settings → Holds** (**Let borrowers reserve books**).
+
+## සිදුවන දේ
+
+1. ණයගැතියෙකු පිටත ඇති පොතක් වෙන් කරයි. කවුන්ටරයට **Reserve a book** මගින් මෙය කළ හැක; ද්වාරය ඉඩ දෙන්නේ නම් දෙමාපියන්ට සහ
+   සිසුන්ටද, ගුරුවරුන්ට [My Library](/si/docs/educonnect-library-my-library) වෙතින්ද කළ හැක.
+2. පිටපතක් ආපසු ලබා ගත් විට එය පැරණිතම බලා සිටින වෙන්කිරීමට යන අතර **hold shelf** (වෙන්කිරීම් රාක්කය) මත තබනු ලැබේ. එය භෞතිකව වෙන්
+   කර තබන්න.
+3. ණයගැතියාට එය රැගෙන යාමට **School days to collect** (පෙරනිමිය 3) ඇත. ඔවුන්ට එය ණයට දීමෙන් වෙන්කිරීම ඉටු වේ. රැගෙන නොගිය
+   වෙන්කිරීමක් කල් ඉකුත් වන අතර පිටපත පෝලිමේ ඊළඟ අයට හෝ නැවත රාක්කයට යයි.
+
+hold shelf මත ඇති පිටපතක් override එකක් භාවිතා නොකරන්නේ නම් ණයට දිය හැක්කේ එය වෙන් කර ඇති ණයගැතියාට පමණි. බලා සිටින වෙන්කිරීම් ඇති පොතක්
+අලුත් නොකෙරේ.
+
+සෑම ණයගැතියෙකුටම ඇති වෙන්කිරීම් සංඛ්‍යාව සීමිතය (**Holds per borrower**, පෙරනිමිය 2; 0 යනු වෙන්කිරීම් තබන්නේ
+කවුන්ටරය පමණක් බවයි).
+
+## Holds පිටුව
+
+**Library → Holds** මගින් **Hold shelf** (වෙන් කර ඇති පොත් සහ කාටද යන්න) සහ පෝලිම් පෙන්වයි. **Place & cancel holds for borrowers** ඇති ඕනෑම අයෙකුට
+අවලංගු කළ හැක.

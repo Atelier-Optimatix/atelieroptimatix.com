@@ -1,0 +1,74 @@
+---
+import Title from "@/components/primitives/Title.astro";
+import DocsShell from "@/layouts/DocsShell.astro";
+import { docsHref, docsUi } from "@/lib/docs-i18n";
+import { getDocsNav } from "@/lib/docs-nav";
+
+/** The guide landing page; rendered by /docs and /<locale>/docs. */
+const locale = Astro.currentLocale;
+const t = docsUi(locale);
+const nav = await getDocsNav(locale);
+const pageCount = nav.reduce(
+	(total, group) =>
+		total + group.sections.reduce((sum, section) => sum + section.docs.length, 0),
+	0,
+);
+---
+
+<DocsShell>
+	<div data-pagefind-ignore>
+		<Title level={1}>{t.userGuide}</Title>
+		<p class="max-w-2xl pt-6 text-base text-slate-500">
+			{t.indexIntro(pageCount)}
+		</p>
+
+		<div class="flex flex-wrap gap-3 pt-8">
+			<a
+				href={docsHref(locale, "educonnect-overview")}
+				class="rounded-full bg-black px-4 py-2 text-sm font-medium text-white hover:bg-slate-800"
+				>{t.startHere}</a
+			>
+			<a
+				href={docsHref(locale, "educonnect-setting-up-a-new-institute")}
+				class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-black hover:border-slate-400"
+				>{t.setUpInstitute}</a
+			>
+			<a
+				href={docsHref(locale, "educonnect-teacher-getting-started")}
+				class="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-black hover:border-slate-400"
+				>{t.imTeacher}</a
+			>
+		</div>
+
+		{
+			nav.map((group) => (
+				<section class="pt-16">
+					<h2 class="text-2xl tracking-tighter text-black">{group.label}</h2>
+					<p class="max-w-2xl pt-2 text-sm text-slate-500">{group.blurb}</p>
+
+					{group.sections.map((section) => (
+						<div class="pt-8">
+							<h3 class="pb-3 text-xs font-semibold uppercase tracking-wide text-slate-400">
+								{section.section}
+							</h3>
+							<ul class="grid gap-x-8 gap-y-4 sm:grid-cols-2">
+								{section.docs.map((doc) => (
+									<li>
+										<a href={doc.href} class="group block">
+											<span class="text-base text-black group-hover:underline">
+												{doc.title}
+											</span>
+											<span class="block pt-1 text-sm leading-snug text-slate-500">
+												{doc.description}
+											</span>
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
+					))}
+				</section>
+			))
+		}
+	</div>
+</DocsShell>

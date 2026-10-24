@@ -1,0 +1,68 @@
+---
+title: "Tutorial: Agregar una clase"
+description: Cómo crear una clase desde la pantalla Classes, para qué sirve cada uno de los cuatro campos y qué hacer a continuación una vez creada.
+product: educonnect
+section: Tutorials
+order: 10
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/components/class_components/add_class_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/class_list.dart
+screenshotIds:
+  - "tutorial-add-a-class"
+hidden: false
+---
+
+Una clase es el contenedor del que depende casi todo lo demás: los estudiantes, la asistencia, la cuadrícula del horario, los resultados de exámenes y las asignaciones de cuotas se organizan por clase. Cree primero la clase.
+
+**Necesita:** acceso a **Students → Classes** y permiso para crear clases.
+
+## Pasos
+
+1. Abra **Students → Classes** en el menú lateral.
+2. Seleccione **Add Class**. Se abre el cuadro de diálogo **Add New Class**.
+3. Complete los cuatro campos:
+   - **Grade** (grado): elíjalo de la lista. Es lo que agrupa las clases en
+     [Currículo del grado](/es/docs/educonnect-tutorial-grade-curriculum) y en los informes por grado,
+     por lo que debe ser correcto.
+   - **Syllabus** (programa de estudios): elíjalo de la lista. Las clases con programas distintos
+     dentro del mismo grado se informan por separado.
+   - **Class Name** (nombre de la clase): obligatorio, y es el identificador de la clase en todo el
+     sistema. Es mejor un nombre corto y convencional que uno descriptivo: `10-A`, `Grade 3 Blue`. Es
+     lo que verá en todas las listas desplegables de clases a partir de ahora.
+   - **Teacher Name** (nombre del docente): opcional. Puede dejarlo vacío y asignar correctamente al
+     docente titular más adelante.
+4. Seleccione **Save**.
+
+Debería ver **Class added successfully** y la nueva clase aparecerá en la lista. Si en cambio aparece
+**Failed to add class.**, la causa más habitual es que ya exista una clase con ese nombre.
+
+## Asignar al docente titular
+
+El campo **Teacher Name** del cuadro de diálogo es texto libre: es una etiqueta, no un vínculo con un
+registro de docente. Para asignar realmente al docente responsable de la clase:
+
+1. Abra la clase desde **Students → Classes**.
+2. Use el menú **⋮ More options** de la pantalla de la clase.
+3. Elija **Edit Class Teacher** y seleccione al docente.
+
+Esto es importante: el docente titular es quien recibe la clase en **My Class** y quien puede marcar su
+asistencia. Consulte [Registrar la asistencia como docente](/es/docs/educonnect-teacher-taking-attendance).
+
+## Qué hacer a continuación
+
+Una vez creada la clase, aproximadamente en este orden:
+
+1. [Agregue estudiantes](/es/docs/educonnect-tutorial-add-a-student), uno por uno o
+   [impórtelos desde Excel](/es/docs/educonnect-tutorial-import-students).
+2. [Asigne sus asignaturas](/es/docs/educonnect-tutorial-class-subjects) para poder incluirla en el horario.
+3. Inclúyala en la [configuración de cuotas](/es/docs/educonnect-tutorial-fee-setup) si las cuotas
+   varían según la clase.
+
+## Relacionado
+
+- [Gestión de estudiantes, clases y suplencias](/es/docs/shared-staff-student-admissions-management)
+- [Configurar una nueva institución](/es/docs/educonnect-setting-up-a-new-institute)

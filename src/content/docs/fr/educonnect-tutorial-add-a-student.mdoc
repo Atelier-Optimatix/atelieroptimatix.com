@@ -1,0 +1,69 @@
+---
+title: "Tutoriel : Ajouter un élève"
+description: Inscrire un élève dans une classe, pourquoi le formulaire diffère d'un établissement à l'autre, et les deux champs qui doivent être uniques.
+product: educonnect
+section: Tutorials
+order: 20
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/add_student_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/add_student_form.dart
+  - attendance-web-app/edu-frontend/assets/student_fields/
+screenshotIds:
+  - "tutorial-add-a-student"
+hidden: false
+---
+
+**Vous avez besoin de :** une classe existante dans laquelle placer l'élève — voir
+[Add a Class](/fr/docs/educonnect-tutorial-add-a-class) — et de l'autorisation de créer des élèves.
+
+## Étapes
+
+1. Ouvrez **Students → Classes** puis la classe que l'élève va rejoindre.
+2. Sélectionnez **Add Student**. (Vous pouvez aussi accéder au même formulaire depuis **Students → Student Search**.)
+3. Remplissez le formulaire. Les champs affichés dépendent de votre établissement (voir ci-dessous), mais voici ceux
+   qui se comportent de façon particulière :
+   - **Student ID** — obligatoire, chiffres uniquement, et **unique dans tout l'établissement**. Si l'ID est
+     déjà pris, le champ vous l'indique pendant la saisie. Vous ne pourrez pas le modifier plus tard en éditant
+     l'élève ; décidez donc de votre système de numérotation avant de commencer les inscriptions.
+   - **RFID** — le numéro de la carte de présence de l'élève. Également chiffres uniquement, également vérifié contre les
+     doublons. Laissez-le vide si les cartes sont délivrées plus tard ; la présence ne pourra simplement pas être scannée tant qu'il n'est pas
+     renseigné.
+   - **Student's Full Name** — lettres, espaces et points uniquement.
+   - **Date of Birth** — un sélecteur de date, enregistrée au format `YYYY-MM-DD`.
+   - **Class** — préremplie avec la classe d'où vous venez. Comme le Student ID, elle est en lecture seule une fois que
+     l'élève existe ; déplacer un élève d'une classe à une autre est une action distincte, pas une modification.
+   - **Contact Number** — facultatif, mais les SMS de présence et les rappels de paiement sont envoyés à ce numéro ; un
+     élève sans numéro ne reçoit donc rien, sans aucun avertissement.
+4. Ajoutez une **photo** si votre établissement en utilise — c'est ce qui apparaît sur les
+   [cartes d'identité](/fr/docs/educonnect-tutorial-id-cards) et dans les listes de classe.
+5. Si l'élève a un **frère ou une sœur** déjà inscrit(e), utilisez le sélecteur de fratrie pour les lier. Recherchez par
+   Student ID ou par nom. Les liens de fratrie sont ce sur quoi reposent les remises familiales.
+6. Sélectionnez **Save**.
+
+## Pourquoi votre formulaire diffère des captures d'écran
+
+Le formulaire Add Student est **configuré par établissement**. Les champs existants, ceux qui sont obligatoires, leur
+libellé et ce qu'ils acceptent proviennent tous de la définition de champs propre à votre établissement —
+c'est pourquoi une école demande le numéro NIC, la maison et l'origine ethnique tandis qu'une autre n'en demande aucun.
+
+Deux conséquences à connaître :
+
+- Si un champ dont vous avez besoin est absent, il peut être activé pour votre établissement. C'est une modification de
+  configuration, pas une nouvelle fonctionnalité.
+- Un champ indiqué comme facultatif ici peut être obligatoire dans votre établissement, et inversement.
+
+## Modifier et supprimer
+
+Ouvrez l'élève depuis **Students → Student Search** ou depuis la liste de la classe. Tout est modifiable
+sauf **Student ID** et **Class**. **Delete Student** demande une confirmation et supprime définitivement le
+dossier — pour un élève qui a simplement quitté l'établissement, privilégiez la procédure de départ de votre établissement
+plutôt que la suppression, car supprimer emporte avec lui son historique de présence et de résultats.
+
+## Voir aussi
+
+- [Import Students from Excel](/fr/docs/educonnect-tutorial-import-students) — au-delà de quelques élèves
+- [Managing Students, Classes and Substitutions](/fr/docs/shared-staff-student-admissions-management)

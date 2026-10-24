@@ -1,0 +1,86 @@
+---
+title: "Tutorial: Bina dan Selenggara Katalog Perpustakaan"
+description: Menambah buku dan salinan, mengimport daftar buku daripada hamparan, mencari ISBN dan mencetak label kod bar.
+product: educonnect
+section: Tutorials
+order: 231
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/catalogue_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/import_catalogue_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/widgets/print_labels_dialog.dart
+  - attendance-web-app/backend/services/library/importService.js
+screenshotIds:
+  - "library-catalogue"
+  - "library-import"
+hidden: false
+---
+
+Katalog mempunyai dua peringkat. **Title** (tajuk) ialah buku seperti yang diterbitkan: nama, penulis,
+ISBN, subjek, harga. **Copy** (salinan) ialah satu item fizikal dengan kod bar, keadaan dan rak
+tersendiri. Peminjaman sentiasa melibatkan salinan.
+
+**Anda memerlukan:** **Search the catalogue** untuk melihat, **Add & edit books and copies** untuk
+mengubah, **Bulk import** untuk hamparan.
+
+## Cari
+
+Buka **Library → Catalogue**. Carian memadankan permulaan perkataan dalam tajuk, penulis dan medan yang
+serupa. **Include hidden books** memaparkan tajuk yang sekolah sembunyikan daripada portal ibu bapa.
+Buka sesuatu buku untuk melihat salinannya dan siapa yang memegangnya, dan buka salinan untuk melihat
+sejarahnya.
+
+## Tambah buku
+
+1. Pilih **Add book**.
+2. Isi tajuk dan butiran. Jika **ISBN lookup** dihidupkan dalam Library Settings, masukkan ISBN dan pilih
+   **Look up** untuk mengisi medan kosong daripada Open Library.
+3. Pilih siapa yang boleh melihat buku itu: semua orang, atau kakitangan sahaja.
+4. Tambah salinan. Anda boleh menambah sehingga 200 sekali gus. Pilih keadaan, lokasi rak dan sama ada ia
+   dibeli atau disumbangkan.
+
+Salinan tanpa kod bar sendiri akan mendapat label yang dijana seperti `LIB000123`.
+
+## Import daftar buku
+
+1. Dalam Catalogue pilih **Import**, kemudian **Download a template** jika anda mahukan satu.
+2. **Choose .xlsx file** dan petakan tajuk lajur anda, bermula dengan **Title**.
+3. Semak pelan: **New books**, **Copies of books already in the catalogue**, **Copies keeping their
+   barcode**, **Copies with new labels**, **Rows skipped**, dan sebarang baris yang perlu diperhatikan
+   beserta sebabnya.
+4. Sahkan. Tiada apa-apa disimpan antara pelan dan pelaksanaan, jadi pelan dikira semula berdasarkan
+   katalog pada saat itu.
+
+Perkara baik untuk diketahui:
+- Baris dengan ISBN yang sama menjadi satu tajuk. Tanpa ISBN, tajuk dipadankan mengikut nama dan penulis
+  pertama.
+- Baris **dengan** kod bar ialah satu salinan dengan label itu. Mengimport fail yang sama sekali lagi
+  tidak menambah dua kali.
+- Baris **tanpa** kod bar mendapat label baharu setiap kali diimport, jadi import semula menambah
+  pendua. Pelan akan memberi amaran kepada anda.
+- Satu fail boleh memuatkan sehingga 20,000 baris.
+
+## Cetak label kod bar
+
+Pilih **Print labels**, tandakan salinan, dan pilih slot mana pada helaian pertama untuk bermula
+(helaian label yang telah digunakan sebahagiannya). Susun atur ialah A4, 3 lajur kali 8. Label yang baru
+dijana ditandakan secara lalai, kerana itulah label yang belum ada apa-apa pada bukunya.
+
+## Imbas dengan kamera
+
+Di mana-mana sahaja aplikasi meminta imbasan, anda boleh menggunakan **Scan with camera**. Ia mengikut
+laluan yang sama seperti pengimbas tangan. Ia tertutup selepas satu kod, kecuali dalam stock-take yang
+mana ia kekal terbuka.
+
+## Tarik balik, baiki, pulihkan
+
+Pustakawan yang mempunyai **Withdraw, repair & restore copies** boleh menandakan salinan sebagai repair
+(dibaiki), withdrawn (ditarik balik) atau available (tersedia). Missing (hilang) dan lost (tercicir)
+ditetapkan oleh stock-take dan kaunter.
+
+## Berkaitan
+
+- [Stock-take](/ms/docs/educonnect-library-stocktake)

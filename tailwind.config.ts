@@ -20,9 +20,10 @@ const config: Config = {
 				whatsapp: "#25d366",
 			},
 			fontFamily: {
-				sans: ["Inter Tight", ...defaultTheme.fontFamily.sans],
+				// Noto Sans Sinhala / Tamil cover the glyphs Inter Tight lacks (guide locales si, ta).
+				sans: ["Inter Tight", "Noto Sans Sinhala", "Noto Sans Tamil", ...defaultTheme.fontFamily.sans],
 				mono: ["Space Mono", ...defaultTheme.fontFamily.mono],
-				display: ["Montserrat", ...defaultTheme.fontFamily.sans],
+				display: ["Montserrat", "Noto Sans Sinhala", "Noto Sans Tamil", ...defaultTheme.fontFamily.sans],
 			},
 		},
 	},

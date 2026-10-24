@@ -1,0 +1,98 @@
+---
+title: Búsqueda de estudiantes, perfiles y estudiantes que se han ido
+description: Cómo buscar y filtrar a todos los estudiantes, leer el perfil (incluida la cuadrícula de asistencia del trimestre día por día y el expediente permanente) y qué sucede cuando un estudiante se va.
+product: educonnect
+section: Guides
+order: 60
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_search.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/left_students_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/student_analytics_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_term_attendance_grid.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_permanent_record_section.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/mark_left_dialog.dart
+  - attendance-web-app/edu-frontend/lib/utils/left_student_fields.dart
+screenshotIds:
+  - "staff-student-search"
+  - "staff-student-profile-term-grid"
+  - "staff-left-students"
+hidden: false
+---
+
+## Student Search
+
+**Students → Student Search** enumera a todos los estudiantes en una tabla que puede buscar, filtrar y ordenar. Está
+pensada tanto para preguntas como "¿qué estudiantes no tienen número de teléfono de tutor?" como para encontrar a una
+persona.
+
+- **Search** acepta un nombre, ID, clase, tutor o número de teléfono. Use **Search By** para restringirla a
+  un solo campo, por ejemplo RFID o Address; *All fields* es el valor predeterminado.
+- Los filtros **Class** y **Gender** acotan la lista.
+- **Missing** muestra los estudiantes con un valor en blanco en un campo: **Mobile**, **Parent / Guardian**,
+  **Address**, **Email**, **Date of Birth**, **Religion**, **Nationality** o **RFID**. Es la forma más rápida
+  de encontrar registros que deben corregirse, por ejemplo antes de emitir
+  [tarjetas de identificación](/es/docs/educonnect-tutorial-id-cards).
+- **Reset Filters** aparece cuando hay algún filtro activo.
+- Haga clic en el encabezado de una columna para ordenar. **Columns** oculta o muestra columnas, y **Compact** / **Comfortable**
+  cambia la densidad con que se agrupan las filas.
+
+*No students match your search.* significa exactamente eso; borre un filtro antes de suponer que el estudiante
+no existe. Para extraer los mismos datos como archivo, consulte [Informes de listas](/es/docs/educonnect-list-reports).
+
+## El perfil del estudiante
+
+Seleccione un estudiante para abrir su perfil. El encabezado permanece fijo mientras se desplaza por las
+secciones, y después de editar y guardar usted permanece en el perfil con los valores guardados a la vista. Las listas de
+estudiantes de toda la aplicación, incluida la lista móvil, muestran la foto de cada estudiante cuando existe.
+
+La asistencia aparece de dos formas:
+
+- **Term Attendance** — el resumen de asistencia del trimestre.
+- **Attendance by Day** — una cuadrícula de calendario del trimestre que elija en el menú desplegable **Term 1, Term 2…**,
+  con una celda por día, coloreada como **Present**, **Absent**, **Not a school day** o **Upcoming**.
+  Debajo, una etiqueta cuenta los días escolares asistidos, por ejemplo *18 / 20 school days attended (90.0%)*,
+  o indica *No school days held yet*.
+
+Las celdas de día no escolar provienen de su [Calendario](/es/docs/educonnect-tutorial-holidays-and-terms)
+(fines de semana, feriados y días fuera del trimestre), así que si ve una ausencia en un feriado significa que el feriado
+no está configurado.
+
+Más abajo se encuentran los resultados de exámenes, pagos, certificados, hermanos y clases anteriores. Los estudiantes con una
+tarjeta registrada también muestran una sección **ID Card** (consulte
+[Gestión y seguimiento de tarjetas de identificación](/es/docs/educonnect-tutorial-id-cards)).
+
+### Permanent Record
+
+Si su instituto lo ha activado, la sección **Permanent Record** contiene notas con fecha en las
+categorías **Conduct**, **Academic**, **Health** y **Other**. Seleccione **Add entry**, elija una categoría
+y una fecha, escriba la nota y guarde. Cada entrada muestra quién la agregó (y quién la editó).
+
+Está desactivada hasta que un administrador active **Enable the permanent record section** en
+**Administration → Settings**. Solo los docentes y administradores pueden leerla, nunca los padres. Los docentes pueden
+agregar y editar entradas de su propia clase; solo los administradores pueden eliminar. Al desactivar el ajuste, la sección
+se oculta pero las entradas se conservan.
+
+## Cuando un estudiante se va
+
+Quien tenga el permiso *Mark students as left school* (configurado en Access Control) da de baja a un estudiante de la lista
+desde la página de edición del estudiante con el botón **Mark as left**. El cuadro de diálogo solicita la **Date left**, un **Reason** y una
+**Note** opcional. Los motivos son:
+*Finished school*, *Moved to a different school*, *Relocated abroad*, *Financial reasons*, *Family
+reasons* y *Other*. Verá *Student marked as left school*.
+
+**Students → Left Students** enumera a todos los marcados como ausentes del centro, con su ID, última clase cursada, fecha de
+ingreso, fecha de salida y motivo. Busque por nombre, ID de estudiante o clase, y ordene por cualquiera de esas columnas.
+Un estudiante de los registros eliminados puede pasarse a esta lista con **Move to left students**.
+Los estudiantes eliminados conservan un perfil que aún se carga desde esos registros.
+
+Los estudiantes que se han ido no se cuentan en la lista de matrícula ni en las cifras de admisiones; consulte
+[Estadísticas de la escuela](/es/docs/shared-staff-analytics).
+
+## Temas relacionados
+
+- [Agregar un estudiante](/es/docs/educonnect-tutorial-add-a-student)
+- [Docentes: consulta de un estudiante](/es/docs/educonnect-teacher-students-and-analytics)

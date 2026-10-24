@@ -1,0 +1,51 @@
+---
+title: Gérer les élèves, les classes et les remplacements
+description: Où se trouvent les dossiers des élèves, les listes de classe et les remplacements d'enseignants dans le tableau de bord du personnel.
+product: educonnect
+section: Guides
+order: 10
+roles:
+  - staff
+  - admin
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/student_routes.dart
+  - attendance-web-app/edu-frontend/lib/navigation/routes/teacher_routes.dart
+screenshotIds:
+  - "staff-student-search"
+  - staff-attendance-classes
+lastUpdateDate: 2026-09-26
+hidden: false
+---
+
+## Students et Classes
+
+Les sections **Students** et **Classes** sont l'endroit où le personnel de bureau tient à jour les
+effectifs : ajouter de nouveaux élèves, les affecter à une classe et mettre à jour leurs dossiers. Cela
+est distinct de **Admissions**, qui couvre la candidature d'un futur élève avant son inscription — une
+fois la candidature approuvée, le dossier passe dans la liste régulière des élèves.
+
+## Teachers
+
+La section **Teachers** liste tout le personnel, et c'est là qu'un administrateur de l'établissement peut :
+
+- Ajouter ou modifier le profil d'un enseignant
+- Affecter un enseignant à une ou plusieurs classes (cette affectation détermine l'accès d'un enseignant
+  à la modification des présences — voir [Faire l'appel](/fr/docs/shared-staff-attendance-overview))
+- Consulter les présences mensuelles d'un enseignant
+- Mettre en place des **substitutions** (remplacements) lorsque l'enseignant habituel d'une classe est
+  absent
+
+## Substitutions
+
+Une substitution modifie temporairement qui a un accès en modification aux présences d'une classe et aux
+enregistrements associés, sans réaffecter définitivement la classe. Si un enseignant ne peut soudain
+plus modifier une classe qu'il modifie normalement, ou si un remplaçant ne voit pas une classe qu'on lui
+a demandé de couvrir, vérifiez si la substitution a bien été enregistrée ici — c'est une source
+fréquente de confusion, car l'effet (la modification des accès) n'est pas visible depuis l'écran des
+présences lui-même.
+
+## Lien avec les admissions
+
+L'entrée **Admissions** sous Students renvoie vers le même guide et le même portail des candidats que
+ceux utilisés par les futurs parents avant de déposer leur candidature — voir
+[Candidater à une école](/fr/docs/admissions-applying) pour le côté candidat de ce processus.

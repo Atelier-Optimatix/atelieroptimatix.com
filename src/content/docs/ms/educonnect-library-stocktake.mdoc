@@ -1,0 +1,47 @@
+---
+title: "Tutorial: Jalankan Stock-take Perpustakaan"
+description: Menyemak rak berbanding katalog dengan mengimbas, dan apa yang berubah apabila dimuktamadkan.
+product: educonnect
+section: Tutorials
+order: 235
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/stocktakes_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/stocktake_page.dart
+  - attendance-web-app/backend/services/library/stocktakeService.js
+screenshotIds:
+  - "library-stocktake"
+hidden: false
+---
+
+Stock-take (semakan stok) mengetahui buku mana yang sebenarnya ada di rak.
+
+**Anda memerlukan:** **Start a stock-take** untuk menjalankannya dan **Finalise** untuk menutup atau
+membatalkannya.
+
+## Jalankan satu
+
+1. **Library → Stock-take → Start a stock-take.** Beri nama. Pilih rak untuk menyemak rak itu sahaja
+   (tambah lokasi rak dalam Library Settings), atau tiada untuk seluruh perpustakaan.
+2. Di bawah **Scan the shelf**, pilih **Shelf I am scanning** dan imbas setiap buku. Setiap imbasan
+   disimpan. Mengimbas buku dua kali tidak mendatangkan masalah. Kamera boleh dibiarkan terbuka untuk
+   pengimbasan berterusan, atau gunakan **Paste a list** untuk imbasan yang disimpan dalam memori
+   pengimbas.
+3. Semak senarai:
+   - **Not seen yet**: buku rak yang belum diimbas oleh sesiapa. Semak ini dahulu.
+   - **Found on a different shelf** daripada yang direkodkan.
+   - **On the shelf but recorded as lent**: daftar masuk buku-buku ini.
+   - **Recorded as missing or lost**: memuktamadkan akan mengembalikannya.
+   - **Not in the catalogue**: kod bar tanpa rekod. Tambah buku itu.
+4. **Finalise.** Buku rak yang tidak dilihat menjadi **missing**. Buku missing atau lost yang diimbas
+   melalui proses daftar masuk semula, jadi ia sampai kepada tempahan seterusnya atau rak, dan denda
+   buku hilang yang ditemui dan belum dibayar dibatalkan.
+
+**Cancel** tidak mengubah mana-mana buku; imbasannya disimpan tetapi tidak boleh dimuktamadkan kemudian.
+
+Peminjaman diteruskan semasa stock-take, dan buku yang dipinjam atau dipulangkan selepas ia bermula
+dikira sebagai telah dilihat. Jika proses memuktamadkan terhenti separuh jalan, **Carry on finalising**
+menyambungnya semula.

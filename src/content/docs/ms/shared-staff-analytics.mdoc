@@ -1,0 +1,94 @@
+---
+title: Membaca Bahagian Analytics
+description: Soalan yang dijawab oleh setiap halaman analitik, cara angkanya dikira, dan mengapa sesetengahnya hanya untuk pentadbir.
+product: educonnect
+section: Guides
+order: 80
+roles:
+  - admin
+  - staff
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/analytics_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/analytics/
+lastUpdateDate: 2026-10-21
+screenshotIds:
+  - "staff-analytics-overview"
+hidden: false
+---
+
+## Tempat mencarinya
+
+**Analytics** dalam laci sisi. Ia bukan satu papan pemuka — ia tujuh halaman, setiap satu dikumpulkan sekitar
+satu jenis keputusan dan bukannya sekitar satu skrin aplikasi:
+
+| Halaman | Kegunaannya |
+| --- | --- |
+| **Statistics** | Kemasukan, yang berhenti dan bilangan senarai nama, dikira daripada rekod pelajar. Disenaraikan dahulu. |
+| **Overview** | Titik permulaan — gambaran utama merentasi institut. |
+| **Students & Risk** | Pelajar individu mana yang memerlukan perhatian. |
+| **Academics** | Prestasi peperiksaan dan penilaian. |
+| **Attendance** | Kehadiran bersama ketepatan masa. |
+| **Payments** | Yuran yang dikenakan berbanding yuran yang sebenarnya dikutip. |
+| **Operations** | Bagaimana institut berjalan dari hari ke hari. |
+
+**Payments** dan **Operations** hanya untuk pentadbir. Jika anda guru atau penyelaras, kedua-dua itu tidak akan
+muncul dalam kumpulan Analytics anda — itulah pembahagian akses yang dimaksudkan, bukan halaman yang hilang.
+
+## School Statistics
+
+**Analytics → Statistics** mengira pelajar dan bukannya menilai mereka. Pilih **Range** (*Last N years*)
+dan anda mendapat kad utama: **Students on roll**, **Admissions** dan **Leavers** bagi tahun semasa
+(1 Januari hingga hari ini), **Net change**, **Classes**, **Average class size**, **Teachers** dan **Seats
+filled**. Di bawahnya:
+
+- **Admissions, leavers & students on roll** mengikut **Month**, **Term** atau **Year**, sebagai carta dan jadual
+  dengan baris jumlah. *Admissions* ialah pelajar yang tarikh masuknya jatuh dalam tempoh itu; *leavers* ialah
+  pelajar yang ditanda telah berhenti dengan tarikh berhenti dalam tempoh itu; *on roll* ialah pelajar yang telah masuk
+  dan belum berhenti pada hari terakhir tempoh itu.
+- **Students by grade** — pelajar dalam senarai nama hari ini mengikut gred kelas semasa mereka, dipecahkan mengikut
+  jantina yang direkodkan (Male, Female, Not recorded) dengan kelas dan tempat duduk.
+
+Pelajar tanpa tarikh masuk dalam rekod tidak dikira sebagai kemasukan dan dikira dalam senarai nama dari
+permulaan julat; halaman itu menyatakan berapa bilangannya. Paparan Term memerlukan tarikh penggal bagi setiap tahun;
+tahun tanpanya disenaraikan dan tidak menunjukkan penggal. Lihat
+[Tetapkan Cuti, Penggal dan Hari Bekerja](/ms/docs/educonnect-tutorial-holidays-and-terms).
+
+## Cara angka Operations dikira
+
+Setiap angka pada **Operations** mempunyai ikon maklumat (halakan tetikus, atau ketik pada telefon) yang menerangkannya. Secara ringkas:
+
+- **Class stability** memulakan setiap kelas pada 100 dan menolak untuk kemeruapan kehadiran sepanjang 60 hari
+  (40%), hari gurunya tidak hadir dalam 90 hari terakhir (30%), penggantian seminggu (20%) dan berapa
+  banyak kehadiran menurun apabila guru tiada (10%). Lebih tinggi bermakna lebih stabil.
+- **Ledger mismatch** membandingkan, bagi setiap hari yang ditutup dalam 30 hari terakhir, jumlah bersih yang disimpan
+  semasa penutupan hari dengan jumlah bersih yang dikira semula daripada lejar hari itu. Perbezaan melebihi 0.01 dikira.
+- **Data quality** mengira pelajar aktif (bukan alumni atau yang telah berhenti) tanpa RFID atau *N/A*, pelajar aktif
+  tanpa tap dalam 30 hari, nombor kad yang ditap dalam 30 hari yang bukan milik mana-mana pelajar, dan hari
+  yang ada tap tetapi tiada ringkasan kehadiran harian.
+- **Voids and refunds** diukur berbanding bayaran dalam 30 hari yang sama; lebih daripada 5% bagi mana-mana satu
+  akan ditandakan.
+
+## Menyempitkan kepada satu kelas
+
+Kebanyakan halaman menerima penapis kelas, dan kelas yang anda pilih dibawa dalam alamat halaman itu sendiri. Itu
+bermakna paparan yang ditapis boleh ditanda buku atau ditampal kepada rakan sekerja dan ia akan terbuka pada kelas yang sama
+bagi mereka — dengan syarat mereka mempunyai akses kepada halaman itu pada mulanya.
+
+## Pautan lama masih berfungsi
+
+Bahagian analitik telah disusun semula daripada satu papan pemuka enam tab kepada halaman berasingan ini.
+Tanda buku dan pautan tersimpan yang lama masih dapat diselesaikan:
+
+- Pautan tab bernombor (gaya asal `?tab=`) mendarat pada halaman yang sepadan.
+- Nama halaman yang telah dihentikan dialihkan ke tempat baharunya — *Exams* → **Academics**, *Financial* →
+  **Payments**, *Punctuality* → **Attendance** (ketepatan masa telah digabungkan), dan *Intelligence* →
+  **Students & Risk**.
+
+Dalam setiap kes, kelas yang anda pilih dibawa bersama, jadi anda tidak kehilangan penapis anda. Tidak
+perlu mencari dan mengemas kini pautan lama.
+
+## Berkaitan
+
+- [Mengambil Kehadiran sebagai Staf](/ms/docs/shared-staff-attendance-overview)
+- [Gambaran Keseluruhan Perakaunan](/ms/docs/shared-staff-accounting-overview)
+- [Keputusan Peperiksaan](/ms/docs/shared-staff-exam-results)

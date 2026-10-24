@@ -1,0 +1,86 @@
+---
+title: Gestionar un proceso de admisión
+description: Desde la publicación del prospecto hasta la matrícula de un estudiante — importar solicitudes del portal, puntuarlas, cobrar la tarifa y convertirlas.
+product: educonnect
+section: Advanced workflows
+order: 30
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/admissions_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/admission_details_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/admission_fee_counter_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/settings/admissions_guidebook_page.dart
+screenshotIds:
+  - "flow-admissions-pipeline"
+hidden: false
+---
+
+Un proceso de admisión abarca dos sistemas: los postulantes usan el **admissions portal** (portal de admisiones) y el personal trabaja en el **staff
+dashboard** (panel del personal). Esta guía cubre el lado del personal de principio a fin.
+
+## 1. Publicar el prospecto
+
+**Students → Prospectus** (también accesible desde **Administration**). Es lo que los postulantes leen
+antes de postular, por lo que debe publicarse antes de anunciar el proceso de admisión.
+
+Vista de los postulantes: [Lectura del prospecto](/es/docs/admissions-prospectus).
+
+## 2. Llegan las solicitudes
+
+Los postulantes inician sesión con un código de un solo uso, completan el formulario y lo envían. Una vez enviada, una
+solicitud queda **locked** (bloqueada) para ellos: ya no pueden seguir editándola. Consulte
+[Postular a una escuela](/es/docs/admissions-applying).
+
+## 3. Importarlas al panel
+
+Abra **Students → Admissions** y seleccione **Fetch from Portal**. El sistema informa cuántas se **synced**
+(sincronizaron) y cuántas se **skipped** (omitieron); omitidas significa, por lo general, que ya fueron importadas.
+
+Sincronice con regularidad durante todo el proceso abierto en lugar de hacerlo una sola vez al final; el panel solo conoce
+las solicitudes que se han importado.
+
+## 4. Revisar y puntuar
+
+La lista de admisiones se puede filtrar y ordenar por nombre, dirección, religión, **total score** (puntuación total) y
+**status** (estado). Abra cualquier fila para ver la solicitud completa y sus documentos cargados.
+
+La **total score** es la base del ranking. Cualesquiera que sean sus criterios, terminan convertidos en este número, así que
+asegúrese de que se esté completando de forma coherente antes de comenzar a comparar postulantes.
+
+Exporte la lista (ID de admisión, nombre, dirección, religión y puntuación total) para su revisión sin conexión o para una reunión
+de selección.
+
+## 5. Cobrar la tarifa de solicitud
+
+Hay dos vías, y ambas terminan en el mismo punto:
+
+- **Online** (en línea) — el postulante paga con tarjeta en el portal. Un estado *pending* no es un fallo; se
+  resuelve solo. Consulte [Pago de la tarifa de solicitud](/es/docs/admissions-payment).
+- **At the office** (en la oficina) — efectivo, cheque o transferencia, registrado en **Students → Fee Counter** (la misma
+  pantalla aparece como **Admission Fees** en Accounting). Consulte
+  [Pago en la oficina de la escuela](/es/docs/admissions-paying-at-the-office).
+
+Las tarifas de admisión llegan al mismo libro contable que todo lo demás, por lo que pasan con normalidad al
+[cierre del día](/es/docs/educonnect-tutorial-day-close) y a la
+[conciliación](/es/docs/educonnect-tutorial-reconciliation).
+
+## 6. Convertir en estudiantes
+
+Los postulantes aceptados pasan a ser estudiantes. Tenga las clases listas de antemano (consulte
+[Agregar una clase](/es/docs/educonnect-tutorial-add-a-class)), porque el estudiante necesita una al matricularse y
+la clase no puede cambiarse después editando el registro.
+
+## 7. Después del proceso de admisión
+
+- Verifique que los [calendarios de tarifas](/es/docs/educonnect-tutorial-fee-setup) cubran las nuevas clases.
+- Emita las [tarjetas de identificación](/es/docs/educonnect-tutorial-id-cards): sin RFID no hay asistencia.
+- Los padres se registran por sí mismos con el ID de estudiante de su hijo:
+  [Registro como padre o madre](/es/docs/shared-parent-registration).
+
+## Para un grupo de escuelas
+
+La oficina central ve el proceso de admisión de todo el grupo en **Reports → Admissions**, pero no puede abrir las pantallas
+de cada sede. Consulte [Oficina central e informes del grupo](/es/docs/shared-head-office-group-reporting).

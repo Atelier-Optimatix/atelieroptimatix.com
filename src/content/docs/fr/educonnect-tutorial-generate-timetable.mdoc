@@ -1,0 +1,100 @@
+---
+title: "Tutoriel : Générer l'emploi du temps"
+description: Lancer le générateur automatique d'emploi du temps — les vérifications préalables, l'aperçu avant validation, et la lecture du résultat planifié/ignoré.
+product: educonnect
+section: Tutorials
+order: 80
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/widgets/timetable_generate_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/timetable_grid_screen.dart
+screenshotIds:
+  - "tutorial-generate-timetable"
+hidden: false
+---
+
+Le générateur place les cours dans les périodes à votre place, en respectant le nombre de cours par semaine, la disponibilité des
+enseignants et les limites quotidiennes et consécutives. Il n'invente rien — il ne peut placer que
+ce que **Class Subjects** indique comme existant.
+
+## Avant de commencer
+
+Tout ce qui suit doit déjà être vrai. Le générateur vérifie les deux premiers points pour vous et refuse de s'exécuter
+dans le cas contraire :
+
+1. Une [grille horaire](/fr/docs/educonnect-tutorial-bell-schedule) existe.
+2. Des [affectations classe-matière](/fr/docs/educonnect-tutorial-class-subjects) existent — avec des enseignants.
+3. La disponibilité et les limites des enseignants sont définies dans **Timetable → Configuration → Teacher Constraints**.
+   Si vous l'omettez, le générateur suppose que tout le monde est libre toute la semaine.
+
+## Étapes
+
+1. Ouvrez **Timetable → Timetable Grid**.
+2. Sélectionnez **Generate**. La boîte de dialogue **Generate Timetable** s'ouvre avec deux lignes de vérification préalable en haut :
+   - **Bell schedule configured** (ou *Bell schedules configured: N* si vous en avez plusieurs)
+   - **Class-subject assignments: *N***
+
+   Si l'une échoue, vous obtenez **Complete setup in Timetable Configuration before generating**, et le
+   bouton Generate reste désactivé. Corrigez la configuration plutôt que de chercher à la contourner.
+3. Choisissez le **Scope** (portée) :
+   - **All classes** — le choix habituel pour un nouvel emploi du temps.
+   - **Selected classes only** — cochez alors les classes. Utilisez-le lorsque vous refaites un niveau
+     et ne voulez pas toucher au reste.
+4. Décidez pour **Replace existing slots** :
+   - **Off** (par défaut) — le générateur travaille autour de ce qui est déjà placé.
+   - **On** — les créneaux existants dans la portée sont d'abord **supprimés**. La boîte de dialogue le précise explicitement. C'est
+     le bon choix pour une reconstruction complète et le mauvais si un collègue a placé quoi que ce soit à la main.
+5. **Fortement recommandé la première fois :** activez **Preview only (don't save)**. Le bouton passe
+   de **Generate** à **Preview**, et vous obtenez le résultat complet sans que rien ne soit écrit.
+6. Lancez-le.
+
+## Lire le résultat
+
+La feuille de résultat affiche :
+
+- un **score** en pourcentage — dans quelle mesure le placement a satisfait les contraintes,
+- **Scheduled** — les cours placés,
+- **Skipped** — les cours qu'il n'a pas pu placer,
+- **Total**,
+- une liste d'**avertissements** expliquant les cours ignorés.
+
+Puis trois choix :
+
+- **Accept & Save** — valider le résultat.
+- **Discard** — le jeter et modifier quelque chose.
+- **View Timetable** — examiner la grille avant de décider.
+
+Une exécution en aperçu ne vous offre que la consultation ; rien n'est enregistré dans les deux cas.
+
+## Quand des cours sont ignorés
+
+Les cours ignorés tiennent presque toujours à une contrainte impossible à satisfaire, et non à une défaillance du générateur. Par
+ordre de probabilité approximatif :
+
+- **Pas assez de périodes dans la journée** pour le nombre de cours par semaine exigé par le programme. Ajoutez des
+  périodes à la grille horaire ou réduisez les cours par semaine.
+- **Un enseignant est surchargé** — la même personne est la seule affectée à une matière dans trop
+  de classes.
+- **Les contraintes des enseignants sont trop strictes** — fenêtres de disponibilité, max/jour ou max consécutifs ne laissent
+  aucun créneau valide.
+- **Une matière n'a pas d'enseignant** dans Class Subjects, donc personne à placer.
+
+Lisez les avertissements, corrigez la cause, puis relancez en aperçu jusqu'à ce que le nombre de cours ignorés soit acceptable.
+
+## Finir à la main
+
+Le générateur fait l'essentiel du chemin ; les derniers créneaux sont généralement manuels. Dans la grille :
+
+- Sélectionnez une cellule pour y définir le cours, ou placez un **subject group** entier lorsque les classes se scindent en
+  options au même moment.
+- **Copy day** reproduit un jour sur d'autres, et vous indique combien de créneaux ont été copiés et combien ont été
+  **skipped as conflicts** (ignorés en raison de conflits) — rien n'est écrasé en silence.
+- La grille refuse toute modification qui crée une double réservation d'un enseignant ou d'une salle, et met le conflit en évidence.
+- Filtrez la vue par **Room**, **Teacher** ou **Class**, et par jour, à l'aide de la barre d'outils.
+
+## Voir aussi
+
+- [Building the Timetable](/fr/docs/shared-staff-timetable) — les concepts derrière ces écrans
+- [Your Timetable as a Teacher](/fr/docs/educonnect-teacher-my-timetable)

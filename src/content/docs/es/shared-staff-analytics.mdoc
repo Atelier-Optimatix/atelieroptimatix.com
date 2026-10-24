@@ -1,0 +1,100 @@
+---
+title: Cómo leer la sección de analítica
+description: Qué responde cada una de las páginas de analítica, cómo se calculan sus cifras y por qué algunas son solo para administradores.
+product: educonnect
+section: Guides
+order: 80
+roles:
+  - admin
+  - staff
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/analytics_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/analytics/
+lastUpdateDate: 2026-10-21
+screenshotIds:
+  - "staff-analytics-overview"
+hidden: false
+---
+
+## Dónde encontrarla
+
+**Analytics** en el menú lateral. No es un panel único: son siete páginas, cada una agrupada en torno a
+un tipo de decisión y no a una pantalla de la aplicación:
+
+| Página | Para qué sirve |
+| --- | --- |
+| **Statistics** | Admisiones, bajas y recuentos de matrícula, contados a partir de los registros de estudiantes. Aparece primero. |
+| **Overview** | El punto de partida: el panorama general de la institución. |
+| **Students & Risk** | Qué estudiantes individuales necesitan atención. |
+| **Academics** | Rendimiento en exámenes y evaluaciones. |
+| **Attendance** | La asistencia junto con la puntualidad. |
+| **Payments** | Cuotas facturadas frente a cuotas realmente cobradas. |
+| **Operations** | Cómo funciona la institución en el día a día. |
+
+**Payments** y **Operations** son solo para administradores. Si usted es docente o coordinador, esas
+dos no aparecerán en su grupo de Analytics; es la división de acceso prevista, no una página que
+falta.
+
+## School Statistics
+
+**Analytics → Statistics** cuenta estudiantes en lugar de puntuarlos. Elija un **Range** (*Last N
+years*) y obtendrá tarjetas de resumen: **Students on roll**, **Admissions** y **Leavers** del año en
+curso (del 1 de enero a hoy), **Net change**, **Classes**, **Average class size**, **Teachers** y
+**Seats filled**. Debajo:
+
+- **Admissions, leavers & students on roll** por **Month**, **Term** o **Year**, como gráfico y como
+  tabla con una fila de total. Las *admisiones* son los estudiantes cuya fecha de ingreso cae en el
+  período; las *bajas* son los estudiantes marcados como retirados con una fecha de salida en el
+  período; los *matriculados* son los estudiantes que ya habían ingresado y aún no se habían retirado
+  el último día del período.
+- **Students by grade** — los estudiantes matriculados hoy según el grado de su clase actual,
+  desglosados por género registrado (Male, Female, Not recorded) con clases y plazas.
+
+Los estudiantes sin fecha de ingreso registrada no se cuentan como admisiones y se cuentan como
+matriculados desde el inicio del rango; la página indica cuántos son. La vista por período requiere
+las fechas de los períodos de cada año; los años que no las tienen se enumeran y no muestran períodos.
+Consulte
+[Establecer feriados, períodos y días laborables](/es/docs/educonnect-tutorial-holidays-and-terms).
+
+## Cómo se calculan las cifras de Operations
+
+Cada cifra de **Operations** tiene un icono de información (pase el cursor por encima, o toque en un
+teléfono) que la explica. En resumen:
+
+- **Class stability** parte de 100 para cada clase y resta según la volatilidad de la asistencia en 60
+  días (40 %), los días de ausencia de su docente en los últimos 90 días (30 %), las sustituciones por
+  semana (20 %) y cuánto cae la asistencia cuando el docente está ausente (10 %). Un valor más alto
+  indica mayor estabilidad.
+- **Ledger mismatch** compara, para cada día cerrado de los últimos 30, el total neto guardado al
+  cerrar el día con el neto recalculado a partir del libro mayor de ese día. Una diferencia superior a
+  0,01 cuenta.
+- **Data quality** cuenta los estudiantes activos (no exalumnos ni retirados) sin RFID o con *N/A*,
+  los estudiantes activos sin ningún pase en 30 días, los números de tarjeta pasados en 30 días que no
+  pertenecen a ningún estudiante, y los días con pases pero sin resumen de asistencia diaria.
+- **Voids and refunds** se miden frente a los pagos de los mismos 30 días; más de un 5 % de cualquiera
+  de los dos se marca.
+
+## Cómo acotar a una clase
+
+La mayoría de las páginas aceptan un filtro de clase, y la clase que elija se conserva en la propia
+dirección de la página. Esto significa que una vista filtrada se puede guardar como marcador o enviar a
+un colega y se abrirá con la misma clase, siempre que esa persona tenga acceso a esa página.
+
+## Los enlaces antiguos siguen funcionando
+
+La sección de analítica se reorganizó, pasando de un único panel de seis pestañas a estas páginas
+separadas. Los marcadores y enlaces guardados antiguos siguen funcionando:
+
+- Los enlaces numerados por pestaña (el estilo original `?tab=`) llevan a la página correspondiente.
+- Los nombres de página retirados redirigen a su nuevo destino: *Exams* → **Academics**, *Financial* →
+  **Payments**, *Punctuality* → **Attendance** (la puntualidad se fusionó) e *Intelligence* →
+  **Students & Risk**.
+
+En todos los casos, la clase que tenía seleccionada se conserva, por lo que no pierde su filtro. No es
+necesario buscar y actualizar los enlaces antiguos.
+
+## Temas relacionados
+
+- [Toma de asistencia por parte del personal](/es/docs/shared-staff-attendance-overview)
+- [Resumen de contabilidad](/es/docs/shared-staff-accounting-overview)
+- [Resultados de exámenes](/es/docs/shared-staff-exam-results)

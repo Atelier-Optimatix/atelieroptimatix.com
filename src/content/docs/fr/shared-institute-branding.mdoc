@@ -1,0 +1,45 @@
+---
+title: "Identité visuelle de l'établissement — pourquoi la terminologie change d'un établissement à l'autre"
+description: Le tableau de bord adapte son vocabulaire (par exemple « School » ou « Kindergarten ») selon l'établissement, et non selon le produit.
+product: shared
+section: Getting started
+order: 1
+roles:
+  - staff
+  - admin
+  - parent
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/utils/institute_branding.dart
+  - educonnect-public/edu-frontend/lib/api_services/branding_service.dart
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Un seul code, de nombreux établissements
+
+Le tableau de bord du personnel comme le portail parents sont la même application pour tous les
+établissements — il n'existe pas d'« application EduConnect » et d'« application KinderCare » séparées.
+Ce qui change d'un établissement à l'autre, c'est l'identité visuelle : le nom affiché, le logo, la
+couleur du thème, et quelques variantes de terminologie, comme appeler votre établissement une
+« School » ou une « Kindergarten » selon la manière dont il est enregistré.
+
+Deux établissements peuvent donc avoir un aspect et un vocabulaire assez différents alors qu'ils
+utilisent un logiciel identique — si quelque chose paraît « anormal » pour un établissement mais correct
+pour un autre, vérifiez s'il s'agit réellement d'une anomalie ou simplement de l'identité visuelle et de
+la terminologie de cet établissement avant de la signaler comme telle.
+
+## D'où vient la terminologie
+
+Sur le portail parents, l'établissement actif est généralement déterminé par un paramètre `school` dans
+l'URL qui vous a été envoyée (par exemple à partir d'un lien d'invitation ou de l'application mobile),
+lequel permet de récupérer le nom affiché et le logo de cet établissement. Si un parent arrive sur la
+page de connexion sans ce contexte, le portail se rabat sur un établissement mémorisé précédemment pour
+ce navigateur, ou sur une valeur générique par défaut.
+
+## Ce que cela signifie en pratique
+
+- Lors d'un échange avec l'assistance, confirmez toujours *de quel établissement* relève l'utilisateur
+  avant de supposer qu'un écran se comporte de la même façon partout.
+- Les captures d'écran et la documentation de ce guide proviennent d'un établissement représentatif —
+  des termes comme « Student » ou son équivalent propre à l'école maternelle peuvent différer légèrement
+  sur votre écran.

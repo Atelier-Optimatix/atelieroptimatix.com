@@ -1,0 +1,33 @@
+---
+title: "පුස්තකාල වාර්තා"
+description: ණය දීමේ, එකතුවේ, කල් ඉකුත් වූ සහ දඩ වාර්තා සහ සෑම සංඛ්‍යාවක්ම ගණන් ගන්නේ මොනවාදැයි.
+product: educonnect
+section: Guides
+order: 236
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/library_reports_page.dart
+  - attendance-web-app/backend/services/library/libraryReportService.js
+screenshotIds:
+  - "library-reports"
+hidden: false
+---
+
+**Library → Reports** සඳහා **Library reports** අවසරය අවශ්‍යයි. **වසරක් හෝ ඊට අඩු** කාල පරාසයක් තෝරන්න;
+දිගු පරාසයක් සඳහා, සංඛ්‍යා සම්පූර්ණව ලැබීමට කෙටි පරාසයක් තෝරන ලෙස පිටුව ඉල්ලා සිටී.
+
+වාර්තා ආවරණය කරන්නේ:
+
+- **Circulation**: කාල පරිච්ඡේදය තුළ ණයට දීම් සහ ආපසු ලබාගැනීම්, **By borrower type**, **By grade** සහ
+  **By class** අනුව බෙදීම් සමඟ, එසේම වෙනස් පොත් සහ ණයගැනුම්කරුවන් ගණන.
+- **Popular titles** සහ **never borrowed** (කිසි විටෙක ණයට නොගත්) පොත්.
+- **Overdue**: නියමිත දිනය ඉක්මවූ පොත් සහ **Days late**.
+- **Collection**: අද වන විට පුස්තකාලයේ ඇති පිටපත් **By status**, **By condition**, **By shelf** සහ
+  **By subject** අනුව.
+- **Fines**: වර්ගය අනුව, ගෙවා නැති, ගෙවූ සහ අත්හළ ඒවා සමඟ.
+- **Engagement**: ණයට ගන්නේ කවුද, නොගන්නේ කවුද යන්න.
+
+සංඛ්‍යා මිනිත්තු කිහිපයක් සඳහා හැඹිලිගත (cached) කර ඇත.

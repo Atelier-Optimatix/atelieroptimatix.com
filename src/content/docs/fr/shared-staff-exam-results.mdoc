@@ -1,0 +1,55 @@
+---
+title: Saisir et publier les résultats d'examen
+description: La différence entre l'ajout de résultats, leur import en masse, les demandes de modification et les classements.
+product: educonnect
+section: Guides
+order: 60
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/exam_routes.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Deux façons de saisir les résultats
+
+La section **Exams** propose deux voies distinctes vers le même ensemble de résultats, et il est facile
+d'utiliser la mauvaise pour ce que vous cherchez à faire :
+
+- **Add results** — saisir les notes d'une classe et d'une matière à la fois, directement dans le
+  tableau de bord. À utiliser pour les petites classes ou les corrections de dernière minute.
+- **Upload results** — importer en masse les notes d'une classe et d'une matière à partir d'un fichier.
+  À utiliser pour la saisie d'une classe entière une fois la correction terminée ; c'est beaucoup plus
+  rapide que de saisir les notes une à une, mais les erreurs du fichier touchent toute la classe d'un
+  coup ; vérifiez donc bien le fichier avant de l'importer.
+
+## La liste des classes d'un examen
+
+L'ouverture d'un examen affiche ses classes regroupées par niveau, selon la même présentation que
+**Students → Classes**. Chaque classe indique ses matières et ses élèves, ainsi que *No results yet*
+tant que les notes ne sont pas saisies. Les élèves supprimés apparaissent dans leur propre groupe.
+L'export fournit **Exam Coverage by Class** avec le niveau, la classe, les matières, les élèves et la
+moyenne.
+
+## Demandes de modification
+
+Si un résultat doit être corrigé après sa saisie (une erreur de correction découverte plus tard, une
+seconde correction), utilisez les **change requests** (demandes de modification) plutôt que de modifier
+directement le résultat. Cela conserve une trace de ce qui a été modifié et pourquoi, ce qui est
+important pour répondre plus tard aux questions des parents sur une note.
+
+## Classements et bulletins trimestriels
+
+Les **Rankings** (classements) et les **term reports** (bulletins trimestriels) sont générés à partir
+des résultats existant à ce moment-là — ils ne reflèteront pas une classe tant que les résultats de
+cette classe et de cette matière n'ont pas été effectivement saisis ou importés. Si un classement
+paraît incomplet, vérifiez d'abord que les résultats de toutes les matières ont bien été saisis avant de
+supposer que le calcul du classement est erroné.
+
+## Qui voit quoi
+
+Les enseignants utilisent généralement l'ajout et l'import de résultats pour leurs propres classes ; les
+classements, les bulletins trimestriels et les analyses inter-classes sont plus couramment utilisés par
+les administrateurs de l'établissement qui examinent une classe entière ou un niveau.

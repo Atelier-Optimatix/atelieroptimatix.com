@@ -1,0 +1,73 @@
+---
+title: "Rédiger des rapports"
+description: Construire un rapport hebdomadaire ou mensuel à partir des activités enregistrées, y compris le premier brouillon généré.
+product: kindercare
+section: Guides
+order: 20
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/reports_screen.dart
+  - kinder-care-fe/lib/screens/report_editor_screen.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Commencer un rapport
+
+**Reports → New report**, puis choisissez l'enfant. Seuls les enfants de votre classe sont proposés —
+si la liste est vide, il s'agit d'un problème d'attribution de classe et non d'un rapport manquant.
+
+Choisissez ensuite le format du rapport :
+
+- **Weekly** (hebdomadaire) ou **Monthly** (mensuel).
+- La **période** qu'il couvre.
+
+## Le brouillon généré
+
+**Generate draft** rédige pour vous une première version à partir des activités déjà enregistrées pour
+cet enfant sur la période. Vous pouvez d'abord ajouter des **Notes for the AI draft (optional)** — par
+exemple « s'est bien adapté, travaille sur le partage » — pour l'orienter. Toutes les versions de
+l'application n'ont pas le générateur activé ; si vous ne voyez pas **Generate draft**, rédigez le
+rapport à la main. C'est pourquoi il est important d'enregistrer les activités au fil de l'eau : le
+brouillon vaut ce que valent les éléments sur lesquels il s'appuie, et une période sans rien de consigné
+produit très peu de contenu.
+
+{% callout type="warning" %}
+Le brouillon est un point de départ, et non un rapport terminé — l'application vous le rappelle
+lorsqu'elle en produit un. **Relisez-le et modifiez-le avant d'enregistrer.** Il est assemblé à partir
+de vos enregistrements d'activités ; il peut donc mal juger le ton, se répéter ou affirmer quelque chose
+avec plus d'assurance que vous ne le feriez. Rien n'arrive chez un parent tant que vous ne l'avez pas
+publié, et ce qu'il lit est exactement ce que vous avez laissé dans le texte.
+{% /callout %}
+
+Vous pouvez aussi ignorer complètement la génération et écrire à partir de zéro, et vous pouvez
+**ajouter des sections** (add sections) pour structurer le rapport comme votre établissement le
+préfère.
+
+## Brouillon ou publié
+
+Deux boutons distincts, et la différence compte :
+
+- **Save draft** — conserve votre travail, visible uniquement du personnel. Vous pourrez y revenir
+  pour le terminer plus tard.
+- **Publish** — met le rapport à la disposition du parent.
+
+Enregistrez un brouillon chaque fois que vous êtes interrompu. Ne publiez que lorsque le rapport est
+réellement prêt, car la publication est ce qui le rend visible en dehors de la salle des professeurs.
+
+Enregistrer comme brouillon un rapport déjà publié le **dépublie** : l'application vous avertit
+d'abord, et les familles ne peuvent plus le voir tant que vous ne l'avez pas publié de nouveau.
+
+## Retrouver des rapports
+
+L'onglet Reports liste vos rapports avec les filtres **All**, **Drafts** et **Published**, et charge
+d'autres éléments au fil du défilement. Les parents lisent les rapports publiés dans l'onglet
+**Reports** du profil de leur enfant.
+
+## Voir aussi
+
+- [Enregistrer des activités](/fr/docs/kindercare-staff-activities)
+- [Premiers pas avec l'application KinderCare pour le personnel](/fr/docs/kindercare-staff-getting-started)
+- [L'application KinderCare pour les parents](/fr/docs/kindercare-parent-app)

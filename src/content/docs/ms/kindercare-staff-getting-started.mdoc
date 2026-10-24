@@ -1,0 +1,104 @@
+---
+title: Bermula dengan Aplikasi Staf KinderCare
+description: Lima tab aplikasi guru, mendaftarkan seorang kanak-kanak, profil pelajar, dan meletakkan acara pada kalendar.
+product: kindercare
+section: Getting started
+order: 10
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/home_screen.dart
+  - kinder-care-fe/lib/screens/students_screen.dart
+  - kinder-care-fe/lib/screens/calendar_screen.dart
+  - kinder-care-fe/lib/screens/add_student_screen.dart
+  - kinder-care-fe/lib/screens/account_settings_screen.dart
+  - kinder-care-fe/lib/screens/student_profile_screen.dart
+  - kinder-care-shared/lib/src/student_profile/student_profile_page.dart
+  - kinder-care-shared/lib/src/student_profile/profile_permissions.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Lima tab
+
+Aplikasi staf KinderCare sengaja dibuat kecil. Semuanya terletak di sebalik lima tab di sepanjang bahagian bawah:
+
+- **Activities** — apa yang anda rekodkan tentang kanak-kanak sepanjang hari.
+- **Students** — kanak-kanak dalam kelas anda.
+- **Calendar** — acara untuk kelas anda.
+- **Reports** — laporan bertulis yang dihantar kepada ibu bapa.
+- **Notices** — pengumuman kepada ibu bapa. Lihat [Menghantar Pengumuman](/ms/docs/kindercare-staff-announcements).
+
+Tiada laci sisi dan tiada kawasan pentadbir berasingan untuk dicari. Jika sesuatu tiada pada salah satu
+daripada lima tab ini, ia tiada dalam aplikasi ini.
+
+{% callout type="note" %}
+Ini ialah aplikasi guru. Ibu bapa mempunyai aplikasi **berasingan** dengan tab tersendiri — lihat
+[Aplikasi Ibu Bapa KinderCare](/ms/docs/kindercare-parent-app). Kedua-duanya memaparkan banyak maklumat yang sama,
+jadi ia membantu untuk mengetahui yang mana satu sedang diterangkan oleh seseorang sebelum menyelesaikan masalah bersama mereka.
+{% /callout %}
+
+## Mendaftarkan seorang kanak-kanak
+
+**Students → Add Student** mengumpul butiran kanak-kanak dalam bahagian berkumpulan — maklumat peribadi
+(nama penuh, student ID, tarikh lahir), maklumat akademik (kelas, jantina), maklumat hubungan
+(alamat, nombor telefon bimbit, e-mel, ibu bapa/penjaga), dan maklumat tambahan (warganegara, agama,
+RFID, alahan dan ubat). Anda boleh melampirkan foto pada masa yang sama, diambil dengan **camera** atau
+dipilih daripada **gallery**. Nama penuh, student ID dan kelas diperlukan.
+
+## Tab Students
+
+Tab Students menunjukkan kelas anda sebagai **grid** atau **list** — butang di bahagian atas kanan menukar
+antara keduanya. **Search by Name** mengecilkan senarai, yang biasanya lebih pantas daripada menatal apabila
+kelas sudah penuh. Setiap kanak-kanak juga mempunyai lencana yang menunjukkan sama ada kehadirannya telah ditanda
+**today**; jika lencana tiada, data kehadiran mungkin belum dimuatkan, dan bahagian aplikasi yang lain
+masih berfungsi.
+
+Jika anda belum ditugaskan kelas, tab ini meminta anda memilih satu dan bukannya menunjukkan senarai kosong.
+
+## Profil kanak-kanak
+
+Ketik seorang kanak-kanak untuk membuka profilnya. Ia ialah halaman yang sama dilihat oleh ibu bapa dalam
+aplikasi mereka, jadi perkataannya sepadan di kedua-dua belah. Ia mempunyai dua tab:
+
+- **Details** — maklumat peribadi dan hubungan, student ID dan kelas sekolah, serta siapa yang terakhir
+  mengemas kini rekod dan bila. **Allergies and medicine** dipaparkan dalam kad merah yang diserlahkan supaya
+  sukar terlepas pandang.
+- **Attendance** — kalendar bulan demi bulan bagi kanak-kanak itu dengan **Days Present**, **Working Days**
+  dan peratusan **Attendance**. Berpindah antara bulan dengan anak panah kalendar.
+
+Gunakan pensel (**Edit profile**) untuk menukar butiran dan **Save Changes** apabila selesai; butang
+kamera menukar foto kanak-kanak itu. Staf boleh menyunting setiap medan kecuali **student ID**,
+**class** dan **Emergency Contact**, yang hanya untuk paparan dalam aplikasi. (Ibu bapa hanya boleh menyunting
+telefon, e-mel, alamat dan foto mereka.)
+
+{% callout type="note" %}
+Jika penyimpanan gagal, aplikasi menunjukkan sebab yang diberikan dan bukannya ralat umum, jadi baca
+mesej itu sebelum mencuba semula — ia biasanya menyebut medan yang ditolak.
+{% /callout %}
+
+## Kalendar
+
+Tab Calendar boleh disunting, bukan sekadar paparan: anda boleh **add**, **edit** dan **delete** acara.
+Ia memuatkan acara sepanjang tahun, jadi anda boleh berpindah ke belakang dan ke hadapan antara bulan
+tanpa menunggu. Pemadaman meminta pengesahan terlebih dahulu, kerana ibu bapa mungkin sudah melihat acara itu dalam
+aplikasi mereka.
+
+## Kekal log masuk
+
+Aplikasi mengekalkan log masuk anda merentasi mula semula, jadi anda tidak perlu log masuk setiap pagi. Anda hanya perlu
+log masuk semula selepas anda log keluar.
+
+## Tetapan akaun
+
+**Account Settings** sengaja dibuat minimum. Di samping butiran akaun anda, ia menawarkan **Request
+Account Deletion** — permintaan kepada sekolah dan bukannya sesuatu yang berlaku serta-merta, jadi
+menghantarnya tidak melog keluar anda atau membuang rekod anda ketika itu juga.
+
+## Berkaitan
+
+- [Merekod Aktiviti](/ms/docs/kindercare-staff-activities)
+- [Menulis Laporan](/ms/docs/kindercare-staff-reports)
+- [Menghantar Pengumuman](/ms/docs/kindercare-staff-announcements)
+- [Aplikasi Ibu Bapa KinderCare](/ms/docs/kindercare-parent-app)

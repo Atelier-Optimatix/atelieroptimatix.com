@@ -1,0 +1,62 @@
+---
+title: Envío de comunicados
+description: Cómo publicar un aviso para los padres de una clase, de unos pocos niños o de toda la escuela, y el SMS opcional.
+product: kindercare
+section: Guides
+order: 30
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/announcements_screen.dart
+  - kinder-care-fe/lib/screens/add_announcement_screen.dart
+  - kinder_care_parent/lib/screens/announcements_screen.dart
+  - kinder_care_parent/lib/widgets/kc_appbar.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Para qué sirven los comunicados
+
+Los comunicados son avisos unidireccionales para los padres ("el día deportivo se traslada al
+viernes"), a diferencia de los [informes](/es/docs/kindercare-staff-reports), que tratan sobre un solo
+niño. Se encuentran en la pestaña **Notices** de la aplicación del personal y detrás del icono de
+campana en la aplicación para padres.
+
+## Cómo publicar uno
+
+**Notices → New announcement** y luego:
+
+1. **Title** y **Message** — ambos obligatorios.
+2. **Send to** — quién debe recibirlo:
+   - **All classes** — todos los padres de la escuela. Los docentes de clase no ven esta opción; está
+     reservada para roles con alcance en toda la escuela.
+   - **Classes** — elija una o más clases. Un docente de clase solo puede elegir su propia clase, que
+     aparece preseleccionada.
+   - **Students** — elija niños individuales de las clases seleccionadas, y se avisa **únicamente a
+     los padres de esos niños**.
+3. **Also send an SMS** — desactivado por defecto. Los padres **siempre** reciben una notificación
+   push; la opción de SMS les envía además un mensaje de texto, lo cual tiene un costo por cada
+   destinatario, así que déjela desactivada a menos que el aviso sea urgente.
+
+**Post Announcement** le pide confirmación primero, indicando el público (por ejemplo "the parents of
+2 classes"). Al publicarse, se envía una notificación push a los padres.
+
+## Cómo encontrar y eliminar comunicados
+
+La pestaña Notices enumera lo que ha publicado y filtra por **All**, **School-wide**, **Classes** y
+**Students**. Deslice hacia abajo para actualizar; la lista carga más elementos a medida que se
+desplaza. El icono de papelera elimina un comunicado tras una confirmación: un aviso eliminado se
+borra, así que elimine solo uno que haya publicado por error.
+
+## Lo que ven los padres
+
+Los padres ven una insignia roja en la campana por los avisos que no han abierto, y la lista completa
+en **Announcements**. Los no leídos aparecen en negrita. Consulte
+[La aplicación KinderCare para padres](/es/docs/kindercare-parent-app).
+
+## Temas relacionados
+
+- [Redacción de informes](/es/docs/kindercare-staff-reports)
+- [Primeros pasos con la aplicación KinderCare para el personal](/es/docs/kindercare-staff-getting-started)
+- [La aplicación KinderCare para padres](/es/docs/kindercare-parent-app)

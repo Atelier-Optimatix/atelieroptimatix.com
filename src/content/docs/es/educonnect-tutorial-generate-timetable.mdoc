@@ -1,0 +1,102 @@
+---
+title: "Tutorial: Generar el horario"
+description: "Cómo ejecutar el generador automático de horarios: las comprobaciones previas, la vista previa antes de confirmar y la lectura del resultado de clases programadas y omitidas."
+product: educonnect
+section: Tutorials
+order: 80
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/widgets/timetable_generate_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/timetable_grid_screen.dart
+screenshotIds:
+  - "tutorial-generate-timetable"
+hidden: false
+---
+
+El generador coloca las clases en los períodos por usted, respetando las lecciones por semana, la disponibilidad de los docentes y los límites diarios y consecutivos. No inventa nada: solo puede colocar lo que **Class Subjects** ya indica que existe.
+
+## Antes de empezar
+
+Todo lo siguiente debe cumplirse ya. El generador comprueba los dos primeros puntos por usted y se
+niega a ejecutarse en caso contrario:
+
+1. Existe un [horario de timbres](/es/docs/educonnect-tutorial-bell-schedule).
+2. Existen [asignaciones de asignaturas por clase](/es/docs/educonnect-tutorial-class-subjects), con docentes.
+3. La disponibilidad y los límites de los docentes están definidos en **Timetable → Configuration → Teacher Constraints**.
+   Si lo omite, el generador supone que todos están libres toda la semana.
+
+## Pasos
+
+1. Abra **Timetable → Timetable Grid**.
+2. Seleccione **Generate**. Se abre el cuadro de diálogo **Generate Timetable** con dos filas de
+   comprobación previa en la parte superior:
+   - **Bell schedule configured** (o *Bell schedules configured: N* si tiene más de uno)
+   - **Class-subject assignments: *N***
+
+   Si alguna falla, aparece **Complete setup in Timetable Configuration before generating** y el botón
+   Generate permanece desactivado. Corrija la configuración en lugar de intentar eludirla.
+3. Elija el **Scope** (alcance):
+   - **All classes**: la opción habitual para un horario nuevo.
+   - **Selected classes only**: luego marque las clases. Úselo cuando esté rehaciendo un grado y no
+     quiera tocar el resto.
+4. Decida sobre **Replace existing slots**:
+   - **Off** (predeterminado): el generador trabaja alrededor de lo que ya está colocado.
+   - **On**: los espacios existentes dentro del alcance se **eliminan** primero. El cuadro de diálogo
+     lo indica de forma explícita. Es la opción correcta para una reconstrucción real y la equivocada
+     si un colega ha colocado algo a mano.
+5. **Muy recomendable la primera vez:** active **Preview only (don't save)**. El botón cambia de
+   **Generate** a **Preview** y obtiene el resultado completo sin que se escriba nada.
+6. Ejecútelo.
+
+## Cómo leer el resultado
+
+La hoja de resultados muestra:
+
+- una **puntuación** en porcentaje: qué tan bien la colocación cumplió las restricciones,
+- **Scheduled**: clases colocadas,
+- **Skipped**: clases que no pudo colocar,
+- **Total**,
+- una lista de **advertencias** que explican las omisiones.
+
+Después hay tres opciones:
+
+- **Accept & Save**: confirmar el resultado.
+- **Discard**: descartarlo y cambiar algo.
+- **View Timetable**: ver la cuadrícula antes de decidir.
+
+Una ejecución de vista previa solo le permite mirar; en ambos casos no se guarda nada.
+
+## Cuando se omiten clases
+
+Las omisiones casi siempre se deben a una restricción imposible de cumplir, no a un fallo del
+generador. En orden aproximado de probabilidad:
+
+- **No hay suficientes períodos en la jornada** para las lecciones por semana que exige el currículo.
+  Agregue períodos al horario de timbres o reduzca las lessons/week.
+- **Un docente está sobrecargado**: la misma persona es la única asignada a una asignatura en
+  demasiadas clases.
+- **Las restricciones de los docentes son demasiado estrictas**: las franjas de disponibilidad, el máximo
+  por día o el máximo consecutivo no dejan ningún espacio válido.
+- **Una asignatura no tiene docente** en Class Subjects, por lo que no hay a quién colocar.
+
+Lea las advertencias, corrija la causa y vuelva a ejecutar en vista previa hasta que el número de
+omisiones sea aceptable.
+
+## Terminar a mano
+
+El generador resuelve la mayor parte; los últimos espacios suelen ser manuales. En la cuadrícula:
+
+- Seleccione una celda para establecer allí la clase, o coloque un **subject group** completo cuando
+  las clases se dividen en opciones al mismo tiempo.
+- **Copy day** repite un día sobre otros e indica cuántos espacios se copiaron y cuántos se
+  **omitieron por conflictos**; nada se sobrescribe sin aviso.
+- La cuadrícula rechaza cualquier cambio que genere un doble compromiso de un docente o un aula, y
+  resalta el conflicto.
+- Filtre la vista por **Room**, **Teacher** o **Class**, y por día, con la barra de herramientas.
+
+## Relacionado
+
+- [Elaboración del horario](/es/docs/shared-staff-timetable): los conceptos detrás de estas pantallas
+- [Su horario como docente](/es/docs/educonnect-teacher-my-timetable)

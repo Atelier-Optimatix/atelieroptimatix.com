@@ -1,9 +1,13 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { Icon } from "astro-icon/components";
-import { defaultLocale } from "site.config";
+import { defaultLocale, siteLocales } from "site.config";
 
-const currentLocale = Astro.currentLocale;
+// Guide-only locales (fr, si, ta) have no marketing pages, so chrome links
+// from a guide page there fall back to the default-locale site.
+const currentLocale = siteLocales.includes(Astro.currentLocale as never)
+	? Astro.currentLocale
+	: defaultLocale;
 
 export interface Props {
 	href?: string;

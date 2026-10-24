@@ -1,0 +1,100 @@
+---
+title: Menyediakan Institut Baharu
+description: Urutan penuh operasi daripada sistem kosong hingga sistem yang berjalan — dan apa yang rosak jika dilakukan tidak mengikut urutan.
+product: educonnect
+section: Getting started
+order: 2
+roles:
+  - admin
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/
+hidden: false
+---
+
+Hampir setiap skrin dalam EduConnect bergantung kepada sesuatu yang dikonfigurasikan pada skrin lain.
+Melakukannya mengikut urutan mengambil masa sepetang; melakukannya tidak mengikut urutan bermakna
+mengulangi sebahagiannya.
+
+Setiap langkah dipautkan kepada tutorialnya sendiri.
+
+## 1. Kalendar
+
+**Administration → Settings**, kemudian **Administration → Calendar**.
+
+Hari bekerja, tarikh penggal, cuti dan cuti penggal. Semua yang berkaitan dengan kehadiran ialah peratusan
+daripada ini, jadi memasukkannya terlebih dahulu bermakna angka anda betul dari hari pertama dan bukannya
+dibetulkan pada minggu ketiga.
+
+→ [Tetapkan Cuti, Penggal dan Hari Bekerja](/ms/docs/educonnect-tutorial-holidays-and-terms)
+
+## 2. Orang dan tempat
+
+1. **Classes** — → [Tambah Kelas](/ms/docs/educonnect-tutorial-add-a-class)
+2. **Teachers**, beserta mata pelajaran yang diajar oleh setiap seorang — →
+   [Tambah Guru](/ms/docs/educonnect-tutorial-add-a-teacher)
+3. **Students**, ke dalam kelas mereka — →
+   [Tambah Pelajar](/ms/docs/educonnect-tutorial-add-a-student) atau
+   [Import daripada Excel](/ms/docs/educonnect-tutorial-import-students)
+4. Tetapkan **class teacher** (guru kelas) bagi setiap kelas.
+
+Guru sebelum pelajar, kerana kelas yang sudah mempunyai guru bermakna satu perkara kurang untuk disemak
+semula.
+
+## 3. Log masuk
+
+**Administration → Users**, kemudian **Administration → Access Control**.
+
+Rekod guru bukan log masuk. Cipta akaun, kemudian tentukan apa yang boleh dibuka oleh setiap peranan.
+
+→ [Tambah Pengguna dan Beri Akses](/ms/docs/educonnect-tutorial-users-and-access)
+
+## 4. Rantaian jadual waktu
+
+Mesti mengikut urutan ini — setiap langkah ialah input kepada langkah seterusnya:
+
+1. **Bell Schedule** — → [Sediakan Jadual Loceng](/ms/docs/educonnect-tutorial-bell-schedule)
+2. **Subjects & Rules**, **Subject Groups**, **Classrooms**, **Teacher Constraints** — selebihnya
+   **Timetable → Configuration**
+3. **Grade Curriculum** (menyimpannya menerapkannya kepada kelas-kelas gred itu) — →
+   [Cipta atau Sunting Kurikulum Gred](/ms/docs/educonnect-tutorial-grade-curriculum)
+4. **Class Subjects**, menugaskan seorang guru kepada setiap satu — →
+   [Tugaskan Mata Pelajaran dan Guru](/ms/docs/educonnect-tutorial-class-subjects)
+5. **Generate** — → [Jana Jadual Waktu](/ms/docs/educonnect-tutorial-generate-timetable)
+
+Menjana dengan rantaian yang tidak lengkap ialah punca paling biasa bagi "jadual waktu tidak berfungsi".
+Penjana hanya dapat meletakkan apa yang telah dimaklumkan kepadanya oleh langkah 1–4.
+
+## 5. Wang
+
+1. **Fee Setup** — jenis yuran dan ansurannya →
+   [Sediakan Yuran](/ms/docs/educonnect-tutorial-fee-setup)
+2. **Discounts** — biasiswa, pengurangan adik-beradik dan kakitangan →
+   [Sediakan dan Berikan Diskaun](/ms/docs/educonnect-tutorial-discounts)
+3. **Portal Access Rules** — kesan yuran tertunggak terhadap akses portal ibu bapa
+4. Pembayaran dalam talian, dalam **Administration → Settings**, jika anda menerima pembayaran kad
+
+Yuran sebelum pelajar mula membayar, sudah tentu — tetapi juga sebelum penggal bermula, kerana tarikh akhir
+ialah yang menjadikan sesuatu caj tertunggak.
+
+## 6. Kad
+
+Tambah kad kosong ke dalam kumpulan, muat naik reka bentuk kad, dan pastikan setiap rekod pelajar dan guru
+mempunyai **RFID**. Rekod tanpa RFID tidak akan dapat mendaftarkan kehadiran.
+
+→ [Keluarkan dan Gantikan Kad ID](/ms/docs/educonnect-tutorial-id-cards)
+
+## 7. Apa yang dilihat oleh ibu bapa
+
+1. **Handbook** — → [Tulis dan Terbitkan Buku Panduan Pelajar](/ms/docs/educonnect-tutorial-handbook)
+2. **Prospectus**, jika anda mengambil kemasukan melalui portal
+3. Penjenamaan dan istilah institut dalam **Administration → Settings** —
+   [sebab perkataan berubah](/ms/docs/shared-institute-branding)
+
+## 8. Kemudian, semasa penggal
+
+- Kehadiran setiap hari — [sebagai guru](/ms/docs/educonnect-teacher-taking-attendance)
+- [Peperiksaan](/ms/docs/educonnect-tutorial-create-an-exam) dan
+  [keputusan](/ms/docs/educonnect-tutorial-enter-exam-results) apabila ia berlaku
+- [Penutupan hari](/ms/docs/educonnect-tutorial-day-close) setiap petang
+- [Laporan kemajuan](/ms/docs/educonnect-tutorial-progress-reports) pada akhir penggal

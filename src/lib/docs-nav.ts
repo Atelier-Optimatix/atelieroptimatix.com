@@ -1,5 +1,6 @@
 import { type CollectionEntry, getCollection } from "astro:content";
-import { defaultLocale } from "site.config";
+import { type Locale, defaultLocale, docsLocales } from "site.config";
+import { docsHref, productBlurb, productLabel, sectionLabel } from "./docs-i18n";
 
 /**
  * Single source for how the user guide is labelled and ordered.
@@ -82,25 +83,62 @@ function sectionIndex(section: string): number {
 	return i === -1 ? sectionOrder.length : i;
 }
 
-/**
- * Every visible doc in the default locale, grouped product → section → page and
- * sorted the way the sidebar renders it. Empty products and sections are
- * dropped so adding a product to `productOrder` before it has any content is
- * harmless.
- */
-export async function getDocsNav(): Promise<DocProductGroup[]> {
-	const all = await getCollection(
-		"docs",
-		({ data, slug }) => !data.hidden && slug.startsWith(`${defaultLocale}/`),
+/** English entries are the canonical set; a locale shadows them where translated. */
+async function getDocsByLocale(locale: string) {
+	const all = await getCollection("docs", ({ data }) => !data.hidden);
+	const base = all.filter((doc) => doc.slug.startsWith(`${defaultLocale}/`));
+	const translated = new Map(
+		all.filter((doc) => doc.slug.startsWith(`${locale}/`)).map((doc) => [docSlug(doc), doc]),
 	);
+	return base.map((doc) => {
+		const localized = translated.get(docSlug(doc));
+		return { base: doc, entry: localized ?? doc, translated: Boolean(localized) };
+	});
+}
+
+/**
+ * The doc to render at `/<locale>/docs/<slug>`: the translation when there is
+ * one, otherwise the English entry (flagged so the page can say so).
+ */
+export async function getDocEntry(locale: string, slug: string) {
+	const found = (await getDocsByLocale(locale)).find(({ base }) => docSlug(base) === slug);
+	return found ? { entry: found.entry, fallback: !found.translated } : undefined;
+}
+
+/** Static paths for `[...slug]` in one locale: every English doc, translated or not. */
+export async function getDocsStaticPaths(locale: string) {
+	return (await getDocsByLocale(locale)).map(({ base, entry, translated }) => ({
+		params: { slug: docSlug(base) },
+		props: { data: entry, fallback: !translated },
+	}));
+}
+
+/** Locales a given doc is actually translated into (always includes English). */
+export async function getAvailableLocales(slug: string): Promise<Locale[]> {
+	const all = await getCollection("docs", ({ data }) => !data.hidden);
+	return docsLocales.filter((locale) =>
+		all.some((doc) => doc.slug === `${locale}/${slug}`),
+	);
+}
+
+/**
+ * Every visible doc, grouped product → section → page and sorted the way the
+ * sidebar renders it, in the requested locale (untranslated pages show their
+ * English title and still link to the locale's route, which renders the English
+ * text with a notice). Empty products and sections are dropped so adding a
+ * product to `productOrder` before it has any content is harmless.
+ */
+export async function getDocsNav(locale: string = defaultLocale): Promise<DocProductGroup[]> {
+	const all = await getDocsByLocale(locale);
 
 	return productOrder
 		.map((product) => {
-			const inProduct = all.filter((doc) => doc.data.product === product);
+			const inProduct = all.filter(({ base }) => base.data.product === product);
 
-			const bySection = new Map<string, DocEntry[]>();
+			// Grouped and ordered by the English section key; labels are translated last.
+			const bySection = new Map<string, typeof inProduct>();
 			for (const doc of inProduct) {
-				const section = doc.data.section ?? defaultSection;
+				const section = doc.base.data.section ?? defaultSection;
 				const bucket = bySection.get(section);
 				if (bucket) bucket.push(doc);
 				else bySection.set(section, [doc]);
@@ -109,28 +147,28 @@ export async function getDocsNav(): Promise<DocProductGroup[]> {
 			const sections: DocSection[] = [...bySection.entries()]
 				.sort(([a], [b]) => sectionIndex(a) - sectionIndex(b) || a.localeCompare(b))
 				.map(([section, docs]) => ({
-					section,
+					section: sectionLabel(locale, section),
 					docs: docs
 						.sort(
 							(a, b) =>
-								(a.data.order ?? 100) - (b.data.order ?? 100) ||
-								a.data.title.localeCompare(b.data.title),
+								(a.base.data.order ?? 100) - (b.base.data.order ?? 100) ||
+								a.base.data.title.localeCompare(b.base.data.title),
 						)
-						.map((doc) => {
-							const slug = docSlug(doc);
+						.map(({ base, entry }) => {
+							const slug = docSlug(base);
 							return {
 								slug,
-								href: `/docs/${slug}`,
-								title: doc.data.title,
-								description: doc.data.description,
+								href: docsHref(locale, slug),
+								title: entry.data.title,
+								description: entry.data.description,
 							};
 						}),
 				}));
 
 			return {
 				product,
-				label: productLabels[product],
-				blurb: productBlurbs[product],
+				label: productLabel(locale, product),
+				blurb: productBlurb(locale, product),
 				sections,
 			};
 		})

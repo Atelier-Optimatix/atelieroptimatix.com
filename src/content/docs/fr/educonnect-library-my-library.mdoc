@@ -1,0 +1,34 @@
+---
+title: "My Library pour les enseignants et le personnel"
+description: Consulter vos propres prêts et réservations, réserver un livre et ce qui se passe au comptoir.
+product: educonnect
+section: For teachers
+order: 90
+roles:
+  - teacher
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/my_library_page.dart
+  - attendance-web-app/backend/services/library/appAccess.js
+screenshotIds:
+  - "library-my-library"
+hidden: false
+---
+
+**My Library** est votre propre compte de bibliothèque. Il est désactivé pour les enseignants tant
+que votre établissement n'a pas coché **My loans & holds** pour le rôle d'enseignant dans Access
+Control. Un membre du personnel non enseignant le voit dès qu'un administrateur lui a
+[donné l'accès à l'application](/fr/docs/educonnect-library-borrowers).
+
+Il affiche :
+
+- Les livres que vous avez en prêt et leur date de retour.
+- Vos réservations. Utilisez **Reserve a book** pour rechercher dans le catalogue et réserver un
+  livre qui est sorti (si les réservations sont activées et que vous n'avez pas atteint votre
+  limite), et annulez vos propres réservations.
+- Les amendes à consulter. Les enseignants et le personnel ne reçoivent jamais d'amende.
+- Les livres que vous avez rendus.
+
+Les renouvellements et les retours se font au comptoir. Si un message vous indique que votre compte
+n'a aucune fiche de bibliothèque, demandez au bibliothécaire de vous ajouter comme emprunteur.

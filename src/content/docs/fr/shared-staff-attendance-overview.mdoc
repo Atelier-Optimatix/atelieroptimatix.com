@@ -1,0 +1,54 @@
+---
+title: Faire l'appel en tant que membre du personnel
+description: Comment les enseignants marquent les présences quotidiennes et comment l'accès à une classe est déterminé.
+product: educonnect
+section: Guides
+order: 20
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/attendance_routes.dart
+  - attendance-web-app/edu-frontend/lib/access/access_policy.dart
+screenshotIds:
+  - staff-dashboard
+  - tutorial-class-attendance
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Où la trouver
+
+Les présences se trouvent dans les sections **My Class** et **Attendance** du tableau de bord du
+personnel. Ce tableau de bord est commun à tous les établissements — quel que soit l'établissement
+auquel vous êtes connecté, les écrans sont les mêmes ; seule la terminologie change (voir
+[Identité visuelle de l'établissement](/fr/docs/shared-institute-branding) pour comprendre pourquoi
+certains établissements parlent de « School » et d'autres de « Kindergarten »).
+
+## Marquer les présences
+
+- Ouvrez **My Class → Attendance** pour voir la liste du jour pour une classe.
+- Marquez chaque élève comme présent, absent ou en retard, puis enregistrez.
+- Les vues **Live** et **Report / Filter** permettent de consulter les jours passés ou d'exporter une
+  période pour une classe.
+
+## Pourquoi vous ne pouvez peut-être pas modifier une classe
+
+La possibilité de consulter ou de modifier les présences d'une classe dépend de votre niveau d'accès à
+cette classe, et pas seulement du fait que vous soyez enseignant :
+
+- **Editable** — vous êtes l'enseignant titulaire de la classe, ou la classe figure dans votre liste de
+  classes attribuées.
+- **Read-only** — vous pouvez voir la liste et l'historique mais pas modifier les saisies. Cela signifie
+  généralement que vous remplacez ou observez la classe sans en être l'enseignant titulaire.
+- **No access** — la classe n'apparaît pas du tout pour vous.
+
+Si une classe que vous vous attendiez à voir est absente, ou apparaît en lecture seule alors que vous
+pensez que cela ne devrait pas être le cas, demandez à l'administrateur de votre établissement de
+vérifier votre attribution de classe dans **Teachers** plutôt que de supposer qu'il s'agit d'une
+anomalie.
+
+## Voir aussi
+
+- [Gestion des élèves et des classes](/fr/docs/shared-staff-student-admissions-management)
+- [Identité visuelle de l'établissement](/fr/docs/shared-institute-branding)

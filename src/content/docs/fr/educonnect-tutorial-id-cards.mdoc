@@ -1,0 +1,125 @@
+---
+title: "Tutoriel : Gérer et suivre les cartes d'identité"
+description: Le stock de cartes vierges, les modèles de carte, le remplacement d'une carte perdue, et le suivi de la carte de chaque élève, de « non imprimée » à « remise ».
+product: educonnect
+section: Tutorials
+order: 190
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/settings/id_cards_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_cards_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_card_widgets.dart
+  - attendance-web-app/edu-frontend/lib/screens/id_cards/student_id_card_quick_add.dart
+  - attendance-web-app/edu-frontend/lib/api_services/student_id_card.dart
+  - attendance-web-app/backend/services/studentIdCardService.js
+screenshotIds:
+  - "tutorial-id-cards"
+  - "tutorial-student-id-cards"
+hidden: false
+---
+
+Les cartes d'identité sont aussi des cartes de présence — le numéro de la carte est le **RFID** de la fiche de la personne,
+ce qui permet l'enregistrement de ses scans. Une carte perdue est donc un problème de présence, pas seulement
+d'identité.
+
+Il y a deux écrans. **Administration → ID Cards** gère le stock de cartes vierges, les modèles et le remplacement des
+cartes perdues. **Students → Student ID Cards** enregistre où en est la carte de chaque élève dans son cycle de vie. Ils
+nécessitent des accès distincts.
+
+**Vous avez besoin de :** l'accès à **Administration → ID Cards** pour la première partie, et à Student ID Cards pour
+la section « Suivre les cartes des élèves » plus bas.
+
+## Le stock de cartes vierges
+
+Le stock (pool) est la réserve de cartes non émises. Ajoutez-y des cartes à mesure que vous les recevez de votre fournisseur ; l'écran
+vous indique ce qu'il reste. L'émission puise dans ce stock : un stock vide est donc la raison pour laquelle l'émission échoue.
+
+## Modèles de carte
+
+Sous **Card designs**, téléversez le modèle de votre établissement au format PDF — séparément pour **Student card**
+et **Teacher card**. Il est conservé comme référence, afin que la personne qui imprime dispose du bon visuel ;
+la carte imprimée elle-même est produite à partir de celui-ci.
+
+**Upload PDF** en ajoute un, **Replace** le remplace, et la suppression est immédiate (**Card design removed**).
+
+## Remplacer une carte perdue
+
+1. Ouvrez **Administration → ID Cards** et choisissez **Report a lost card**.
+2. Choisissez **Student** ou **Teacher**.
+3. Saisissez le **Student ID** ou le **Teacher ID**.
+4. Sélectionnez **Issue Temporary Card**.
+5. **Print** (imprimez) la carte.
+
+La carte temporaire porte un nouveau numéro, et ce numéro devient le RFID actif de la personne. Son ancienne
+carte cesse de fonctionner — c'est le but, puisqu'elle est vraisemblablement entre d'autres mains.
+
+## Si la présence de quelqu'un cesse de fonctionner
+
+Vérifiez d'abord sa carte. Les deux causes habituelles sont une carte perdue qui n'a jamais été signalée,
+de sorte que les scans vont vers un numéro mort, et une fiche dont le RFID n'a jamais été renseigné — voir
+[Add a Student](/fr/docs/educonnect-tutorial-add-a-student).
+
+## Suivre les cartes des élèves
+
+**Students → Student ID Cards** garde un historique de la carte de chaque élève : si elle a été imprimée,
+si elle a été remise, et ce qui s'est passé si elle a été perdue ou endommagée. Modifier le statut d'une carte
+nécessite l'autorisation de gestion distincte ; sans elle, la liste est en lecture seule.
+
+### La liste
+
+Chaque élève apparaît avec son **Name**, son **Student ID**, sa **Class**, son **RFID**, son **Status**, son **Reason**
+et sa date **Updated**. Les en-têtes de colonne permettent de trier. Utilisez les filtres pour restreindre la liste :
+
+- **Search name, student ID or RFID**
+- **Class** (*All classes* par défaut)
+- **Status**, qui indique combien d'élèves sont dans chaque état ; **Reset** efface les filtres.
+
+Les statuts sont **Not printed**, **Printed**, **Distributed**, **Lost**, **Damaged**, **Returned**,
+**Replaced** et **Other**. Un élève dont aucune carte n'est encore enregistrée apparaît comme *Not printed*.
+
+Le menu d'exportation de la page télécharge la liste filtrée, y compris les dates Printed et Handed over
+et la raison pour laquelle une carte n'a pas été imprimée.
+
+### Pourquoi une carte n'est pas imprimée
+
+Si la carte d'un élève est encore *Not printed* et que son dossier est incomplet, la colonne **Reason** s'affiche
+en rouge, par exemple *Missing photo, address*. Une carte nécessite la **photo**, l'**adresse** et le **numéro de téléphone**
+de l'élève au dossier. Ouvrez le profil de l'élève, ajoutez ce qui manque, et la raison disparaît. Une
+valeur vide, *N/A* ou absente est considérée comme manquante.
+
+### Marquer des cartes comme imprimées ou remises
+
+1. Cochez les élèves souhaités, ou cochez l'en-tête pour sélectionner toute la liste filtrée.
+2. Utilisez **Mark printed** ou **Mark distributed** ; le bouton indique combien d'élèves sont sélectionnés, par exemple
+   *Mark printed (12)*. Les deux boutons sont en haut de la page.
+
+Pour un seul élève, utilisez le menu de sa ligne (**Change status**) pour choisir n'importe quel statut. Une note est
+obligatoire pour **Other** (*Add a note saying what happened.*) et facultative pour les autres. Lorsque le
+statut est **Lost** ou **Damaged**, vous pouvez aussi choisir **Start a replacement card**, ce qui ajoute une nouvelle carte
+*Not printed* à la liste.
+
+### Ajout rapide au guichet de remise
+
+**Quick add** sert à remettre des cartes les unes après les autres :
+
+1. Sélectionnez **Quick add**.
+2. Saisissez ou scannez le **Student ID** et le **RFID** de la carte, puis **Verify**.
+3. Vérifiez l'élève affiché. L'écran vous avertit si la carte est déjà liée à cet élève, si elle
+   remplacera sa carte actuelle, ou si le RFID ne peut pas être utilisé parce qu'une autre fiche le détient.
+4. **Confirm** enregistre la carte comme liée et remise.
+
+Les cartes ajoutées de cette manière sont listées sous **Added this session**.
+
+### Sur le profil de l'élève
+
+Le profil d'un élève comporte une section **ID Card** indiquant le numéro de carte (RFID), la date d'impression et de remise,
+toute note, et un **History** (historique) de chaque modification. **Update** y modifie le statut
+de la même façon que la liste.
+
+## Voir aussi
+
+- [Student Search, Profiles and Left Students](/fr/docs/educonnect-student-search-and-profile)
+- [Mark Your Class's Attendance](/fr/docs/educonnect-teacher-taking-attendance)

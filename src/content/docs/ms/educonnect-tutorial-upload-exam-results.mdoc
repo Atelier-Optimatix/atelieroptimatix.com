@@ -1,0 +1,50 @@
+---
+title: "Tutorial: Muat Naik Keputusan Peperiksaan daripada Hamparan"
+description: Wizard muat naik tujuh langkah — memilih helaian, memberitahu baris mana ialah pengepala, memetakan lajur, dan memadankan baris dengan pelajar.
+product: educonnect
+section: Tutorials
+order: 110
+roles:
+  - staff
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/upload_class_results_wizard.dart
+hidden: false
+---
+
+Tidak seperti [pengimport pelajar](/ms/docs/educonnect-tutorial-import-students), pemuat naik keputusan
+tidak mementingkan susunan lajur anda — anda memberitahunya dalam wizard. Jadi anda boleh memuat naik
+hamparan pemarkahan yang sedia disimpan oleh guru tanpa perlu membentuknya semula terlebih dahulu.
+
+## Langkah
+
+Wizard ini mempunyai tujuh langkah dan penunjuk kemajuan di bahagian atas. Anda boleh berundur pada bila-bila masa.
+
+1. **Pick file** — pilih buku kerja.
+2. **Pick sheet** — jika ia mempunyai beberapa helaian, pilih satu. Setiap helaian disenaraikan dengan
+   bilangan barisnya, yang biasanya mencukupi untuk mengenal pasti helaian yang betul.
+3. **Header row** — beritahu baris mana yang mengandungi tajuk lajur anda. Hamparan pemarkahan sering
+   mempunyai tajuk dan satu baris kosong di atas pengepala sebenar; di sinilah anda mengambil kira perkara itu.
+4. **Columns** — petakan setiap lajur kepada kandungannya: pengecam pelajar, markah, dan apa-apa yang
+   perlu diabaikan. Lajur yang tidak dipetakan akan dilangkau.
+5. **Matching** — wizard memadankan setiap baris dengan seorang pelajar dalam kelas dan menunjukkan
+   hasilnya. **Inilah langkah yang penting.** Baris yang tidak dipadankan ialah yang perlu diperhatikan:
+   biasanya kerana ruang tambahan, nama yang dieja berbeza daripada rekod pendaftaran, atau pelajar berada
+   dalam kelas lain.
+6. **Review** — senarai akhir apa yang akan ditulis. Sahkan bilangannya dengan hamparan anda.
+7. **Upload** — sahkan, dan ia akan menulis data.
+
+## Jika baris tidak dapat dipadankan
+
+- Padankan menggunakan **Student ID** dan bukannya nama di mana-mana hamparan mempunyainya; nama ialah
+  punca yang biasa.
+- Pelajar yang telah berhenti, atau tidak pernah didaftarkan dalam kelas ini, tidak akan dapat dipadankan.
+  Buang baris tersebut.
+- Betulkan hamparan dan mulakan semula wizard daripada memaksa muat naik separa — anda sentiasa boleh
+  mengisi beberapa baris yang tertinggal secara manual kemudian dengan
+  [Add Results](/ms/docs/educonnect-tutorial-enter-exam-results).
+
+## Berkaitan
+
+- [Memasukkan dan Menerbitkan Keputusan Peperiksaan](/ms/docs/shared-staff-exam-results)

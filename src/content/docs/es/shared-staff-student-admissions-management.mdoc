@@ -1,0 +1,49 @@
+---
+title: Gestión de estudiantes, clases y sustituciones
+description: Dónde se encuentran en el panel del personal los registros de estudiantes, las listas de clase y las sustituciones de docentes.
+product: educonnect
+section: Guides
+order: 10
+roles:
+  - staff
+  - admin
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/student_routes.dart
+  - attendance-web-app/edu-frontend/lib/navigation/routes/teacher_routes.dart
+screenshotIds:
+  - "staff-student-search"
+  - staff-attendance-classes
+lastUpdateDate: 2026-09-26
+hidden: false
+---
+
+## Estudiantes y clases
+
+Las secciones **Students** y **Classes** son donde el personal de oficina mantiene la lista: agregar
+nuevos estudiantes, asignarlos a una clase y actualizar sus registros. Esto es independiente de
+**Admissions**, que abarca la solicitud de un posible estudiante antes de su matrícula: una vez
+aprobada una solicitud, el registro pasa a la lista regular de estudiantes.
+
+## Docentes
+
+La sección **Teachers** enumera a todo el personal y es donde un administrador de la escuela:
+
+- Agrega o edita el perfil de un docente
+- Asigna un docente a una o más clases (esta asignación es lo que determina el acceso del docente a
+  editar la asistencia; consulte [Toma de asistencia](/es/docs/shared-staff-attendance-overview))
+- Consulta la asistencia mensual de un docente
+- Configura **sustituciones** cuando el docente habitual de una clase está ausente
+
+## Sustituciones
+
+Una sustitución cambia temporalmente quién tiene acceso de edición a la asistencia de una clase y a
+los registros relacionados, sin reasignar la clase de forma permanente. Si un docente no puede editar
+inesperadamente una clase que normalmente sí puede, o un suplente no puede ver una clase que le dijeron
+que cubriera, compruebe si la sustitución se registró realmente aquí: es una fuente habitual de
+confusión, ya que el efecto (el cambio de acceso) no se ve desde la propia pantalla de asistencia.
+
+## Enlace con Admissions
+
+La entrada **Admissions** bajo Students enlaza con la misma guía y el mismo flujo del portal de
+solicitantes que usan los futuros padres antes de presentar su solicitud; consulte
+[Solicitar plaza en una escuela](/es/docs/admissions-applying) para el lado del solicitante.

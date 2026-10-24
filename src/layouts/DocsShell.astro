@@ -1,6 +1,9 @@
 ---
 import DocsSidebar from "@/components/docs/DocsSidebar.astro";
 import Container from "@/components/primitives/Container.astro";
+import { docsHref, docsUi, localeNames } from "@/lib/docs-i18n";
+import { getAvailableLocales } from "@/lib/docs-nav";
+import { docsLocales } from "site.config";
 import BaseLayout from "./BaseLayout.astro";
 
 /**
@@ -14,6 +17,14 @@ type Props = {
 };
 
 const { currentSlug } = Astro.props;
+const locale = Astro.currentLocale;
+const t = docsUi(locale);
+
+// Language switcher: the same page in every language it exists in. The index
+// is available in all of them; an article only in the languages it has been
+// translated into (the English text is always there).
+const available = currentSlug ? await getAvailableLocales(currentSlug) : docsLocales;
+const alternates = available.filter((code) => code !== locale);
 ---
 
 <BaseLayout>
@@ -24,7 +35,7 @@ const { currentSlug } = Astro.props;
 				     article below the fold. Desktop: always visible, sticky. -->
 				<details class="docs-nav-disclosure mb-8 rounded-2xl border border-slate-200 p-4 lg:hidden">
 					<summary class="cursor-pointer text-sm font-semibold text-black">
-						Browse the guide
+						{t.browseGuide}
 					</summary>
 					<div class="pt-4">
 						<DocsSidebar currentSlug={currentSlug} searchId="docs-search-mobile" />
@@ -38,6 +49,29 @@ const { currentSlug } = Astro.props;
 				</aside>
 
 				<div class="min-w-0">
+					{
+						alternates.length > 0 && (
+							<nav
+								aria-label={t.language}
+								class="mb-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-500"
+								data-pagefind-ignore
+							>
+								<span class="text-xs font-semibold uppercase tracking-wide text-slate-400">
+									{t.language}
+								</span>
+								{alternates.map((code) => (
+									<a
+										href={docsHref(code, currentSlug)}
+										hreflang={code}
+										lang={code}
+										class="hover:text-black hover:underline"
+									>
+										{localeNames[code]}
+									</a>
+								))}
+							</nav>
+						)
+					}
 					<slot />
 				</div>
 			</div>

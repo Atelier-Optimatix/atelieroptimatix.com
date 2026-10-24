@@ -1,0 +1,54 @@
+---
+title: "Tutoriel : importer des résultats d'examen depuis un tableur"
+description: L'assistant d'import en sept étapes — choisir la feuille, indiquer la ligne d'en-tête, associer les colonnes et rapprocher les lignes des élèves.
+product: educonnect
+section: Tutorials
+order: 110
+roles:
+  - staff
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/upload_class_results_wizard.dart
+hidden: false
+---
+
+Contrairement à l'[importateur d'élèves](/fr/docs/educonnect-tutorial-import-students), l'outil
+d'import des résultats ne se soucie pas de l'ordre de vos colonnes : c'est vous qui le lui indiquez,
+dans l'assistant. Vous pouvez donc importer le tableur de notation qu'un enseignant tient déjà, sans
+avoir à le remanier au préalable.
+
+## Étapes
+
+L'assistant comporte sept étapes et un indicateur de progression en haut de l'écran. Vous pouvez
+revenir en arrière à tout moment.
+
+1. **Pick file** — choisissez le classeur.
+2. **Pick sheet** — s'il contient plusieurs feuilles, choisissez-en une. Chacune est listée avec son
+   nombre de lignes, ce qui suffit généralement à repérer la bonne.
+3. **Header row** — indiquez quelle ligne contient les intitulés de colonnes. Les tableurs de notation
+   comportent souvent un titre et une ligne vide au-dessus du véritable en-tête ; c'est ici que vous en
+   tenez compte.
+4. **Columns** — associez chaque colonne à son contenu : l'identifiant de l'élève, les notes, et ce
+   qu'il faut ignorer. Les colonnes non associées sont ignorées.
+5. **Matching** — l'assistant rapproche chaque ligne d'un élève de la classe et vous montre le
+   résultat. **C'est l'étape qui compte.** Ce sont les lignes non rapprochées qu'il faut examiner :
+   en général une espace parasite, un nom orthographié autrement que dans le dossier d'inscription, ou
+   un élève d'une autre classe.
+6. **Review** — la liste finale de ce qui sera enregistré. Comparez le nombre de lignes à celui de
+   votre feuille.
+7. **Upload** — confirmez, et l'assistant enregistre les résultats.
+
+## Si des lignes ne sont pas rapprochées
+
+- Faites le rapprochement sur l'**Student ID** plutôt que sur le nom dès que la feuille en contient un ;
+  les noms sont le plus souvent en cause.
+- Un élève qui est parti, ou qui n'a jamais été inscrit dans cette classe, ne sera jamais rapproché.
+  Supprimez la ligne.
+- Corrigez le tableur et relancez l'assistant plutôt que de forcer un import partiel — vous pourrez
+  toujours saisir à la main quelques retardataires ensuite avec
+  [Add Results](/fr/docs/educonnect-tutorial-enter-exam-results).
+
+## Voir aussi
+
+- [Saisir et publier les résultats d'examen](/fr/docs/shared-staff-exam-results)

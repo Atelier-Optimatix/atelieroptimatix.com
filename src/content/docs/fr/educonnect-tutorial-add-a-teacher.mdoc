@@ -1,0 +1,75 @@
+---
+title: "Tutoriel : Ajouter un enseignant"
+description: Créer une fiche enseignant, lui affecter les matières qu'il enseigne, et l'étape distincte qui lui donne un accès de connexion.
+product: educonnect
+section: Tutorials
+order: 40
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/add_teacher_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_management_page.dart
+screenshotIds:
+  - "tutorial-add-a-teacher"
+hidden: false
+---
+
+## Une fiche enseignant n'est pas un accès de connexion
+
+Ce sont deux choses distinctes, et ne faire que la première est la raison la plus courante pour laquelle un nouvel enseignant
+« ne peut pas se connecter » :
+
+1. **La fiche enseignant** — la personne, ses matières, sa présence, son emploi du temps. Créée
+   ici.
+2. **Le compte utilisateur** — l'identifiant et le mot de passe avec lesquels l'enseignant se connecte réellement. Créé dans
+   **Administration → Users**, voir [Users and Access](/fr/docs/educonnect-tutorial-users-and-access).
+
+Créez d'abord la fiche enseignant, puis le compte.
+
+## Étapes
+
+1. Ouvrez **Teachers → Directory**.
+2. Sélectionnez **Add Teacher**.
+3. Remplissez le formulaire :
+   - **Teacher ID** — obligatoire et unique. Le champ vous avertit par **Duplicate Teacher ID
+     detected** s'il est déjà pris.
+   - **Full Name** — obligatoire.
+   - **Gender** — obligatoire.
+   - **Date of Birth** et **Joined Date** — tous deux facultatifs, tous deux au format `YYYY-MM-DD`.
+   - **Contact Number**, **Email**, **Address**, **Religion**, **Ethnicity**, **Nationality** — tous
+     facultatifs.
+   - **RFID** — facultatif. C'est la carte que l'enseignant scanne pour sa *propre* présence. Sans elle,
+     sa présence doit être enregistrée d'une autre manière.
+4. Ajoutez les **matières qu'il enseigne**. C'est le champ le plus important pour la suite : le générateur d'emploi du temps
+   et les suggestions de remplacement ne proposent un enseignant que pour une matière listée
+   ici. Un enseignant sans matières ne sera jamais planifié automatiquement.
+5. Ajoutez une **photo** si votre établissement en utilise.
+6. Sélectionnez **SAVE TEACHER**.
+
+## Puis donnez-lui un accès de connexion
+
+1. Ouvrez **Administration → Users**.
+2. Sélectionnez **Add User** et créez le compte, en le liant à la fiche enseignant que vous venez de créer.
+3. Vérifiez ce à quoi le compte donne accès dans **Administration → Access Control** — voir
+   [Users and Access](/fr/docs/educonnect-tutorial-users-and-access).
+
+## Modifier et supprimer
+
+Ouvrez l'enseignant depuis **Teachers → Directory** et utilisez **Edit**. **DELETE TEACHER** demande d'abord une confirmation,
+et supprime la fiche avec son historique de présence — pour quelqu'un qui est parti, renseignez-vous auprès de votre
+établissement avant de supprimer, et non après.
+
+## Que faire ensuite
+
+- Affectez-le à des classes comme enseignant de matière dans
+  [Class Subjects](/fr/docs/educonnect-tutorial-class-subjects).
+- Définissez ses disponibilités et indisponibilités dans **Timetable → Configuration → Teacher Constraints**,
+  avant de [générer l'emploi du temps](/fr/docs/educonnect-tutorial-generate-timetable).
+- Faites-en un enseignant principal via **Edit Class Teacher** sur une classe — voir
+  [Add a Class](/fr/docs/educonnect-tutorial-add-a-class).
+
+## Voir aussi
+
+- [Managing Teachers](/fr/docs/shared-staff-teacher-management)
+- [Teacher Attendance & Substitution](/fr/docs/shared-staff-teacher-attendance)

@@ -1,0 +1,83 @@
+---
+title: "Tutorial: Crear y mantener el catálogo de la biblioteca"
+description: Cómo agregar libros y ejemplares, importar un registro de libros desde una hoja de cálculo, consultar ISBN e imprimir etiquetas de código de barras.
+product: educonnect
+section: Tutorials
+order: 231
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/catalogue_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/import_catalogue_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/widgets/print_labels_dialog.dart
+  - attendance-web-app/backend/services/library/importService.js
+screenshotIds:
+  - "library-catalogue"
+  - "library-import"
+hidden: false
+---
+
+El catálogo tiene dos niveles. Un **título** es el libro tal como se publicó: nombre, autores, ISBN, materias,
+precio. Un **ejemplar** es un objeto físico con su propio código de barras, estado y estante. El préstamo siempre
+involucra un ejemplar.
+
+**Necesita:** **Search the catalogue** para consultar, **Add & edit books and copies** para modificar y **Bulk
+import** para la hoja de cálculo.
+
+## Búsqueda
+
+Abra **Library → Catalogue**. La búsqueda coincide con el inicio de las palabras en títulos, autores y campos
+similares. **Include hidden books** muestra los títulos que la escuela mantiene fuera del portal para padres. Abra un libro
+para ver sus ejemplares y quién los tiene, y abra un ejemplar para ver su historial.
+
+## Agregar un libro
+
+1. Seleccione **Add book**.
+2. Complete el título y los detalles. Si **ISBN lookup** está activado en Library Settings, ingrese el ISBN y
+   seleccione **Look up** para completar los campos vacíos desde Open Library.
+3. Elija dónde es visible el libro: para todos o solo para el personal.
+4. Agregue ejemplares. Puede agregar hasta 200 a la vez. Elija el estado, la ubicación en el estante y si
+   fue comprado o donado.
+
+Los ejemplares sin un código de barras propio reciben una etiqueta generada, como `LIB000123`.
+
+## Importar un registro de libros
+
+1. En el Catalogue seleccione **Import** y luego **Download a template** si desea una plantilla.
+2. **Choose .xlsx file** y asocie los encabezados de sus columnas, empezando por **Title**.
+3. Revise el plan: **New books**, **Copies of books already in the catalogue**, **Copies keeping
+   their barcode**, **Copies with new labels**, **Rows skipped** y las filas que conviene examinar con el
+   motivo de cada una.
+4. Confirme. No se conserva nada entre el plan y la confirmación, por lo que el plan se recalcula con el
+   catálogo tal como esté en ese momento.
+
+Conviene saber:
+- Las filas con el mismo ISBN se convierten en un solo título. Sin ISBN, el título se identifica por nombre y primer
+  autor.
+- Una fila **con** código de barras es un ejemplar con esa etiqueta. Importar el mismo archivo de nuevo no agrega nada
+  por duplicado.
+- Una fila **sin** código de barras recibe etiquetas nuevas cada vez que se importa, por lo que una reimportación agrega
+  duplicados. El plan se lo advierte.
+- Un archivo puede contener hasta 20,000 filas.
+
+## Imprimir etiquetas de código de barras
+
+Seleccione **Print labels**, marque los ejemplares y elija en qué posición de la primera hoja comenzar
+(hojas de etiquetas parcialmente usadas). El formato es A4, 3 columnas por 8. Las etiquetas recién generadas vienen marcadas
+por defecto, porque son las que aún no tienen nada en el libro.
+
+## Escanear con la cámara
+
+En cualquier lugar donde la aplicación pida un escaneo puede usar **Scan with camera**. Sigue el mismo flujo
+que un lector manual. Se cierra tras un código, excepto en un inventario, donde permanece abierta.
+
+## Retirar, reparar, restaurar
+
+Un bibliotecario con **Withdraw, repair & restore copies** puede marcar un ejemplar como en reparación, retirado o
+disponible. Los estados de extraviado y perdido los establecen los inventarios y el mostrador.
+
+## Temas relacionados
+
+- [Inventario](/es/docs/educonnect-library-stocktake)

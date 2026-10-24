@@ -1,0 +1,66 @@
+---
+title: Pejabat Induk & Pelaporan Kumpulan
+description: Pelaporan merentasi setiap cawangan kumpulan sekolah, dan sebab akaun pejabat induk tidak boleh membuka skrin cawangan tunggal.
+product: educonnect
+section: Advanced workflows
+order: 90
+roles:
+  - org_admin
+  - super_admin
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/head_office_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/head_office/
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## Untuk siapa
+
+Pejabat induk adalah untuk mereka yang menguruskan *kumpulan* institut dan bukannya satu institut.
+Terdapat dua peranan sedemikian:
+
+- **Organisation admin** — menguruskan kumpulan sekolah milik seorang pelanggan.
+- **Super admin** — staf platform dalaman.
+
+Kedua-duanya membaca laporan kumpulan yang sama. Perbezaannya ialah capaian: berapa banyak cawangan
+yang diselesaikan oleh akaun itu. Super admin juga mendapat skrin **Platform** yang diterangkan di bawah.
+
+{% callout type="note" %}
+Akaun pejabat induk terkurung dalam bahagian ini. Jika anda log masuk dengan menjangkakan papan pemuka
+staf biasa dan sebaliknya sampai ke **Group Overview**, tiada apa yang salah — akaun itu ialah akaun
+pejabat induk, dan skrin biasa bagi setiap cawangan sengaja tidak dapat dicapai olehnya. Kerja harian
+dalam satu cawangan memerlukan akaun staf bagi cawangan tersebut.
+{% /callout %}
+
+## Group Overview dan laporan di bawahnya
+
+**Group Overview** ialah halaman pendaratan. Di bawahnya terdapat paparan seluruh kumpulan, setiap satu
+merupakan soalan yang sama seperti yang akan ditanya oleh satu cawangan, tetapi dijawab merentasi setiap
+cawangan yang boleh anda lihat:
+
+- **Branches** — institut dalam kumpulan anda.
+- **Teachers**, **Accounting**, **Analytics**, **Collections**, **Operations**, **Exams**,
+  **Admissions** dan **Demographics** — pelaporan peringkat kumpulan bagi setiap bidang tersebut.
+
+Ini ialah laporan baca-merentasi-kumpulan. Mengubah sesuatu bagi satu cawangan masih dilakukan dalam
+cawangan itu, oleh seseorang yang mempunyai akses kepadanya.
+
+## Konfigurasi
+
+Dua tetapan peringkat kumpulan terletak berasingan daripada laporan:
+
+- **Discounts** — konfigurasi diskaun yang dikenakan merentasi kumpulan.
+- **Term Dates** — kalendar penggal kumpulan.
+
+## Skrin Platform (super admin sahaja)
+
+**Organisations** dan **Provision Branch** ialah kerja platform dalaman — mencipta organisasi pelanggan
+baharu, dan menyediakan cawangan baharu di dalamnya. Organisation admin tidak melihatnya
+walaupun mereka melihat semua yang di atas, dan sekatan itu dikuatkuasakan di pelayan serta
+disembunyikan dalam antara muka, jadi ia tidak boleh dipintas dengan pergi terus ke alamat tersebut.
+
+## Berkaitan
+
+- [Gambaran Keseluruhan Perakaunan](/ms/docs/shared-staff-accounting-overview)
+- [Membaca Bahagian Analytics](/ms/docs/shared-staff-analytics)
+- [Penjenamaan Institut](/ms/docs/shared-institute-branding)

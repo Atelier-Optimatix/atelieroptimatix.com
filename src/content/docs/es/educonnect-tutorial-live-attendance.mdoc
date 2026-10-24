@@ -1,0 +1,73 @@
+---
+title: "Tutorial: Ver la asistencia en tiempo real"
+description: Las listas de presentes y ausentes de hoy, el Live Monitor en la puerta y los filtros guardados para las preguntas que hace cada semana.
+product: educonnect
+section: Tutorials
+order: 220
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/attendance_summary/todays_attendance_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/attendance_filter/attendance_filter_page.dart
+  - attendance-web-app/edu-frontend/lib/navigation/routes/attendance_routes.dart
+screenshotIds:
+  - "tutorial-todays-attendance"
+  - "tutorial-live-attendance"
+hidden: false
+---
+
+## Today's Attendance
+
+**Attendance → Today's Attendance** muestra a toda la escuela en una sola página para hoy: una pestaña
+**Present** y una pestaña **Absent**, cada una con su recuento, y la hora de la última actualización de
+la lista.
+
+- Acótela con el selector **Class**, o busque por número de admisión o por nombre.
+- En la pestaña Present, filtre por **cuándo** llegó el estudiante (*Any time*, *On Time*, *Late* o
+  *Afternoon Only*) y por **cómo** se le marcó (*Marked by gate*, un escaneo de tarjeta, o *Marked by
+  teacher*). Cada fila muestra la hora del registro y si cuenta como tardanza.
+- **Search all students** busca a cualquier estudiante, esté presente o no.
+
+La tardanza se decide según la hora límite de la institución en Settings, la misma regla que usan todas
+las demás pantallas de asistencia. Los docentes ven esta página como **Attendance** en su menú lateral.
+
+Desde la página de asistencia de una clase, **Today's list** salta directamente aquí con esa clase seleccionada.
+
+## Live Monitor
+
+**Attendance → Live Monitor** muestra los escaneos a medida que llegan. Es una pantalla de la mañana:
+déjela abierta mientras llegan los estudiantes y podrá ver que la puerta funciona o ver de inmediato
+que no lo hace.
+
+Úsela para:
+
+- Confirmar que un lector realmente está registrando escaneos, antes de que cien estudiantes pasen
+  frente a uno averiado.
+- Observar las llegadas tardías a medida que ocurren, en lugar de reconstruirlas después.
+
+Si no aparece nada durante las llegadas, considérelo un problema del dispositivo y no de asistencia, y
+revise el lector.
+
+## Saved filters
+
+**Attendance → Saved Filters** sirve para las preguntas que hace repetidamente: *estudiantes por debajo
+del 80 % este período*, *las ausencias de este grado esta semana*. Elabore la consulta una vez,
+guárdela y vuelva a ejecutarla en lugar de reconstruirla cada vez.
+
+Esa es la diferencia entre un informe que se ejecuta mensualmente y uno que realmente se ejecuta. Si se
+encuentra configurando las mismas listas desplegables todos los lunes, guárdelo.
+
+## El resto del grupo Attendance
+
+- **Today's Attendance**: como se explicó arriba.
+- **Summary**: la vista de toda la institución, con detalle hasta una clase.
+- **Reports**: la salida imprimible.
+- **Saved Filters**: como se explicó arriba.
+- **Live Monitor**: como se explicó arriba.
+
+## Relacionado
+
+- [Registro de asistencia por parte del personal](/es/docs/shared-staff-attendance-overview)
+- [Consultar la asistencia de su clase](/es/docs/educonnect-teacher-class-attendance)

@@ -1,0 +1,70 @@
+---
+title: El tablón de avisos
+description: Cómo leer el tablón de avisos de la escuela, y publicar, programar, fijar y archivar avisos para el personal, los padres o clases seleccionadas.
+product: educonnect
+section: Guides
+order: 70
+roles:
+  - admin
+  - staff
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/notices/notice_board_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/notices/notice_editor_dialog.dart
+  - attendance-web-app/edu-frontend/lib/models/notice.dart
+  - attendance-web-app/backend/config/accessCatalog.js
+screenshotIds:
+  - "staff-notice-board"
+hidden: false
+---
+
+**Communication → Notice Board** es donde la escuela publica avisos que permanecen visibles, a diferencia de
+[Enviar mensajes](/es/docs/educonnect-tutorial-send-messages), que envía un SMS puntual. Un aviso puede llegar al
+personal, a los padres (que además reciben una notificación en sus teléfonos la primera vez que se publica) o a los
+padres y docentes de clases seleccionadas.
+
+## Lectura de avisos
+
+Todos los del lado del personal pueden leer el tablón (el permiso *View the notice board*). La pestaña **Board**
+enumera los avisos que le corresponden, los más recientes primero, con los avisos fijados en la parte superior.
+*No notices right now.* significa que no hay ninguno.
+
+## Publicación de avisos
+
+Publicar es un permiso aparte (*Create, publish, pin & archive notices*) que la configuración predeterminada deja
+al administrador, porque coloca un texto ante toda la escuela. Si usted lo tiene, la página
+incluye además una pestaña **Manage** con todos los avisos y un botón **New notice**.
+
+1. Seleccione **New notice**.
+2. Ingrese un **Title** y un **Message**. Ambos son obligatorios (*Give the notice a title.*, *Write the
+   message.*), y cada uno tiene un límite de longitud.
+3. Elija la **Audience**: todos, docentes, padres o **classes**. En el caso de clases, elija cuáles.
+   Los padres de los niños de esas clases, y los docentes que les enseñan, verán el aviso. Un usuario
+   sin clase asignada no tiene ninguna clase en la que publicar.
+4. Establezca **Publish** con una fecha y hora. Una hora futura programa el aviso.
+5. Opcionalmente establezca **Expires**. El vencimiento debe ser posterior a la fecha de publicación.
+6. Opcionalmente adjunte un PDF o una imagen (hasta 20 MB cada uno). Los archivos adjuntos solo pueden agregarse desde la
+   aplicación web.
+7. Elija **Save draft** o **Publish**. Al editar un aviso existente se ofrecen **Save** y **Save &
+   publish**.
+
+Verá *Notice saved*.
+
+## Gestión de avisos
+
+La pestaña **Manage** enumera **Title**, **Audience**, **Status**, **Dates** y **Files**, y puede
+filtrarse por estado: **Drafts**, **Published** o **Archived**. En cada fila puede:
+
+- **Edit** el aviso.
+- **Publish** un borrador. Un cuadro de diálogo confirma primero la audiencia; se notifica a los padres si el aviso
+  no se había enviado antes.
+- **Pin to the top** o **Unpin**.
+- **Archive**.
+
+Las etiquetas de estado indican en qué situación está un aviso: **Draft**, **Scheduled** (fecha de publicación futura),
+**Live**, **Expired** o **Archived**.
+
+## Temas relacionados
+
+- [Enviar mensajes](/es/docs/educonnect-tutorial-send-messages)

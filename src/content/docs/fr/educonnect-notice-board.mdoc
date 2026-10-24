@@ -1,0 +1,74 @@
+---
+title: Le tableau d'affichage
+description: Consulter le tableau d'affichage de l'établissement, et publier, programmer, épingler et archiver des avis destinés au personnel, aux parents ou à certaines classes.
+product: educonnect
+section: Guides
+order: 70
+roles:
+  - admin
+  - staff
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/notices/notice_board_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/notices/notice_editor_dialog.dart
+  - attendance-web-app/edu-frontend/lib/models/notice.dart
+  - attendance-web-app/backend/config/accessCatalog.js
+screenshotIds:
+  - "staff-notice-board"
+hidden: false
+---
+
+**Communication → Notice Board** est l'endroit où l'établissement publie des avis qui restent
+visibles, par opposition à [Envoyer des messages](/fr/docs/educonnect-tutorial-send-messages), qui
+envoie un SMS ponctuel. Un avis peut s'adresser au personnel, aux parents (qui sont aussi notifiés
+sur leur téléphone la première fois qu'il est publié) ou aux parents et enseignants de certaines
+classes.
+
+## Lire les avis
+
+Toute personne côté personnel peut lire le tableau (autorisation *View the notice board*). L'onglet
+**Board** liste les avis qui vous concernent, du plus récent au plus ancien, les avis épinglés
+figurant en haut. *No notices right now.* signifie qu'il n'y en a aucun.
+
+## Publier des avis
+
+La publication est une autorisation distincte (*Create, publish, pin & archive notices*) que les
+réglages par défaut laissent à l'administrateur, car elle place du texte sous les yeux de tout
+l'établissement. Si vous la détenez, la page comporte aussi un onglet **Manage** avec tous les avis
+et un bouton **New notice**.
+
+1. Sélectionnez **New notice**.
+2. Saisissez un **Title** et un **Message**. Les deux sont obligatoires (*Give the notice a title.*,
+   *Write the message.*), et chacun a une limite de longueur.
+3. Choisissez l'**Audience** : tout le monde, les enseignants, les parents ou des **classes**. Pour
+   des classes, choisissez lesquelles. Les parents des enfants de ces classes, et les enseignants qui
+   y enseignent, verront l'avis. Un utilisateur sans classe affectée n'a aucune classe à laquelle
+   publier.
+4. Réglez **Publish** sur une date et une heure. Une heure future programme l'avis.
+5. Si vous le souhaitez, définissez **Expires**. L'expiration doit être postérieure à la date de
+   publication.
+6. Si vous le souhaitez, joignez un PDF ou une image (jusqu'à 20 Mo chacun). Les pièces jointes ne
+   peuvent être ajoutées que depuis l'application web.
+7. Choisissez **Save draft** ou **Publish**. La modification d'un avis existant propose **Save** et
+   **Save & publish**.
+
+Vous verrez *Notice saved*.
+
+## Gérer les avis
+
+L'onglet **Manage** liste **Title**, **Audience**, **Status**, **Dates** et **Files**, et peut être
+filtré par statut : **Drafts**, **Published** ou **Archived**. Sur chaque ligne, vous pouvez :
+
+- **Edit** l'avis.
+- **Publish** un brouillon. Une boîte de dialogue confirme d'abord le public ; les parents sont
+  notifiés si l'avis n'a pas déjà été envoyé.
+- **Pin to the top** ou **Unpin**.
+- **Archive** l'avis.
+
+Les pastilles de statut indiquent où en est un avis : **Draft**, **Scheduled** (date de publication
+dans le futur), **Live**, **Expired** ou **Archived**.
+
+## À consulter également
+
+- [Envoyer des messages](/fr/docs/educonnect-tutorial-send-messages)

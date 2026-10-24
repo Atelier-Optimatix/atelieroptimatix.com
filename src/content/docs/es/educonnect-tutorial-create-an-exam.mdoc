@@ -1,0 +1,46 @@
+---
+title: "Tutorial: Crear un examen"
+description: Cómo configurar un examen de período, de medio período o especial para poder registrar resultados de clases y asignaturas.
+product: educonnect
+section: Tutorials
+order: 90
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/widgets/new_exam_form_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/exams/exam_dashboard_page.dart
+screenshotIds:
+  - "tutorial-create-an-exam"
+hidden: false
+---
+
+Un examen es el contenedor en el que se registran los resultados. Créelo antes de que alguien empiece a calificar.
+
+## Pasos
+
+1. Abra **Exams** en el menú lateral.
+2. Seleccione **New Exam**.
+3. Complete:
+   - **Exam Name**: lo que todos verán en las listas desplegables y en los informes. Incluya el año si
+     realiza el mismo examen cada año (`Term 1 2026`, no `Term 1`).
+   - **Exam Type**: uno de **TERM**, **MIDTERM** o **SPECIAL**. No es algo meramente estético: los
+     [informes de progreso](/es/docs/educonnect-tutorial-progress-reports) y las clasificaciones del
+     período se elaboran a partir de los exámenes TERM, por lo que un examen de período registrado
+     como SPECIAL no aparecerá donde usted espera.
+   - **Date**: mediante **Pick Date**.
+4. Seleccione **Save**.
+
+El examen aparece ahora en el panel Exams y pueden abrirse clases dentro de él.
+
+## Qué hacer a continuación
+
+- [Registre los resultados](/es/docs/educonnect-tutorial-enter-exam-results), clase por clase y
+  asignatura por asignatura, o [cárguelos desde una hoja de cálculo](/es/docs/educonnect-tutorial-upload-exam-results).
+- Consulte **Exams → Rankings** cuando haya suficientes asignaturas registradas.
+- Revise los **Exams → Result Changes** generados sobre calificaciones que ya están guardadas.
+
+## Relacionado
+
+- [Registro y publicación de resultados de exámenes](/es/docs/shared-staff-exam-results)

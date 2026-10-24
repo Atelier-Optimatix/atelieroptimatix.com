@@ -1,0 +1,89 @@
+---
+title: Jalankan Pengambilan Kemasukan
+description: Daripada menerbitkan prospektus hingga mendaftarkan pelajar — menarik permohonan masuk dari portal, memberi markah, mengutip yuran dan menukarnya kepada pelajar.
+product: educonnect
+section: Advanced workflows
+order: 30
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/admissions_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/admission_details_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/admission_fee_counter_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/settings/admissions_guidebook_page.dart
+screenshotIds:
+  - "flow-admissions-pipeline"
+hidden: false
+---
+
+Satu pengambilan melibatkan dua sistem: pemohon menggunakan **admissions portal** (portal kemasukan),
+manakala kakitangan bekerja dalam **staff dashboard** (papan pemuka kakitangan). Ini ialah bahagian
+kakitangan dari awal hingga akhir.
+
+## 1. Terbitkan prospektus
+
+**Students → Prospectus** (juga boleh dicapai daripada **Administration**). Inilah yang dibaca pemohon
+sebelum memohon, jadi ia perlu diterbitkan sebelum anda mengumumkan pengambilan.
+
+Paparan pemohon: [Membaca Prospektus](/ms/docs/admissions-prospectus).
+
+## 2. Permohonan masuk
+
+Pemohon log masuk dengan kod sekali guna, melengkapkan borang dan menghantarnya. Setelah dihantar,
+permohonan **dikunci** daripada mereka — mereka tidak boleh terus menyuntingnya. Lihat
+[Memohon ke Sekolah](/ms/docs/admissions-applying).
+
+## 3. Tarik masuk ke papan pemuka
+
+Buka **Students → Admissions** dan pilih **Fetch from Portal**. Ia melaporkan berapa banyak yang
+**synced** (diselaraskan) dan berapa banyak yang **skipped** (dilangkau) — dilangkau biasanya bermaksud
+telah diimport.
+
+Selaraskan secara berkala sepanjang pengambilan yang sedang dibuka dan bukan sekali sahaja pada akhirnya;
+papan pemuka hanya mengetahui permohonan yang telah ditarik.
+
+## 4. Semak dan beri markah
+
+Senarai kemasukan boleh ditapis dan disusun mengikut nama, alamat, agama, **total score** dan
+**status**. Buka mana-mana baris untuk melihat permohonan penuh dan dokumen yang dimuat naik.
+
+**Total score** ialah asas kedudukan. Apa pun kriteria anda, ia akhirnya menjadi nombor ini, jadi pastikan
+ia diisi secara konsisten sebelum anda mula membandingkan pemohon.
+
+Eksport senarai — ID kemasukan, nama, alamat, agama dan jumlah markah — untuk semakan luar talian atau
+mesyuarat pemilihan.
+
+## 5. Kutip yuran permohonan
+
+Dua laluan, dan kedua-duanya berakhir di tempat yang sama:
+
+- **Online** (dalam talian) — pemohon membayar dengan kad dalam portal. Status *pending* bukan satu
+  kegagalan; ia akan selesai. Lihat [Membayar Yuran Permohonan Anda](/ms/docs/admissions-payment).
+- **At the office** (di pejabat) — tunai, cek atau pemindahan, direkodkan di **Students → Fee Counter**
+  (skrin yang sama muncul sebagai **Admission Fees** di bawah Accounting). Lihat
+  [Membayar di Pejabat Sekolah](/ms/docs/admissions-paying-at-the-office).
+
+Yuran kemasukan masuk ke dalam lejar yang sama seperti yang lain, jadi ia mengalir ke
+[penutupan hari](/ms/docs/educonnect-tutorial-day-close) dan
+[penyesuaian](/ms/docs/educonnect-tutorial-reconciliation) seperti biasa.
+
+## 6. Tukar kepada pelajar
+
+Pemohon yang diterima menjadi pelajar. Sediakan kelas terlebih dahulu — lihat
+[Tambah Kelas](/ms/docs/educonnect-tutorial-add-a-class) — kerana pelajar memerlukan kelas semasa
+pendaftaran, dan kelas tidak boleh diubah kemudian dengan menyunting rekod.
+
+## 7. Selepas pengambilan
+
+- Semak sama ada [jadual yuran](/ms/docs/educonnect-tutorial-fee-setup) merangkumi kelas baharu.
+- Keluarkan [kad ID](/ms/docs/educonnect-tutorial-id-cards) — tanpa RFID, tiada kehadiran.
+- Ibu bapa mendaftar sendiri dengan menggunakan Student ID anak mereka —
+  [Mendaftar sebagai Ibu Bapa](/ms/docs/shared-parent-registration).
+
+## Untuk kumpulan sekolah
+
+Ibu pejabat melihat pengambilan seluruh kumpulan di **Reports → Admissions**, tetapi tidak boleh membuka
+skrin cawangan secara individu. Lihat
+[Ibu Pejabat & Pelaporan Kumpulan](/ms/docs/shared-head-office-group-reporting).

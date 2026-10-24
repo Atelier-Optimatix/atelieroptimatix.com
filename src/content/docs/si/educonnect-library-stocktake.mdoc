@@ -1,0 +1,45 @@
+---
+title: "නිබන්ධනය: පුස්තකාල තොග පරීක්ෂාවක් කරන්න"
+description: ස්කෑන් කිරීමෙන් රාක්ක නාමාවලිය සමඟ ගැලපීම සහ අවසන් කිරීමෙන් වෙනස් වන දේ.
+product: educonnect
+section: Tutorials
+order: 235
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/stocktakes_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/stocktake_page.dart
+  - attendance-web-app/backend/services/library/stocktakeService.js
+screenshotIds:
+  - "library-stocktake"
+hidden: false
+---
+
+තොග පරීක්ෂාවකින් (stock-take) රාක්කවල සැබවින්ම ඇති පොත් මොනවාදැයි සොයාගත හැකිය.
+
+**ඔබට අවශ්‍ය වන්නේ:** එකක් ආරම්භ කිරීමට **Start a stock-take** සහ එය වසා දැමීමට හෝ අවලංගු කිරීමට
+**Finalise** අවසරයයි.
+
+## එකක් කරන ආකාරය
+
+1. **Library → Stock-take → Start a stock-take.** එයට නමක් දෙන්න. එම රාක්ක පමණක් පරීක්ෂා කිරීමට රාක්ක
+   තෝරන්න (රාක්ක ස්ථාන Library Settings හි එක් කරන්න), නැතහොත් සම්පූර්ණ පුස්තකාලයටම කිසිවක් තෝරන්න එපා.
+2. **Scan the shelf** යටතේ **Shelf I am scanning** තෝරා සෑම පොතක්ම ස්කෑන් කරන්න. සෑම ස්කෑන් එකක්ම
+   සුරැකේ. පොතක් දෙවරක් ස්කෑන් කිරීමෙන් හානියක් නැත. අඛණ්ඩව ස්කෑන් කිරීමට කැමරාව විවෘතව තබාගත හැකිය,
+   නැතහොත් ස්කෑනරයක මතකයේ ගබඩා වූ ස්කෑන් සඳහා **Paste a list** භාවිත කරන්න.
+3. ලැයිස්තු සමාලෝචනය කරන්න:
+   - **Not seen yet**: කිසිවෙකු ස්කෑන් නොකළ රාක්කයේ පොත්. මෙය මුලින්ම පරීක්ෂා කරන්න.
+   - වාර්තාගත රාක්කයට වඩා **Found on a different shelf** (වෙනත් රාක්කයකින් හමු වූ).
+   - **On the shelf but recorded as lent**: ඒවා check in කරන්න.
+   - **Recorded as missing or lost**: අවසන් කිරීමෙන් ඒවා නැවත ස්ථානගත වේ.
+   - **Not in the catalogue**: වාර්තාවක් නැති බාර්කෝඩ්. පොත එක් කරන්න.
+4. **Finalise.** නොපෙනුණු රාක්ක පොත් **missing** බවට පත් වේ. ස්කෑන් කරන ලද missing හෝ lost පොත් check-in
+   හරහා නැවත යන බැවින් ඒවා ඊළඟ වෙන්කිරීමට හෝ රාක්කයට පැමිණේ, සහ සොයාගත් lost පොතක ගෙවා නැති දඩය
+   අවලංගු වේ.
+
+**Cancel** කිරීමෙන් කිසිදු පොතක් වෙනස් නොවේ; එහි ස්කෑන් තබාගන්නා නමුත් පසුව අවසන් කළ නොහැක.
+
+තොග පරීක්ෂාව අතරතුර ණය දීම දිගටම සිදුවන අතර, එය ආරම්භ වූ පසු ණයට දුන් හෝ ආපසු ලැබුණු පොතක් දක්නට
+ලැබුණු ලෙස ගණන් ගැනේ. අවසන් කිරීම අතරමඟ නතර වුවහොත් **Carry on finalising** මගින් එය නැවත ආරම්භ වේ.

@@ -1,0 +1,57 @@
+---
+title: "නිබන්ධනය: පන්තියක් එක් කිරීම"
+description: Classes තිරයෙන් පන්තියක් සෑදීම, ක්ෂේත්‍ර හතරෙන් එක් එකක අරමුණ සහ පන්තිය සෑදූ පසු කළ යුත්තේ කුමක්ද යන්න.
+product: educonnect
+section: Tutorials
+order: 10
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/components/class_components/add_class_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/class_list.dart
+screenshotIds:
+  - "tutorial-add-a-class"
+hidden: false
+---
+
+පන්තිය යනු අනෙක් සෑම දෙයක්ම එල්ලා ඇති බඳුනයි — සිසුන්, පැමිණීම, කාලසටහන් ජාලය, විභාග ප්‍රතිඵල සහ ගාස්තු පැවරීම් සියල්ලම පන්තිය අනුව ආමන්ත්‍රණය කෙරේ. පළමුව පන්තිය සාදන්න.
+
+**ඔබට අවශ්‍ය වන්නේ:** **Students → Classes** වෙත ප්‍රවේශය සහ පන්ති සෑදීමට අවසරය.
+
+## පියවර
+
+1. පැති drawer හි **Students → Classes** විවෘත කරන්න.
+2. **Add Class** තෝරන්න. **Add New Class** සංවාද කොටුව විවෘත වේ.
+3. ක්ෂේත්‍ර හතර පුරවන්න:
+   - **Grade** — ලැයිස්තුවෙන් තෝරන්න. [Grade Curriculum](/si/docs/educonnect-tutorial-grade-curriculum) සඳහා සහ ශ්‍රේණි පුරා වාර්තා කිරීම සඳහා පන්ති එකට කාණ්ඩ කරන්නේ මෙයයි, එබැවින් එය නිවැරදි විය යුතුය.
+   - **Syllabus** — ලැයිස්තුවෙන් තෝරන්න. එකම ශ්‍රේණියේ විවිධ විෂය නිර්දේශවල පන්ති වෙන වෙනම වාර්තා කෙරේ.
+   - **Class Name** — අවශ්‍යයි, තවද පද්ධතිය පුරා පන්තියේ හඳුනාගැනීම මෙයයි. විස්තරාත්මක නමකට වඩා කෙටි සහ සම්ප්‍රදායික නමක් හොඳය: `10-A`, `Grade 3 Blue`. මෙතැන් සිට සෑම පන්ති dropdown එකකම ඔබට පෙනෙන්නේ මෙයයි.
+   - **Teacher Name** — අත්‍යවශ්‍ය නොවේ. ඔබට එය හිස්ව තබා පසුව පන්ති ගුරුවරයා නිසි ලෙස සැකසිය හැක.
+4. **Save** තෝරන්න.
+
+ඔබට **Class added successfully** පෙනිය යුතු අතර නව පන්තිය ලැයිස්තුවේ දිස්වේ. ඒ වෙනුවට **Failed to add class.** ලැබෙන්නේ නම්, වඩාත් පොදු හේතුව දැනටමත් පවතින පන්ති නාමයකි.
+
+## පන්ති ගුරුවරයා සැකසීම
+
+සංවාද කොටුවේ ඇති **Teacher Name** ක්ෂේත්‍රය නිදහස් පෙළකි — එය ලේබලයකි, ගුරු වාර්තාවකට සබැඳියක් නොවේ. පන්තියේ හිමිකරු වන ගුරුවරයා සැබවින්ම පැවරීමට:
+
+1. **Students → Classes** වෙතින් පන්තිය විවෘත කරන්න.
+2. පන්ති තිරයේ ඇති **⋮ More options** මෙනුව භාවිත කරන්න.
+3. **Edit Class Teacher** තෝරා ගුරුවරයා තෝරන්න.
+
+මෙය වැදගත්ය: **My Class** හි පන්තිය ලැබෙන්නේ සහ එහි පැමිණීම සළකුණු කළ හැක්කේ පන්ති ගුරුවරයාටය. [Taking Attendance as a Teacher](/si/docs/educonnect-teacher-taking-attendance) බලන්න.
+
+## ඊළඟට කළ යුත්තේ
+
+පන්තිය සෑදූ පසු, මෙම පිළිවෙළින්:
+
+1. [එයට සිසුන් එක් කරන්න](/si/docs/educonnect-tutorial-add-a-student) — එකින් එක, හෝ [Excel වෙතින් ආයාත කරන්න](/si/docs/educonnect-tutorial-import-students).
+2. කාලසටහන් ගත කළ හැකි වන පරිදි [එහි විෂයයන් පවරන්න](/si/docs/educonnect-tutorial-class-subjects).
+3. ගාස්තු පන්තිය අනුව වෙනස් වේ නම් එය [ගාස්තු සැකසුමට](/si/docs/educonnect-tutorial-fee-setup) ඇතුළත් කරන්න.
+
+## සම්බන්ධිත
+
+- [Managing Students, Classes and Substitutions](/si/docs/shared-staff-student-admissions-management)
+- [Setting Up a New Institute](/si/docs/educonnect-setting-up-a-new-institute)

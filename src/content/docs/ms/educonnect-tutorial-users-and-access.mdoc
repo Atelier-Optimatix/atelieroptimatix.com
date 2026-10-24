@@ -1,0 +1,76 @@
+---
+title: "Tutorial: Tambah Pengguna dan Berikan Akses"
+description: Mencipta log masuk staf dan ibu bapa, menetapkan semula kata laluan, dan menggunakan Access Control untuk menentukan apa yang boleh dibuka oleh setiap akaun.
+product: educonnect
+section: Tutorials
+order: 170
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/user_management_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/user_management/parent_accounts_tab.dart
+  - attendance-web-app/edu-frontend/lib/screens/settings/access_management_page.dart
+screenshotIds:
+  - "tutorial-users-and-access"
+hidden: false
+---
+
+## Dua skrin, dua fungsi
+
+- **Administration → Users** — siapa yang mempunyai log masuk.
+- **Administration → Access Control** — apa yang boleh dibuka oleh log masuk itu.
+
+Mencipta pengguna tidak dengan sendirinya memberikan banyak akses. Kedua-dua langkah diperlukan.
+
+## Menambah pengguna
+
+1. Buka **Administration → Users**. Ia mempunyai dua tab: **Staff** dan **Parents**.
+2. Pada **Staff**, pilih **Add User**.
+3. Isi butiran akaun dan pautkannya kepada rekod sedia ada individu itu — bagi guru,
+   [rekod guru yang telah anda cipta](/ms/docs/educonnect-tutorial-add-a-teacher).
+4. Simpan.
+
+Akaun ibu bapa kebanyakannya dicipta sendiri — ibu bapa mendaftar daripada portal dengan Student ID
+anak mereka dan mengesahkan melalui SMS atau e-mel. Tab **Parents** ialah tempat anda mencari dan
+mengurus hasilnya. Lihat [Mendaftar sebagai Ibu Bapa](/ms/docs/shared-parent-registration).
+
+## Menetapkan semula kata laluan
+
+1. Cari pengguna dan pilih **Reset PW**.
+2. Sama ada taip **New Password** dan **Confirm Password**, atau biarkan sistem menjananya.
+3. Kata laluan baharu kemudian **dipaparkan pada skrin** supaya anda boleh menyampaikannya.
+
+Paparan itu ialah keseluruhan model keselamatan bagi penetapan semula, jadi: bacakan atau serahkan
+secara terus, jangan e-melkan, dan beritahu individu itu supaya menukarnya pada log masuk pertama
+daripada [My Profile](/ms/docs/educonnect-teacher-my-profile).
+
+## Memadam pengguna
+
+**Delete** meminta pengesahan terlebih dahulu. Ia membuang log masuk, bukan rekod guru atau pelajar yang
+mendasarinya — yang biasanya memang dikehendaki bagi seseorang yang telah berhenti.
+
+## Access Control
+
+**Administration → Access Control** ialah matriks skrin berbanding peranan. Inilah yang menyebabkan dua
+orang guru di sekolah yang sama melihat laci menu yang berbeza.
+
+1. Buka **Administration → Access Control**.
+2. Hidupkan atau matikan skrin secara individu. Peranan yang mempunyai sebahagian tetapi bukan semua
+   skrin dalam sesuatu kumpulan dipaparkan sebagai **Partial access**.
+3. Sepanduk memberi amaran **You have unsaved permission changes** sehingga anda sama ada **Save changes**
+   atau **Discard**. Jangan tinggalkan skrin ini selagi ia dipaparkan.
+
+**Reset to defaults** mengembalikan sesuatu peranan kepada set kebenaran asal. Itulah cara paling pantas
+untuk keluar daripada konfigurasi yang tiada sesiapa dapat jelaskan lagi, tetapi ia membuang setiap
+penyesuaian bagi peranan itu — catat apa yang anda ubah sebelum menekannya.
+
+## Menyelesaikan masalah "Saya tidak nampak skrin itu"
+
+Hampir selalu masalah akses, bukan kerosakan. Laci menu menyembunyikan apa yang tidak boleh anda buka
+dan bukannya menjadikannya kelabu, jadi entri menu yang hilang ialah gejala yang dijangka. Semak
+Access Control bagi peranan individu itu terlebih dahulu.
+
+## Berkaitan
+
+- [Mengenali Selok-belok Aplikasi](/ms/docs/educonnect-navigating-the-dashboard)

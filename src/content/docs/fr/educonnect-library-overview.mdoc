@@ -1,0 +1,122 @@
+---
+title: "La bibliothèque de l'établissement : présentation et configuration"
+description: Ce que fait le module bibliothèque, qui peut l'utiliser, comment l'activer et les paramètres qui le contrôlent.
+product: educonnect
+section: Getting started
+order: 50
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/backend/config/libraryOptions.js
+  - attendance-web-app/edu-frontend/lib/screens/library/library_settings_page.dart
+  - attendance-web-app/backend/config/accessCatalog.js
+screenshotIds:
+  - "library-settings"
+  - "library-drawer"
+hidden: false
+---
+
+Le module bibliothèque prête des livres aux élèves, aux enseignants et au personnel depuis la même
+application que celle que vous utilisez déjà. Il tient un catalogue de titres, une fiche par
+exemplaire physique, la liste de qui a emprunté quoi, les réservations, les amendes, les inventaires
+et les rapports. Les emprunteurs sont les personnes déjà présentes dans vos fichiers : personne n'est
+saisi deux fois.
+
+> La bibliothèque est un ajout récent et n'est peut-être pas encore activée pour votre
+> établissement. Si vous ne voyez pas **Library** dans le menu latéral, demandez à votre
+> administrateur d'accorder l'accès à un rôle.
+
+## Comment fonctionne le prêt
+
+- **Les exemplaires portent un code-barres.** Chaque livre physique a une étiquette. La scanner
+  permet d'identifier l'exemplaire.
+- **Les personnes sont identifiées par leur carte d'identité.** Le numéro figurant sur la carte d'un
+  élève ou d'un enseignant est son RFID, le même numéro que celui utilisé pour la présence. Passer la
+  carte sur un lecteur USB au comptoir ouvre la fiche de cette personne. Voir
+  [Émettre et remplacer des cartes d'identité](/fr/docs/educonnect-tutorial-id-cards).
+- **Les deux appareils se comportent comme un clavier.** Le comptoir n'a besoin d'aucun logiciel
+  supplémentaire, et l'appareil photo d'un téléphone ou d'un ordinateur portable peut remplacer une
+  douchette. Voir [Le comptoir de prêt](/fr/docs/educonnect-library-circulation-desk).
+
+## Le menu Library
+
+| Écran | À quoi il sert | Guide |
+| --- | --- | --- |
+| **Circulation Desk** | Prêter, retourner, renouveler | [Circulation Desk](/fr/docs/educonnect-library-circulation-desk) |
+| **Catalogue** | Livres et exemplaires, import, étiquettes | [Catalogue](/fr/docs/educonnect-library-catalogue) |
+| **Loans & Overdue** | Tout ce qui est sorti, ce qui est en retard, ce qui est revenu aujourd'hui | [Circulation Desk](/fr/docs/educonnect-library-circulation-desk) |
+| **Holds** | L'étagère des réservations et les files de réservation | [Holds](/fr/docs/educonnect-library-holds) |
+| **Borrowers** | Prêts, réservations, amendes et limites de chaque personne | [Borrowers](/fr/docs/educonnect-library-borrowers) |
+| **Fines** | Amendes de bibliothèque impayées, payées et annulées | [Fines](/fr/docs/educonnect-library-fines) |
+| **Stock-take** | Vérifier les rayonnages par rapport au catalogue | [Stock-take](/fr/docs/educonnect-library-stocktake) |
+| **Reports** | Chiffres de circulation, de collection et d'amendes | [Reports](/fr/docs/educonnect-library-reports) |
+| **Library Settings** | Règles de prêt, amendes, réservations, étiquettes, portail | ci-dessous |
+
+Les enseignants qui y ont accès voient aussi **My Library**. Voir
+[My Library](/fr/docs/educonnect-library-my-library).
+
+## Qui peut faire quoi
+
+Tout se contrôle dans **Access Control**, sous le groupe **Library**. Il existe un rôle prêt à
+l'emploi, **librarian**. Il aboutit sur le Circulation Desk et dispose du comptoir, des réservations,
+des emprunteurs, du catalogue, de l'inventaire, des amendes, de l'annulation des amendes et des
+rapports. Il n'inclut **pas** **Library settings**, qui restent du ressort de l'administrateur tant
+que vous ne les accordez pas.
+
+Les principales autorisations :
+
+| Autorisation | Permet de |
+| --- | --- |
+| Search the catalogue | Consulter les livres et leur disponibilité |
+| Circulation desk | Ouvrir le comptoir, les prêts et les emprunteurs |
+| Check out & renew / Check in returns | Prêter et reprendre |
+| Override borrowing limits, blocks & holds | Prêter au-delà d'une limite ou d'un blocage, en indiquant un motif |
+| Add & edit books and copies; Withdraw, repair & restore | Tenir à jour le catalogue |
+| Bulk import the catalogue | Importer depuis un tableur |
+| Start a stock-take; Finalise | Lancer et clore un inventaire |
+| Declare books lost & charge damage | Évaluer les amendes |
+| Waive unpaid library fines | Une décision financière, distincte du groupe des amendes |
+| Library reports | Consulter les rapports |
+| Library settings | Modifier les règles ci-dessous |
+
+Les enseignants n'ont **aucune** autorisation de bibliothèque par défaut. Cochez-les lorsque votre
+bibliothèque ouvre.
+
+## Library Settings
+
+Ouvrez **Library → Library Settings** (nécessite l'autorisation sur les paramètres).
+
+- **Loan rules** : séparément pour les élèves, les enseignants et le personnel : nombre de livres à
+  la fois (0 signifie que ce type ne peut pas emprunter), durée du prêt en jours, renouvellements et
+  jours par renouvellement. Valeurs par défaut : élèves 2 livres pour 14 jours ; enseignants 10 pour
+  30 ; personnel 5 pour 30.
+- **Move due dates off closed days** : une date de retour tombant un week-end, un jour férié ou hors
+  trimestre est reportée au jour d'école suivant.
+- **No new books while one is overdue**.
+- **Circulation desk** : fermer la fiche de l'emprunteur après un nombre défini de secondes sans scan
+  (90 par défaut), afin que les livres de l'enfant suivant ne se retrouvent jamais sur la carte du
+  précédent ; et **Lend only on a card tap**, qui exige une dérogation pour rechercher quelqu'un par
+  son nom.
+- **Charge library fines** : voir [Fines](/fr/docs/educonnect-library-fines). Désactivé tant que vous
+  ne l'activez pas.
+- **Holds** : indique si les emprunteurs peuvent réserver, le nombre de réservations par emprunteur
+  et le nombre de jours d'école pour le retrait.
+- **Parent portal** : afficher la bibliothèque aux parents, leur permettre de réserver, de payer les
+  amendes en ligne.
+- **Overdue reminders** : une notification hebdomadaire à 7 h envoyée à chaque emprunteur ayant un
+  livre en retard (les parents d'un élève, ou l'enseignant). Désactivé par défaut.
+- **ISBN lookup** : ajoute un bouton **Look up** au formulaire d'ajout de livre. Il envoie l'ISBN à
+  Open Library ; il est donc désactivé tant que vous ne l'activez pas.
+- **Barcode labels** : le **Label prefix** (`LIB` par défaut, ce qui donne `LIB000001`, `LIB000002`,
+  etc.). Les étiquettes déjà imprimées conservent leur numéro ; choisissez donc un préfixe distinct
+  si des livres peuvent circuler entre plusieurs campus.
+- **Shelf locations** : le vocabulaire proposé lors de l'ajout d'exemplaires, par exemple « Fiction
+  A–F ».
+
+## Absent de cette version
+
+Les enseignants et le personnel ne reçoivent jamais d'amende, et il n'existe pas de service de
+recherche distinct : la recherche dans le catalogue correspond au début des mots dans les titres, les
+auteurs et les champs similaires.

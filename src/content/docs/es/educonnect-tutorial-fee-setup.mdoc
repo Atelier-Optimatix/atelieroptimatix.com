@@ -1,0 +1,64 @@
+---
+title: "Tutorial: Configurar las cuotas"
+description: Cómo definir lo que cobra su institución, cuándo vence y a qué clases se aplica, antes de poder registrar cualquier pago.
+product: educonnect
+section: Tutorials
+order: 130
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/fee_setup_page.dart
+screenshotIds:
+  - "tutorial-fee-setup"
+hidden: false
+---
+
+Nada de Accounting funciona hasta que existan las cuotas. Un pago siempre es *contra* un cargo, y los cargos provienen del calendario de cuotas que usted define aquí.
+
+**Necesita:** acceso a **Accounting → Fee Setup**.
+
+## Los dos niveles
+
+- Un **fee type** (tipo de cuota) es lo que se cobra: Term Fee, Admission Fee, Transport.
+- Un **schedule** (calendario) es una cuota parcial del tipo: una etiqueta, un importe, una fecha de
+  vencimiento y a quién se aplica.
+
+Un tipo de cuota suele tener varios calendarios, por ejemplo tres cuotas del mismo Term Fee a lo largo del período.
+
+## Pasos
+
+1. Abra **Accounting → Fee Setup**.
+2. Cree o seleccione el **fee type**.
+3. Seleccione **Schedule** para agregar una cuota parcial y complete:
+   - **Label**: lo que aparece en el estado de cuenta de los padres y en el recibo. Sea específico:
+     `Term 1 2026`, no `Instalment`.
+   - **Amount**.
+   - **Due date**: lo que hace que un cargo esté vencido y de lo que dependen los recordatorios de pago.
+   - **Applies to classes**: **All classes** o marque las específicas. Así se cobran importes distintos
+     a distintos grados: un calendario por cada conjunto de clases.
+   - **Active**: déjelo activado. Al desactivarlo se retira un calendario sin eliminar su historial.
+4. Guarde.
+
+## Duplicar
+
+**Duplicate** copia un calendario existente para que solo cambie la etiqueta, el importe y la fecha de
+vencimiento. Es la forma más rápida de trasladar una cuota al siguiente período o año, y mantiene la
+redacción coherente entre cuotas.
+
+## Retirar en lugar de eliminar
+
+Desactive **Active** en un calendario que ya no se aplique. Eliminar uno que ya tiene pagos asociados
+es lo que genera los cargos huérfanos que luego hay que resolver en
+[Conciliación](/es/docs/educonnect-tutorial-reconciliation).
+
+## Qué hacer a continuación
+
+- [Registre los pagos](/es/docs/educonnect-tutorial-record-a-payment) a medida que lleguen.
+- Configure los [descuentos](/es/docs/educonnect-tutorial-discounts) para becas y reducciones por hermanos.
+- Decida qué efecto tienen las cuotas impagas sobre el acceso al portal en **Accounting → Portal Access Rules**.
+
+## Relacionado
+
+- [Flujo de contabilidad: libro mayor, cierre del día y conciliación](/es/docs/shared-staff-accounting-overview)

@@ -1,0 +1,62 @@
+---
+title: Pago en la oficina de la escuela
+description: Cómo pagar la tarifa de solicitud en efectivo, con cheque o por transferencia bancaria en lugar de con tarjeta, y qué cambia una vez registrado el pago.
+product: admissions
+section: Guides
+order: 4
+roles:
+  - applicant
+sourcePaths:
+  - educonnect-admissions/backend/controllers/adminController.js
+  - educonnect-admissions/backend/constants/statuses.js
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## Cuando no paga con tarjeta
+
+No todos los postulantes pagan en línea. Los institutos pueden registrar una tarifa pagada por otro medio:
+
+- **Cash** (efectivo)
+- **Cheque**
+- **Bank transfer** (transferencia bancaria)
+- **Other** (otro), para cualquier medio que la escuela acuerde fuera de los anteriores
+
+Usted no registra estos pagos por sí mismo. Usted paga a la escuela y un oficial de admisiones lo registra en
+su solicitud.
+
+## Qué entregar en la oficina
+
+Pídales que anoten una **referencia**: un número de recibo o la referencia de la transferencia bancaria. El registro
+conserva una referencia y notas junto con quién lo registró, de modo que un pago que se consulte más adelante pueda
+rastrearse hasta la persona que lo ingresó y la documentación correspondiente.
+
+Conserve su propia copia de esa referencia hasta que su solicitud sea enviada.
+
+## Qué cambia una vez registrado el pago
+
+Al registrar el pago ocurren dos cosas a la vez:
+
+- El estado de su tarifa pasa a **paid** (pagada).
+- Su solicitud pasa a ser un **draft** (borrador) que usted puede completar.
+
+Es decir, el objetivo del pago es abrir el formulario. Si ya pagó en la oficina y la solicitud aún
+no le permite continuar, es porque el pago todavía no se ha registrado; debe llamar a la oficina y no
+reintentar el pago en el portal.
+
+{% callout type="note" %}
+Un pago con tarjeta que permanece en **pending** (pendiente) no puede resolverse de esta manera. El registro manual cubre los
+demás medios; los pagos en línea con tarjeta solo los confirma la pasarela de pago. Consulte
+[Pago de la tarifa de solicitud](/es/docs/admissions-payment) para saber qué hacer ante un pago con tarjeta que queda detenido.
+{% /callout %}
+
+## Si la tarifa no está configurada
+
+Es posible que la oficina no pueda registrar un pago porque la tarifa de admisión del instituto no se ha
+configurado. Se trata de una tarea de configuración por parte de la escuela y usted no puede resolverla desde su lado.
+
+## Temas relacionados
+
+- [Pago de la tarifa de solicitud](/es/docs/admissions-payment)
+- [Postular a una escuela](/es/docs/admissions-applying)
+- [Inicio de sesión para postular](/es/docs/admissions-signing-in)

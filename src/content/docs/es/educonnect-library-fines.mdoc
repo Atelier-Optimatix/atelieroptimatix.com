@@ -1,0 +1,54 @@
+---
+title: "Tutorial: Multas de la biblioteca y su pago"
+description: Cómo configurar las multas de la biblioteca, cómo se cobran las multas por retraso, pérdida y daño, cómo condonarlas y cómo pagan las familias.
+product: educonnect
+section: Tutorials
+order: 233
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/fines_page.dart
+  - attendance-web-app/backend/services/library/fineService.js
+  - attendance-web-app/backend/config/libraryOptions.js
+screenshotIds:
+  - "library-fines"
+hidden: false
+---
+
+Las multas están **desactivadas** hasta que active **Charge library fines** en Library Settings. Mientras estén desactivadas, no se
+cobra nada y las multas impagas no bloquean nada.
+
+**Solo se multa a los estudiantes.** A los docentes y al personal nunca.
+
+## Cómo se genera una multa
+
+Una multa de biblioteca es un cargo pendiente ordinario en la cuenta del estudiante. Esto significa que aparece en
+su estado de cuenta y se salda como cualquier otro cargo. La biblioteca nunca modifica por sí misma su libro contable.
+
+| Tipo | Cuándo se cobra |
+| --- | --- |
+| Overdue | Una sola vez, cuando se registra la devolución del libro. Mientras el libro está fuera, es solo una proyección |
+| Lost | Cuando un bibliotecario declara el libro perdido |
+| Damage | Cuando un bibliotecario registra un daño |
+
+Configuración: **Fine per late day**, **Days late before fining starts**, **Most for one late book**
+(0 para sin tope), **Count school days only** (los fines de semana, feriados y días fuera del trimestre no son
+días de retraso), **Lost book, when no price is recorded**, **Added to every lost book**, **Stop borrowing when
+owing more than** (0 significa que cualquier multa impaga bloquea) y **Days to pay**.
+
+## La página Fines
+
+**Library → Fines** enumera las multas impagas, pagadas y condonadas. Quien tenga **Waive unpaid library fines**
+puede condonar una multa impaga indicando un motivo: se anula sin ningún asiento contable.
+
+## Cómo pagan las familias
+
+- En la oficina, mediante Manual Payment Entry, con el ID del estudiante.
+- En línea, si su escuela acepta pagos en línea y **Let parents pay library fines online** está activado.
+  Las multas también aparecen en las pantallas de pagos en línea, esté o no activada la biblioteca del portal.
+
+## Temas relacionados
+
+- [Registro de un pago](/es/docs/educonnect-tutorial-record-a-payment)

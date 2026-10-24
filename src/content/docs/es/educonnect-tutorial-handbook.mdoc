@@ -1,0 +1,59 @@
+---
+title: "Tutorial: Redactar y publicar el manual del estudiante"
+description: Cómo elaborar el manual sección por sección, guardar borradores y publicar una versión para los padres.
+product: educonnect
+section: Tutorials
+order: 200
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/handbook/handbook_editor_screen.dart
+  - attendance-web-app/edu-frontend/lib/screens/handbook/handbook_preview_screen.dart
+screenshotIds:
+  - "tutorial-handbook"
+hidden: false
+---
+
+El manual (handbook) es el documento que los padres leen en el portal junto con los informes de progreso de sus hijos: normas, fechas del período, uniforme, contactos.
+
+**Necesita:** acceso a **Administration → Handbook**.
+
+## Pasos
+
+1. Abra **Administration → Handbook**.
+2. Seleccione **New section**. Póngale primero un **título**; si guarda sin él, aparece *Give the section
+   a title before saving.*
+3. Escriba el contenido de la sección en el editor de bloques.
+4. Guarde la sección (**Section saved.**) o use **save all sections** para guardarlas todas a la vez
+   cuando haya trabajado en varias.
+5. Haga una vista previa antes de publicar.
+6. Seleccione **Publish** y confirme *Publish the handbook?*
+
+Aparece **Handbook published (version _n_)**: el manual tiene versiones, de modo que cada publicación
+es una versión distinta y no una sobrescritura.
+
+## Borradores y publicación
+
+Guardar y publicar son acciones separadas a propósito. Todo lo que guarda es un borrador; los padres
+no ven nada hasta que usted publica. Si intenta publicar con ediciones sin guardar, aparece **Save your
+changes before publishing.**
+
+Por tanto, el patrón de trabajo es: escriba y guarde con libertad a lo largo de varios días y publique
+una sola vez cuando todo el documento esté listo.
+
+## Eliminar una sección
+
+**Delete "*section*"?** advierte que **this cannot be undone** (no se puede deshacer). Es una
+eliminación real: no hay forma de deshacerla ni queda ninguna copia en borrador. Si es posible que
+quiera recuperar el texto, saque primero el contenido.
+
+## Qué ven los padres
+
+El manual publicado aparece en el portal de padres. Consulte
+[Informes de progreso y manual](/es/docs/shared-parent-progress-reports).
+
+## Relacionado
+
+- [Configurar una nueva institución](/es/docs/educonnect-setting-up-a-new-institute)

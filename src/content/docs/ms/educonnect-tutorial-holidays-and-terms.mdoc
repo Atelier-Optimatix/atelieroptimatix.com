@@ -1,0 +1,71 @@
+---
+title: "Tutorial: Menetapkan Cuti, Penggal dan Hari Bekerja"
+description: Menggunakan Calendar untuk memberitahu sistem hari mana yang tidak dikira — dan sebab laporan kehadiran kelihatan salah sehingga anda berbuat demikian.
+product: educonnect
+section: Tutorials
+order: 180
+roles:
+  - admin
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/events/events_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/events/holiday_form_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/events/mark_today_holiday_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/settings/settings_page.dart
+screenshotIds:
+  - "tutorial-holidays-and-terms"
+  - "tutorial-calendar-mark-holiday"
+hidden: false
+---
+
+Peratusan kehadiran hanya sebaik kalendar yang menjadi asasnya. Cuti yang tidak dikonfigurasikan ialah hari yang kelihatan seolah-olah seluruh sekolah tidak hadir.
+
+## Hari bekerja
+
+Dalam **Administration → Settings**, tetapkan hari dalam minggu yang dijalankan oleh institut anda, kemudian **Save Working Days**. Segala yang lain dikira berdasarkan ini, jadi lakukannya sebelum penggal bermula.
+
+## Halaman Calendar
+
+Cuti kini terdapat di **Administration → Calendar** (skrin lama *Holidays* dan skrin *Events* telah digabungkan ke dalamnya; pautan lama ke Holidays membuka tab **Holidays** pada Calendar). Ia mempunyai dua tab:
+
+- **Upcoming** — acara dan cuti yang akan datang, mengikut tarikh.
+- **Holidays** — setiap cuti dan cuti penggal yang telah anda tentukan. Inilah sumber kebenaran tunggal bagi hari yang dikira sebagai hari persekolahan, dan ia menjadi asas peratusan kehadiran dan kad laporan di mana-mana.
+
+Kad di bahagian atas menunjukkan **School days held in** tahun semasa: hari bekerja dari 1 Januari hingga hari ini, tidak termasuk hujung minggu, cuti dan hari di luar tarikh penggal. Jika nombor itu kelihatan salah, kalendar anda puncanya.
+
+Semua orang yang mempunyai akses kakitangan boleh membaca Calendar. Hanya pentadbir melihat butang untuk menambah, mengedit atau memadam.
+
+## Menambah cuti
+
+1. Buka **Administration → Calendar** dan pilih tab **Holidays**.
+2. Pilih **Add Holiday**.
+3. Isi:
+   - **Title** — nama yang digunakan pada laporan. *Enter a title* ialah ralat jika ia kosong.
+   - **Date range** — pilih hari pertama dan terakhir (dua klik; tiada apa-apa dipilih awal). *Pick the first and last day* ialah ralat jika anda belum memilih.
+   - **School holiday** atau **Term break**. Cuti penggal menetapkan sempadan penggal yang menjadi asas pengiraan [kehadiran penggal](/ms/docs/educonnect-teacher-class-attendance) dan laporan kemajuan, jadi perbezaan ini penting.
+   - **Classes** — biarkan kosong untuk semua kelas, atau pilih kelas tertentu. Beginilah cara anda merekodkan satu kumpulan tahun yang keluar dalam lawatan tanpa menandakan seluruh sekolah tidak hadir.
+4. Pilih **Create**. Anda akan melihat **Holiday created**.
+
+Senarai menunjukkan setiap cuti dengan tarikh, jenis, dan **All classes** atau kelas yang dikenakan. **Delete** bertanya dahulu (*Delete holiday?*), dan memberi amaran bahawa ia menjejaskan peratusan kehadiran dan kad laporan. Jika ia memaparkan *No holidays yet. Add one to get started.*, tiada apa-apa dikonfigurasikan — dan setiap hari bukan pengajaran setakat ini dikira terhadap angka kehadiran anda.
+
+## Menutup sekolah hari ini
+
+Jika sekolah ditutup tanpa dijangka, pilih **Mark today a holiday**. Masukkan **Reason** (wajib — *Enter a reason*), secara pilihan pilih kelas (kosong bermaksud setiap kelas), dan pilih **Mark as holiday**. Peratusan kehadiran dan laporan melangkau hari itu, dan anda akan melihat **Today marked as a holiday**.
+
+## Menambah acara
+
+Pada tab **Upcoming**, **Add Event** memerlukan **Title**, **Details** pilihan, tarikh dan ikon. *Mengedit* acara hanya mengubah satu kejadian itu. Siri berulang dicipta daripada kalendar papan pemuka dan bukan di sini.
+
+## Penggal
+
+Tarikh penggal ditetapkan dalam **Administration → Settings** (dan, bagi kumpulan sekolah, secara berpusat dalam ibu pejabat **Configuration → Term Dates**). Simpan dengan **Save Terms**.
+
+Tetapkan penggal sebelum memasukkan keputusan peperiksaan: peperiksaan yang diadakan di luar semua penggal yang dikonfigurasikan tidak akan masuk ke penggal yang sepatutnya.
+
+## Lakukan ini dahulu
+
+Jika peratusan kehadiran kelihatan terlalu rendah, semak halaman ini sebelum menyiasat apa-apa yang lain. Hujung minggu, cuti dan cuti penggal yang tidak dikonfigurasikan ialah punca yang paling biasa.
+
+## Berkaitan
+
+- [Setting Up a New Institute](/ms/docs/educonnect-setting-up-a-new-institute)

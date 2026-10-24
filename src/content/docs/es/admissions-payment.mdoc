@@ -1,0 +1,36 @@
+---
+title: Pago de la tarifa de solicitud
+description: Qué sucede después de pagar en línea una tarifa de admisión, y por qué el estado "pendiente" no es un fallo.
+product: admissions
+section: Guides
+order: 3
+roles:
+  - applicant
+sourcePaths:
+  - educonnect-admissions/edu-frontend/lib/screens/online_payment_return_page.dart
+  - educonnect-admissions/backend/controllers/onlinePaymentController.js
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Cómo funciona el paso de pago
+
+Si su solicitud requiere una tarifa, se le dirigirá a una pasarela de pago para pagar con tarjeta. Después de
+pagar, regresará a una pantalla de confirmación que muestra su ID de transacción, un número de tarjeta
+enmascarado, el monto y un estado.
+
+## Estados del pago
+
+- **Not started** (no iniciado) — aún no ha llegado al paso de pago o no lo ha completado.
+- **Pending** (pendiente) — el pago se está procesando. Esto es normal inmediatamente después de pagar; no es
+  un fallo y no necesita volver a pagar.
+- **Paid** (pagado) — el pago ha sido confirmado.
+
+Los pagos en línea con tarjeta solo pasan a "paid" cuando la pasarela de pago confirma la
+transacción: un oficial de admisiones puede marcar como pagados otros medios de pago de forma manual, pero no puede
+hacerlo con un pago con tarjeta que aún aparece como pendiente. Si su estado lleva detenido en pendiente un tiempo
+inusualmente largo, comuníquese con la oficina de admisiones indicando su ID de transacción en lugar de volver a pagar.
+
+## Temas relacionados
+
+- [Postular a una escuela](/es/docs/admissions-applying)

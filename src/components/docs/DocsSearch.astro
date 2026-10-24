@@ -7,14 +7,19 @@
  * they only exist after a real build. Under `astro dev` the script tag 404s
  * silently and the box simply stays empty - that is expected, not a fault.
  */
+import { docsUi } from "@/lib/docs-i18n";
+
 type Props = { id?: string; class?: string };
 const { id = "docs-search", class: className } = Astro.props;
+// Pagefind picks the index for the page's <html lang> on its own; only the
+// widget's wording needs translating.
+const translations = docsUi(Astro.currentLocale).search;
 ---
 
 <div id={id} class:list={["docs-search", className]} data-pagefind-ignore></div>
 
 <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
-<script is:inline define:vars={{ id }}>
+<script is:inline define:vars={{ id, translations }}>
 	(() => {
 		const mount = () => {
 			const el = document.getElementById(id);
@@ -26,7 +31,7 @@ const { id = "docs-search", class: className } = Astro.props;
 				showSubResults: true,
 				showImages: false,
 				resetStyles: false,
-				translations: { placeholder: "Search the guide" },
+				translations,
 			});
 		};
 

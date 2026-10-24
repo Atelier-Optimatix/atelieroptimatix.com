@@ -1,0 +1,88 @@
+---
+title: "Tutorial: Gunakan Kaunter Peminjaman"
+description: Meminjam, memperbaharui dan memulangkan buku dengan kad ID dan pengimbas kod bar, serta menangani pinjaman yang lewat.
+product: educonnect
+section: Tutorials
+order: 230
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/circulation_desk_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/loans_page.dart
+  - attendance-web-app/backend/services/library/circulationService.js
+screenshotIds:
+  - "library-circulation-desk"
+  - "library-loans"
+hidden: false
+---
+
+Kaunter ialah tempat buku keluar dan kembali. Ia sentiasa mendengar imbasan, jadi anda jarang perlu
+mengklik.
+
+**Anda memerlukan:** peranan dengan **Circulation desk**, **Check out & renew** dan **Check in returns**,
+biasanya pustakawan. Buka **Library → Circulation Desk**.
+
+**Perkakasan:** pengimbas kod bar USB atau Bluetooth yang ditetapkan kepada Code 128 atau Code 39 dengan
+akhiran Enter, dan pembaca RFID USB dalam mod papan kekunci yang membaca kad yang sama seperti pembaca
+pintu pagar anda. Tanpa kedua-duanya, gunakan kamera: **Scan with camera** berfungsi pada telefon,
+tablet atau kamera web komputer riba.
+
+## Pinjamkan buku
+
+1. **Ketik kad peminjam.** Skrin memaparkan nama mereka, buku dalam pinjaman beserta tarikh akhir,
+   tempahan dan denda, dan sama ada mereka boleh meminjam lagi.
+2. **Imbas kod bar setiap buku.** Setiap buku dipinjamkan dengan tarikh akhir daripada peraturan
+   pinjaman.
+3. Pilih **Done**, atau tunggu. Paparan peminjam tertutup sendiri selepas masa melahu dalam Library
+   Settings.
+
+Tarikh akhir yang jatuh pada hari tutup dipindahkan ke hari persekolahan berikutnya. Imbasan berganda
+bagi buku yang sama tidak mendatangkan masalah.
+
+Jika kad tidak sepadan, atau imbasan sepadan dengan lebih daripada satu perkara, kaunter akan
+memberitahu (**That scan matches more than one thing**). Cari orang itu mengikut nama sebaliknya. Jika
+**Lend only on a card tap** dihidupkan, itu memerlukan override.
+
+## Pulangkan buku
+
+Imbas buku. Anda tidak perlu membuka peminjam terlebih dahulu. Jika buku itu lewat, denda dikira dan,
+apabila denda dihidupkan, dikenakan pada ketika itu. Imbasan kedua bagi buku yang telah dipulangkan tidak
+berbuat apa-apa. Jika ada orang menunggu buku itu, ia dihantar ke rak tempahan: lihat
+[Holds](/ms/docs/educonnect-library-holds).
+
+**Rosak?** Semasa pemulangan, rekodkan kerosakan untuk mengenakan caj.
+
+## Perbaharui
+
+Perbaharui daripada senarai peminjam. Buku yang ada orang menunggunya tidak diperbaharui, dan pembaharuan
+terhenti pada had dalam peraturan pinjaman.
+
+## Apabila buku dipinjam oleh orang lain
+
+Mengimbasnya untuk peminjam baharu memaparkan **This book is on loan to someone else**. Pilih
+**Check in and lend** jika buku itu benar-benar telah dikembalikan.
+
+## Override
+
+Peminjam yang telah mencapai had, disekat, atau berhutang terlalu banyak tidak boleh meminjam. Orang
+yang mempunyai **Override** boleh meminjamkan juga: anda mesti memberi sebab, dan kaunter memaparkan
+**Override on: reason** sehingga anda selesai. Setiap override direkodkan.
+
+## Loans & Overdue
+
+**Library → Loans & Overdue** mempunyai tiga senarai: **All on loan**, **Overdue**, dan **Returned
+today**. Buku yang lewat memaparkan denda yang akan dikenakan jika dipulangkan hari ini. Itu ialah
+unjuran dan tiada apa-apa dikenakan sehingga buku dikembalikan.
+
+## Isytiharkan buku hilang
+
+Buka pinjaman daripada halaman peminjam dan isytiharkannya hilang. Pelajar dikenakan harga salinan, atau
+harga tajuk, atau kos penggantian lalai dalam tetapan, ditambah yuran pemprosesan kehilangan. Jika buku
+itu kemudian ditemui dan didaftar masuk, dendanya yang belum dibayar dibatalkan.
+
+## Berkaitan
+
+- [Borrowers](/ms/docs/educonnect-library-borrowers)
+- [Fines](/ms/docs/educonnect-library-fines)

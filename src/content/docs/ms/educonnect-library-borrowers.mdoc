@@ -1,0 +1,57 @@
+---
+title: "Tutorial: Urus Peminjam Perpustakaan"
+description: Pinjaman, tempahan, denda dan had seseorang, menyekat peminjam, menambah peminjam kakitangan dan memberi mereka akses aplikasi.
+product: educonnect
+section: Tutorials
+order: 232
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/borrowers_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/borrower_detail_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/widgets/app_access_dialog.dart
+screenshotIds:
+  - "library-borrower"
+hidden: false
+---
+
+Peminjam ialah pelajar, guru dan kakitangan anda. Tiada apa-apa disalin: perpustakaan hanya menambah
+keadaannya sendiri (sekatan, had peribadi, bilangan pinjaman) kali pertama seseorang meminjam.
+
+Buka **Library → Borrowers**, cari, dan pilih seseorang.
+
+## Halaman peminjam
+
+- **Library card**: nombor kad yang direkodkan.
+- Sejarah **Loans**, **Holds**, **Fines** dan **Returned**.
+- **Blocked because**: sebab mereka tidak boleh meminjam sekarang. Ini dikira apabila anda melihatnya,
+  tidak pernah disimpan: had pinjaman, buku lewat pulang, denda tidak berbayar melebihi had anda, atau
+  sekatan yang dibuat secara manual.
+- **Reserve a book** bagi pihak mereka.
+
+## Sekat, nyahsekat dan had peribadi
+
+Dengan **Add staff borrowers, block, unblock & set limits** anda boleh menyekat seseorang dengan memberi
+sebab. Mereka kekal memegang buku yang ada; kaunter akan menolak pinjaman baharu.
+
+Di bawah **Own limits** tetapkan **Books at a time (0–50)** atau **Loan length in days** bagi seorang
+individu. Biarkan kotak kosong untuk menggunakan **Loan rule** bagi jenis mereka.
+
+## Tambah peminjam kakitangan
+
+Kakitangan bukan pengajar tiada dalam senarai pelajar atau guru anda. Gunakan **New staff borrower**
+pada halaman ini atau di kaunter.
+
+## Beri akses aplikasi kepada peminjam kakitangan
+
+**Give app access** mencipta log masuk supaya kakitangan dapat melihat pinjaman dan tempahan mereka
+sendiri dalam [My Library](/ms/docs/educonnect-library-my-library). Pilih nama pengguna (3 hingga 64
+aksara: huruf, digit, titik, sempang, garis bawah dan @, tanpa ruang) dan kata laluan pertama.
+**Remove access** menariknya balik. Guru tidak memerlukan ini; mereka menggunakan akaun yang sedia ada.
+
+## Berkaitan
+
+- [Circulation Desk](/ms/docs/educonnect-library-circulation-desk)
+- [Fines](/ms/docs/educonnect-library-fines)

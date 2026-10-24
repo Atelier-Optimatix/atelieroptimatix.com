@@ -1,0 +1,43 @@
+---
+title: "Tutorial: Reservas y estante de reservas"
+description: Cómo reservar libros que están prestados, el estante de reservas, los días de recogida y la cancelación de reservas.
+product: educonnect
+section: Tutorials
+order: 234
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/holds_page.dart
+  - attendance-web-app/backend/services/library/holdService.js
+  - attendance-web-app/backend/services/library/holdShelf.js
+screenshotIds:
+  - "library-holds"
+hidden: false
+---
+
+Una reserva (hold) aparta un **título**, no un ejemplar en particular. Las reservas forman una cola por orden de llegada.
+
+**Para activarlas:** **Library Settings → Holds** (**Let borrowers reserve books**).
+
+## Qué sucede
+
+1. Un prestatario reserva un libro que está prestado. El mostrador puede hacerlo con **Reserve a book**; los padres y
+   los estudiantes también pueden si el portal lo permite, y los docentes desde [Mi biblioteca](/es/docs/educonnect-library-my-library).
+2. Cuando se registra la devolución de un ejemplar, pasa a la reserva en espera más antigua y se coloca en el **hold shelf**. Apártelo
+   físicamente.
+3. El prestatario dispone de **School days to collect** (3 por defecto) para recogerlo. Al prestárselo se cumple
+   la reserva. Una reserva no recogida caduca y el ejemplar pasa al siguiente de la cola o vuelve al
+   estante.
+
+Un ejemplar en el estante de reservas solo se presta al prestatario para quien se reservó, salvo que se use una excepción. Un libro
+con reservas en espera no se renueva.
+
+Cada prestatario puede tener un número limitado de reservas (**Holds per borrower**, 2 por defecto; 0 significa que solo el
+mostrador realiza reservas).
+
+## La página Holds
+
+**Library → Holds** muestra el **Hold shelf** (libros apartados y para quién) y las colas. Cualquier persona con
+**Place & cancel holds for borrowers** puede cancelar.

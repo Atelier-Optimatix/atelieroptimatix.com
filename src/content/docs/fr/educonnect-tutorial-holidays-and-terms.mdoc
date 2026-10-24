@@ -1,0 +1,93 @@
+---
+title: "Tutoriel : Définir les jours fériés, les trimestres et les jours ouvrés"
+description: Utiliser le Calendar pour indiquer au système quels jours ne comptent pas — et pourquoi les rapports d'assiduité semblent faux tant que ce n'est pas fait.
+product: educonnect
+section: Tutorials
+order: 180
+roles:
+  - admin
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/events/events_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/events/holiday_form_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/events/mark_today_holiday_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/settings/settings_page.dart
+screenshotIds:
+  - "tutorial-holidays-and-terms"
+  - "tutorial-calendar-mark-holiday"
+hidden: false
+---
+
+Les pourcentages d'assiduité ne valent que ce que vaut le calendrier qui les sous-tend. Un jour férié non
+configuré est un jour que toute l'école semble avoir manqué.
+
+## Jours ouvrés
+
+Dans **Administration → Settings**, définissez les jours de la semaine où votre établissement fonctionne, puis **Save
+Working Days**. Tout le reste est calculé à partir de cela ; faites-le donc avant le début du trimestre.
+
+## La page Calendar
+
+Les jours fériés se trouvent désormais dans **Administration → Calendar** (l'ancien écran *Holidays* et l'écran *Events*
+ont été fusionnés en un seul ; les anciens liens vers Holidays ouvrent l'onglet **Holidays** du Calendar). Il comporte deux onglets :
+
+- **Upcoming** — les événements et jours fériés à venir, par ordre de date.
+- **Holidays** — chaque jour férié et chaque vacance de trimestre que vous avez définis. Ils constituent la source unique de vérité
+  pour déterminer quels jours comptent comme jours d'école, et alimentent les pourcentages d'assiduité et les bulletins partout.
+
+Une carte en haut affiche **School days held in** l'année en cours : les jours ouvrés du 1er janvier jusqu'à
+aujourd'hui, hors week-ends, jours fériés et jours en dehors des dates de trimestre. Si ce nombre semble faux, votre
+calendrier en est la cause.
+
+Toute personne ayant un accès « staff » (personnel) peut consulter le Calendar. Seuls les administrateurs voient les boutons d'ajout, de modification
+ou de suppression.
+
+## Ajouter un jour férié
+
+1. Ouvrez **Administration → Calendar** et choisissez l'onglet **Holidays**.
+2. Sélectionnez **Add Holiday**.
+3. Renseignez :
+   - **Title** — son nom sur les rapports. *Enter a title* est l'erreur affichée si le champ est vide.
+   - **Date range** — choisissez le premier et le dernier jour (deux clics ; rien n'est présélectionné). *Pick the
+     first and last day* est l'erreur affichée si vous ne l'avez pas fait.
+   - **School holiday** ou **Term break**. Les Term breaks délimitent les trimestres sur lesquels
+     l'[assiduité du trimestre](/fr/docs/educonnect-teacher-class-attendance) et les bulletins de progression sont
+     calculés ; la distinction est donc importante.
+   - **Classes** — laissez vide pour toutes les classes, ou choisissez-en des précises. C'est ainsi que vous enregistrez
+     l'absence d'un niveau en sortie sans marquer toute l'école absente.
+4. Sélectionnez **Create**. Vous verrez **Holiday created**.
+
+La liste affiche chaque jour férié avec ses dates, son type, et **All classes** ou les classes concernées.
+**Delete** demande d'abord confirmation (*Delete holiday?*) et avertit que cela affecte les pourcentages d'assiduité et les
+bulletins. Si l'écran indique *No holidays yet. Add one to get started.*, rien n'est configuré — et
+tous les jours sans cours jusqu'ici sont comptés contre vos chiffres d'assiduité.
+
+## Fermer l'école aujourd'hui
+
+Si l'école est fermée de manière imprévue, sélectionnez **Mark today a holiday**. Saisissez un **Reason** (obligatoire —
+*Enter a reason*), choisissez éventuellement des classes (vide signifie toutes les classes), puis sélectionnez **Mark as
+holiday**. Les pourcentages d'assiduité et les rapports ignorent ce jour, et vous verrez **Today marked as a
+holiday**.
+
+## Ajouter un événement
+
+Sur l'onglet **Upcoming**, **Add Event** demande un **Title**, des **Details** facultatifs, une date et une icône.
+*Modifier* un événement change cette seule occurrence. Les séries récurrentes sont créées depuis le calendrier du tableau de bord
+et non ici.
+
+## Trimestres
+
+Les dates des trimestres sont définies dans **Administration → Settings** (et, pour un groupe scolaire, de façon centralisée dans
+**Configuration → Term Dates** du siège). Enregistrez-les avec **Save Terms**.
+
+Définissez les trimestres avant de saisir des résultats d'examen : un examen situé en dehors de tous les trimestres configurés ne sera pas rattaché
+au trimestre auquel il appartient.
+
+## À faire en premier
+
+Si les pourcentages d'assiduité semblent anormalement bas, consultez cette page avant d'investiguer autre chose.
+Des week-ends, jours fériés et vacances de trimestre non configurés en sont de loin la cause la plus fréquente.
+
+## Voir aussi
+
+- [Setting Up a New Institute](/fr/docs/educonnect-setting-up-a-new-institute)

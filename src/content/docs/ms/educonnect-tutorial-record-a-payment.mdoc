@@ -1,0 +1,57 @@
+---
+title: "Tutorial: Rekod Bayaran di Kaunter"
+description: Menerima bayaran tunai atau cek bagi yuran tertunggak pelajar dan mengeluarkan resit.
+product: educonnect
+section: Tutorials
+order: 140
+roles:
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/manual_payment_entry_page.dart
+screenshotIds:
+  - "tutorial-record-a-payment"
+hidden: false
+---
+
+Ini ialah aliran kerja di kaunter — ibu bapa berada di hadapan anda dan membayar secara tunai, cek atau
+pindahan bank. Pembayaran kad yang dibuat sendiri oleh ibu bapa akan masuk ke **Accounting → Online Payments**
+dan tidak memerlukan sebarang kemasukan data.
+
+**Anda perlukan:** akses kepada **Accounting → Manual Payment Entry** (Kemasukan Bayaran Manual), dan
+[yuran yang telah disediakan](/ms/docs/educonnect-tutorial-fee-setup).
+
+## Langkah
+
+1. Buka **Accounting → Manual Payment Entry**.
+2. Masukkan ID atau nama pelajar dan pilih **Find**. **Clear** menetapkan semula skrin untuk ibu bapa
+   seterusnya.
+3. Yuran pelajar dimuatkan dalam dua senarai:
+   - **Pending fees** — yuran yang masih tertunggak, setiap satu dengan tarikh akhir bayarannya. Jika
+     tertera *Nothing outstanding — all fees settled*, tiada apa yang perlu diterima.
+   - **Settled** — yuran yang sudah dibayar, dengan tarikh dan kaedah bayaran.
+4. Cari caj yang sedang dibayar dan pilih **Receive**.
+5. Dalam dialog, semak jumlah. Jika diskaun dikenakan, anda akan melihat jumlah **Original** di samping
+   jumlah yang sebenarnya perlu dibayar — terimalah jumlah yang perlu dibayar, bukan jumlah asal.
+6. Tetapkan tarikh **received on** jika wang diterima lebih awal daripada hari ini. Lalai ialah hari ini.
+7. Rekodkan **payment method** (kaedah bayaran).
+8. Lampirkan imej jika institut anda memerlukannya — gambar cek atau slip pindahan.
+   **Remove** akan mengosongkannya jika anda tersilap memilih fail.
+9. Pilih **Confirm _amount_**.
+
+Anda akan melihat **Payment recorded — receipt #_n_**. Nombor resit itu ialah rujukan ibu bapa;
+serahkan kepada mereka.
+
+Jika anda menerima **Payment failed**, tiada apa yang direkodkan — jangan masukkan semula sebagai bayaran
+kedua sehingga anda pasti bahawa yang pertama tidak berjaya.
+
+## Menyemak kerja anda sendiri
+
+**My entries today** menyenaraikan semua yang telah anda terima sepanjang sesi ini, bersama nombor resit.
+Gunakannya untuk menyemak jumlah sebelum menyerahkan wang, dan pada akhir syif anda sebelum
+[penutupan hari](/ms/docs/educonnect-tutorial-day-close).
+
+## Berkaitan
+
+- [Tutup Hari](/ms/docs/educonnect-tutorial-day-close)
+- [Aliran Kerja Perakaunan](/ms/docs/shared-staff-accounting-overview)

@@ -1,0 +1,57 @@
+---
+title: "பயிற்சி: வகுப்பைச் சேர்த்தல்"
+description: Classes திரையிலிருந்து வகுப்பை உருவாக்குதல், நான்கு புலங்களும் எதற்காக, வகுப்பு உருவான பின் அடுத்து என்ன செய்வது.
+product: educonnect
+section: Tutorials
+order: 10
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/components/class_components/add_class_dialog.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/class_list.dart
+screenshotIds:
+  - "tutorial-add-a-class"
+hidden: false
+---
+
+வகுப்பு என்பது கிட்டத்தட்ட மற்ற அனைத்தும் தொங்கும் கொள்கலன் — மாணவர்கள், வருகை, நேரசூசிக் கட்டம், பரீட்சை முடிவுகள், கட்டண நியமனங்கள் அனைத்தும் வகுப்பு மூலமே முகவரியிடப்படுகின்றன. முதலில் வகுப்பை உருவாக்குங்கள்.
+
+**உங்களுக்குத் தேவை:** **Students → Classes** இற்கான அணுகலும், வகுப்புகளை உருவாக்கும் அனுமதியும்.
+
+## படிகள்
+
+1. பக்க drawer இல் **Students → Classes** ஐத் திறவுங்கள்.
+2. **Add Class** ஐத் தெரிவு செய்யுங்கள். **Add New Class** உரையாடல் திறக்கும்.
+3. நான்கு புலங்களையும் நிரப்புங்கள்:
+   - **Grade** — பட்டியலிலிருந்து தெரிவு செய்யுங்கள். [Grade Curriculum](/ta/docs/educonnect-tutorial-grade-curriculum) இற்கும் தரம் முழுவதற்குமான அறிக்கையிடலுக்கும் வகுப்புகளைக் குழுவாக்குவது இதுவே; எனவே இது சரியாக இருக்க வேண்டும்.
+   - **Syllabus** — பட்டியலிலிருந்து தெரிவு செய்யுங்கள். ஒரே தரத்தில் வெவ்வேறு பாடத்திட்டங்களிலுள்ள வகுப்புகள் தனித்தனியாக அறிக்கையிடப்படும்.
+   - **Class Name** — கட்டாயம்; முழு முறைமையிலும் வகுப்பின் அடையாளங்காட்டி இதுவே. விளக்கமாக இருப்பதை விடக் குறுகியதும் வழமையானதும் சிறந்தது: `10-A`, `Grade 3 Blue`. இனிமேல் ஒவ்வொரு வகுப்பு dropdown இலும் நீங்கள் காண்பது இதுவே.
+   - **Teacher Name** — விருப்பத்துக்குரியது. வெறுமையாக விட்டு, வகுப்பாசிரியரைப் பின்னர் முறையாக அமைக்கலாம்.
+4. **Save** ஐத் தெரிவு செய்யுங்கள்.
+
+**Class added successfully** எனத் தோன்றி, புதிய வகுப்பு பட்டியலில் தோன்றும். அதற்குப் பதிலாக **Failed to add class.** என வந்தால், மிகப் பொதுவான காரணம் ஏற்கனவே உள்ள வகுப்புப் பெயராகும்.
+
+## வகுப்பாசிரியரை அமைத்தல்
+
+உரையாடலிலுள்ள **Teacher Name** புலம் சுயாதீன உரை — அது ஒரு லேபிள்; ஆசிரியர் பதிவுக்கான இணைப்பு அல்ல. வகுப்பை உடைமையாகக் கொண்ட ஆசிரியரை உண்மையில் நியமிக்க:
+
+1. **Students → Classes** இலிருந்து வகுப்பைத் திறவுங்கள்.
+2. வகுப்புத் திரையிலுள்ள **⋮ More options** மெனுவைப் பயன்படுத்துங்கள்.
+3. **Edit Class Teacher** ஐத் தெரிவு செய்து ஆசிரியரைத் தெரிவு செய்யுங்கள்.
+
+இது முக்கியம்: **My Class** இல் வகுப்பைப் பெறுபவரும், அதன் வருகையைப் பதியக்கூடியவரும் வகுப்பாசிரியரே. [Taking Attendance as a Teacher](/ta/docs/educonnect-teacher-taking-attendance) ஐப் பாருங்கள்.
+
+## அடுத்து என்ன செய்வது
+
+வகுப்பு உருவான பின், ஏறக்குறைய இந்த வரிசையில்:
+
+1. [மாணவர்களை அதில் சேர்த்தல்](/ta/docs/educonnect-tutorial-add-a-student) — ஒவ்வொருவராக, அல்லது [Excel இலிருந்து இறக்குமதி செய்தல்](/ta/docs/educonnect-tutorial-import-students).
+2. நேரசூசி அமைக்க முடியும்படி [அதன் பாடங்களை நியமித்தல்](/ta/docs/educonnect-tutorial-class-subjects).
+3. வகுப்புக்கு வகுப்பு கட்டணம் வேறுபடுமெனில் [கட்டண அமைப்பில்](/ta/docs/educonnect-tutorial-fee-setup) அதைச் சேர்த்தல்.
+
+## தொடர்புடையவை
+
+- [Managing Students, Classes and Substitutions](/ta/docs/shared-staff-student-admissions-management)
+- [Setting Up a New Institute](/ta/docs/educonnect-setting-up-a-new-institute)

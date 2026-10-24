@@ -1,0 +1,56 @@
+---
+title: "Tutorial: Gestionar los prestatarios de la biblioteca"
+description: Los préstamos, reservas, multas y límites de una persona, el bloqueo de un prestatario, la incorporación de personal como prestatarios y el acceso a la aplicación.
+product: educonnect
+section: Tutorials
+order: 232
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/library/borrowers_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/borrower_detail_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/library/widgets/app_access_dialog.dart
+screenshotIds:
+  - "library-borrower"
+hidden: false
+---
+
+Los prestatarios son sus estudiantes, docentes y personal. No se copia nada: la biblioteca agrega solo su propio
+estado (un bloqueo, límites personales, un conteo de préstamos) la primera vez que alguien toma un libro prestado.
+
+Abra **Library → Borrowers**, busque y seleccione a una persona.
+
+## La página del prestatario
+
+- **Library card**: el número de carnet registrado.
+- Historial de **Loans**, **Holds**, **Fines** y **Returned**.
+- **Blocked because**: el motivo por el que no puede pedir prestado ahora. Esto se calcula al consultar y nunca se
+  almacena: límite de préstamos, un libro vencido, multas impagas por encima de su límite o un bloqueo aplicado manualmente.
+- **Reserve a book** en su nombre.
+
+## Bloquear, desbloquear y límites personales
+
+Con **Add staff borrowers, block, unblock & set limits** puede bloquear a alguien indicando un motivo. La persona
+conserva los libros que tiene; el mostrador rechaza nuevos préstamos.
+
+En **Own limits** configure **Books at a time (0–50)** o **Loan length in days** para una sola persona. Deje una
+casilla vacía para usar la **Loan rule** correspondiente a su tipo.
+
+## Agregar un prestatario del personal
+
+El personal no docente no figura en sus listas de estudiantes ni de docentes. Use **New staff borrower** en esta página
+o en el mostrador.
+
+## Dar acceso a la aplicación a un prestatario del personal
+
+**Give app access** crea un inicio de sesión para que un miembro del personal pueda ver sus propios préstamos y reservas en
+[Mi biblioteca](/es/docs/educonnect-library-my-library). Elija un nombre de usuario (de 3 a 64 caracteres: letras,
+dígitos, puntos, guiones, guiones bajos y @, sin espacios) y una contraseña inicial. **Remove access** lo
+retira. Los docentes no necesitan esto; utilizan la cuenta que ya tienen.
+
+## Temas relacionados
+
+- [Mostrador de circulación](/es/docs/educonnect-library-circulation-desk)
+- [Multas](/es/docs/educonnect-library-fines)

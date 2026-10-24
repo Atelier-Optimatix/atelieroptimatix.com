@@ -1,0 +1,45 @@
+---
+title: "Tutorial: Mencipta atau Mengedit Kurikulum Gred"
+description: Menetapkan apa yang diajar kepada seluruh gred dan kekerapannya, kemudian mengenakannya kepada setiap kelas dalam gred itu dengan satu tindakan.
+product: educonnect
+section: Tutorials
+order: 60
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/widgets/grade_curriculum_tab.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/timetable_config_screen.dart
+screenshotIds:
+  - "tutorial-grade-curriculum"
+hidden: false
+---
+
+Kurikulum gred ialah templat: *"setiap kelas Grade 8 diajar mata pelajaran ini, sekian kali seminggu."* Anda menulisnya sekali bagi setiap gred, kemudian mengenakannya kepada semua kelas gred itu dan bukannya menugaskan mata pelajaran kelas demi kelas.
+
+**Anda memerlukan:** akses kepada **Timetable → Configuration**, dan kelas yang sudah ditetapkan gred yang betul — lihat [Add a Class](/ms/docs/educonnect-tutorial-add-a-class).
+
+## Langkah
+
+1. Buka **Timetable → Configuration** dan pilih tab **Grade Curriculum**.
+2. Pilih gred di bawah **Select Grade**.
+3. Bagi setiap mata pelajaran yang diajar kepada gred itu, pilih **Add Subject** dan isi:
+   - **Subject** — boleh dicari; senarai ini datang daripada **Timetable → Configuration → Subjects & Rules**.
+   - **Lessons / week** — berapa waktu seminggu yang diperoleh mata pelajaran ini. Inilah nombor yang cuba diletakkan oleh penjana.
+   - **Max per day** — had maksimum pada mana-mana satu hari. Biarkan kosong untuk menerima nilai lalai.
+   - **Max consecutive** — berapa banyak yang boleh berjalan berturut-turut. Biarkan kosong untuk menerima nilai lalai.
+
+   Kosong bukan sifar. Kosong bermaksud "guna nilai lalai"; baris hanya menunjukkan penanda **(override)** apabila anda menetapkan sesuatu secara jelas.
+4. Secara pilihan, isi **Book List** — senarai buku gred dalam teks bebas, disimpan bersama kurikulum.
+5. Pilih **Save Curriculum**. Ini menyimpan kurikulum **dan** mengenakannya kepada setiap kelas dalam gred itu: pengesahan menyatakan berapa banyak kelas akan menerimanya dan mengingatkan anda bahawa *existing teacher assignments will not be changed*. Pilih **Save & Apply**, dan keputusan memberitahu anda berapa banyak entri mata pelajaran kelas yang **created** dan berapa yang **updated**.
+
+Oleh sebab ia tidak pernah menyentuh tugasan guru, menyimpan semula selepas perubahan kurikulum adalah selamat — ia menambah dan melaraskan mata pelajaran tanpa membatalkan siapa mengajar apa.
+
+## Mengedit kurikulum sedia ada
+
+Ubah nombor di tempatnya dan **Save Curriculum** sekali lagi. Membuang mata pelajaran daripada kurikulum tidak membuangnya secara retroaktif daripada kelas yang sudah mempunyainya; buang di [Class Subjects](/ms/docs/educonnect-tutorial-class-subjects) jika anda mahu ia dihapuskan.
+
+## Langkah seterusnya
+
+[Tugaskan guru kepada mata pelajaran itu](/ms/docs/educonnect-tutorial-class-subjects), kemudian
+[jana jadual waktu](/ms/docs/educonnect-tutorial-generate-timetable).

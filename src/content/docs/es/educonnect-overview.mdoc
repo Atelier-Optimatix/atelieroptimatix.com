@@ -1,0 +1,73 @@
+---
+title: Qué es EduConnect
+description: Una plataforma, dos nombres — cómo encajan EduConnect para escuelas, KinderCare para jardines de infancia, el portal para padres y el portal de admisiones.
+product: educonnect
+section: Getting started
+order: 0
+roles:
+  - admin
+  - staff
+  - teacher
+  - parent
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/
+screenshotIds:
+  - "staff-dashboard"
+hidden: false
+---
+
+## La versión corta
+
+**EduConnect es la aplicación principal.** Es el panel del personal donde residen las clases, los estudiantes,
+los docentes, la asistencia, el horario, los exámenes y las tarifas. Casi todo lo que contiene esta guía trata
+de esa única aplicación.
+
+La misma aplicación se comercializa con dos nombres, según para quién se implemente:
+
+- **EduConnect** — la implementación para escuelas.
+- **KinderCare** — la implementación para jardines de infancia.
+
+No son productos separados con funciones distintas. Son el mismo código base con una redacción distinta,
+valores predeterminados distintos y un conjunto diferente de pantallas activadas. Un jardín de infancia no recibe
+una versión reducida de EduConnect; recibe EduConnect con las partes que un jardín de infancia realmente usa.
+
+Si una pantalla se describe en cualquier parte de la sección **EduConnect** de esta guía, dé por hecho que también
+existe en una implementación de KinderCare, salvo que la sección de KinderCare indique lo contrario.
+
+## Las piezas que lo rodean
+
+Cuatro elementos acompañan al panel del personal:
+
+| Pieza | Quién inicia sesión | Para qué sirve |
+| --- | --- | --- |
+| **Staff dashboard** | Personal, docentes, administradores | Todo lo operativo: este es EduConnect propiamente dicho |
+| **Parent portal** | Padres | Asistencia, informes de progreso, el manual, pago de tarifas |
+| **Admissions portal** | Postulantes, antes de ser estudiantes | Lectura del prospecto, postulación, pago de la tarifa de solicitud |
+| **KinderCare mobile apps** | Personal de jardín de infancia y padres | Las dos aplicaciones para teléfono descritas en la sección de KinderCare |
+
+Las dos aplicaciones móviles de KinderCare, una **staff app** y una **parent app**, solo existen para implementaciones de
+jardines de infancia. Las escuelas usan en su lugar el portal web para padres.
+
+## Dónde se ejecuta
+
+El panel del personal se ejecuta en cualquier navegador moderno, y la misma aplicación también se distribuye como:
+
+- **Aplicaciones para teléfono** para Android y iPhone. Los docentes pueden agregar widgets a la pantalla de inicio para **Mark My
+  Attendance**, **My Timetable Today** y el **Calendar**; al tocar uno se abre la aplicación en esa
+  pantalla. **Send Messages** no está disponible en las aplicaciones para teléfono; use la aplicación web o la de Windows para ello.
+- Una **aplicación de escritorio para Windows**, que se actualiza sola cuando se publica una nueva versión.
+
+Todo lo de esta guía se aplica a todas ellas; cuando una pantalla difiere en un teléfono, la página lo indica.
+
+## Por qué la redacción cambia entre institutos
+
+El panel toma su propio vocabulario de la configuración del instituto, de modo que el mismo botón puede decir
+"School" en un instituto y "Kindergarten" en otro. Es configuración, no una versión distinta.
+Consulte [Por qué cambia la terminología entre institutos](/es/docs/shared-institute-branding).
+
+## Por dónde empezar
+
+- ¿Es nuevo en el panel del personal? [Cómo orientarse en la aplicación](/es/docs/educonnect-navigating-the-dashboard).
+- ¿Configura un instituto desde cero? [Configuración de un nuevo instituto](/es/docs/educonnect-setting-up-a-new-institute).
+- ¿Es docente? Vaya directamente a [Su primera semana como docente](/es/docs/educonnect-teacher-getting-started).

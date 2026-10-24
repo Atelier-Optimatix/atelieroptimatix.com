@@ -1,0 +1,67 @@
+---
+title: "Payer au secrétariat de l'établissement"
+description: Payer des frais de candidature en espèces, par chèque ou par virement bancaire plutôt que par carte, et ce qui change une fois le paiement enregistré.
+product: admissions
+section: Guides
+order: 4
+roles:
+  - applicant
+sourcePaths:
+  - educonnect-admissions/backend/controllers/adminController.js
+  - educonnect-admissions/backend/constants/statuses.js
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## Lorsque vous ne payez pas par carte
+
+Tous les candidats ne paient pas en ligne. Les établissements peuvent enregistrer des frais réglés
+d'une autre manière :
+
+- **Cash** (espèces)
+- **Cheque** (chèque)
+- **Bank transfer** (virement bancaire)
+- **Other** (autre), pour tout mode de paiement convenu par l'établissement en dehors de ceux-ci
+
+Vous ne les enregistrez pas vous-même. Vous payez l'établissement, et un responsable des admissions
+l'enregistre sur votre candidature.
+
+## Ce qu'il faut communiquer au secrétariat
+
+Demandez-lui de noter une **référence** — un numéro de reçu ou la référence du virement bancaire.
+L'enregistrement conserve une référence et des notes, ainsi que le nom de la personne qui l'a saisi,
+de sorte qu'un paiement mis en question par la suite puisse être retracé jusqu'à la personne qui l'a
+saisi et aux justificatifs correspondants.
+
+Conservez votre propre copie de cette référence jusqu'à l'envoi de votre candidature.
+
+## Ce qui change une fois le paiement enregistré
+
+L'enregistrement du paiement produit deux effets simultanés :
+
+- Le statut de vos frais devient **paid** (payé).
+- Votre candidature devient un **draft** (brouillon) que vous pouvez remplir.
+
+Le paiement a donc pour effet d'ouvrir le formulaire. Si vous avez payé au secrétariat et que la
+candidature ne vous permet toujours pas de poursuivre, c'est que le paiement n'a pas encore été
+enregistré — il faut alors appeler le secrétariat, et non réessayer dans le portail.
+
+{% callout type="note" %}
+Un paiement par carte au statut **pending** (en attente) ne peut pas être régularisé de cette
+manière. L'enregistrement manuel couvre les autres modes de paiement ; les paiements par carte en
+ligne ne sont confirmés que par la passerelle de paiement. Consultez
+[Payer vos frais de candidature](/fr/docs/admissions-payment) pour savoir quoi faire en cas de
+paiement par carte bloqué.
+{% /callout %}
+
+## Si les frais ne sont pas configurés
+
+Il se peut que le secrétariat ne puisse pas enregistrer un paiement parce que les frais d'admission
+de l'établissement n'ont pas été configurés. Il s'agit d'une tâche de configuration qui incombe à
+l'établissement, et que vous ne pouvez pas résoudre de votre côté.
+
+## À consulter également
+
+- [Payer vos frais de candidature](/fr/docs/admissions-payment)
+- [Déposer une candidature auprès d'un établissement](/fr/docs/admissions-applying)
+- [Se connecter pour candidater](/fr/docs/admissions-signing-in)

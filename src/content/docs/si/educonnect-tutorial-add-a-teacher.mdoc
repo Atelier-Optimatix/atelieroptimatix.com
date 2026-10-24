@@ -1,0 +1,61 @@
+---
+title: "නිබන්ධනය: ගුරුවරයෙකු එක් කිරීම"
+description: ගුරු වාර්තාවක් සෑදීම, ඔවුන් උගන්වන විෂයයන් පැවරීම සහ ඔවුන්ට පිවිසුමක් ලබා දෙන වෙනම පියවර.
+product: educonnect
+section: Tutorials
+order: 40
+roles:
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/teacher/add_teacher_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/teacher/teacher_management_page.dart
+screenshotIds:
+  - "tutorial-add-a-teacher"
+hidden: false
+---
+
+## ගුරු වාර්තාවක් යනු පිවිසුමක් නොවේ
+
+මේවා වෙනස් දෙයක් දෙකකි, නව ගුරුවරයෙකුට "පිවිසිය නොහැක" යන්නට වඩාත්ම පොදු හේතුව පළමුවැන්න පමණක් කිරීමයි:
+
+1. **ගුරු වාර්තාව** — පුද්ගලයා, ඔවුන්ගේ විෂයයන්, පැමිණීම, කාලසටහන. මෙහිදී සාදනු ලැබේ.
+2. **පරිශීලක ගිණුම** — ඔවුන් සැබවින්ම පිවිසීමට භාවිත කරන පරිශීලක නාමය සහ මුරපදය. **Administration → Users** හි සාදනු ලැබේ, [Users and Access](/si/docs/educonnect-tutorial-users-and-access) බලන්න.
+
+පළමුව ගුරු වාර්තාව සාදන්න, ඉන්පසු ගිණුම.
+
+## පියවර
+
+1. **Teachers → Directory** විවෘත කරන්න.
+2. **Add Teacher** තෝරන්න.
+3. පෝරමය පුරවන්න:
+   - **Teacher ID** — අවශ්‍යයි සහ අද්විතීයයි. එය භාවිතයේ තිබේ නම් ක්ෂේත්‍රය **Duplicate Teacher ID detected** ලෙස අනතුරු අඟවයි.
+   - **Full Name** — අවශ්‍යයි.
+   - **Gender** — අවශ්‍යයි.
+   - **Date of Birth** සහ **Joined Date** — දෙකම අත්‍යවශ්‍ය නොවේ, දෙකම `YYYY-MM-DD`.
+   - **Contact Number**, **Email**, **Address**, **Religion**, **Ethnicity**, **Nationality** — සියල්ලම අත්‍යවශ්‍ය නොවේ.
+   - **RFID** — අත්‍යවශ්‍ය නොවේ. ගුරුවරයා තමන්ගේම පැමිණීම සඳහා ස්කෑන් කරන කාඩ්පත මෙයයි. එය නොමැතිව, ඔවුන්ගේ පැමිණීම වෙනත් ක්‍රමයකින් සටහන් කළ යුතුය.
+4. **ඔවුන් උගන්වන විෂයයන්** එක් කරන්න. පසු අවස්ථාවල වඩාත්ම වැදගත් වන ක්ෂේත්‍රය මෙයයි: කාලසටහන් උත්පාදකය සහ ආදේශක යෝජනා දෙකම විෂයක් සඳහා ගුරුවරයකු යෝජනා කරන්නේ මෙහි ලැයිස්තුගත කර ඇත්නම් පමණි. විෂයයන් නැති ගුරුවරයෙකු කිසිදා ස්වයංක්‍රීයව උපලේඛනගත නොවේ.
+5. ඔබේ ආයතනය ඡායාරූප භාවිත කරන්නේ නම් **photo** එකක් එක් කරන්න.
+6. **SAVE TEACHER** තෝරන්න.
+
+## ඉන්පසු ඔවුන්ට පිවිසුමක් ලබා දෙන්න
+
+1. **Administration → Users** විවෘත කරන්න.
+2. **Add User** තෝරා, ඔබ දැන් සෑදූ ගුරු වාර්තාවට සම්බන්ධ කරමින් ගිණුම සාදන්න.
+3. ගිණුමට ප්‍රවේශ විය හැක්කේ කුමකටදැයි **Administration → Access Control** හි පරීක්ෂා කරන්න — [Users and Access](/si/docs/educonnect-tutorial-users-and-access) බලන්න.
+
+## සංස්කරණය සහ මකා දැමීම
+
+**Teachers → Directory** වෙතින් ගුරුවරයා විවෘත කර **Edit** භාවිත කරන්න. **DELETE TEACHER** පළමුව තහවුරු කරන අතර වාර්තාව එහි පැමිණීමේ ඉතිහාසය සමඟ ඉවත් කරයි — ඉවත් වී ගිය අයෙකු සම්බන්ධයෙන්, මකා දැමීමෙන් පසුව නොව පෙර ඔබේ ආයතනය සමඟ පරීක්ෂා කරන්න.
+
+## ඊළඟට කළ යුත්තේ
+
+- [Class Subjects](/si/docs/educonnect-tutorial-class-subjects) හි ඔවුන් විෂය ගුරුවරයකු ලෙස පන්තිවලට පවරන්න.
+- [කාලසටහන උත්පාදනය](/si/docs/educonnect-tutorial-generate-timetable) කිරීමට පෙර, **Timetable → Configuration → Teacher Constraints** හි ඔවුන් නිදහස් සහ නිදහස් නොවන වේලාවන් සකසන්න.
+- පන්තියක **Edit Class Teacher** හරහා ඔවුන් පන්ති ගුරුවරයකු බවට පත් කරන්න — [Add a Class](/si/docs/educonnect-tutorial-add-a-class) බලන්න.
+
+## සම්බන්ධිත
+
+- [Managing Teachers](/si/docs/shared-staff-teacher-management)
+- [Teacher Attendance & Substitution](/si/docs/shared-staff-teacher-attendance)

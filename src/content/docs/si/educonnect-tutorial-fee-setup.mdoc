@@ -1,0 +1,57 @@
+---
+title: "නිබන්ධනය: ගාස්තු සකසන්න"
+description: ඔබේ ආයතනය අය කරන දේ, එය ගෙවිය යුතු දිනය, සහ අදාළ වන පන්ති නිර්වචනය කිරීම — ගෙවීමක් වාර්තා කිරීමට පෙර.
+product: educonnect
+section: Tutorials
+order: 130
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/fee_setup_page.dart
+screenshotIds:
+  - "tutorial-fee-setup"
+hidden: false
+---
+
+ගාස්තු නොමැති නම් Accounting හි කිසිවක් ක්‍රියා නොකරයි. ගෙවීමක් සැමවිටම ගාස්තුවකට *එරෙහිව* වන අතර, ගාස්තු ලැබෙන්නේ ඔබ මෙහි නිර්වචනය කරන ගාස්තු කාලසටහනෙනි.
+
+**ඔබට අවශ්‍ය වන්නේ:** **Accounting → Fee Setup** වෙත ප්‍රවේශයයි.
+
+## මට්ටම් දෙක
+
+- **fee type** යනු අය කරන දෙයයි — Term Fee, Admission Fee, Transport.
+- **schedule** යනු එහි එක් වාරිකයකි: ලේබලයක්, මුදලක්, ගෙවිය යුතු දිනයක්, සහ එය අදාළ වන අය.
+
+එක් fee type එකකට සාමාන්‍යයෙන් schedule කිහිපයක් ඇත — එකම Term Fee හි වාර තුනේ වාරික.
+
+## පියවර
+
+1. **Accounting → Fee Setup** විවෘත කරන්න.
+2. **fee type** එක සාදන්න හෝ තෝරන්න.
+3. වාරිකයක් එක් කිරීමට **Schedule** තෝරා පහත දෑ පුරවන්න:
+   - **Label** — දෙමව්පියන්ගේ ප්‍රකාශයේ සහ රිසිට්පතේ පෙන්වන නම. නිශ්චිත වන්න: `Instalment` නොව `Term 1 2026`.
+   - **Amount**.
+   - **Due date** — ගාස්තුවක් කල් පසුවීමට හේතුව, සහ ගෙවීම් මතක් කිරීම් පදනම් වන දිනය.
+   - **Applies to classes** — **All classes** හෝ නිශ්චිත පන්ති ටික් කරන්න. වෙනස් වසර කණ්ඩායම්වලට වෙනස් මුදල් අය කරන්නේ මෙලෙසය: පන්ති කට්ටලයකට එක් schedule එකක්.
+   - **Active** — ක්‍රියාත්මකව තබන්න. එය ක්‍රියාවිරහිත කිරීමෙන් schedule එකක් එහි ඉතිහාසය මකා නොදමා විශ්‍රාම ගන්වයි.
+4. Save.
+
+## අනුපිටපත් කිරීම
+
+**Duplicate** මගින් පවතින schedule එකක් පිටපත් කරන අතර ඔබට ලේබලය, මුදල සහ ගෙවිය යුතු දිනය පමණක් වෙනස් කළ හැක. ගාස්තුවක් ඊළඟ වාරයට හෝ වසරට ගෙන යාමට ඇති වේගවත්ම ක්‍රමය මෙයයි, සහ වාරික අතර වචන සමාන තබයි.
+
+## මකනවා වෙනුවට විශ්‍රාම ගන්වන්න
+
+තවදුරටත් අදාළ නොවන schedule එකක් සඳහා **Active** ක්‍රියාවිරහිත කරන්න. දැනටමත් ගෙවීම් ඇති එකක් මකා දැමීමෙන් අනාථ ගාස්තු ඇති වන අතර, ඒවා ඔබට [Reconciliation](/si/docs/educonnect-tutorial-reconciliation) හි ඉවත් කිරීමට සිදු වේ.
+
+## ඊළඟට කළ යුත්තේ
+
+- ගෙවීම් ලැබෙන විට [ඒවා වාර්තා කරන්න](/si/docs/educonnect-tutorial-record-a-payment).
+- ශිෂ්‍යත්ව සහ සහෝදර අඩු කිරීම් සඳහා [වට්ටම්](/si/docs/educonnect-tutorial-discounts) සකසන්න.
+- නොගෙවූ ගාස්තු ද්වාර ප්‍රවේශයට කරන බලපෑම **Accounting → Portal Access Rules** හි තීරණය කරන්න.
+
+## අදාළ
+
+- [Accounting Workflow — Ledger, Day-Close and Reconciliation](/si/docs/shared-staff-accounting-overview)

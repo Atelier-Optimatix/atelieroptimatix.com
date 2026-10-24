@@ -1,0 +1,88 @@
+---
+title: Mencari Jalan Anda
+description: Cara laci sisi disusun, sebab dua orang melihat menu yang berbeza, dan di mana skrin dalam panduan ini sebenarnya berada.
+product: educonnect
+section: Getting started
+order: 1
+roles:
+  - admin
+  - staff
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/nav_menu.dart
+  - attendance-web-app/edu-frontend/lib/shell/app_drawer.dart
+  - attendance-web-app/edu-frontend/lib/navigation/access.dart
+hidden: false
+---
+
+## Laci sisi
+
+Segala-galanya dicapai daripada laci di sebelah kiri. Entrinya dikumpulkan, dan kumpulan sentiasa muncul
+dalam susunan yang sama:
+
+| Kumpulan | Apa yang ada di dalamnya |
+| --- | --- |
+| *(peringkat teratas)* | Dashboard, Help & What's New, List Reports (dan Teacher Complaints, untuk guru) |
+| **My Class** | Students, Attendance — kelas guru itu sendiri |
+| **Students** | Student Search, Classes, Admissions, Prospectus, Fee Counter, Left Students, Student ID Cards |
+| **Attendance** | Today's Attendance, Summary, Reports, Saved Filters, Live Monitor |
+| **Teachers** | Overview, Directory, Attendance, Substitution |
+| **Timetable** | Timetable Grid, Configuration (Bell Schedule, Subjects & Rules, Grade Curriculum, Class Subjects dan lain-lain ialah tab di dalamnya) |
+| **Exams** | Exams, Rankings, Result Changes, Progress Reports |
+| **Analytics** | Statistics, Overview, Students & Risk, Academics, Attendance, Payments, Operations |
+| **Accounting** | Overview, Ledger, Manual Payment Entry, Online Payments, Day Close, Reconciliation, Fee Setup, Portal Access Rules, Invoices, Discounts |
+| **Communication** | Send Messages, Notification History, Notice Board |
+| **Administration** | Users, Locations, Settings, Access Control, Handbook, Prospectus, ID Cards, Campus Map, Calendar |
+| *(ibu pejabat)* | Group Overview, Branches, Teachers |
+| **Reports** *(ibu pejabat)* | Accounting, Analytics, Collections, Operations, Exams, Admissions, Demographics |
+| **Configuration** *(ibu pejabat)* | Discount Rules, Term Dates |
+
+**Calendar** (yang menggantikan skrin *Holidays* dan *Events* yang berasingan) memuatkan kedua-dua acara
+dan cuti; lihat [Tetapkan Cuti, Penggal dan Hari Bekerja](/ms/docs/educonnect-tutorial-holidays-and-terms).
+**List Reports** terletak pada peringkat teratas, di bawah Help & What's New; lihat
+[List Reports](/ms/docs/educonnect-list-reports). **Student ID Cards** (di bawah Students) menjejaki kad
+setiap pelajar; **ID Cards** (di bawah Administration) ialah kumpulan kad kosong dan reka bentuk kad; lihat
+[Kad ID Pelajar](/ms/docs/educonnect-tutorial-id-cards).
+
+Pilih pengepala sesuatu kumpulan untuk mengembangkannya; laci ialah panel pepejal pada setiap saiz skrin,
+dan pada telefon ia dibuka sebagai tindanan.
+
+Guru juga mendapat **My Class** (pelajar dan kehadiran kelas mereka sendiri) dan **My Timetable**. Rekod
+kehadiran mereka sendiri, **My Attendance**, terletak di bahagian atas kumpulan Attendance.
+
+## Menu akaun anda
+
+Lencana bulat di penjuru kanan atas setiap skrin (foto anda, atau huruf pertama nama anda) membuka menu
+akaun. Ia mengandungi:
+
+- **My Profile** — butiran anda sendiri. Guru menyunting rekod guru mereka di sini; pentadbir menyunting
+  nama, nombor telefon bimbit, jawatan dan e-mel mereka.
+- **Account Settings** — nama pengguna dan kata laluan.
+- **Preferences** — **Theme** warna dan **Display density** (*Automatic*, *Comfortable* atau *Compact*;
+  Compact memuatkan lebih banyak baris pada skrin kecil atau lama).
+- **Log out**.
+
+Versi aplikasi dipaparkan di bahagian bawah laci — sebutkannya apabila anda menghubungi sokongan. Dalam
+aplikasi telefon dan tablet, sepanduk bertulis **A new version is available.** dengan butang **Update**
+muncul apabila keluaran yang lebih baharu tersedia; anda boleh menolaknya.
+
+## Sebab laci anda kelihatan berbeza daripada rakan sekerja
+
+Laci bukan menu tetap. Ia dibina daripada skrin yang **anda** dibenarkan membuka, jadi:
+
+- Kumpulan yang tidak boleh anda akses **tidak muncul langsung** — ia tidak dikelabukan.
+- Kumpulan yang hanya satu skrin boleh anda capai **runtuh menjadi satu jubin**, tanpa pengepala yang boleh
+  dikembangkan. Jadi "Timetable" mungkin muncul sebagai kumpulan bagi pentadbir dan sebagai satu pautan
+  **My Timetable** bagi guru.
+- Dua orang yang mempunyai jawatan sama masih boleh melihat menu yang berbeza, kerana akses diberikan bagi
+  setiap skrin dalam **Administration → Access Control**, bukan bagi setiap peranan.
+
+Jika sesuatu skrin yang diterangkan dalam panduan ini tiada dalam laci anda, itu persoalan akses, bukan
+pepijat. Minta pentadbir institut anda menyemak [Access Control](/ms/docs/educonnect-tutorial-users-and-access).
+
+## Kembali
+
+Bar di bahagian atas menunjukkan breadcrumb bagi tempat anda berada. Skrin butiran — profil pelajar,
+sesuatu kelas peperiksaan — menonjolkan **induk terdekat** dalam laci dan bukannya entri mereka sendiri,
+jadi laci kekal pada tempatnya semasa anda meneroka lebih dalam.

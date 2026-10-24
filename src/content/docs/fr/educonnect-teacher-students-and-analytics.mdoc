@@ -1,0 +1,57 @@
+---
+title: "Enseignants : Rechercher un élève"
+description: Trouver un élève, lire son profil, et ce que les analyses qui y figurent vous indiquent réellement.
+product: educonnect
+section: For teachers
+order: 80
+roles:
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_search.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/
+hidden: false
+---
+
+## Trouver un élève
+
+Deux possibilités :
+
+- **My Class → Students** — votre propre liste de classe, par laquelle vous commencerez généralement.
+- **Students → Student Search** — tous les élèves, si cet accès vous a été accordé. Recherchez par nom ou par Student
+  ID ; l'ID est plus rapide et sans ambiguïté lorsque des noms se répètent.
+
+La sélection d'un élève ouvre son profil. Student Search peut aussi filtrer par classe, genre et informations manquantes ;
+voir [Student Search, Profiles and Left Students](/fr/docs/educonnect-student-search-and-profile).
+
+## Ce que contient le profil
+
+Les informations de l'élève, puis son historique : assiduité sur le mois et le trimestre (y compris une grille
+**Attendance by Day** pour le trimestre que vous choisissez, qui indique les jours fériés par *Not a school day*), résultats d'examens
+dans toutes les matières, et paiements lorsque vous pouvez les consulter.
+
+Pour un enseignant, le plus utile ici est le croisement de ces données. Une baisse de résultats qui coïncide avec une
+baisse d'assiduité appelle un autre échange que celle qui ne coïncide pas, et le profil est le seul
+endroit où les deux figurent sur le même écran.
+
+## Lire honnêtement les chiffres d'assiduité
+
+L'assiduité mensuelle et trimestrielle d'un profil est construite à partir des mêmes enregistrements que vous créez chaque
+matin. Un élève qui semble avoir manqué quinze jours a peut-être simplement fait partie d'une classe dont l'appel
+n'a pas été complété. Avant d'en parler à une famille, vérifiez l'assiduité de la classe elle-même pour
+ces dates — voir
+[Read Your Class's Attendance](/fr/docs/educonnect-teacher-class-attendance).
+
+Si votre établissement a activé le **Permanent Record** (dossier permanent), les enseignants peuvent y ajouter et modifier des entrées pour leur propre
+classe ; seuls les administrateurs peuvent en supprimer.
+
+## Ce que vous pouvez et ne pouvez pas modifier
+
+Vous pouvez consulter un profil. Modifier des dossiers d'élèves, déplacer un élève d'une classe à une autre et supprimer
+quiconque sont des actions du secrétariat — et le Student ID et la Class ne peuvent plus être modifiés une fois l'élève créé,
+par personne. Voir [Add a Student](/fr/docs/educonnect-tutorial-add-a-student).
+
+## Voir aussi
+
+- [Managing Students, Classes and Substitutions](/fr/docs/shared-staff-student-admissions-management)
+- [Reading the Analytics Section](/fr/docs/shared-staff-analytics)

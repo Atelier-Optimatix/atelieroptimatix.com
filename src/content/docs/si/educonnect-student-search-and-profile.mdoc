@@ -1,0 +1,97 @@
+---
+title: සිසු සෙවුම, පැතිකඩ සහ පාසලෙන් ඉවත් වූ සිසුන්
+description: සෑම සිසුවෙකුම සෙවීම සහ පෙරීම, පැතිකඩ කියවීම (දිනපතා වාර පැමිණීම් ජාලය සහ ස්ථිර වාර්තාව ඇතුළුව), සහ සිසුවෙකු ඉවත් වූ විට සිදුවන දේ.
+product: educonnect
+section: Guides
+order: 60
+roles:
+  - admin
+  - staff
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_search.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/left_students_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/student_analytics_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_term_attendance_grid.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/student_permanent_record_section.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_analytics/widgets/mark_left_dialog.dart
+  - attendance-web-app/edu-frontend/lib/utils/left_student_fields.dart
+screenshotIds:
+  - "staff-student-search"
+  - "staff-student-profile-term-grid"
+  - "staff-left-students"
+hidden: false
+---
+
+## Student Search
+
+**Students → Student Search** මඟින් සෑම සිසුවෙකුම ඔබට සෙවීමට, පෙරීමට සහ වර්ග කිරීමට හැකි වගුවක ලැයිස්තුගත
+කරයි. එය එක් පුද්ගලයෙකු සොයා ගැනීම මෙන්ම "කුමන සිසුන්ට භාරකරුගේ දුරකථන අංකයක් නැද්ද?" වැනි ප්‍රශ්න සඳහාද
+සාදා ඇත.
+
+- **Search** නමක්, ID එකක්, පන්තියක්, භාරකරුවෙකු හෝ දුරකථන අංකයක් ගනී. එය එක් ක්ෂේත්‍රයකට සීමා කිරීමට
+  **Search By** භාවිත කරන්න, උදාහරණයක් ලෙස RFID හෝ Address; පෙරනිමිය *All fields* ය.
+- **Class** සහ **Gender** පෙරහන් ලැයිස්තුව පටු කරයි.
+- **Missing** මඟින් එක් ක්ෂේත්‍රයක අගය හිස් සිසුන් පෙන්වයි: **Mobile**, **Parent / Guardian**, **Address**,
+  **Email**, **Date of Birth**, **Religion**, **Nationality** හෝ **RFID**. නිවැරදි කළ යුතු වාර්තා සොයා ගැනීමට
+  එය වේගවත්ම ක්‍රමයයි, උදාහරණයක් ලෙස [හැඳුනුම්පත්](/si/docs/educonnect-tutorial-id-cards) නිකුත් කිරීමට පෙර.
+- ඕනෑම පෙරහනක් සක්‍රිය වූ පසු **Reset Filters** දිස්වේ.
+- වර්ග කිරීමට තීරු ශීර්ෂයක් ක්ලික් කරන්න. **Columns** තීරු සඟවයි හෝ පෙන්වයි, සහ **Compact** /
+  **Comfortable** මඟින් පේළි කොපමණ තදින් පිහිටයිද යන්න වෙනස් කරයි.
+
+*No students match your search.* යන්නෙන් අදහස් වන්නේ ඒ බවමයි; සිසුවා නැතිවී ඇතැයි උපකල්පනය කිරීමට පෙර
+පෙරහනක් හිස් කරන්න. එම දත්තමත් ගොනුවක් ලෙස ලබා ගැනීමට [List Reports](/si/docs/educonnect-list-reports) බලන්න.
+
+## සිසු පැතිකඩ
+
+සිසුවෙකු තෝරා ඔහුගේ පැතිකඩ විවෘත කරන්න. ඔබ කොටස් හරහා අනුචලනය කරන විට ශීර්ෂය එහිම පවතින අතර, සංස්කරණය කර
+සුරැකීමෙන් පසු ඔබ සුරැකූ අගයන් පෙන්වමින් පැතිකඩේම රැඳේ. ජංගම ලැයිස්තුව ඇතුළුව යෙදුම පුරා ඇති සිසු
+ලැයිස්තුවල, ඡායාරූපයක් ඇති තැන සෑම සිසුවෙකුගේම ඡායාරූපය පෙන්වයි.
+
+පැමිණීම ආකාර දෙකකින් දිස්වේ:
+
+- **Term Attendance** — වාරයේ පැමිණීම් සාරාංශය.
+- **Attendance by Day** — ඔබ **Term 1, Term 2…** dropdown එකෙන් තෝරන වාරය සඳහා දින දර්ශන ජාලයක්, දිනකට
+  එක් කොටුවක්, **Present**, **Absent**, **Not a school day** හෝ **Upcoming** ලෙස වර්ණ ගන්වා ඇත. එයට පහළින්,
+  chip එකක් පැමිණි පාසල් දින ගණන ගණන් කරයි, උදාහරණයක් ලෙස *18 / 20 school days attended (90.0%)*,
+  හෝ *No school days held yet* යැයි කියයි.
+
+Not-a-school-day කොටු පැමිණෙන්නේ ඔබේ [Calendar](/si/docs/educonnect-tutorial-holidays-and-terms) එකෙනි
+(සති අන්ත, නිවාඩු සහ වාරයෙන් පිටත දින), එබැවින් නිවාඩු දිනයක නොපැමිණීමක් ඔබට පෙනේ නම්, එයින් අදහස් වන්නේ
+නිවාඩුව සකසා නැති බවයි.
+
+තව පහළින් විභාග ප්‍රතිඵල, ගෙවීම්, සහතික, සහෝදර සහෝදරියන් සහ පෙර පන්ති ඇත. වාර්තාගත කාඩ්පතක් ඇති
+සිසුන්ට **ID Card** කොටසක්ද පෙනේ ([හැඳුනුම්පත් කළමනාකරණය සහ පසු විපරම](/si/docs/educonnect-tutorial-id-cards)
+බලන්න).
+
+### Permanent Record
+
+ඔබේ ආයතනය එය සක්‍රිය කර ඇත්නම්, **Permanent Record** කොටසේ **Conduct**, **Academic**, **Health** සහ
+**Other** ප්‍රවර්ග යටතේ දිනයක් සහිත සටහන් තබා ඇත. **Add entry** තෝරා, ප්‍රවර්ගයක් සහ දිනයක් තෝරා, සටහන ලියා,
+සුරකින්න. සෑම ඇතුළත් කිරීමක්ම එය එක් කළේ කවුද (සහ සංස්කරණය කළේ කවුද) යන්න පෙන්වයි.
+
+පරිපාලකයෙකු **Administration → Settings** හි **Enable the permanent record section** සක්‍රිය කරන
+තෙක් එය අක්‍රියයි. එය කියවිය හැක්කේ ගුරුවරුන්ට සහ පරිපාලකයන්ට පමණි, කිසි විටෙක දෙමාපියන්ට නොවේ. ගුරුවරුන්ට
+තමන්ගේ පන්තිය සඳහා ඇතුළත් කිරීම් එක් කර සංස්කරණය කළ හැකිය; මැකිය හැක්කේ පරිපාලකයන්ට පමණි. සැකසුම අක්‍රිය
+කිරීමෙන් කොටස සැඟවෙන නමුත් ඇතුළත් කිරීම් රැඳේ.
+
+## සිසුවෙකු ඉවත් වන විට
+
+*Mark students as left school* අවසරය ඇති අයෙකු (Access Control හි සකසන ලද) සිසුවාගේ සංස්කරණ පිටුවේ
+**Mark as left** බොත්තමෙන් සිසුවා ලේඛනයෙන් ඉවත් කරයි. dialog එක **Date left**, **Reason** සහ විකල්ප
+**Note** එකක් ඉල්ලයි. හේතු මෙසේය:
+*Finished school*, *Moved to a different school*, *Relocated abroad*, *Financial reasons*, *Family
+reasons* සහ *Other*. ඔබට *Student marked as left school* පෙනෙනු ඇත.
+
+**Students → Left Students** මඟින් ඉවත් වූ බව සටහන් කළ සැමටම ඔවුන්ගේ ID, අවසන් වරට ඉගෙනගත් පන්තිය, ඇතුළත්
+වූ දිනය, ඉවත් වූ දිනය සහ හේතුව සමඟ ලැයිස්තුගත කරයි. නම, සිසු ID හෝ පන්තිය අනුව සොයන්න, සහ ඒ ඕනෑම තීරුවක්
+අනුව වර්ග කරන්න. මකා දැමූ වාර්තාවල ඇති සිසුවෙකු **Move to left students** මඟින් මෙම ලැයිස්තුවට ගෙන යා හැකිය.
+මකා දැමූ සිසුන්ට එම වාර්තාවලින් තවමත් පූරණය වන පැතිකඩක් රැඳේ.
+
+ඉවත් වූ සිසුන් ලේඛනයේ හෝ ඇතුළත් කිරීම් සංඛ්‍යාවල ගණන් නොගනී; [පාසල් සංඛ්‍යාලේඛන](/si/docs/shared-staff-analytics)
+බලන්න.
+
+## ආශ්‍රිත
+
+- [සිසුවෙකු එක් කරන්න](/si/docs/educonnect-tutorial-add-a-student)
+- [ගුරුවරුන්: සිසුවෙකු සොයා බැලීම](/si/docs/educonnect-teacher-students-and-analytics)

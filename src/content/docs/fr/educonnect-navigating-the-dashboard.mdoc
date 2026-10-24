@@ -1,0 +1,94 @@
+---
+title: S'orienter dans l'application
+description: Comment le menu latéral est organisé, pourquoi deux personnes voient des menus différents, et où se trouvent réellement les écrans décrits dans ce guide.
+product: educonnect
+section: Getting started
+order: 1
+roles:
+  - admin
+  - staff
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/nav_menu.dart
+  - attendance-web-app/edu-frontend/lib/shell/app_drawer.dart
+  - attendance-web-app/edu-frontend/lib/navigation/access.dart
+hidden: false
+---
+
+## Le menu latéral
+
+Tout est accessible depuis le menu latéral à gauche (« drawer »). Ses entrées sont regroupées, et les
+groupes apparaissent toujours dans le même ordre :
+
+| Groupe | Contenu |
+| --- | --- |
+| *(premier niveau)* | Dashboard, Help & What's New, List Reports (et Teacher Complaints, pour les enseignants) |
+| **My Class** | Students, Attendance — la propre classe d'un enseignant |
+| **Students** | Student Search, Classes, Admissions, Prospectus, Fee Counter, Left Students, Student ID Cards |
+| **Attendance** | Today's Attendance, Summary, Reports, Saved Filters, Live Monitor |
+| **Teachers** | Overview, Directory, Attendance, Substitution |
+| **Timetable** | Timetable Grid, Configuration (Bell Schedule, Subjects & Rules, Grade Curriculum, Class Subjects et d'autres sont des onglets à l'intérieur) |
+| **Exams** | Exams, Rankings, Result Changes, Progress Reports |
+| **Analytics** | Statistics, Overview, Students & Risk, Academics, Attendance, Payments, Operations |
+| **Accounting** | Overview, Ledger, Manual Payment Entry, Online Payments, Day Close, Reconciliation, Fee Setup, Portal Access Rules, Invoices, Discounts |
+| **Communication** | Send Messages, Notification History, Notice Board |
+| **Administration** | Users, Locations, Settings, Access Control, Handbook, Prospectus, ID Cards, Campus Map, Calendar |
+| *(siège)* | Group Overview, Branches, Teachers |
+| **Reports** *(siège)* | Accounting, Analytics, Collections, Operations, Exams, Admissions, Demographics |
+| **Configuration** *(siège)* | Discount Rules, Term Dates |
+
+**Calendar** (qui a remplacé les écrans distincts *Holidays* et *Events*) regroupe à la fois les
+événements et les jours fériés ; voir
+[Définir les jours fériés, les trimestres et les jours ouvrés](/fr/docs/educonnect-tutorial-holidays-and-terms).
+**List Reports** se trouve au premier niveau, sous Help & What's New ; voir
+[Rapports sous forme de listes](/fr/docs/educonnect-list-reports). **Student ID Cards** (sous Students)
+suit la carte de chaque élève ; **ID Cards** (sous Administration) est le stock de cartes vierges et
+les modèles de cartes ; voir [Cartes d'identité des élèves](/fr/docs/educonnect-tutorial-id-cards).
+
+Sélectionnez l'en-tête d'un groupe pour le développer ; le menu latéral est un panneau plein sur
+toutes les tailles d'écran, et sur un téléphone il s'ouvre en superposition.
+
+Les enseignants disposent aussi de **My Class** (les élèves et la présence de leur propre classe) et
+de **My Timetable**. Leur propre fiche de présence, **My Attendance**, se trouve en haut du groupe
+Attendance.
+
+## Votre menu de compte
+
+Le badge rond en haut à droite de chaque écran (votre photo, ou votre initiale) ouvre le menu de
+compte. Il contient :
+
+- **My Profile** — vos propres informations. Les enseignants y modifient leur fiche d'enseignant ; les
+  administrateurs y modifient leur nom, numéro de mobile, fonction et adresse e-mail.
+- **Account Settings** — nom d'utilisateur et mot de passe.
+- **Preferences** — la couleur du **Theme** et la **Display density** (*Automatic*, *Comfortable* ou
+  *Compact* ; Compact affiche plus de lignes sur les écrans petits ou anciens).
+- **Log out**.
+
+La version de l'application est affichée en bas du menu latéral — indiquez-la lorsque vous contactez
+le support. Dans les applications pour téléphone et tablette, une bannière indiquant **A new version
+is available.** avec un bouton **Update** apparaît lorsqu'une version plus récente est disponible ;
+vous pouvez la fermer.
+
+## Pourquoi votre menu diffère de celui d'un collègue
+
+Le menu latéral n'est pas un menu figé. Il est construit à partir des écrans que **vous** avez le
+droit d'ouvrir ; ainsi :
+
+- Un groupe auquel vous n'avez pas accès **n'apparaît pas du tout** — il n'est pas grisé.
+- Un groupe dans lequel vous ne pouvez accéder qu'à un seul écran **se réduit à une seule tuile**,
+  sans l'en-tête dépliable. Ainsi, « Timetable » peut apparaître comme un groupe pour un
+  administrateur et comme un simple lien **My Timetable** pour un enseignant.
+- Deux personnes ayant le même intitulé de poste peuvent tout de même voir des menus différents, car
+  l'accès est accordé écran par écran dans **Administration → Access Control**, et non par rôle.
+
+Si un écran décrit dans ce guide manque dans votre menu, c'est une question d'accès et non un bogue.
+Demandez à la personne qui administre votre établissement de vérifier
+[Access Control](/fr/docs/educonnect-tutorial-users-and-access).
+
+## Revenir en arrière
+
+La barre en haut de l'écran affiche un fil d'Ariane indiquant où vous vous trouvez. Les écrans de
+détail — une fiche d'élève, une classe d'un seul examen — mettent en surbrillance leur **parent le
+plus proche** dans le menu latéral plutôt qu'une entrée qui leur serait propre ; le menu reste donc en
+place pendant que vous explorez en profondeur.

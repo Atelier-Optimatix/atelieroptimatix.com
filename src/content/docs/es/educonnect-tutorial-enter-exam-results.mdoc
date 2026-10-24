@@ -1,0 +1,47 @@
+---
+title: "Tutorial: Registrar los resultados de un examen para una clase"
+description: Cómo escribir las calificaciones de una clase y asignatura, marcar a los ausentes y qué ocurre cuando necesita cambiar una calificación ya guardada.
+product: educonnect
+section: Tutorials
+order: 100
+roles:
+  - staff
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/add_class_results_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/exams/exam_change_requests_page.dart
+hidden: false
+---
+
+**Necesita:** un [examen](/es/docs/educonnect-tutorial-create-an-exam) que ya exista y acceso a la clase.
+
+## Pasos
+
+1. Abra **Exams** y seleccione el examen.
+2. Elija la **class** en la lista de clases.
+3. Seleccione **Add Results**.
+4. En la parte superior, elija la **subject** y el **teacher** al que se acreditan las calificaciones.
+5. Escriba las calificaciones recorriendo la lista de estudiantes. A medida que avanza, los contadores
+   de la parte superior de la pantalla llevan la cuenta: **_n_ of _total_ entered** y **_n_ absent**.
+6. Para los estudiantes que no rindieron la prueba, marque **Absent** en lugar de escribir `0`. Un cero
+   es una calificación y baja los promedios; un ausente queda excluido de ellos.
+7. Cuando haya registrado a todos los que rindieron, use **Mark remaining absent** para marcar al resto
+   de una sola vez, pero antes lea los contadores de registrados y ausentes y asegúrese de que los
+   restantes realmente son ausentes y no personas que olvidó.
+8. Seleccione **Save Results** y confirme.
+
+## Cambiar una calificación después
+
+Las calificaciones guardadas no se pueden editar libremente. Al editar una se genera una **change
+request** (solicitud de cambio) con una nota opcional, que revisa en **Exams → Result Changes** alguien
+con derechos de aprobación. Es deliberado: deja un rastro sobre calificaciones que ya han sido vistas.
+
+Si al editar aparece **The mark has moved**, otra persona cambió esa calificación después de que usted
+abriera la pantalla. Recargue y consulte el valor actual antes de volver a enviar; su cambio no se aplicó.
+
+## Relacionado
+
+- [Cargar resultados de exámenes desde una hoja de cálculo](/es/docs/educonnect-tutorial-upload-exam-results):
+  más rápido para una clase completa
+- [Registro y publicación de resultados de exámenes](/es/docs/shared-staff-exam-results)

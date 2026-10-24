@@ -1,0 +1,60 @@
+---
+title: "Guru: Menandakan Kehadiran Kelas Anda"
+description: Daftar kehadiran harian — lokasi lajur kehadiran, cara menandakan dan membatalkan tanda seorang murid, dan hubungannya dengan imbasan kad.
+product: educonnect
+section: For teachers
+order: 10
+roles:
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/students_in_class.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_list_desktop.dart
+  - attendance-web-app/edu-frontend/lib/screens/student_lists/student_list_mobile.dart
+hidden: false
+---
+
+Inilah satu tugas yang akan anda lakukan setiap pagi.
+
+## Lokasinya
+
+**My Class → Students** dalam laci menu sisi (side drawer).
+
+Lajur kehadiran pada senarai murid itu **hanya muncul untuk akaun guru**. Jika anda melihat kelas yang sama sebagai pentadbir, atau melalui **Students → Classes** dan bukan **My Class**, lajur itu tiada — itulah sebabnya pentadbir tidak dapat melihat apa yang anda huraikan.
+
+## Menandakan murid hadir
+
+1. Buka **My Class → Students**.
+2. Cari murid itu dalam senarai.
+3. Pilih kawalan kehadiran pada barisnya. Ia menandakan murid itu serta-merta — tiada langkah simpan yang berasingan, dan tiada pengesahan.
+
+Teruskan menyusuri senarai. Kawalan itu menunjukkan keadaan semasa setiap murid, jadi sekali imbas ke bawah lajur itu akan menunjukkan siapa yang belum ditandakan.
+
+## Membatalkan tanda
+
+Memilih kawalan itu sekali lagi pada murid yang sudah ditandakan akan menanyakan **Are you sure you want to unmark attendance?** dan, setelah disahkan, membuang rekod itu. Gunakannya untuk kesilapan sebenar, bukan untuk menandakan seseorang tidak hadir — lihat di bawah.
+
+## Hadir, tidak hadir dan belum ditandakan
+
+Hanya dua keadaan yang disimpan: murid **mempunyai** rekod kehadiran bagi hari ini, atau tidak.
+
+- **Marked** = hadir.
+- **Unmarked** = tidak direkodkan hadir. Ini merangkumi tidak hadir, lewat dan belum tiba, serta anda belum sampai kepadanya, dan laporan tidak dapat membezakan keadaan-keadaan ini.
+
+Jadi daftar kehadiran hanya bermakna selepas anda menyemak seluruh kelas. Lengkapkan senarai itu.
+
+## Kad dan imbasan
+
+Jika murid membawa kad RFID, imbasan di pintu pagar mencipta rekod yang sama seperti yang anda cipta secara manual — murid yang sudah mengimbas masuk akan kelihatan ditandakan sebelum anda bermula. Anda hanya melengkapkan murid yang terlepas di pintu pagar, bukan menggandakannya.
+
+Murid yang tiada nombor kad pada rekodnya tidak akan dapat ditandakan melalui imbasan, hanya oleh anda. Jika seseorang sentiasa tiada dalam imbasan, rekodnya mungkin tidak mempunyai RFID — lihat
+[Add a Student](/ms/docs/educonnect-tutorial-add-a-student).
+
+## Jika murid tiada dalam senarai
+
+Mereka berdaftar dalam kelas lain, atau tidak berdaftar langsung. Menambah mereka ialah tugas pejabat, bukan guru — minta supaya mereka ditambah ke dalam kelas anda dan jangan mencipta rekod pendua.
+
+## Berkaitan
+
+- [Reading Your Class's Attendance](/ms/docs/educonnect-teacher-class-attendance)
+- [Taking Attendance as Staff](/ms/docs/shared-staff-attendance-overview)

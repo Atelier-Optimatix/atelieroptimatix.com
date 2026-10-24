@@ -1,0 +1,45 @@
+---
+title: "Tutorial: Menutup Hari"
+description: Menyelaraskan wang tunai yang dikira dengan jumlah yang dijangka sistem, menutup hari, dan maksud membuka semula hari yang telah ditutup.
+product: educonnect
+section: Tutorials
+order: 150
+roles:
+  - staff
+  - admin
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/day_close_page.dart
+screenshotIds:
+  - "tutorial-day-close"
+hidden: false
+---
+
+Day close ialah semakan wang tunai akhir hari: sistem memberitahu anda apa yang disangkanya ada dalam laci, anda mengira apa yang sebenarnya ada, dan perbezaannya direkodkan dan bukannya dipertikaikan kemudian.
+
+**Anda memerlukan:** akses kepada **Accounting → Day Close**. Lakukannya selepas semua orang selesai
+[merekodkan pembayaran](/ms/docs/educonnect-tutorial-record-a-payment) bagi hari itu.
+
+## Langkah
+
+1. Buka **Accounting → Day Close** dan pilih hari itu.
+2. Semak urus niaga hari itu yang disenaraikan pada skrin. Jika ia memaparkan **No transactions on this day**, tiada apa-apa untuk ditutup — pastikan tarikh anda betul sebelum menyangka ada masalah.
+3. Kira wang tunai dan masukkan angka **counted**.
+4. Pilih **Close day**.
+5. Pengesahan memaparkan **Expected cash** dan **Counted cash** bersebelahan. Ini ialah peluang terakhir anda melihat percanggahan sebelum ia direkodkan. Jika kedua-duanya tidak sama, batalkan dan cari puncanya *sebelum* menutup — resit yang hilang jauh lebih mudah dijejak hari ini berbanding minggu depan.
+6. Sahkan.
+
+## Membuka semula hari
+
+Hari yang telah ditutup boleh dibuka semula, dan penutupan lepas disenaraikan pada skrin yang sama. Pembukaan semula wujud untuk pembetulan sebenar — pembayaran yang direkodkan pada hari yang salah, kesilapan mengira yang ditemui serta-merta — bukan sebagai langkah rutin. Setiap penutupan dan pembukaan semula direkodkan.
+
+## Kedudukannya dalam kitaran bulan
+
+1. Pembayaran direkodkan sepanjang hari.
+2. **Day close** setiap petang.
+3. [Reconciliation](/ms/docs/educonnect-tutorial-reconciliation) secara berkala, untuk mengesan caj dan catatan lejar yang telah menyimpang.
+4. Invois dikeluarkan daripada **Accounting → Invoices**.
+
+## Berkaitan
+
+- [Accounting Workflow — Ledger, Day-Close and Reconciliation](/ms/docs/shared-staff-accounting-overview)

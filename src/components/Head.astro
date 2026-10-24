@@ -111,6 +111,16 @@ const seo = {
 		rel="stylesheet"
 	/>
 
+	<!-- Sinhala / Tamil glyph fallbacks, only for the guide locales that need them -->
+	{
+		(currentLocale === "si" || currentLocale === "ta") && (
+			<link
+				href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@100..900&family=Noto+Sans+Tamil:wght@100..900&display=swap"
+				rel="stylesheet"
+			/>
+		)
+	}
+
 	<!-- LIBS -->
 	<script
 		defer

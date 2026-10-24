@@ -1,0 +1,48 @@
+---
+title: "Tutoriel : Saisir les résultats d'examen d'une classe"
+description: Saisir les notes d'une classe et d'une matière, marquer les absents, et ce qui se passe lorsque vous devez modifier une note déjà enregistrée.
+product: educonnect
+section: Tutorials
+order: 100
+roles:
+  - staff
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/add_class_results_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/exams/exam_change_requests_page.dart
+hidden: false
+---
+
+**Vous avez besoin de :** un [examen](/fr/docs/educonnect-tutorial-create-an-exam) déjà existant, et de l'accès à
+la classe.
+
+## Étapes
+
+1. Ouvrez **Exams** et sélectionnez l'examen.
+2. Choisissez la **classe** dans la liste des classes.
+3. Sélectionnez **Add Results**.
+4. En haut, choisissez la **matière** et l'**enseignant** auquel les notes sont attribuées.
+5. Saisissez les notes en descendant la liste des élèves. Au fur et à mesure, les compteurs en haut de l'écran tiennent
+   le décompte : **_n_ of _total_ entered**, et **_n_ absent**.
+6. Pour les élèves qui n'ont pas passé l'épreuve, cochez **Absent** plutôt que de saisir `0`. Un zéro est
+   une note et fait baisser les moyennes ; un absent en est exclu.
+7. Lorsque tous ceux qui ont passé l'épreuve sont saisis, utilisez **Mark remaining absent** pour cocher les retardataires d'un coup
+   — mais lisez d'abord les compteurs saisis/absents et assurez-vous que les restants sont réellement des absents
+   et non des personnes oubliées.
+8. Sélectionnez **Save Results** et confirmez.
+
+## Modifier une note ensuite
+
+Les notes enregistrées ne sont pas librement modifiables. En modifier une déclenche une **change request**, avec une note facultative,
+qu'une personne disposant des droits d'approbation examine sous **Exams → Result Changes**. C'est voulu —
+cela laisse une trace sur des notes déjà consultées.
+
+Si vous obtenez **The mark has moved** pendant la modification, quelqu'un d'autre a changé cette note après l'ouverture de
+l'écran. Rechargez et consultez la valeur actuelle avant de soumettre à nouveau ; votre modification n'a pas été appliquée.
+
+## Voir aussi
+
+- [Upload Exam Results from a Spreadsheet](/fr/docs/educonnect-tutorial-upload-exam-results) — plus rapide
+  pour une classe entière
+- [Entering and Publishing Exam Results](/fr/docs/shared-staff-exam-results)

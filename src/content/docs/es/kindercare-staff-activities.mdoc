@@ -1,0 +1,59 @@
+---
+title: Registro de actividades
+description: Cómo registrar lo que hizo un niño, con una foto y un logro de aprendizaje, y cómo volver a encontrarlo después.
+product: kindercare
+section: Guides
+order: 10
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/activities_screen.dart
+  - kinder-care-fe/lib/screens/add_activity_screen.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Qué es una actividad
+
+Una actividad es un momento registrado: qué ocurrió, qué niños participaron y qué muestra sobre su
+aprendizaje. Es la materia prima con la que se elabora después el informe trimestral, por lo que el
+hábito de registrar sobre la marcha es lo que hace que redactar los informes sea rápido en lugar de
+penoso.
+
+Los padres también las ven, aunque su aplicación las llama **observations** en lugar de activities.
+Son los mismos registros con otro nombre.
+
+## Cómo agregar una
+
+**Activities → Add Activity** y luego:
+
+1. **Add a photo** — el formulario se abre en este paso. Use **Take a photo** con la cámara o
+   **Choose from gallery**, o toque **Skip for now** para continuar sin foto. Los padres ven primero
+   la foto en su historial, por lo que normalmente vale la pena agregarla.
+2. **What did they do?** — elija el **activity type** y el **learning outcome** que demuestra, y
+   agregue **Remarks (optional)** de hasta 500 caracteres.
+3. **Who took part?** — marque a todos los niños involucrados. **Search students** reduce la lista y
+   el encabezado muestra cuántos están seleccionados.
+
+Luego **Create Activity**. Una actividad puede abarcar a varios niños a la vez, de modo que una
+sesión grupal se registra una sola vez en lugar de volver a escribirla por cada niño. El activity type
+y el learning outcome son obligatorios, y debe seleccionar **al menos un** estudiante; el formulario
+le indica cuál falta.
+
+Si sale a mitad de camino, la aplicación pregunta **Discard this activity?** antes de descartar lo
+que haya ingresado.
+
+## Cómo volver a encontrar actividades
+
+La pestaña Activities filtra por **student**, **activity type** y **date**, y **Clear** los restablece
+todos a la vez. La lista carga más elementos a medida que se desplaza hasta el final, de modo que las
+actividades más antiguas aparecen sin botones de paginación. Si un registro parece haber
+desaparecido, compruebe si sigue aplicado algún filtro de más temprano en el día antes de suponer que
+no se guardó.
+
+## Temas relacionados
+
+- [Redacción de informes](/es/docs/kindercare-staff-reports)
+- [Primeros pasos con la aplicación KinderCare para el personal](/es/docs/kindercare-staff-getting-started)
+- [La aplicación KinderCare para padres](/es/docs/kindercare-parent-app)

@@ -1,0 +1,49 @@
+---
+title: "Tutorial: Asignar asignaturas y docentes a una clase"
+description: Cómo convertir el currículo de un grado en la lista real de asignaturas de una clase concreta, con un docente designado para cada una.
+product: educonnect
+section: Tutorials
+order: 70
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/widgets/class_subjects_tab.dart
+screenshotIds:
+  - "tutorial-class-subjects"
+hidden: false
+---
+
+**Class Subjects** es donde la plantilla de un grado se convierte en la realidad de una clase: *esta*
+clase estudia estas asignaturas, impartidas por estas personas. Es lo último que necesita el generador
+de horarios.
+
+**Necesita:** un [currículo del grado aplicado](/es/docs/educonnect-tutorial-grade-curriculum) a la clase y
+[docentes que tengan la asignatura](/es/docs/educonnect-tutorial-add-a-teacher) entre las que imparten.
+
+## Pasos
+
+1. Abra **Timetable → Configuration** y seleccione la pestaña **Class Subjects**.
+2. Elija la clase en **Select Class**. Si aplicó el currículo del grado, sus asignaturas ya aparecen
+   en la lista, todavía sin docente. Si ve **No subjects assigned to *class***, o bien el currículo
+   nunca se aplicó a ese grado, o bien el grado de la clase no es el que usted cree.
+3. En cada fila, establezca el **docente**. Solo aparecen en el selector los docentes que tienen esa
+   asignatura; si falta la persona que busca, agregue primero la asignatura a su registro de docente.
+4. Para agregar una asignatura que el currículo no incluía, seleccione **Add Subject** y complete:
+   - **Subject** y **docente**,
+   - **Lessons/week**, **Max consec.** y **Max/day**: todos opcionales. Si se dejan en blanco, heredan
+     los valores del currículo del grado; si se completan, la fila muestra el valor con **(override)**
+     al lado, y solo esa clase recibe el tratamiento diferente.
+5. Guarde cada fila a medida que avance. **Remove** quita una asignación de la clase tras pedir confirmación.
+
+## Anulaciones y cuándo usarlas
+
+Anule a nivel de clase solo en excepciones reales: una clase que recibe un período adicional de
+Matemáticas, un grupo dividido que solo se reúne dos veces por semana. Todo lo que se aplique a todo
+el grado corresponde a [Currículo del grado](/es/docs/educonnect-tutorial-grade-curriculum), donde se
+mantiene coherente entre clases y se conserva la próxima vez que se guarde el currículo.
+
+## Qué hacer a continuación
+
+Cuando todas las clases tengan asignaturas con docentes asignados, tendrá todo lo que necesita el
+generador: [Generar el horario](/es/docs/educonnect-tutorial-generate-timetable).

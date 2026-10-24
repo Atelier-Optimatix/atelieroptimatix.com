@@ -1,0 +1,58 @@
+---
+title: "Tutorial: Registrar un pago en el mostrador"
+description: Cómo recibir un pago en efectivo o con cheque por las cuotas pendientes de un estudiante y emitir el recibo.
+product: educonnect
+section: Tutorials
+order: 140
+roles:
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/manual_payment_entry_page.dart
+screenshotIds:
+  - "tutorial-record-a-payment"
+hidden: false
+---
+
+Este es el flujo de atención en el mostrador: un padre o madre frente a usted, que paga en efectivo,
+con cheque o mediante transferencia bancaria. Los pagos con tarjeta que realizan los propios padres
+llegan a **Accounting → Online Payments** y no requieren ingreso de datos.
+
+**Necesita:** acceso a **Accounting → Manual Payment Entry** y
+[cuotas ya configuradas](/es/docs/educonnect-tutorial-fee-setup).
+
+## Pasos
+
+1. Abra **Accounting → Manual Payment Entry**.
+2. Ingrese el ID o el nombre del estudiante y seleccione **Find**. **Clear** restablece la pantalla
+   para el siguiente padre o madre.
+3. Las cuotas del estudiante se cargan en dos listas:
+   - **Pending fees** — lo que está pendiente, cada concepto con su fecha de vencimiento. Si dice
+     *Nothing outstanding — all fees settled*, no hay nada que cobrar.
+   - **Settled** — lo que ya se ha pagado, con la fecha y el método.
+4. Busque el cargo que se está pagando y seleccione **Receive**.
+5. En el cuadro de diálogo, verifique los importes. Si se aplica un descuento, verá el importe
+   **Original** junto a lo que realmente se debe: cobre el importe adeudado, no el original.
+6. Establezca la fecha **received on** si el dinero se recibió antes del día de hoy. Por defecto es
+   la fecha de hoy.
+7. Registre el **payment method** (método de pago).
+8. Adjunte una imagen si su institución lo requiere, por ejemplo una foto del cheque o del
+   comprobante de transferencia. **Remove** la elimina si selecciona el archivo equivocado.
+9. Seleccione **Confirm _amount_**.
+
+Verá el mensaje **Payment recorded — receipt #_n_**. Ese número de recibo es la referencia del padre
+o madre; entrégueselo.
+
+Si aparece **Payment failed**, no se registró nada: no vuelva a ingresarlo como un segundo pago
+hasta confirmar que el primero no se procesó.
+
+## Cómo revisar su propio trabajo
+
+**My entries today** muestra todo lo que ha cobrado durante esta sesión, con los números de recibo.
+Utilícelo para verificar un total antes de entregarlo y al final de su turno, antes del
+[cierre del día](/es/docs/educonnect-tutorial-day-close).
+
+## Temas relacionados
+
+- [Cerrar el día](/es/docs/educonnect-tutorial-day-close)
+- [Flujo de trabajo de contabilidad](/es/docs/shared-staff-accounting-overview)

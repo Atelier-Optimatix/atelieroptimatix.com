@@ -1,0 +1,66 @@
+---
+title: Oficina central e informes de grupo
+description: Informes de todas las sedes de un grupo escolar, y por qué las cuentas de oficina central no pueden abrir las pantallas de una sede individual.
+product: educonnect
+section: Advanced workflows
+order: 90
+roles:
+  - org_admin
+  - super_admin
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/routes/head_office_routes.dart
+  - attendance-web-app/edu-frontend/lib/screens/head_office/
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## A quién va dirigido
+
+La oficina central es para quienes dirigen un *grupo* de instituciones y no una sola. Hay dos roles
+de este tipo:
+
+- **Organisation admin** — dirige el grupo escolar de un cliente.
+- **Super admin** — personal interno de la plataforma.
+
+Ambos leen los mismos informes de grupo. La diferencia es el alcance: a cuántas sedes se resuelve la
+cuenta. Un super admin además obtiene las pantallas de **Platform** que se describen más abajo.
+
+{% callout type="note" %}
+Una cuenta de oficina central está restringida a esta sección. Si inicia sesión esperando un panel
+normal de personal y llega a **Group Overview**, no ha ocurrido nada incorrecto: esa cuenta es de
+oficina central y las pantallas habituales de cada sede están deliberadamente fuera de su alcance. El
+trabajo diario en una sola sede requiere una cuenta de personal de esa sede.
+{% /callout %}
+
+## Group Overview y los informes que dependen de ella
+
+**Group Overview** es la página de inicio. Debajo se encuentran las vistas de todo el grupo, cada una
+con la misma pregunta que haría una sola sede, pero respondida para todas las sedes que usted puede
+ver:
+
+- **Branches** — las instituciones de su grupo.
+- **Teachers**, **Accounting**, **Analytics**, **Collections**, **Operations**, **Exams**,
+  **Admissions** y **Demographics** — informes a nivel de grupo para cada una de esas áreas.
+
+Son informes de lectura transversal del grupo. Cambiar algo en una sede sigue haciéndose dentro de
+esa sede, por alguien con acceso a ella.
+
+## Configuración
+
+Dos ajustes a nivel de grupo se encuentran separados de los informes:
+
+- **Discounts** — configuración de descuentos aplicada a todo el grupo.
+- **Term Dates** — el calendario de períodos del grupo.
+
+## Pantallas de plataforma (solo super admin)
+
+**Organisations** y **Provision Branch** son trabajo interno de la plataforma: crear una nueva
+organización cliente y poner en marcha una nueva sede dentro de ella. Un organisation admin no las ve,
+aunque vea todo lo anterior, y la restricción se aplica también en el servidor, no solo se oculta en
+la interfaz, por lo que no se puede eludir accediendo directamente a la dirección.
+
+## Temas relacionados
+
+- [Resumen de contabilidad](/es/docs/shared-staff-accounting-overview)
+- [Cómo leer la sección de analítica](/es/docs/shared-staff-analytics)
+- [Identidad de la institución](/es/docs/shared-institute-branding)

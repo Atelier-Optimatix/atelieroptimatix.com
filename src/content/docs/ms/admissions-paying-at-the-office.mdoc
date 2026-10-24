@@ -1,0 +1,64 @@
+---
+title: Membayar di Pejabat Sekolah
+description: Membayar yuran permohonan secara tunai, cek atau pemindahan bank dan bukannya dengan kad, serta perkara yang berubah selepas ia direkodkan.
+product: admissions
+section: Guides
+order: 4
+roles:
+  - applicant
+sourcePaths:
+  - educonnect-admissions/backend/controllers/adminController.js
+  - educonnect-admissions/backend/constants/statuses.js
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## Apabila anda tidak membayar dengan kad
+
+Bukan semua pemohon membayar dalam talian. Institut boleh merekodkan yuran yang dibayar dengan cara lain:
+
+- **Cash** (tunai)
+- **Cheque** (cek)
+- **Bank transfer** (pemindahan bank)
+- **Other** (lain-lain), bagi apa-apa kaedah yang diatur oleh sekolah di luar senarai di atas
+
+Anda tidak merekodkan pembayaran ini sendiri. Anda membayar kepada sekolah, dan pegawai kemasukan
+akan merekodkannya pada permohonan anda.
+
+## Apa yang perlu diberikan kepada pejabat
+
+Minta mereka mencatat **rujukan** — nombor resit atau rujukan pemindahan bank. Rekod tersebut menyimpan
+rujukan dan nota bersama nama orang yang merekodkannya, supaya pembayaran yang dipersoalkan kemudian
+dapat dikesan kembali kepada orang yang memasukkannya dan dokumen sokongannya.
+
+Simpan salinan rujukan itu sendiri sehingga permohonan anda dihantar.
+
+## Perkara yang berubah selepas ia direkodkan
+
+Merekodkan pembayaran melakukan dua perkara serentak:
+
+- Status yuran anda menjadi **paid** (dibayar).
+- Permohonan anda menjadi **draft** (draf) yang boleh anda isi.
+
+Jadi tujuan pembayaran ialah untuk membuka borang. Jika anda telah membayar di pejabat tetapi
+permohonan masih tidak membenarkan anda meneruskan, pembayaran tersebut belum direkodkan — hubungi
+pejabat, dan jangan cuba semula dalam portal.
+
+{% callout type="note" %}
+Pembayaran kad yang berstatus **pending** (belum selesai) tidak boleh diselesaikan dengan cara ini.
+Rekod manual hanya meliputi kaedah lain; pembayaran kad dalam talian hanya disahkan oleh gerbang
+pembayaran. Lihat [Membayar Yuran Permohonan Anda](/ms/docs/admissions-payment) untuk perkara yang
+perlu dilakukan jika pembayaran kad tersangkut.
+{% /callout %}
+
+## Jika yuran belum disediakan
+
+Pejabat mungkin mendapati mereka tidak dapat merekodkan pembayaran kerana yuran kemasukan institut
+belum dikonfigurasikan. Itu ialah tugas penyediaan di pihak sekolah, dan bukan sesuatu yang boleh anda
+selesaikan dari pihak anda.
+
+## Berkaitan
+
+- [Membayar Yuran Permohonan Anda](/ms/docs/admissions-payment)
+- [Memohon ke Sekolah](/ms/docs/admissions-applying)
+- [Log Masuk untuk Memohon](/ms/docs/admissions-signing-in)

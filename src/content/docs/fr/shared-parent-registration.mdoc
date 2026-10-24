@@ -1,0 +1,76 @@
+---
+title: S'inscrire en tant que parent
+description: Créer un compte parent avec l'identifiant élève de votre enfant, vérifier par SMS ou e-mail, et définir votre mot de passe.
+product: educonnect
+section: For parents
+order: 1
+roles:
+  - parent
+sourcePaths:
+  - educonnect-public/edu-frontend/lib/pages/parent_register_page.dart
+  - educonnect-public/edu-frontend/lib/pages/otp_verification_page.dart
+  - educonnect-public/edu-frontend/lib/pages/set_password_page.dart
+  - educonnect-public/edu-frontend/lib/pages/forgot_password_page.dart
+lastUpdateDate: 2026-09-04
+hidden: false
+---
+
+## Avant de commencer
+
+Il vous faut deux éléments que l'établissement détient déjà :
+
+- L'**identifiant élève** (Student ID) de votre enfant (quelque chose comme `ADV001`).
+- Le **numéro de mobile ou l'adresse e-mail enregistrés à votre nom dans le système de
+  l'établissement**.
+
+L'inscription s'appuie sur ces enregistrements. Elle ne peut pas créer un parent qui n'est pas déjà
+connu ; si la vérification échoue, la première chose à contrôler est donc de savoir si l'établissement
+dispose de votre numéro ou de votre adresse actuels — et non si vous avez bien saisi le code.
+
+## S'inscrire
+
+Depuis l'écran de connexion, choisissez de vous inscrire, puis :
+
+1. **Select your school** (ou école maternelle — le terme dépend de votre établissement).
+2. Saisissez le **Student ID**.
+3. Choisissez comment vous souhaitez recevoir le code : **Mobile** ou **Email**.
+4. Saisissez ce numéro de mobile ou cette adresse e-mail.
+5. **Send OTP**.
+
+## Saisir le code
+
+Le code comporte **six chiffres**. Sur l'écran de vérification :
+
+- Vous pouvez **renvoyer** le code, mais pas immédiatement — il faut attendre **60 secondes**, décomptées
+  à l'écran, avant que l'option de renvoi ne devienne disponible.
+- Si un code est refusé, les cases se vident afin que vous puissiez le ressaisir proprement.
+- **Back to Login** quitte le parcours sans le terminer ; vous pourrez recommencer plus tard.
+
+## Définir votre mot de passe
+
+Une fois le code accepté, vous choisissez un mot de passe. Il doit comporter **au moins 8 caractères**,
+et vous le saisissez deux fois afin qu'une faute de frappe ne vous empêche pas d'accéder au compte que
+vous êtes en train de créer.
+
+Ensuite, vous êtes connecté.
+
+## Mot de passe oublié
+
+La réinitialisation d'un mot de passe existant suit les mêmes étapes de vérification puis de définition
+d'un mot de passe, avec une différence au départ : au lieu de choisir un canal d'envoi, vous vous
+identifiez par **Username**, **Student ID** ou **Email**, et le code est envoyé aux coordonnées déjà
+enregistrées pour ce compte.
+
+La confirmation indique volontairement seulement que, *si* un compte existe, un code a été envoyé — elle
+ne vous dira pas si l'identifiant saisi a été reconnu, de sorte que personne ne puisse se servir de
+l'écran de réinitialisation pour découvrir quels comptes existent. Si aucun code n'arrive, vérifiez
+l'identifiant auprès de l'établissement plutôt que de supposer que le message s'est perdu.
+
+Le même minimum de 8 caractères s'applique au nouveau mot de passe, et vous revenez à l'écran de
+connexion pour vous connecter avec celui-ci.
+
+## Voir aussi
+
+- [Premiers pas en tant que parent](/fr/docs/shared-parent-getting-started)
+- [Se connecter](/fr/docs/shared-logging-in)
+- [Effectuer un paiement](/fr/docs/shared-parent-payments)

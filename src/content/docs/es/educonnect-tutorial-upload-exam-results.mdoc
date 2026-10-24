@@ -1,0 +1,51 @@
+---
+title: "Tutorial: Cargar resultados de exámenes desde una hoja de cálculo"
+description: "El asistente de carga de siete pasos: elegir la hoja, indicar qué fila es el encabezado, asignar columnas y hacer coincidir las filas con los estudiantes."
+product: educonnect
+section: Tutorials
+order: 110
+roles:
+  - staff
+  - teacher
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/exams/upload_class_results_wizard.dart
+hidden: false
+---
+
+A diferencia del [importador de estudiantes](/es/docs/educonnect-tutorial-import-students), el cargador
+de resultados no exige un orden determinado de columnas: usted se lo indica en el asistente. Así
+puede cargar la hoja de calificaciones que un docente ya utiliza, sin tener que reformatearla antes.
+
+## Pasos
+
+El asistente tiene siete pasos y un indicador de progreso en la parte superior. Puede retroceder en
+cualquier momento.
+
+1. **Pick file** — elija el libro de trabajo.
+2. **Pick sheet** — si tiene varias hojas, elija una. Cada una aparece con su número de filas, lo
+   que normalmente basta para identificar la correcta.
+3. **Header row** — indique qué fila contiene los encabezados de columna. Las hojas de calificaciones
+   suelen tener un título y una fila en blanco sobre el encabezado real; aquí es donde lo indica.
+4. **Columns** — asigne cada columna a su contenido: el identificador del estudiante, las
+   calificaciones y lo que debe ignorarse. Las columnas que no asigne se omiten.
+5. **Matching** — el asistente hace coincidir cada fila con un estudiante de la clase y le muestra el
+   resultado. **Este es el paso que importa.** Las filas sin coincidencia son las que debe revisar:
+   por lo general se trata de un espacio sobrante, un nombre escrito de forma distinta al del
+   registro de matrícula, o un estudiante de otra clase.
+6. **Review** — la lista final de lo que se va a escribir. Compare el total con su hoja.
+7. **Upload** — confirme y se escribirán los datos.
+
+## Si las filas no coinciden
+
+- Haga la coincidencia por **Student ID** en lugar de por nombre siempre que la hoja lo tenga; los
+  nombres suelen ser la causa habitual.
+- Un estudiante que ya se retiró, o que nunca estuvo matriculado en esta clase, nunca coincidirá.
+  Elimine la fila.
+- Corrija la hoja de cálculo y reinicie el asistente en lugar de forzar una carga parcial; siempre
+  podrá completar a mano unos pocos casos pendientes con
+  [Add Results](/es/docs/educonnect-tutorial-enter-exam-results).
+
+## Temas relacionados
+
+- [Ingreso y publicación de resultados de exámenes](/es/docs/shared-staff-exam-results)

@@ -1,0 +1,78 @@
+---
+title: உங்கள் வழியைக் கண்டறிதல்
+description: பக்க drawer எவ்வாறு ஒழுங்கமைக்கப்பட்டுள்ளது, இருவர் ஏன் வெவ்வேறு மெனுக்களைப் பார்க்கிறார்கள், இந்த வழிகாட்டியிலுள்ள திரைகள் உண்மையில் எங்கே உள்ளன.
+product: educonnect
+section: Getting started
+order: 1
+roles:
+  - admin
+  - staff
+  - teacher
+lastUpdateDate: 2026-10-21
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/navigation/nav_menu.dart
+  - attendance-web-app/edu-frontend/lib/shell/app_drawer.dart
+  - attendance-web-app/edu-frontend/lib/navigation/access.dart
+hidden: false
+---
+
+## பக்க drawer
+
+எல்லாவற்றையும் இடப்பக்கத்திலுள்ள drawer மூலம் அடையலாம். அதன் உள்ளீடுகள் குழுக்களாகத் தொகுக்கப்பட்டுள்ளன; குழுக்கள் எப்போதும் ஒரே வரிசையில் தோன்றும்:
+
+| குழு | உள்ளே இருப்பவை |
+| --- | --- |
+| *(மேல்மட்டம்)* | Dashboard, Help & What's New, List Reports (ஆசிரியர்களுக்கு Teacher Complaints உம்) |
+| **My Class** | Students, Attendance — ஆசிரியரின் சொந்த வகுப்பு |
+| **Students** | Student Search, Classes, Admissions, Prospectus, Fee Counter, Left Students, Student ID Cards |
+| **Attendance** | Today's Attendance, Summary, Reports, Saved Filters, Live Monitor |
+| **Teachers** | Overview, Directory, Attendance, Substitution |
+| **Timetable** | Timetable Grid, Configuration (Bell Schedule, Subjects & Rules, Grade Curriculum, Class Subjects மற்றும் பிறவும் இதற்குள் tab களாக உள்ளன) |
+| **Exams** | Exams, Rankings, Result Changes, Progress Reports |
+| **Analytics** | Statistics, Overview, Students & Risk, Academics, Attendance, Payments, Operations |
+| **Accounting** | Overview, Ledger, Manual Payment Entry, Online Payments, Day Close, Reconciliation, Fee Setup, Portal Access Rules, Invoices, Discounts |
+| **Communication** | Send Messages, Notification History, Notice Board |
+| **Administration** | Users, Locations, Settings, Access Control, Handbook, Prospectus, ID Cards, Campus Map, Calendar |
+| *(தலைமையகம்)* | Group Overview, Branches, Teachers |
+| **Reports** *(தலைமையகம்)* | Accounting, Analytics, Collections, Operations, Exams, Admissions, Demographics |
+| **Configuration** *(தலைமையகம்)* | Discount Rules, Term Dates |
+
+**Calendar** (தனித்தனியான *Holidays*, *Events* திரைகளுக்குப் பதிலாக வந்தது) நிகழ்வுகளையும் விடுமுறைகளையும் கொண்டுள்ளது;
+பார்க்க [Set Holidays, Terms and Working Days](/ta/docs/educonnect-tutorial-holidays-and-terms). **List Reports** மேல்மட்டத்தில், Help & What's New இற்குக் கீழே உள்ளது;
+பார்க்க [List Reports](/ta/docs/educonnect-list-reports).
+**Student ID Cards** (Students இன் கீழ்) ஒவ்வொரு மாணவரின் அட்டையையும் கண்காணிக்கிறது; **ID Cards** (Administration இன் கீழ்) வெற்று அட்டைத் தொகுதியும் அட்டை வடிவமைப்புகளும் ஆகும்;
+பார்க்க [Student ID Cards](/ta/docs/educonnect-tutorial-id-cards).
+
+ஒரு குழுவின் தலைப்பைத் தெரிவு செய்து அதை விரிக்கலாம்; drawer எல்லாத் திரை அளவுகளிலும் திடமான பலகையாக இருக்கும்; தொலைபேசியில் அது மேலடுக்காகத் திறக்கும்.
+
+ஆசிரியர்களுக்கு **My Class** (தங்கள் வகுப்பின் மாணவர்களும் வருகையும்), **My Timetable** ஆகியனவும் கிடைக்கும்.
+அவர்களின் சொந்த வருகைப் பதிவான **My Attendance**, Attendance குழுவின் மேலே இருக்கும்.
+
+## உங்கள் கணக்கு மெனு
+
+ஒவ்வொரு திரையின் வலது மேல்மூலையிலும் உள்ள வட்டச் சின்னம் (உங்கள் புகைப்படம், அல்லது முதல் எழுத்து) கணக்கு மெனுவைத் திறக்கும். அதில் உள்ளவை:
+
+- **My Profile** — உங்கள் சொந்த விவரங்கள். ஆசிரியர்கள் இங்கே தங்கள் ஆசிரியர் பதிவைத் திருத்துவர்; நிர்வாகிகள் தங்கள் பெயர், கைப்பேசி இலக்கம், பதவி, மின்னஞ்சல் ஆகியவற்றைத் திருத்துவர்.
+- **Account Settings** — பயனர் பெயரும் கடவுச்சொல்லும்.
+- **Preferences** — நிறத் **Theme** உம் **Display density** உம் (*Automatic*, *Comfortable* அல்லது *Compact*; Compact சிறிய அல்லது பழைய திரைகளில் அதிக வரிசைகளைப் பொருத்தும்).
+- **Log out**.
+
+செயலியின் பதிப்பு drawer இன் அடியில் காட்டப்படும் — ஆதரவுப் பிரிவைத் தொடர்புகொள்ளும்போது அதைக் குறிப்பிடுங்கள். தொலைபேசி, tablet செயலிகளில், புதிய வெளியீடு இருக்கும்போது
+**Update** பொத்தானுடன் **A new version is available.** என்ற பதாகை தோன்றும்; அதை நீங்கள் மூடிவிடலாம்.
+
+## உங்கள் drawer சக ஊழியரின் drawer இலிருந்து ஏன் வேறுபடுகிறது
+
+drawer என்பது நிலையான மெனு அல்ல. **நீங்கள்** திறக்க அனுமதிக்கப்பட்ட திரைகளிலிருந்தே அது உருவாக்கப்படுகிறது; எனவே:
+
+- உங்களுக்கு அணுகல் இல்லாத குழு **அறவே தோன்றாது** — சாம்பல் நிறத்தில் கூடக் காட்டப்படாது.
+- ஒரே ஒரு திரையை மட்டும் அடைய முடிந்த குழு, விரியும் தலைப்பு இல்லாமல் **ஒற்றை ஓடாக** (tile) சுருங்கும். எனவே "Timetable" நிர்வாகிக்கு ஒரு குழுவாகவும்,
+  ஆசிரியருக்கு ஒற்றை **My Timetable** இணைப்பாகவும் தோன்றலாம்.
+- ஒரே பதவிப் பெயர் உள்ள இருவரும் வெவ்வேறு மெனுக்களைக் காணலாம்; ஏனெனில் அணுகல், பங்கு அடிப்படையில் அல்ல, **Administration → Access Control** இல் திரை அடிப்படையில் வழங்கப்படுகிறது.
+
+இந்த வழிகாட்டி விவரிக்கும் திரை உங்கள் drawer இல் இல்லையெனில், அது அணுகல் தொடர்பான விடயமே தவிர, பிழை அல்ல.
+உங்கள் நிறுவனத்தை நிர்வகிப்பவரிடம் [Access Control](/ta/docs/educonnect-tutorial-users-and-access) ஐச் சரிபார்க்கச் சொல்லுங்கள்.
+
+## திரும்பிச் செல்லுதல்
+
+மேலே குறுக்கே உள்ள பட்டை, நீங்கள் இருக்கும் இடத்துக்கான breadcrumb களைக் காட்டும். மாணவர் சுயவிவரம், ஒற்றைப் பரீட்சை வகுப்பு போன்ற விவரத் திரைகள் தமக்கெனத் தனி உள்ளீட்டை அல்லாமல், drawer இல் தமது
+**அண்மைய பெற்றோர்** உள்ளீட்டையே ஒளிரச் செய்யும்; இதனால் நீங்கள் ஆழமாகச் செல்லும்போதும் drawer மாறாமல் இருக்கும்.

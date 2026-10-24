@@ -1,0 +1,103 @@
+---
+title: La aplicación KinderCare para padres
+description: Lo que ven los padres (observaciones, perfil e informes del niño, calendario, temas, pagos y comunicados) y cómo un mismo inicio de sesión gestiona a más de un hijo.
+product: kindercare
+section: For parents
+order: 10
+roles:
+  - parent
+sourcePaths:
+  - kinder_care_parent/lib/screens/home_screen.dart
+  - kinder_care_parent/lib/screens/activities_screen.dart
+  - kinder_care_parent/lib/screens/theme_plans_screen.dart
+  - kinder_care_parent/lib/screens/switch_account_screen.dart
+  - kinder_care_parent/lib/screens/add_child_screen.dart
+  - kinder_care_parent/lib/screens/account_screen.dart
+  - kinder_care_parent/lib/screens/announcements_screen.dart
+  - kinder_care_parent/lib/screens/student_profile_screen.dart
+  - kinder_care_shared/lib/src/student_profile/student_profile_page.dart
+  - kinder_care_parent/lib/screens/payment/payment_screen.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Las cinco pestañas
+
+- **Observations** — lo que el personal registró sobre su hijo o hija, normalmente con fotos.
+- **Student** — el perfil de su hijo, con las pestañas **Details**, **Attendance** y **Reports**.
+- **Calendar** — lo que viene próximamente.
+- **Themes** — los planes temáticos que el centro está desarrollando.
+- **Payments** — sus registros de pago.
+
+El icono de campana en la parte superior de cada pantalla abre **Announcements** (comunicados) de la
+escuela. Una insignia roja cuenta los que aún no ha abierto (muestra **9+** a partir de nueve).
+
+{% callout type="note" %}
+El personal llama **activities** a las observaciones en su propia aplicación. Si un docente se
+refiere a "la actividad que agregué", es lo mismo que usted ve en **Observations**.
+{% /callout %}
+
+## Cómo encontrar una observación concreta
+
+Las observaciones se filtran por **growth milestone**, **activity type** y **date**, con **Clear**
+para restablecerlos. La lista carga más elementos a medida que se desplaza hasta el final. El filtro
+de growth milestone es el más útil cuando desea ver el progreso en un área concreta a lo largo del
+tiempo, en lugar de leer el historial día por día.
+
+## El perfil de su hijo
+
+La pestaña **Student** es la misma página de perfil que ve el docente, con tres pestañas:
+
+- **Details** — la información de su hijo, con las alergias y los medicamentos resaltados.
+- **Attendance** — un calendario por mes que muestra los días presentes, los días laborables y un
+  porcentaje de asistencia.
+- **Reports** — los informes escritos que el docente de su hijo ha **publicado**. Los borradores
+  nunca se muestran.
+
+Puede actualizar su **número de móvil**, **correo electrónico** y **dirección**, y cambiar la
+**foto** de su hijo (use el lápiz y luego **Save Changes**). Todo lo demás lo define la escuela;
+consulte al docente o a la oficina si algún dato es incorrecto.
+
+## Pagos
+
+La pestaña Payments enumera sus registros de pago y lo lleva a la página de pago cuando hay algo
+pendiente. Si indica que no se encontraron registros de pago, significa que el centro no ha generado
+ningún cargo a su cuenta; no es señal de que la aplicación no haya podido cargarlos.
+
+## Más de un hijo, o más de un padre o madre
+
+**Un mismo inicio de sesión puede contener varios hijos en la misma escuela.** Toque la inicial o la
+foto de su hijo en la parte superior de la pantalla para ver los niños de la cuenta, toque uno para
+**cambiar de niño** o elija **Manage children & accounts**. Encontrará la misma pantalla en
+**Account → Switch child**.
+
+En la pantalla **Switch child**:
+
+- **Children on this account** enumera a cada niño con su clase; el que está viendo aparece marcado.
+  Al cambiar se recargan todas las pestañas para ese niño, de modo que no queda nada del anterior.
+- **Add another child** solicita el **Student ID** del niño y luego **Send code**: se envía un código
+  al número de teléfono o correo electrónico que la escuela tiene registrado para ese niño.
+  Ingréselo y toque **Add child**. Solo se pueden agregar niños de la *misma escuela* que esta cuenta.
+- Si hay más de un niño, el menú **⋮** ofrece **Remove from account**. No se puede cambiar a un niño
+  que aparece como "No longer on the school's records".
+
+Un niño en una **escuela distinta** necesita una cuenta de padre o madre independiente. Estas aparecen
+en **Other parent accounts**; **Sign in to a different parent account** agrega una. Cambiar a otra
+cuenta cierra la sesión de la actual, y las cuentas se guardan **en el dispositivo**:
+
+- Un teléfono nuevo comienza sin cuentas guardadas. Es lo esperado: inicie sesión una vez y se
+  guardará de nuevo.
+- La ✕ junto a una cuenta guardada la quita *solo de ese dispositivo*. La cuenta en sí sigue
+  existiendo y puede volver a iniciar sesión con ella.
+
+## Cerrar sesión y eliminar su cuenta
+
+**Account → Log out** cierra su sesión. En **Danger zone**, **Delete account** elimina de forma
+permanente su inicio de sesión y cierra su sesión; solicita confirmación y no se puede deshacer.
+
+## Temas relacionados
+
+- [Registro de actividades](/es/docs/kindercare-staff-activities)
+- [Envío de comunicados](/es/docs/kindercare-staff-announcements)
+- [Primeros pasos con la aplicación KinderCare para el personal](/es/docs/kindercare-staff-getting-started)
+- [Registro como padre o madre](/es/docs/shared-parent-registration)

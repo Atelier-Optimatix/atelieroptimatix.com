@@ -1,0 +1,57 @@
+---
+title: "Tutoriel : Créer ou modifier un programme de niveau"
+description: Définir ce qui est enseigné à un niveau entier et à quelle fréquence, puis le répercuter sur toutes les classes de ce niveau en une seule action.
+product: educonnect
+section: Tutorials
+order: 60
+roles:
+  - admin
+lastUpdateDate: 2026-09-26
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/timetable/widgets/grade_curriculum_tab.dart
+  - attendance-web-app/edu-frontend/lib/screens/timetable/timetable_config_screen.dart
+screenshotIds:
+  - "tutorial-grade-curriculum"
+hidden: false
+---
+
+Le programme de niveau est le modèle : *« chaque classe de Grade 8 étudie ces matières, tant de
+fois par semaine. »* Vous le rédigez une fois par niveau, puis vous l'appliquez à toutes les classes de ce niveau plutôt que
+d'affecter les matières classe par classe.
+
+**Vous avez besoin de :** l'accès à **Timetable → Configuration**, et de classes dont le niveau
+est déjà correctement défini — voir [Add a Class](/fr/docs/educonnect-tutorial-add-a-class).
+
+## Étapes
+
+1. Ouvrez **Timetable → Configuration** et sélectionnez l'onglet **Grade Curriculum**.
+2. Choisissez le niveau sous **Select Grade**.
+3. Pour chaque matière enseignée à ce niveau, sélectionnez **Add Subject** et renseignez :
+   - **Subject** — avec recherche ; la liste provient de **Timetable → Configuration → Subjects & Rules**.
+   - **Lessons / week** — combien de périodes par semaine reçoit cette matière. C'est le nombre que
+     le générateur cherche à placer.
+   - **Max per day** — le plafond pour un jour donné. Laissez vide pour accepter la valeur par défaut.
+   - **Max consecutive** — combien de cours peuvent se suivre. Laissez vide pour accepter la valeur par défaut.
+
+   Vide n'est pas zéro. Vide signifie « utiliser la valeur par défaut » ; la ligne n'affiche un marqueur **(override)** que
+   là où vous avez défini quelque chose explicitement.
+4. Renseignez éventuellement la **Book List** — une liste libre des manuels du niveau, conservée avec le
+   programme.
+5. Sélectionnez **Save Curriculum**. Cela enregistre le programme **et** le répercute sur chaque classe du
+   niveau : la confirmation indique combien de classes le recevront et vous rappelle que *existing
+   teacher assignments will not be changed*. Sélectionnez **Save & Apply**, et le résultat vous indique
+   combien d'entrées classe-matière ont été **created** (créées) et combien **updated** (mises à jour).
+
+Comme il ne touche jamais aux affectations d'enseignants, enregistrer à nouveau après une modification du programme est sans risque — il
+ajoute et ajuste des matières sans défaire qui enseigne quoi.
+
+## Modifier un programme existant
+
+Modifiez les chiffres directement et faites **Save Curriculum** à nouveau. Retirer une matière du programme
+ne la retire pas rétroactivement des classes qui l'ont déjà ; supprimez-la dans
+[Class Subjects](/fr/docs/educonnect-tutorial-class-subjects) si vous voulez qu'elle disparaisse.
+
+## Que faire ensuite
+
+[Affectez des enseignants à ces matières](/fr/docs/educonnect-tutorial-class-subjects), puis
+[générez l'emploi du temps](/fr/docs/educonnect-tutorial-generate-timetable).

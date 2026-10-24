@@ -1,0 +1,38 @@
+---
+title: "Payer vos frais de candidature"
+description: Ce qui se passe après le paiement en ligne de frais d'admission, et pourquoi le statut « pending » n'est pas un échec.
+product: admissions
+section: Guides
+order: 3
+roles:
+  - applicant
+sourcePaths:
+  - educonnect-admissions/edu-frontend/lib/screens/online_payment_return_page.dart
+  - educonnect-admissions/backend/controllers/onlinePaymentController.js
+lastUpdateDate: 2026-08-30
+hidden: false
+---
+
+## Fonctionnement de l'étape de paiement
+
+Si votre candidature nécessite des frais, vous êtes redirigé vers une passerelle de paiement pour
+régler par carte. Une fois le paiement effectué, vous revenez sur un écran de confirmation qui
+affiche votre identifiant de transaction, un numéro de carte masqué, le montant et un statut.
+
+## Statuts de paiement
+
+- **Not started** (non commencé) — vous n'avez pas encore atteint ou terminé l'étape de paiement.
+- **Pending** (en attente) — le paiement est en cours de traitement. C'est normal immédiatement après
+  le paiement ; ce n'est pas un échec, et vous n'avez pas besoin de payer à nouveau.
+- **Paid** (payé) — le paiement a été confirmé.
+
+Les paiements par carte en ligne ne passent à « paid » que lorsque la passerelle de paiement confirme
+la transaction — un responsable des admissions peut marquer manuellement d'autres modes de paiement
+comme payés, mais ne peut pas le faire pour un paiement par carte encore affiché comme pending. Si
+votre statut reste bloqué sur pending pendant une durée inhabituellement longue, contactez le
+service des admissions en lui indiquant votre identifiant de transaction, plutôt que de payer à
+nouveau.
+
+## À consulter également
+
+- [Déposer une candidature auprès d'un établissement](/fr/docs/admissions-applying)

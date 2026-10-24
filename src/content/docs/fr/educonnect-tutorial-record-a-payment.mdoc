@@ -1,0 +1,59 @@
+---
+title: "Tutoriel : enregistrer un paiement au guichet"
+description: Encaisser un paiement en espèces ou par chèque sur les frais impayés d'un élève et délivrer le reçu.
+product: educonnect
+section: Tutorials
+order: 140
+roles:
+  - staff
+lastUpdateDate: 2026-09-05
+sourcePaths:
+  - attendance-web-app/edu-frontend/lib/screens/accounting/manual_payment_entry_page.dart
+screenshotIds:
+  - "tutorial-record-a-payment"
+hidden: false
+---
+
+Voici le déroulement au guichet : un parent est devant vous et paie en espèces, par chèque ou par
+virement bancaire. Les paiements par carte effectués directement par les parents arrivent plutôt dans
+**Accounting → Online Payments** et ne demandent aucune saisie.
+
+**Ce dont vous avez besoin :** l'accès à **Accounting → Manual Payment Entry**, et
+des [frais déjà configurés](/fr/docs/educonnect-tutorial-fee-setup).
+
+## Étapes
+
+1. Ouvrez **Accounting → Manual Payment Entry**.
+2. Saisissez l'identifiant ou le nom de l'élève, puis sélectionnez **Find**. **Clear** réinitialise
+   l'écran pour le parent suivant.
+3. Les frais de l'élève s'affichent dans deux listes :
+   - **Pending fees** — ce qui reste à payer, avec la date d'échéance de chaque ligne. Si l'écran
+     indique *Nothing outstanding — all fees settled*, il n'y a rien à encaisser.
+   - **Settled** — ce qui a déjà été payé, avec la date et le mode de paiement.
+4. Repérez la charge en cours de paiement et sélectionnez **Receive**.
+5. Dans la boîte de dialogue, vérifiez les montants. Lorsqu'une remise s'applique, le montant
+   **Original** apparaît à côté du montant réellement dû — encaissez le montant dû, et non le montant
+   d'origine.
+6. Renseignez la date **received on** si l'argent a été reçu avant aujourd'hui. Par défaut, c'est la
+   date du jour.
+7. Indiquez le **payment method** (mode de paiement).
+8. Joignez une image si votre établissement le souhaite — une photo du chèque ou du bordereau de
+   virement. **Remove** supprime l'image si vous avez choisi le mauvais fichier.
+9. Sélectionnez **Confirm _amount_**.
+
+Le message **Payment recorded — receipt #_n_** s'affiche. Ce numéro de reçu est la référence du
+parent ; remettez-le-lui.
+
+Si vous obtenez **Payment failed**, rien n'a été enregistré — ne saisissez pas le paiement une
+seconde fois avant d'avoir vérifié que le premier n'a pas abouti.
+
+## Vérifier votre travail
+
+**My entries today** liste tout ce que vous avez encaissé durant cette session, avec les numéros de
+reçu. Servez-vous-en pour contrôler un total avant de rendre la caisse, et en fin de service avant la
+[clôture de la journée](/fr/docs/educonnect-tutorial-day-close).
+
+## Voir aussi
+
+- [Clôturer la journée](/fr/docs/educonnect-tutorial-day-close)
+- [Flux de travail de la comptabilité](/fr/docs/shared-staff-accounting-overview)

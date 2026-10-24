@@ -1,0 +1,57 @@
+---
+title: නිවේදන යැවීම
+description: පන්තියක, දරුවන් කිහිප දෙනෙකුගේ හෝ මුළු පාසලේම දෙමව්පියන්ට නිවේදනයක් පළ කිරීම, සහ විකල්ප SMS.
+product: kindercare
+section: Guides
+order: 30
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/announcements_screen.dart
+  - kinder-care-fe/lib/screens/add_announcement_screen.dart
+  - kinder_care_parent/lib/screens/announcements_screen.dart
+  - kinder_care_parent/lib/widgets/kc_appbar.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## නිවේදන කුමක් සඳහාද
+
+නිවේදන යනු දෙමව්පියන්ට යවන ඒක පාර්ශ්වික දැනුම්දීම් — "ක්‍රීඩා උත්සවය සිකුරාදාට මාරු කළා" — තනි දරුවෙකු ගැන වන
+[වාර්තා](/si/docs/kindercare-staff-reports) වලට වෙනස්ව. ඒවා staff app එකේ **Notices**
+ටැබයේද, parent app එකේ සීනුව අයිකනය පිටුපසද ඇත.
+
+## එකක් පළ කිරීම
+
+**Notices → New announcement**, ඉන්පසු:
+
+1. **Title** සහ **Message** — දෙකම අවශ්‍යයි.
+2. **Send to** — එය ලැබිය යුත්තේ කාටද:
+   - **All classes** — පාසලේ සෑම දෙමව්පියෙකුටම. පන්ති ගුරුවරුන්ට මෙම විකල්පය නොපෙනේ; එය
+     පාසල පුරා ළඟා විය හැකි භූමිකා සඳහා වෙන් කර ඇත.
+   - **Classes** — පන්ති එකක් හෝ කිහිපයක් තෝරන්න. පන්ති ගුරුවරයෙකුට තෝරා ගත හැක්කේ තමාගේම පන්තිය පමණි, එය කලින් තෝරා ඇත.
+   - **Students** — තෝරාගත් පන්තිවලින් තනි දරුවන් තෝරන්න, එවිට **එම දරුවන්ගේ දෙමව්පියන්ට පමණක්**
+     දැනුම් දෙයි.
+3. **Also send an SMS** — පෙරනිමියෙන් අක්‍රියයි. දෙමව්පියන්ට **සැමවිටම** push දැනුම්දීමක් ලැබේ; SMS විකල්පය
+   ඔවුන්ට පණිවිඩයක්ද යවන අතර, ලබන්නෙකු සඳහා මුදල් වැය වේ, එබැවින් නිවේදනය හදිසි නම් මිස එය අක්‍රිය කර තබන්න.
+
+**Post Announcement** පළමුව ඔබෙන් තහවුරු කිරීමක් ඉල්ලන අතර, ප්‍රේක්ෂකයන් නම් කරයි (උදාහරණයක් ලෙස "පන්ති 2ක
+දෙමව්පියන්"). එය පළ කළ විට දෙමව්පියන්ට push දැනුම්දීමක් යැවේ.
+
+## නිවේදන සොයා ගැනීම සහ ඉවත් කිරීම
+
+Notices ටැබය ඔබ පළ කළ දේ ලැයිස්තුගත කර **All**, **School-wide**, **Classes** සහ
+**Students** අනුව පෙරහන් කරයි. නැවුම් කිරීමට පහළට අදින්න; ඔබ පහළට යද්දී ලැයිස්තුව තවත් පූරණය වේ. කුණු කූඩා අයිකනය
+තහවුරු කිරීමකින් පසු නිවේදනයක් මකයි — මකා දැමූ නිවේදනයක් ඉවත් වන බැවින්, වැරදීමකින් පළ කළ එකක් පමණක් මකන්න.
+
+## දෙමව්පියන්ට පෙනෙන දේ
+
+විවෘත නොකළ නිවේදන සඳහා දෙමව්පියන්ට සීනුවේ රතු ලාංඡනයක් පෙනෙන අතර, සම්පූර්ණ ලැයිස්තුව
+**Announcements** යටතේ ඇත. නොකියවූ ඒවා තද අකුරින් වේ. [KinderCare Parent App](/si/docs/kindercare-parent-app) බලන්න.
+
+## ආශ්‍රිත
+
+- [වාර්තා ලිවීම](/si/docs/kindercare-staff-reports)
+- [KinderCare Staff App සමඟ ආරම්භ කිරීම](/si/docs/kindercare-staff-getting-started)
+- [KinderCare Parent App](/si/docs/kindercare-parent-app)

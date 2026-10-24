@@ -1,0 +1,59 @@
+---
+title: Menghantar Pengumuman
+description: Menyiarkan notis kepada ibu bapa sesebuah kelas, beberapa orang kanak-kanak atau seluruh sekolah, dan SMS pilihan.
+product: kindercare
+section: Guides
+order: 30
+roles:
+  - staff
+  - teacher
+sourcePaths:
+  - kinder-care-fe/lib/screens/announcements_screen.dart
+  - kinder-care-fe/lib/screens/add_announcement_screen.dart
+  - kinder_care_parent/lib/screens/announcements_screen.dart
+  - kinder_care_parent/lib/widgets/kc_appbar.dart
+lastUpdateDate: 2026-10-21
+hidden: false
+---
+
+## Kegunaan pengumuman
+
+Pengumuman ialah notis sehala kepada ibu bapa — "hari sukan dialihkan ke hari Jumaat" — berbeza
+daripada [laporan](/ms/docs/kindercare-staff-reports), yang mengenai seorang kanak-kanak. Ia terdapat pada tab
+**Notices** dalam aplikasi staf dan di sebalik ikon loceng dalam aplikasi ibu bapa.
+
+## Menyiarkan satu
+
+**Notices → New announcement**, kemudian:
+
+1. **Title** dan **Message** — kedua-duanya wajib.
+2. **Send to** — siapa yang patut menerimanya:
+   - **All classes** — setiap ibu bapa dalam sekolah. Guru kelas tidak melihat pilihan ini; ia
+     dikhaskan untuk peranan yang mempunyai capaian seluruh sekolah.
+   - **Classes** — pilih satu atau lebih kelas. Guru kelas hanya boleh memilih kelasnya sendiri, yang
+     telah dipilih terlebih dahulu.
+   - **Students** — pilih kanak-kanak tertentu daripada kelas yang dipilih, dan **hanya ibu bapa
+     kanak-kanak itu** yang dimaklumkan.
+3. **Also send an SMS** — dimatikan secara lalai. Ibu bapa **sentiasa** menerima pemberitahuan tolak; pilihan
+   SMS menghantar teks kepada mereka juga, dan mengenakan kos bagi setiap penerima, jadi biarkan ia
+   dimatikan melainkan notis itu mendesak.
+
+**Post Announcement** meminta anda mengesahkan terlebih dahulu, dengan menyebut khalayak (contohnya "the parents of 2
+classes"). Ibu bapa dihantar pemberitahuan tolak apabila ia disiarkan.
+
+## Mencari dan membuang pengumuman
+
+Tab Notices menyenaraikan apa yang telah anda siarkan dan menapis mengikut **All**, **School-wide**, **Classes** dan
+**Students**. Tarik ke bawah untuk menyegar; senarai memuatkan lebih banyak apabila anda menatal. Ikon tong sampah memadam
+pengumuman selepas pengesahan — notis yang dipadam akan dibuang, jadi padam hanya yang anda siarkan secara tersilap.
+
+## Apa yang dilihat oleh ibu bapa
+
+Ibu bapa melihat lencana merah pada loceng bagi notis yang belum dibuka, dan senarai penuh di bawah
+**Announcements**. Yang belum dibaca dipaparkan tebal. Lihat [Aplikasi Ibu Bapa KinderCare](/ms/docs/kindercare-parent-app).
+
+## Berkaitan
+
+- [Menulis Laporan](/ms/docs/kindercare-staff-reports)
+- [Bermula dengan Aplikasi Staf KinderCare](/ms/docs/kindercare-staff-getting-started)
+- [Aplikasi Ibu Bapa KinderCare](/ms/docs/kindercare-parent-app)
