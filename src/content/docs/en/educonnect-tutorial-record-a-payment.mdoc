@@ -6,9 +6,10 @@ section: Tutorials
 order: 140
 roles:
   - staff
-lastUpdateDate: 2026-09-05
+lastUpdateDate: 2026-11-02
 sourcePaths:
   - attendance-web-app/edu-frontend/lib/screens/accounting/manual_payment_entry_page.dart
+  - attendance-web-app/edu-frontend/lib/components/accounting_components/receive_payment_dialog.dart
 screenshotIds:
   - "tutorial-record-a-payment"
 hidden: false
@@ -24,8 +25,10 @@ no data entry.
 ## Steps
 
 1. Open **Accounting → Manual Payment Entry**.
-2. Enter the student's ID or name and select **Find**. **Clear** resets the screen for the next
-   parent.
+2. Start typing the student's name, student ID or a guardian's phone number. Matching students are
+   suggested as you type — pick one, or enter a full ID and select **Find**. When the box is empty,
+   a **Recent** row offers the students you looked up lately. **Clear** resets the screen for the
+   next parent.
 3. The student's fees load in two lists:
    - **Pending fees** — what is outstanding, each with its due date. If it says *Nothing outstanding
      — all fees settled*, there is nothing to take.
@@ -34,7 +37,12 @@ no data entry.
 5. In the dialog, check the amounts. Where a discount applies you will see the **Original** amount
    alongside what is actually due — take the amount due, not the original.
 6. Set the **received on** date if the money came in earlier than today. It defaults to today.
-7. Record the **payment method**.
+7. Choose the **payment method**: Cash, Cheque, Bank transfer or Other. Two of them need a
+   reference before you can confirm:
+   - **Cheque** — enter the **Cheque number (required)**.
+   - **Bank transfer** — enter the **Transfer reference (required)**.
+
+   Cash and Other need neither.
 8. Attach an image if your institute wants one — a photo of the cheque or the transfer slip.
    **Remove** clears it if you pick the wrong file.
 9. Select **Confirm _amount_**.
