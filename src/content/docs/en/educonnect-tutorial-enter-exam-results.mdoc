@@ -7,9 +7,10 @@ order: 100
 roles:
   - staff
   - teacher
-lastUpdateDate: 2026-09-05
+lastUpdateDate: 2026-11-02
 sourcePaths:
   - attendance-web-app/edu-frontend/lib/screens/exams/add_class_results_page.dart
+  - attendance-web-app/edu-frontend/lib/screens/exams/mark_input.dart
   - attendance-web-app/edu-frontend/lib/screens/exams/exam_change_requests_page.dart
 hidden: false
 ---
@@ -22,15 +23,23 @@ the class.
 1. Open **Exams** and select the exam.
 2. Pick the **class** from the class list.
 3. Select **Add Results**.
-4. At the top, choose the **subject** and the **teacher** the marks are credited to.
-5. Type marks down the list of students. As you go, the counters at the top of the screen keep
-   score: **_n_ of _total_ entered**, and **_n_ absent**.
+4. At the top, choose the **subject** and the **teacher** the marks are credited to, and check the
+   **Maximum Score**. It opens at 100, or at the last value you saved.
+5. Type marks down the list of students. Whole numbers and decimals both work — `72` or `72.5`.
+   A mark higher than the Maximum Score shows **Exceeds max** as soon as you type it, so you can fix
+   it before you save. As you go, the counters at the top of the screen keep score: **_n_ of
+   _total_ entered**, and **_n_ absent**.
 6. For students who did not sit the paper, tick **Absent** rather than entering `0`. A zero is a
    mark and drags averages down; absent is excluded from them.
 7. When everyone who sat is entered, use **Mark remaining absent** to tick the stragglers in one go
    — but read the entered/absent counts first and make sure the remainder really are absentees and
    not people you forgot.
 8. Select **Save Results** and confirm.
+
+If you change the class, or leave the page, while you have marks or absences typed in that are not
+saved, you are asked **Discard entered marks?** Choose **Keep editing** to stay and save, or
+**Discard** to throw them away. This covers the sidebar, the back arrow and your browser's back
+button. Saving does not ask.
 
 ## Changing a mark afterwards
 
